@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Ce sont juste mes contenus pédagogiques pour l&#039;enseignement de l’ingénierie logicielle...</description>
-	<lastBuildDate>Wed, 06 Jan 2021 08:12:25 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 06 Jan 2021 12:32:49 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -280,15 +280,35 @@
 		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=47</guid>
 
-					<description><![CDATA[<p>À strictement parler, Linux n&#8217;est que le noyau d&#8217;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés sur le système. Mais à quoi servirait un ordinateur sans aucun logiciel, pas même un &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Brève histoire de GNU/Linux</span></a></p>
+					<description><![CDATA[<p>GNU/Linux = GNU + Linux À strictement parler, Linux n&#8217;est que le noyau d&#8217;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés. Mais sans une suite logicielle minimale, il ne rend aucun &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Brève histoire de GNU/Linux</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/">2. Brève histoire de GNU/Linux</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<p>À strictement parler, Linux n&rsquo;est que le noyau d&rsquo;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés sur le système. Mais à quoi servirait un ordinateur sans aucun logiciel, pas même un explorateur de fichiers, et encore moins le moyen d&rsquo;installer de nouvelles applications ?</p>
+<h4>GNU/Linux = GNU + Linux</h4>
 
 
 
-<p>La suite GNU est une gamme de logiciels, notamment d&rsquo;utilitaires de base. Toute distribution GNU/Linux est donc composée de ces logiciels et du noyau lui-même. On désigne cet ensemble comme une installation minimale. Elle se compose notamment de :</p>
+<p>À strictement parler, Linux n&rsquo;est que le noyau d&rsquo;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés. Mais sans une suite logicielle minimale, il ne rend aucun service à l&rsquo;utilisateur final. L&rsquo;utilisateur serait incapable de manipuler ses fichiers et n&rsquo;aurait aucun moyen d&rsquo;installer de nouvelles applications. À ses débuts, le projet Linux s&rsquo;est donc rapproché du projet GNU, qui développait cette suite d&rsquo;outils et n&rsquo;avait pas encore de noyau.</p>
+
+
+
+<p>La suite GNU est une gamme de logiciels, notamment d&rsquo;utilitaires de base. Toute distribution GNU/Linux est donc composée de ces logiciels et du noyau lui-même. On désigne cet ensemble comme une installation minimale.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="620" height="434" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png" alt="" class="wp-image-340" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png 620w, https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux-300x210.png 300w" sizes="(max-width: 620px) 100vw, 620px" /><figcaption>Source <a href="https://commons.wikimedia.org/wiki/File:GNU%2BLinux.png" target="_blank" rel="noreferrer noopener">Wikipédia</a>, sous licence CC.<br>À gauche, le logo de GNU représente un gnou (une espèce proche de l&rsquo;antilope).<br>À droite, le manchot est la mascotte du noyau linux. Il s&rsquo;appelle Tux.</figcaption></figure></div>
+
+
+
+<p>Voilà qui explique la concaténation des termes « GNU » et « Linux ». Le nom Linux, quant à lui, est la contraction de Linus et d&rsquo;Unix. Linus Towards est l&rsquo;étudiant finlandais à l&rsquo;initiative du développement du noyau en 1991. En 2021, il a toujours la gouvernance sur le projet.</p>
+
+
+
+<h4>Quelques mots sur le projet GNU</h4>
+
+
+
+<p>Cette suite logicielle commune à toutes les distributions inclut entres autres :</p>
 
 
 
@@ -296,7 +316,7 @@
 
 
 
-<ul><li>La bibliothèque standard C. Le C est un langage de programmation avec lequel la majorité du noyau est implémenté. Une bibliothèque est un (gros) morceau de code que des applications peuvent réutiliser. La « libc » comme on l&rsquo;appelle, est indispensable à la plupart des logiciels Linux. Elle permet à l&rsquo;application de lire une saisie utilisateur, d&rsquo;afficher du texte, de répondre à des événements extérieurs comme les signaux&#8230;</li></ul>
+<ul><li>La bibliothèque standard C et le compilateur GCC. Le C est un langage de programmation avec lequel la majorité du noyau est implémenté. Une bibliothèque est un (gros) morceau de code que des applications peuvent réutiliser. La « libc » comme on l&rsquo;appelle, est indispensable à la plupart des logiciels Linux. Elle permet à l&rsquo;application de lire une saisie utilisateur, d&rsquo;afficher du texte, de répondre à des événements extérieurs comme les signaux&#8230;</li></ul>
 
 
 
@@ -304,19 +324,27 @@
 
 
 
-<p>Le nom Linux, quant à lui, est la contraction de Linus et d&rsquo;Unix. Linus Towards est tout simplement l&rsquo;étudiant finlandais à l&rsquo;initiative du développement du noyau en 1991. Unix est à l&rsquo;origine un système d&rsquo;exploitation commercial créé dans les années 1970, à destination des professionnels. Linux s&rsquo;inspire ouvertement d&rsquo;Unix et de ses standards, si bien que Wikipédia considère que Linux fait partie de la famille des systèmes d&rsquo;exploitation Unix. Le standard Unix en question porte le nom de POSIX.</p>
+<h4>Linux s&rsquo;inspire de Unix et est conforme au standard POSIX</h4>
 
 
 
-<p>Linux doit une partie de son succès au rapprochement opéré avec GNU. Richard Stallman, à l&rsquo;origine de GNU, souhaitait lui aussi créer un OS conforme aux normes POSIX . GNU avait la suite logiciel utilitaire, mais pas de noyau. Linux était dans la situation inverse. Les deux projets se sont rapprochés pour devenir GNU/Linux.</p>
+<p>Unix est à l&rsquo;origine un système d&rsquo;exploitation commercial créé dans les années 1970, à destination des professionnels. Linux s&rsquo;inspire ouvertement d&rsquo;Unix et de ses standards, si bien que Wikipédia considère que Linux fait partie de la famille des systèmes d&rsquo;exploitation Unix. Le standard introduit par Unix s&rsquo;appelle POSIX.</p>
 
 
 
-<p>Linux est développé sous licence OpenSource, à l&rsquo;inverse de l&rsquo;Unix original et de Windows qui sont des logiciels propriétaires et commerciaux. Les individus à l&rsquo;origine de ce mouvement ont clarifié ce qu&rsquo;est une licence OpenSource. Elle assure que le code source du programme soit en libre accès. Il peut être redistribué sous n&rsquo;importe quelle forme, notamment en tant que fichier exécutable (compilé), intégré dans un autre projet ou modifié. La licence ne limite pas les champs d&rsquo;application à un domaine particulier ou à un groupe de personnes. Il n&rsquo;y a pas de discrimination sur qui ou pourquoi Linux peut être utilisé.</p>
+<p>Linux est développé sous licence OpenSource, à l&rsquo;inverse de l&rsquo;Unix original et de Windows qui sont des logiciels propriétaires et commerciaux. Les individus à l&rsquo;origine de ce mouvement ont clarifié ce qu&rsquo;est une licence OpenSource. Elle assure que le code source du programme soit en libre accès. Il peut être redistribué sous n&rsquo;importe quelle forme, notamment en tant que fichier exécutable (compilé), intégré dans un autre projet ou modifié. La licence ne limite pas les champs d&rsquo;application à un domaine particulier ou à un groupe de personnes. Il n&rsquo;y a ainsi aucune discrimination sur qui ou pourquoi Linux peut être utilisé.</p>
+
+
+
+<h4>La place actuellement occupée par GNU/Linux</h4>
 
 
 
 <p>Aujourd&rsquo;hui, GNU/Linux représente une part de marché majoritaire pour les téléphones portables (Android étant une distribution Linux), les serveurs et les supercalculateurs. Mais il reste marginal dans les environnements de bureaux, où les utilisateurs sont plutôt des développeurs et des ingénieurs. GNU/Linux est ainsi assez méconnu du grand public, tout en étant de plus en plus recherché en entreprise.</p>
+
+
+
+<figure class="wp-block-image"><img src="https://01.org/sites/default/files/users/u31028/linuxbythenumbersinfographic082317-01.png" alt=""/><figcaption>Infographie produite par Intel à propos de Linux. Il y apparaît que Linux est en quasi-monopole sur le segment des supercalculateurs et qu&rsquo;il est utilisé pour des activités critiques comme l&rsquo;opération de marchés boursiers.</figcaption></figure>
 
 
 
@@ -342,7 +370,7 @@
 ]]></description>
 										<content:encoded><![CDATA[
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe  id="_ytid_83577"  width="660" height="371"  data-origwidth="660" data-origheight="371"  src="https://www.youtube.com/embed/bI9d1BfNhR8?enablejsapi=1&#038;autoplay=0&#038;cc_load_policy=0&#038;cc_lang_pref=&#038;iv_load_policy=1&#038;loop=0&#038;modestbranding=0&#038;rel=1&#038;fs=1&#038;playsinline=0&#038;autohide=2&#038;theme=dark&#038;color=red&#038;controls=1&#038;" class="__youtube_prefs__  epyt-is-override  no-lazyload" title="YouTube player"  allow="autoplay; encrypted-media" allowfullscreen data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe>
+<iframe  id="_ytid_70212"  width="660" height="371"  data-origwidth="660" data-origheight="371"  src="https://www.youtube.com/embed/bI9d1BfNhR8?enablejsapi=1&#038;autoplay=0&#038;cc_load_policy=0&#038;cc_lang_pref=&#038;iv_load_policy=1&#038;loop=0&#038;modestbranding=0&#038;rel=1&#038;fs=1&#038;playsinline=0&#038;autohide=2&#038;theme=dark&#038;color=red&#038;controls=1&#038;" class="__youtube_prefs__  epyt-is-override  no-lazyload" title="YouTube player"  allow="autoplay; encrypted-media" allowfullscreen data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe>
 </div></figure>
 
 
