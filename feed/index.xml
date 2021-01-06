@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Thomas VEILLARD</title>
+	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
+	<link>https://thomas-veillard.fr/</link>
+	<description>Ce sont juste mes contenus pédagogiques pour l&#039;enseignement de l’ingénierie logicielle...</description>
+	<lastBuildDate>Wed, 06 Jan 2021 06:44:09 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.6</generator>
+	<item>
+		<title>4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</title>
+		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Tue, 05 Jan 2021 06:28:58 +0000</pubDate>
+				<category><![CDATA[Chapitre 1. Introduction]]></category>
+		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=224</guid>
+
+					<description><![CDATA[<p>À propos des exercices et des corrections Ce document est le sujet d&#8217;une séance de travaux pratiques. Il est composé à la fois d&#8217;explications, de conseils et d&#8217;exercices. Pour les corrections, merci de vous référer à la vidéo associée. Prérequis Avoir suivi les chapitres précédents de ce cours; Disposer des droits d&#8217;administration sur sa machine &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/" class="more-link">Continuer la lecture de <span class="screen-reader-text">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>À propos des exercices et des corrections</h4>
+
+
+
+<p>Ce document est le sujet d&rsquo;une séance de travaux pratiques. Il est composé à la fois d&rsquo;explications, de conseils et d&rsquo;exercices. Pour les corrections, merci de vous référer à la vidéo associée.</p>
+
+
+
+<h4>Prérequis</h4>
+
+
+
+<ul><li>Avoir suivi les chapitres précédents de ce cours;</li><li>Disposer des droits d&rsquo;administration sur sa machine pour installer VirtualBox;</li><li>Libérer au moins 30 Go d&rsquo;espace libre et 2Go de RAM sur votre machine;</li><li>Accéder à une connexion rapide pour télécharger les 4Go du programme d&rsquo;installation d&rsquo;Ubuntu.</li></ul>
+
+
+
+<h4>Plusieurs OS sur la même machine ?!</h4>
+
+
+
+<p>Au cours de cette séance mélangeant théorie et pratique, nous allons installer Ubuntu Desktop dans un environnement virtualisé. De cette manière, nous pourrons exécuter plusieurs systèmes d&rsquo;exploitation sur la même machine. Dans cet environnement virtualisé, vous pourrez mener toute sorte d&rsquo;expérimentation sans risque de casser votre environnement principal. En cas de « boulette » dans le machine virtuelle, vous pouvez simplement la supprimer et la recréer.</p>
+
+
+
+<p>De prime abord, avoir 2 systèmes d&rsquo;exploitation résidant sur la même machine est configuration ésotérique. En effet, <a href="/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">lors de l&rsquo;introduction</a>, je vous ai enseigné que l&rsquo;OS avait l&rsquo;exclusivité du contrôle du matériel. Il délègue ensuite des vues simplifiées aux logiciels.</p>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="806" height="326" class="wp-image-231" style="width: 100%;" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-1.svg" alt=""><figcaption>Schéma du cas nominal. L&rsquo;OS a l&rsquo;exclusivité du contrôle du matériel. Les logiciels demandent systématiquement à l&rsquo;OS pour utiliser le matériel.</figcaption></figure>
+
+
+<p>Pourtant, nous allons aboutir à une configuration où plusieurs OS s&rsquo;exécuteront en parallèle et voudront chacun le contrôle exclusif de leur matériel. On pourrait penser qu&rsquo;ils seront en compétition. Mais grâce aux technologies de virtualisation, ce ne sera pas le cas.</p>
+
+
+<figure class="wp-block-image is-resized size-large"><img class="wp-image-235" style="width: 100%;" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-Hyperviseur-niveau-2.svg" alt=""><figcaption>Schéma faisant intervenir un hyperviseur de second niveau (par exemple VirtualBox).</figcaption></figure>
+
+
+<p>Nous avons cette fois-ci 2 systèmes en cours d&rsquo;exécution. Il ne peut y avoir qu&rsquo;un seul OS hôte, puisqu&rsquo;il a un accès direct au matériel. En revanche, les systèmes invités peuvent être aussi nombreux que vous le souhaitez. Chaque système invité s’exécute dans un environnement construit par VirtualBox. Du point de vue d&rsquo;un OS invité, il est seul dans son environnement.</p>
+
+
+
+<h4>Installation d&rsquo;un hyperviseur de niveau 2</h4>
+
+
+
+<p>Les hyperviseurs de niveau 2 les plus connus sont :</p>
+
+
+
+<ul><li>Oracle VirtualBox (opensource et gratuit), à récupérer sur la <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noreferrer noopener">page de téléchargement officielle</a>. Il est particulièrement simple d&rsquo;utilisation, fonctionne sur les principaux systèmes d&rsquo;exploitation (Windows, MacOS, Linux&#8230;) et est maintenu par la même entreprise que Java.</li><li>VMWare Player (gratuit), VMWare Workstation (payant), etc. Probablement l&rsquo;un des produits les plus aboutis du marché. Il fonctionne aussi sur les principaux OS. Je l&rsquo;aurais utilisé pour ce cours si le télécharger n&rsquo;était pas un parcours du combattant. Si vous êtes sous MacOS et cherchez un produit VMWare, regardez du côté de VMWare Fusion (payant).</li><li>Parallel Desktop est une  référence sur MacOS.</li></ul>
+
+
+
+<p>Pour ce cours, nous utiliserons VirtualBox pour sa facilité d&rsquo;utilisation et parce qu&rsquo;il est gratuit. Si vous rencontrez des problèmes avec VirtualBox, vous pouvez vous tourner vers VMWare Player, qui est plus stable d&rsquo;après mon expérience personnelle.</p>
+
+
+
+<p class="exercice"><strong>Exercice 1</strong> : vérifiez que vous avez au moins 30 Go de disque et 2 Go de RAM disponible sur votre machine hôte.</p>
+
+
+
+<p class="exercice"><strong>Exercice 2</strong> : téléchargez et installez VirtualBox sur votre machine. </p>
+
+
+
+<h4>Image ISO du support d&rsquo;installation d&rsquo;Ubuntu Desktop</h4>
+
+
+
+<p>Un fichier ISO est l&rsquo;image exacte d&rsquo;un CD/DVD. Le format ISO est standard et largement adopté. C&rsquo;est d&rsquo;ailleurs le principal format de distribution des supports d&rsquo;installation de systèmes d&rsquo;exploitation.</p>
+
+
+
+<p>Si vous vouliez installer ou réinstaller un système hôte depuis une image ISO, vous devriez d&rsquo;abord la graver (sur un CD, un DVD ou une clé USB), puis démarrer une machine à froid sur ce support. Cette dernière étape est parfois fastidieuse, puisque la procédure diffère d&rsquo;une carte mère à l&rsquo;autre&#8230; Mais heureusement, c&rsquo;est bien plus simple avec une machine virtuelle.</p>
+
+
+
+<p>Avec VirtualBox, nous n&rsquo;aurons qu&rsquo;à sélectionner l&rsquo;image ISO pendant la configuration de la machine virtuelle. Ensuite, cet ISO sera vu comme un DVD classique à l&rsquo;intérieur de la machine virtuelle.</p>
+
+
+
+<p class="exercice"><strong>Exercice 3</strong> : téléchargez l&rsquo;image ISO d&rsquo;Ubuntu Desktop depuis <a href="https://ubuntu.com/download" target="_blank" rel="noreferrer noopener">le site officiel</a> de son éditeur Canonical. </p>
+
+
+
+<h4>Créer et démarrer la machine virtuelle</h4>
+
+
+<div class="exercice" style="margin-bottom: 1em;">
+<p><strong>Exercice 4</strong> : créez une nouvelle machine virtuelle, sans la démarrer pour l&rsquo;instant. Au cours du processus d&rsquo;installation, soyez attentif aux explications intégrées à Virtualbox. La machine doit avoir les caractéristiques suivantes :</p>
+<ul style="margin-left: 1em; margin-bottom: 0;">
+<li>Système d&rsquo;exploitation invité : Ubuntu 64 bits</li>
+<li>1 Go de mémoire vive</li>
+<li>1 unique disque de 10 Go (préférez l&rsquo;option « taille dynamiquement allouée »)</li>
+</ul>
+</div>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="980" height="586" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3.png" alt="" class="wp-image-309" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3.png 980w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3-300x179.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3-768x459.png 768w" sizes="(max-width: 980px) 100vw, 980px" /><figcaption>Interface de Virtualbox à la fin de l&rsquo;exercice. Une machine virtuelle nommée « TP Ubuntu » est éteinte. La partie droite résume les caractéristiques du matériel virtualisé.</figcaption></figure>
+
+
+
+<p class="exercice"><strong>Question 1</strong> : Par défaut, l&rsquo;ordre d&rsquo;amorçage est « disquette », puis « optique » (CD/DVD) et enfin « disque dur ». Qu&rsquo;est-ce que l&rsquo;ordre d&rsquo;amorçage ? Pourquoi la machine virtuelle devra-t-elle amorcer sur un CD/DVD au premier démarrage ? </p>
+
+
+
+<p class="exercice"><strong>Question 2</strong> : Localisez le fichier contenant les données du disque dur virtuel. Quelle taille fait-il avant l&rsquo;installation ? Faites le lien avec le paramètre « taille allouée dynamiquement » et expliquez brièvement le principe de « thin-provisioning ».</p>
+
+
+
+<p></p>
+
+
+
+<p class="has-text-align-center"><em>(la rédaction de cet article est en cours)</em></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>3. Des distributions Linux… En veux-tu, en voilà</title>
+		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 02 Jan 2021 12:53:44 +0000</pubDate>
+				<category><![CDATA[Chapitre 1. Introduction]]></category>
+		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=96</guid>
+
+					<description><![CDATA[<p>Pour installer Linux, on se tourne vers une des nombreuses distributions sur le marché. Pour rappel, une distribution est un noyau Linux accompagné d&#8217;un ensemble cohérent de logiciels. Classification par famille de dérivés On classe les distributions habituellement rencontrées dans les entreprises en trois familles. Chaque famille porte le nom de sa distribution de référence. &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. Des distributions Linux… En veux-tu, en voilà</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/">3. Des distributions Linux… En veux-tu, en voilà</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Pour installer Linux, on se tourne vers une des nombreuses distributions sur le marché. Pour rappel, une distribution est un noyau Linux accompagné d&rsquo;un ensemble cohérent de logiciels.</p>
+
+
+
+<h4>Classification par famille de dérivés</h4>
+
+
+
+<p>On classe les distributions habituellement rencontrées dans les entreprises en trois familles. Chaque famille porte le nom de sa distribution de référence. Cette dernière peut avoir plusieurs dérivés, qui sont les membres de la famille.</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td><strong>Famille</strong></td><td><strong>Debian-based</strong></td><td><strong>RHEL-based</strong></td><td><strong>OpenSUSE</strong></td></tr><tr><td><strong>Dérivés majeurs</strong></td><td>Ubuntu, Linux Mint</td><td>Fedora, CentOS</td><td>&#8211;</td></tr><tr><td><strong>Gestionnaire de paquets</strong></td><td>apt &amp; dkpg</td><td>yum/dnf &amp; rpm</td><td>zypper &amp; rpm</td></tr></tbody></table><figcaption>Les trois grandes familles d&rsquo;OS Linux en entreprise</figcaption></figure>
+
+
+
+<p>Chaque distribution est maintenue par une entité. Il peut s&rsquo;agir :</p>
+
+
+
+<ul><li>d&rsquo;une association à but non lucratif (ex. la Fondation Debian)</li><li>d&rsquo;une entreprise commerciale (ex. Canonical maintient Ubuntu, Redhat maintient RHEL et CentOS)</li><li>d&rsquo;une communauté sans aucune structure juridique</li></ul>
+
+
+
+<p>Il y a de nombreuses autres distributions disponibles. La nébuleuse est si grande qu&rsquo;on pourrait s&rsquo;y perdre. On ne retient en général que quelques grands noms.</p>
+
+
+
+<p>Dans le cadre de ce cours, vous pratiquerez principalement sur Ubuntu. Ce que vous apprendre sur Ubuntu sera très facile à transposer. </p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="620" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1024x620.png" alt="" class="wp-image-145" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1024x620.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-300x182.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-768x465.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1536x931.png 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image.png 1578w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Un aperçu des dérivés d&rsquo;Ubuntu entre 2004 et 2020, lui-même un dérivé de Debian&#8230; Source <a href="https://fr.wikipedia.org/wiki/Liste_des_distributions_GNU/Linux#/media/Fichier:Linux_Distribution_Timeline.svg" target="_blank" rel="noopener">Wikipédia</a>.</figcaption></figure>
+
+
+
+<h4>Classification par cas d&rsquo;usage nominal</h4>
+
+
+
+<p>Certaines distributions sont conçues pour les ordinateurs de bureau et les stations de travail. Elles sont dotées d&rsquo;une interface graphique, de logiciels bureautiques (ex. un navigateur, une suite bureautique), de drivers spécifiques (ex. de la carte Wifi), etc.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="768" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3.png" alt="" class="wp-image-201" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3-300x225.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3-768x576.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Ubuntu Desktop 20.04, avec l&rsquo;interface Gnome 3</figcaption></figure>
+
+
+
+<p>À l&rsquo;inverse, d&rsquo;autres cibleront des serveurs pour lesquels la disponibilité et la fiabilité sont prioritaires sur les nouveautés. Elles auront un noyau plus vieux, préféreront une interface exclusivement en ligne de commande, seront configurées différemment&#8230; Comparativement à une déclinaison de bureau, celles des serveurs ont beaucoup moins de logiciels préinstallés.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="768" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique.png" alt="" class="wp-image-203" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique-300x225.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique-768x576.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Ubuntu 20.04 sur tty3, sans interface graphique</figcaption></figure>
+
+
+
+<p>Dans le cas d&rsquo;Ubuntu, on retrouve plusieurs variantes officiellement maintenues par Canonical, notamment Ubuntu Desktop, Ubuntu Server.</p>
+
+
+
+<p>On retrouve d&rsquo;autres catégories, comme les distributions minimalistes. Elles cherchent à réduire au maximum leur taille sur le disque, la consommation de ressources matérielles et la surface d&rsquo;attaque. La surface d&rsquo;attaque est le périmètre exposé à un attaquant. Plus la distribution exécute de tâches en arrière-plan, plus les points d&rsquo;entrées potentiels sont nombreux.</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>Distribution</td><td>Ubuntu Desktop 20.04</td><td>Ubuntu Server 20.04</td><td>Alpine Linux 3.12</td></tr><tr><td>Taille du programme d&rsquo;installation (ISO)</td><td>2 784 Mo</td><td>914 Mo</td><td>126 Mo</td></tr></tbody></table><figcaption>Comparaison de la taille des images d&rsquo;installation de 3 distributions</figcaption></figure>
+
+
+
+<p>Les environnements graphiques et les nombreux logiciels qu&rsquo;ils contiennent prennent beaucoup de place. Sur ma machine, Firefox consomme plus de 200 Mo juste pour les binaires, soit plus que tout Alpine Linux.</p>
+
+
+
+<p>Il existe encore d&rsquo;autres cas d&rsquo;usages, adressés par des distributions spécialisées. Par exemple, Android fait tourner nombre de téléphones. L&rsquo;IOT (Internet of Things), qui inclut des caméras IP et les capteurs dans les usines, a aussi ses propres besoins.</p>
+
+
+
+<h4>🎉 C&rsquo;est l&rsquo;heure de la pratique 🥳</h4>
+
+
+
+<p>La prochaine activité sera un TP, où vous installerez Ubuntu Desktop dans une machine virtuelle. À tout de suite.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/">3. Des distributions Linux… En veux-tu, en voilà</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2. Brève histoire de GNU/Linux</title>
+		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 02 Jan 2021 01:34:09 +0000</pubDate>
+				<category><![CDATA[Chapitre 1. Introduction]]></category>
+		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=47</guid>
+
+					<description><![CDATA[<p>À strictement parler, Linux n&#8217;est que le noyau d&#8217;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés sur le système. Mais à quoi servirait un ordinateur sans aucun logiciel, pas même un &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Brève histoire de GNU/Linux</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/">2. Brève histoire de GNU/Linux</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>À strictement parler, Linux n&rsquo;est que le noyau d&rsquo;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés sur le système. Mais à quoi servirait un ordinateur sans aucun logiciel, pas même un explorateur de fichiers, et encore moins le moyen d&rsquo;installer de nouvelles applications ?</p>
+
+
+
+<p>La suite GNU est une gamme de logiciels, notamment d&rsquo;utilitaires de base. Toute distribution GNU/Linux est donc composée de ces logiciels et du noyau lui-même. On désigne cet ensemble comme une installation minimale. Elle se compose notamment de :</p>
+
+
+
+<ul><li>GRUB (GRand Unified Bootloader), un chargeur d&rsquo;amorçage. Il s&rsquo;agit du tout premier programme lu sur le disque. Il se situe à un emplacement bien connu, ce qui explique que le BIOS et l&rsquo;UEFI sachent où le trouver et lui délèguent l&rsquo;amorçage du système d&rsquo;exploitation. Grâce à lui, l&rsquo;utilisateur peut choisir quel OS démarrer (s&rsquo;il en avait plusieurs sur sa machine) et personnaliser les options de démarrage de Linux.</li></ul>
+
+
+
+<ul><li>La bibliothèque standard C. Le C est un langage de programmation avec lequel la majorité du noyau est implémenté. Une bibliothèque est un (gros) morceau de code que des applications peuvent réutiliser. La « libc » comme on l&rsquo;appelle, est indispensable à la plupart des logiciels Linux. Elle permet à l&rsquo;application de lire une saisie utilisateur, d&rsquo;afficher du texte, de répondre à des événements extérieurs comme les signaux&#8230;</li></ul>
+
+
+
+<ul><li>Bash, un environnement en ligne de commande dans lequel lancer des logiciels. Entre autres logiciels compatibles avec cet environnement, vous trouverez de quoi naviguer dans une arborescence de dossiers et des fichiers, d&rsquo;en manipuler le contenu, etc.</li></ul>
+
+
+
+<p>Le nom Linux, quant à lui, est la contraction de Linus et d&rsquo;Unix. Linus Towards est tout simplement l&rsquo;étudiant finlandais à l&rsquo;initiative du développement du noyau en 1991. Unix est à l&rsquo;origine un système d&rsquo;exploitation commercial créé dans les années 1970, à destination des professionnels. Linux s&rsquo;inspire ouvertement d&rsquo;Unix et de ses standards, si bien que Wikipédia considère que Linux fait partie de la famille des systèmes d&rsquo;exploitation Unix. Le standard Unix en question porte le nom de POSIX.</p>
+
+
+
+<p>Linux doit une partie de son succès au rapprochement opéré avec GNU. Richard Stallman, à l&rsquo;origine de GNU, souhaitait lui aussi créer un OS conforme aux normes POSIX . GNU avait la suite logiciel utilitaire, mais pas de noyau. Linux était dans la situation inverse. Les deux projets se sont rapprochés pour devenir GNU/Linux.</p>
+
+
+
+<p>Linux est développé sous licence OpenSource, à l&rsquo;inverse de l&rsquo;Unix original et de Windows qui sont des logiciels propriétaires et commerciaux. Les individus à l&rsquo;origine de ce mouvement ont clarifié ce qu&rsquo;est une licence OpenSource. Elle assure que le code source du programme soit en libre accès. Il peut être redistribué sous n&rsquo;importe quelle forme, notamment en tant que fichier exécutable (compilé), intégré dans un autre projet ou modifié. La licence ne limite pas les champs d&rsquo;application à un domaine particulier ou à un groupe de personnes. Il n&rsquo;y a pas de discrimination sur qui ou pourquoi Linux peut être utilisé.</p>
+
+
+
+<p>Aujourd&rsquo;hui, GNU/Linux représente une part de marché majoritaire pour les téléphones portables (Android étant une distribution Linux), les serveurs et les supercalculateurs. Mais il reste marginal dans les environnements de bureaux, où les utilisateurs sont plutôt des développeurs et des ingénieurs. GNU/Linux est ainsi assez méconnu du grand public, tout en étant de plus en plus recherché en entreprise.</p>
+
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/">2. Brève histoire de GNU/Linux</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>1. Introduction et objectifs pédagogiques</title>
+		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 02 Jan 2021 01:08:05 +0000</pubDate>
+				<category><![CDATA[Chapitre 1. Introduction]]></category>
+		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=34</guid>
+
+					<description><![CDATA[<p>Bonjour. Je m’appelle Thomas VEILLARD et je suis ingénieur informatique. Étant spécialisé dans le développement logiciel, je me sers de Linux au quotidien depuis plus de 10 ans. Je vais bientôt faire l&#8217;expérience de l&#8217;enseignement en école d&#8217;ingénieur informatique. Et pour cela, je vais devoir construire mes premiers cours. J&#8217;ai décidé de les publier gratuitement &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction et objectifs pédagogiques</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">1. Introduction et objectifs pédagogiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe  id="_ytid_71842"  width="660" height="371"  data-origwidth="660" data-origheight="371"  src="https://www.youtube.com/embed/bI9d1BfNhR8?enablejsapi=1&#038;autoplay=0&#038;cc_load_policy=0&#038;cc_lang_pref=&#038;iv_load_policy=1&#038;loop=0&#038;modestbranding=0&#038;rel=1&#038;fs=1&#038;playsinline=0&#038;autohide=2&#038;theme=dark&#038;color=red&#038;controls=1&#038;" class="__youtube_prefs__  epyt-is-override  no-lazyload" title="YouTube player"  allow="autoplay; encrypted-media" allowfullscreen data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe>
+</div></figure>
+
+
+
+<p>Bonjour. Je m’appelle Thomas VEILLARD et je suis ingénieur informatique. Étant spécialisé dans le développement logiciel, je me sers de Linux au quotidien depuis plus de 10 ans. Je vais bientôt faire l&rsquo;expérience de l&rsquo;enseignement en école d&rsquo;ingénieur informatique. Et pour cela, je vais devoir construire mes premiers cours. J&rsquo;ai décidé de les publier gratuitement sous licence Creative Common, de sorte qu&rsquo;il puisse servir à toute personne qui y porterait intérêt. C&rsquo;est un peu l&rsquo;occasion de m’entraîner et de partager du contenu de qualité. J&rsquo;ai intitulé mon premier essai “Théorie des systèmes d’exploitation et pratique de GNU/Linux”, et je vous invite à le suivre.</p>
+
+
+
+<p>Le contenu de ce cours et ses activités ont été pensés pour un enseignement en écoles d’ingénieur informatique. Je suis convaincu que vous pourrez le suivre sans prérequis particulier, et que certains contenus vous profiteront même si vous êtes un utilisateur assez expérimenté de Linux.</p>
+
+
+
+<p>Je souhaite trouver un équilibre entre la théorie et la pratique. Pour la théorie, nous aurons les fondamentaux des systèmes d&rsquo;exploitation. La mise en pratique se fera sur Linux, avec pour principal objectif à la fin du cours que vous sachiez administrer un serveur Linux. Les cours seront des vidéos comme celles-ci. Et les travaux pratiques seront aussi en vidéo, bien que dans un format légèrement différent. Je vous mettrais systématiquement à disposition les corrections et les démonstrations complémentaires.</p>
+
+
+
+<p>Si vous avez trouvé ce cours, alors vous savez peut-être ce qu&rsquo;est un système d&rsquo;exploitation. Autrement, sachez que Windows, MacOS ou encore Android sont des systèmes d’exploitation. On abrège souvent l’expression “système d’exploitation” par “OS”, qui nous vient de l’anglais “Operating System”. L&rsquo;OS est indispensable pour utiliser votre appareil et lancer des applications. Il gère les périphériques, les interactions avec l’utilisateur et crée un contexte favorable à l’exécution de vos programmes.</p>
+
+
+
+<p>Pour être un peu plus formel, voici quelques objectifs pédagogiques :</p>
+
+
+
+<ul><li>Assimiler les concepts théoriques sous-jacents aux systèmes d’exploitation</li><li>Comprendre en quoi un système d’exploitation est indispensable</li><li>Effectuer aisément les tâches d’administration quotidienne d’un système GNU/Linux</li><li>Savoir gérer les utilisateurs, les processus, les permissions, les quotas…</li><li>Diagnostiquer des problèmes et des anomalies, puis les résoudre</li><li>Être averti des implications en termes de sécurité de vos actions</li><li>Être à l’aise avec la ligne de commande et autonome avec le “man”</li><li>Développer votre culture de l’écosystème GNU/Linux</li><li>Être familier des principaux services et logiciels de l’écosystème GNU/Linux</li><li>Etc. La liste serait trop longue à écrire !</li></ul>
+
+
+
+<p>Cette vidéo est une introduction. C&rsquo;est aussi l&rsquo;occasion de démystifier l&rsquo;objet du cours: le système d&rsquo;exploitation et son rôle.</p>
+
+
+
+<p>Considérez la capture d&rsquo;écran suivante, prise en recherchant « carte réseau » chez un vendeur français de matériel informatique. Elle donne un aperçu de la diversité des marques et des modèles pour un seul type de composants. Presque aucun éditeur de logiciel ne serait capable d&rsquo;adapter ses développements à autant de modèles. Tester le logiciel serait bien trop chronophage, sans même aborder la question du coût d&rsquo;achat du matériel. Ce travail fastidieux est pris en charge par l&rsquo;éditeur de l&rsquo;OS. L&rsquo;OS crée alors un environnement d&rsquo;exécution normalisé et abstrait l&rsquo;accès au matériel. Le support matériel peut être étendu en installant de nouveaux pilotes.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-1024x692.png" alt="" class="wp-image-212" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-1024x692.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-300x203.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-768x519.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1.png 1283w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption><em>Comment un éditeur de logiciel pourrait-il adapter seul son logiciel à tous les produits matériels sur le marché ? N’a-t-il pas mieux à faire ?</em></figcaption></figure>
+
+
+
+<p>En prime, un logiciel doit cohabiter avec d’autres programmes, partager avec eux des ressources telles que de la puissance de calcul, de la mémoire, de la bande passante réseau, etc. Nos ordinateurs savent non seulement exécuter plusieurs tâches en parallèle, mais aussi servir les besoins de plusieurs utilisateurs sur une même machine. S’assurer que chacun des processus ait un accès équitable au matériel est la mission historique d’un système d’exploitation.</p>
+
+
+
+<p>En plus de cela, les systèmes modernes cloisonnent les processus et les utilisateurs pour des raisons de stabilité et de sécurité. 2 utilisateurs de la même machine ont chacun leurs propres fichiers et processus. Ils ne veulent certainement pas qu&rsquo;un autre y accède. De même, si un processus venait à planter, le système d’exploitation devrait assurer la stabilité du reste du système.</p>
+
+
+
+<p>À travers une série de vidéos, nous allons aborder les concepts sous-jacents aux systèmes d’exploitation. Et nous allons les mettre en pratique avec GNU/Linux, le système d’exploitation gratuit et opensource dominant sur les serveurs.</p>
+
+
+
+<p>Sur ce, je vous souhaite une bonne progression dans ce cours.</p>
+
+
+<a href=https://docs.google.com/presentation/d/1Z0MLnlWTGKAOtuuccF02__VyR_r_rgkgfWIfHEMD3xU/edit?usp=sharing target="_blank">
+  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
+    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
+    <div>Ouvrir la présentation Google Slide</div>
+  </div>
+</a>
+
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">1. Introduction et objectifs pédagogiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
