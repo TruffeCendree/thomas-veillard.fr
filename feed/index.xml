@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Ce sont juste mes contenus pédagogiques pour l&#039;enseignement de l’ingénierie logicielle...</description>
-	<lastBuildDate>Wed, 06 Jan 2021 06:44:09 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 06 Jan 2021 08:12:25 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -121,7 +121,7 @@
 
 
 <div class="exercice" style="margin-bottom: 1em;">
-<p><strong>Exercice 4</strong> : créez une nouvelle machine virtuelle, sans la démarrer pour l&rsquo;instant. Au cours du processus d&rsquo;installation, soyez attentif aux explications intégrées à Virtualbox. La machine doit avoir les caractéristiques suivantes :</p>
+<p><strong>Exercice 4</strong>&nbsp;: créez une nouvelle machine virtuelle, sans la démarrer pour l&rsquo;instant. Au cours du processus d&rsquo;installation, soyez attentif aux explications intégrées à Virtualbox. La machine doit avoir les caractéristiques suivantes :</p>
 <ul style="margin-left: 1em; margin-bottom: 0;">
 <li>Système d&rsquo;exploitation invité : Ubuntu 64 bits</li>
 <li>1 Go de mémoire vive</li>
@@ -142,11 +142,27 @@
 
 
 
-<p></p>
+<p class="exercice"><strong>Exercice 5</strong> : Démarrez la machine virtuelle et amorcez sur le support d&rsquo;installation. Au premier lancement de la machine virtuelle, VirtualBox vous demandera de sélectionner l&rsquo;image ISO.</p>
 
 
 
-<p class="has-text-align-center"><em>(la rédaction de cet article est en cours)</em></p>
+<blockquote class="wp-block-quote"><p>FATAL: No bootable medium found!  System halted.</p><cite>Si vous rencontrez cette erreur, éteignez la machine virtuelle et configurez manuellement la cible du contrôleur de disque optique.</cite></blockquote>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="626" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-1024x626.gif" alt="" class="wp-image-326" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-1024x626.gif 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-300x183.gif 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-768x469.gif 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>La procédure à suivre si le BIOS de la machine virtuelle ne détecte pas de disque optique sur lequel amorcer.</figcaption></figure>
+
+
+
+<p class="exercice"><strong>Exercice 6</strong> : Suivez la procédure d&rsquo;installation d&rsquo;Ubuntu. Elle est facile à prendre en main.</p>
+
+
+
+<p>Vous avez maintenant une installation d&rsquo;Ubuntu Desktop parfaitement fonctionnelle. Je vous invite à l&rsquo;explorer et à vous familiariser avec.</p>
+
+
+
+<p class="exercice"><strong>Exercice 7</strong> : En utilisant les onglets « Ressources » et « Système de fichiers » du moniteur système, comparez les ressources visibles par l&rsquo;OS invité avec les spécifications de la machine virtuelle.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -326,7 +342,7 @@
 ]]></description>
 										<content:encoded><![CDATA[
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe  id="_ytid_76502"  width="660" height="371"  data-origwidth="660" data-origheight="371"  src="https://www.youtube.com/embed/bI9d1BfNhR8?enablejsapi=1&#038;autoplay=0&#038;cc_load_policy=0&#038;cc_lang_pref=&#038;iv_load_policy=1&#038;loop=0&#038;modestbranding=0&#038;rel=1&#038;fs=1&#038;playsinline=0&#038;autohide=2&#038;theme=dark&#038;color=red&#038;controls=1&#038;" class="__youtube_prefs__  epyt-is-override  no-lazyload" title="YouTube player"  allow="autoplay; encrypted-media" allowfullscreen data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe>
+<iframe  id="_ytid_83577"  width="660" height="371"  data-origwidth="660" data-origheight="371"  src="https://www.youtube.com/embed/bI9d1BfNhR8?enablejsapi=1&#038;autoplay=0&#038;cc_load_policy=0&#038;cc_lang_pref=&#038;iv_load_policy=1&#038;loop=0&#038;modestbranding=0&#038;rel=1&#038;fs=1&#038;playsinline=0&#038;autohide=2&#038;theme=dark&#038;color=red&#038;controls=1&#038;" class="__youtube_prefs__  epyt-is-override  no-lazyload" title="YouTube player"  allow="autoplay; encrypted-media" allowfullscreen data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe>
 </div></figure>
 
 
