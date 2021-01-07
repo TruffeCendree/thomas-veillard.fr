@@ -10,8 +10,8 @@
 	Commentaires pour Thomas VEILLARD	</title>
 	<atom:link href="https://thomas-veillard.fr/comments/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
-	<description>Ce sont juste mes contenus pédagogiques pour l&#039;enseignement de l’ingénierie logicielle...</description>
-	<lastBuildDate>Thu, 07 Jan 2021 19:41:49 +0000</lastBuildDate>
+	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
+	<lastBuildDate>Thu, 07 Jan 2021 20:02:23 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>

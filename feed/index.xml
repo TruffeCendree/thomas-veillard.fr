@@ -11,8 +11,8 @@
 	<title>Thomas VEILLARD</title>
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
-	<description>Ce sont juste mes contenus pédagogiques pour l&#039;enseignement de l’ingénierie logicielle...</description>
-	<lastBuildDate>Thu, 07 Jan 2021 19:41:49 +0000</lastBuildDate>
+	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
+	<lastBuildDate>Thu, 07 Jan 2021 20:02:23 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -422,7 +422,7 @@
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">1. Introduction et objectifs pédagogiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/bI9d1BfNhR8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/bI9d1BfNhR8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 
@@ -487,7 +487,7 @@
 
 
 
-<p>Considérez la capture d&rsquo;écran suivante, prise en recherchant « carte réseau » chez un vendeur français de matériel informatique. Elle donne un aperçu de la diversité des marques et des modèles pour un seul type de composants. Presque aucun éditeur de logiciel ne serait capable d&rsquo;adapter ses développements à autant de modèles. Tester le logiciel serait bien trop chronophage, sans même aborder la question du coût d&rsquo;achat du matériel. Ce travail fastidieux est pris en charge par l&rsquo;éditeur de l&rsquo;OS. </p>
+<p>Considérez la capture d&rsquo;écran suivante, prise en recherchant « carte réseau » chez un vendeur français de matériel informatique. Elle donne un aperçu de la diversité des marques et des modèles pour un seul type de composants. Presque aucun éditeur de logiciel ne serait capable d&rsquo;adapter ses développements à autant de modèles. Tester le logiciel serait bien trop chronophage, sans même aborder la question du coût d&rsquo;achat du matériel. L&rsquo;éditeur de l&rsquo;OS prend en charge ce travail fastidieux.</p>
 
 
 
@@ -525,7 +525,7 @@
 
 
 
-<h5>Un exemple récapitulatif : l&rsquo;usage CONCOURANT d&rsquo;une interface réseau</h5>
+<h5>Un exemple récapitulatif : Accès concurrent à l&rsquo;interface réseau</h5>
 
 
 
