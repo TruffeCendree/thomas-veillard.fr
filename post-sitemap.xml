@@ -30,19 +30,12 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</loc>
-		<lastmod>2021-01-06T12:32:49+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/</loc>
 		<lastmod>2021-01-06T22:04:53+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/</loc>
-		<lastmod>2021-01-07T20:02:23+00:00</lastmod>
+		<lastmod>2021-01-09T10:15:01+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1.png</image:loc>
 		</image:image>
@@ -51,6 +44,19 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Transfert-des-packets-reseaux-vers-leurs-processus-respectifs.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</loc>
+		<lastmod>2021-01-09T10:16:08+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/GRUB-demarrant-Ubuntu.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Une-session-dans-bash.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>
