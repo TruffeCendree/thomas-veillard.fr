@@ -30,10 +30,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/</loc>
-		<lastmod>2021-01-06T22:04:53+00:00</lastmod>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</loc>
 		<lastmod>2021-01-09T10:16:08+00:00</lastmod>
 		<image:image>
@@ -57,6 +53,13 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Transfert-des-packets-reseaux-vers-leurs-processus-respectifs.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/</loc>
+		<lastmod>2021-01-09T21:38:57+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
