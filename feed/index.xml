@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 09 Jan 2021 21:38:57 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 10 Jan 2021 15:51:33 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -445,7 +445,10 @@
 					<description><![CDATA[<p>GNU/Linux = GNU + Linux À strictement parler, Linux n&#8217;est que le noyau d&#8217;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés. Mais sans une suite logicielle minimale, il ne rend aucun &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Brève histoire de GNU/Linux</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/">2. Brève histoire de GNU/Linux</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[
+										<content:encoded><![CDATA[<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/KvGN1SrNwAo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+
+
+
 <h4>GNU/Linux = GNU + Linux</h4>
 
 
@@ -542,8 +545,7 @@
 					<description><![CDATA[<p>Vous souhaitez acquérir des compétences d&#8217;administration système, en particulier sous GNU/Linux ? Ce cours vous y aidera. Objectifs pédagogiques Voici quelques-uns des objectifs au terme de la formation : Assimiler les concepts théoriques sous-jacents aux systèmes d’exploitation Comprendre en quoi un système d’exploitation est indispensable Effectuer aisément les tâches d’administration quotidienne d’un système GNU/Linux Savoir &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction et objectifs pédagogiques</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">1. Introduction et objectifs pédagogiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[
-<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/Hc-MFDvutxU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+										<content:encoded><![CDATA[<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/Hc-MFDvutxU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 

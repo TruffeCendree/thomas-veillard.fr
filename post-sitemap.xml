@@ -30,21 +30,15 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</loc>
-		<lastmod>2021-01-09T10:16:08+00:00</lastmod>
+		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/</loc>
+		<lastmod>2021-01-09T21:38:57+00:00</lastmod>
 		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/GRUB-demarrant-Ubuntu.gif</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Une-session-dans-bash.gif</image:loc>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers.png</image:loc>
 		</image:image>
 	</url>
 	<url>
 		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/</loc>
-		<lastmod>2021-01-09T14:39:27+00:00</lastmod>
+		<lastmod>2021-01-10T15:50:54+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1.png</image:loc>
 		</image:image>
@@ -56,10 +50,16 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/</loc>
-		<lastmod>2021-01-09T21:38:57+00:00</lastmod>
+		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</loc>
+		<lastmod>2021-01-10T15:51:33+00:00</lastmod>
 		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers.png</image:loc>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/GRUB-demarrant-Ubuntu.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Une-session-dans-bash.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>
