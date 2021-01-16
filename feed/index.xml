@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Thu, 14 Jan 2021 20:38:42 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 16 Jan 2021 12:47:40 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -529,7 +529,10 @@
 					<description><![CDATA[<p>Pour installer Linux, on se tourne vers une des nombreuses distributions sur le marché. Pour rappel, une distribution est un noyau Linux accompagné d&#8217;un ensemble cohérent de logiciels. Qu&#8217;est-ce qui change d&#8217;une distribution à l&#8217;autre ? Leurs éditeurs (communautés, entreprises…) Leurs licences (gratuites ou payantes) Les choix techniques (ex. systemd / upstart / system V) &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. Des distributions Linux… En veux-tu, en voilà</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/">3. Des distributions Linux… En veux-tu, en voilà</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[
+										<content:encoded><![CDATA[<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/vKn7q2TeyQg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+
+
+
 <p>Pour installer Linux, on se tourne vers une des nombreuses distributions sur le marché. Pour rappel, une distribution est un noyau Linux accompagné d&rsquo;un ensemble cohérent de logiciels.</p>
 
 
@@ -566,11 +569,43 @@
 
 
 
-<p>Dans le cadre de ce cours, vous pratiquerez principalement sur Ubuntu. Ce que vous apprendre sur Ubuntu sera très facile à transposer. </p>
+<p>Dans le cadre de ce cours, vous pratiquerez principalement sur Ubuntu. Ce que vous apprendrez sur Ubuntu sera très facile à transposer. </p>
+
+
+
+<h5>L&rsquo;exemple d&rsquo;Ubuntu, lui-même un fork de Debian</h5>
 
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="620" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1024x620.png" alt="" class="wp-image-145" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1024x620.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-300x182.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-768x465.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1536x931.png 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image.png 1578w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Un aperçu des dérivés d&rsquo;Ubuntu entre 2004 et 2020, lui-même un dérivé de Debian&#8230; Source <a href="https://fr.wikipedia.org/wiki/Liste_des_distributions_GNU/Linux#/media/Fichier:Linux_Distribution_Timeline.svg" target="_blank" rel="noopener">Wikipédia</a>.</figcaption></figure>
+
+
+
+<p>Ubuntu est un fork de Debian, c&rsquo;est-à-dire une distribution construite sur la base de Debian tout en prenant une direction légèrement différente.</p>
+
+
+
+<p>Les forks sont caractérisques du monde du libre. La plupart des distributions sont construites sous licence libre, comme la GPL. Du coup, il est parfaitement légal de reprendre un projet, de le modifier et de le redistribuer. Cela s&rsquo;applique également à tout logiciel libre, et donc pas seulement aux distributions.</p>
+
+
+
+<p>Pour qu&rsquo;un fork survive, il doit apporter suffisamment de valeur pour rassembler des individus. Sinon, il finira fatalement par mourir.</p>
+
+
+
+<p>Voici pourquoi les distributions sont si nombreuses, et en même temps si proches. Les connaissances et compétences d&rsquo;administrateur système sont portables d&rsquo;une distribution à l&rsquo;autre, voire entre différentes familles.</p>
+
+
+
+<p>Pour en revenir à Ubuntu, vous avez ci-dessus l&rsquo;arbre de ses forks depuis 2004.</p>
+
+
+
+<p>Il y a eu Ubuntu Touch, un beau projet pour conquérir le marché des télépĥones, avant que Canonical n&rsquo;abandonne le projet.</p>
+
+
+
+<p>Et puis, il y a aussi des déclinaisons mineures, comme Ubuntu Gnome ou Ubuntu Mate, où seuls les logiciels et environnements graphiques installés par défaut changent.</p>
 
 
 
@@ -594,7 +629,11 @@
 
 
 
-<p>À l&rsquo;inverse, d&rsquo;autres cibleront des serveurs pour lesquels la disponibilité et la fiabilité sont prioritaires sur les nouveautés. Elles auront un noyau plus vieux, préféreront une interface exclusivement en ligne de commande, seront configurées différemment&#8230; Comparativement à une déclinaison de bureau, celles des serveurs ont beaucoup moins de logiciels préinstallés.</p>
+<p>À l&rsquo;inverse, d&rsquo;autres cibleront des serveurs pour lesquels la disponibilité, la fiabilité et la sécurité sont prioritaires sur les nouveautés. Elles auront un noyau plus vieux, préféreront une interface exclusivement en ligne de commande, seront configurées différemment&#8230;</p>
+
+
+
+<p>En minimisant le nombre de logiciels installés, on réduit également la surface d&rsquo;attaque et la maintenance. Les mises à jour sont synonymes de corrections de sécurité, de corrections de bugs et de risques de régression. Les administrateurs système évitent d&rsquo;installer des mises à jour de fonctionnalités, sauf si elles répondent à un besoin, car tout changement peut introduire des bugs. En même temps, il faut résoudre au plus vite les vulnérabilités. En effet, certains serveurs sont exposés sur internet, où des attaquants opportunistes sont nombreux. Parce que les serveurs fonctionnent en autonomie, sans interaction d&rsquo;un opérateur, on privilégie en général les mises à jour automatiques de sécurité.</p>
 
 
 
@@ -610,7 +649,7 @@
 
 
 
-<p>Un serveur physique est généralement (sur) dimensionné pour répondre au pire des cas. C’est pourquoi leur puissance est souvent sous-exploitée.</p>
+<p>Un serveur physique est généralement (sur) dimensionné pour répondre au pire des cas. C’est pourquoi leur puissance est souvent sous-exploitée. La charge CPU moyenne dépasse rarement les 10%. Les disques durs sont des multiples de 1 To, car les espaces plus faibles ne sont plus activement commercialisés. Enfin, la pression sur la mémoire dépasse exceptionnellement la moitié de la quantité disponible. Bref, c&rsquo;est du gâchis.</p>
 
 
 
