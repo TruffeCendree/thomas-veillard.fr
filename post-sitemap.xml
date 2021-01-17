@@ -21,22 +21,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/</loc>
-		<lastmod>2021-01-13T20:35:41+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-1.svg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-Hyperviseur-niveau-2.svg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</loc>
 		<lastmod>2021-01-14T06:41:46+00:00</lastmod>
 		<image:image>
@@ -82,6 +66,22 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/systemes-invites-sur-hyperviseur-type-2.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/</loc>
+		<lastmod>2021-01-17T10:56:03+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-1.svg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-Hyperviseur-niveau-2.svg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>
