@@ -503,7 +503,8 @@ input {
 }
 
 input,
-textarea {
+textarea,
+select {
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)); /* Removing the inner shadow on iOS inputs */
 	border: 1px solid #eaeaea;
 	border: 1px solid rgba(51, 51, 51, 0.1);
@@ -583,6 +584,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+select,
 textarea {
 	padding: 0.375em;
 	width: 100%;
@@ -598,6 +600,7 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
+select:focus,
 textarea:focus {
 	outline: 0;
 }
@@ -1386,6 +1389,7 @@ img.aligncenter {
 .widget input[type="url"],
 .widget input[type="password"],
 .widget input[type="search"],
+.widget select,
 .widget textarea {
 	padding: 0.375em;
 }
@@ -2357,7 +2361,8 @@ a.post-thumbnail:focus {
 .comment-form input[type="text"],
 .comment-form input[type="email"],
 .comment-form input[type="url"],
-.comment-form input[type="submit"] {
+.comment-form input[type="submit"],
+.comment-form select {
 	width: 100%;
 }
 
@@ -3010,6 +3015,7 @@ p > video {
 	input[type="url"],
 	input[type="password"],
 	input[type="search"],
+  select,
 	textarea {
 		padding: 0.5em;
 	}
@@ -3238,6 +3244,7 @@ p > video {
 	.widget input[type="url"],
 	.widget input[type="password"],
 	.widget input[type="search"],
+  .widget select,
 	.widget textarea {
 		padding: 0.5625em;
 	}
@@ -3653,6 +3660,7 @@ p > video {
 	input[type="url"],
 	input[type="password"],
 	input[type="search"],
+  select,
 	textarea {
 		padding: 0.5278em;
 	}
@@ -3850,6 +3858,7 @@ p > video {
 	.widget input[type="url"],
 	.widget input[type="password"],
 	.widget input[type="search"],
+  .widget select,
 	.widget textarea {
 		padding: 0.75em;
 	}
@@ -4258,6 +4267,7 @@ p > video {
 	input[type="url"],
 	input[type="password"],
 	input[type="search"],
+  select,
 	textarea {
 		padding: 0.375em;
 	}
@@ -4497,6 +4507,7 @@ p > video {
 	.widget input[type="url"],
 	.widget input[type="password"],
 	.widget input[type="search"],
+  .widget select,
 	.widget textarea {
 		padding: 0.4583em;
 	}
@@ -4928,6 +4939,7 @@ p > video {
 	input[type="url"],
 	input[type="password"],
 	input[type="search"],
+  select,
 	textarea {
 		padding: 0.5em;
 	}
@@ -5103,6 +5115,7 @@ p > video {
 	.widget input[type="url"],
 	.widget input[type="password"],
 	.widget input[type="search"],
+  .widget select,
 	.widget textarea {
 		padding: 0.5em;
 	}
@@ -5472,6 +5485,7 @@ p > video {
 	input[type="url"],
 	input[type="password"],
 	input[type="search"],
+  select,
 	textarea {
 		padding: 0.5278em;
 	}
@@ -5654,6 +5668,7 @@ p > video {
 	.widget input[type="url"],
 	.widget input[type="password"],
 	.widget input[type="search"],
+  .widget select,
 	.widget textarea {
 		padding: 0.5em;
 	}

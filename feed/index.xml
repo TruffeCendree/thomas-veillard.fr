@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Tue, 19 Jan 2021 18:26:40 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 20 Jan 2021 10:11:15 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -73,7 +73,7 @@
 
 
 
-<p>Vos allez expérimenter ces fonctionnalités au travers des prochains exercices.</p>
+<p>Vous allez expérimenter ces fonctionnalités au travers des prochains exercices.</p>
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="938" height="764" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Passage-de-Gnome-a-KDE.gif" alt="" class="wp-image-680"/><figcaption>Démonstration pour passer de l&rsquo;interface Gnome à KDE.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" width="938" height="764" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Passage-de-Gnome-a-KDE.gif" alt="" class="wp-image-680"/><figcaption>Démonstration du passage de l&rsquo;interface Gnome à KDE.</figcaption></figure>
 
 
 
