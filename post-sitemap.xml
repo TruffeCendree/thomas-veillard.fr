@@ -102,16 +102,44 @@
 	</url>
 	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/introduction/</loc>
-		<lastmod>2021-01-31T11:59:17+00:00</lastmod>
+		<lastmod>2021-02-03T17:21:01+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/</loc>
-		<lastmod>2021-01-31T12:41:16+00:00</lastmod>
+		<lastmod>2021-02-03T17:50:24+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/</loc>
+		<lastmod>2021-02-03T20:02:43+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/image-1.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-angular-routes-home-login-and-profile.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/routerLink-directive-in-action.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-login-form-template.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-login-form-material-design.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/login-form-responsive.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/submit-error-handler-in-tempalte.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>

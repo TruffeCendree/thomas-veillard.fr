@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://thomas-veillard.fr/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/html5.js?ver=3.7.0"></script>
+	<![endif]-->
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+
+	<!-- This site is optimized with the Yoast SEO plugin v15.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>3. Managing authentication &amp; routing | Thomas VEILLARD</title>
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="3. Managing authentication &amp; routing | Thomas VEILLARD" />
+	<meta property="og:description" content="You will build a basic navigation experience, with login capabilities and authenticated area. This is the opportunity to: create your first feature branch on git ; review the code of someone else pull request ; build components, forms and navigation ; write routing configuration with authorisation guards ; work with async processing and error handlers &hellip; Continuer la lecture de 3. Managing authentication &#038; routing" />
+	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/" />
+	<meta property="og:site_name" content="Thomas VEILLARD" />
+	<meta property="article:published_time" content="2021-02-02T12:04:06+00:00" />
+	<meta property="article:modified_time" content="2021-02-03T20:02:43+00:00" />
+	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Écrit par">
+	<meta name="twitter:data1" content="Thomas Veillard">
+	<meta name="twitter:label2" content="Durée de lecture est.">
+	<meta name="twitter:data2" content="5 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{
+	    "@context": "https://schema.org",
+	    "@graph": [
+	        {
+	            "@type": "WebSite",
+	            "@id": "https://thomas-veillard.fr/#website",
+	            "url": "https://thomas-veillard.fr/",
+	            "name": "Thomas VEILLARD",
+	            "description": "Mes cours et supports p\u00e9dagogiques pour l&#039;enseignement de l&#039;ing\u00e9nierie informatique.",
+	            "publisher": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "inLanguage": "fr-FR"
+	        },
+	        {
+	            "@type": "ImageObject",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/#primaryimage",
+	            "inLanguage": "fr-FR",
+	            "url": "https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png",
+	            "width": 703,
+	            "height": 317
+	        },
+	        {
+	            "@type": "WebPage",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/#webpage",
+	            "url": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/",
+	            "name": "3. Managing authentication & routing | Thomas VEILLARD",
+	            "isPartOf": {
+	                "@id": "https://thomas-veillard.fr/#website"
+	            },
+	            "primaryImageOfPage": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/#primaryimage"
+	            },
+	            "datePublished": "2021-02-02T12:04:06+00:00",
+	            "dateModified": "2021-02-03T20:02:43+00:00",
+	            "inLanguage": "fr-FR",
+	            "potentialAction": [
+	                {
+	                    "@type": "ReadAction",
+	                    "target": [
+	                        "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/"
+	                    ]
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "Article",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/#article",
+	            "isPartOf": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/#webpage"
+	            },
+	            "author": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "headline": "3. Managing authentication &#038; routing",
+	            "datePublished": "2021-02-02T12:04:06+00:00",
+	            "dateModified": "2021-02-03T20:02:43+00:00",
+	            "mainEntityOfPage": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/#webpage"
+	            },
+	            "publisher": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "image": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/#primaryimage"
+	            },
+	            "articleSection": "Front-end web development (English)",
+	            "inLanguage": "fr-FR"
+	        },
+	        {
+	            "@type": [
+	                "Person",
+	                "Organization"
+	            ],
+	            "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb",
+	            "name": "Thomas Veillard",
+	            "image": {
+	                "@type": "ImageObject",
+	                "@id": "https://thomas-veillard.fr/#personlogo",
+	                "inLanguage": "fr-FR",
+	                "url": "http://2.gravatar.com/avatar/2008ad33ccb3924190bb884024ca6114?s=96&d=mm&r=g",
+	                "caption": "Thomas Veillard"
+	            },
+	            "logo": {
+	                "@id": "https://thomas-veillard.fr/#personlogo"
+	            },
+	            "sameAs": [
+	                "https://thomas-veillard.fr:8080"
+	            ]
+	        }
+	    ]
+	}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com/' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux" href="https://thomas-veillard.fr/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux des commentaires" href="https://thomas-veillard.fr/comments/feed/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://thomas-veillard.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.6' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='https://thomas-veillard.fr/wp-includes/css/dist/block-library/theme.min.css?ver=5.6' media='all' />
+<link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;display=fallback' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=20201208' media='all' />
+<link rel='stylesheet' id='twentyfifteen-style-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/style.css?ver=20201208' media='all' />
+<link rel='stylesheet' id='twentyfifteen-block-style-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/blocks.css?ver=20190102' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/ie.css?ver=20170916' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141210' media='all' />
+<![endif]-->
+<script src='https://thomas-veillard.fr/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script src='https://thomas-veillard.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://thomas-veillard.fr/wp-json/" /><link rel="alternate" type="application/json" href="https://thomas-veillard.fr/wp-json/wp/v2/posts/1125" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thomas-veillard.fr/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://thomas-veillard.fr/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.6" />
+<link rel='shortlink' href='https://thomas-veillard.fr/?p=1125' />
+<link rel="alternate" type="application/json+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2F3-managing-authentication-routing%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2F3-managing-authentication-routing%2F&#038;format=xml" />
+<script src="https://kit.fontawesome.com/f02a77f3db.js" crossorigin="anonymous"></script>
+<script data-ad-client="ca-pub-9505048372269906" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NH45PR7ELJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NH45PR7ELJ');
+</script>
+		<style id="wp-custom-css">
+			.entry-title {
+	font-size: 1.6em !important;
+	text-align: left;
+}
+
+article {
+	text-align: justify;
+	font-size: 0.9em;
+}
+
+@media screen and (min-width: 59.6875em) {
+	.site-header {
+		padding: 0 1em;
+	}
+
+	.main-navigation {
+		margin: 1em;
+	}
+}
+
+.main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a {
+	font-weight: unset;
+	color: black;
+}
+
+.main-navigation a {
+	color: #666;
+}
+
+.no-puce, .no-puce ul {
+	list-style-type: none;
+}
+
+table {
+	margin-bottom: 0;
+}
+
+figcaption {
+	margin-bottom: 1em !important;
+}
+
+h4 {
+	margin-top: 1em !important;
+	font-size: 1.25em !important;
+}
+
+h5 {
+	font-size: 1em !important;
+	text-transform: none !important;
+	margin-top: 1em !important;
+}
+
+.exercice {
+  padding: 1em;
+  border-radius: 3px;
+  border: 1px solid #795548;
+  background: #f7f7f7;
+
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+	margin-bottom: 1em;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  padding: 2rem 1rem;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1-hoverable:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-1125 single-format-standard wp-embed-responsive">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Aller au contenu</a>
+
+	<div id="sidebar" class="sidebar">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+										<p class="site-title"><a href="https://thomas-veillard.fr/" rel="home">Thomas VEILLARD</a></p>
+												<p class="site-description">Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</p>
+										<!-- <button class="secondary-toggle">Menu et widgets</button> -->
+			</div><!-- .site-branding -->
+		</header><!-- .site-header -->
+
+			<div id="secondary" class="secondary">
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux-container"><ul id="menu-theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux" class="nav-menu"><li id="menu-item-135" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-135"><a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/">Théorie des systèmes d’exploitation et pratique de GNU/Linux</a>
+<ul class="sub-menu">
+	<li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-49"><a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/">Chapitre 1. Introduction</a>
+	<ul class="sub-menu">
+		<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43"><a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">1. Introduction et objectifs pédagogiques</a></li>
+		<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-53"><a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/">2. Brève histoire de GNU/Linux</a></li>
+		<li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-124"><a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/">3. Des distributions Linux… En veux-tu, en voilà</a></li>
+		<li id="menu-item-226" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-226"><a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</a></li>
+		<li id="menu-item-374" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-374"><a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/">5. Quizz de fin de chapitre</a></li>
+	</ul>
+</li>
+	<li id="menu-item-558" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-558"><a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/">Chapitre 2. Les interfaces utilisateur</a>
+	<ul class="sub-menu">
+		<li id="menu-item-560" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-560"><a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/1-les-interfaces-graphiques/">1. Les interfaces graphiques</a></li>
+		<li id="menu-item-693" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-693"><a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/2-utiliser-les-instantanes-de-vm-et-changer-denvironnement-de-bureau-tp/">2. Instantanés de VM et changement d’environnement de bureau (TP)</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1097" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-1097"><a href="https://thomas-veillard.fr/category/front-end-web-development/">Front-end web development (English)</a>
+<ul class="sub-menu">
+	<li id="menu-item-1099" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1099"><a href="https://thomas-veillard.fr/front-end-web-development/introduction/">1. Introduction</a></li>
+	<li id="menu-item-1098" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1098"><a href="https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/">2. Setup your practical environment</a></li>
+	<li id="menu-item-1161" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-1161"><a href="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/" aria-current="page">3. Managing authentication &#038; routing</a></li>
+</ul>
+</li>
+</ul></div>			</nav><!-- .main-navigation -->
+		
+		
+		
+	</div><!-- .secondary -->
+
+	</div><!-- .sidebar -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-1125" class="post-1125 post type-post status-publish format-standard hentry category-front-end-web-development">
+	
+	<header class="entry-header">
+		<h1 class="entry-title">3. Managing authentication &#038; routing</h1>	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<p>You will build a basic navigation experience, with login capabilities and authenticated area. This is the opportunity to:</p>
+
+
+
+<ul><li>create your first feature branch on git ;</li><li>review the code of someone else pull request ;</li><li>build components, forms and navigation ;</li><li>write routing configuration with authorisation guards ;</li><li>work with async processing and error handlers ;</li><li>discover some angular&rsquo;s internals (text interpolation, dependency injection&#8230;).</li></ul>
+
+
+
+<h2>Start a feature branch</h2>
+
+
+
+<p>In our git workflow, a feature branch contains new code that is still under construction or need a peer review. Once that code seems mature (feature complete and code reviewed), it is merged into the develop branch. Finally, when develop has been well tested, you can create a release and push it to the production.</p>
+
+
+
+<p>Of course, the notion of « production » is not applicable to this practical work. But it is appropriate for the project.</p>
+
+
+
+<p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>authentication-and-routing</code>. On Github, you should see a branch called <code>feature/authentication-and-routing</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><link rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
+git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2>Basic navigation</h2>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong>: For this question, find your path using the angular-material <a href="https://material.angular.io/guide/getting-started" target="_blank" rel="noreferrer noopener">getting started guide</a>. Then, import and use the <a href="https://material.angular.io/components/toolbar/overview" target="_blank" rel="noreferrer noopener">mat-toolbar</a> component to display a menu with 3 navigation items (without link). At this step, you can put your code in <code>app.component.html</code>.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="703" height="317" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png" alt="" class="wp-image-1151" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png 703w, https://thomas-veillard.fr/wp-content/uploads/2021/02/image-300x135.png 300w" sizes="(max-width: 703px) 100vw, 703px" /><figcaption>The expected result. There is no link yet on &lsquo;home&rsquo;, &lsquo;login&rsquo;&#8230; The item &lsquo;profile&rsquo; is rendered even if the user is not logged. That will change once authentication is ready.</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9639358755a68534bfd63a718680541b4e1f926e/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9639358755a68534bfd63a718680541b4e1f926e" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 3</strong>: Explain the pro and cons of moving the navigation to its own component.</p>
+
+
+
+<p>The <code>@angular/cli</code> is able to generate some pieces of code, like a component.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
+$ ng generate component navigation
+CREATE src/app/navigation/navigation.component.css (<span class="hljs-number">0</span> bytes)
+CREATE src/app/navigation/navigation.component.html (<span class="hljs-number">25</span> bytes)
+CREATE src/app/navigation/navigation.component.ts (<span class="hljs-number">291</span> bytes)
+UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="exercice"><strong>Exercise 4</strong>: Commit any existing change on git, then generate a new component called <code>navigation</code>. Examine changes made by <code>@angular/cli</code> (you can use git and the output of <code>ng generate</code> command). Finally, move the mat-toolbar into <code>navigation.component</code>. Visually, the result should be identical.</p>
+
+
+<div class="wp-block-image" style="text-align: center;">
+<figure class="size-large"><img loading="lazy" class="wp-image-1162" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/image-1.png" alt="" width="311" height="154"><figcaption>The new component tree with NavigationComponent. Captured with <a href="https://augury.rangle.io/" target="_blank" rel="noreferrer noopener">Augury</a>.</figcaption></figure>
+</div>
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/d90afc6f2b5eaffa6e03dfb4dd7baf2cb9472917/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/d90afc6f2b5eaffa6e03dfb4dd7baf2cb9472917" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 5</strong>: Generate 3 more components using the cli: <code>home</code>, <code>login</code> and <code>profile</code>. Those components do not have to be included in <code>app.component.html</code> yet. Later, we will let <code>@angular/router</code> dynamically include the right component depending on the current path.</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/fd4e68d458cfb634586a14423e4812f79964d12d/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/fd4e68d458cfb634586a14423e4812f79964d12d" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<div class="exercice" style="padding-bottom: 0; margin-bottom: 1em">
+<p><strong>Exercise 6</strong>: Implement 3 routes with <code>@angular/router</code>. Each route will render the eponym component.</p>
+
+<ul style="margin-left: 1em;">
+<li><code>/</code> will render <code>home.component</code></li>
+<li><code>/login</code> will render <code>login.component</code></li>
+<li><code>/profile</code> will render <code>profile.component</code></li>
+</ul>
+
+<p>You can use this <a href="https://angular.io/guide/router" target="_blank" rel="noopener">guide</a>. Remember that your project was previously generated with routing enabled. You just have to set up routes and use <code>router-outlet</code> in <code>app.component.html</code>.</p>
+</div>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="919" height="381" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-angular-routes-home-login-and-profile.gif" alt="" class="wp-image-1186"/><figcaption>Expected result. The component is dynamically rendered depending on the route.</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/3e0ffc419173f5ebd7d9541851c3a7e2365080fb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/3e0ffc419173f5ebd7d9541851c3a7e2365080fb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: Add links to your menu items.</p>
+
+
+
+<p class="exercice"><strong>Exercise 8</strong>: Did you use <code>&lt;a href="PATH_OR_URL">&lt;/a></code> for your links ? Instead of the <code>href</code> HTML attribute, you must use the <code>routerLink</code> directive. Both ways will technically work, but there are major differences. What are they ?</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="919" height="381" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/routerLink-directive-in-action.gif" alt="" class="wp-image-1196"/><figcaption>Expected result. The user can click links in menu to navigate across views.</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9d6045149030833ff98f86c7689ce8cb175877c5/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9d6045149030833ff98f86c7689ce8cb175877c5" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h2>Login form</h2>
+
+
+
+<p>Forms are a major part of most applications. In angular, you have 2 approaches available: template-driven and reactive. I will use template-driven form in my correction, because they are simple and strong-typable. You have an <a href="https://angular.io/guide/forms" target="_blank" rel="noreferrer noopener">example of template-driven forms</a> in the angular documentation.</p>
+
+
+
+<p class="exercice"><strong>Exercise 9</strong>: Add a simple login form. When the user clicks on <code>submit</code> button, open a modal with content of inputs (see <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert" target="_blank" rel="noreferrer noopener">window.alert</a>). Email and password fields are required to submit the form. If they are missing, the submit button is disabled.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="938" height="371" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-login-form-template.gif" alt="" class="wp-image-1212"/><figcaption>The login form as expected at this step.</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/77c6844e5480df8c207193cf644ff86db31f5b69/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/77c6844e5480df8c207193cf644ff86db31f5b69" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p>Although this is not a design course, we can probably make this form more beautiful. For this we will use some components from <code>angular-material</code> like we did for the toolbar.</p>
+
+
+
+<p class="exercice"><strong>Exercise 10</strong>: Improve the look and feel of the login page. Using <code>angular-material</code> is recommended.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="947" height="512" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-login-form-material-design.gif" alt="" class="wp-image-1219"/><figcaption>The result once I used material components and a bit of CSS.</figcaption></figure>
+
+
+
+<p>To achieve this look and feel, I used the following modules:</p>
+
+
+
+<ul><li><a href="https://material.angular.io/components/card/overview" target="_blank" rel="noreferrer noopener">MatCardModule</a></li><li><a href="https://material.angular.io/components/form-field/overview" target="_blank" rel="noreferrer noopener">MatFormFieldModule</a> &amp; <a href="https://material.angular.io/components/input/overview" target="_blank" rel="noreferrer noopener">MatInputModule</a> (both works together)</li><li><a href="https://material.angular.io/components/button/overview" target="_blank" rel="noreferrer noopener">MatButtonModule</a></li></ul>
+
+
+
+<p>Of course, you are free to layout the page and design the UI like you wish. That is just an example.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="947" height="804" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/login-form-responsive.gif" alt="" class="wp-image-1222"/><figcaption>Bonus: use <a href="https://css-tricks.com/css-media-queries/" target="_blank" rel="noreferrer noopener">CSS media queries</a> to make your form responsive. Your browser includes developers tools simulating phones and pads. They are useful to test your media queries.</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/ce6004485d6366409ae88c7f098f78638787605c/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/ce6004485d6366409ae88c7f098f78638787605c" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p>The same way we prefer <code>routerLink</code> over <code>href</code> because it does not reload the <code>Single Page Application</code>, you should use the <code>@angular/router</code> from your typescript controller (ex. from your submit method in <code>LoginComponent</code>). Here an example:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/router'</span>;
+
+<span class="hljs-meta">@Component</span>({
+  selector: <span class="hljs-string">'app-login'</span>,
+  templateUrl: <span class="hljs-string">'./login.component.html'</span>,
+  styleUrls: [<span class="hljs-string">'./login.component.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> LoginComponent {
+  <span class="hljs-keyword">constructor</span> (<span class="hljs-params"><span class="hljs-keyword">private</span> router: Router</span>) {}
+
+  <span class="hljs-keyword">async</span> submit () {
+    <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.router.navigateByUrl(<span class="hljs-string">'/profile'</span>);
+  }
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+<div class="exercice" style="margin-bottom: 1em;">
+<p><strong>Exercise 11</strong>: This example is rich of typescript and angular features. Let&rsquo;s analyse it.</p>
+<ul style="margin-left: 1em; margin-bottom: 0;">
+<li>How many instance attributes has the <code>LoginComponent</code> class ?</li>
+<li>Why is the visibility of <code>router</code> attribute restricted to <code>private</code> ?</li>
+<li>Angular detects the class constructor requires an instance of <code>Router</code>. When it instantiates the <code>LoginComponent</code>, it will provide an instance of <code>Router</code>. Take a look at <a href="https://angular.io/guide/dependency-injection" target="_blank" rel="noopener">Angular&rsquo;s dependency injection</a>.</li>
+<li><code>@Component</code> is a <a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener">decorator</a>. Although it is still a typescript experimental feature, Angular heavily relies on it.</li>
+</ul>
+</div>
+
+
+<p>On submit, the form should send credentials to the server (using <code>axios</code> or native <code>fetch</code> as you prefer). Then, your <code>submit</code> method will deal with the server&rsquo;s response. On success, the user will be redirected to <code>/profile</code>. Finally, he should be notified for any error that occurred.</p>
+
+
+
+<p>Remember you have the documentation and playground of API. Also do not forget that calling the server is an <code>async</code> task.</p>
+
+
+
+<h4>If you choose axios</h4>
+
+
+
+<p>Axios is an external dependency you have to install. Its interface is easy to use. You have to install it using npm (Node Package Manager). Because axios is purely in JS, there is no type definition in it. Typescript can use declaration files (.d.ts), which may be included inside the main npm package or distributed under another package.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># install the axios library</span>
+npm install axios
+
+<span class="hljs-comment"># install type definitions from another npm module</span>
+npm install --save-dev @types/axios</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>If you choose fetch</h4>
+
+
+
+<p>fetch is nice <code>Promise</code>-based interface built-in modern browsers. It is ready to use, but a bit harder to learn than axios. You have to manually check HTTP code, parse json payload&#8230;</p>
+
+
+
+<p class="exercice"><strong>Exercise 12</strong>: Implement the submit method as specified above. For the first iteration, use <code>window.alert</code> to report errors.</p>
+
+
+
+<p class="exercice"><strong>Exercise 13</strong>: Take a tour at <a href="https://angular.io/guide/template-syntax" target="_blank" rel="noreferrer noopener">template syntax guide</a>. For this question, you will need <code>text interpolation</code> and <code>*ngIf</code>. Then, report errors in the template itself.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="939" height="518" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/submit-error-handler-in-tempalte.gif" alt="" class="wp-image-1267"/><figcaption>Demonstration of error handler (errors are printed in the template using text interpolation and *ngIf directive).</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5ae1bc288f032d14355777d5e3b751403f8a748e/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5ae1bc288f032d14355777d5e3b751403f8a748e" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p></p>
+	</div><!-- .entry-content -->
+
+	
+	<footer class="entry-footer">
+		<span class="cat-links"><span class="screen-reader-text">Catégories </span><a href="https://thomas-veillard.fr/category/front-end-web-development/" rel="category tag">Front-end web development (English)</a></span>			</footer><!-- .entry-footer -->
+
+</article><!-- #post-1125 -->
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Publications">
+		<h2 class="screen-reader-text">Navigation de l’article</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">2. Setup your practical environment</span></a></div></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	</div><!-- .site-content -->
+
+</div><!-- .site -->
+
+<script src='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141028' id='twentyfifteen-skip-link-focus-fix-js'></script>
+<script id='twentyfifteen-script-js-extra'>
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">ouvrir le sous-menu<\/span>","collapse":"<span class=\"screen-reader-text\">fermer le sous-menu<\/span>"};
+</script>
+<script src='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/functions.js?ver=20171218' id='twentyfifteen-script-js'></script>
+<script src='https://thomas-veillard.fr/wp-includes/js/wp-embed.min.js?ver=5.6' id='wp-embed-js'></script>
+
+</body>
+</html>

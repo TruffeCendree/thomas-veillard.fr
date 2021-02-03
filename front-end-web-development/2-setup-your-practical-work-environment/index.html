@@ -21,7 +21,7 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/" />
 	<meta property="og:site_name" content="Thomas VEILLARD" />
 	<meta property="article:published_time" content="2021-01-24T08:53:06+00:00" />
-	<meta property="article:modified_time" content="2021-01-31T12:41:16+00:00" />
+	<meta property="article:modified_time" content="2021-02-03T17:50:24+00:00" />
 	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:label1" content="Écrit par">
@@ -62,7 +62,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/#primaryimage"
 	            },
 	            "datePublished": "2021-01-24T08:53:06+00:00",
-	            "dateModified": "2021-01-31T12:41:16+00:00",
+	            "dateModified": "2021-02-03T17:50:24+00:00",
 	            "inLanguage": "fr-FR",
 	            "potentialAction": [
 	                {
@@ -84,7 +84,7 @@
 	            },
 	            "headline": "2. Setup your practical environment",
 	            "datePublished": "2021-01-24T08:53:06+00:00",
-	            "dateModified": "2021-01-31T12:41:16+00:00",
+	            "dateModified": "2021-02-03T17:50:24+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/#webpage"
 	            },
@@ -290,6 +290,7 @@ h5 {
 <ul class="sub-menu">
 	<li id="menu-item-1099" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1099"><a href="https://thomas-veillard.fr/front-end-web-development/introduction/">1. Introduction</a></li>
 	<li id="menu-item-1098" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-1098"><a href="https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/" aria-current="page">2. Setup your practical environment</a></li>
+	<li id="menu-item-1161" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1161"><a href="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/">3. Managing authentication &#038; routing</a></li>
 </ul>
 </li>
 </ul></div>			</nav><!-- .main-navigation -->
@@ -357,7 +358,7 @@ h5 {
 
 
 
-<p>But here we are in front-end module. A lot of tools you will use runs on that platform. Some of them are even shipped with the node installer. Node Package Manager (npm) is one of them. It manages dependencies of your project and installs cli softwares written for node.</p>
+<p>But here we are in front-end module. We are interested in node.js because it powers most tools we will use. Some of them are even shipped with the node installer. Node Package Manager (npm) is one of them. It manages dependencies of your project and installs cli softwares written for node.</p>
 
 
 
@@ -369,7 +370,7 @@ h5 {
 
 
 
-<p><a href="https://docs.docker.com/engine/install/" target="_blank" rel="noreferrer noopener">Docker</a> is a container runtime. Everything running in the container is isolated from the host. Except the kernel shared with the host, the container contains a fully functional operating system (including software, shared libraries, users&#8230;).</p>
+<p><a href="https://docs.docker.com/engine/install/" target="_blank" rel="noreferrer noopener">Docker</a> is a container runtime. Everything running in the container is isolated from the host. Except the kernel which is shared with the host, the container contains a fully functional operating system (including software, shared libraries, users&#8230;).</p>
 
 
 
@@ -377,11 +378,11 @@ h5 {
 
 
 
-<p>Docker maintains DockerHub, a public registry tons of prebuilt images you can pull and instantiate.</p>
+<p>Docker maintains DockerHub, a public registry hosting tons of prebuilt images you can pull and instantiate.</p>
 
 
 
-<p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="noreferrer noopener">Docker-compose</a> is a higher-level tool, allowing the definition of infrastructure as code. You just have to write a config file, and docker compose will pull, configure and starts all containers for you. It takes care of networking, exposing ports, storing persistent data, etc.</p>
+<p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="noreferrer noopener">Docker-compose</a> is a higher-level tool, allowing the definition of infrastructure as code. You just have to write a config file, and docker compose will pull, configure and start all containers for you. It takes care of networking, exposing ports, storing persistent data, etc.</p>
 
 
 
@@ -523,8 +524,8 @@ learning-materials             <span class="hljs-comment"># my git repository yo
 <pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
 npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics
 
-<span class="hljs-comment"># creates a new project</span>
-ng new --collection=@angular-eslint/schematics frontend
+<span class="hljs-comment"># creates a new project with angular router enabled</span>
+ng new --routing --collection=@angular-eslint/schematics frontend
 
 <span class="hljs-comment"># enter the 'frontend' folder</span>
 <span class="hljs-built_in">cd</span> frontend
@@ -543,12 +544,21 @@ npm install --save-dev ts-standard
   <span class="hljs-attr">"rules"</span>: {
     <span class="hljs-attr">"@typescript-eslint/explicit-function-return-type"</span>: <span class="hljs-string">"off"</span>,
     <span class="hljs-attr">"@typescript-eslint/prefer-readonly"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"@typescript-eslint/strict-boolean-expressions"</span>: <span class="hljs-string">"off"</span>,
     <span class="hljs-attr">"@typescript-eslint/semi"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"always"</span>]
   }
 }</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, edit the <code>tsconfig.json</code> to add <code>compilerOptions.strictNullChecks = true</code> (required by some linter&rsquo;s rules).</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/b31ec0e583ce467e359ece5288c77af1e235a760/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/b31ec0e583ce467e359ece5288c77af1e235a760" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
 
 
 
@@ -568,7 +578,7 @@ npm install --save-dev ts-standard
 
 
 
-<p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overflow of more useful.</p>
+<p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
@@ -618,7 +628,7 @@ Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</sp
 
 
 
-<p class="exercice"><strong>Exercise 4</strong> : Register yourself on Github. Then create a private git repository on Github. Then push you angular project to Github.</p>
+<p class="exercice"><strong>Exercise 4</strong> : Register yourself on Github. Then create a private git repository on Github. Finally push you angular project to Github.</p>
 
 
 
@@ -632,13 +642,15 @@ Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</sp
 <pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
 git status
 
-<span class="hljs-comment"># you probably want to commit new files in your repository. git add accepts a list of files or folder. '.' designates the current directory.</span>
+<span class="hljs-comment"># you probably want to commit new files in your repository.</span>
+<span class="hljs-comment"># git add accepts a list of files or folder.</span>
+<span class="hljs-comment"># '.' designates the current directory.</span>
 git add .
 
 <span class="hljs-comment"># commit every pending change with a message</span>
 git commit -a -m <span class="hljs-string">"configure linter and typescript"</span>
 
-<span class="hljs-comment"># the follow Github guide to push commits to remote for the first time</span>
+<span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
 git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
 git branch -M main
 git push -u origin main</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
@@ -670,7 +682,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p>Before cloning the repository, remember we want <code>frontend</code> and <code>learning-materials</code> in the same location. So ensure you see <code>frontend</code> folder when you write <code>ls</code> command. if not, use the <code>cd</code> command.</p>
+<p>Before cloning the repository, remember we want <code>frontend</code> and <code>learning-materials</code> in the same location. So ensure you see <code>frontend</code> folder when you write <code>ls</code> command. If not, use the <code>cd</code> command.</p>
 
 
 
@@ -681,14 +693,15 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p>This git repository is a <a href="https://en.wikipedia.org/wiki/Monorepo" target="_blank" rel="noreferrer noopener">monorepo</a>. It contains learning materials for multiple modules. You must focus on <code>learning-materials/frontend-web-development</code> folder.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
+<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the file.</p>
+<p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the <code>docker-compose.yml</code> file.</p>
 
 
 
-<p>Do you know what is a safe password ? A long should they be ? ANSSI (Agence Nationale de la Sécurité des Systèmes d&rsquo;Information) provides explanations and a <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator</a>. I recommend generating random and unique password for each account (not just in this module 🧐).</p>
+<p>Do you know what is a safe password ? How long should they be ? ANSSI (Agence Nationale de la Sécurité des Systèmes d&rsquo;Information) provides explanations and a <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator</a>. I recommend generating random and unique password for each account (not just in this module 🧐).</p>
 
 
 
@@ -714,7 +727,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></mark></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker. Then start the full stack. The backend API should notify a successful startup.</p>
+<p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker (using <code>Ctrl + C</code>). Then start the full stack. The backend API should notify a successful startup.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
@@ -760,7 +773,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<ul><li>Lines 2 to 7: docker-compose build the backend using scripts in <code>Dockerfile</code> (more explanation about Dockerfile <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noreferrer noopener">here</a>).</li><li>Lines 9 to 11: containers are booting.</li><li>Line 15: database reported a complete initialisation.</li><li>Line 18: phpmyadmin reported a complete initialisation.</li><li>Lines 22 and 30: the backend API creates databases and load schema.</li><li>Line 36: the backend API reported a complete initialisation. </li></ul>
+<ul><li>Lines 2 to 7: docker-compose builds the backend using scripts in <code>Dockerfile</code> (more explanation about Dockerfile <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noreferrer noopener">here</a>).</li><li>Lines 9 to 11: containers are booting.</li><li>Line 15: database reported a complete initialisation.</li><li>Line 18: phpmyadmin reported a complete initialisation.</li><li>Lines 22 and 30: the backend API creates databases and load schema.</li><li>Line 36: the backend API reported a complete initialisation. </li></ul>
 
 
 
@@ -768,7 +781,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<ul><li>https://thomas-veillard.fr:8080 for the HTTP server. </li><li>https://thomas-veillard.fr:8081 for phpmyadmin, to explore data stored into the DB</li></ul>
+<ul><li>https://thomas-veillard.fr:8080 for the HTTP API server. </li><li>https://thomas-veillard.fr:8081 for phpmyadmin, to explore data stored into the DB</li></ul>
 
 
 
@@ -828,7 +841,7 @@ Register yourself as customer using public API.
 
 
 
-<p class="exercice"><strong>Exercise 1</strong>1 : Same exercise, but this time you will use <a href="https://www.postman.com/" target="_blank" rel="noreferrer noopener">Postman</a>. Why ? Because the API designer will not always implement a playground&#8230;</p>
+<p class="exercice"><strong>Exercise 11</strong> : Same exercise, but this time you will use <a href="https://www.postman.com/" target="_blank" rel="noreferrer noopener">Postman</a>. Why ? Because the API designer will not always implement a playground&#8230;</p>
 
 
 
@@ -843,7 +856,7 @@ Register yourself as customer using public API.
 
 	<nav class="navigation post-navigation" role="navigation" aria-label="Publications">
 		<h2 class="screen-reader-text">Navigation de l’article</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/introduction/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">1. Introduction</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/introduction/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">1. Introduction</span></a></div><div class="nav-next"><a href="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/" rel="next"><span class="meta-nav" aria-hidden="true">Suivant</span> <span class="screen-reader-text">Article suivant&nbsp;:</span> <span class="post-title">3. Managing authentication &#038; routing</span></a></div></div>
 	</nav>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
