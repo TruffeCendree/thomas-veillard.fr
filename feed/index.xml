@@ -12,24 +12,25 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Wed, 03 Feb 2021 20:02:43 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 05 Feb 2021 12:31:51 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.6</generator>
+	<generator>https://wordpress.org/?v=5.6.1</generator>
 	<item>
-		<title>3. Managing authentication &#038; routing</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/</link>
+		<title>2. Managing authentication &#038; routing</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Tue, 02 Feb 2021 12:04:06 +0000</pubDate>
+		<pubDate>Tue, 02 Mar 2021 12:04:06 +0000</pubDate>
 				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1125</guid>
 
-					<description><![CDATA[<p>You will build a basic navigation experience, with login capabilities and authenticated area. This is the opportunity to: create your first feature branch on git ; review the code of someone else pull request ; build components, forms and navigation ; write routing configuration with authorisation guards ; work with async processing and error handlers &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. Managing authentication &#038; routing</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/">3. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>You will build a basic navigation experience, with login capabilities and authenticated area. This is the opportunity to: create your first feature branch on git ; review the code of someone else pull request ; build components, forms and navigation ; write routing configuration with authorisation guards ; work with async processing and error handlers &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Managing authentication &#038; routing</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <p>You will build a basic navigation experience, with login capabilities and authenticated area. This is the opportunity to:</p>
@@ -152,7 +153,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 
 
 
-<p class="exercice"><strong>Exercise 8</strong>: Did you use <code>&lt;a href="PATH_OR_URL">&lt;/a></code> for your links ? Instead of the <code>href</code> HTML attribute, you must use the <code>routerLink</code> directive. Both ways will technically work, but there are major differences. What are they ?</p>
+<p class="exercice"><strong>Exercise 8</strong>: Did you use <code>&lt;a href="PATH_OR_URL"&gt;&lt;/a&gt;</code> for your links ? Instead of the <code>href</code> HTML attribute, you must use the <code>routerLink</code> directive. Both ways will technically work, but there are major differences. What are they ?</p>
 
 
 
@@ -309,23 +310,24 @@ npm install --save-dev @types/axios</code></div><small class="shcb-language" id=
 
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/">3. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
 		
 			</item>
 		<item>
-		<title>2. Setup your practical environment</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/</link>
+		<title>1. Setup your practical environment</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sun, 24 Jan 2021 08:53:06 +0000</pubDate>
+		<pubDate>Wed, 24 Feb 2021 08:53:06 +0000</pubDate>
 				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
 
-					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools and learning materials ; start the mock back-end infrastructure (server, database&#8230;) and import seeds ; access to the back-end API documentation and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Setup your practical environment</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/">2. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools and learning materials ; start the mock back-end infrastructure (server, database&#8230;) and import seeds ; access to the back-end API documentation and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Setup your practical environment</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided.</p>
@@ -783,38 +785,288 @@ Register yourself as customer using public API.
 
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/">2. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
 		
 			</item>
 		<item>
-		<title>1. Introduction</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/introduction/</link>
+		<title>4. Using web tools to build something else</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:02:36 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Lectures]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1440</guid>
+
+					<description><![CDATA[<p>For desktops and phones Since front-end technologies were so convenient, developers found ways to reuse web technologies in other contexts. This targets specially desktop and phone app. The idea is always the same: to write an application using HTML/CSS/JS and bundle it inside a webview. Everything related to the browser UI is hidden. The user &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/" class="more-link">Continuer la lecture de <span class="screen-reader-text">4. Using web tools to build something else</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/">4. Using web tools to build something else</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>For desktops and phones</h4>
+
+
+
+<p>Since front-end technologies were so convenient, developers found ways to reuse web technologies in other contexts. This targets specially desktop and phone app.</p>
+
+
+
+<p>The idea is always the same: to write an application using HTML/CSS/JS and bundle it inside a webview. Everything related to the browser UI is hidden. The user only see what the developer wants to show.</p>
+
+
+
+<p>Once packaged, the user does not see any difference compared to another software. It installs itself in the same way as native software. On Android, the application can be exported as an APK/AAB file and shipped via Google Play. On iOS, you submit an IPA file to the App Store Connect.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Write once, run everywhere. 🎉</p></blockquote>
+
+
+
+<p>This sentence summarises another benefit of sharing your codebase between the website version and the desktop/phone version. You only have a single codebase to maintain, so features are immediately available on all platforms. Finally, you may conditionally enable some features depending on the running environment capabilities.</p>
+
+
+
+<p>Users may expect more features in an app that they installed compared to the web version. Effectively, by packaging your application using <code>Electron</code> or <code>Cordova</code>, you got access to advanced features and OS integrations. That is possible because <code>Electron</code> and <code>Cordova</code> trust your code.</p>
+
+
+
+<p> Conversely, the browser has to deal with security issues. It always considers the website as mistrusted code running on your computer. It must sandbox and protect itself from it. For that reason, APIs like direct access to filesystems from the website are unavailable. </p>
+
+
+
+<h4>For command line and back-end</h4>
+
+
+
+<p>Nowadays, Javascript can run outside the browser. The leader platform is Node.js, built on top of the Chromium Javascript engine (V8). Node.js powers various cli tools (including those we will use in this module) and HTTP servers.</p>
+
+
+
+<p>For developers, using the same languages for front-end and back-end improve productivity.</p>
+
+
+
+<ul><li>There is only a single language to master.</li><li>Your stack is consistent and you may reuse dependencies across front and back.</li><li>You can share code between front and back.</li></ul>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/">4. Using web tools to build something else</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>3. How rich and interactive is this UI ?</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 08:38:14 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Lectures]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1394</guid>
+
+					<description><![CDATA[<p>The layout The « add server » page&#8217;s layout is composed of 4 parts: a header, containing site identity, notification centre and accesses to other parts of the customer portal ; a left menu, to navigate between the cloud portal features ; a content area, where the form takes place ; a floating footer summarizing the delivery. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. How rich and interactive is this UI ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/">3. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1395"/><figcaption>The control panel of Hetzner Cloud, which is a nice example of Single Page Application.</figcaption></figure>
+
+
+
+<h4>The layout</h4>
+
+
+
+<p>The « add server » page&rsquo;s layout is composed of 4 parts:</p>
+
+
+
+<ul><li>a header, containing site identity, notification centre and accesses to other parts of the customer portal ;</li><li>a left menu, to navigate between the cloud portal features ;</li><li>a content area, where the form takes place ;</li><li>a floating footer summarizing the delivery.</li></ul>
+
+
+
+<h4>The form</h4>
+
+
+
+<p>The form itself is highly interactive. Actions available at a step depends on a combination of previous choices. It opens modals containing another embedded form, computes the total price on the client side, prints warnings for misconfigurations, etc. All computations related to content are powered by Javascript.</p>
+
+
+
+<h4>The style</h4>
+
+
+
+<p>Fonts, colours, backgrounds, gradients, border radiuses, block sizes, margins, paddings, text positioning and so much more are handled by the browser rendering engine for you. </p>
+
+
+
+<p>Imagine how complex it could be to round corners and center text of the following block if you had to deal with raw pixels&#8230; But that is so simple with CSS.</p>
+
+
+
+<style>
+.my-rounded-block {
+  background-color: #ffecb8;
+  border: 1px solid #795548;
+  border-radius: 3px;
+  text-align: center;
+}
+</style>
+
+<p class="my-rounded-block">Example of paragraph with background and rounded border.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+
+
+
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+  Example of paragraph with background and rounded border.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+</div>
+
+
+
+<h4>Animations</h4>
+
+
+
+<p>Building animations from scratch is something difficult. You must write mathematical functions describing the transformation, then compute each frame and render them. Your goal is to achieve 60 images per second, which requires optimisations.</p>
+
+
+
+<p>Thanks to CSS3, animations are now easy to build. You just describe an initial and final state, and apply a built-in transformation function. The browser handle the rest. It even selects the best hardware available for the task and does concessions to maintain the framerate.</p>
+
+
+
+<p>Animations give feedback to the user. They also make the UI interaction fluid. Some examples:</p>
+
+
+
+<ul><li>The colour of a button changes on hover, on focus or on click.</li><li>Newly created elements inside the page are highlighted on append.</li></ul>
+
+
+
+<p>This example illustrates perfectly why web technologies are so efficient for UI/UX compared to dinosaurs 🦖. (Hi JAVA and its Swing UI framework !)</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/">3. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2. Why are web technologies so popular ?</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sun, 24 Jan 2021 08:24:00 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Lectures]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1342</guid>
+
+					<description><![CDATA[<p>They are cross-platform. End user just needs a browser. The primary homes of front-end technologies are browsers themselves. Those browsers exist in almost any operating system. That is true for computers (Windows, MacOs, GNU/Linux&#8230;) as for phones and pads (Android, iOS&#8230;). If the end user is running an up-to-date browser, it immediately access all web &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Why are web technologies so popular ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/">2. Why are web technologies so popular ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>They are cross-platform. End user just needs a browser.</h4>
+
+
+
+<p>The primary homes of front-end technologies are browsers themselves. Those browsers exist in almost any operating system. That is true for computers (Windows, MacOs, GNU/Linux&#8230;) as for phones and pads (Android, iOS&#8230;).</p>
+
+
+
+<p>If the end user is running an up-to-date browser, it immediately access all web applications published on the Internet.</p>
+
+
+
+<h4>They are well known, mature and still evolving.</h4>
+
+
+
+<p>The web is not born yesterday. So the community learned from its experience. Nowadays, the web is a good place for standards. Standards ensure your projects will still work in decades if you strictly rely on them.</p>
+
+
+
+<p>Have you seen the <a href="http://info.cern.ch/" target="_blank" rel="noreferrer noopener">first website ever built</a> ? It is still online and fully functional because it followed standards.</p>
+
+
+
+<p>Of course, the web continues to grow and standards to evolve.</p>
+
+
+
+<h4>Building rich and responsive UI is easy.</h4>
+
+
+
+<p>The core business of web browsers is to render pages. As you can expect, browsers perform very well at this task.</p>
+
+
+
+<p>From the point of view of web developers, you first have to write your content (with HTML). Then, you build the layout and apply styles thanks to CSS. Those two languages are quick and easy to learn. And they are so powerful (specially CSS which handles all the complexity).</p>
+
+
+
+<h4>Javascript allows complex interaction inside the browser.</h4>
+
+
+
+<p>Javascript comes from the old days of the Web. At this time, HTML and CSS were produced on server. Javascript purpose was to add a bit of dynamicity on the client-side. For example, it allowed:</p>
+
+
+
+<ul><li>to animate elements (now replaced by CSS3 animations) ;</li><li>to apply minor changes to the page on user interaction (like showing or hiding a block when the clicks a button).</li></ul>
+
+
+
+<p>Last decade, the language and its ecosystem have matured. A lot of frameworks help developers to produce all HTML and CSS using only Javascript. Even when a user clicks a link, the new page is produced and replaced this way.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>We call that kind of applications « Single Page Application ».</p></blockquote>
+
+
+
+<p>If building and rendering the page can be done on client-side, is there still a place for servers ? It depends on your need. Some tasks, like authentication and authorisation can only run in trusted environments. Some other requires infrastructure, like files and contents sharing.</p>
+
+
+
+<h4>Ecosystem is rich of tools</h4>
+
+
+
+<p>During this module, you will discover some tools. First of all, your browser includes a lot of utilities like an element inspector, a JavaScript debugger, a network analyser, etc. You will also import and manage dependencies (that contains reusable code) using package managers. And so much more.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/">2. Why are web technologies so popular ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>1. Prerequisites</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Sun, 24 Jan 2021 08:23:21 +0000</pubDate>
 				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Lectures]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=884</guid>
 
-					<description><![CDATA[<p>This course is about creating front-end applications, with modern web technologies. You will discover that such a rich environment, learn good practices, develop quality code, write modular code&#8230; Prerequisite Skills This teaching assumes you know the basics of HTML and CSS. If that is not the case, please consider the following resources. They are quick &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/introduction/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/introduction/">1. Introduction</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>This course is about creating front-end applications, with modern web technologies. You will discover that such a rich environment, learn good practices, develop quality code, write modular code&#8230; Skills This teaching assumes you know the basics of HTML and CSS. If that is not the case, please consider the following resources. They are quick and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Prerequisites</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <p>This course is about creating front-end applications, with modern web technologies. You will discover that such a rich environment, learn good practices, develop quality code, write modular code&#8230;</p>
-
-
-<a href=https://docs.google.com/presentation/d/1cjTmJwYxGxT5aW4noNiNxUYFBbvRMG_i9r1tHBjxlFY/edit?usp=sharing target="_blank">
-  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
-    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
-    <div>Open lecture slides</div>
-  </div>
-</a>
-
-
-
-<h2>Prerequisite</h2>
 
 
 
@@ -853,9 +1105,17 @@ Register yourself as customer using public API.
 <p>During practical works, you will install and use much more tools. For convenience, I already packaged some of them and my learning materials using Docker. </p>
 
 
+<a href=https://docs.google.com/presentation/d/1cjTmJwYxGxT5aW4noNiNxUYFBbvRMG_i9r1tHBjxlFY/edit?usp=sharing target="_blank">
+  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
+    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
+    <div>Open lecture slides</div>
+  </div>
+</a>
+
+
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/introduction/">1. Introduction</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -1500,10 +1760,10 @@ Register yourself as customer using public API.
 <p class="exercice"><strong>Question 3</strong> : Documentez-vous sur les « virtualbox guest addons ». À quoi servent-ils (listez 3 fonctionnalités minimum) ?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># Lancez ces commandes dans un terminal de l'invité avant d'y installer les addons.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># Lancez ces commandes dans un terminal de l'invité avant d'y installer les addons.</span>
 <span class="hljs-comment"># Elles installent les dépendances nécessaires.</span>
 sudo apt update
-sudo apt install gcc make</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+sudo apt install gcc make</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercice 7</strong> : Installez les « virtualbox guest addons » sur le système invité. Pour cela, vous devrez d&rsquo;abord installer 2 programmes sur Ubuntu, à savoir gcc et make. Ensuite, dans le menu « périphériques », cliquez sur « Insérer l&rsquo;image CD des additions invités ». La suite se passe à nouveau sur Ubuntu.</p>
@@ -1516,477 +1776,6 @@ sudo apt install gcc make</code></div><small class="shcb-language" id="shcb-lang
 
 <p class="exercice"><strong>Exercice 8</strong> : En utilisant les onglets « Ressources » et « Système de fichiers » du moniteur système, comparez les ressources visibles par l&rsquo;OS invité avec les spécifications de la machine virtuelle.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>3. Des distributions Linux… En veux-tu, en voilà</title>
-		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sat, 02 Jan 2021 12:53:44 +0000</pubDate>
-				<category><![CDATA[Chapitre 1. Introduction]]></category>
-		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=96</guid>
-
-					<description><![CDATA[<p>Pour installer Linux, on se tourne vers une des nombreuses distributions sur le marché. Pour rappel, une distribution est un noyau Linux accompagné d&#8217;un ensemble cohérent de logiciels. Qu&#8217;est-ce qui change d&#8217;une distribution à l&#8217;autre ? Leurs éditeurs (communautés, entreprises…) Leurs licences (gratuites ou payantes) Les choix techniques (ex. systemd / upstart / system V) &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. Des distributions Linux… En veux-tu, en voilà</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/">3. Des distributions Linux… En veux-tu, en voilà</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/vKn7q2TeyQg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-
-
-
-<p>Pour installer Linux, on se tourne vers une des nombreuses distributions sur le marché. Pour rappel, une distribution est un noyau Linux accompagné d&rsquo;un ensemble cohérent de logiciels.</p>
-
-
-
-<h4>Qu&rsquo;est-ce qui change d&rsquo;une distribution à l&rsquo;autre ?</h4>
-
-
-
-<ul><li>Leurs éditeurs (communautés, entreprises…)</li><li>Leurs licences (gratuites ou payantes)</li><li>Les choix techniques (ex. systemd / upstart / system V)</li><li>L’arbitrage entre stabilité et nouveautés</li><li>Les gestionnaires de paquets et le contenu des dépôts</li><li>La vente de services associés (ex. support professionnel)</li><li>Les charges de travail types et les plateformes ciblées</li><li>Etc.</li></ul>
-
-
-
-<h4>Classification par famille de dérivés</h4>
-
-
-
-<p>On classe les distributions habituellement rencontrées dans les entreprises en trois familles. Chaque famille porte le nom de sa distribution de référence. Cette dernière peut avoir plusieurs dérivés, qui sont les membres de la famille.</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td><strong>Famille</strong></td><td><strong>Debian-based</strong></td><td><strong>RHEL-based</strong></td><td><strong>OpenSUSE</strong></td></tr><tr><td><strong>Dérivés majeurs</strong></td><td>Ubuntu, Linux Mint</td><td>Fedora, CentOS</td><td>&#8211;</td></tr><tr><td><strong>Gestionnaire de paquets</strong></td><td>apt &amp; dkpg</td><td>yum/dnf &amp; rpm</td><td>zypper &amp; rpm</td></tr></tbody></table><figcaption>Les trois grandes familles d&rsquo;OS Linux en entreprise</figcaption></figure>
-
-
-
-<p>Chaque distribution est maintenue par une entité. Il peut s&rsquo;agir :</p>
-
-
-
-<ul><li>d&rsquo;une association à but non lucratif (ex. la Fondation Debian)</li><li>d&rsquo;une entreprise commerciale (ex. Canonical maintient Ubuntu, Redhat maintient RHEL et CentOS)</li><li>d&rsquo;une communauté sans aucune structure juridique</li></ul>
-
-
-
-<p>Il y a de nombreuses autres distributions disponibles. La nébuleuse est si grande qu&rsquo;on pourrait s&rsquo;y perdre. On ne retient en général que quelques grands noms.</p>
-
-
-
-<p>Dans le cadre de ce cours, vous pratiquerez principalement sur Ubuntu. Ce que vous apprendrez sur Ubuntu sera très facile à transposer. </p>
-
-
-
-<h5>L&rsquo;exemple d&rsquo;Ubuntu, lui-même un fork de Debian</h5>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="620" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1024x620.png" alt="" class="wp-image-145" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1024x620.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-300x182.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-768x465.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1536x931.png 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image.png 1578w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Un aperçu des dérivés d&rsquo;Ubuntu entre 2004 et 2020, lui-même un dérivé de Debian&#8230; Source <a href="https://fr.wikipedia.org/wiki/Liste_des_distributions_GNU/Linux#/media/Fichier:Linux_Distribution_Timeline.svg" target="_blank" rel="noopener">Wikipédia</a>.</figcaption></figure>
-
-
-
-<p>Ubuntu est un fork de Debian, c&rsquo;est-à-dire une distribution construite sur la base de Debian tout en prenant une direction légèrement différente.</p>
-
-
-
-<p>Les forks sont caractérisques du monde du libre. La plupart des distributions sont construites sous licence libre, comme la GPL. Du coup, il est parfaitement légal de reprendre un projet, de le modifier et de le redistribuer. Cela s&rsquo;applique également à tout logiciel libre, et donc pas seulement aux distributions.</p>
-
-
-
-<p>Pour qu&rsquo;un fork survive, il doit apporter suffisamment de valeur pour rassembler des individus. Sinon, il finira fatalement par mourir.</p>
-
-
-
-<p>Voici pourquoi les distributions sont si nombreuses, et en même temps si proches. Les connaissances et compétences d&rsquo;administrateur système sont portables d&rsquo;une distribution à l&rsquo;autre, voire entre différentes familles.</p>
-
-
-
-<p>Pour en revenir à Ubuntu, vous avez ci-dessus l&rsquo;arbre de ses forks depuis 2004.</p>
-
-
-
-<p>Il y a eu Ubuntu Touch, un beau projet pour conquérir le marché des télépĥones, avant que Canonical n&rsquo;abandonne le projet.</p>
-
-
-
-<p>Et puis, il y a aussi des déclinaisons mineures, comme Ubuntu Gnome ou Ubuntu Mate, où seuls les logiciels et environnements graphiques installés par défaut changent.</p>
-
-
-
-<h4>Classification par cas d&rsquo;usage nominal</h4>
-
-
-
-<h5>Bureaux et stations de travail</h5>
-
-
-
-<p>Certaines distributions sont conçues pour les ordinateurs de bureau et les stations de travail. Elles sont dotées d&rsquo;une interface graphique, de logiciels bureautiques (ex. un navigateur, une suite bureautique), de drivers spécifiques (ex. de la carte Wifi), etc.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="768" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3.png" alt="" class="wp-image-201" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3-300x225.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-avec-Gnome-3-768x576.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Ubuntu Desktop 20.04, avec l&rsquo;interface Gnome 3</figcaption></figure>
-
-
-
-<h5>Serveurs</h5>
-
-
-
-<p>À l&rsquo;inverse, d&rsquo;autres cibleront des serveurs pour lesquels la disponibilité, la fiabilité et la sécurité sont prioritaires sur les nouveautés. Elles auront un noyau plus vieux, préféreront une interface exclusivement en ligne de commande, seront configurées différemment&#8230;</p>
-
-
-
-<p>En minimisant le nombre de logiciels installés, on réduit également la surface d&rsquo;attaque et la maintenance. Les mises à jour sont synonymes de corrections de sécurité, de corrections de bugs et de risques de régression. Les administrateurs système évitent d&rsquo;installer des mises à jour de fonctionnalités, sauf si elles répondent à un besoin, car tout changement peut introduire des bugs. En même temps, il faut résoudre au plus vite les vulnérabilités. En effet, certains serveurs sont exposés sur internet, où des attaquants opportunistes sont nombreux. Parce que les serveurs fonctionnent en autonomie, sans interaction d&rsquo;un opérateur, on privilégie en général les mises à jour automatiques de sécurité.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="768" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique.png" alt="" class="wp-image-203" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique-300x225.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Ubuntu-sur-tty3-sans-interface-graphique-768x576.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Ubuntu 20.04 sur tty3, sans interface graphique</figcaption></figure>
-
-
-
-<p>Dans le cas d&rsquo;Ubuntu, on retrouve plusieurs variantes officiellement maintenues par Canonical, notamment Ubuntu Desktop, Ubuntu Server.</p>
-
-
-
-<h5>Serveurs invités</h5>
-
-
-
-<p>Un serveur physique est généralement (sur) dimensionné pour répondre au pire des cas. C’est pourquoi leur puissance est souvent sous-exploitée. La charge CPU moyenne dépasse rarement les 10%. Les disques durs sont des multiples de 1 To, car les espaces plus faibles ne sont plus activement commercialisés. Enfin, la pression sur la mémoire dépasse exceptionnellement la moitié de la quantité disponible. Bref, c&rsquo;est du gâchis.</p>
-
-
-
-<p>Grâce à des mécanismes appelés “virtualisation” et “containerisation”, on parvient à héberger plusieurs systèmes invités sur la même machine hôte.</p>
-
-
-
-<p>Les différentes machines invitées ne connaissent généralement pas de pics de charges simultanés, ce qui permet de sous-estimer la puissance totale nécessaire. En cas de forte charge, il reste possible de déplacer quelques invités vers une machine hôte pour équilibrer la charge.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="767" height="471" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/systemes-invites-sur-hyperviseur-type-2.png" alt="" class="wp-image-599" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/systemes-invites-sur-hyperviseur-type-2.png 767w, https://thomas-veillard.fr/wp-content/uploads/2021/01/systemes-invites-sur-hyperviseur-type-2-300x184.png 300w" sizes="(max-width: 767px) 100vw, 767px" /><figcaption>Exemple de 2 systèmes invités qui fonctionnent simultanément sur la même machine grâce à VirtualBox (un logiciel hyperviseur de type 2)</figcaption></figure>
-
-
-
-<p>Les distributions pour systèmes invités cherchent en général à limiter leur usage de ressources (taille sur le disque, consommation de CPU et de RAM&#8230;) et la surface d&rsquo;attaque. Elles n&rsquo;ont pas besoin, par exemple, d&rsquo;inclure tous les drivers existants puisqu&rsquo;elles sont prévues pour s&rsquo;exécuter dans des environnements virtualisés.</p>
-
-
-
-<p>La surface d&rsquo;attaque est le périmètre exposé à un attaquant. Plus la distribution exécute de tâches en arrière-plan, plus les points d&rsquo;entrées potentiels sont nombreux.</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td>Distribution</td><td>Ubuntu Desktop 20.04</td><td>Ubuntu Server 20.04</td><td>Alpine Linux 3.12</td></tr><tr><td>Taille du programme d&rsquo;installation (ISO)</td><td>2 784 Mo</td><td>914 Mo</td><td>126 Mo</td></tr></tbody></table><figcaption>Comparaison de la taille des images d&rsquo;installation de 3 distributions</figcaption></figure>
-
-
-
-<h5>Autres cas d&rsquo;usage</h5>
-
-
-
-<p>Il existe encore d&rsquo;autres cas d&rsquo;usages, adressés par des distributions spécialisées. Par exemple, Android fait tourner nombre de téléphones. L&rsquo;IoT (Internet of Things), qui inclut des caméras IP et les capteurs dans les usines, a aussi ses propres besoins.</p>
-
-
-
-<h4>🎉 C&rsquo;est l&rsquo;heure de la pratique 🥳</h4>
-
-
-
-<p>La prochaine activité sera un TP, où vous installerez Ubuntu Desktop dans une machine virtuelle. À tout de suite.</p>
-
-
-<a href=https://docs.google.com/presentation/d/1vXTJBeXDnXAhVtC-7uCNcY-6jBbFlP_86buIsuSBPY4/edit?usp=sharing target="_blank">
-  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
-    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
-    <div>Ouvrir la présentation Google Slide</div>
-  </div>
-</a>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/">3. Des distributions Linux… En veux-tu, en voilà</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>2. Brève histoire de GNU/Linux</title>
-		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sat, 02 Jan 2021 01:34:09 +0000</pubDate>
-				<category><![CDATA[Chapitre 1. Introduction]]></category>
-		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=47</guid>
-
-					<description><![CDATA[<p>GNU/Linux = GNU + Linux À strictement parler, Linux n&#8217;est que le noyau d&#8217;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés. Mais sans une suite logicielle minimale, il ne rend aucun &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Brève histoire de GNU/Linux</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/">2. Brève histoire de GNU/Linux</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/KvGN1SrNwAo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-
-
-
-<h4>GNU/Linux = GNU + Linux</h4>
-
-
-
-<p>À strictement parler, Linux n&rsquo;est que le noyau d&rsquo;un système GNU/Linux. Ce raccourci est un abus de langage passé dans les mœurs. Le noyau gère tous les aspects liés au matériel, en plus de fournir diverses routines aux programmes installés. Mais sans une suite logicielle minimale, il ne rend aucun service à l&rsquo;utilisateur final. L&rsquo;utilisateur serait incapable de manipuler ses fichiers et n&rsquo;aurait aucun moyen d&rsquo;installer de nouvelles applications. À ses débuts, le projet Linux s&rsquo;est donc rapproché du projet GNU, qui développait cette suite d&rsquo;outils et n&rsquo;avait pas encore de noyau.</p>
-
-
-
-<p>La suite GNU est une gamme de logiciels, notamment d&rsquo;utilitaires de base. Toute distribution GNU/Linux se compose de ces logiciels et du noyau lui-même. On désigne cet ensemble comme une installation minimale.</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="620" height="434" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png" alt="" class="wp-image-340" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux.png 620w, https://thomas-veillard.fr/wp-content/uploads/2021/01/GNULinux-300x210.png 300w" sizes="(max-width: 620px) 100vw, 620px" /><figcaption>Source <a href="https://commons.wikimedia.org/wiki/File:GNU%2BLinux.png" target="_blank" rel="noreferrer noopener">Wikipédia</a>, sous licence CC.<br>À gauche, le logo de GNU représente un gnou (une espèce proche de l&rsquo;antilope).<br>À droite, le manchot est la mascotte du noyau linux. Il s&rsquo;appelle Tux.</figcaption></figure></div>
-
-
-
-<p>Voilà qui explique la concaténation des termes « GNU » et « Linux ». Le nom Linux, quant à lui, est la contraction de Linus et d&rsquo;Unix. Linus Towards est l&rsquo;étudiant finlandais à l&rsquo;initiative du développement du noyau en 1991. En 2021, il a toujours la gouvernance sur le projet.</p>
-
-
-
-<h4>Quelques mots sur le projet GNU</h4>
-
-
-
-<p>Cette suite logicielle commune à toutes les distributions inclut entre autres :</p>
-
-
-
-<ul><li>GRUB (GRand Unified Bootloader), un chargeur d&rsquo;amorçage. Il s&rsquo;agit du tout premier programme lu sur le disque. Il se situe à un emplacement bien connu, ce qui explique que le BIOS et l&rsquo;UEFI sachent où le trouver et lui délèguent l&rsquo;amorçage du système d&rsquo;exploitation. Grâce à lui, l&rsquo;utilisateur peut choisir quel OS démarrer (s&rsquo;il en avait plusieurs sur sa machine) et personnaliser les options de démarrage de Linux.</li></ul>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="833" height="606" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/GRUB-demarrant-Ubuntu.gif" alt="" class="wp-image-425"/><figcaption>GRUB en action au démarrage d&rsquo;une machine virtuelle.<br>Il lance Ubuntu en sélectionnant la version 5.4.0-59 du noyau Linux</figcaption></figure>
-
-
-
-<ul><li>La bibliothèque standard C. Le C est un langage de programmation avec lequel la majorité du noyau est implémenté. Une bibliothèque est un (gros) morceau de code que des applications peuvent réutiliser. La « libc » comme on l&rsquo;appelle, est indispensable à la plupart des logiciels Linux. Elle permet à l&rsquo;application de lire une saisie utilisateur, d&rsquo;afficher du texte, de répondre à des événements extérieurs comme les signaux&#8230; Le projet GNU a également beaucoup aidé l&rsquo;écosystème C en créant le compilateur C GCC. Un compilateur est un programme qui transforme du code source (produit et compris par un développeur) en code machine. Linux utilise officielle GCC pour sa compilation.</li></ul>
-
-
-
-<ul><li>Bash, un environnement en ligne de commande dans lequel lancer des logiciels. Entre autres logiciels compatibles avec cet environnement, vous trouverez de quoi naviguer dans une arborescence de dossiers et des fichiers, d&rsquo;en manipuler le contenu, etc. Vous pouvez retrouver la liste et la documentation des logiciels membres  du projet « GNU coreutils » sur le <a href="https://www.gnu.org/software/coreutils/" target="_blank" rel="noreferrer noopener">site de GNU</a>.</li></ul>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="719" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Une-session-dans-bash.gif" alt="" class="wp-image-431"/><figcaption>Une session bash, dans laquelle sont exécutés séquentiellement les programmes cd, ls et man.</figcaption></figure>
-
-
-
-<h4>Linux s&rsquo;inspire d&rsquo;Unix et est conforme au standard POSIX</h4>
-
-
-
-<p>Unix est à l&rsquo;origine un système d&rsquo;exploitation commercial créé dans les années 1970, à destination des professionnels. Linux s&rsquo;inspire ouvertement d&rsquo;Unix et de ses standards, si bien que Wikipédia considère que Linux fait partie de la famille des systèmes d&rsquo;exploitation Unix. Le standard introduit par Unix s&rsquo;appelle POSIX.</p>
-
-
-
-<p>Linux est développé sous licence OpenSource, à l&rsquo;inverse de l&rsquo;Unix original et de Windows qui sont des logiciels propriétaires et commerciaux. Les individus à l&rsquo;origine de ce mouvement ont clarifié ce qu&rsquo;est une licence OpenSource. Elle assure que le code source du programme soit en libre accès. Il peut être redistribué sous n&rsquo;importe quelle forme, notamment en tant que fichier exécutable (compilé), intégré dans un autre projet ou modifié. La licence ne limite pas les champs d&rsquo;application à un domaine particulier ou à un groupe de personnes. Il n&rsquo;y a ainsi aucune discrimination sur qui ou pourquoi Linux peut être utilisé.</p>
-
-
-
-<h4>La place actuellement occupée par GNU/Linux</h4>
-
-
-
-<p>Aujourd&rsquo;hui, GNU/Linux représente une part de marché majoritaire pour les téléphones portables (Android étant une distribution Linux), les serveurs et les supercalculateurs. Mais il reste marginal dans les environnements de bureaux, où les utilisateurs sont plutôt des développeurs et des ingénieurs. GNU/Linux est ainsi assez méconnu du grand public, tout en étant de plus en plus recherché en entreprise.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="512" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers.png" alt="" class="wp-image-468" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers-300x150.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers-768x384.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Infographie produite par Intel à propos de Linux. Il y apparaît que Linux est en quasi-monopole sur le segment des supercalculateurs et qu&rsquo;il est utilisé pour des activités critiques comme l&rsquo;opération de marchés boursiers.</figcaption></figure>
-
-
-<a href=https://docs.google.com/presentation/d/1gICtO_YXRnU4JSlQWFQKmeSe6EHkXTqaghXIVOUwBcI/edit?usp=sharing target="_blank">
-  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
-    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
-    <div>Ouvrir la présentation Google Slide</div>
-  </div>
-</a>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/">2. Brève histoire de GNU/Linux</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>1. Introduction et objectifs pédagogiques</title>
-		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sat, 02 Jan 2021 01:08:05 +0000</pubDate>
-				<category><![CDATA[Chapitre 1. Introduction]]></category>
-		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=34</guid>
-
-					<description><![CDATA[<p>Vous souhaitez acquérir des compétences d&#8217;administration système, en particulier sous GNU/Linux ? Ce cours vous y aidera. Objectifs pédagogiques Voici quelques-uns des objectifs au terme de la formation : Assimiler les concepts théoriques sous-jacents aux systèmes d’exploitation Comprendre en quoi un système d’exploitation est indispensable Effectuer aisément les tâches d’administration quotidienne d’un système GNU/Linux Savoir &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction et objectifs pédagogiques</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">1. Introduction et objectifs pédagogiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/Hc-MFDvutxU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-
-
-
-<p>Vous souhaitez acquérir des compétences d&rsquo;administration système, en particulier sous GNU/Linux ? Ce cours vous y aidera.</p>
-
-
-
-<h4>Objectifs pédagogiques</h4>
-
-
-
-<p>Voici quelques-uns des objectifs au terme de la formation :</p>
-
-
-
-<ul><li>Assimiler les concepts théoriques sous-jacents aux systèmes d’exploitation</li><li>Comprendre en quoi un système d’exploitation est indispensable</li><li>Effectuer aisément les tâches d’administration quotidienne d’un système GNU/Linux</li><li>Savoir gérer les utilisateurs, les processus, les permissions, les quotas…</li><li>Diagnostiquer des problèmes et des anomalies, puis les résoudre</li><li>Être averti des implications en termes de sécurité de vos actions</li><li>Être à l’aise avec la ligne de commande et autonome avec le “man”</li><li>Développer votre culture de l’écosystème GNU/Linux</li><li>Être familier des principaux services et logiciels de l’écosystème GNU/Linux</li><li>Etc. La liste serait trop longue à écrire !</li></ul>
-
-
-
-<h4>Le format du cours et ses activités</h4>
-
-
-
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; text-align: center">
-  <div style="color: #303f9f">
-    <i class="fad fa-presentation" style="font-size: 8em"></i>
-    <p style="margin-top: 1em">Cours</p>
-  </div>
-  <div style="color: #fbc02d">
-    <i class="fad fa-laptop-code" style="font-size: 8em"></i>
-    <p style="margin-top: 1em">Travaux pratiques</p>
-  </div>
-  <div style="color: #00796b">
-    <i class="fad fa-map-marker-question" style="font-size: 8em"></i>
-    <p style="margin-top: 1em">Quiz</p>
-  </div>
-</div>
-
-
-
-<p>Le contenu de ce cours et ses activités sont pensés pour un enseignement en écoles d’ingénieur informatique. Le public type est une classe de première année. Vous pourrez le suivre sans prérequis particulier. Si toutefois vous aviez déjà développé votre expertise sur Linux, les parties théoriques portant sur les fondamentaux des systèmes d&rsquo;exploitation. Vous trouverez également des contenus pratiques plus approfondis à mesure que le cours avancera.</p>
-
-
-
-<p>Je souhaite trouver un équilibre entre la théorie et la pratique. Pour la théorie, nous aurons les fondamentaux des systèmes d&rsquo;exploitation. La mise en pratique se fera sur Linux, avec pour principal objectif à la fin du cours que vous sachiez administrer un serveur Linux. Les cours seront des vidéos comme celles-ci. Et les travaux pratiques seront aussi en vidéo, bien que dans un format légèrement différent. Je vous mettrais systématiquement à disposition les corrections et les démonstrations complémentaires.</p>
-
-
-
-<h4>Un OS ? Quésaco ? Et pour quoi faire ?</h4>
-
-
-
-<p>Ce chapitre est une introduction. C&rsquo;est donc l&rsquo;occasion parfaite de démystifier l&rsquo;objet du cours: le système d&rsquo;exploitation et son rôle.</p>
-
-
-
-<p>Windows, MacOS ou encore Android sont des exemples de systèmes d’exploitation. On abrège souvent l’expression “système d’exploitation” par “OS”, qui nous vient de l’anglais “Operating System”. L&rsquo;OS est indispensable pour utiliser votre appareil et lancer des applications. Il gère les périphériques, les interactions avec l’utilisateur et crée un contexte favorable à l’exécution de vos programmes.</p>
-
-
-
-<h5>L&rsquo;abstraction du matériel</h5>
-
-
-
-<p>Considérez la capture d&rsquo;écran suivante, prise en recherchant « carte réseau » chez un vendeur français de matériel informatique. Elle donne un aperçu de la diversité des marques et des modèles pour un seul type de composants. Presque aucun éditeur de logiciel ne serait capable d&rsquo;adapter ses développements à autant de modèles. Tester le logiciel serait bien trop chronophage, sans même aborder la question du coût d&rsquo;achat du matériel. L&rsquo;éditeur de l&rsquo;OS prend en charge ce travail fastidieux.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-1024x692.png" alt="" class="wp-image-212" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-1024x692.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-300x203.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1-768x519.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-1.png 1283w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption><em>Comment un éditeur de logiciel pourrait-il adapter seul son logiciel à tous les produits matériels sur le marché ? N’a-t-il pas mieux à faire ?</em></figcaption></figure>
-
-
-
-<p>L&rsquo;OS crée alors un environnement d&rsquo;exécution normalisé et abstrait l&rsquo;accès au matériel. Le support matériel peut être étendu en installant de nouveaux pilotes.</p>
-
-
-<figure class="wp-block-image size-large"><img class="wp-image-231" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-1.svg" alt="" width="100%"><figcaption>Le logiciel demande à l&rsquo;OS une allocation de ressource qu’il utilisera au travers d’une couche d’abstraction (les appels système). Si du nouveau matériel est intégré à la plateforme, seul l&rsquo;OS doit être adapté. Dans la plupart des cas, le choix du matériel est transparent pour les logiciels.</figcaption></figure>
-
-
-<h5>La mutualisation des ressources</h5>
-
-
-
-<p>En prime, un logiciel doit cohabiter avec d’autres programmes, partager avec eux des ressources telles que de la puissance de calcul, de la mémoire, de la bande passante réseau, etc. Nos ordinateurs savent non seulement exécuter plusieurs tâches en parallèle, mais aussi servir les besoins de plusieurs utilisateurs sur une même machine. S’assurer que chacun des processus ait un accès équitable au matériel est la mission historique d’un système d’exploitation.</p>
-
-
-
-<h5>Le cloisonnement des ressources et des utilisateurs</h5>
-
-
-
-<p>Les systèmes d&rsquo;exploitation modernes sont multitâches et multi-utilisateurs.</p>
-
-
-
-<p>Chaque utilisateur a ses propres données (fichiers, mots de passe, configuration&#8230;). Cette notion de propriété est gérée par l&rsquo;OS et fait partie du système de gestion de droits. Ainsi, un utilisateur peut garder ses données privées et bloquer l&rsquo;accès aux autres utilisateurs.</p>
-
-
-
-<p>Ces droits se propagent aux processus. Un processus est un programme en cours d&rsquo;exécution. Ces processus sont lancés par un utilisateur, qui est considéré comme le propriétaire de ce processus. Le propriétaire d&rsquo;un processus possède des droits supplémentaires, comme l&rsquo;interrompre de force. À l&rsquo;inverse, le processus s’exécute au nom d&rsquo;un utilisateur. Il a ainsi par défaut accès aux mêmes données que l’utilisateur.</p>
-
-
-
-<h5>Un exemple récapitulatif : Accès concurrent à l&rsquo;interface réseau</h5>
-
-
-
-<p>Maintenant, prenons l&rsquo;exemple d&rsquo;une interface réseau. Le cas nominal sur PC est de n&rsquo;être connecté qu&rsquo;à un seul réseau à la fois. Le système d&rsquo;exploitation est capable de communiquer avec cette carte réseau et d&rsquo;en tirer parti.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="261" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Transfert-des-packets-reseaux-vers-leurs-processus-respectifs-1024x261.png" alt="" class="wp-image-386" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Transfert-des-packets-reseaux-vers-leurs-processus-respectifs-1024x261.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Transfert-des-packets-reseaux-vers-leurs-processus-respectifs-300x76.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Transfert-des-packets-reseaux-vers-leurs-processus-respectifs-768x196.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Transfert-des-packets-reseaux-vers-leurs-processus-respectifs.png 1276w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Schéma du multiplexage des flux issus des 2 programmes sur une seule interface réseau. Ce schéma est révélateur de plusieurs rôles d&rsquo;un OS.</figcaption></figure>
-
-
-
-<p>Sur le schéma ci-dessus, 2 logiciels veulent échanger des données sur internet. Les flèches représentent les flux, colorisés en fonction du programme.</p>
-
-
-
-<p>Sur toute la partie gauche, les 2 flux sont confondus. Ils transitent sur les mêmes câbles, traversent la même interface réseau et arrivent au niveau de l&rsquo;OS.</p>
-
-
-
-<p>Une fois l&rsquo;OS franchi, les deux flux sont séparés et acheminés aux bons programmes. En rendant ce service aux logiciels, l&rsquo;OS répond à plusieurs besoins :</p>
-
-
-
-<ul><li><strong>La mutualisation :</strong> 2 logiciels étaient en concurrence pour utiliser le même composant matériel. Sans le système d&rsquo;exploitation pour multiplexer les flux, ils n&rsquo;auraient pas pu cohabiter.</li></ul>
-
-
-
-<ul><li><strong>La performance</strong> : le programme doit traiter chaque paquet de données qu&rsquo;il reçoit, ce qui consomme à minima du temps CPU. Mieux vaut éviter de le faire ingurgiter des données inutiles.</li></ul>
-
-
-
-<ul><li><strong>L’abstraction</strong> : le programme est agnostique des technologies dernières l&rsquo;interface réseau. Il pourrait aussi bien s&rsquo;agir d&rsquo;une carte Ethernet que WIFI. De même, toute la complexité de maintenir la session avec le correspondant distant et l&rsquo;acheminement des flux sont de la responsabilité de l&rsquo;OS.</li></ul>
-
-
-
-<ul><li><strong>La sécurité par le cloisonnement</strong> : les flux de chaque programme peuvent contenir des données confidentielles. Voudriez-vous que votre courrielleur reçoive la réponse du site web sur lequel vous venez de payer dans Firefox ? Très peu pour moi !</li></ul>
-
-
-
-<h5>Bon cours à tous !</h5>
-
-
-
-<p>À travers une série de vidéos et d&rsquo;articles, nous allons aborder les concepts sous-jacents aux systèmes d’exploitation. Et nous allons les mettre en pratique avec GNU/Linux.</p>
-
-
-
-<p>Sur ce, je vous souhaite une bonne progression dans ce cours.</p>
-
-
-<a href=https://docs.google.com/presentation/d/1Z0MLnlWTGKAOtuuccF02__VyR_r_rgkgfWIfHEMD3xU/edit?usp=sharing target="_blank">
-  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
-    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
-    <div>Ouvrir la présentation Google Slide</div>
-  </div>
-</a>
-
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">1. Introduction et objectifs pédagogiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

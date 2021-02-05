@@ -101,12 +101,8 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/introduction/</loc>
-		<lastmod>2021-02-03T17:21:01+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/2-setup-your-practical-work-environment/</loc>
-		<lastmod>2021-02-03T17:50:24+00:00</lastmod>
+		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</loc>
+		<lastmod>2021-02-24T08:53:06+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
 		</image:image>
@@ -115,8 +111,8 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/3-managing-authentication-routing/</loc>
-		<lastmod>2021-02-03T20:02:43+00:00</lastmod>
+		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</loc>
+		<lastmod>2021-03-02T12:04:06+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png</image:loc>
 		</image:image>
@@ -140,6 +136,37 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/submit-error-handler-in-tempalte.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</loc>
+		<lastmod>2021-02-05T07:37:01+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Why-are-web-front-end-technologies-so-popular-.png</image:loc>
+			<image:title><![CDATA[Why-are-web-front-end-technologies-so-popular-]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</loc>
+		<lastmod>2021-02-05T07:37:22+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Prerequisite.png</image:loc>
+			<image:title><![CDATA[Prerequisite]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/</loc>
+		<lastmod>2021-02-05T10:06:24+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</loc>
+		<lastmod>2021-02-05T12:31:51+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Using-web-tools-to-build-something-else.png</image:loc>
+			<image:title><![CDATA[Using-web-tools-to-build-something-else]]></image:title>
 		</image:image>
 	</url>
 </urlset>
