@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 05 Feb 2021 12:31:51 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 09 Feb 2021 12:05:20 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,11 +20,59 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.6.1</generator>
 	<item>
+		<title>Project</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/the-project/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Tue, 09 Feb 2021 07:16:11 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1576</guid>
+
+					<description><![CDATA[<p>Topic Your goal for this project is to build a client application that leverages publicly available APIs. You can choose as many public API you want. Try to build something new and useful, with a real added value. Rules This is a group work (3 or 4 students per team). Use Angular or React. Material &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Topic</h4>
+
+
+
+<p>Your goal for this project is to build a client application that leverages <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noreferrer noopener">publicly available</a> APIs. You can choose as many public API you want. Try to build something new and useful, with a real added value.</p>
+
+
+
+<h4>Rules</h4>
+
+
+
+<ul><li>This is a group work (3 or 4 students per team).</li><li>Use Angular or React. Material design is <strong>not</strong> mandatory.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check you commit, and when.</li><li>Use eslint. Recommended configuration is in <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">practical works</a>.</li></ul>
+
+
+
+<h4>Delivery</h4>
+
+
+
+<p>Your git repository is your delivery. Just share read-only access with me (my Github username is <code>TruffeCendree</code>).</p>
+
+
+
+<h4>Bonuses</h4>
+
+
+
+<ul><li>Host your static website online (ex. Firebase Hosting, render.com, aws S3&#8230;).</li><li>Monitor client side errors in production (ex. Sentry, Rollbar, Stackdriver&#8230;).</li></ul>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>2. Managing authentication &#038; routing</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Tue, 02 Mar 2021 12:04:06 +0000</pubDate>
+		<pubDate>Tue, 09 Feb 2021 09:00:01 +0000</pubDate>
 				<category><![CDATA[Front-end web development (English)]]></category>
 		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1125</guid>
@@ -259,33 +307,11 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 </div>
 
 
-<p>On submit, the form should send credentials to the server (using <code>axios</code> or native <code>fetch</code> as you prefer). Then, your <code>submit</code> method will deal with the server&rsquo;s response. On success, the user will be redirected to <code>/profile</code>. Finally, he should be notified for any error that occurred.</p>
+<p>On submit, the form should send credentials to the server (using built-in <code>HttpService</code>). Then, your <code>submit</code> method will deal with the server&rsquo;s response. On success, the user will be redirected to <code>/profile</code>. Finally, he should be notified for any error that occurred.</p>
 
 
 
 <p>Remember you have the documentation and playground of API. Also do not forget that calling the server is an <code>async</code> task.</p>
-
-
-
-<h4>If you choose axios</h4>
-
-
-
-<p>Axios is an external dependency you have to install. Its interface is easy to use. You have to install it using npm (Node Package Manager). Because axios is purely in JS, there is no type definition in it. Typescript can use declaration files (.d.ts), which may be included inside the main npm package or distributed under another package.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># install the axios library</span>
-npm install axios
-
-<span class="hljs-comment"># install type definitions from another npm module</span>
-npm install --save-dev @types/axios</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h4>If you choose fetch</h4>
-
-
-
-<p>fetch is nice <code>Promise</code>-based interface built-in modern browsers. It is ready to use, but a bit harder to learn than axios. You have to manually check HTTP code, parse json payload&#8230;</p>
 
 
 
@@ -303,13 +329,165 @@ npm install --save-dev @types/axios</code></div><small class="shcb-language" id=
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5ae1bc288f032d14355777d5e3b751403f8a748e/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5ae1bc288f032d14355777d5e3b751403f8a748e" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/3c361a82b74ac351175e7754b2268c7f2733abbc/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/3c361a82b74ac351175e7754b2268c7f2733abbc" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
 
 
-<p></p>
+<h2>Using backend type definitions</h2>
+
+
+
+<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. There are located at <code>frontend-web-development/dist-typings/</code>.</p>
+
+
+<pre class="wp-block-code"><div><code class="hljs">ls -lhsa frontend-web-development/dist-typings
+total 60K
+4,0K drwxr-xr-x 6 root   root   4,0K févr.  9 11:26 .
+4,0K drwxrwxr-x 8 thomas thomas 4,0K févr.  9 11:25 ..
+4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 apidoc.d.ts
+4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 app.d.ts
+4,0K -rw-r--r-- 1 root   root    292 févr.  9 11:26 config.d.ts
+4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 ddl.d.ts
+4,0K drwxr-xr-x 2 root   root   4,0K févr.  9 11:26 docs
+4,0K drwxr-xr-x 4 root   root   4,0K févr.  9 11:26 models
+4,0K -rw-r--r-- 1 root   root    363 févr.  9 11:26 mysql-store.d.ts
+4,0K -rw-r--r-- 1 root   root    115 févr.  9 11:26 printable-error.d.ts
+4,0K drwxr-xr-x 5 root   root   4,0K févr.  9 11:24 routes
+4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 seeds.d.ts
+4,0K -rw-r--r-- 1 root   root     99 févr.  9 11:26 server.d.ts
+4,0K drwxr-xr-x 4 root   root   4,0K févr.  9 11:26 specs
+4,0K -rw-r--r-- 1 root   root    123 févr.  9 11:26 utils.d.ts</code></div></pre>
+
+
+<p>You are most likely interested in API and models definitions. For example:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
+</span></span><span class='shcb-loc'><span><span class="hljs-keyword">import</span> { Request, Response } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
+</span></span><mark class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
+</span></mark><mark class='shcb-loc'><span>    email: <span class="hljs-built_in">string</span>;
+</span></mark><mark class='shcb-loc'><span>    password: <span class="hljs-built_in">string</span>;
+</span></mark><mark class='shcb-loc'><span>}
+</span></mark><span class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">req: Request, res: Response</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;</span>;
+</span></span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Those definitions are still up to date with the back-end implementation, since it is derived from it. If any change in the back-end is incompatible with the front-end usage, the typescript compiler catches it.</p>
+
+
+
+<p>To use those definitions with angular, edit your <code>tsconfig.json</code> like this:</p>
+
+
+
+<p> </p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
+</span></span><span class='shcb-loc'><span>{
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compileOnSave"</span>: <span class="hljs-literal">false</span>,
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compilerOptions"</span>: {
+</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"baseUrl"</span>: <span class="hljs-string">"./"</span>,
+</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"./dist/out-tsc"</span>,
+</span></span><span class='shcb-loc'><span>    <span class="hljs-comment">/* ... */</span>
+</span></span><mark class='shcb-loc'><span>    <span class="hljs-attr">"paths"</span>: {
+</span></mark><mark class='shcb-loc'><span>      <span class="hljs-attr">"@backend/*"</span>: [ <span class="hljs-string">"../learning-materials/frontend-web-development/dist-typings/*"</span> ]
+</span></mark><mark class='shcb-loc'><span>    }
+</span></mark><span class='shcb-loc'><span>  },
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"angularCompilerOptions"</span>: {
+</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"enableI18nLegacyMessageIdFormat"</span>: <span class="hljs-literal">false</span>,
+</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictInjectionParameters"</span>: <span class="hljs-literal">true</span>,
+</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictInputAccessModifiers"</span>: <span class="hljs-literal">true</span>,
+</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictTemplates"</span>: <span class="hljs-literal">true</span>
+</span></span><span class='shcb-loc'><span>  }
+</span></span><span class='shcb-loc'><span>}
+</span></span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1141" height="777" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif" alt="" class="wp-image-1613"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/0cb6f32ef696f334487a9f8641c25bf1096e56b0/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/0cb6f32ef696f334487a9f8641c25bf1096e56b0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h2>Using services</h2>
+
+
+
+<p>Because of the single responsibility principle, components should not fetch data or query the server themselves. That is the responsibility of <a href="https://angular.io/tutorial/toh-pt4" target="_blank" rel="noreferrer noopener">Services</a>. This allows testing the behaviour of components by mocking the services it uses.</p>
+
+
+
+<p>Services are singleton that persists until the end of the navigation. On their side, components are destroyed as soon as they are detached from the component tree (aka. not used anymore). You can store some state inside the component as long you do not need them outside. Else, you should use services.</p>
+
+
+
+<p class="exercice"><strong>Exercise 14</strong>: Using the <code>@angular/cli</code>, generate <code>me.service.ts</code> and implement <code>resolve</code>, <code>login</code> and <code>logout</code> methods. Finally, update accordly the <code>LoginComponent</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login'</span>;
+<span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/models/user'</span>;
+
+<span class="hljs-keyword">interface</span> IMeService {
+  me: User
+
+  <span class="hljs-comment">/**
+   * On first call, retrieve the current user identity on /api/users/me.
+   * On following calls, use a cached reference (this.me).
+   * Returns Promise&lt;User&gt; if logged.
+   * Returns Promise&lt;null&gt; otherwise.
+   */</span>
+  resolve: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;User | <span class="hljs-literal">null</span>&gt;
+
+  <span class="hljs-comment">/**
+   * Sends credentials against /auth/login.
+   * Throws HttpErrorResponse in case of failure.
+   * Returns Promise&lt;void&gt; if success.
+   */</span>
+  login: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-params">credentials</span>: <span class="hljs-params">Auth</span>$<span class="hljs-params">LoginParams</span></span>) =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt;
+
+  <span class="hljs-comment">/**
+   * Sends credentials against /auth/logout.
+   * Throws HttpErrorResponse in case of failure.
+   * Returns Promise&lt;void&gt; if success.
+   */</span>
+  logout: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt;
+}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/8b9d8a2743cda00a1d6f398d7b7b0e733c6b9dcb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/8b9d8a2743cda00a1d6f398d7b7b0e733c6b9dcb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h2>Routing &amp; authentication</h2>
+
+
+
+<p>At this step, the application suffers a major bug. It is not aware of the current session.</p>
+
+
+
+<ul><li>The login link and profile links are always visible.</li><li>The login form is always available, even for logged users.</li><li>The profile page is accessible without session.</li></ul>
+
+
+
+<p>This is because the <code>LoginComponent</code> state is destroyed when the user is redirected. We need to store current user identity somewhere it will persist during navigation. That is the purpose of <a href="https://angular.io/tutorial/toh-pt4" target="_blank" rel="noreferrer noopener">Angular Services</a> (among other things). Also, this identity should be retrieved from the server via XHR request on browser page reload.</p>
+
+
+
+<p>Hopefully, the <code>MeService</code> on which you will rely is ready. </p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -321,7 +499,7 @@ npm install --save-dev @types/axios</code></div><small class="shcb-language" id=
 		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Wed, 24 Feb 2021 08:53:06 +0000</pubDate>
+		<pubDate>Tue, 09 Feb 2021 09:00:00 +0000</pubDate>
 				<category><![CDATA[Front-end web development (English)]]></category>
 		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
@@ -417,7 +595,7 @@ npm install --save-dev @types/axios</code></div><small class="shcb-language" id=
 <p>A single command written in a terminal (Powershell or Node Command Prompt for Windows) do the job. Ensure node is installed first. We also install <a href="https://eslint.org/" target="_blank" rel="noreferrer noopener">eslint</a>, which ensure coding conventions are applied across codebase.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h2>Workspace overview</h2>
@@ -427,7 +605,7 @@ npm install --save-dev @types/axios</code></div><small class="shcb-language" id=
 <p>At the end of this seance, your workspace should match the following folder hierarchy.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
  ↳ dist                        <span class="hljs-comment"># the folder containing your bundled app. Only exists after running `ng build` command.</span>
  ↳ node_modules                <span class="hljs-comment"># the folder containing local dependencies. See package.json file and npm command for more info.</span>
  ↳ src                         <span class="hljs-comment"># source code (HTML, CSS, TS). It includes components, services, etc.</span>
@@ -438,7 +616,7 @@ npm install --save-dev @types/axios</code></div><small class="shcb-language" id=
 learning-materials             <span class="hljs-comment"># my git repository you have to clone, which contains backend server, database and some tools</span>
  ↳ frontend-web-development    <span class="hljs-comment"># the folder containing every materials related to this practical work.</span>
     ↳ docker-compose.yml       <span class="hljs-comment"># configuration for docker-compose, that will take care of booting full backend infrastructure.</span>
-    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Angular project&rsquo;s structure is standard (thanks to @angular/cli). For more information about it, please refer to <a href="https://angular.io/guide/file-structure" target="_blank" rel="noreferrer noopener">official documentation</a>.</p>
@@ -460,7 +638,7 @@ learning-materials             <span class="hljs-comment"># my git repository yo
 <ul><li>Linux/Mac: run a terminal</li><li>Windows: use PowerShell or “Node.js Command Prompt”</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
 npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics
 
 <span class="hljs-comment"># creates a new project with angular router enabled</span>
@@ -471,13 +649,13 @@ ng new --routing --collection=@angular-eslint/schematics frontend
 
 <span class="hljs-comment"># install locally ts-standard (our linter)</span>
 npm install --save-dev ts-standard
-</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, replace <code>.eslintrc.json</code> file content with the following config. This uses ts-standard presets, with some small differences. Two minor checks are disabled for convenience and semicolons are always required. The reason is angular cli always adds semicolons on generated files. So our rules matches that pattern.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
   <span class="hljs-attr">"extends"</span>: [<span class="hljs-string">"standard-with-typescript"</span>, <span class="hljs-string">"standard-jsx"</span>],
   <span class="hljs-attr">"parserOptions"</span>: { <span class="hljs-attr">"project"</span>: <span class="hljs-string">"./tsconfig.json"</span> },
   <span class="hljs-attr">"rules"</span>: {
@@ -486,7 +664,7 @@ npm install --save-dev ts-standard
     <span class="hljs-attr">"@typescript-eslint/strict-boolean-expressions"</span>: <span class="hljs-string">"off"</span>,
     <span class="hljs-attr">"@typescript-eslint/semi"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"always"</span>]
   }
-}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, edit the <code>tsconfig.json</code> to add <code>compilerOptions.strictNullChecks = true</code> (required by some linter&rsquo;s rules).</p>
@@ -520,9 +698,9 @@ npm install --save-dev ts-standard
 <p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
 ng build --prod   <span class="hljs-comment"># build the app for production. A lot of optimisations are processed, reducing bundle size.</span>
-ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <div class="exercice" style="margin-bottom: 1em">
@@ -538,7 +716,7 @@ ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on
 </div>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
 ✔ Browser application bundle generation complete.
 ✔ Copying assets complete.
 ✔ Index html generation complete.
@@ -552,7 +730,7 @@ styles.css          | styles        | <span class="hljs-number">119</span> bytes
 
                     | Initial Total |   <span class="hljs-number">2.85</span> MB
 
-Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>At this step, you can open <code>frontend/dist/index.html</code> in your browser and explore the placeholder generated by <code>@angular/cli</code>.</p>
@@ -578,7 +756,7 @@ Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</sp
 <p>You have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
 git status
 
 <span class="hljs-comment"># you probably want to commit new files in your repository.</span>
@@ -592,7 +770,7 @@ git commit -a -m <span class="hljs-string">"configure linter and typescript"</sp
 <span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
 git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
 git branch -M main
-git push -u origin main</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+git push -u origin main</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
@@ -632,8 +810,8 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p>This git repository is a <a href="https://en.wikipedia.org/wiki/Monorepo" target="_blank" rel="noreferrer noopener">monorepo</a>. It contains learning materials for multiple modules. You must focus on <code>learning-materials/frontend-web-development</code> folder.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
-<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
+<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the <code>docker-compose.yml</code> file.</p>
@@ -647,7 +825,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 8</strong>: Start the mariadb database using the following command. On first launch, wait until the database reported a complete initialisation (highlighted in output).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
 </span></span><span class='shcb-loc'><span>$ docker-compose up mariadb
 </span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
 </span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1
@@ -663,13 +841,13 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Added new Master_info <span class="hljs-string">''</span> to <span class="hljs-built_in">hash</span> table
 </span></span><mark class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld: ready <span class="hljs-keyword">for</span> connections.
 </span></mark><mark class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></mark></code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></mark></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker (using <code>Ctrl + C</code>). Then start the full stack. The backend API should notify a successful startup.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
 </span></span><span class='shcb-loc'><span>Building backend
 </span></span><span class='shcb-loc'><span>
 </span></span><span class='shcb-loc'><span>[... truncated]
@@ -705,7 +883,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.549Z backend:mysql-store Upgrading SQL triggers...
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.577Z backend:mysql-store Triggers updated successfully
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.582Z backend:app App listening on port 8080...
-</span></span></code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Let’s analyse logs above:</p>
@@ -920,18 +1098,18 @@ Register yourself as customer using public API.
 
 
 <div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
   <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+}</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
 
 
 
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
@@ -1602,180 +1780,6 @@ Register yourself as customer using public API.
     document.querySelectorAll('.hidden-until-responded').forEach(function (elem) { elem.style.display = 'none' })
   </script>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/">5. Quizz de fin de chapitre</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</title>
-		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Tue, 05 Jan 2021 06:28:58 +0000</pubDate>
-				<category><![CDATA[Chapitre 1. Introduction]]></category>
-		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=224</guid>
-
-					<description><![CDATA[<p>À propos des exercices et des corrections Ce document est le sujet d&#8217;une séance de travaux pratiques. Il est composé à la fois d&#8217;explications, de conseils et d&#8217;exercices. Pour les corrections, merci de vous référer à la vidéo associée. Prérequis Avoir suivi les chapitres précédents de ce cours; Disposer des droits d&#8217;administration sur sa machine &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/" class="more-link">Continuer la lecture de <span class="screen-reader-text">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<div class="video-container"><iframe width="660" height="371" src="https://www.youtube.com/embed/-wAcSVmmgqo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-
-
-
-<h4>À propos des exercices et des corrections</h4>
-
-
-
-<p>Ce document est le sujet d&rsquo;une séance de travaux pratiques. Il est composé à la fois d&rsquo;explications, de conseils et d&rsquo;exercices. Pour les corrections, merci de vous référer à la vidéo associée.</p>
-
-
-
-<h4>Prérequis</h4>
-
-
-
-<ul><li>Avoir suivi les chapitres précédents de ce cours;</li><li>Disposer des droits d&rsquo;administration sur sa machine pour installer VirtualBox;</li><li>Libérer au moins 30 Go d&rsquo;espace libre et 2Go de RAM sur votre machine;</li><li>Accéder à une connexion rapide pour télécharger les 4Go du programme d&rsquo;installation d&rsquo;Ubuntu.</li></ul>
-
-
-
-<h4>Objectifs pédagogiques</h4>
-
-
-
-<ul><li>Installer Ubuntu dans une machine virtuelle.</li><li>Comprendre le rôle d&rsquo;un hyperviseur de type 2.</li><li>Expliquer la différence entre un système invité et hôte.</li><li>Se familiariser avec l&rsquo;amorçage sur périphériques optiques et disques durs.</li><li>Expliquer ce que sont des fichiers ISO, des images disques et le « thin-provisioning ».</li><li>Configurer l&rsquo;espace disque, la mémoire et le processeur d&rsquo;un VM.</li></ul>
-
-
-
-<h4>Plusieurs OS sur la même machine ?!</h4>
-
-
-
-<p>Au cours de cette séance mélangeant théorie et pratique, nous allons installer Ubuntu Desktop dans un environnement virtualisé. De cette manière, nous pourrons exécuter plusieurs systèmes d&rsquo;exploitation sur la même machine. Dans cet environnement virtualisé, vous pourrez mener toute sorte d&rsquo;expérimentation sans risque de casser votre environnement principal. En cas de « boulette » dans le machine virtuelle, vous pouvez simplement la supprimer et la recréer.</p>
-
-
-
-<p>De prime abord, avoir 2 systèmes d&rsquo;exploitation résidant sur la même machine est configuration ésotérique. En effet, <a href="/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/introduction-et-objectifs-pedagogiques/">lors de l&rsquo;introduction</a>, je vous ai enseigné que l&rsquo;OS avait l&rsquo;exclusivité du contrôle du matériel. Il délègue ensuite des vues simplifiées aux logiciels.</p>
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="806" height="326" class="wp-image-231" style="width: 100%;" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-1.svg" alt=""><figcaption>Schéma du cas nominal. L&rsquo;OS a l&rsquo;exclusivité du contrôle du matériel. Les logiciels demandent systématiquement à l&rsquo;OS pour utiliser le matériel.</figcaption></figure>
-
-
-<p>Pourtant, nous allons aboutir à une configuration où plusieurs OS s&rsquo;exécuteront en parallèle et voudront chacun le contrôle exclusif de leur matériel. On pourrait penser qu&rsquo;ils seront en compétition. Mais grâce aux technologies de virtualisation, ce ne sera pas le cas.</p>
-
-
-<figure class="wp-block-image is-resized size-large"><img class="wp-image-235" style="width: 100%;" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema-Hardware-OS-Software-Hyperviseur-niveau-2.svg" alt=""><figcaption>Schéma faisant intervenir un hyperviseur de second niveau (par exemple VirtualBox).</figcaption></figure>
-
-
-<p>Nous avons cette fois-ci 2 systèmes en cours d&rsquo;exécution. Il ne peut y avoir qu&rsquo;un seul OS hôte, puisqu&rsquo;il a un accès direct au matériel. En revanche, les systèmes invités peuvent être aussi nombreux que vous le souhaitez. Chaque système invité s’exécute dans un environnement construit par VirtualBox. Du point de vue d&rsquo;un OS invité, il est seul dans son environnement.</p>
-
-
-
-<h4>Installation d&rsquo;un hyperviseur de niveau 2</h4>
-
-
-
-<p>Les hyperviseurs de niveau 2 les plus connus sont :</p>
-
-
-
-<ul><li>Oracle VirtualBox (opensource et gratuit), à récupérer sur la <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noreferrer noopener">page de téléchargement officielle</a>. Il est particulièrement simple d&rsquo;utilisation, fonctionne sur les principaux systèmes d&rsquo;exploitation (Windows, MacOS, Linux&#8230;) et est maintenu par la même entreprise que Java.</li><li>VMWare Player (gratuit), VMWare Workstation (payant), etc. Probablement l&rsquo;un des produits les plus aboutis du marché. Il fonctionne aussi sur les principaux OS. Je l&rsquo;aurais utilisé pour ce cours si le télécharger n&rsquo;était pas un parcours du combattant. Si vous êtes sous MacOS et cherchez un produit VMWare, regardez du côté de VMWare Fusion (payant).</li><li>Parallel Desktop est une  référence sur MacOS.</li></ul>
-
-
-
-<p>Pour ce cours, nous utiliserons VirtualBox pour sa facilité d&rsquo;utilisation et parce qu&rsquo;il est gratuit. Si vous rencontrez des problèmes avec VirtualBox, vous pouvez vous tourner vers VMWare Player, qui est plus stable d&rsquo;après mon expérience personnelle.</p>
-
-
-
-<p class="exercice"><strong>Exercice 1</strong> : vérifiez que vous avez au moins 30 Go de disque et 2 Go de RAM disponible sur votre machine hôte.</p>
-
-
-
-<p class="exercice"><strong>Exercice 2</strong> : téléchargez et installez VirtualBox sur votre machine. </p>
-
-
-
-<h4>Image ISO du support d&rsquo;installation d&rsquo;Ubuntu Desktop</h4>
-
-
-
-<p>Un fichier ISO est l&rsquo;image exacte d&rsquo;un CD/DVD. Le format ISO est standard et largement adopté. C&rsquo;est d&rsquo;ailleurs le principal format de distribution des supports d&rsquo;installation de systèmes d&rsquo;exploitation.</p>
-
-
-
-<p>Si vous vouliez installer ou réinstaller un système hôte depuis une image ISO, vous devriez d&rsquo;abord la graver (sur un CD, un DVD ou une clé USB), puis démarrer une machine à froid sur ce support. Cette dernière étape est parfois fastidieuse, puisque la procédure diffère d&rsquo;une carte mère à l&rsquo;autre&#8230; Mais heureusement, c&rsquo;est bien plus simple avec une machine virtuelle.</p>
-
-
-
-<p>Avec VirtualBox, nous n&rsquo;aurons qu&rsquo;à sélectionner l&rsquo;image ISO pendant la configuration de la machine virtuelle. Ensuite, cet ISO sera vu comme un DVD classique à l&rsquo;intérieur de la machine virtuelle.</p>
-
-
-
-<p class="exercice"><strong>Exercice 3</strong> : téléchargez l&rsquo;image ISO d&rsquo;Ubuntu Desktop depuis <a href="https://ubuntu.com/download" target="_blank" rel="noreferrer noopener">le site officiel</a> de son éditeur Canonical. </p>
-
-
-
-<h4>Créer et démarrer la machine virtuelle</h4>
-
-
-<div class="exercice" style="margin-bottom: 1em;">
-<p><strong>Exercice 4</strong>&nbsp;: créez une nouvelle machine virtuelle, sans la démarrer pour l&rsquo;instant. Au cours du processus d&rsquo;installation, soyez attentif aux explications intégrées à Virtualbox. La machine doit avoir les caractéristiques suivantes :</p>
-<ul style="margin-left: 1em; margin-bottom: 0;">
-<li>Système d&rsquo;exploitation invité : Ubuntu 64 bits</li>
-<li>1 Go de mémoire vive</li>
-<li>1 unique disque de 10 Go (préférez l&rsquo;option « taille dynamiquement allouée »)</li>
-</ul>
-</div>
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="980" height="586" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3.png" alt="" class="wp-image-309" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3.png 980w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3-300x179.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/image-3-768x459.png 768w" sizes="(max-width: 980px) 100vw, 980px" /><figcaption>Interface de Virtualbox à la fin de l&rsquo;exercice. Une machine virtuelle nommée « TP Ubuntu » est éteinte. La partie droite résume les caractéristiques du matériel virtualisé.</figcaption></figure>
-
-
-
-<p class="exercice"><strong>Question 1</strong> : Par défaut, l&rsquo;ordre d&rsquo;amorçage est « disquette », puis « optique » (CD/DVD) et enfin « disque dur ». Qu&rsquo;est-ce que l&rsquo;ordre d&rsquo;amorçage ? Pourquoi la machine virtuelle devra-t-elle amorcer sur un CD/DVD au premier démarrage ? </p>
-
-
-
-<p class="exercice"><strong>Question 2</strong> : Localisez le fichier contenant les données du disque dur virtuel. Quelle taille fait-il avant l&rsquo;installation ? Faites le lien avec le paramètre « taille allouée dynamiquement » et expliquez brièvement le principe de « thin-provisioning ».</p>
-
-
-
-<p class="exercice"><strong>Exercice 5</strong> : Démarrez la machine virtuelle et amorcez sur le support d&rsquo;installation. Au premier lancement de la machine virtuelle, VirtualBox vous demandera de sélectionner l&rsquo;image ISO.</p>
-
-
-
-<blockquote class="wp-block-quote"><p>FATAL: No bootable medium found!  System halted.</p><cite>Si vous rencontrez cette erreur, éteignez la machine virtuelle et configurez manuellement la cible du contrôleur de disque optique.</cite></blockquote>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="626" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-1024x626.gif" alt="" class="wp-image-326" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-1024x626.gif 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-300x183.gif 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Debug-no-bootable-device-on-virtualbox-768x469.gif 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>La procédure à suivre si le BIOS de la machine virtuelle ne détecte pas de disque optique sur lequel amorcer.</figcaption></figure>
-
-
-
-<p class="exercice"><strong>Exercice 6</strong> : Suivez la procédure d&rsquo;installation d&rsquo;Ubuntu. Elle est facile à prendre en main.</p>
-
-
-
-<p class="exercice"><strong>Question 3</strong> : Documentez-vous sur les « virtualbox guest addons ». À quoi servent-ils (listez 3 fonctionnalités minimum) ?</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># Lancez ces commandes dans un terminal de l'invité avant d'y installer les addons.</span>
-<span class="hljs-comment"># Elles installent les dépendances nécessaires.</span>
-sudo apt update
-sudo apt install gcc make</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="exercice"><strong>Exercice 7</strong> : Installez les « virtualbox guest addons » sur le système invité. Pour cela, vous devrez d&rsquo;abord installer 2 programmes sur Ubuntu, à savoir gcc et make. Ensuite, dans le menu « périphériques », cliquez sur « Insérer l&rsquo;image CD des additions invités ». La suite se passe à nouveau sur Ubuntu.</p>
-
-
-
-<p>Vous avez maintenant une installation d&rsquo;Ubuntu Desktop parfaitement fonctionnelle. Je vous invite à l&rsquo;explorer et à vous familiariser avec.</p>
-
-
-
-<p class="exercice"><strong>Exercice 8</strong> : En utilisant les onglets « Ressources » et « Système de fichiers » du moniteur système, comparez les ressources visibles par l&rsquo;OS invité avec les spécifications de la machine virtuelle.</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">4. Installation d’Ubuntu dans une machine virtuelle (Cours/TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
