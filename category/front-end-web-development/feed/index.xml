@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 12 Feb 2021 18:22:52 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 12 Feb 2021 20:28:01 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,42 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.6.1</generator>
 	<item>
+		<title>Quizz</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/quizz/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 12 Feb 2021 19:43:27 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1695</guid>
+
+					<description><![CDATA[<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available. GitThe main (or master) branch for git hf workflow is dedicated to: Single page applicationsWhat produces HTML in an Single Page Application? ComparisonsWhich rows are output?What is the output? DependenciesWhat are the risks inherent to dependency import? Copy &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/quizz/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Quizz</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizz</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available.</p>
+
+
+<p><strong>Git</strong><br><a href="https://thomas-veillard.fr/quizz/4b2454cb-64fe-4885-9876-0d905b8333c1/">The main (or master) branch for git hf workflow is dedicated to:</a></p>
+<p><strong>Single page applications</strong><br><a href="https://thomas-veillard.fr/quizz/24a77c23-be4b-49bf-a27f-43381047bd08/">What produces HTML in an Single Page Application?</a></p>
+<p><strong>Comparisons</strong><br><a href="https://thomas-veillard.fr/quizz/7d1d50c8-22a6-44f5-92c3-ed8430a01519/">Which rows are output?</a><br><a href="https://thomas-veillard.fr/quizz/3f4c00ae-e590-46ad-80f9-9d03f16a0844/">What is the output?</a></p>
+<p><strong>Dependencies</strong><br><a href="https://thomas-veillard.fr/quizz/3068fbce-4414-49b5-ac29-e6b1e1f88f99/">What are the risks inherent to dependency import?</a></p>
+<p><strong>Copy vs reference</strong><br><a href="https://thomas-veillard.fr/quizz/0c7a0ba2-efc9-42d4-9d2d-3fd4bee2988d/">What is the result ?</a></p>
+<p><strong>Object destructuring</strong><br><a href="https://thomas-veillard.fr/quizz/9b4c2b05-1053-41be-a0b5-8f6e3984c0af/">What is the output ?</a></p>
+<p><strong>Function arguments</strong><br><a href="https://thomas-veillard.fr/quizz/ef17d3dd-3355-43ee-abad-9821a7c5e2ea/">What is the result of this code?</a></p>
+<p><strong>Callbacks</strong><br><a href="https://thomas-veillard.fr/quizz/b4a89b4d-f1e4-4830-a968-77ebb32a83ff/">In what order are the lines executed?</a></p>
+<p><strong>Async/await</strong><br><a href="https://thomas-veillard.fr/quizz/e256f6ff-28b8-4713-bad3-b1151b4a8669/">What is the content of result?</a></p>
+<p><strong>Mixed syntax &amp; promises</strong><br><a href="https://thomas-veillard.fr/quizz/1e9c9b35-dee4-4045-844c-e20c6327c31c/">Analyze this example</a>.</p>
+<p><strong>Arrow functions</strong><br><a href="https://thomas-veillard.fr/quizz/6f2fd75d-9ed3-4652-b447-9d89b1d83567/">What is the output?</a><br><a href="https://thomas-veillard.fr/quizz/6eafa1cb-8389-4ebc-8ad9-e87be0ce722e/">Where is the bug?</a></p>
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizz</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>Project</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/the-project/</link>
 		

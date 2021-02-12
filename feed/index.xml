@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 12 Feb 2021 18:30:24 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 12 Feb 2021 20:28:01 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,42 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.6.1</generator>
 	<item>
+		<title>Quizz</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/quizz/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 12 Feb 2021 19:43:27 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1695</guid>
+
+					<description><![CDATA[<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available. GitThe main (or master) branch for git hf workflow is dedicated to: Single page applicationsWhat produces HTML in an Single Page Application? ComparisonsWhich rows are output?What is the output? DependenciesWhat are the risks inherent to dependency import? Copy &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/quizz/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Quizz</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizz</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available.</p>
+
+
+<p><strong>Git</strong><br><a href="https://thomas-veillard.fr/quizz/4b2454cb-64fe-4885-9876-0d905b8333c1/">The main (or master) branch for git hf workflow is dedicated to:</a></p>
+<p><strong>Single page applications</strong><br><a href="https://thomas-veillard.fr/quizz/24a77c23-be4b-49bf-a27f-43381047bd08/">What produces HTML in an Single Page Application?</a></p>
+<p><strong>Comparisons</strong><br><a href="https://thomas-veillard.fr/quizz/7d1d50c8-22a6-44f5-92c3-ed8430a01519/">Which rows are output?</a><br><a href="https://thomas-veillard.fr/quizz/3f4c00ae-e590-46ad-80f9-9d03f16a0844/">What is the output?</a></p>
+<p><strong>Dependencies</strong><br><a href="https://thomas-veillard.fr/quizz/3068fbce-4414-49b5-ac29-e6b1e1f88f99/">What are the risks inherent to dependency import?</a></p>
+<p><strong>Copy vs reference</strong><br><a href="https://thomas-veillard.fr/quizz/0c7a0ba2-efc9-42d4-9d2d-3fd4bee2988d/">What is the result ?</a></p>
+<p><strong>Object destructuring</strong><br><a href="https://thomas-veillard.fr/quizz/9b4c2b05-1053-41be-a0b5-8f6e3984c0af/">What is the output ?</a></p>
+<p><strong>Function arguments</strong><br><a href="https://thomas-veillard.fr/quizz/ef17d3dd-3355-43ee-abad-9821a7c5e2ea/">What is the result of this code?</a></p>
+<p><strong>Callbacks</strong><br><a href="https://thomas-veillard.fr/quizz/b4a89b4d-f1e4-4830-a968-77ebb32a83ff/">In what order are the lines executed?</a></p>
+<p><strong>Async/await</strong><br><a href="https://thomas-veillard.fr/quizz/e256f6ff-28b8-4713-bad3-b1151b4a8669/">What is the content of result?</a></p>
+<p><strong>Mixed syntax &amp; promises</strong><br><a href="https://thomas-veillard.fr/quizz/1e9c9b35-dee4-4045-844c-e20c6327c31c/">Analyze this example</a>.</p>
+<p><strong>Arrow functions</strong><br><a href="https://thomas-veillard.fr/quizz/6f2fd75d-9ed3-4652-b447-9d89b1d83567/">What is the output?</a><br><a href="https://thomas-veillard.fr/quizz/6eafa1cb-8389-4ebc-8ad9-e87be0ce722e/">Where is the bug?</a></p>
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizz</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>3. La ligne de commande et les entrées / sorties</title>
 		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/</link>
 		
@@ -1730,183 +1766,6 @@ Register yourself as customer using public API.
 
 <p class="exercice"><strong>Exercice 10</strong>: Au fait, sauriez-vous expliquer les différences entre un instantané et une sauvegarde ?</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/2-utiliser-les-instantanes-de-vm-et-changer-denvironnement-de-bureau-tp/">2. Instantanés de VM et changement d&rsquo;environnement de bureau (TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>1. Les interfaces graphiques</title>
-		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/1-les-interfaces-graphiques/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Wed, 13 Jan 2021 18:29:03 +0000</pubDate>
-				<category><![CDATA[Chapitre 2. Les interfaces utilisateur]]></category>
-		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=509</guid>
-
-					<description><![CDATA[<p>Ce chapitre est l&#8217;un des rares abordant la question des interfaces graphiques. En effet, ce cours se concentrera plutôt sur l&#8217;usage de Linux sur les serveurs. Toutefois, en commençant par ce sujet, j&#8217;espère adoucir la courbe d&#8217;apprentissage pour ceux et celles qui n&#8217;auraient pas expérimenté la ligne de commande auparavant. Aussi, pour bien comprendre les &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/1-les-interfaces-graphiques/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Les interfaces graphiques</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/1-les-interfaces-graphiques/">1. Les interfaces graphiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>Ce chapitre est l&rsquo;un des rares abordant la question des interfaces graphiques. En effet, ce cours se concentrera plutôt sur l&rsquo;usage de Linux sur les serveurs. Toutefois, en commençant par ce sujet, j&rsquo;espère adoucir la courbe d&rsquo;apprentissage pour ceux et celles qui n&rsquo;auraient pas expérimenté la ligne de commande auparavant.</p>
-
-
-
-<p>Aussi, pour bien comprendre les avantages et inconvénients de chaque solution, ne vaut-il pas les avoir toutes deux expérimentées ? Et puis, je rappelle que ce cours doit vous apporter une culture sur l&rsquo;écosystème qui gravite autour de Linux.</p>
-
-
-
-<h2>Du choix pour l&rsquo;environnement de bureau</h2>
-
-
-
-<p>Vous souvenez-vous de la grande diversité des distributions GNU/Linux ? Sans tomber dans les mêmes extrêmes, il y a également un large choix de gestionnaires de bureau. De quoi faire plaisir à tous ceux qui ont envie de changement et veulent personnaliser leur environnement de travail.</p>
-
-
-
-<p>Par chance, les différents gestionnaires de bureau proposent des expériences vraiment variées. En contrepartie, l&rsquo;expérience utilisateur change radicalement d&rsquo;une installation à l&rsquo;autre. Même les solutions techniques sous-jacentes diffèrent. Cela aboutit parfois à démultiplier les efforts de développement.</p>
-
-
-
-<h4>Gnome 3</h4>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="576" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/activities-overview-1024x576.jpg" alt="" class="wp-image-583" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/activities-overview-1024x576.jpg 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/activities-overview-300x169.jpg 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/activities-overview-768x432.jpg 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/activities-overview-1536x864.jpg 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/01/activities-overview-2048x1152.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>L&rsquo;interface Gnome Shell, source: <a href="https://www.gnome.org/gnome-3/">Gnome</a></figcaption></figure>
-
-
-
-<p>Gnome Shell est l&rsquo;interface par défaut d&rsquo;Ubuntu 20.04 et de Fedora, entre autres. Il supporte de multiples espaces de travail, des extensions, etc.</p>
-
-
-
-<p>La fondation Gnome développe de nombreux logiciels, graphiquement et techniquement très bien intégrés à Gnome Shell, tels que :</p>
-
-
-
-<ul><li>un éditeur de paramètres</li><li>un moniteur système (équivalant du gestionnaire de tâche sous Windows)</li><li>un courrielleur (gnome-evolution)</li><li>une boutique applicative (gnome-software)</li><li>un explorateur de fichiers (nautilus)</li><li>un bus de communication interprocessus (d-bus)</li><li>etc.</li></ul>
-
-
-
-<p>Ces logiciels sont construits avec la bibliothèque C GTK, elle aussi développée par la fondation Gnome. GTK est une bibliothèque « cross plateform ». À ce titre, elle est aussi présente sur MacOS et Windows.</p>
-
-
-
-<p>Gnome Shell a activement recours à l&rsquo;accélération matérielle (carte graphique) est réputé assez consommateur en ressources.</p>
-
-
-
-<h4>KDE</h4>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="576" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/plasma-launcher-1024x576.png" alt="" class="wp-image-585" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/plasma-launcher-1024x576.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/plasma-launcher-300x169.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/plasma-launcher-768x432.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/plasma-launcher-1536x864.png 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/01/plasma-launcher.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Capture d&rsquo;écran de l&rsquo;interface KDE Plasma, source <a href="https://kde.org/" target="_blank" rel="noreferrer noopener">KDE</a></figcaption></figure>
-
-
-
-<p>L&rsquo;interface Plasma de KDE paraîtra plus familière aux utilisateurs de Windows, que ce soit par son « menu démarré » ou la disposition de sa « barre de tâches ».</p>
-
-
-
-<p>KDE n&rsquo;en est pas moins une interface hautement personnalisable et extensible. Elle est construite sur la bibliothèque QT.</p>
-
-
-
-<p>Sur beaucoup de points, KDE et Gnome sont similaires. Les deux projets ont activement développé des logiciels s&rsquo;appuyant sur les mêmes fondations techniques que leurs gestionnaires de bureaux.</p>
-
-
-
-<p>Heureusement, un programme développé pour KDE fonctionne sur Gnome, et inversement. Toutefois, dans ces situations, on retrouvera sur la même machine des dépendances des deux environnements. Cet excédent de binaires dépasse facilement plusieurs centaines de mégaoctets sur le disque.</p>
-
-
-
-<h4>Les environnements légers</h4>
-
-
-
-<p>Gnome et KDE sont les principaux représentants, mais ils partagent la place avec LXDE et Xfce. Ces alternatives visent la sobriété et une consommation de ressource moindre.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="795" height="600" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/795px-LXDE_desktop_full.png" alt="" class="wp-image-588" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/795px-LXDE_desktop_full.png 795w, https://thomas-veillard.fr/wp-content/uploads/2021/01/795px-LXDE_desktop_full-300x226.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/795px-LXDE_desktop_full-768x580.png 768w" sizes="(max-width: 795px) 100vw, 795px" /><figcaption>L&rsquo;interface LXDE est plutôt minimaliste. Source <a href="https://wiki.lxde.org/en/File:LXDE_desktop_full.png" target="_blank" rel="noreferrer noopener">lxde.org</a></figcaption></figure>
-
-
-
-<h2>Les couches de l&rsquo;interface graphique</h2>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="768" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema_des_couches_de_linterface_graphique-1024x768.png" alt="" class="wp-image-590" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema_des_couches_de_linterface_graphique-1024x768.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema_des_couches_de_linterface_graphique-300x225.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema_des_couches_de_linterface_graphique-768x576.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Schema_des_couches_de_linterface_graphique.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Les différentes couches pour construire une interface sous GNU/Linux.<br>Source <a href="https://fr.wikipedia.org/wiki/Gestionnaire_de_fen%C3%AAtres" target="_blank" rel="noreferrer noopener">Wikipédia</a></figcaption></figure>
-
-
-
-<h4>Le matériel</h4>
-
-
-
-<p>Les traitements graphiques sont consommateurs de ressources de calcul. Bien que le processeur soit à même d&rsquo;effectuer ces rendus, on préfère déléguer ce genre de tâches à des cartes d&rsquo;accélération matérielle.</p>
-
-
-
-<p>On parle d&rsquo;accélération matérielle quand une tâche est assurée par un circuit spécialisé plutôt qu&rsquo;un processeur générique. La carte graphique en est une. Elle excelle en traitements parallélisés (donc pas que les images ou la 3D). À l&rsquo;inverse, un processeur est bien meilleur pour les tâches séquentielles.</p>
-
-
-
-<h4>Le noyau</h4>
-
-
-
-<p>Comme d&rsquo;habitude, le noyau contrôle le matériel et expose une couche d&rsquo;abstraction aux périphériques de plus haut niveau. Cette couche d&rsquo;abstraction est une API appelée le <a href="https://en.wikipedia.org/wiki/Direct_Rendering_Manager" target="_blank" rel="noreferrer noopener">Direct Rendering Manager (DRM)</a>. Elle reste de très bas niveau (comme le sous-entend le terme « direct ») et vise surtout à permettre la coopération de plusieurs processus.</p>
-
-
-
-<h4>Le système de fenêtrage</h4>
-
-
-
-<p>Le système de fenêtrage consomme l&rsquo;API DRM du noyau et expose à son tour une API de plus haut niveau. Cette dernière permet par exemple de rendu de formes géométriques et de polices. En prime, il gère la redirection de clavier et de la souris vers la fenêtre active.</p>
-
-
-
-<p>Sous Linux, X11 est le logiciel de référence. Il se fait toutefois progressivement remplacer par Wayland, qui apportera plus de sécurité en isolant mieux les fenêtres entre elles. Mais Wayland ne supporte pas encore toutes les fonctionnalités de X11.</p>
-
-
-
-<p>Comme nous le verrons dans un TP, X11 fonctionne sur un modèle de client-serveur. C&rsquo;est à dire qu&rsquo;il fonctionne comme un processus autonome et qu&rsquo;il expose son API via une communication interprocessus (capable de transiter sur le réseau). L&rsquo;autre processus qui utilise cette API est qualifié de client. X11 et le processus client sont complètement indépendants : ils peuvent être sur des machines différentes.</p>
-
-
-
-<h4>Le gestionnaire de fenêtres</h4>
-
-
-
-<p>Le gestionnaire de fenêtres fonctionne en coopération avec le système de fenêtrage. Il permet de positionner et de décorer les fenêtres. La décoration d&rsquo;une fenêtre consiste à afficher une bordure, un titre, des boutons de réduction, etc.</p>
-
-
-
-<h4>L&rsquo;interface graphique (ou gestionnaire de bureau)</h4>
-
-
-
-<p>On a vu des exemples d&rsquo;interface graphique en début de séance. Elles créent l&rsquo;environnement dans lequel existent les fenêtres. Cet environnement est composé d&rsquo;un lanceur d&rsquo;application (ex. un équivalent du « menu démarrer » de Windows), d&rsquo;un bureau, d&rsquo;une zone où retrouver les fenêtres réduites, d&rsquo;un espace d&rsquo;affichage des notifications, etc.</p>
-
-
-
-<p>Le gestionnaire de bureau contrôle le système de fenêtrage via son API. Pour rappel, cette API permet d&rsquo;afficher un texte, de dessiner des lignes et des rectangles. Construire une belle fenêtre à partir de ces primitives est fastidieux. Pour simplifier cette tâche, les éditeurs de bureaux développent des bibliothèques (comme QT et GTK). Grâce à elles, créer un bouton se fait en une seule instruction. Elles prennent aussi en charge les thèmes (couleurs, taille de textes). Ces bibliothèques peuvent être réutilisées par des logiciels tiers pour construire leurs interfaces, comme s&rsquo;ils assemblaient des briques préexistantes.</p>
-
-
-
-<h2>Que retenir ?</h2>
-
-
-
-<ul><li>Contrairement à Windows ou MacOS, l&rsquo;environnement graphique de GNU/Linux peut être installé, désinstallé ou remplacé par l&rsquo;utilisateur. Plusieurs environnements peuvent cohabiter entre eux.</li><li>Il existe plusieurs environnements graphiques. Gnome et KDE sont les plus largement diffusés.</li><li>Les bibliothèques contiennent des fonctionnalités facilement réutilisables. On avait déjà évoqué la bibliothèque standard C. Dans cette séance, vous avez découvert d&rsquo;autres. Par exemple, GTK et QT servent à construire des interfaces graphiques.</li><li>Sous GNU/Linux, le rendu de la fenêtre est fait par X11 ou Wayland. Ce sont des applications client-serveur. X11 peut fonctionner sur une machine distante (transparence réseau), autorisant l&rsquo;export de fenêtres lors d&rsquo;une session distante (on y revient lors d&rsquo;un TP).</li><li>Bien que le CPU soit capable de faire un rendu graphique, on lui préfère des circuits spécialisés comme une carte ou un contrôleur graphiques. Cela s&rsquo;appelle l&rsquo;accélération matérielle.</li><li>Le matériel est toujours utilisé au travers du noyau. Toutefois, la couche d’abstraction mise en place par le noyau reste de bas niveau (ex. DRM). Les éditeurs préfèrent utiliser des API et des bibliothèques de plus haut niveau.</li></ul>
-
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/1-les-interfaces-graphiques/">1. Les interfaces graphiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
