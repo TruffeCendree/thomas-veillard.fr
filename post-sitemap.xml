@@ -101,16 +101,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</loc>
-		<lastmod>2021-02-09T09:00:00+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</loc>
 		<lastmod>2021-02-05T07:37:01+00:00</lastmod>
 		<image:image>
@@ -146,8 +136,18 @@
 		<lastmod>2021-02-09T09:26:30+00:00</lastmod>
 	</url>
 	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</loc>
+		<lastmod>2021-02-12T06:35:10+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</loc>
-		<lastmod>2021-02-09T12:05:20+00:00</lastmod>
+		<lastmod>2021-02-12T07:28:21+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png</image:loc>
 		</image:image>
@@ -174,6 +174,12 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-dynamic-navigation-items.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-dynamic-navigation-items-on-reload.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>

@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/practical-works/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Tue, 09 Feb 2021 12:05:20 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 12 Feb 2021 07:28:21 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -74,7 +74,7 @@ git hf feature start authentication-<span class="hljs-keyword">and</span>-routin
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9639358755a68534bfd63a718680541b4e1f926e/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9639358755a68534bfd63a718680541b4e1f926e" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/2520313f41d90c53ca90e510b27b8a0d78679fdf/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/2520313f41d90c53ca90e510b27b8a0d78679fdf" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -105,7 +105,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/d90afc6f2b5eaffa6e03dfb4dd7baf2cb9472917/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/d90afc6f2b5eaffa6e03dfb4dd7baf2cb9472917" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/f9d1bd55c3069418a8d25c28c628c5e7d95112bf/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/f9d1bd55c3069418a8d25c28c628c5e7d95112bf" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -117,7 +117,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/fd4e68d458cfb634586a14423e4812f79964d12d/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/fd4e68d458cfb634586a14423e4812f79964d12d" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/04f07d3630867a0e483288b2bae1a6e12882c8e0/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/04f07d3630867a0e483288b2bae1a6e12882c8e0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -143,7 +143,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/3e0ffc419173f5ebd7d9541851c3a7e2365080fb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/3e0ffc419173f5ebd7d9541851c3a7e2365080fb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/d87a674fddbf150030130be8939f2da71a409d08/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/d87a674fddbf150030130be8939f2da71a409d08" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -163,7 +163,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9d6045149030833ff98f86c7689ce8cb175877c5/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9d6045149030833ff98f86c7689ce8cb175877c5" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/419ccbb35fafeecc33a24e403830700c6521cc54/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/419ccbb35fafeecc33a24e403830700c6521cc54" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -187,7 +187,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/77c6844e5480df8c207193cf644ff86db31f5b69/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/77c6844e5480df8c207193cf644ff86db31f5b69" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/584e834ba044ac2c88b81c8df6f36edeb7eab798/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/584e834ba044ac2c88b81c8df6f36edeb7eab798" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -223,7 +223,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/ce6004485d6366409ae88c7f098f78638787605c/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/ce6004485d6366409ae88c7f098f78638787605c" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/3ad2dcdb56ac6c87d48081cd9bb73f88513a07f7/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/3ad2dcdb56ac6c87d48081cd9bb73f88513a07f7" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -281,7 +281,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/3c361a82b74ac351175e7754b2268c7f2733abbc/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/3c361a82b74ac351175e7754b2268c7f2733abbc" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9f6645b9cf8ca31cdd4996e439ab68d27ef87074/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9f6645b9cf8ca31cdd4996e439ab68d27ef87074" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -364,7 +364,7 @@ total 60K
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/0cb6f32ef696f334487a9f8641c25bf1096e56b0/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/0cb6f32ef696f334487a9f8641c25bf1096e56b0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/0e5a4c0075f266ecc3f74016038887fa01c5cd21/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/0e5a4c0075f266ecc3f74016038887fa01c5cd21" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -417,7 +417,7 @@ total 60K
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/8b9d8a2743cda00a1d6f398d7b7b0e733c6b9dcb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/8b9d8a2743cda00a1d6f398d7b7b0e733c6b9dcb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/a3803b0dcef7fd9884ab7eb667db81f32f986e17/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/a3803b0dcef7fd9884ab7eb667db81f32f986e17" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -427,19 +427,77 @@ total 60K
 
 
 
-<p>At this step, the application suffers a major bug. It is not aware of the current session.</p>
+<p>At this step, the application suffers a major bug. It is not aware of the current user session.</p>
 
 
 
-<ul><li>The login link and profile links are always visible.</li><li>The login form is always available, even for logged users.</li><li>The profile page is accessible without session.</li></ul>
+<ul><li>The login and profile links are always visible.</li><li>The login form is always available, even for logged users.</li><li>The profile page is accessible without session.</li></ul>
 
 
 
-<p>This is because the <code>LoginComponent</code> state is destroyed when the user is redirected. We need to store current user identity somewhere it will persist during navigation. That is the purpose of <a href="https://angular.io/tutorial/toh-pt4" target="_blank" rel="noreferrer noopener">Angular Services</a> (among other things). Also, this identity should be retrieved from the server via XHR request on browser page reload.</p>
+<p>This is because the <code>LoginComponent</code> state is destroyed when the user is redirected. We need to store current user identity somewhere it will persist during navigation. That is the purpose of <a href="https://angular.io/tutorial/toh-pt4" target="_blank" rel="noreferrer noopener">Angular Services</a> (among other things like fetching data). Also, this identity should be retrieved from the server via XHR request on browser page reload.</p>
 
 
 
-<p>Hopefully, the <code>MeService</code> on which you will rely is ready. </p>
+<h4>The login and profile links are always visible</h4>
+
+
+
+<p>Let&rsquo;s start by fixing the first issue. <code>@angular/router</code> can resolve async data from a service when a route is triggered. Thoses data are provided to components by injecting the <code>ActivatedRoute</code> service. Here <a href="https://angular.io/api/router/Resolve" target="_blank" rel="noreferrer noopener">an example</a>.</p>
+
+
+
+<p>Hopefully, the <code>MeService</code> on which you will rely is ready. It implements an async method <code>resolve()</code> that returns the current user identity. So it is a valid resolver for <code>@angular.router</code>.</p>
+
+
+
+<p>You have to change your routes, so they look like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
+  { path: <span class="hljs-string">'login'</span>, component: LoginComponent, resolve: { me: MeService } },
+  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Now, components scoped inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>  can access the me property though <code>ActivatedRoute</code> service injection.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
+  <span class="hljs-comment">// once initialized, you can use it to dynamically adapt the navigation template.</span>
+  me: User;
+
+  <span class="hljs-keyword">constructor</span> (<span class="hljs-params">activatedRoute: ActivatedRoute</span>) {
+    <span class="hljs-comment">// When the NavigationComponent is mounted, the MeService has already been resolved.</span>
+    <span class="hljs-keyword">this</span>.me = activatedRoute.snapshot.data.me;
+  }
+}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>For some reasons, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. At this step, you still include it in <code>app.component.html</code>. You must change this (by moving it from <code>app-component</code> to <code>home-component</code>, <code>login-component</code>&#8230;).</p>
+
+
+
+<p class="exercice"><strong>Exercise 15</strong>: Use  <code>MeService</code> to resolve current user identity on all routes like explain above. Then,  conditionally show or hide the login and profile links depending on resolved (or unresolved) session.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="927" height="502" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-dynamic-navigation-items.gif" alt="" class="wp-image-1640"/><figcaption>Expected result: the « login » link is visible until the user logs in. Then, the profile link should be displaied.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="927" height="502" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-dynamic-navigation-items-on-reload.gif" alt="" class="wp-image-1642"/><figcaption>The user identity is fetched using MeService when a route is triggered. So, it should retrieve current session even after a browser reload.</figcaption></figure>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9d5075597a424d82a3e81363bab1445243369adb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9d5075597a424d82a3e81363bab1445243369adb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -547,7 +605,7 @@ total 60K
 <p>A single command written in a terminal (Powershell or Node Command Prompt for Windows) do the job. Ensure node is installed first. We also install <a href="https://eslint.org/" target="_blank" rel="noreferrer noopener">eslint</a>, which ensure coding conventions are applied across codebase.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h2>Workspace overview</h2>
@@ -557,7 +615,7 @@ total 60K
 <p>At the end of this seance, your workspace should match the following folder hierarchy.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
  ↳ dist                        <span class="hljs-comment"># the folder containing your bundled app. Only exists after running `ng build` command.</span>
  ↳ node_modules                <span class="hljs-comment"># the folder containing local dependencies. See package.json file and npm command for more info.</span>
  ↳ src                         <span class="hljs-comment"># source code (HTML, CSS, TS). It includes components, services, etc.</span>
@@ -568,7 +626,7 @@ total 60K
 learning-materials             <span class="hljs-comment"># my git repository you have to clone, which contains backend server, database and some tools</span>
  ↳ frontend-web-development    <span class="hljs-comment"># the folder containing every materials related to this practical work.</span>
     ↳ docker-compose.yml       <span class="hljs-comment"># configuration for docker-compose, that will take care of booting full backend infrastructure.</span>
-    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Angular project&rsquo;s structure is standard (thanks to @angular/cli). For more information about it, please refer to <a href="https://angular.io/guide/file-structure" target="_blank" rel="noreferrer noopener">official documentation</a>.</p>
@@ -590,42 +648,27 @@ learning-materials             <span class="hljs-comment"># my git repository yo
 <ul><li>Linux/Mac: run a terminal</li><li>Windows: use PowerShell or “Node.js Command Prompt”</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
-npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
+npm i -g @angular/cli @angular-devkit/core @angular-devkit/schematics @angular-eslint/schematics
 
 <span class="hljs-comment"># creates a new project with angular router enabled</span>
-ng new --routing --collection=@angular-eslint/schematics frontend
+ng new --routing --strict --collection=@angular-eslint/schematics frontend
 
 <span class="hljs-comment"># enter the 'frontend' folder</span>
-<span class="hljs-built_in">cd</span> frontend
-
-<span class="hljs-comment"># install locally ts-standard (our linter)</span>
-npm install --save-dev ts-standard
-</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>Then, replace <code>.eslintrc.json</code> file content with the following config. This uses ts-standard presets, with some small differences. Two minor checks are disabled for convenience and semicolons are always required. The reason is angular cli always adds semicolons on generated files. So our rules matches that pattern.</p>
+<p>The previous commands enabled the<code>:</code></p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
-  <span class="hljs-attr">"extends"</span>: [<span class="hljs-string">"standard-with-typescript"</span>, <span class="hljs-string">"standard-jsx"</span>],
-  <span class="hljs-attr">"parserOptions"</span>: { <span class="hljs-attr">"project"</span>: <span class="hljs-string">"./tsconfig.json"</span> },
-  <span class="hljs-attr">"rules"</span>: {
-    <span class="hljs-attr">"@typescript-eslint/explicit-function-return-type"</span>: <span class="hljs-string">"off"</span>,
-    <span class="hljs-attr">"@typescript-eslint/prefer-readonly"</span>: <span class="hljs-string">"off"</span>,
-    <span class="hljs-attr">"@typescript-eslint/strict-boolean-expressions"</span>: <span class="hljs-string">"off"</span>,
-    <span class="hljs-attr">"@typescript-eslint/semi"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"always"</span>]
-  }
-}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
-
-<p>Finally, edit the <code>tsconfig.json</code> to add <code>compilerOptions.strictNullChecks = true</code> (required by some linter&rsquo;s rules).</p>
+<ul><li><code>angular/router</code>, with argument <code>--routing</code> that let our angular app overriding and intercepting the browser URLs through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="noreferrer noopener">HTML5 History API</a>.</li><li>the strict mode of typescript with <code>--strict</code> argument. Among other things, Typescript will expect to know the type of each variable, so it can enforce safety checks. See <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank" rel="noreferrer noopener">typescript reference</a> for more info.</li><li><code>eslint</code> support, with rules recommended by the angular community. Linter&rsquo;s objectives is to ensure codebase consistency across the team and collaborator turnover. It sets guidelines, detects some bad coding patterns, etc.</li></ul>
 
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/b31ec0e583ce467e359ece5288c77af1e235a760/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/b31ec0e583ce467e359ece5288c77af1e235a760" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5444790f18c5e943fd9e6202c677b0db943e8ce0/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5444790f18c5e943fd9e6202c677b0db943e8ce0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -650,9 +693,9 @@ npm install --save-dev ts-standard
 <p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
 ng build --prod   <span class="hljs-comment"># build the app for production. A lot of optimisations are processed, reducing bundle size.</span>
-ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <div class="exercice" style="margin-bottom: 1em">
@@ -668,7 +711,7 @@ ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on
 </div>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
 ✔ Browser application bundle generation complete.
 ✔ Copying assets complete.
 ✔ Index html generation complete.
@@ -682,7 +725,7 @@ styles.css          | styles        | <span class="hljs-number">119</span> bytes
 
                     | Initial Total |   <span class="hljs-number">2.85</span> MB
 
-Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>At this step, you can open <code>frontend/dist/index.html</code> in your browser and explore the placeholder generated by <code>@angular/cli</code>.</p>
@@ -701,14 +744,10 @@ Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</sp
 
 
 
-<p>The <code>ng new</code> command already initialised a local git repository. During the previous questions, you did changes to project (ex. by <code>editing tsconfig.json</code> or <code>.eslintrc.json</code>).</p>
+<p>The <code>ng new</code> command already initialised a local git repository. If you have any pending change, you have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
 
 
-
-<p>You have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
 git status
 
 <span class="hljs-comment"># you probably want to commit new files in your repository.</span>
@@ -722,7 +761,7 @@ git commit -a -m <span class="hljs-string">"configure linter and typescript"</sp
 <span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
 git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
 git branch -M main
-git push -u origin main</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+git push -u origin main</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
@@ -762,8 +801,8 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p>This git repository is a <a href="https://en.wikipedia.org/wiki/Monorepo" target="_blank" rel="noreferrer noopener">monorepo</a>. It contains learning materials for multiple modules. You must focus on <code>learning-materials/frontend-web-development</code> folder.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
-<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
+<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the <code>docker-compose.yml</code> file.</p>
@@ -777,7 +816,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 8</strong>: Start the mariadb database using the following command. On first launch, wait until the database reported a complete initialisation (highlighted in output).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
 </span></span><span class='shcb-loc'><span>$ docker-compose up mariadb
 </span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
 </span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1
@@ -793,13 +832,13 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Added new Master_info <span class="hljs-string">''</span> to <span class="hljs-built_in">hash</span> table
 </span></span><mark class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld: ready <span class="hljs-keyword">for</span> connections.
 </span></mark><mark class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></mark></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></mark></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker (using <code>Ctrl + C</code>). Then start the full stack. The backend API should notify a successful startup.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
 </span></span><span class='shcb-loc'><span>Building backend
 </span></span><span class='shcb-loc'><span>
 </span></span><span class='shcb-loc'><span>[... truncated]
@@ -835,7 +874,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.549Z backend:mysql-store Upgrading SQL triggers...
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.577Z backend:mysql-store Triggers updated successfully
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.582Z backend:app App listening on port 8080...
-</span></span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Let’s analyse logs above:</p>
