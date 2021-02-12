@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 12 Feb 2021 17:35:04 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 12 Feb 2021 18:30:24 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,207 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.6.1</generator>
 	<item>
+		<title>3. La ligne de commande et les entrées / sorties</title>
+		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 12 Feb 2021 18:30:05 +0000</pubDate>
+				<category><![CDATA[Chapitre 2. Les interfaces utilisateur]]></category>
+		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=696</guid>
+
+					<description><![CDATA[<p>Rappels Lors des précédentes séances, nous avons abordé : bash, un interpréteur de ligne de commande et un langage de script. coreutils, un ensemble de programmes en lignes de commande du projet GNU. apt, pour installer des logiciels, en ligne de commande à nouveau. L&#8217;interpréteur de ligne de commande Bash est l’interpréteur le plus populaire &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. La ligne de commande et les entrées / sorties</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/">3. La ligne de commande et les entrées / sorties</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Rappels</h4>
+
+
+
+<p>Lors des précédentes séances, nous avons abordé :</p>
+
+
+
+<ul><li>bash, un interpréteur de ligne de commande et un langage de script.</li><li>coreutils, un ensemble de programmes en lignes de commande du projet GNU.</li><li>apt, pour installer des logiciels, en ligne de commande à nouveau.</li></ul>
+
+
+
+<h4>L&rsquo;interpréteur de ligne de commande</h4>
+
+
+
+<p>Bash est l’interpréteur le plus populaire sur les systèmes Unix et Unix-like. Il est installé et utilisé par défaut sur GNU/Linux, MacOS, etc.</p>
+
+
+
+<p>Pour simplifier, on peut décrire bash en mode interactif comme un environnement où l&rsquo;utilisateur pose une question (commande) et reçoit une réponse (message texte).</p>
+
+
+
+<p>Plus précisément, quand l&rsquo;utilisateur exécute une commande :</p>
+
+
+
+<ol><li>L&rsquo;utilisateur saisit une commande et appuie sur la touche « entrée ».</li><li>Bash analyse la commande, qui suit une syntaxe précise.</li><li>Bash lance le programme désigné avec des arguments.</li><li>Le programme s&rsquo;exécute, produit une réponse (notamment un texte) et quitte.</li><li>Bash affiche la réponse à l&rsquo;utilisateur, puis attend une nouvelle commande.</li></ol>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="768" height="553" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/ls-lhsa-etc.png" alt="" class="wp-image-698" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/ls-lhsa-etc.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/ls-lhsa-etc-300x216.png 300w" sizes="(max-width: 768px) 100vw, 768px" /><figcaption>Exécution de la commande « ls -lhsa /etc » et affichage de la réponse du programme « ls ». Ce logiciel permet de lister le contenu d&rsquo;un répertoire et d&rsquo;afficher des propriétés des fichiers (nom, taille, propriétaire, permissions&#8230;).</figcaption></figure>
+
+
+
+<h4>Structure d’une commande basique</h4>
+
+
+
+<p class="exercice">Considérons la commande suivante : <span style="color:#3d85c6" class="has-inline-color">ls</span> <span style="color:#741b47" class="has-inline-color">-lhsa</span> <span style="color:#bf9000" class="has-inline-color">/etc</span></p>
+
+
+
+<p><strong><span style="color:#3d85c6" class="has-inline-color">Le nom de la commande.</span></strong> En règle générale, une commande est en réalité un programme. Grâce à son nom, bash le retrouve dans les répertoires standards. Par exemple, cette commande lancera le programme dont le binaire se situe à l’emplacement /bin/ls. Ce logiciel permet de lister le contenu d&rsquo;un répertoire et d&rsquo;afficher des propriétés des fichiers (nom, taille, propriétaire, permissions&#8230;).</p>
+
+
+
+<p><strong><span style="color:#741b47" class="has-inline-color">Les options</span></strong> permettent de personnaliser le comportement. Pour ls, d’après le manuel:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># extrait de "man ls", commande qui permet d'accéder à la documentation de "ls"</span>
+-l	use a long listing format
+-s	<span class="hljs-built_in">print</span> the allocated size of each file, <span class="hljs-keyword">in</span> blocks
+-a	<span class="hljs-keyword">do</span> not ignore entries starting with .
+-h 	with -l and -s, <span class="hljs-built_in">print</span> sizes like 1K 234M 2G etc.</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong><span style="color:#bf9000" class="has-inline-color">Les arguments</span></strong> permettent généralement de spécifier la cible du traitement. Par exemple, ls attend optionnellement une liste de chemins de dossiers et de fichiers à examiner.</p>
+
+
+
+<h4>Les entrées d&rsquo;un processus</h4>
+
+
+
+<p>Un processus accepte des <strong>entrées</strong> (qui contiennent un problème à résoudre). Il effectue ensuite des traitements, qui aboutissent à un résultat. Ce résultat étant communiqué, il s&rsquo;agit d&rsquo;une <strong>sortie</strong>. Enfin, le traitement peut échouer, auquel cas le processus remonte l&rsquo;erreur. C&rsquo;est aussi une <strong>sortie</strong>, bien qu&rsquo;on s&rsquo;en serait passé 😱 !</p>
+
+
+
+<p class="exercice">Reprenons notre précédente commande : <span style="color:#3d85c6" class="has-inline-color">ls</span><span class="has-inline-color has-purple-color"> </span><span class="has-inline-color has-medium-pink-color">-lhsa /etc</span></p>
+
+
+
+<p>Cette commande aboutit à lancer un processus <code>ls</code>. Ce processus a diverses entrées :</p>
+
+
+
+<ul><li>Le contenu passé sur la ligne de commande après le nom du programme sera transmis au processus lors de son initialisation. Ainsi, l&rsquo;expression « <span class="has-inline-color has-medium-pink-color">-lhsa /etc</span> » a du sens pour le programme <code>ls</code> et formalise le problème à résoudre (cf. section précédente). On appelle ces contenus des « paramètres » et il s&rsquo;agit d&rsquo;une entrée pour le processus. À noter que cette entrée est immuable pour toute la vie du processus.</li></ul>
+
+
+
+<ul><li>Diverses informations contextuelles. Par exemple, le processus connait le chemin du répertoire courant (répertoire depuis lequel l&rsquo;utilisateur a lancé le processus). Il connait aussi l&rsquo;identité de l&rsquo;utilisateur, etc. </li></ul>
+
+
+
+<ul><li>D&rsquo;autres données peuvent arriver durant le cycle de vie du programme. Par exemple, un processus peut poser une question et laisser l&rsquo;utilisateur y répondre. Le processus reçoit chaque caractère saisi dans un flux. Ce flux venant du clavier s&rsquo;appelle l&rsquo;entrée standard.</li></ul>
+
+
+
+<ul><li>Bien sûr, d&rsquo;autres flux d&rsquo;entrée peuvent être initiés par le processus : typiquement une connexion réseau ou une lecture de fichier.</li></ul>
+
+
+
+<h4>Les sorties d&rsquo;un processus</h4>
+
+
+
+<p>Toujours dans notre exemple <code>ls -lhsa /etc</code>, le résultat du processus est un texte. On regardera au passage que ce format autorise une mise en page en colonne ou un rendu de couleurs.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell">thomas@thinkpad-laptop:~$ ls -lhsa /etc
+total 1,3M
+ 12K drwxr-xr-x 156 root root    12K janv. 18 19:06 .
+4,0K drwxr-xr-x  20 root root   4,0K mai   31  2020 ..
+4,0K drwxr-xr-x   3 root root   4,0K avril 23  2020 acpi
+4,0K -rw-r--r--   1 root root   3,0K avril 23  2020 adduser.conf
+4,0K drwxr-xr-x   3 root root   4,0K avril 23  2020 alsa
+ 12K drwxr-xr-x   2 root root    12K janv. 18 19:12 alternatives
+4,0K -rw-r--r--   1 root root    401 juil. 16  2019 anacrontab
+4,0K -rw-r--r--   1 root root    244 oct.   7 10:42 antidote.conf
+4,0K drwxr-xr-x   3 root root   4,0K oct.  23 10:19 apache2
+4,0K -rw-r--r--   1 root root    433 oct.   2  2017 apg.conf
+[...] sortie tronquée</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>D&rsquo;ailleurs, la sortie console d&rsquo;un processus est un flux. La commande <code>ls</code> laisse penser qu&rsquo;il faut attendre la complétion de l&rsquo;exécution du programme pour avoir le résultat. C&rsquo;est faux, et une commande que <code>htop</code> le démontre. Un processus peut envoyer des messages par intermittence.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="734" height="524" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/htop-actualise-sa-sortie-par-intermittence.gif" alt="" class="wp-image-863"/><figcaption>htop, un gestionnaire de tâches en ligne de commande, actualise son contenu par intermittence. Il prouve aussi qu&rsquo;un programme sans interface graphique peut utiliser des mises en formes évoluées et des couleurs. </figcaption></figure>
+
+
+
+<p>D&rsquo;autres productions de sorties auraient été envisageables : écriture d&rsquo;un fichier sur le disque, envoi d&rsquo;un message sur une connexion, etc.</p>
+
+
+
+<h4>Les flux standards d&rsquo;entrée/sortie</h4>
+
+
+
+<p>Sous Linux en particulier, les programmes en lignes de commande ont recours à 3 flux standards. Ils permettent au processus de communiquer avec l&rsquo;utilisateur ou d&rsquo;autres processus.</p>
+
+
+
+<ul><li>Le flux d&rsquo;<strong>entrée standard</strong>, nommé <strong>STDIN</strong> et indexé comme le flux numéro 0. Par exemple, quand bash est en attente d&rsquo;une commande, chaque caractère saisi par l&rsquo;utilisateur est envoyé à bash via son flux d&rsquo;entrée.</li></ul>
+
+
+
+<ul><li>Le flux de <strong>sortie standard</strong> (<strong>STDOUT</strong>, n°1). Un processus peut utiliser ce flux pour afficher une réponse à l&rsquo;utilisateur. Par exemple, <code>ls</code> affiche la liste des répertoires sous la forme d&rsquo;un texte. Vous avez aussi rencontré <code>htop</code>, qui écrit à intervalle de temps réguliers dans ce flux.</li></ul>
+
+
+
+<ul><li>Le flux de <strong>sortie d&rsquo;erreur standard </strong>(<strong>STDERR</strong>, n°2). De la même manière que le processus envoie un résultat valide sur STDOUT, il peut envoyer un message d&rsquo;erreur sur STDERR. <code>ls</code> utilise par exemple ce flux s&rsquo;il ne parvient pas à ouvrir un répertoire. Il s&rsquo;agit dans les 2 cas d&rsquo;un résultat produit par le processus, mais les différencier par le canal permet de les traiter séparément (notamment dans des scripts).</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="605" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Stdstreams-notitle.svg-1024x605.png" alt="" class="wp-image-847" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Stdstreams-notitle.svg-1024x605.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Stdstreams-notitle.svg-300x177.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Stdstreams-notitle.svg-768x454.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Stdstreams-notitle.svg-1536x908.png 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Stdstreams-notitle.svg.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Les flux standard sous Linux : entrée, sortie, erreur. Source <a href="https://fr.wikipedia.org/wiki/Flux_standard" target="_blank" rel="noreferrer noopener">Wikipédia</a></figcaption></figure>
+
+
+
+<p>Cette façon de gérer les flux standard sous Linux fait partie de la norme POSIX.</p>
+
+
+
+<h4>Redirection du flux vers un fichier</h4>
+
+
+
+<p>Vous avez ci-dessous une démonstration de redirection de flux.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="1125" height="697" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-redirection-de-flux.gif" alt="" class="wp-image-868"/><figcaption>Démonstration d&rsquo;une redirection de flux vers un fichier.</figcaption></figure>
+
+
+
+<ol><li>D&rsquo;abord, je saisis la commande <code>ls -lhsa</code>. La sortie est affichée en console. Un seul fichier <code>fichier.txt</code> existe dans le répertoire courant. Un explorateur graphique de fichiers est ouvert en arrière-plan dans le même répertoire.</li><li>Ensuite, j&rsquo;adapte cette commande pour rediriger la sortie vers un fichier. Cette commande adaptée est <code>ls -lhsa &gt; sortie_redirigee.txt</code>.</li><li>Aucune sortie n&rsquo;est affichée en console. Un fichier est créé dans le répertoire courant. Je l&rsquo;ouvre et on y retrouve le contenu de notre première commande.</li></ol>
+
+
+
+<p>Dans cette démonstration, nous avons seulement redirigé le flux STDOUT vers le fichier. En TP, nous verrons qu&rsquo;il est aussi possible de rediriger STDERR vers ce même fichier ou vers un autre.</p>
+
+
+
+<h4>Envoyer un fichier vers STDIN</h4>
+
+
+
+<p>S&rsquo;il est possible de rediriger les flux de sortie STDOUT et STDERR vers un fichier, attendez-vous à ce que rediriger un fichier vers STDIN le soit aussi 😋.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/">3. La ligne de commande et les entrées / sorties</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>Project</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/the-project/</link>
 		
@@ -104,8 +305,8 @@
 <p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>authentication-and-routing</code>. On Github, you should see a branch called <code>feature/authentication-and-routing</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
-git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
+git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h2>Basic navigation</h2>
@@ -135,12 +336,12 @@ git hf feature start authentication-<span class="hljs-keyword">and</span>-routin
 <p>The <code>@angular/cli</code> is able to generate some pieces of code, like a component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
 $ ng generate component navigation
 CREATE src/app/navigation/navigation.component.css (<span class="hljs-number">0</span> bytes)
 CREATE src/app/navigation/navigation.component.html (<span class="hljs-number">25</span> bytes)
 CREATE src/app/navigation/navigation.component.ts (<span class="hljs-number">291</span> bytes)
-UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 4</strong>: Commit any existing change on git, then generate a new component called <code>navigation</code>. Examine changes made by <code>@angular/cli</code> (you can use git and the output of <code>ng generate</code> command). Finally, move the mat-toolbar into <code>navigation.component</code>. Visually, the result should be identical.</p>
@@ -280,7 +481,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <p>The same way we prefer <code>routerLink</code> over <code>href</code> because it does not reload the <code>Single Page Application</code>, you should use the <code>@angular/router</code> from your typescript controller (ex. from your submit method in <code>LoginComponent</code>). Here an example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/router'</span>;
 
 <span class="hljs-meta">@Component</span>({
@@ -294,7 +495,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
   <span class="hljs-keyword">async</span> submit () {
     <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.router.navigateByUrl(<span class="hljs-string">'/profile'</span>);
   }
-}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="margin-bottom: 1em;">
 <p><strong>Exercise 11</strong>: This example is rich of typescript and angular features. Let&rsquo;s analyse it.</p>
@@ -364,14 +565,14 @@ total 60K
 <p>You are most likely interested in API and models’ definitions. For example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
 </span></span><span class='shcb-loc'><span><span class="hljs-keyword">import</span> { Request, Response } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 </span></span><mark class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
 </span></mark><mark class='shcb-loc'><span>    email: <span class="hljs-built_in">string</span>;
 </span></mark><mark class='shcb-loc'><span>    password: <span class="hljs-built_in">string</span>;
 </span></mark><mark class='shcb-loc'><span>}
 </span></mark><span class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">req: Request, res: Response</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;</span>;
-</span></span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the back-end is incompatible with the front-end usage, the typescript compiler catches it.</p>
@@ -385,7 +586,7 @@ total 60K
 <p> </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
 </span></span><span class='shcb-loc'><span>{
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compileOnSave"</span>: <span class="hljs-literal">false</span>,
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compilerOptions"</span>: {
@@ -403,7 +604,7 @@ total 60K
 </span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictTemplates"</span>: <span class="hljs-literal">true</span>
 </span></span><span class='shcb-loc'><span>  }
 </span></span><span class='shcb-loc'><span>}
-</span></span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="1141" height="777" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif" alt="" class="wp-image-1613"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
@@ -433,7 +634,7 @@ total 60K
 <p class="exercice"><strong>Exercise 14</strong>: Using the <code>@angular/cli</code>, generate <code>me.service.ts</code> and implement <code>resolve</code>, <code>login</code> and <code>logout</code> methods. Finally, update accordly the <code>LoginComponent</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login'</span>;
 <span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/models/user'</span>;
 
 <span class="hljs-keyword">interface</span> IMeService {
@@ -460,7 +661,7 @@ total 60K
    * Returns Promise&lt;void&gt; if success.
    */</span>
   logout: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt;
-}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
@@ -502,15 +703,15 @@ total 60K
 <p>You have to change your routes, so they look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
   { path: <span class="hljs-string">'login'</span>, component: LoginComponent, resolve: { me: MeService } },
-  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>Now, components scoped inside the <code>&lt;router-outlet>&lt;/router-outlet></code>  can access the <code>me</code> property through <code>ActivatedRoute</code> service injection.</p>
+<p>Now, components scoped inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>  can access the <code>me</code> property through <code>ActivatedRoute</code> service injection.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
   <span class="hljs-comment">// once initialized, you can use it to dynamically adapt the navigation template.</span>
   me: User;
 
@@ -518,10 +719,10 @@ total 60K
     <span class="hljs-comment">// When the NavigationComponent is mounted, the MeService has already been resolved.</span>
     <span class="hljs-keyword">this</span>.me = activatedRoute.snapshot.data.me;
   }
-}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>For some reason, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet>&lt;/router-outlet></code>. At this step, you include <code>app-navigation</code> in <code>app.component.html</code>. You must move it to <code>home-component</code>, <code>login-component</code>&#8230;</p>
+<p>For some reason, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. At this step, you include <code>app-navigation</code> in <code>app.component.html</code>. You must move it to <code>home-component</code>, <code>login-component</code>&#8230;</p>
 
 
 
@@ -542,6 +743,55 @@ total 60K
   Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9d5075597a424d82a3e81363bab1445243369adb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9d5075597a424d82a3e81363bab1445243369adb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
+
+
+
+<h4>The login form is always available, even for logged users.</h4>
+
+
+
+<p><a href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/" target="_blank" rel="noreferrer noopener">Angular Guards</a> execute codes when a route is triggered. You already experienced resolvers that are useful to mount components once they fetched data from the API. This time, you need a <code>CanActivate</code> guard.</p>
+
+
+<pre class="wp-block-code"><div><code class="hljs">ng generate guard unauthenticated
+? Which interfaces would you like to implement? CanActivate
+CREATE src/app/unauthenticated.guard.spec.ts (386 bytes)
+CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
+
+
+<p class="exercice"><strong>Exercise 16</strong>: Implement <code>UnauthenticatedGuard#canActivate()</code> method. It returns a <code>UrlTree</code> redirecting to <code>/profile</code> if user is already logged. Else, it allows activation of <code>/login</code>.</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h4>The profile page is accessible without session.</h4>
+
+
+
+<p class="exercice"><strong>Exercise 17</strong>: Implement <code>AuthenticatedGuard#canActivate()</code> method for <code>/profile</code>.</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/bf79236edb6480168294c9fedc9816d08fc810e8/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/bf79236edb6480168294c9fedc9816d08fc810e8" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h2>The final touch</h2>
+
+
+
+<p class="exercice"><strong>Exercise 18</strong>: A logout button would be great. Add it to the navigation. Optionally, you may import an icon library like <a href="https://fontawesome.com/" target="_blank" rel="noreferrer noopener">FontAwesome</a>.</p>
 
 
 
@@ -653,7 +903,7 @@ total 60K
 <p>A single command written in a terminal (Powershell or Node Command Prompt for Windows) do the job. Ensure node is installed first. We also install <a href="https://eslint.org/" target="_blank" rel="noreferrer noopener">eslint</a>, which ensure coding conventions are applied across codebase.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h2>Workspace overview</h2>
@@ -663,7 +913,7 @@ total 60K
 <p>At the end of this seance, your workspace should match the following folder hierarchy.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
  ↳ dist                        <span class="hljs-comment"># the folder containing your bundled app. Only exists after running `ng build` command.</span>
  ↳ node_modules                <span class="hljs-comment"># the folder containing local dependencies. See package.json file and npm command for more info.</span>
  ↳ src                         <span class="hljs-comment"># source code (HTML, CSS, TS). It includes components, services, etc.</span>
@@ -674,7 +924,7 @@ total 60K
 learning-materials             <span class="hljs-comment"># my git repository you have to clone, which contains backend server, database and some tools</span>
  ↳ frontend-web-development    <span class="hljs-comment"># the folder containing every materials related to this practical work.</span>
     ↳ docker-compose.yml       <span class="hljs-comment"># configuration for docker-compose, that will take care of booting full backend infrastructure.</span>
-    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Angular project&rsquo;s structure is standard (thanks to @angular/cli). For more information about it, please refer to <a href="https://angular.io/guide/file-structure" target="_blank" rel="noreferrer noopener">official documentation</a>.</p>
@@ -696,14 +946,14 @@ learning-materials             <span class="hljs-comment"># my git repository yo
 <ul><li>Linux/Mac: run a terminal</li><li>Windows: use PowerShell or “Node.js Command Prompt”</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
 npm i -g @angular/cli @angular-devkit/core @angular-devkit/schematics @angular-eslint/schematics
 
 <span class="hljs-comment"># creates a new project with angular router enabled</span>
 ng new --routing --strict --collection=@angular-eslint/schematics frontend
 
 <span class="hljs-comment"># enter the 'frontend' folder</span>
-<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The previous commands enabled the<code>:</code></p>
@@ -741,9 +991,9 @@ ng new --routing --strict --collection=@angular-eslint/schematics frontend
 <p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
 ng build --prod   <span class="hljs-comment"># build the app for production. A lot of optimisations are processed, reducing bundle size.</span>
-ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <div class="exercice" style="margin-bottom: 1em">
@@ -759,7 +1009,7 @@ ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on
 </div>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
 ✔ Browser application bundle generation complete.
 ✔ Copying assets complete.
 ✔ Index html generation complete.
@@ -773,7 +1023,7 @@ styles.css          | styles        | <span class="hljs-number">119</span> bytes
 
                     | Initial Total |   <span class="hljs-number">2.85</span> MB
 
-Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>At this step, you can open <code>frontend/dist/index.html</code> in your browser and explore the placeholder generated by <code>@angular/cli</code>.</p>
@@ -795,7 +1045,7 @@ Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</sp
 <p>The <code>ng new</code> command already initialised a local git repository. If you have any pending change, you have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
 git status
 
 <span class="hljs-comment"># you probably want to commit new files in your repository.</span>
@@ -809,7 +1059,7 @@ git commit -a -m <span class="hljs-string">"configure linter and typescript"</sp
 <span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
 git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
 git branch -M main
-git push -u origin main</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+git push -u origin main</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
@@ -849,8 +1099,8 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p>This git repository is a <a href="https://en.wikipedia.org/wiki/Monorepo" target="_blank" rel="noreferrer noopener">monorepo</a>. It contains learning materials for multiple modules. You must focus on <code>learning-materials/frontend-web-development</code> folder.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
-<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
+<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the <code>docker-compose.yml</code> file.</p>
@@ -864,7 +1114,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 8</strong>: Start the mariadb database using the following command. On first launch, wait until the database reported a complete initialisation (highlighted in output).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
 </span></span><span class='shcb-loc'><span>$ docker-compose up mariadb
 </span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
 </span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1
@@ -880,13 +1130,13 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Added new Master_info <span class="hljs-string">''</span> to <span class="hljs-built_in">hash</span> table
 </span></span><mark class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld: ready <span class="hljs-keyword">for</span> connections.
 </span></mark><mark class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></mark></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></mark></code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker (using <code>Ctrl + C</code>). Then start the full stack. The backend API should notify a successful startup.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
 </span></span><span class='shcb-loc'><span>Building backend
 </span></span><span class='shcb-loc'><span>
 </span></span><span class='shcb-loc'><span>[... truncated]
@@ -922,7 +1172,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.549Z backend:mysql-store Upgrading SQL triggers...
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.577Z backend:mysql-store Triggers updated successfully
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.582Z backend:app App listening on port 8080...
-</span></span></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Let’s analyse logs above:</p>
@@ -1137,18 +1387,18 @@ Register yourself as customer using public API.
 
 
 <div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
   <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+}</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
 
 
 
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
@@ -1657,168 +1907,6 @@ Register yourself as customer using public API.
 
 <p></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/1-les-interfaces-graphiques/">1. Les interfaces graphiques</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>5. Quizz de fin de chapitre</title>
-		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Wed, 06 Jan 2021 22:02:31 +0000</pubDate>
-				<category><![CDATA[Chapitre 1. Introduction]]></category>
-		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=357</guid>
-
-					<description><![CDATA[<p>Testez vos connaissances acquises lors de ce chapitre. En cliquant sur le bouton « voir les réponses » en fin de quiz, vous accéderez également aux explications détaillées. Vous pouvez considérer ces explications comme un complément du cours principal. Parmi ces choix, lequel ou lesquels sont des systèmes d&#8217;exploitation open source&#160;? Microsoft Windows est un système d&#8217;exploitation &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/" class="more-link">Continuer la lecture de <span class="screen-reader-text">5. Quizz de fin de chapitre</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/">5. Quizz de fin de chapitre</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<p style="margin-bottom: 3em;">Testez vos connaissances acquises lors de ce chapitre. En cliquant sur le bouton « voir les réponses » en fin de quiz, vous accéderez également aux explications détaillées. Vous pouvez considérer ces explications comme un complément du cours principal.</p>
-
-
-<h4>Parmi ces choix, lequel ou lesquels sont des systèmes d&rsquo;exploitation open source&nbsp;?</h4>
-
-
-<div style='margin-bottom: 2em'><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-0' id='quizz-0-0' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-0-0' style='text-align: left'>Windows</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-0' id='quizz-0-1' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-0-1' style='text-align: left'>MacOs</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-0' id='quizz-0-2' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-0-2' style='text-align: left'>GNU/Linux</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-0' id='quizz-0-3' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-0-3' style='text-align: left'>LibreOffice</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-0' id='quizz-0-4' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-0-4' style='text-align: left'>Ubuntu</label></div></div>
-
-<div class="hidden-until-responded">
-<p><strong>Microsoft Windows</strong> est un système d&rsquo;exploitation propriétaire, dont l&rsquo;utilisation est soumise à des licences payantes.</p>
-<p>D&rsquo;un côté, des versions OEM sont conçues pour les intégrateurs et fabricants de PC. Le client final en ignore le coût, car il est intégré au prix de l&rsquo;ordinateur neuf. Les licences OEM sont solidaires de la machine et ne peuvent pas être migrées sur un autre ordinateur.</p>
-<p>De l&rsquo;autre, les clients peuvent acheter des licences au détail. Ces dernières concernent tout particulièrement les entreprises exploitant l&rsquo;édition Windows Server.</p>
-<p>En effet, Microsoft a adopté une tarification fonction de la quantité de cœurs CPU et du nombre d&rsquo;utilisateurs connectés simultanés. Dans le cas des serveurs, les tarifs des licences peuvent dépasser la valeur d&rsquo;achat du matériel. Malheureusement pour les entreprises, la politique de Microsoft vis-à- vis des licences a connu plusieurs remaniements, avec parfois de lourds impacts financiers.</p>
-<p><strong>MacOS</strong> est un système d&rsquo;exploitation de la famille Unix. Il est commercialisé par Apple, qui n&rsquo;autorise son installation que sur ses propres modèles d&rsquo;ordinateurs. Même combat pour iOS.</p>
-<p><strong>GNU/Linux</strong> est l&rsquo;union des projets <strong>GNU</strong> et <strong>Linux</strong>. Les deux projets utilisent la GPL (General Public Licence). Il s&rsquo;agit d&rsquo;une licence libre (donc qui va au-delà d&rsquo;une licence open-source en matière de liberté du code et des usages). Notez au passage que l&rsquo;on doit le projet GNU et la licence GPL au même instigateur : Richard Stallman !</p>
-<p><strong>Libreoffice</strong> est hors course&#8230; C&rsquo;est une suite bureautique, donc n&rsquo;a rien à voir avec un OS.</p>
-<p><strong>Ubuntu</strong> est une distribution GNU/Linux, au même titre que Debian.</p>
-</div>
-
-
-<h4>Quelle(s) solution(s) ai-je si mon système GNU/Linux ne reconnait pas un composant matériel ?</h4>
-
-
-<div style='margin-bottom: 2em'><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-1' id='quizz-1-0' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-1-0' style='text-align: left'>Remplacer ce composant par un modèle supporté.</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-1' id='quizz-1-1' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-1-1' style='text-align: left'>Utiliser une version plus récente du noyau Linux.</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-1' id='quizz-1-2' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-1-2' style='text-align: left'>Installer ou activer un module noyau, en particulier un pilote.</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-1' id='quizz-1-3' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-1-3' style='text-align: left'>Récupérer la référence exacte de mon modèle et faire une recherche.</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-1' id='quizz-1-4' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-1-4' style='text-align: left'>Récupérer et analyser les journaux de mon système.</label></div></div>
-
-<div class="hidden-until-responded">
-<p>Parfois, certains composants se montrent récalcitrants sous Linux. Plusieurs raisons peuvent l&rsquo;expliquer.</p>
-<ul>
-<li>Le composant est peut-être trop récent, et votre version du noyau ne le supporte pas encore. Certaines distributions laissent leurs utilisateurs choisir entre le noyau le plus stable, et un second plus récent. Ubuntu, par exemple, propose <a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack">la Hardware Enablement Stack (HWE)</a>.</li>
-<li>Le matériel est exotique, ou du moins la base d&rsquo;utilisateur n&rsquo;est pas assez développée pour justifier des développements de drivers. Les cartes Wifi et Bluetooth rentrent parfois dans cette catégorie. Linux ayant du mal à percer sur le marché des ordinateurs personnels. Donc cette gamme n&rsquo;est pas totalement supportée. D&rsquo;ailleurs, le support logiciel de ce composant pourrait ne jamais venir, ne vous laissant pas d&rsquo;autre choix que de le remplacer.</li>
-</ul>
-<p>Finalement, toutes les propositions étaient admissibles. Certaines sont toutefois plus abordables que d&rsquo;autres.&nbsp;</p>
-</div>
-
-
-<h4>Combien d&rsquo;utilisateurs au maximum peuvent utiliser une machine Linux ?</h4>
-
-
-<div style='margin-bottom: 2em'><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-2' id='quizz-2-0' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-2-0' style='text-align: left'>Un seul utilisateur</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-2' id='quizz-2-1' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-2-1' style='text-align: left'>Jusqu&rsquo;à 5 utilisateurs</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-2' id='quizz-2-2' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-2-2' style='text-align: left'>Un très grand nombre</label></div></div>
-
-<div class="hidden-until-responded">
-<p>GNU/Linux est un système multi-utilisateur, ce qui exclut de fait le premier choix. Chaque utilisateur est désigné par un identifiant numérique unique appelé « uid ». Il semblerait que depuis la version 2.6 du noyau, cet identifiant soit codé sur 4 octets (source <a href="https://serverfault.com/questions/201136/maximum-number-of-users-on-linux">ServerFault</a>). Il y aurait donc 2^(4*8) = 2^32 = plus de 4 milliards d&rsquo;uids disponibles. Autant dire que les limitations de la machine (RAM, Disque, CPU) seraient atteintes bien avant que la réserve d&rsquo;uids disponibles ne se tarisse !</p>
-<p>Par ailleurs, juste après son installation, votre système a déjà probablement dépassé la dizaine d&rsquo;utilisateurs, en incluant les comptes de services. Chaque utilisateur a une ligne dans le fichier /etc/passwd. Vous pouvez donc facilement compter le nombre d&rsquo;utilisateurs sur votre système.</p>
-</div>
-
-
-<h4>Qu&rsquo;est-ce qu&rsquo;un processus ?</h4>
-
-
-<div style='margin-bottom: 2em'><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-3' id='quizz-3-0' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-3-0' style='text-align: left'>Un programme en cours d&rsquo;exécution</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-3' id='quizz-3-1' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-3-1' style='text-align: left'>Un utilisateur procédurié, qui remet en cause la politique du système</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-3' id='quizz-3-2' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-3-2' style='text-align: left'>Une succession d&rsquo;activités qui aboutissent à un résultat</label></div></div>
-
-<div class="hidden-until-responded">
-<p>Le terme « processus » a effectivement plusieurs sens.</p>
-<ul id="block-295d0153-5d85-4908-ac0e-ecee90967860" class="block-editor-rich-text__editable block-editor-block-list__block wp-block is-selected rich-text" tabindex="0" role="group" contenteditable="true" aria-multiline="true" aria-label="Bloc&nbsp;: Liste" data-block="295d0153-5d85-4908-ac0e-ecee90967860" data-type="core/list" data-title="Liste">
-<li>Dans le langage courant, un processus est un ensemble d&rsquo;étapes qui transforment des entrées en des résultats souhaités. Dans ce contexte, vous entendrez aussi parler de procédures. Il s&rsquo;agit cette fois-ci de règles à respecter pour obtenir le résultat souhaité. Elles servent également de critères d&rsquo;observation du processus, notamment lors d&rsquo;audits.</li>
-<li>Dans le contexte du système d&rsquo;exploitation, un processus est défini comme un programme en cours d&rsquo;exécution. Un processus appartient à l&rsquo;utilisateur qui l&rsquo;a lancé et mobilise des ressources (temps de calcul, mémoire vive&#8230;). Avant d&rsquo;être lancé, un programme n&rsquo;est jamais qu&rsquo;un fichier au format ELF (Executable and Linkable Format) sur le disque. Un chapitre entier sera dédié aux processus.</li>
-</ul>
-</div>
-
-
-<h4>Au sens strict du terme, Linux désigne :</h4>
-
-
-<div style='margin-bottom: 2em'><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-4' id='quizz-4-0' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-4-0' style='text-align: left'>Seulement le noyau d&rsquo;un système GUI/Linux</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-4' id='quizz-4-1' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-4-1' style='text-align: left'>Seulement le noyau d&rsquo;un système GNU/Linux</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-4' id='quizz-4-2' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-4-2' style='text-align: left'>Seulement le noyau et les utilitaires de base</label></div></div>
-
-<div class="hidden-until-responded">
-<p>Et oui ! Linux n&rsquo;est que le noyau d&rsquo;un système GNU/Linux. J&rsquo;ai consacré la moitié du <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/" data-wplink-url-error="true">poste sur la genèse de Linux</a> à ce propos.</p>
-</div>
-
-
-<h4>La licence open source assure que :</h4>
-
-
-<div style='margin-bottom: 2em'><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-5' id='quizz-5-0' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-5-0' style='text-align: left'>Le logiciel est gratuit</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-5' id='quizz-5-1' data-ok='0' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-5-1' style='text-align: left'>Le code source est téléchargeable sur internet</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-5' id='quizz-5-2' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-5-2' style='text-align: left'>Que n&rsquo;importe qui peut utiliser le logiciel</label></div></div>
-
-<div class="hidden-until-responded">
-<ul>
-<li>Un logiciel open-source n&rsquo;est pas obligatoirement gratuit. Il vous apporte seulement la garantie que son code source est facilement consultable. Sinon, de grandes entreprises comme Red Hat n&rsquo;auraient pas pu bâtir d&rsquo;activité lucrative de vente de licences pour leur distribution Linux. Red Hat, c&rsquo;est l&rsquo;un des plus grands contributeurs à Linux et son écosystème. Mais c&rsquo;est aussi une entreprise valorisée à 34 milliards de dollars lors de <a href="https://www.lefigaro.fr/secteur/high-tech/2018/10/29/32001-20181029ARTFIG00098-pourquoi-ibm-rachete-red-hat-pour-34-milliards-de-dollars.php">son rachat par IBM</a>. Chapeau (rouge) bas pour ce succès !</li>
-<li>La diffusion des sources sur internet est devenue la normalité, notamment pour des raisons de commodité et de simplicité. Mais un logiciel n&rsquo;est pas tenu d&rsquo;en faire son canal de diffusion pour être éligible à une licence open-source. Il doit seulement garantir que l&rsquo;accès à ce code est facile.</li>
-</ul>
-</div>
-
-
-<h4>Lesquelles de ces propositions sont justes ?</h4>
-
-
-<div style='margin-bottom: 2em'><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-6' id='quizz-6-0' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-6-0' style='text-align: left'>Linux est en situation de quasi-monopole sur le segment du HPC (High Performance Computing).</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-6' id='quizz-6-1' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-6-1' style='text-align: left'>Linux est populaire sur les téléphones et les tablettes.</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-6' id='quizz-6-2' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-6-2' style='text-align: left'>Android est une distribution Linux, bien que profondément modifiée.</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-6' id='quizz-6-3' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-6-3' style='text-align: left'>La plupart des serveurs Linux n&rsquo;ont pas d&rsquo;interface graphique.</label></div><div style='display: flex; align-items: center; margin-bottom: 0.2em'><input type='checkbox' name='quizz-6' id='quizz-6-4' data-ok='1' style='margin-left: 0.5em; margin-right: 0.6em'/><label for='quizz-6-4' style='text-align: left'>La plupart des serveurs Linux ne peuvent pas être contrôlés avec une souris.</label></div></div>
-
-<div class="hidden-until-responded">
-<p>Toutes ces propositions étaient exactes. Je vous ressors la petite infographique d&rsquo;Intel sur le sujet, déjà présentée à la fin de la séance <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/bref-historique-de-gnu-linux/" data-wplink-url-error="true">sur la genèse de Linux.</a></p>
-<p><img loading="lazy" class="alignnone wp-image-468 size-full" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers.png" alt="" width="1024" height="512" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers-300x150.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Linux-by-the-numbers-768x384.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
-<p>En complément de cette infographie, vous pouvez vous documenter sur la part de marché d&rsquo;Android sur téléphones et tablettes. Bien qu&rsquo;Android ne soit pas considéré comme une distribution GNU/Linux, il n&rsquo;en reste pas moins un OS pourvu d&rsquo;un noyau Linux.</p>
-<p>Enfin, concernant la dernière affirmation, la plupart des serveurs n&rsquo;ont effectivement pas d&rsquo;interface graphique. On a brièvement parlé de bash dans ce chapitre. C&rsquo;est sur lui (et sur d&rsquo;autres shells répondants aux mêmes besoins) que les administrateurs système s’appuient. Il est populaire parce qu&rsquo;il est devenu un standard de fait, commun à toutes les distributions. Aussi, il est léger et a une surface d&rsquo;attaque réduite. Souvenez-vous de la <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/des-distributions-linux-en-veux-tu-en-voila/" data-wplink-url-error="true">taille d&rsquo;Alpine (qui incluait bash) par rapport à Ubuntu Desktop</a> qui incorporait l&rsquo;interface Gnome Shell. La différence de taille sur disque est corrélée à une moindre consommation de ressources par Alpine. La surface d&rsquo;attaque est également drastiquement réduite.</p>
-</div>
-
-  <style>
-    h4 {
-      font-size: 1em !important;
-    }
-
-    .hidden-until-responded {
-      margin-bottom: 4em;
-      background-color: #f2f5f2;
-      padding: 1em;
-      padding-bottom: 0;
-      border: 1px solid green;
-      border-radius: 3px;
-    }
-
-    .hidden-until-responded ul {
-      margin-left: 1em;
-    }
-
-    .hidden-until-responded ul li {
-      margin-bottom: 0.5em;
-    }
-  </style>
-
-  <p style="text-align: center">
-    <button id="submit-quizz-button">Voir les réponses</button>
-  </p>
-
-  <script>
-    document.getElementById('submit-quizz-button').addEventListener('click', function () {
-      this.style.display = 'none'
-      document.querySelectorAll('.hidden-until-responded').forEach(function (elem) { elem.style.display = 'block' })
-
-      document.querySelectorAll('input[name^="quizz-"]').forEach(function (checkbox) {
-        const label = document.querySelector('label[for="' + checkbox.id + '"]')
-
-        if ((checkbox.checked ? '1' : '0') === checkbox.getAttribute('data-ok')) {
-          label.innerText = '✅ ' + label.innerText 
-        } else {
-          label.innerText = '❌ ' + label.innerText
-        }
-
-        checkbox.disabled = true
-      })
-      
-    });
-
-    document.querySelectorAll('.hidden-until-responded').forEach(function (elem) { elem.style.display = 'none' })
-  </script>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/5-quizz-de-fin-de-chapitre/">5. Quizz de fin de chapitre</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

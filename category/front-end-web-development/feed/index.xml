@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 12 Feb 2021 17:35:04 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 12 Feb 2021 18:22:52 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -507,7 +507,7 @@ total 60K
   { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>Now, components scoped inside the <code>&lt;router-outlet>&lt;/router-outlet></code>  can access the <code>me</code> property through <code>ActivatedRoute</code> service injection.</p>
+<p>Now, components scoped inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>  can access the <code>me</code> property through <code>ActivatedRoute</code> service injection.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
@@ -521,7 +521,7 @@ total 60K
 }</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>For some reason, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet>&lt;/router-outlet></code>. At this step, you include <code>app-navigation</code> in <code>app.component.html</code>. You must move it to <code>home-component</code>, <code>login-component</code>&#8230;</p>
+<p>For some reason, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. At this step, you include <code>app-navigation</code> in <code>app.component.html</code>. You must move it to <code>home-component</code>, <code>login-component</code>&#8230;</p>
 
 
 
@@ -542,6 +542,55 @@ total 60K
   Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9d5075597a424d82a3e81363bab1445243369adb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9d5075597a424d82a3e81363bab1445243369adb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
+
+
+
+<h4>The login form is always available, even for logged users.</h4>
+
+
+
+<p><a href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/" target="_blank" rel="noreferrer noopener">Angular Guards</a> execute codes when a route is triggered. You already experienced resolvers that are useful to mount components once they fetched data from the API. This time, you need a <code>CanActivate</code> guard.</p>
+
+
+<pre class="wp-block-code"><div><code class="hljs">ng generate guard unauthenticated
+? Which interfaces would you like to implement? CanActivate
+CREATE src/app/unauthenticated.guard.spec.ts (386 bytes)
+CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
+
+
+<p class="exercice"><strong>Exercise 16</strong>: Implement <code>UnauthenticatedGuard#canActivate()</code> method. It returns a <code>UrlTree</code> redirecting to <code>/profile</code> if user is already logged. Else, it allows activation of <code>/login</code>.</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h4>The profile page is accessible without session.</h4>
+
+
+
+<p class="exercice"><strong>Exercise 17</strong>: Implement <code>AuthenticatedGuard#canActivate()</code> method for <code>/profile</code>.</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/bf79236edb6480168294c9fedc9816d08fc810e8/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/bf79236edb6480168294c9fedc9816d08fc810e8" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h2>The final touch</h2>
+
+
+
+<p class="exercice"><strong>Exercise 18</strong>: A logout button would be great. Add it to the navigation. Optionally, you may import an icon library like <a href="https://fontawesome.com/" target="_blank" rel="noreferrer noopener">FontAwesome</a>.</p>
 
 
 
