@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 13 Feb 2021 13:14:15 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 14 Feb 2021 07:45:09 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -250,6 +250,30 @@ total 1,3M
 
 
 <p>S&rsquo;il est possible de rediriger les flux de sortie STDOUT et STDERR vers un fichier, attendez-vous à ce que rediriger un fichier vers STDIN le soit aussi 😋.</p>
+
+
+
+<p>Seul le sens du chevron change. Ainsi, la commande <code>wc -l &lt; fichier.txt</code> lance la commande <code>cat</code> et lui passe le contenu de <code>fichier.txt</code> en entrée (sur STDIN).</p>
+
+
+
+<p>La commande <code>wc -l</code> compte le nombre de lignes lues depuis l&rsquo;entrée standard jusqu&rsquo;à ce que le flux soit fermé. Elle me servira à illustrer la redirection d&rsquo;un flux du fichier vers le STDIN d&rsquo;un processus.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="739" height="519" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-wc.gif" alt="" class="wp-image-1774"/><figcaption>Démonstration de wc -l qui compte le nombre de lignes envoyées sur STDIN. La combinaison Ctrl + D met fin à la lecture et affiche « 6 ».</figcaption></figure>
+
+
+
+<p>Maintenant que le comportement de <code>wc -l</code> est clair, voyons comment lui passer le contenu de <code>fichier.txt</code> en entrée, ce sorte qu&rsquo;il en compte le nombre de lignes.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="739" height="519" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-wc-avec-redirection-de-flux.gif" alt="" class="wp-image-1775"/></figure>
+
+
+
+<ol><li>Tout d&rsquo;abord, je crée un nouveau fichier sobrement nommé <code>fichier.txt</code>. Il contient l&rsquo;introduction de cette séance.</li><li>Ensuite, je lance <code>wc -l</code> en redirigeant le contenu du fichier vers STDIN. Et le tour est joué. Simple, n&rsquo;est-ce pas ?</li></ol>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/">3. La ligne de commande et les entrées / sorties</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -1329,6 +1353,87 @@ Register yourself as customer using public API.
 		
 			</item>
 		<item>
+		<title>5. What can the web do today ?</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 12:03:36 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Lectures]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1780</guid>
+
+					<description><![CDATA[<p>Although HTML is a markup language for structuring the content, HTML5 standard also specified new APIs for Javascript and the browser. You can find an overview of these features on https://whatwebcando.today./ You may be surprised for example that your app can delegate payment to the customer&#8217;s browser! Examples about connectivity Nowadays, your front-end application can &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/" class="more-link">Continuer la lecture de <span class="screen-reader-text">5. What can the web do today ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/">5. What can the web do today ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Although HTML is a markup language for structuring the content, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noreferrer noopener">HTML5 standard</a> also specified new APIs for Javascript and the browser.</p>
+
+
+
+<p>You can find an overview of these features on <a href="https://whatwebcando.today/" target="_blank" rel="noreferrer noopener">https://whatwebcando.today/</a>. You may be surprised for example that your app can delegate payment to the customer&rsquo;s browser!</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1788"/><figcaption>Demonstration of <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, allowing app to delegate all the shipping process to the browser. This includes price summary, payment card registration, etc.</figcaption></figure>
+
+
+
+<h2>Examples about connectivity</h2>
+
+
+
+<p>Nowadays, your front-end application can receive or send events to the server in real time. Depending on your needs, you may use:</p>
+
+
+
+<ul><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank" rel="noreferrer noopener">WebSocket API</a> for a bidirectional connection.</li><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events" target="_blank" rel="noreferrer noopener">server-sent events</a> to send events from the server to the client (simpler backend architecture).</li></ul>
+
+
+
+<h2>Examples about media</h2>
+
+
+
+<p>Your browser also probably supports audio and video stream real-time communication via <a href="https://developer.mozilla.org/fr/docs/WebRTC" target="_blank" rel="noreferrer noopener">WebRTC</a>. This API leverages media capacities (including built-in audio and video codecs, stream recording from microphones, webcams and screens&#8230;).</p>
+
+
+
+<p>Also, 2D and 3D rendering through the GPU are available thanks to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="noreferrer noopener">Canvas API</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noreferrer noopener">WebGL API</a>.</p>
+
+
+
+<h2>Your browser is a database management system</h2>
+
+
+
+<p>There are various ways to store data on the client side. Here some of them:</p>
+
+
+
+<ul><li><a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies" target="_blank" rel="noreferrer noopener">Cookies</a> are short plain-text payloads the server lets on the client. The client sends them to the server on each HTTP(s) request. Cookies are useful to build session persistence for authentication.</li><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noreferrer noopener">localStorage</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank" rel="noreferrer noopener">sessionStorage</a> are key-value databases able to store strings. You may serialise small objects with <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/JSON/stringify" target="_blank" rel="noreferrer noopener">JSON.stringify</a>.</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noreferrer noopener">IndexedDB</a> is a transactional database system (kind of RDBMS) allowing you application to store large amount of data in the browser (many GB 🤩).</li></ul>
+
+
+
+<h2>To conclude</h2>
+
+
+
+<p>The browser is a rich platform allowing running complex applications with strong APIs and a lot of features.</p>
+
+
+
+<p>Before using any of these features, you may refer to <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">https://caniuse.com/</a> for current support across active browsers on the market.</p>
+
+
+
+<p> </p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/">5. What can the web do today ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>4. Using web tools to build something else</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</link>
 		
@@ -1653,153 +1758,6 @@ Register yourself as customer using public API.
 
 <p></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>2. Instantanés de VM et changement d&#8217;environnement de bureau (TP)</title>
-		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/2-utiliser-les-instantanes-de-vm-et-changer-denvironnement-de-bureau-tp/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Tue, 19 Jan 2021 18:19:05 +0000</pubDate>
-				<category><![CDATA[Chapitre 2. Les interfaces utilisateur]]></category>
-		<category><![CDATA[Théorie des systèmes d’exploitation et pratique de GNU/Linux]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=566</guid>
-
-					<description><![CDATA[<p>Introduction Au cours de cette séance de TP, vous prendrez un instantané de votre machine virtuelle sous Ubuntu. Vous apporterez ensuite des modifications à cette machine en installant un nouvel environnement graphique. Enfin, vous aurez la possibilité de restaurer votre VM exactement telle qu&#8217;elle était avant vos modifications. Prérequis Avoir suivi le cours sur les &#8230; <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/2-utiliser-les-instantanes-de-vm-et-changer-denvironnement-de-bureau-tp/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Instantanés de VM et changement d&#8217;environnement de bureau (TP)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/2-utiliser-les-instantanes-de-vm-et-changer-denvironnement-de-bureau-tp/">2. Instantanés de VM et changement d&rsquo;environnement de bureau (TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h3>Introduction</h3>
-
-
-
-<p>Au cours de cette séance de TP, vous prendrez un instantané de votre machine virtuelle sous Ubuntu. Vous apporterez ensuite des modifications à cette machine en installant un nouvel environnement graphique. Enfin, vous aurez la possibilité de restaurer votre VM exactement telle qu&rsquo;elle était avant vos modifications.</p>
-
-
-
-<h4>Prérequis</h4>
-
-
-
-<ul><li>Avoir suivi le cours sur <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/1-les-interfaces-graphiques/">les interfaces graphiques</a>.</li><li>Disposer d&rsquo;une machine virtuelle Ubuntu 20.04, telle qu&rsquo;installée dans le TP <a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/">« Installation d’Ubuntu dans une machine virtuelle »</a>.</li></ul>
-
-
-
-<h4>Objectifs pédagogiques</h4>
-
-
-
-<ul><li>Prendre et restaurer un instantané de machine virtuelle.</li><li>Comprendre la différence entre un instantané et une sauvegarde.</li><li>Installer un logiciel et ses dépendances avec APT.</li><li>Se familiariser avec Gnome et KDE.</li></ul>
-
-
-
-<h3>Partie 1 : les instantanés</h3>
-
-
-
-<p>Vous allez d&rsquo;abord expérimenter les instantanés de machines virtuelles. Il s&rsquo;agit d&rsquo;un formidable outil de productivité. Je vous recommande d&rsquo;en user systématiquement avant d&rsquo;effectuer une action que vous pourriez regretter. Ils vous permettront un retour en arrière tel que le système était au moment de l&rsquo;instantané.</p>
-
-
-
-<p>Avec VirtualBox, vous pouvez créer un instantané des disques et de l&rsquo;état d’exécution de la machine virtuelle. Voici quelques scénarii :</p>
-
-
-
-<ul><li>Vous prenez un instantané du disque. Puis vous installez une mise à jour logicielle. La mise à jour se passe mal et le système ne redémarre plus. Finalement, vous pourriez restaurer la machine virtuelle dans un état fonctionnel antérieur à la mise à jour.</li><li>Vous prenez un instantané du disque et de l&rsquo;exécution de la machine. Vous fermez malencontreusement un programme. En restaurant votre dernier instantané, votre programme sera à nouveau ouvert (comme s&rsquo;il n&rsquo;avait jamais été fermé).</li></ul>
-
-
-
-<p>Vous allez expérimenter ces fonctionnalités au travers des prochains exercices.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="975" height="567" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Vues-journaux-et-instantanees-de-VirtualBox.gif" alt="" class="wp-image-646"/><figcaption>Démonstration de l&rsquo;accès aux vues « instantanés » et « journaux » d&rsquo;une machine virtuelle sur VirtualBox.</figcaption></figure>
-
-
-
-<p class="exercice"><strong>Exercice 1</strong> : En vous assurant que la machine virtuelle est éteinte, prenez un premier instantané. Nommez le « Fraîchement installé, à l&rsquo;arrêt ». Un fichier a été créé dans le dossier « TP Ubuntu/Snapshots » ? Quelle est son extension ? Déduisez le type de données qu&rsquo;il contient.</p>
-
-
-
-<p class="exercice"><strong>Exercice 2</strong> : Démarrez maintenant la machine virtuelle. Allez jusqu&rsquo;à l&rsquo;écran de déverrouillage. Prenez un second instantané et nommez le « Fraîchement installé, en cours d’exécution ». Observez les changements dans le dossier « TP Ubuntu/Snapshots ». Combien de nouveaux fichiers ont été créés ? Quelles sont leurs extensions. Que peut bien contenir le fichier avec l&rsquo;extension « .sav » ?</p>
-
-
-
-<p class="exercice"><strong>Exercice 3</strong> : Connectez-vous à votre compte sur Ubuntu. Ouvrez plusieurs logiciels de votre choix. Ensuite, prenez un nouvel instantané et nommez le « Fraîchement installé, en cours d’exécution et connecté ».</p>
-
-
-
-<p class="exercice"><strong>Exercice 4</strong> : Éteignez proprement la machine virtuelle (depuis l&rsquo;interface d&rsquo;Ubuntu, sans passer par le bouton « fermer » de la fenêtre de VirtualBox).</p>
-
-
-
-<p>En consultant la liste des instantanés, vous devriez obtenir le résultat ci-dessus (horodatage mis à part, évidemment).</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="573" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Liste-des-instantanes-1024x573.png" alt="" class="wp-image-652" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Liste-des-instantanes-1024x573.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Liste-des-instantanes-300x168.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Liste-des-instantanes-768x430.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Liste-des-instantanes.png 1047w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>État attendu à la fin de l&rsquo;exercice 4. Trois instantanés ont été créés et VM à l&rsquo;arrêt. </figcaption></figure>
-
-
-
-<p class="exercice"><strong>Exercice 5</strong> : Virtualbox signale que l&rsquo;état actuel est modifié. À votre avis, à quelles modifications fait-il référence ?</p>
-
-
-
-<p class="exercice"><strong>Exercice 6</strong> : Restaurez l&rsquo;instantané « Fraîchement installé, en cours d’exécution et connecté ». Décochez au besoin la case « créer un instantané de l&rsquo;état actuel de la machine ». L&rsquo;état actuel n&rsquo;est plus considéré comme modifié. Cela valide-t-il votre hypothèse de l&rsquo;exercice 5 ?</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="440" height="276" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Avertissement-virtualbox-avant-restauration-de-snapshot.png" alt="" class="wp-image-656" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/Avertissement-virtualbox-avant-restauration-de-snapshot.png 440w, https://thomas-veillard.fr/wp-content/uploads/2021/01/Avertissement-virtualbox-avant-restauration-de-snapshot-300x188.png 300w" sizes="(max-width: 440px) 100vw, 440px" /><figcaption>Avertissement de VirtualBox avant de restaurer un instantané qui écraserait des changements non validés dans un autre instantané.</figcaption></figure></div>
-
-
-
-<p class="exercice"><strong>Exercice 6</strong> : Démarrez à nouveau la machine virtuelle. Vous retrouverez votre session et les vos différents logiciels dans l&rsquo;état exact où vous les aviez laissés. Comment cela est-il possible alors que vous aviez éteint la machine ?</p>
-
-
-
-<h3>Partie 2 : plusieurs environnements de bureau</h3>
-
-
-<div class="exercice" style="margin-bottom: 1em;">
-<p><strong>Exercice 7</strong> : Installez KDE, sachant que :</p>
-<ul style="margin-left: 1em;">
-<li>le paquet <code>kde-plasma-desktop</code> permet d&rsquo;installer l&rsquo;environnement de bureau KDE;</li>
-<li>que vous avez déjà installé les paquets <code>gcc</code> et <code>make</code> dans le précédent TP (<a href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/4-installation-dubuntu-dans-une-machine-virtuelle-tp/" data-wplink-url-error="true">Installation d’Ubuntu dans une machine virtuelle</a>);</li>
-</ul>
-<p>Juste avant de confirmer l&rsquo;installation, prenez note de l&rsquo;espace disque supplémentaire nécessaire. Pourquoi autant d&rsquo;espace libre est-il nécessaire ?</p>
-<p>Vérifiez que le système peut procéder à l&rsquo;installation. Sinon, vous pouvez :</p>
-<ul style="margin-left: 1em; margin-bottom: 0;">
-<li>désinstaller des logiciels inutiles. Vous pouvez le faire graphiquement avec le logiciel « Ubuntu Software »;</li>
-<li>préférer l&rsquo;installation du paquet <code>xfce4</code>, une autre interface beaucoup plus légère.</li>
-</ul>
-</div>
-
-
-<p>Une fois KDE ou LXCE installé, vous pouvez changer de gestionnaire de bureau à la volée. Il faudra toutefois fermer la session active et la rouvrir comme montré sur l&rsquo;animation ci-dessous.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="938" height="764" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/Passage-de-Gnome-a-KDE.gif" alt="" class="wp-image-680"/><figcaption>Démonstration du passage de l&rsquo;interface Gnome à KDE.</figcaption></figure>
-
-
-
-<p class="exercice"><strong>Exercice 8</strong> : N&rsquo;hésitez pas à expérimenter les deux environnements et à les comparer.</p>
-
-
-
-<p class="exercice"><strong>Exercice 9</strong>: Le disque virtuel ne faisant que 10 Go, il reste presque plus d&rsquo;espace libre. Pour éviter les problèmes dans les prochains TP, restaurez votre premier instantané. Supprimez les autres pour libérer de l&rsquo;espace disque sur l&rsquo;hôte.</p>
-
-
-
-<p>Félicitation, vous avez retrouvé votre machine virtuelle telle qu&rsquo;elle était en début de séance ! Bien que ce TP n&rsquo;ait laissé aucune trace sur votre VM, j&rsquo;espère que vous en retiendrez ses enseignements 🤔.</p>
-
-
-
-<p class="exercice"><strong>Exercice 10</strong>: Au fait, sauriez-vous expliquer les différences entre un instantané et une sauvegarde ?</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/2-utiliser-les-instantanes-de-vm-et-changer-denvironnement-de-bureau-tp/">2. Instantanés de VM et changement d&rsquo;environnement de bureau (TP)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

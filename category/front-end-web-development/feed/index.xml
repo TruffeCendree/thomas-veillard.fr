@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 13 Feb 2021 13:14:15 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 14 Feb 2021 07:45:09 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1122,6 +1122,87 @@ Register yourself as customer using public API.
 
 <p></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>5. What can the web do today ?</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 12:03:36 +0000</pubDate>
+				<category><![CDATA[Front-end web development (English)]]></category>
+		<category><![CDATA[Lectures]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1780</guid>
+
+					<description><![CDATA[<p>Although HTML is a markup language for structuring the content, HTML5 standard also specified new APIs for Javascript and the browser. You can find an overview of these features on https://whatwebcando.today./ You may be surprised for example that your app can delegate payment to the customer&#8217;s browser! Examples about connectivity Nowadays, your front-end application can &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/" class="more-link">Continuer la lecture de <span class="screen-reader-text">5. What can the web do today ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/">5. What can the web do today ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Although HTML is a markup language for structuring the content, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noreferrer noopener">HTML5 standard</a> also specified new APIs for Javascript and the browser.</p>
+
+
+
+<p>You can find an overview of these features on <a href="https://whatwebcando.today/" target="_blank" rel="noreferrer noopener">https://whatwebcando.today/</a>. You may be surprised for example that your app can delegate payment to the customer&rsquo;s browser!</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1788"/><figcaption>Demonstration of <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, allowing app to delegate all the shipping process to the browser. This includes price summary, payment card registration, etc.</figcaption></figure>
+
+
+
+<h2>Examples about connectivity</h2>
+
+
+
+<p>Nowadays, your front-end application can receive or send events to the server in real time. Depending on your needs, you may use:</p>
+
+
+
+<ul><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank" rel="noreferrer noopener">WebSocket API</a> for a bidirectional connection.</li><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events" target="_blank" rel="noreferrer noopener">server-sent events</a> to send events from the server to the client (simpler backend architecture).</li></ul>
+
+
+
+<h2>Examples about media</h2>
+
+
+
+<p>Your browser also probably supports audio and video stream real-time communication via <a href="https://developer.mozilla.org/fr/docs/WebRTC" target="_blank" rel="noreferrer noopener">WebRTC</a>. This API leverages media capacities (including built-in audio and video codecs, stream recording from microphones, webcams and screens&#8230;).</p>
+
+
+
+<p>Also, 2D and 3D rendering through the GPU are available thanks to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="noreferrer noopener">Canvas API</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noreferrer noopener">WebGL API</a>.</p>
+
+
+
+<h2>Your browser is a database management system</h2>
+
+
+
+<p>There are various ways to store data on the client side. Here some of them:</p>
+
+
+
+<ul><li><a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies" target="_blank" rel="noreferrer noopener">Cookies</a> are short plain-text payloads the server lets on the client. The client sends them to the server on each HTTP(s) request. Cookies are useful to build session persistence for authentication.</li><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noreferrer noopener">localStorage</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank" rel="noreferrer noopener">sessionStorage</a> are key-value databases able to store strings. You may serialise small objects with <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/JSON/stringify" target="_blank" rel="noreferrer noopener">JSON.stringify</a>.</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noreferrer noopener">IndexedDB</a> is a transactional database system (kind of RDBMS) allowing you application to store large amount of data in the browser (many GB 🤩).</li></ul>
+
+
+
+<h2>To conclude</h2>
+
+
+
+<p>The browser is a rich platform allowing running complex applications with strong APIs and a lot of features.</p>
+
+
+
+<p>Before using any of these features, you may refer to <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">https://caniuse.com/</a> for current support across active browsers on the market.</p>
+
+
+
+<p> </p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/">5. What can the web do today ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
