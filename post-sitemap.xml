@@ -198,8 +198,19 @@
 		</image:image>
 	</url>
 	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</loc>
+		<lastmod>2021-02-14T07:45:09+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/What-the-web-can-do-today.png</image:loc>
+			<image:title><![CDATA[What the web can do today]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png</image:loc>
+		</image:image>
+	</url>
+	<url>
 		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/</loc>
-		<lastmod>2021-02-13T16:09:02+00:00</lastmod>
+		<lastmod>2021-02-14T12:46:07+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/ls-lhsa-etc.png</image:loc>
 		</image:image>
@@ -217,17 +228,6 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-wc-avec-redirection-de-flux.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</loc>
-		<lastmod>2021-02-14T07:45:09+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/What-the-web-can-do-today.png</image:loc>
-			<image:title><![CDATA[What the web can do today]]></image:title>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
