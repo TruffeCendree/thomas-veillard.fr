@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Tue, 23 Feb 2021 06:15:56 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 23 Feb 2021 06:27:03 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -105,7 +105,7 @@
 			</item>
 		<item>
 		<title>3. The booking experience</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/the-booking-experience/</link>
+		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:02 +0000</pubDate>
@@ -113,8 +113,8 @@
 		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2008</guid>
 
-					<description><![CDATA[<p>Learning objectives &#38; expected results During this practical activity, you will build the booking experience and take care of business logic. That is the opportunity to: be more autonomous than during the last practical work ; build more complex forms than previous login component ; split the form in reusable components ; use @Input() and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. The booking experience</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>Learning objectives &#38; expected results During this practical activity, you will build the booking experience and take care of business logic. That is the opportunity to: be more autonomous than during the last practical work ; build more complex forms than previous login component ; split the form in reusable components ; use @Input() and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. The booking experience</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <h4>Learning objectives &amp; expected results</h4>
@@ -271,7 +271,7 @@
 
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
