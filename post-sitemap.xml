@@ -101,37 +101,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</loc>
-		<lastmod>2021-02-05T07:37:01+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Why-are-web-front-end-technologies-so-popular-.png</image:loc>
-			<image:title><![CDATA[Why-are-web-front-end-technologies-so-popular-]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</loc>
-		<lastmod>2021-02-05T07:37:22+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Prerequisite.png</image:loc>
-			<image:title><![CDATA[Prerequisite]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/</loc>
-		<lastmod>2021-02-05T10:06:24+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</loc>
-		<lastmod>2021-02-05T12:31:51+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Using-web-tools-to-build-something-else.png</image:loc>
-			<image:title><![CDATA[Using-web-tools-to-build-something-else]]></image:title>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/quizz/</loc>
 		<lastmod>2021-02-12T20:29:58+00:00</lastmod>
 		<image:image>
@@ -198,17 +167,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</loc>
-		<lastmod>2021-02-14T07:45:09+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/What-the-web-can-do-today.png</image:loc>
-			<image:title><![CDATA[What the web can do today]]></image:title>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/</loc>
 		<lastmod>2021-02-14T12:46:07+00:00</lastmod>
 		<image:image>
@@ -228,6 +186,97 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-wc-avec-redirection-de-flux.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</loc>
+		<lastmod>2021-02-16T07:40:49+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Prerequisite.png</image:loc>
+			<image:title><![CDATA[Prerequisite]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</loc>
+		<lastmod>2021-02-19T06:26:37+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Why-are-web-front-end-technologies-so-popular-.png</image:loc>
+			<image:title><![CDATA[Why-are-web-front-end-technologies-so-popular-]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/</loc>
+		<lastmod>2021-02-19T06:47:45+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Pourquoi-les-technologies-web-sont-elles-si-populaires-.png</image:loc>
+			<image:title><![CDATA[Pourquoi les technologies web sont-elles si populaires ?]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/</loc>
+		<lastmod>2021-02-20T07:04:35+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Prerequis.png</image:loc>
+			<image:title><![CDATA[Prérequis]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/</loc>
+		<lastmod>2021-02-20T08:12:58+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/</loc>
+		<lastmod>2021-02-20T08:28:34+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</loc>
+		<lastmod>2021-02-20T09:49:10+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Using-web-tools-to-build-something-else.png</image:loc>
+			<image:title><![CDATA[Using-web-tools-to-build-something-else]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/</loc>
+		<lastmod>2021-02-20T10:43:00+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Ils-utilisent-les-technologies-web-pour-autre-chose-quun-site.png</image:loc>
+			<image:title><![CDATA[Ils utilisent les technologies web pour autre chose qu’un site]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</loc>
+		<lastmod>2021-02-20T10:55:50+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/What-the-web-can-do-today.png</image:loc>
+			<image:title><![CDATA[What the web can do today]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/</loc>
+		<lastmod>2021-02-20T12:53:13+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Que-peut-faire-le-web-aujourdhui-.png</image:loc>
+			<image:title><![CDATA[Que peut faire le web aujourd’hui ?]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/the-booking-experience/</loc>
+		<lastmod>2021-02-23T06:15:56+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>

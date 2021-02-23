@@ -12,20 +12,20 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/lectures/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 14 Feb 2021 07:45:09 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 20 Feb 2021 10:55:50 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.6.1</generator>
+	<generator>https://wordpress.org/?v=5.6.2</generator>
 	<item>
 		<title>5. What can the web do today ?</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Fri, 05 Feb 2021 12:03:36 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Lectures]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1780</guid>
 
@@ -45,7 +45,7 @@
 
 
 
-<h2>Examples about connectivity</h2>
+<h4>Examples about connectivity</h4>
 
 
 
@@ -57,7 +57,7 @@
 
 
 
-<h2>Examples about media</h2>
+<h4>Examples about media</h4>
 
 
 
@@ -69,7 +69,7 @@
 
 
 
-<h2>Your browser is a database management system</h2>
+<h4>Your browser is a database management system</h4>
 
 
 
@@ -81,7 +81,7 @@
 
 
 
-<h2>To conclude</h2>
+<h4>To conclude</h4>
 
 
 
@@ -106,7 +106,7 @@
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Fri, 05 Feb 2021 10:02:36 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Lectures]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1440</guid>
 
@@ -130,7 +130,7 @@
 
 
 
-<blockquote class="wp-block-quote"><p>Write once, run everywhere. 🎉</p></blockquote>
+<blockquote class="wp-block-quote"><p>Write once, run everywhere. 🎉</p><cite>Originally a <a href="https://en.wikipedia.org/wiki/Write_once,_run_anywhere" target="_blank" rel="noreferrer noopener">quote of Java</a>.</cite></blockquote>
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-<p> Conversely, the browser has to deal with security issues. It always considers the website as mistrusted code running on your computer. It must sandbox and protect itself from it. For that reason, APIs like direct access to filesystems from the website are unavailable. </p>
+<p>Conversely, the browser has to deal with security issues. It always considers the website as mistrusted code running on your computer. It must sandbox and protect itself from it. For that reason, APIs like direct access to filesystems from the website are unavailable. </p>
 
 
 
@@ -171,11 +171,11 @@
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Fri, 05 Feb 2021 08:38:14 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Lectures]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1394</guid>
 
-					<description><![CDATA[<p>The layout The « add server » page&#8217;s layout is composed of 4 parts: a header, containing site identity, notification centre and accesses to other parts of the customer portal ; a left menu, to navigate between the cloud portal features ; a content area, where the form takes place ; a floating footer summarizing the delivery. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. How rich and interactive is this UI ?</span></a></p>
+					<description><![CDATA[<p>The layout The layout is the way blocks are organized and sized. The « add server » page&#8217;s layout is composed of 4 main blocks: a header, containing site identity, notification centre and accesses to other parts of the customer portal ; a left menu, to navigate between the cloud portal features ; a content area, where &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. How rich and interactive is this UI ?</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/">3. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
@@ -187,7 +187,7 @@
 
 
 
-<p>The « add server » page&rsquo;s layout is composed of 4 parts:</p>
+<p>The layout is the way blocks are organized and sized. The « add server » page&rsquo;s layout is composed of 4 main blocks:</p>
 
 
 
@@ -199,7 +199,7 @@
 
 
 
-<p>The form itself is highly interactive. Actions available at a step depends on a combination of previous choices. It opens modals containing another embedded form, computes the total price on the client side, prints warnings for misconfigurations, etc. All computations related to content are powered by Javascript.</p>
+<p>The form itself is highly interactive. Actions available at a step depends on a combination of previous choices. It opens modals containing another embedded form, computes the total price on the client side, prints warnings for misconfigurations, etc. All computations related to content are powered by Javascript. Under the hood, this panel is powered by angular (at the time I wrote this post).</p>
 
 
 
@@ -207,7 +207,7 @@
 
 
 
-<p>Fonts, colours, backgrounds, gradients, border radiuses, block sizes, margins, paddings, text positioning and so much more are handled by the browser rendering engine for you. </p>
+<p>Fonts, colours, backgrounds, gradients, border radiuses, margins, paddings, text positioning and so much more are handled by the browser rendering engine for you. </p>
 
 
 
@@ -253,7 +253,7 @@
 
 
 
-<p>Thanks to CSS3, animations are now easy to build. You just describe an initial and final state, and apply a built-in transformation function. The browser handle the rest. It even selects the best hardware available for the task and does concessions to maintain the framerate.</p>
+<p>Thanks to CSS3, animations are now easy to build. You just describe an initial and final state. The browser handle the rest. It even selects the best hardware available for the task and does concessions to maintain the framerate.</p>
 
 
 
@@ -265,7 +265,7 @@
 
 
 
-<p>This example illustrates perfectly why web technologies are so efficient for UI/UX compared to dinosaurs 🦖. (Hi JAVA and its Swing UI framework !)</p>
+<p>This example of app illustrates perfectly why web technologies are so efficient for UI/UX compared to dinosaurs 🦖. (Hi JAVA and its Swing UI framework !)</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/">3. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -278,7 +278,7 @@
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Sun, 24 Jan 2021 08:24:00 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Lectures]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1342</guid>
 
@@ -334,7 +334,7 @@
 
 
 
-<ul><li>to animate elements (now replaced by CSS3 animations) ;</li><li>to apply minor changes to the page on user interaction (like showing or hiding a block when the clicks a button).</li></ul>
+<ul><li>to animate elements (now replaced by CSS3 animations) ;</li><li>to apply minor changes to the page on user interaction (like showing or hiding a block when the user clicks a button).</li></ul>
 
 
 
@@ -362,20 +362,28 @@
 		
 			</item>
 		<item>
-		<title>1. Prerequisites</title>
+		<title>1. Introduction &#038; prerequisites</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Sun, 24 Jan 2021 08:23:21 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Lectures]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=884</guid>
 
-					<description><![CDATA[<p>This course is about creating front-end applications, with modern web technologies. You will discover that such a rich environment, learn good practices, develop quality code, write modular code&#8230; Skills This teaching assumes you know the basics of HTML and CSS. If that is not the case, please consider the following resources. They are quick and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Prerequisites</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>This course is about creating front-end applications, with modern web technologies. Learning objectives Build modern web interfaces with Single Page Applications (focus on Angular). Understand the Event-oriented programming paradigm. Manage your code source and collaborate with Git and Git Flow workflow. Manage your dependencies with npm. Write quality code (good practices, modularity, static typing with &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction &#038; prerequisites</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Introduction &#038; prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<p>This course is about creating front-end applications, with modern web technologies. You will discover that such a rich environment, learn good practices, develop quality code, write modular code&#8230;</p>
+<p>This course is about creating front-end applications, with modern web technologies. </p>
+
+
+
+<h4>Learning objectives</h4>
+
+
+
+<ul><li>Build modern web interfaces with Single Page Applications (focus on Angular).</li><li>Understand the Event-oriented programming paradigm.</li><li>Manage your code source and collaborate with Git and Git Flow workflow.</li><li>Manage your dependencies with npm.</li><li>Write quality code (good practices, modularity, static typing with TS&#8230;)</li><li>Get an overview of web ecosystem (usages, tools, pro and cons&#8230;).</li></ul>
 
 
 
@@ -383,7 +391,7 @@
 
 
 
-<p>This teaching assumes you know the basics of HTML and CSS. If that is not the case, please consider the following resources. They are quick and basic.</p>
+<p>This teaching assumes you know the basics of HTML and CSS, besides having knowledge of algorithmic and software programming. If that is not the case, please consider the following resources. They are quick and basic.</p>
 
 
 
@@ -395,19 +403,27 @@
 
 
 
-<p>For end users, Front-end web technologies only require a modern browser. In the same way, developers could use almost any operating system for building apps. Nonetheless, your experience may drastically differ, and some tools harder to install or unavailable.</p>
+<p>For end users, Front-end web technologies only require a modern browser. The operating system is not revelant anymore.</p>
 
 
 
-<p>You are free to use Windows or MacOS. Or you could install a GNU/Linux distribution in a virtual machine. My demonstrations will occur on an Ubuntu system.</p>
+<p>That is also true to a lesser extent for web developers. Most build tools work on any operating system. Nonetheless, your experience may drastically differ and some tasks harder to complete.</p>
 
 
 
-<p>Before the first lecture, please:</p>
+<p>You are free to use Windows, MacOS or Linux. If you use Windows, you may have some difficulties to install Docker, which is a strong requirement for practical works.</p>
 
 
 
-<ul><li>bring your own computer, you will need it;</li><li>install <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">Node.js</a>, as it is required for building applications. Use <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a> for installing it;</li><li>install a decent IDE or editor for web development like VSCode or WebStorm;</li></ul>
+<p>My demonstrations will occur on a Linux Ubuntu system. You can get closer to this setup by installing a GNU/Linux distribution in a virtual machine.</p>
+
+
+
+<p><strong>Before the first lecture, please:</strong></p>
+
+
+
+<ul><li>bring your own computer, you will need it;</li><li>install <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">Node.js</a>, as it is required for building applications. On Linux, prefer using <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a>.</li><li>install a decent IDE or editor for web development like VSCode or WebStorm;</li></ul>
 
 
 
@@ -424,7 +440,7 @@
 
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Introduction &#038; prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

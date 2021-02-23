@@ -12,20 +12,194 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/practical-works/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 13 Feb 2021 13:01:54 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 23 Feb 2021 06:15:56 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.6.1</generator>
+	<generator>https://wordpress.org/?v=5.6.2</generator>
 	<item>
+		<title>3. The booking experience</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/the-booking-experience/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Tue, 09 Feb 2021 09:00:02 +0000</pubDate>
+				<category><![CDATA[Front-end web development]]></category>
+		<category><![CDATA[Practical works]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2008</guid>
+
+					<description><![CDATA[<p>Learning objectives &#38; expected results During this practical activity, you will build the booking experience and take care of business logic. That is the opportunity to: be more autonomous than during the last practical work ; build more complex forms than previous login component ; split the form in reusable components ; use @Input() and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. The booking experience</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Learning objectives &amp; expected results</h4>
+
+
+
+<p>During this practical activity, you will build the booking experience and take care of business logic.</p>
+
+
+
+<p>That is the opportunity to:</p>
+
+
+
+<ul><li>be more autonomous than during the last practical work ;</li><li>build more complex forms than previous login component ;</li><li>split the form in reusable components ;</li><li>use <code>@Input()</code> and <code>@Output()</code> data bindings on component boundaries ;</li><li>manage the state of the application and persistence across form steps ;</li><li>train yourself with async http requests and angular services ;</li><li>think about your UI and UX, so it is convenient for customer ;</li><li>use directives such as <code>*ngIf</code> and <code>*ngFor</code>, template variables, etc.</li></ul>
+
+
+
+<p>Your booking experience must satisfy the following requirements:</p>
+
+
+
+<ol><li>The customer initiates the booking from the home page. It provides the location of the delivery (postal code or city name). This user input is validated against Openstreetmap API and geocoded.</li><li>Geocoded postal address (latitude and longitude) is sent to the server. If zone is covered, the customer goes on next step. Else, an explanation is displayed.</li><li>The customer provides basic informations describing the service (start date and time, duration).</li><li>All collected data are sent to the server, which revolves available employees. The user selects one proposal.</li><li>At that time, it may be unauthenticated or unregistered. The user logs in or creates a new customer account. Then it confirms the booking.</li></ol>
+
+
+
+<h4>Let&rsquo;s go !</h4>
+
+
+
+<p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>booking-experience</code>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong>: You know more components will be created&#8230; Take a few minutes to reorganise your project, so it looks like the following tree.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">src
+ ↳ app
+    ↳ decorators         <span class="hljs-comment"># empty for now. Will contain typescript decorators.</span>
+    ↳ guards             <span class="hljs-comment"># contains guards for @angular/router.</span>
+    ↳ routes             <span class="hljs-comment"># contains components respecting the same tree structure as URL paths.</span>
+       ↳ home
+       ↳ login
+       ↳ profile
+    ↳ services           <span class="hljs-comment"># contains angular services.</span>
+    ↳ shared             <span class="hljs-comment"># empty for now. Will contain shared and reusable components.</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Home page</h4>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1242" height="498" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif" alt="" class="wp-image-2038"/><figcaption>The customer enters a city, postal code or postal address, which is geocoded using nominatim API.</figcaption></figure>
+
+
+
+<p>I give you some pieces of code that you may reuse. First of all, the <code>GeocodeService</code> can query the <code>nominatim</code> to search places.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/app/services/geocode.service.ts</span>
+<span class="hljs-keyword">import</span> { HttpClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/common/http'</span>;
+<span class="hljs-keyword">import</span> { Injectable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> NominatimResult {
+  display_name: <span class="hljs-built_in">string</span>
+  importance: <span class="hljs-built_in">number</span>  
+  lat: <span class="hljs-built_in">number</span>
+  lon: <span class="hljs-built_in">number</span>
+}
+
+<span class="hljs-meta">@Injectable</span>({
+  providedIn: <span class="hljs-string">'root'</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> GeocodeService {
+  <span class="hljs-keyword">constructor</span> (<span class="hljs-params"><span class="hljs-keyword">private</span> httpClient: HttpClient</span>) {}
+
+  geocodeCity (postalAddress: <span class="hljs-built_in">string</span>, country = <span class="hljs-string">'fr'</span>): NominatimResult[] {
+    <span class="hljs-comment">// no API call if input is too short</span>
+    <span class="hljs-keyword">if</span> (postalAddress.length &lt; <span class="hljs-number">3</span>) <span class="hljs-keyword">return</span> [];
+
+    <span class="hljs-comment">// find OpenStreetMap nominatim API documention at https://nominatim.org/release-docs/latest/api/Search/</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.httpClient.get(<span class="hljs-string">`https://nominatim.openstreetmap.org/search?format=json&amp;featuretype=administrative&amp;countrycodes=<span class="hljs-subst">${country}</span>&amp;q=<span class="hljs-subst">${postalAddress}</span>`</span>).toPromise() <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>;
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Also, you <strong>must</strong> debounce HTTP calls to OpenStreetMap API. In other words, do not call the geocoding API until the customer stopped writing for 1 second. I provide you ready to use typescript decorator, usable on your callback component method.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/app/decorators/debounce.decorator.ts</span>
+<span class="hljs-comment">/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was invoked.
+ * 
+ * See https://blog.bitsrc.io/3-ways-to-debounce-http-requests-in-angular-c407eb165ada
+ * 
+ * Usage:
+ * @Debounce(750)
+ * static methodToDebound (args: any) {}
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Debounce</span> (<span class="hljs-params">ms: <span class="hljs-built_in">number</span></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target: <span class="hljs-built_in">any</span>, key: <span class="hljs-built_in">any</span>, descriptor: <span class="hljs-built_in">any</span></span>) </span>{
+    <span class="hljs-keyword">const</span> oldFunc = descriptor.value
+    <span class="hljs-keyword">const</span> newFunc = debounce(oldFunc, ms)
+    descriptor.value = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> newFunc.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>)
+    }
+  }
+}
+
+<span class="hljs-comment">/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was invoked.
+ * See more at https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>&lt;<span class="hljs-title">F</span> <span class="hljs-title">extends</span> <span class="hljs-title">Function</span>&gt;(<span class="hljs-params">func: F, wait: <span class="hljs-built_in">number</span>, immediate = <span class="hljs-literal">false</span></span>): <span class="hljs-title">F</span> </span>{
+  <span class="hljs-keyword">let</span> timeout: <span class="hljs-built_in">number</span> | <span class="hljs-literal">null</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// @ts-ignore</span>
+    <span class="hljs-keyword">let</span> context = <span class="hljs-keyword">this</span>, args = <span class="hljs-built_in">arguments</span>;
+
+    <span class="hljs-keyword">if</span> (timeout) clearTimeout(timeout);
+    timeout = <span class="hljs-built_in">window</span>.setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      timeout = <span class="hljs-literal">null</span>;
+      <span class="hljs-keyword">if</span> (!immediate) func.apply(context, args);
+    }, wait);
+
+    <span class="hljs-keyword">if</span> (immediate &amp;&amp; !timeout) func.apply(context, args);
+  } <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Here an example how to use the decorator.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">class</span> PostalAddressInputComponent {
+  <span class="hljs-meta">@Debounce</span>(<span class="hljs-number">1000</span>)
+  <span class="hljs-keyword">async</span> searchAddress (rawPostalAddress: <span class="hljs-built_in">string</span>) {
+    <span class="hljs-comment">// trigerred 1 time per second max.</span>
+    <span class="hljs-comment">// delayed until the method has not been call for 1 second.</span>
+  }
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Note <code>@angular/material</code> provides ready to use <a href="https://material.angular.io/components/autocomplete/overview" target="_blank" rel="noreferrer noopener">autocomplete field</a> you may import.</p>
+
+
+
+<p class="exercice"><strong>Exercise 3</strong>: Build such autocomplete input (as a reusable component) and use it on the home page. You <strong>must</strong> debounce API calls. Also take a few minutes, so your home page looks more friendly.</p>
+
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>2. Managing authentication &#038; routing</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:01 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1125</guid>
 
@@ -56,8 +230,8 @@
 <p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>authentication-and-routing</code>. On Github, you should see a branch called <code>feature/authentication-and-routing</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
-git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
+git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>I encourage you to commit regular your changes (for example, at the end of each question). You may also reset your workspace to last commit when things go wrong.</p>
@@ -91,12 +265,12 @@ git hf feature start authentication-<span class="hljs-keyword">and</span>-routin
 <p>The <code>@angular/cli</code> is able to generate some pieces of code, like a component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
 $ ng generate component navigation
 CREATE src/app/navigation/navigation.component.css (<span class="hljs-number">0</span> bytes)
 CREATE src/app/navigation/navigation.component.html (<span class="hljs-number">25</span> bytes)
 CREATE src/app/navigation/navigation.component.ts (<span class="hljs-number">291</span> bytes)
-UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 4</strong>: Commit any existing change on git, then generate a new component called <code>navigation</code>. Examine changes made by <code>@angular/cli</code> (you can use git and the output of <code>ng generate</code> command). Finally, move the mat-toolbar into <code>navigation.component</code>. Visually, the result should be identical.</p>
@@ -236,7 +410,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <p>The same way we prefer <code>routerLink</code> over <code>href</code> because it does not reload the <code>Single Page Application</code>, you should use the <code>@angular/router</code> from your typescript controller (ex. from your submit method in <code>LoginComponent</code>). Here an example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/router'</span>;
 
 <span class="hljs-meta">@Component</span>({
@@ -250,7 +424,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
   <span class="hljs-keyword">async</span> submit () {
     <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.router.navigateByUrl(<span class="hljs-string">'/profile'</span>);
   }
-}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="margin-bottom: 1em;">
 <p><strong>Exercise 11</strong>: This example is rich of typescript and angular features. Let&rsquo;s analyse it.</p>
@@ -320,14 +494,14 @@ total 60K
 <p>You are most likely interested in API and models’ definitions. For example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
 </span></span><span class='shcb-loc'><span><span class="hljs-keyword">import</span> { Request, Response } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 </span></span><mark class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
 </span></mark><mark class='shcb-loc'><span>    email: <span class="hljs-built_in">string</span>;
 </span></mark><mark class='shcb-loc'><span>    password: <span class="hljs-built_in">string</span>;
 </span></mark><mark class='shcb-loc'><span>}
 </span></mark><span class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">req: Request, res: Response</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;</span>;
-</span></span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the back-end is incompatible with the front-end usage, the typescript compiler catches it.</p>
@@ -341,7 +515,7 @@ total 60K
 <p> </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
 </span></span><span class='shcb-loc'><span>{
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compileOnSave"</span>: <span class="hljs-literal">false</span>,
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compilerOptions"</span>: {
@@ -359,7 +533,7 @@ total 60K
 </span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictTemplates"</span>: <span class="hljs-literal">true</span>
 </span></span><span class='shcb-loc'><span>  }
 </span></span><span class='shcb-loc'><span>}
-</span></span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="1141" height="777" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif" alt="" class="wp-image-1613"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
@@ -389,7 +563,7 @@ total 60K
 <p class="exercice"><strong>Exercise 14</strong>: Using the <code>@angular/cli</code>, generate <code>me.service.ts</code> and implement <code>resolve</code>, <code>login</code> and <code>logout</code> methods. Finally, update accordly the <code>LoginComponent</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login'</span>;
 <span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/models/user'</span>;
 
 <span class="hljs-keyword">interface</span> IMeService {
@@ -416,7 +590,7 @@ total 60K
    * Returns Promise&lt;void&gt; if success.
    */</span>
   logout: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt;
-}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
@@ -458,15 +632,15 @@ total 60K
 <p>You have to change your routes, so they look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
   { path: <span class="hljs-string">'login'</span>, component: LoginComponent, resolve: { me: MeService } },
-  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Now, components scoped inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>  can access the <code>me</code> property through <code>ActivatedRoute</code> service injection.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
   <span class="hljs-comment">// once initialized, you can use it to dynamically adapt the navigation template.</span>
   me: User;
 
@@ -474,7 +648,7 @@ total 60K
     <span class="hljs-comment">// When the NavigationComponent is mounted, the MeService has already been resolved.</span>
     <span class="hljs-keyword">this</span>.me = activatedRoute.snapshot.data.me;
   }
-}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>For some reason, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. At this step, you include <code>app-navigation</code> in <code>app.component.html</code>. You must move it to <code>home-component</code>, <code>login-component</code>&#8230;</p>
@@ -577,7 +751,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <p>Once the code is reviewed, merge your pull request on Github and finalise your feature.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">git hf feature finish authentication-and-routing</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">git hf feature finish authentication-and-routing</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p></p>
@@ -593,7 +767,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:00 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
 
@@ -688,7 +862,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <p>A single command written in a terminal (Powershell or Node Command Prompt for Windows) do the job. Ensure node is installed first. We also install <a href="https://eslint.org/" target="_blank" rel="noreferrer noopener">eslint</a>, which ensure coding conventions are applied across codebase.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h2>Workspace overview</h2>
@@ -698,7 +872,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <p>At the end of this seance, your workspace should match the following folder hierarchy.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
  ↳ dist                        <span class="hljs-comment"># the folder containing your bundled app. Only exists after running `ng build` command.</span>
  ↳ node_modules                <span class="hljs-comment"># the folder containing local dependencies. See package.json file and npm command for more info.</span>
  ↳ src                         <span class="hljs-comment"># source code (HTML, CSS, TS). It includes components, services, etc.</span>
@@ -709,7 +883,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 learning-materials             <span class="hljs-comment"># my git repository you have to clone, which contains backend server, database and some tools</span>
  ↳ frontend-web-development    <span class="hljs-comment"># the folder containing every materials related to this practical work.</span>
     ↳ docker-compose.yml       <span class="hljs-comment"># configuration for docker-compose, that will take care of booting full backend infrastructure.</span>
-    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Angular project&rsquo;s structure is standard (thanks to @angular/cli). For more information about it, please refer to <a href="https://angular.io/guide/file-structure" target="_blank" rel="noreferrer noopener">official documentation</a>.</p>
@@ -731,14 +905,14 @@ learning-materials             <span class="hljs-comment"># my git repository yo
 <ul><li>Linux/Mac: run a terminal</li><li>Windows: use PowerShell or “Node.js Command Prompt”</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
 npm i -g @angular/cli @angular-devkit/core @angular-devkit/schematics @angular-eslint/schematics
 
 <span class="hljs-comment"># creates a new project with angular router enabled</span>
 ng new --routing --strict --collection=@angular-eslint/schematics frontend
 
 <span class="hljs-comment"># enter the 'frontend' folder</span>
-<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The previous commands enabled the<code>:</code></p>
@@ -776,9 +950,9 @@ ng new --routing --strict --collection=@angular-eslint/schematics frontend
 <p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
 ng build --prod   <span class="hljs-comment"># build the app for production. A lot of optimisations are processed, reducing bundle size.</span>
-ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <div class="exercice" style="margin-bottom: 1em">
@@ -794,7 +968,7 @@ ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on
 </div>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
 ✔ Browser application bundle generation complete.
 ✔ Copying assets complete.
 ✔ Index html generation complete.
@@ -808,7 +982,7 @@ styles.css          | styles        | <span class="hljs-number">119</span> bytes
 
                     | Initial Total |   <span class="hljs-number">2.85</span> MB
 
-Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>At this step, you can open <code>frontend/dist/index.html</code> in your browser and explore the placeholder generated by <code>@angular/cli</code>.</p>
@@ -830,7 +1004,7 @@ Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</sp
 <p>The <code>ng new</code> command already initialised a local git repository. If you have any pending change, you have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
 git status
 
 <span class="hljs-comment"># you probably want to commit new files in your repository.</span>
@@ -844,7 +1018,7 @@ git commit -a -m <span class="hljs-string">"configure linter and typescript"</sp
 <span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
 git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
 git branch -M main
-git push -u origin main</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+git push -u origin main</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
@@ -884,8 +1058,8 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p>This git repository is a <a href="https://en.wikipedia.org/wiki/Monorepo" target="_blank" rel="noreferrer noopener">monorepo</a>. It contains learning materials for multiple modules. You must focus on <code>learning-materials/frontend-web-development</code> folder.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
-<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
+<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the <code>docker-compose.yml</code> file.</p>
@@ -899,7 +1073,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 8</strong>: Start the mariadb database using the following command. On first launch, wait until the database reported a complete initialisation (highlighted in output).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
 </span></span><span class='shcb-loc'><span>$ docker-compose up mariadb
 </span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
 </span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1
@@ -915,13 +1089,13 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Added new Master_info <span class="hljs-string">''</span> to <span class="hljs-built_in">hash</span> table
 </span></span><mark class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld: ready <span class="hljs-keyword">for</span> connections.
 </span></mark><mark class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></mark></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></mark></code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker (using <code>Ctrl + C</code>). Then start the full stack. The backend API should notify a successful startup.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
 </span></span><span class='shcb-loc'><span>Building backend
 </span></span><span class='shcb-loc'><span>
 </span></span><span class='shcb-loc'><span>[... truncated]
@@ -957,7 +1131,7 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.549Z backend:mysql-store Upgrading SQL triggers...
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.577Z backend:mysql-store Triggers updated successfully
 </span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.582Z backend:app App listening on port 8080...
-</span></span></code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Let’s analyse logs above:</p>

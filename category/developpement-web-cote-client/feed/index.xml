@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Développement web côté client &#8211; Thomas VEILLARD</title>
+	<atom:link href="https://thomas-veillard.fr/category/developpement-web-cote-client/feed/" rel="self" type="application/rss+xml" />
+	<link>https://thomas-veillard.fr/</link>
+	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
+	<lastBuildDate>Sat, 20 Feb 2021 12:53:13 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.6.2</generator>
+	<item>
+		<title>5. Que peut faire le web aujourd&#8217;hui ?</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2021 10:43:49 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1973</guid>
+
+					<description><![CDATA[<p>Lorsqu&#8217;on fait référence à HTML5, on pense d&#8217;abord à une certaine version du langage de balise utilisé pour structurer les contenus. Toutefois, ce nom désigne aussi l&#8217;ensemble des HTML5 API. Vous trouverez un aperçu de ces nombreuses fonctionnalités sur le site https://whatwebcando.today./ Vous pourriez découvrir par exemple que votre application peut déléguer le processus de paiement &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/" class="more-link">Continuer la lecture de <span class="screen-reader-text">5. Que peut faire le web aujourd&#8217;hui ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/">5. Que peut faire le web aujourd&rsquo;hui ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Lorsqu&rsquo;on fait référence à HTML5, on pense d&rsquo;abord à une certaine version du langage de balise utilisé pour structurer les contenus. Toutefois, ce nom désigne aussi l&rsquo;ensemble des <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noreferrer noopener">HTML5 API</a>. </p>
+
+
+
+<p>Vous trouverez un aperçu de ces nombreuses fonctionnalités sur le site <a href="https://whatwebcando.today/" target="_blank" rel="noreferrer noopener">https://whatwebcando.today/</a>. Vous pourriez découvrir par exemple que votre application peut déléguer le processus de paiement à votre navigateur !</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="658" height="515" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1790" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png 658w, https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments-300x235.png 300w" sizes="(max-width: 658px) 100vw, 658px" /><figcaption>Démonstration de la <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, qui permet au site web de déléguer tout le processus de commande et de paiement en ligne. Cela inclut l&rsquo;affichage du détail des prix, l&rsquo;enregistrement des cartes bancaires et le traitement du paiement.</figcaption></figure>
+
+
+
+<h4>Exemple d&rsquo;APIs exploitant le réseau</h4>
+
+
+
+<p>De nos jours, les applications web peuvent émettre et recevoir en temps réel des messages du serveur. En fonction de vos besoins, vous pourriez utiliser :</p>
+
+
+
+<ul><li>Les <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank" rel="noreferrer noopener">WebSockets</a> pour une communication à double sens ;</li><li>Les <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events" target="_blank" rel="noreferrer noopener">server-sent events</a> pour recevoir des notifications depuis le serveur (unidirectionnel et l&rsquo;infrastructure est plus simple que les websockets).</li></ul>
+
+
+
+<h4>Exemples d&rsquo;API pour le multimédia</h4>
+
+
+
+<p>Votre navigateur supporte à coup sûr la visioconférence grâce à l&rsquo;API <a href="https://developer.mozilla.org/fr/docs/WebRTC" target="_blank" rel="noreferrer noopener">WebRTC</a>. Celle-ci permet la réception et diffusion de flux en temps réel et tire avantage des codecs et enregistrements de flux exposés par d&rsquo;autres API (caméra, microphone, voire partage d&rsquo;écran).</p>
+
+
+
+<p>Toujours sur le plan des traitements multimédias, le navigateur sait procéder à des rendus 2D et 3D accélérés par carte graphique grâce à la <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="noreferrer noopener">Canvas API</a> et la <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noreferrer noopener">WebGL API</a>.</p>
+
+
+
+<h4>Votre navigateur est un véritable moteur de bases de données</h4>
+
+
+
+<p>Il y a plusieurs façons de sauvegarder des données côté client. Entre autres :</p>
+
+
+
+<ul><li>Les <a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies" target="_blank" rel="noreferrer noopener">cookies</a> sont de petits fichiers textes que le serveur dépose dans le navigateur. Celui-ci les renvoie systématiquement lors de futures requêtes HTTP(s) vers les domaines autorisés.</li><li>Les <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noreferrer noopener">localStorage</a> et <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank" rel="noreferrer noopener">sessionStorage</a> sont des bases de données clés/valeurs destinées à conserver de petits volumes de données. Des objets plus complexes peuvent être enregistrés s&rsquo;ils sont sérialisés avec <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/JSON/stringify" target="_blank" rel="noreferrer noopener">JSON.stringify</a> par exemple.</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noreferrer noopener">IndexedDB</a> est une base de données relationnelle et transactionnelle dans laquelle vous pouvez sauvegarder plusieurs gigaoctets de données 🤩. À partir d&rsquo;un certain volume (dépendant du navigateur), l&rsquo;application devra demander le consentement de l&rsquo;utilisateur.</li></ul>
+
+
+
+<h4>En conclusion</h4>
+
+
+
+<p>Le navigateur est un environnement d&rsquo;exécution très riche en fonctionnalités. Chacune d&rsquo;elles est implémentée dans le respect de standards, dont notamment les HTML5 API Standards.</p>
+
+
+
+<p>Malheureusement, votre base d&rsquo;utilisateur est hétérogène. Avant d&#8217;employer toute solution, vous devriez vérifier son taux d&rsquo;adoption par le marché. Le référentiel <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">https://caniuse.com/</a> vous y aidera. Il agrège les parts de marché de chaque navigateur, version par version.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/">5. Que peut faire le web aujourd&rsquo;hui ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>4. Utiliser les technologies web pour construire autre chose qu&#8217;un site.</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2021 09:22:35 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1944</guid>
+
+					<description><![CDATA[<p>Pour les ordinateurs de bureau et les téléphones Puisque les technologies du web front-end sont si pratiques pour la construction d&#8217;interfaces, les développeurs ont mis au point des stratagèmes afin de les utiliser dans d&#8217;autres contextes. En particulier, ils souhaitent en user pour leurs applications sur PC, tablettes et téléphones. Peu importe la plateforme, l&#8217;idée &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/" class="more-link">Continuer la lecture de <span class="screen-reader-text">4. Utiliser les technologies web pour construire autre chose qu&#8217;un site.</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/">4. Utiliser les technologies web pour construire autre chose qu&rsquo;un site.</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Pour les ordinateurs de bureau et les téléphones</h4>
+
+
+
+<p>Puisque les technologies du web front-end sont si pratiques pour la construction d&rsquo;interfaces, les développeurs ont mis au point des stratagèmes afin de les utiliser dans d&rsquo;autres contextes. En particulier, ils souhaitent en user pour leurs applications sur PC, tablettes et téléphones. </p>
+
+
+
+<p>Peu importe la plateforme, l&rsquo;idée est souvent la même. Il s&rsquo;agit d&rsquo;écrire une application en HTML/CSS/JS et de l&#8217;empaqueter dans une webview. Tous les éléments relatifs à l&rsquo;interface d&rsquo;un navigateur classique sont masqués (pas de barre d&rsquo;adresse, de bouton de retour, etc.). L&rsquo;intégration avec le système est aussi renforcée grâce à de nouvelles APIs.</p>
+
+
+
+<p>Une fois empaquetée, l&rsquo;application propose une expérience similaire aux autres logiciels. Elle peut fournir un programme d&rsquo;installation autonome (sous Windows ou MacOS), un paquet (.deb sous Debian, .rpm sous RHEL) ou une diffusion sur les boutiques (Google Play, App Store).</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Write once, run everywhere. 🎉</p><cite>Il s&rsquo;agit à l&rsquo;origine du <a href="https://en.wikipedia.org/wiki/Write_once,_run_anywhere" target="_blank" rel="noreferrer noopener">slogan de Java</a>.</cite></blockquote>
+
+
+
+<p>Cette citation résume un autre bénéfice de mutualiser la base de code entre plusieurs implémentations (ex. un site web, une application PC et téléphone). Vous n&rsquo;avez alors qu&rsquo;une seule base de code et plusieurs cibles de construction. En conséquence, toute nouveauté ou correction est immédiatement disponible sur ces plateformes. Toutefois, rien ne vous empêche d&rsquo;activer conditionnellement certaines fonctionnalités en fonction de la plateforme.</p>
+
+
+
+<p>Les utilisateurs pourraient exiger davantage de fonctionnalités d&rsquo;une application installée en comparaison à sa version site. Electron et Cordova vous offrent cette possibilité via une plus forte intégration avec le système et des API supplémentaires. Ce n&rsquo;est envisageable uniquement car Cordova et Electron font confiance à votre code, contrairement à un navigateur qui doit s&rsquo;en protéger.</p>
+
+
+
+<p>En effet, le navigateur fait face à des enjeux de sécurité. Il considère chaque site comme un programme non fiable, voire potentiellement malveillant. Les mécanismes de protection sont nombreux : sandbox, demande de permissions, API restreintes, etc. C&rsquo;est typiquement pour cette raison que le système de fichier n&rsquo;est pas exposé à un site web, mais pleinement accessible dans le contexte d&rsquo;Electron.</p>
+
+
+
+<h4>Pour le terminal (ligne de commande) et les serveurs</h4>
+
+
+
+<p>De nos jours, Javascript peut s&rsquo;exécuter en dehors d&rsquo;un navigateur. Node.js est l&rsquo;environnement de référence. Il est basé sur le moteur V8 de Chromium qu&rsquo;il étend avec de nouvelles API. De nombreux outils en ligne de commandes et serveurs HTTP s&rsquo;en servent.</p>
+
+
+
+<p>Pour les développeurs, utiliser le même langage entre le front-end et back-end améliore nettement la productivité. C&rsquo;est aussi un chemin rapide pour devenir « full-stack ».</p>
+
+
+
+<ul><li>Il n&rsquo;y a qu&rsquo;un seul à langage et écosystème à maîtriser (donc plus de temps pour approfondir le sujet).</li><li>La stack technique est consistante et des briques (code, dépendances&#8230;) peuvent être mutualisées entre le front-end et le back-end.</li></ul>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/">4. Utiliser les technologies web pour construire autre chose qu&rsquo;un site.</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>3. À quelle point cette interface est-elle élaborée ?</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2021 07:09:08 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1896</guid>
+
+					<description><![CDATA[<p>La disposition et mise en page (layout) La disposition et la mise en page consistent à dimensionner et positionner les blocs. La page de commande d&#8217;un nouveau serveur est composée de 4 principaux blocs : l&#8217;entête accueille l&#8217;identité du service (logo), le centre de notifications et la navigation vers les autres portails ; le menu &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. À quelle point cette interface est-elle élaborée ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img loading="lazy" width="1058" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1406"/><figcaption>L&rsquo;interface de gestion d&rsquo;Hetzner Cloud est un bel exemple de Single Page Application.</figcaption></figure>
+
+
+
+<h4>La disposition et mise en page (layout)</h4>
+
+
+
+<p>La disposition et la mise en page consistent à dimensionner et positionner les blocs. La page de commande d&rsquo;un nouveau serveur est composée de 4 principaux blocs :</p>
+
+
+
+<ul><li>l&rsquo;entête accueille l&rsquo;identité du service (logo), le centre de notifications et la navigation vers les autres portails ;</li><li>le menu de gauche permet de naviguer dans l&rsquo;interface de gestion du projet ;</li><li>le corps de la page (espace qui centralise l&rsquo;attention de l&rsquo;utilisateur) contient le formulaire ;</li><li>le pied de page flottant résume l&rsquo;état actuel de la commande.</li></ul>
+
+
+
+<h4>Le formulaire dynamique</h4>
+
+
+
+<p>Le formulaire lui-même est hautement interactif. Les actions disponibles à une étape dépendent d&rsquo;une combinaison de choix antérieurs. Il ouvre des sous-formulaires dans des fenêtres contextuelles, calcule et affiche le prix dans le pied de page, averti en cas de mauvaise configuration, etc. </p>
+
+
+
+<p>Ponctuellement, Javascript collecte quelques informations auprès du serveur comme la liste des volumes existants pour les proposer à la sélection. Il n&rsquo;en demeure pas moins que l&rsquo;intégralité des calculs, de la construction de la page et de son rendu sont réalisés côté client. Au moment où j&rsquo;écris cet article, la console est basée sur Angular. Cela tombe bien, car nous utiliserons le même cadriciel dans ce cours.</p>
+
+
+
+<h4>Le style</h4>
+
+
+
+<p>Le moteur de rendu du navigateur prend en charge les polices, les couleurs, les fonds colorés ou texturés, les dégradés, les marges internes et externes, les bordures et leurs coins arrondis, le positionnement du texte et tant d&rsquo;autres éléments de style.</p>
+
+
+
+<p>Imaginez un bloc sur fond jaune à bordure marron, dont le texte est centré et les coins sont arrondis. Avec CSS, seulement quatre petites règles sont requises. Mais combien de lignes de code vous faudrait-il pour produire le même résultat en manipulant directement un tableau 2D de pixels ?</p>
+
+
+
+<style>
+.my-rounded-block {
+  background-color: #ffecb8;
+  border: 1px solid #795548;
+  border-radius: 3px;
+  text-align: center;
+}
+</style>
+
+<p class="my-rounded-block">Example of paragraph with background and rounded border.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+
+
+
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+  Example of paragraph with background and rounded border.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+</div>
+
+
+
+<h4>Les animations</h4>
+
+
+
+<p>Créer une animation à partir de zéro est difficile. Il faut poser des formules mathématiques décrivant la transformation de la cible en fonction du temps. Ensuite, il faut calculer chacune des images tout en visant un débit stable de 60 images par seconde. Cela implique beaucoup d&rsquo;optimisations, d&rsquo;autant plus que les animations peuvent coexister.</p>
+
+
+
+<p>Heureusement, CSS3 vient encore une fois à la rescousse. Il suffira de lui décrire les états initiaux et finaux de l&rsquo;élément à animer. Le navigateur s&rsquo;occupe du reste, notamment du choix du matériel le plus adapté (comme un accélérateur graphique si disponible) et des éventuelles concessions pour maintenir un débit d&rsquo;images satisfaisant.</p>
+
+
+
+<p>Les animations donnent un retour à l&rsquo;utilisateur, lui procurant le sentiment que l&rsquo;interface est réactive et prête à accepter de nouvelles instructions.</p>
+
+
+
+<ul><li>Le changement de couleur d&rsquo;un bouton au survol de la souris invite l&rsquo;utilisateur à interagir avec.</li><li>Une animation de chargement l&rsquo;avertit que l&rsquo;application travaille normalement, même si le résultat est un peu long à obtenir.</li></ul>
+
+
+
+<p>Finalement, cet exemple d&rsquo;application illustre parfaitement l&rsquo;efficacité du couple HTML/CSS pour la construction d&rsquo;interfaces graphiques. Rien à voir, donc, avec des dinosaures 🦖 comme swing de Java !</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2. Pourquoi les technologies web sont-elles si populaires ?</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2021 07:29:03 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1863</guid>
+
+					<description><![CDATA[<p>Elles sont portables d’un OS à l’autre. L’utilisateur final a juste besoin d’un navigateur. Les technologies web front-end ont avant tout été conçues pour les navigateurs. Ces derniers fonctionnent sur presque n&#8217;importe quel système d&#8217;exploitation. C&#8217;est aussi bien valable pour les PC (Windows, MacOS, GNU/Linux&#8230;) que les téléphones (iOS, Android&#8230;). Du moment que l&#8217;utilisateur final &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Pourquoi les technologies web sont-elles si populaires ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/">2. Pourquoi les technologies web sont-elles si populaires ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Elles sont portables d’un OS à l’autre. L’utilisateur final a juste besoin d’un navigateur.</h4>
+
+
+
+<p>Les technologies web front-end ont avant tout été conçues pour les navigateurs. Ces derniers fonctionnent sur presque n&rsquo;importe quel système d&rsquo;exploitation. C&rsquo;est aussi bien valable pour les PC (Windows, MacOS, GNU/Linux&#8230;) que les téléphones (iOS, Android&#8230;).</p>
+
+
+
+<p>Du moment que l&rsquo;utilisateur final emploie un navigateur à jour, il acquière immédiatement l&rsquo;accès à toutes les applications publiées sur Internet sous la forme de sites web.</p>
+
+
+
+<h4> Elles sont maîtrisées, matures et continuent d’évoluer.</h4>
+
+
+
+<p>Internet n&rsquo;est pas né hier. Ses acteurs ont appris de leurs expériences et ont capitalisé sur les technologies et les outils.</p>
+
+
+
+<p>Aujourd&rsquo;hui, le web est plutôt régit par des standards (au moins pour les briques fondamentales).  Si votre application respecte elle-même strictement ces standards, alors il est certain qu&rsquo;elle fonctionnera encore dans des décénies.</p>
+
+
+
+<p>Prenez pour exemple <a href="http://info.cern.ch/" target="_blank" rel="noreferrer noopener">le premier site jamais construit</a> et publié sur internet. Il est toujours en ligne et parfaitement fonctionnel parce qu&rsquo;il s&rsquo;appuyait sur des standards.</p>
+
+
+
+<p>Bien sûr, ces technologies continuent d&rsquo;évoluer pour répondre aux nouveaux besoins. Il suffit de comparer n&rsquo;importe quel site moderne au premier du CERN pour s&rsquo;en convaincre.</p>
+
+
+
+<h4>La création de riches interfaces est facile</h4>
+
+
+
+<p>Historiquement, la principale mission d&rsquo;un navigateur est de procéder au rendu de pages web. C&rsquo;est une tâche à laquelle ils excellent.</p>
+
+
+
+<p>En tant que développeur, il vous suffit de construire la structure et son contenu en HTML. Quelques centaines de règles CSS permettent ensuite d&rsquo;appliquer un style et une disposition. Toute la complexité du rendu est ensuite prise en charge par de navigateur.</p>
+
+
+
+<h4>Javascript rend cette interface dynamique et interactive</h4>
+
+
+
+<p>Au début du web, le HTML et le CSS étaient produits par les serveurs. Javascript n&rsquo;avait pour objectif que d&rsquo;ajouter un peu de dynamisme côté client. Il servait principalement à :</p>
+
+
+
+<ul><li>animer des éléments (maintenant de la responsabilité de CSS) ;</li><li>réagir à des événements et modifier ponctuellement la page (par exemple afficher ou cacher un bloc quand l&rsquo;utilisateur clique sur un bouton).</li></ul>
+
+
+
+<p>Cette dernière décennie, le langage et son écosystème ont mûri. Beaucoup de cadriciels et de bibliothèques aident les développeurs à construire l&rsquo;intégralité de leurs applications clientes en JS. Celles-ci sont alors responsables de produire contenus et styles, en plus de gérer la navigation. Lorsque l&rsquo;utilisateur clique sur un lien interne, Javascript capture l&rsquo;événement, puis génère et remplace la page actuelle.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>On les appelle des « <em>Single Page Application »</em>.</p></blockquote>
+
+
+
+<p>Si tout le processus de construction et de rendu des pages se fait côté client, y-a-t-il encore besoin de serveurs ? Cela dépendra des besoins de l&rsquo;application. Certaines tâches, comme l&rsquo;authentification et l&rsquo;autorisation des accès, sont réservés à des environnements de confiance. D&rsquo;autres routines peuvent nécessiter une infrastructure pour la persistance et la diffusion de données. </p>
+
+
+
+<h4>L&rsquo;écosystème est riche en outils</h4>
+
+
+
+<p>Les outils améliorent la productivité, le confort ou la qualité. C&rsquo;est pourquoi tant d&rsquo;efforts et d&rsquo;énergies sont dépensés à les maintenir. Ils sont particulièrement abondant en développement web.</p>
+
+
+
+<p>Vous découvrirez naturellement certains d&rsquo;entres-eux au cours du module. En particulier, l&rsquo;inspecteur de DOM, de réseau, de mémoire ou le débogueur Javascript intégrés à votre navigateur vous seront d&rsquo;une grande aide. Vous apprendrez aussi à importer et gérer du code tiers grâce aux gestionnaires de dépendances. Et bien plus encore !</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/">2. Pourquoi les technologies web sont-elles si populaires ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>1. Introduction et prérequis</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Tue, 16 Feb 2021 06:46:28 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1831</guid>
+
+					<description><![CDATA[<p>Ce cours enseigne comment créer des applications web côté client en utilisant les technologies modernes. Objectifs pédagogiques Construire des interfaces web modernes de type Single Page Application, en utilisant Angular comme cadriciel. Comprendre le paradigme de programmation orientée événement (Event Driven Development). Gérer votre code source et collaborer en équipe grâce à git et à &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction et prérequis</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/">1. Introduction et prérequis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Ce cours enseigne comment créer des applications web côté client en utilisant les technologies modernes.</p>
+
+
+
+<h4>Objectifs pédagogiques</h4>
+
+
+
+<ul><li>Construire des interfaces web modernes de type <code>Single Page Application</code>, en utilisant Angular comme cadriciel.</li><li>Comprendre le paradigme de programmation orientée événement (Event Driven Development).</li><li>Gérer votre code source et collaborer en équipe grâce à git et à un workflow comme Git Flow.</li><li>Gérer les dépendances de votre projet avec npm.</li><li>Écrire du code source de qualité (bonnes pratiques, modularité, typage statique avec TS&#8230;).</li><li>Découvrir le riche écosystème des applications web (usages, outils, avantages et inconvénients).</li></ul>
+
+
+
+<h4>Compétences</h4>
+
+
+
+<p>Cet enseignement a été construit en supposant que vous connaissiez les bases de HTML et CSS, en plus d&rsquo;avoir l&rsquo;expérience de l&rsquo;algorithmique et de la programmation. Si ce n&rsquo;est pas le cas, faites un tour sur ces ressources (rapides et faciles) :</p>
+
+
+
+<ul><li><a href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started" target="_blank" rel="noreferrer noopener">Commencer avec le HTML</a></li><li><a href="https://developer.mozilla.org/fr/docs/Learn/CSS/First_steps/How_CSS_works" target="_blank" rel="noreferrer noopener">CSS, comment ça marche ?</a></li></ul>
+
+
+
+<h4>Outils</h4>
+
+
+
+<p>Les utilisateurs finaux n&rsquo;ont besoin que d&rsquo;un navigateur récent pour exécuter les applications web clientes (front-end).  Le choix de tel ou tel système d&rsquo;exploitation n&rsquo;a plus tant d&rsquo;importance dans ce contexte.</p>
+
+
+
+<p>Dans une moindre mesure, c&rsquo;est aussi vrai pour les développeurs. La plupart (mais pas tous) des outils fonctionnent sur les principaux OS. Toutefois, l&rsquo;expérience de développement peut beaucoup varier d&rsquo;un OS à l&rsquo;autre et certaines tâches seront parfois plus compliquées.</p>
+
+
+
+<p>Pour ce module, vous êtes libre d&rsquo;utiliser Windows, MacOS ou Linux. Si vous utilisez Windows, vous pourriez rencontrer des difficultés à installer Docker (utilisé pour les TP).</p>
+
+
+
+<p>Mes démonstrations seront réalisées sur Ubuntu, une distribution Linux. En cas de difficultés à mettre en place votre environnement de travail, vous pourriez installer Linux dans une machine virtuelle. Il sera alors plus simple de le mettre en place.</p>
+
+
+
+<p><strong>Pour le premier cours, veuillez s&rsquo;il vous plait :</strong></p>
+
+
+
+<ul><li>apporter systématiquement votre ordinateur.</li><li>installer <a href="https://nodejs.org/fr/" target="_blank" rel="noreferrer noopener">Node.js</a>, indispensable pour la construction et l&#8217;empaquetage d&rsquo;application web. Sous Linux, préférez l&rsquo;installation avec <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a>.</li><li>installer un éditeur ou un IDE adapté au développement web, comme VSCode ou WebStorm.</li></ul>
+
+
+
+<p>Pendant les travaux pratiques, vous installerez encore beaucoup d&rsquo;autres outils. Afin de gagner du temps et en confort, j&rsquo;ai empaqueté la plupart de ces outils et des ressources pédagogiques avec Docker.</p>
+
+
+<a href=https://docs.google.com/presentation/d/1cjTmJwYxGxT5aW4noNiNxUYFBbvRMG_i9r1tHBjxlFY/edit?usp=sharing target="_blank">
+  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
+    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
+    <div>Ouvrir le support de présentation</div>
+  </div>
+</a>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/">1. Introduction et prérequis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

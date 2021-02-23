@@ -12,20 +12,451 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 14 Feb 2021 12:46:07 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 23 Feb 2021 06:15:56 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.6.1</generator>
+	<generator>https://wordpress.org/?v=5.6.2</generator>
 	<item>
+		<title>5. Que peut faire le web aujourd&#8217;hui ?</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2021 10:43:49 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1973</guid>
+
+					<description><![CDATA[<p>Lorsqu&#8217;on fait référence à HTML5, on pense d&#8217;abord à une certaine version du langage de balise utilisé pour structurer les contenus. Toutefois, ce nom désigne aussi l&#8217;ensemble des HTML5 API. Vous trouverez un aperçu de ces nombreuses fonctionnalités sur le site https://whatwebcando.today./ Vous pourriez découvrir par exemple que votre application peut déléguer le processus de paiement &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/" class="more-link">Continuer la lecture de <span class="screen-reader-text">5. Que peut faire le web aujourd&#8217;hui ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/">5. Que peut faire le web aujourd&rsquo;hui ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Lorsqu&rsquo;on fait référence à HTML5, on pense d&rsquo;abord à une certaine version du langage de balise utilisé pour structurer les contenus. Toutefois, ce nom désigne aussi l&rsquo;ensemble des <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noreferrer noopener">HTML5 API</a>. </p>
+
+
+
+<p>Vous trouverez un aperçu de ces nombreuses fonctionnalités sur le site <a href="https://whatwebcando.today/" target="_blank" rel="noreferrer noopener">https://whatwebcando.today/</a>. Vous pourriez découvrir par exemple que votre application peut déléguer le processus de paiement à votre navigateur !</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="658" height="515" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1790" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png 658w, https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments-300x235.png 300w" sizes="(max-width: 658px) 100vw, 658px" /><figcaption>Démonstration de la <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, qui permet au site web de déléguer tout le processus de commande et de paiement en ligne. Cela inclut l&rsquo;affichage du détail des prix, l&rsquo;enregistrement des cartes bancaires et le traitement du paiement.</figcaption></figure>
+
+
+
+<h4>Exemple d&rsquo;APIs exploitant le réseau</h4>
+
+
+
+<p>De nos jours, les applications web peuvent émettre et recevoir en temps réel des messages du serveur. En fonction de vos besoins, vous pourriez utiliser :</p>
+
+
+
+<ul><li>Les <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank" rel="noreferrer noopener">WebSockets</a> pour une communication à double sens ;</li><li>Les <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events" target="_blank" rel="noreferrer noopener">server-sent events</a> pour recevoir des notifications depuis le serveur (unidirectionnel et l&rsquo;infrastructure est plus simple que les websockets).</li></ul>
+
+
+
+<h4>Exemples d&rsquo;API pour le multimédia</h4>
+
+
+
+<p>Votre navigateur supporte à coup sûr la visioconférence grâce à l&rsquo;API <a href="https://developer.mozilla.org/fr/docs/WebRTC" target="_blank" rel="noreferrer noopener">WebRTC</a>. Celle-ci permet la réception et diffusion de flux en temps réel et tire avantage des codecs et enregistrements de flux exposés par d&rsquo;autres API (caméra, microphone, voire partage d&rsquo;écran).</p>
+
+
+
+<p>Toujours sur le plan des traitements multimédias, le navigateur sait procéder à des rendus 2D et 3D accélérés par carte graphique grâce à la <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="noreferrer noopener">Canvas API</a> et la <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noreferrer noopener">WebGL API</a>.</p>
+
+
+
+<h4>Votre navigateur est un véritable moteur de bases de données</h4>
+
+
+
+<p>Il y a plusieurs façons de sauvegarder des données côté client. Entre autres :</p>
+
+
+
+<ul><li>Les <a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies" target="_blank" rel="noreferrer noopener">cookies</a> sont de petits fichiers textes que le serveur dépose dans le navigateur. Celui-ci les renvoie systématiquement lors de futures requêtes HTTP(s) vers les domaines autorisés.</li><li>Les <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noreferrer noopener">localStorage</a> et <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank" rel="noreferrer noopener">sessionStorage</a> sont des bases de données clés/valeurs destinées à conserver de petits volumes de données. Des objets plus complexes peuvent être enregistrés s&rsquo;ils sont sérialisés avec <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/JSON/stringify" target="_blank" rel="noreferrer noopener">JSON.stringify</a> par exemple.</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noreferrer noopener">IndexedDB</a> est une base de données relationnelle et transactionnelle dans laquelle vous pouvez sauvegarder plusieurs gigaoctets de données 🤩. À partir d&rsquo;un certain volume (dépendant du navigateur), l&rsquo;application devra demander le consentement de l&rsquo;utilisateur.</li></ul>
+
+
+
+<h4>En conclusion</h4>
+
+
+
+<p>Le navigateur est un environnement d&rsquo;exécution très riche en fonctionnalités. Chacune d&rsquo;elles est implémentée dans le respect de standards, dont notamment les HTML5 API Standards.</p>
+
+
+
+<p>Malheureusement, votre base d&rsquo;utilisateur est hétérogène. Avant d&#8217;employer toute solution, vous devriez vérifier son taux d&rsquo;adoption par le marché. Le référentiel <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">https://caniuse.com/</a> vous y aidera. Il agrège les parts de marché de chaque navigateur, version par version.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/">5. Que peut faire le web aujourd&rsquo;hui ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>4. Utiliser les technologies web pour construire autre chose qu&#8217;un site.</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2021 09:22:35 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1944</guid>
+
+					<description><![CDATA[<p>Pour les ordinateurs de bureau et les téléphones Puisque les technologies du web front-end sont si pratiques pour la construction d&#8217;interfaces, les développeurs ont mis au point des stratagèmes afin de les utiliser dans d&#8217;autres contextes. En particulier, ils souhaitent en user pour leurs applications sur PC, tablettes et téléphones. Peu importe la plateforme, l&#8217;idée &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/" class="more-link">Continuer la lecture de <span class="screen-reader-text">4. Utiliser les technologies web pour construire autre chose qu&#8217;un site.</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/">4. Utiliser les technologies web pour construire autre chose qu&rsquo;un site.</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Pour les ordinateurs de bureau et les téléphones</h4>
+
+
+
+<p>Puisque les technologies du web front-end sont si pratiques pour la construction d&rsquo;interfaces, les développeurs ont mis au point des stratagèmes afin de les utiliser dans d&rsquo;autres contextes. En particulier, ils souhaitent en user pour leurs applications sur PC, tablettes et téléphones. </p>
+
+
+
+<p>Peu importe la plateforme, l&rsquo;idée est souvent la même. Il s&rsquo;agit d&rsquo;écrire une application en HTML/CSS/JS et de l&#8217;empaqueter dans une webview. Tous les éléments relatifs à l&rsquo;interface d&rsquo;un navigateur classique sont masqués (pas de barre d&rsquo;adresse, de bouton de retour, etc.). L&rsquo;intégration avec le système est aussi renforcée grâce à de nouvelles APIs.</p>
+
+
+
+<p>Une fois empaquetée, l&rsquo;application propose une expérience similaire aux autres logiciels. Elle peut fournir un programme d&rsquo;installation autonome (sous Windows ou MacOS), un paquet (.deb sous Debian, .rpm sous RHEL) ou une diffusion sur les boutiques (Google Play, App Store).</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Write once, run everywhere. 🎉</p><cite>Il s&rsquo;agit à l&rsquo;origine du <a href="https://en.wikipedia.org/wiki/Write_once,_run_anywhere" target="_blank" rel="noreferrer noopener">slogan de Java</a>.</cite></blockquote>
+
+
+
+<p>Cette citation résume un autre bénéfice de mutualiser la base de code entre plusieurs implémentations (ex. un site web, une application PC et téléphone). Vous n&rsquo;avez alors qu&rsquo;une seule base de code et plusieurs cibles de construction. En conséquence, toute nouveauté ou correction est immédiatement disponible sur ces plateformes. Toutefois, rien ne vous empêche d&rsquo;activer conditionnellement certaines fonctionnalités en fonction de la plateforme.</p>
+
+
+
+<p>Les utilisateurs pourraient exiger davantage de fonctionnalités d&rsquo;une application installée en comparaison à sa version site. Electron et Cordova vous offrent cette possibilité via une plus forte intégration avec le système et des API supplémentaires. Ce n&rsquo;est envisageable uniquement car Cordova et Electron font confiance à votre code, contrairement à un navigateur qui doit s&rsquo;en protéger.</p>
+
+
+
+<p>En effet, le navigateur fait face à des enjeux de sécurité. Il considère chaque site comme un programme non fiable, voire potentiellement malveillant. Les mécanismes de protection sont nombreux : sandbox, demande de permissions, API restreintes, etc. C&rsquo;est typiquement pour cette raison que le système de fichier n&rsquo;est pas exposé à un site web, mais pleinement accessible dans le contexte d&rsquo;Electron.</p>
+
+
+
+<h4>Pour le terminal (ligne de commande) et les serveurs</h4>
+
+
+
+<p>De nos jours, Javascript peut s&rsquo;exécuter en dehors d&rsquo;un navigateur. Node.js est l&rsquo;environnement de référence. Il est basé sur le moteur V8 de Chromium qu&rsquo;il étend avec de nouvelles API. De nombreux outils en ligne de commandes et serveurs HTTP s&rsquo;en servent.</p>
+
+
+
+<p>Pour les développeurs, utiliser le même langage entre le front-end et back-end améliore nettement la productivité. C&rsquo;est aussi un chemin rapide pour devenir « full-stack ».</p>
+
+
+
+<ul><li>Il n&rsquo;y a qu&rsquo;un seul à langage et écosystème à maîtriser (donc plus de temps pour approfondir le sujet).</li><li>La stack technique est consistante et des briques (code, dépendances&#8230;) peuvent être mutualisées entre le front-end et le back-end.</li></ul>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/utiliser-les-technologies-web-pour-construire-autre-chose-quun-site/">4. Utiliser les technologies web pour construire autre chose qu&rsquo;un site.</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>3. À quelle point cette interface est-elle élaborée ?</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2021 07:09:08 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1896</guid>
+
+					<description><![CDATA[<p>La disposition et mise en page (layout) La disposition et la mise en page consistent à dimensionner et positionner les blocs. La page de commande d&#8217;un nouveau serveur est composée de 4 principaux blocs : l&#8217;entête accueille l&#8217;identité du service (logo), le centre de notifications et la navigation vers les autres portails ; le menu &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. À quelle point cette interface est-elle élaborée ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img loading="lazy" width="1058" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1406"/><figcaption>L&rsquo;interface de gestion d&rsquo;Hetzner Cloud est un bel exemple de Single Page Application.</figcaption></figure>
+
+
+
+<h4>La disposition et mise en page (layout)</h4>
+
+
+
+<p>La disposition et la mise en page consistent à dimensionner et positionner les blocs. La page de commande d&rsquo;un nouveau serveur est composée de 4 principaux blocs :</p>
+
+
+
+<ul><li>l&rsquo;entête accueille l&rsquo;identité du service (logo), le centre de notifications et la navigation vers les autres portails ;</li><li>le menu de gauche permet de naviguer dans l&rsquo;interface de gestion du projet ;</li><li>le corps de la page (espace qui centralise l&rsquo;attention de l&rsquo;utilisateur) contient le formulaire ;</li><li>le pied de page flottant résume l&rsquo;état actuel de la commande.</li></ul>
+
+
+
+<h4>Le formulaire dynamique</h4>
+
+
+
+<p>Le formulaire lui-même est hautement interactif. Les actions disponibles à une étape dépendent d&rsquo;une combinaison de choix antérieurs. Il ouvre des sous-formulaires dans des fenêtres contextuelles, calcule et affiche le prix dans le pied de page, averti en cas de mauvaise configuration, etc. </p>
+
+
+
+<p>Ponctuellement, Javascript collecte quelques informations auprès du serveur comme la liste des volumes existants pour les proposer à la sélection. Il n&rsquo;en demeure pas moins que l&rsquo;intégralité des calculs, de la construction de la page et de son rendu sont réalisés côté client. Au moment où j&rsquo;écris cet article, la console est basée sur Angular. Cela tombe bien, car nous utiliserons le même cadriciel dans ce cours.</p>
+
+
+
+<h4>Le style</h4>
+
+
+
+<p>Le moteur de rendu du navigateur prend en charge les polices, les couleurs, les fonds colorés ou texturés, les dégradés, les marges internes et externes, les bordures et leurs coins arrondis, le positionnement du texte et tant d&rsquo;autres éléments de style.</p>
+
+
+
+<p>Imaginez un bloc sur fond jaune à bordure marron, dont le texte est centré et les coins sont arrondis. Avec CSS, seulement quatre petites règles sont requises. Mais combien de lignes de code vous faudrait-il pour produire le même résultat en manipulant directement un tableau 2D de pixels ?</p>
+
+
+
+<style>
+.my-rounded-block {
+  background-color: #ffecb8;
+  border: 1px solid #795548;
+  border-radius: 3px;
+  text-align: center;
+}
+</style>
+
+<p class="my-rounded-block">Example of paragraph with background and rounded border.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+
+
+
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+  Example of paragraph with background and rounded border.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+</div>
+
+
+
+<h4>Les animations</h4>
+
+
+
+<p>Créer une animation à partir de zéro est difficile. Il faut poser des formules mathématiques décrivant la transformation de la cible en fonction du temps. Ensuite, il faut calculer chacune des images tout en visant un débit stable de 60 images par seconde. Cela implique beaucoup d&rsquo;optimisations, d&rsquo;autant plus que les animations peuvent coexister.</p>
+
+
+
+<p>Heureusement, CSS3 vient encore une fois à la rescousse. Il suffira de lui décrire les états initiaux et finaux de l&rsquo;élément à animer. Le navigateur s&rsquo;occupe du reste, notamment du choix du matériel le plus adapté (comme un accélérateur graphique si disponible) et des éventuelles concessions pour maintenir un débit d&rsquo;images satisfaisant.</p>
+
+
+
+<p>Les animations donnent un retour à l&rsquo;utilisateur, lui procurant le sentiment que l&rsquo;interface est réactive et prête à accepter de nouvelles instructions.</p>
+
+
+
+<ul><li>Le changement de couleur d&rsquo;un bouton au survol de la souris invite l&rsquo;utilisateur à interagir avec.</li><li>Une animation de chargement l&rsquo;avertit que l&rsquo;application travaille normalement, même si le résultat est un peu long à obtenir.</li></ul>
+
+
+
+<p>Finalement, cet exemple d&rsquo;application illustre parfaitement l&rsquo;efficacité du couple HTML/CSS pour la construction d&rsquo;interfaces graphiques. Rien à voir, donc, avec des dinosaures 🦖 comme swing de Java !</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2. Pourquoi les technologies web sont-elles si populaires ?</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2021 07:29:03 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1863</guid>
+
+					<description><![CDATA[<p>Elles sont portables d’un OS à l’autre. L’utilisateur final a juste besoin d’un navigateur. Les technologies web front-end ont avant tout été conçues pour les navigateurs. Ces derniers fonctionnent sur presque n&#8217;importe quel système d&#8217;exploitation. C&#8217;est aussi bien valable pour les PC (Windows, MacOS, GNU/Linux&#8230;) que les téléphones (iOS, Android&#8230;). Du moment que l&#8217;utilisateur final &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Pourquoi les technologies web sont-elles si populaires ?</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/">2. Pourquoi les technologies web sont-elles si populaires ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Elles sont portables d’un OS à l’autre. L’utilisateur final a juste besoin d’un navigateur.</h4>
+
+
+
+<p>Les technologies web front-end ont avant tout été conçues pour les navigateurs. Ces derniers fonctionnent sur presque n&rsquo;importe quel système d&rsquo;exploitation. C&rsquo;est aussi bien valable pour les PC (Windows, MacOS, GNU/Linux&#8230;) que les téléphones (iOS, Android&#8230;).</p>
+
+
+
+<p>Du moment que l&rsquo;utilisateur final emploie un navigateur à jour, il acquière immédiatement l&rsquo;accès à toutes les applications publiées sur Internet sous la forme de sites web.</p>
+
+
+
+<h4> Elles sont maîtrisées, matures et continuent d’évoluer.</h4>
+
+
+
+<p>Internet n&rsquo;est pas né hier. Ses acteurs ont appris de leurs expériences et ont capitalisé sur les technologies et les outils.</p>
+
+
+
+<p>Aujourd&rsquo;hui, le web est plutôt régit par des standards (au moins pour les briques fondamentales).  Si votre application respecte elle-même strictement ces standards, alors il est certain qu&rsquo;elle fonctionnera encore dans des décénies.</p>
+
+
+
+<p>Prenez pour exemple <a href="http://info.cern.ch/" target="_blank" rel="noreferrer noopener">le premier site jamais construit</a> et publié sur internet. Il est toujours en ligne et parfaitement fonctionnel parce qu&rsquo;il s&rsquo;appuyait sur des standards.</p>
+
+
+
+<p>Bien sûr, ces technologies continuent d&rsquo;évoluer pour répondre aux nouveaux besoins. Il suffit de comparer n&rsquo;importe quel site moderne au premier du CERN pour s&rsquo;en convaincre.</p>
+
+
+
+<h4>La création de riches interfaces est facile</h4>
+
+
+
+<p>Historiquement, la principale mission d&rsquo;un navigateur est de procéder au rendu de pages web. C&rsquo;est une tâche à laquelle ils excellent.</p>
+
+
+
+<p>En tant que développeur, il vous suffit de construire la structure et son contenu en HTML. Quelques centaines de règles CSS permettent ensuite d&rsquo;appliquer un style et une disposition. Toute la complexité du rendu est ensuite prise en charge par de navigateur.</p>
+
+
+
+<h4>Javascript rend cette interface dynamique et interactive</h4>
+
+
+
+<p>Au début du web, le HTML et le CSS étaient produits par les serveurs. Javascript n&rsquo;avait pour objectif que d&rsquo;ajouter un peu de dynamisme côté client. Il servait principalement à :</p>
+
+
+
+<ul><li>animer des éléments (maintenant de la responsabilité de CSS) ;</li><li>réagir à des événements et modifier ponctuellement la page (par exemple afficher ou cacher un bloc quand l&rsquo;utilisateur clique sur un bouton).</li></ul>
+
+
+
+<p>Cette dernière décennie, le langage et son écosystème ont mûri. Beaucoup de cadriciels et de bibliothèques aident les développeurs à construire l&rsquo;intégralité de leurs applications clientes en JS. Celles-ci sont alors responsables de produire contenus et styles, en plus de gérer la navigation. Lorsque l&rsquo;utilisateur clique sur un lien interne, Javascript capture l&rsquo;événement, puis génère et remplace la page actuelle.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>On les appelle des « <em>Single Page Application »</em>.</p></blockquote>
+
+
+
+<p>Si tout le processus de construction et de rendu des pages se fait côté client, y-a-t-il encore besoin de serveurs ? Cela dépendra des besoins de l&rsquo;application. Certaines tâches, comme l&rsquo;authentification et l&rsquo;autorisation des accès, sont réservés à des environnements de confiance. D&rsquo;autres routines peuvent nécessiter une infrastructure pour la persistance et la diffusion de données. </p>
+
+
+
+<h4>L&rsquo;écosystème est riche en outils</h4>
+
+
+
+<p>Les outils améliorent la productivité, le confort ou la qualité. C&rsquo;est pourquoi tant d&rsquo;efforts et d&rsquo;énergies sont dépensés à les maintenir. Ils sont particulièrement abondant en développement web.</p>
+
+
+
+<p>Vous découvrirez naturellement certains d&rsquo;entres-eux au cours du module. En particulier, l&rsquo;inspecteur de DOM, de réseau, de mémoire ou le débogueur Javascript intégrés à votre navigateur vous seront d&rsquo;une grande aide. Vous apprendrez aussi à importer et gérer du code tiers grâce aux gestionnaires de dépendances. Et bien plus encore !</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/">2. Pourquoi les technologies web sont-elles si populaires ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>1. Introduction et prérequis</title>
+		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Tue, 16 Feb 2021 06:46:28 +0000</pubDate>
+				<category><![CDATA[Cours]]></category>
+		<category><![CDATA[Développement web côté client]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1831</guid>
+
+					<description><![CDATA[<p>Ce cours enseigne comment créer des applications web côté client en utilisant les technologies modernes. Objectifs pédagogiques Construire des interfaces web modernes de type Single Page Application, en utilisant Angular comme cadriciel. Comprendre le paradigme de programmation orientée événement (Event Driven Development). Gérer votre code source et collaborer en équipe grâce à git et à &#8230; <a href="https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction et prérequis</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/">1. Introduction et prérequis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Ce cours enseigne comment créer des applications web côté client en utilisant les technologies modernes.</p>
+
+
+
+<h4>Objectifs pédagogiques</h4>
+
+
+
+<ul><li>Construire des interfaces web modernes de type <code>Single Page Application</code>, en utilisant Angular comme cadriciel.</li><li>Comprendre le paradigme de programmation orientée événement (Event Driven Development).</li><li>Gérer votre code source et collaborer en équipe grâce à git et à un workflow comme Git Flow.</li><li>Gérer les dépendances de votre projet avec npm.</li><li>Écrire du code source de qualité (bonnes pratiques, modularité, typage statique avec TS&#8230;).</li><li>Découvrir le riche écosystème des applications web (usages, outils, avantages et inconvénients).</li></ul>
+
+
+
+<h4>Compétences</h4>
+
+
+
+<p>Cet enseignement a été construit en supposant que vous connaissiez les bases de HTML et CSS, en plus d&rsquo;avoir l&rsquo;expérience de l&rsquo;algorithmique et de la programmation. Si ce n&rsquo;est pas le cas, faites un tour sur ces ressources (rapides et faciles) :</p>
+
+
+
+<ul><li><a href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started" target="_blank" rel="noreferrer noopener">Commencer avec le HTML</a></li><li><a href="https://developer.mozilla.org/fr/docs/Learn/CSS/First_steps/How_CSS_works" target="_blank" rel="noreferrer noopener">CSS, comment ça marche ?</a></li></ul>
+
+
+
+<h4>Outils</h4>
+
+
+
+<p>Les utilisateurs finaux n&rsquo;ont besoin que d&rsquo;un navigateur récent pour exécuter les applications web clientes (front-end).  Le choix de tel ou tel système d&rsquo;exploitation n&rsquo;a plus tant d&rsquo;importance dans ce contexte.</p>
+
+
+
+<p>Dans une moindre mesure, c&rsquo;est aussi vrai pour les développeurs. La plupart (mais pas tous) des outils fonctionnent sur les principaux OS. Toutefois, l&rsquo;expérience de développement peut beaucoup varier d&rsquo;un OS à l&rsquo;autre et certaines tâches seront parfois plus compliquées.</p>
+
+
+
+<p>Pour ce module, vous êtes libre d&rsquo;utiliser Windows, MacOS ou Linux. Si vous utilisez Windows, vous pourriez rencontrer des difficultés à installer Docker (utilisé pour les TP).</p>
+
+
+
+<p>Mes démonstrations seront réalisées sur Ubuntu, une distribution Linux. En cas de difficultés à mettre en place votre environnement de travail, vous pourriez installer Linux dans une machine virtuelle. Il sera alors plus simple de le mettre en place.</p>
+
+
+
+<p><strong>Pour le premier cours, veuillez s&rsquo;il vous plait :</strong></p>
+
+
+
+<ul><li>apporter systématiquement votre ordinateur.</li><li>installer <a href="https://nodejs.org/fr/" target="_blank" rel="noreferrer noopener">Node.js</a>, indispensable pour la construction et l&#8217;empaquetage d&rsquo;application web. Sous Linux, préférez l&rsquo;installation avec <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a>.</li><li>installer un éditeur ou un IDE adapté au développement web, comme VSCode ou WebStorm.</li></ul>
+
+
+
+<p>Pendant les travaux pratiques, vous installerez encore beaucoup d&rsquo;autres outils. Afin de gagner du temps et en confort, j&rsquo;ai empaqueté la plupart de ces outils et des ressources pédagogiques avec Docker.</p>
+
+
+<a href=https://docs.google.com/presentation/d/1cjTmJwYxGxT5aW4noNiNxUYFBbvRMG_i9r1tHBjxlFY/edit?usp=sharing target="_blank">
+  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
+    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
+    <div>Ouvrir le support de présentation</div>
+  </div>
+</a>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/introduction-2/">1. Introduction et prérequis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>Quizzes</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/quizz/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Fri, 12 Feb 2021 19:43:27 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1695</guid>
 
 					<description><![CDATA[<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available. GitThe main (or master) branch for git hf workflow is dedicated to: Single page applicationsWhat produces HTML in an Single Page Application? ComparisonsWhich rows are output?What is the output? DependenciesWhat are the risks inherent to dependency import? Copy &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/quizz/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Quizzes</span></a></p>
@@ -120,11 +551,11 @@
 <p><strong><span style="color:#741b47" class="has-inline-color">Les options</span></strong> permettent de personnaliser le comportement. Pour ls, d’après le manuel:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># extrait de "man ls", commande qui permet d'accéder à la documentation de "ls"</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># extrait de "man ls", commande qui permet d'accéder à la documentation de "ls"</span>
 -l	use a long listing format
 -s	<span class="hljs-built_in">print</span> the allocated size of each file, <span class="hljs-keyword">in</span> blocks
 -a	<span class="hljs-keyword">do</span> not ignore entries starting with .
--h 	with -l and -s, <span class="hljs-built_in">print</span> sizes like 1K 234M 2G etc.</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+-h 	with -l and -s, <span class="hljs-built_in">print</span> sizes like 1K 234M 2G etc.</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong><span style="color:#bf9000" class="has-inline-color">Les arguments</span></strong> permettent généralement de spécifier la cible du traitement. Par exemple, ls attend optionnellement une liste de chemins de dossiers et de fichiers à examiner.</p>
@@ -170,7 +601,7 @@
 <p>Toujours dans notre exemple <code>ls -lhsa /etc</code>, le résultat du processus est un texte. On regardera au passage que ce format autorise une mise en page en colonne ou un rendu de couleurs.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell">thomas@thinkpad-laptop:~$ ls -lhsa /etc
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell">thomas@thinkpad-laptop:~$ ls -lhsa /etc
 total 1,3M
  12K drwxr-xr-x 156 root root    12K janv. 18 19:06 .
 4,0K drwxr-xr-x  20 root root   4,0K mai   31  2020 ..
@@ -182,7 +613,7 @@ total 1,3M
 4,0K -rw-r--r--   1 root root    244 oct.   7 10:42 antidote.conf
 4,0K drwxr-xr-x   3 root root   4,0K oct.  23 10:19 apache2
 4,0K -rw-r--r--   1 root root    433 oct.   2  2017 apg.conf
-[...] sortie tronquée</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
+[...] sortie tronquée</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>D&rsquo;ailleurs, la sortie console d&rsquo;un processus est un flux. La commande <code>ls</code> laisse penser qu&rsquo;il faut attendre la complétion de l&rsquo;exécution du programme pour avoir le résultat. C&rsquo;est faux, et une commande que <code>htop</code> le démontre. Un processus peut envoyer des messages par intermittence.</p>
@@ -252,38 +683,38 @@ total 1,3M
 <p>Ces deux exemples sont équivalents. Ils redirigent STDOUT (flux n°1) vers un fichier. En cas d&rsquo;erreur sur STDERR, les messages s&rsquo;affichent toujours en console.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt; sortie_redirigee.txt
-ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt; sortie_redirigee.txt
+ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Il est aussi possible de rediriger le flux STDERR (flux n°2) avec cette syntaxe.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>On peut rediriger séparément STDOUT et STDERR vers deux fichiers différents.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 1&gt; sortie_redirigee.txt 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 1&gt; sortie_redirigee.txt 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Une syntaxe permet de rediriger STDERR vers STDOUT. Dans le cas présent, STDOUT restant affiché en console, toute la sortie du programme est en console.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>On peut chaîner la redirection STDERR vers STDOUT, puis STDOUT vers un fichier.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1 &gt; sortie_fusionnee_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1 &gt; sortie_fusionnee_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Les redirections avec un simple &lsquo;>&rsquo; détruisent le fichier existant. À l&rsquo;inverse, la syntaxe avec deux chevrons permet d&rsquo;ajouter le contenu en fin de fichier.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt;&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt;&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Envoyer un fichier vers STDIN</h4>
@@ -327,7 +758,7 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 07:16:11 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1576</guid>
 
 					<description><![CDATA[<p>Topic Your goal for this project is to build a client application that leverages publicly available APIs. You can choose as many public API you want. Try to build something new and useful, with a real added value. Rules This is a group work (3 or 4 students per team). Use Angular or React. Material &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project</span></a></p>
@@ -370,12 +801,186 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 		
 			</item>
 		<item>
+		<title>3. The booking experience</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/the-booking-experience/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Tue, 09 Feb 2021 09:00:02 +0000</pubDate>
+				<category><![CDATA[Front-end web development]]></category>
+		<category><![CDATA[Practical works]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2008</guid>
+
+					<description><![CDATA[<p>Learning objectives &#38; expected results During this practical activity, you will build the booking experience and take care of business logic. That is the opportunity to: be more autonomous than during the last practical work ; build more complex forms than previous login component ; split the form in reusable components ; use @Input() and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. The booking experience</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Learning objectives &amp; expected results</h4>
+
+
+
+<p>During this practical activity, you will build the booking experience and take care of business logic.</p>
+
+
+
+<p>That is the opportunity to:</p>
+
+
+
+<ul><li>be more autonomous than during the last practical work ;</li><li>build more complex forms than previous login component ;</li><li>split the form in reusable components ;</li><li>use <code>@Input()</code> and <code>@Output()</code> data bindings on component boundaries ;</li><li>manage the state of the application and persistence across form steps ;</li><li>train yourself with async http requests and angular services ;</li><li>think about your UI and UX, so it is convenient for customer ;</li><li>use directives such as <code>*ngIf</code> and <code>*ngFor</code>, template variables, etc.</li></ul>
+
+
+
+<p>Your booking experience must satisfy the following requirements:</p>
+
+
+
+<ol><li>The customer initiates the booking from the home page. It provides the location of the delivery (postal code or city name). This user input is validated against Openstreetmap API and geocoded.</li><li>Geocoded postal address (latitude and longitude) is sent to the server. If zone is covered, the customer goes on next step. Else, an explanation is displayed.</li><li>The customer provides basic informations describing the service (start date and time, duration).</li><li>All collected data are sent to the server, which revolves available employees. The user selects one proposal.</li><li>At that time, it may be unauthenticated or unregistered. The user logs in or creates a new customer account. Then it confirms the booking.</li></ol>
+
+
+
+<h4>Let&rsquo;s go !</h4>
+
+
+
+<p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>booking-experience</code>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong>: You know more components will be created&#8230; Take a few minutes to reorganise your project, so it looks like the following tree.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">src
+ ↳ app
+    ↳ decorators         <span class="hljs-comment"># empty for now. Will contain typescript decorators.</span>
+    ↳ guards             <span class="hljs-comment"># contains guards for @angular/router.</span>
+    ↳ routes             <span class="hljs-comment"># contains components respecting the same tree structure as URL paths.</span>
+       ↳ home
+       ↳ login
+       ↳ profile
+    ↳ services           <span class="hljs-comment"># contains angular services.</span>
+    ↳ shared             <span class="hljs-comment"># empty for now. Will contain shared and reusable components.</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Home page</h4>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1242" height="498" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif" alt="" class="wp-image-2038"/><figcaption>The customer enters a city, postal code or postal address, which is geocoded using nominatim API.</figcaption></figure>
+
+
+
+<p>I give you some pieces of code that you may reuse. First of all, the <code>GeocodeService</code> can query the <code>nominatim</code> to search places.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/app/services/geocode.service.ts</span>
+<span class="hljs-keyword">import</span> { HttpClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/common/http'</span>;
+<span class="hljs-keyword">import</span> { Injectable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> NominatimResult {
+  display_name: <span class="hljs-built_in">string</span>
+  importance: <span class="hljs-built_in">number</span>  
+  lat: <span class="hljs-built_in">number</span>
+  lon: <span class="hljs-built_in">number</span>
+}
+
+<span class="hljs-meta">@Injectable</span>({
+  providedIn: <span class="hljs-string">'root'</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> GeocodeService {
+  <span class="hljs-keyword">constructor</span> (<span class="hljs-params"><span class="hljs-keyword">private</span> httpClient: HttpClient</span>) {}
+
+  geocodeCity (postalAddress: <span class="hljs-built_in">string</span>, country = <span class="hljs-string">'fr'</span>): NominatimResult[] {
+    <span class="hljs-comment">// no API call if input is too short</span>
+    <span class="hljs-keyword">if</span> (postalAddress.length &lt; <span class="hljs-number">3</span>) <span class="hljs-keyword">return</span> [];
+
+    <span class="hljs-comment">// find OpenStreetMap nominatim API documention at https://nominatim.org/release-docs/latest/api/Search/</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.httpClient.get(<span class="hljs-string">`https://nominatim.openstreetmap.org/search?format=json&amp;featuretype=administrative&amp;countrycodes=<span class="hljs-subst">${country}</span>&amp;q=<span class="hljs-subst">${postalAddress}</span>`</span>).toPromise() <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>;
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Also, you <strong>must</strong> debounce HTTP calls to OpenStreetMap API. In other words, do not call the geocoding API until the customer stopped writing for 1 second. I provide you ready to use typescript decorator, usable on your callback component method.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/app/decorators/debounce.decorator.ts</span>
+<span class="hljs-comment">/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was invoked.
+ * 
+ * See https://blog.bitsrc.io/3-ways-to-debounce-http-requests-in-angular-c407eb165ada
+ * 
+ * Usage:
+ * @Debounce(750)
+ * static methodToDebound (args: any) {}
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Debounce</span> (<span class="hljs-params">ms: <span class="hljs-built_in">number</span></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target: <span class="hljs-built_in">any</span>, key: <span class="hljs-built_in">any</span>, descriptor: <span class="hljs-built_in">any</span></span>) </span>{
+    <span class="hljs-keyword">const</span> oldFunc = descriptor.value
+    <span class="hljs-keyword">const</span> newFunc = debounce(oldFunc, ms)
+    descriptor.value = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> newFunc.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>)
+    }
+  }
+}
+
+<span class="hljs-comment">/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was invoked.
+ * See more at https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>&lt;<span class="hljs-title">F</span> <span class="hljs-title">extends</span> <span class="hljs-title">Function</span>&gt;(<span class="hljs-params">func: F, wait: <span class="hljs-built_in">number</span>, immediate = <span class="hljs-literal">false</span></span>): <span class="hljs-title">F</span> </span>{
+  <span class="hljs-keyword">let</span> timeout: <span class="hljs-built_in">number</span> | <span class="hljs-literal">null</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// @ts-ignore</span>
+    <span class="hljs-keyword">let</span> context = <span class="hljs-keyword">this</span>, args = <span class="hljs-built_in">arguments</span>;
+
+    <span class="hljs-keyword">if</span> (timeout) clearTimeout(timeout);
+    timeout = <span class="hljs-built_in">window</span>.setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      timeout = <span class="hljs-literal">null</span>;
+      <span class="hljs-keyword">if</span> (!immediate) func.apply(context, args);
+    }, wait);
+
+    <span class="hljs-keyword">if</span> (immediate &amp;&amp; !timeout) func.apply(context, args);
+  } <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>
+}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Here an example how to use the decorator.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">class</span> PostalAddressInputComponent {
+  <span class="hljs-meta">@Debounce</span>(<span class="hljs-number">1000</span>)
+  <span class="hljs-keyword">async</span> searchAddress (rawPostalAddress: <span class="hljs-built_in">string</span>) {
+    <span class="hljs-comment">// trigerred 1 time per second max.</span>
+    <span class="hljs-comment">// delayed until the method has not been call for 1 second.</span>
+  }
+}</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Note <code>@angular/material</code> provides ready to use <a href="https://material.angular.io/components/autocomplete/overview" target="_blank" rel="noreferrer noopener">autocomplete field</a> you may import.</p>
+
+
+
+<p class="exercice"><strong>Exercise 3</strong>: Build such autocomplete input (as a reusable component) and use it on the home page. You <strong>must</strong> debounce API calls. Also take a few minutes, so your home page looks more friendly.</p>
+
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>2. Managing authentication &#038; routing</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:01 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
+				<category><![CDATA[Front-end web development]]></category>
 		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1125</guid>
 
@@ -406,8 +1011,8 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 <p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>authentication-and-routing</code>. On Github, you should see a branch called <code>feature/authentication-and-routing</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
-git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
+git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>I encourage you to commit regular your changes (for example, at the end of each question). You may also reset your workspace to last commit when things go wrong.</p>
@@ -441,12 +1046,12 @@ git hf feature start authentication-<span class="hljs-keyword">and</span>-routin
 <p>The <code>@angular/cli</code> is able to generate some pieces of code, like a component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
 $ ng generate component navigation
 CREATE src/app/navigation/navigation.component.css (<span class="hljs-number">0</span> bytes)
 CREATE src/app/navigation/navigation.component.html (<span class="hljs-number">25</span> bytes)
 CREATE src/app/navigation/navigation.component.ts (<span class="hljs-number">291</span> bytes)
-UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 4</strong>: Commit any existing change on git, then generate a new component called <code>navigation</code>. Examine changes made by <code>@angular/cli</code> (you can use git and the output of <code>ng generate</code> command). Finally, move the mat-toolbar into <code>navigation.component</code>. Visually, the result should be identical.</p>
@@ -586,7 +1191,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <p>The same way we prefer <code>routerLink</code> over <code>href</code> because it does not reload the <code>Single Page Application</code>, you should use the <code>@angular/router</code> from your typescript controller (ex. from your submit method in <code>LoginComponent</code>). Here an example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/router'</span>;
 
 <span class="hljs-meta">@Component</span>({
@@ -600,7 +1205,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
   <span class="hljs-keyword">async</span> submit () {
     <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.router.navigateByUrl(<span class="hljs-string">'/profile'</span>);
   }
-}</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="margin-bottom: 1em;">
 <p><strong>Exercise 11</strong>: This example is rich of typescript and angular features. Let&rsquo;s analyse it.</p>
@@ -670,14 +1275,14 @@ total 60K
 <p>You are most likely interested in API and models’ definitions. For example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
 </span></span><span class='shcb-loc'><span><span class="hljs-keyword">import</span> { Request, Response } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 </span></span><mark class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
 </span></mark><mark class='shcb-loc'><span>    email: <span class="hljs-built_in">string</span>;
 </span></mark><mark class='shcb-loc'><span>    password: <span class="hljs-built_in">string</span>;
 </span></mark><mark class='shcb-loc'><span>}
 </span></mark><span class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">req: Request, res: Response</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;</span>;
-</span></span></code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the back-end is incompatible with the front-end usage, the typescript compiler catches it.</p>
@@ -691,7 +1296,7 @@ total 60K
 <p> </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
 </span></span><span class='shcb-loc'><span>{
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compileOnSave"</span>: <span class="hljs-literal">false</span>,
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compilerOptions"</span>: {
@@ -709,7 +1314,7 @@ total 60K
 </span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictTemplates"</span>: <span class="hljs-literal">true</span>
 </span></span><span class='shcb-loc'><span>  }
 </span></span><span class='shcb-loc'><span>}
-</span></span></code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="1141" height="777" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif" alt="" class="wp-image-1613"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
@@ -739,7 +1344,7 @@ total 60K
 <p class="exercice"><strong>Exercise 14</strong>: Using the <code>@angular/cli</code>, generate <code>me.service.ts</code> and implement <code>resolve</code>, <code>login</code> and <code>logout</code> methods. Finally, update accordly the <code>LoginComponent</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login'</span>;
 <span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/models/user'</span>;
 
 <span class="hljs-keyword">interface</span> IMeService {
@@ -766,7 +1371,7 @@ total 60K
    * Returns Promise&lt;void&gt; if success.
    */</span>
   logout: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt;
-}</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
@@ -808,15 +1413,15 @@ total 60K
 <p>You have to change your routes, so they look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
+<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
   { path: <span class="hljs-string">'login'</span>, component: LoginComponent, resolve: { me: MeService } },
-  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Now, components scoped inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>  can access the <code>me</code> property through <code>ActivatedRoute</code> service injection.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
   <span class="hljs-comment">// once initialized, you can use it to dynamically adapt the navigation template.</span>
   me: User;
 
@@ -824,7 +1429,7 @@ total 60K
     <span class="hljs-comment">// When the NavigationComponent is mounted, the MeService has already been resolved.</span>
     <span class="hljs-keyword">this</span>.me = activatedRoute.snapshot.data.me;
   }
-}</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>For some reason, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. At this step, you include <code>app-navigation</code> in <code>app.component.html</code>. You must move it to <code>home-component</code>, <code>login-component</code>&#8230;</p>
@@ -927,878 +1532,11 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <p>Once the code is reviewed, merge your pull request on Github and finalise your feature.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">git hf feature finish authentication-and-routing</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">git hf feature finish authentication-and-routing</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>1. Setup your practical environment</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Tue, 09 Feb 2021 09:00:00 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
-		<category><![CDATA[Practical works]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
-
-					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools and learning materials ; start the mock back-end infrastructure (server, database&#8230;) and import seeds ; access to the back-end API documentation and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Setup your practical environment</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided.</p>
-
-
-
-<p>During this first seance, you will:</p>
-
-
-
-<ul><li>install the necessary tools and learning materials ;</li><li>start the mock back-end infrastructure (server, database&#8230;) and import seeds ;</li><li>access to the back-end API documentation and interact manually with it ;</li><li>generate the angular project and serve compiled application to your browser ;</li><li>commit that angular project on git and push it to Github.</li></ul>
-
-
-
-<h2>Required softwares installation</h2>
-
-
-
-<p>Only git and docker require administration privileges to be installed. On Linux and macOS, this means you should not use sudo or root for anything else (even installing node.js).</p>
-
-
-
-<h4>Git &amp; git-hf</h4>
-
-
-
-<p>Git is a decentralised source version manager. A git repository stores the source code of a project and any of its changes. Typically, a contributor writes some code on its side. Once it has completed its task, it commits the changes (with a message) and push it to the remote repositories. Other contributors can update their base. Nowadays, teams centralise repositories hosting on SaaS platforms like Github and Gitlab.</p>
-
-
-
-<p>During the lecture, I expressed you follow the <a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html" target="_blank" rel="noreferrer noopener">gitflow</a> workflow. Takes the time to understand it. Then, install the git extension <a href="https://datasift.github.io/gitflow/TheHubFlowTools.html" target="_blank" rel="noreferrer noopener">git-hf</a>. That tool creates high-level commands to manage features, releases and hotfixes branches.</p>
-
-
-
-<p>Of course, you also need a Github account.</p>
-
-
-
-<h4>Node.js &amp; npm &amp; nvm</h4>
-
-
-
-<p><a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">Node.js</a> is a platform that runs Javascript code outside the browser. It makes possible to write server applications in Javascript, allowing developers to use the same technologies for front and back. The back-end you will interface with is running on node.js.</p>
-
-
-
-<p>But here we are in front-end module. We are interested in node.js because it powers most tools we will use. Some of them are even shipped with the node installer. Node Package Manager (npm) is one of them. It manages dependencies of your project and installs cli softwares written for node.</p>
-
-
-
-<p>I personally use <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a> for installing node. Nvm (Node Version Manager) installs and manages various versions of node (including latest one) without requiring root privileges.</p>
-
-
-
-<h4>Docker &amp; docker-compose</h4>
-
-
-
-<p><a href="https://docs.docker.com/engine/install/" target="_blank" rel="noreferrer noopener">Docker</a> is a container runtime. Everything running in the container is isolated from the host. Except the kernel which is shared with the host, the container contains a fully functional operating system (including software, shared libraries, users&#8230;).</p>
-
-
-
-<p>For example, consider an application only runs on Ubuntu version 20.04, with specific dependencies and a lot a setup. The distribution of that software will be complicated, as there are such requirements. What if you could directly distribute ready to use Ubuntu instance with the software installed ? That is what we call a container image.</p>
-
-
-
-<p>Docker maintains DockerHub, a public registry hosting tons of prebuilt images you can pull and instantiate.</p>
-
-
-
-<p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="noreferrer noopener">Docker-compose</a> is a higher-level tool, allowing the definition of infrastructure as code. You just have to write a config file, and docker compose will pull, configure and start all containers for you. It takes care of networking, exposing ports, storing persistent data, etc.</p>
-
-
-
-<p>Please install both tools. For Windows 10 users, docker-compose is already packaged with Docker Desktop.</p>
-
-
-
-<h4>Angular CLI</h4>
-
-
-
-<p><a href="https://angular.io/" target="_blank" rel="noreferrer noopener">Angular</a> is a full-featured framework you will use for building your front application. Most actions, such as generating projects or components have been automatised in the « cli » tool.</p>
-
-
-
-<p>A single command written in a terminal (Powershell or Node Command Prompt for Windows) do the job. Ensure node is installed first. We also install <a href="https://eslint.org/" target="_blank" rel="noreferrer noopener">eslint</a>, which ensure coding conventions are applied across codebase.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h2>Workspace overview</h2>
-
-
-
-<p>At the end of this seance, your workspace should match the following folder hierarchy.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
- ↳ dist                        <span class="hljs-comment"># the folder containing your bundled app. Only exists after running `ng build` command.</span>
- ↳ node_modules                <span class="hljs-comment"># the folder containing local dependencies. See package.json file and npm command for more info.</span>
- ↳ src                         <span class="hljs-comment"># source code (HTML, CSS, TS). It includes components, services, etc.</span>
- ↳ angular.json                <span class="hljs-comment"># @angular/cli configuration</span>
- ↳ package.json                <span class="hljs-comment"># npm configuration, primary used for installing dependencies</span>
- ↳ tsconfig.json               <span class="hljs-comment"># typescript configuration, where are defined target, enabled syntax and type checking features.</span>
- ↳ .eslintrc.json              <span class="hljs-comment"># eslint configuration, where you set linter rules.</span>
-learning-materials             <span class="hljs-comment"># my git repository you have to clone, which contains backend server, database and some tools</span>
- ↳ frontend-web-development    <span class="hljs-comment"># the folder containing every materials related to this practical work.</span>
-    ↳ docker-compose.yml       <span class="hljs-comment"># configuration for docker-compose, that will take care of booting full backend infrastructure.</span>
-    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Angular project&rsquo;s structure is standard (thanks to @angular/cli). For more information about it, please refer to <a href="https://angular.io/guide/file-structure" target="_blank" rel="noreferrer noopener">official documentation</a>.</p>
-
-
-
-<h2>Setup the angular project</h2>
-
-
-
-<h4>Create the angular app using @angular/cli</h4>
-
-
-
-<p class="exercice"><strong>Exercise 1</strong> : Follow this process to create and configure a new angular app.</p>
-
-
-
-<ul><li>Linux/Mac: run a terminal</li><li>Windows: use PowerShell or “Node.js Command Prompt”</li></ul>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
-npm i -g @angular/cli @angular-devkit/core @angular-devkit/schematics @angular-eslint/schematics
-
-<span class="hljs-comment"># creates a new project with angular router enabled</span>
-ng new --routing --strict --collection=@angular-eslint/schematics frontend
-
-<span class="hljs-comment"># enter the 'frontend' folder</span>
-<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>The previous commands enabled the<code>:</code></p>
-
-
-
-<ul><li><code>angular/router</code>, with argument <code>--routing</code> that let our angular app overriding and intercepting the browser URLs through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="noreferrer noopener">HTML5 History API</a>.</li><li>the strict mode of typescript with <code>--strict</code> argument. Among other things, Typescript will expect to know the type of each variable, so it can enforce safety checks. See <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank" rel="noreferrer noopener">typescript reference</a> for more info.</li><li><code>eslint</code> support, with rules recommended by the angular community. Linter&rsquo;s objectives is to ensure codebase consistency across the team and collaborator turnover. It sets guidelines, detects some bad coding patterns, etc.</li></ul>
-
-
-<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
-  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
-<div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5444790f18c5e943fd9e6202c677b0db943e8ce0/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5444790f18c5e943fd9e6202c677b0db943e8ce0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
-</div>
-</div>
-
-
-
-<h4>Configure your editor</h4>
-
-
-
-<p>If you are using VSCode, you will probably appreciate those extensions:</p>
-
-
-
-<ul><li>Angular Language Service (type inference in template)</li><li>Eslint checks that conventions are correctly applied</li><li>Gitlens (optional) for better git experience</li></ul>
-
-
-
-<h4>Build the app</h4>
-
-
-
-<p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
-ng build --prod   <span class="hljs-comment"># build the app for production. A lot of optimisations are processed, reducing bundle size.</span>
-ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<div class="exercice" style="margin-bottom: 1em">
-<p><strong>Exercise 2</strong> : I provided you an example of output of the <code>ng build</code> command. Run it on your side and check the content of  `frontend/dist` folder.</p>
-
-<ul style="margin-left: 1em; margin-bottom: 0">
-  <li>What are the languages used in output ?</li>
-  <li>Which source files have been transpiled and bundled into main.js ?</li>
-  <li>How many files were outputted ? Compare this count to the number of files in the source directory. Do you think adding new sources will increase outputted files count ?</li>
-<li>What is the purpose of .js.map files ?</li>
-<li>What is the purpose of polyfills in Javascript ?</li>
-</ul>
-</div>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
-✔ Browser application bundle generation complete.
-✔ Copying assets complete.
-✔ Index html generation complete.
-
-Initial Chunk Files | Names         |      Size
-vendor.js           | vendor        |   <span class="hljs-number">2.70</span> MB
-polyfills.js        | polyfills     | <span class="hljs-number">127.61</span> kB
-main.js             | main          |  <span class="hljs-number">20.85</span> kB
-runtime.js          | runtime       |   <span class="hljs-number">6.15</span> kB
-styles.css          | styles        | <span class="hljs-number">119</span> bytes
-
-                    | Initial Total |   <span class="hljs-number">2.85</span> MB
-
-Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>At this step, you can open <code>frontend/dist/index.html</code> in your browser and explore the placeholder generated by <code>@angular/cli</code>.</p>
-
-
-
-<p class="exercice"><strong>Exercise 3</strong> : Build your app with <code>--prod</code> option and check differences in output.</p>
-
-
-
-<h4>Commit your code and push it to Github</h4>
-
-
-
-<p class="exercice"><strong>Exercise 4</strong> : Register yourself on Github. Then create a private git repository on Github. Finally push you angular project to Github.</p>
-
-
-
-<p>The <code>ng new</code> command already initialised a local git repository. If you have any pending change, you have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
-git status
-
-<span class="hljs-comment"># you probably want to commit new files in your repository.</span>
-<span class="hljs-comment"># git add accepts a list of files or folder.</span>
-<span class="hljs-comment"># '.' designates the current directory.</span>
-git add .
-
-<span class="hljs-comment"># commit every pending change with a message</span>
-git commit -a -m <span class="hljs-string">"configure linter and typescript"</span>
-
-<span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
-git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
-git branch -M main
-git push -u origin main</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
-
-
-
-<h4>Start using GitFlow and git-hf</h4>
-
-
-
-<p>All the code is currently committed on main branch (previously called master branch). In the GitFlow workflow, the main branch is dedicated to the production code only.</p>
-
-
-
-<p>This TPs series will use feature branches, develop and main. Each time you start a new feature (ex. adding authentification), you will start a feature branch. Once you completed your changes, open a pull request on github and merge the code to develop. Once the code on develop is well tested, it can be merged on main branch.</p>
-
-
-
-<p class="exercice"><strong>Exercise 5</strong> : Initialise git hf with the following command. Ensure you select &lsquo;main&rsquo; as primary branch (not master). You can find <a href="https://datasift.github.io/gitflow/index.html" target="_blank" rel="noreferrer noopener">documentation here</a>.</p>
-
-
-<pre class="wp-block-code"><div><code class="hljs">git hf init -a</code></div></pre>
-
-
-<h2>Setup back-end infrastructure</h2>
-
-
-
-<p>Before cloning the repository, remember we want <code>frontend</code> and <code>learning-materials</code> in the same location. So ensure you see <code>frontend</code> folder when you write <code>ls</code> command. If not, use the <code>cd</code> command.</p>
-
-
-
-<p class="exercice"><strong>Exercise 6</strong> : create a folder dedicated to practical works and clone <a href="https://github.com/TruffeCendree/learning-materials" target="_blank" rel="noreferrer noopener">my git repository</a> in it.</p>
-
-
-
-<p>This git repository is a <a href="https://en.wikipedia.org/wiki/Monorepo" target="_blank" rel="noreferrer noopener">monorepo</a>. It contains learning materials for multiple modules. You must focus on <code>learning-materials/frontend-web-development</code> folder.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
-<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the <code>docker-compose.yml</code> file.</p>
-
-
-
-<p>Do you know what is a safe password ? How long should they be ? ANSSI (Agence Nationale de la Sécurité des Systèmes d&rsquo;Information) provides explanations and a <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator</a>. I recommend generating random and unique password for each account (not just in this module 🧐).</p>
-
-
-
-<p class="exercice"><strong>Exercise 8</strong>: Start the mariadb database using the following command. On first launch, wait until the database reported a complete initialisation (highlighted in output).</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
-</span></span><span class='shcb-loc'><span>$ docker-compose up mariadb
-</span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52+00:00 [Note] [Entrypoint]: Entrypoint script <span class="hljs-keyword">for</span> MySQL Server 1:10.5.8+maria~focal started.
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52+00:00 [Note] [Entrypoint]: Switching to dedicated user <span class="hljs-string">'mysql'</span>
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52+00:00 [Note] [Entrypoint]: Entrypoint script <span class="hljs-keyword">for</span> MySQL Server 1:10.5.8+maria~focal started.
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld (mysqld 10.5.8-MariaDB-1:10.5.8+maria~focal) starting as process 1 ...
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] InnoDB: Using Linux native AIO
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] InnoDB: Uses event mutexes
-</span></span><span class='shcb-loc'><span>[...] truncated
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Warning] <span class="hljs-string">'proxies_priv'</span> entry <span class="hljs-string">'@% root@d05a66d49a70'</span> ignored <span class="hljs-keyword">in</span> --skip-name-resolve mode.
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Reading of all Master_info entries succeeded
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Added new Master_info <span class="hljs-string">''</span> to <span class="hljs-built_in">hash</span> table
-</span></span><mark class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld: ready <span class="hljs-keyword">for</span> connections.
-</span></mark><mark class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></mark></code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker (using <code>Ctrl + C</code>). Then start the full stack. The backend API should notify a successful startup.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-26" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
-</span></span><span class='shcb-loc'><span>Building backend
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>Successfully built 48950e9da763
-</span></span><span class='shcb-loc'><span>Successfully tagged frontend-web-development_backend:latest
-</span></span><span class='shcb-loc'><span>WARNING: Image <span class="hljs-keyword">for</span> service backend was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Creating frontend-web-development_backend_1    ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Creating frontend-web-development_phpmyadmin_1 ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1, frontend-web-development_phpmyadmin_1, frontend-web-development_backend_1
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>phpmyadmin_1  | [Sun Jan 24 14:01:37.687410 2021] [core:notice] [pid 1] AH00094: Command line: <span class="hljs-string">'apache2 -D FOREGROUND'</span>
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; frontend-web-development@1.0.0 db:prepare:prod /app
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; NODE_ENV=<span class="hljs-built_in">test</span> node -e <span class="hljs-string">"require('./build/server/mysql-store').default.rebuildDatabase('prod').then(() =&gt; process.exit()).catch(err =&gt; { console.error(err); process.exit(1) })"</span>
-</span></span><span class='shcb-loc'><span>backend_1     | 
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:53.387Z backend:mysql-store Upgrading SQL triggers...
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:53.401Z backend:mysql-store Triggers updated successfully
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 14:01:53 4 [Warning] Aborted connection 4 to db: <span class="hljs-string">'unconnected'</span> user: <span class="hljs-string">'root'</span> host: <span class="hljs-string">'172.24.0.3'</span> (Got an error reading communication packets)
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 14:01:53 5 [Warning] Aborted connection 5 to db: <span class="hljs-string">'cleaningshop'</span> user: <span class="hljs-string">'root'</span> host: <span class="hljs-string">'172.24.0.3'</span> (Got an error reading communication packets)
-</span></span><span class='shcb-loc'><span>backend_1     | 
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; frontend-web-development@1.0.0 db:prepare:<span class="hljs-built_in">test</span> /app
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; NODE_ENV=<span class="hljs-built_in">test</span> node -e <span class="hljs-string">"require('./build/server/mysql-store').default.rebuildDatabase('test').then(() =&gt; process.exit()).catch(err =&gt; { console.error(err); process.exit(1) })"</span>
-</span></span><span class='shcb-loc'><span>backend_1     | 
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.288Z backend:mysql-store Upgrading SQL triggers...
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.307Z backend:mysql-store Triggers updated successfully
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.549Z backend:mysql-store Upgrading SQL triggers...
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.577Z backend:mysql-store Triggers updated successfully
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.582Z backend:app App listening on port 8080...
-</span></span></code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Let’s analyse logs above:</p>
-
-
-
-<ul><li>Lines 2 to 7: docker-compose builds the backend using scripts in <code>Dockerfile</code> (more explanation about Dockerfile <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noreferrer noopener">here</a>).</li><li>Lines 9 to 11: containers are booting.</li><li>Line 15: database reported a complete initialisation.</li><li>Line 18: phpmyadmin reported a complete initialisation.</li><li>Lines 22 and 30: the backend API creates databases and load schema.</li><li>Line 36: the backend API reported a complete initialisation. </li></ul>
-
-
-
-<p>You now have 2 locally exposed services you can reach from the browser:</p>
-
-
-
-<ul><li>https://thomas-veillard.fr:8080/ for the HTTP API server. </li><li>https://thomas-veillard.fr:8081/ for phpmyadmin, to explore data stored into the DB</li></ul>
-
-
-
-<h2>HTTP Server overview</h2>
-
-
-
-<p>HTTP server hosts the API and serves static files from <code>../../frontend/dist</code> (path relative to <code>docker-compose.yml</code>. That is why the location relative to <code>frontend</code> project was so important).</p>
-
-
-
-<p>If you properly built the angular project and started the web server via docker-compose, you can now reach <code>https://thomas-veillard.fr:8080/</code> in your browser. You will be welcomed with your own frontend application.</p>
-
-
-
-<h2>API documentation and playground</h2>
-
-
-
-<p>The API is self-documented and up to date. Open it at https://thomas-veillard.fr:8080/docs.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="835" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-1024x835.gif" alt="" class="wp-image-969" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-1024x835.gif 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-300x245.gif 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-768x626.gif 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>API playground and documentation demonstration</figcaption></figure>
-
-
-
-<p>During database population, some seeds were generated. These built-in accounts are designed for testing purposes:</p>
-
-
-
-<ul><li><strong>Operator</strong> (operator@cleaning.com / seedpass)</li><li><strong>Customer</strong> (customer@cleaning.com / seedpass)</li><li><strong>Employee</strong> (employee@cleaning.com / seedpass)</li></ul>
-
-
-
-<div class="exercice" style="padding-bottom: 0; margin-bottom: 1em">
-<p><strong>Exercise 10</strong> : Through the playground, manually execute the following scenario:</p>
-
-<code>POST /auth/login</code>
-<p>Connect yourself as operator.</p>
-
-<code>GET /api/users/me</code>
-<p>Query some information about your own account.</p>
-
-<code>GET /api/users</code>
-<p>List all users on the shop. That is only possible because you are operator.</p>
-
-<code>POST /auth/logout</code>
-<p>Close your session.</p>
-
-<code>??? find paths and arguments yourself</code>
-<p>
-Try to call any endpoint behind authentication.<br>
-Register yourself as customer using public API.
-</p>
-</div>
-
-
-
-<p class="exercice"><strong>Exercise 11</strong> : Same exercise, but this time you will use <a href="https://www.postman.com/" target="_blank" rel="noreferrer noopener">Postman</a>. Why ? Because the API designer will not always implement a playground&#8230;</p>
-
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>5. What can the web do today ?</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 12:03:36 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
-		<category><![CDATA[Lectures]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1780</guid>
-
-					<description><![CDATA[<p>Although HTML is a markup language for structuring the content, HTML5 standard also specified new APIs for Javascript and the browser. You can find an overview of these features on https://whatwebcando.today./ You may be surprised for example that your app can delegate payment to the customer&#8217;s browser! Examples about connectivity Nowadays, your front-end application can &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/" class="more-link">Continuer la lecture de <span class="screen-reader-text">5. What can the web do today ?</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/">5. What can the web do today ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>Although HTML is a markup language for structuring the content, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noreferrer noopener">HTML5 standard</a> also specified new APIs for Javascript and the browser.</p>
-
-
-
-<p>You can find an overview of these features on <a href="https://whatwebcando.today/" target="_blank" rel="noreferrer noopener">https://whatwebcando.today/</a>. You may be surprised for example that your app can delegate payment to the customer&rsquo;s browser!</p>
-
-
-
-<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1788"/><figcaption>Demonstration of <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, allowing app to delegate all the shipping process to the browser. This includes price summary, payment card registration, etc.</figcaption></figure>
-
-
-
-<h2>Examples about connectivity</h2>
-
-
-
-<p>Nowadays, your front-end application can receive or send events to the server in real time. Depending on your needs, you may use:</p>
-
-
-
-<ul><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank" rel="noreferrer noopener">WebSocket API</a> for a bidirectional connection.</li><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events" target="_blank" rel="noreferrer noopener">server-sent events</a> to send events from the server to the client (simpler backend architecture).</li></ul>
-
-
-
-<h2>Examples about media</h2>
-
-
-
-<p>Your browser also probably supports audio and video stream real-time communication via <a href="https://developer.mozilla.org/fr/docs/WebRTC" target="_blank" rel="noreferrer noopener">WebRTC</a>. This API leverages media capacities (including built-in audio and video codecs, stream recording from microphones, webcams and screens&#8230;).</p>
-
-
-
-<p>Also, 2D and 3D rendering through the GPU are available thanks to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="noreferrer noopener">Canvas API</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noreferrer noopener">WebGL API</a>.</p>
-
-
-
-<h2>Your browser is a database management system</h2>
-
-
-
-<p>There are various ways to store data on the client side. Here some of them:</p>
-
-
-
-<ul><li><a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies" target="_blank" rel="noreferrer noopener">Cookies</a> are short plain-text payloads the server lets on the client. The client sends them to the server on each HTTP(s) request. Cookies are useful to build session persistence for authentication.</li><li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noreferrer noopener">localStorage</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank" rel="noreferrer noopener">sessionStorage</a> are key-value databases able to store strings. You may serialise small objects with <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/JSON/stringify" target="_blank" rel="noreferrer noopener">JSON.stringify</a>.</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noreferrer noopener">IndexedDB</a> is a transactional database system (kind of RDBMS) allowing you application to store large amount of data in the browser (many GB 🤩).</li></ul>
-
-
-
-<h2>To conclude</h2>
-
-
-
-<p>The browser is a rich platform allowing running complex applications with strong APIs and a lot of features.</p>
-
-
-
-<p>Before using any of these features, you may refer to <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">https://caniuse.com/</a> for current support across active browsers on the market.</p>
-
-
-
-<p> </p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/">5. What can the web do today ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>4. Using web tools to build something else</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 10:02:36 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
-		<category><![CDATA[Lectures]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1440</guid>
-
-					<description><![CDATA[<p>For desktops and phones Since front-end technologies were so convenient, developers found ways to reuse web technologies in other contexts. This targets specially desktop and phone app. The idea is always the same: to write an application using HTML/CSS/JS and bundle it inside a webview. Everything related to the browser UI is hidden. The user &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/" class="more-link">Continuer la lecture de <span class="screen-reader-text">4. Using web tools to build something else</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/">4. Using web tools to build something else</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>For desktops and phones</h4>
-
-
-
-<p>Since front-end technologies were so convenient, developers found ways to reuse web technologies in other contexts. This targets specially desktop and phone app.</p>
-
-
-
-<p>The idea is always the same: to write an application using HTML/CSS/JS and bundle it inside a webview. Everything related to the browser UI is hidden. The user only see what the developer wants to show.</p>
-
-
-
-<p>Once packaged, the user does not see any difference compared to another software. It installs itself in the same way as native software. On Android, the application can be exported as an APK/AAB file and shipped via Google Play. On iOS, you submit an IPA file to the App Store Connect.</p>
-
-
-
-<blockquote class="wp-block-quote"><p>Write once, run everywhere. 🎉</p></blockquote>
-
-
-
-<p>This sentence summarises another benefit of sharing your codebase between the website version and the desktop/phone version. You only have a single codebase to maintain, so features are immediately available on all platforms. Finally, you may conditionally enable some features depending on the running environment capabilities.</p>
-
-
-
-<p>Users may expect more features in an app that they installed compared to the web version. Effectively, by packaging your application using <code>Electron</code> or <code>Cordova</code>, you got access to advanced features and OS integrations. That is possible because <code>Electron</code> and <code>Cordova</code> trust your code.</p>
-
-
-
-<p> Conversely, the browser has to deal with security issues. It always considers the website as mistrusted code running on your computer. It must sandbox and protect itself from it. For that reason, APIs like direct access to filesystems from the website are unavailable. </p>
-
-
-
-<h4>For command line and back-end</h4>
-
-
-
-<p>Nowadays, Javascript can run outside the browser. The leader platform is Node.js, built on top of the Chromium Javascript engine (V8). Node.js powers various cli tools (including those we will use in this module) and HTTP servers.</p>
-
-
-
-<p>For developers, using the same languages for front-end and back-end improve productivity.</p>
-
-
-
-<ul><li>There is only a single language to master.</li><li>Your stack is consistent and you may reuse dependencies across front and back.</li><li>You can share code between front and back.</li></ul>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/">4. Using web tools to build something else</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>3. How rich and interactive is this UI ?</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 08:38:14 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
-		<category><![CDATA[Lectures]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1394</guid>
-
-					<description><![CDATA[<p>The layout The « add server » page&#8217;s layout is composed of 4 parts: a header, containing site identity, notification centre and accesses to other parts of the customer portal ; a left menu, to navigate between the cloud portal features ; a content area, where the form takes place ; a floating footer summarizing the delivery. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. How rich and interactive is this UI ?</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/">3. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1395"/><figcaption>The control panel of Hetzner Cloud, which is a nice example of Single Page Application.</figcaption></figure>
-
-
-
-<h4>The layout</h4>
-
-
-
-<p>The « add server » page&rsquo;s layout is composed of 4 parts:</p>
-
-
-
-<ul><li>a header, containing site identity, notification centre and accesses to other parts of the customer portal ;</li><li>a left menu, to navigate between the cloud portal features ;</li><li>a content area, where the form takes place ;</li><li>a floating footer summarizing the delivery.</li></ul>
-
-
-
-<h4>The form</h4>
-
-
-
-<p>The form itself is highly interactive. Actions available at a step depends on a combination of previous choices. It opens modals containing another embedded form, computes the total price on the client side, prints warnings for misconfigurations, etc. All computations related to content are powered by Javascript.</p>
-
-
-
-<h4>The style</h4>
-
-
-
-<p>Fonts, colours, backgrounds, gradients, border radiuses, block sizes, margins, paddings, text positioning and so much more are handled by the browser rendering engine for you. </p>
-
-
-
-<p>Imagine how complex it could be to round corners and center text of the following block if you had to deal with raw pixels&#8230; But that is so simple with CSS.</p>
-
-
-
-<style>
-.my-rounded-block {
-  background-color: #ffecb8;
-  border: 1px solid #795548;
-  border-radius: 3px;
-  text-align: center;
-}
-</style>
-
-<p class="my-rounded-block">Example of paragraph with background and rounded border.</p>
-
-
-
-<div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-27" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
-  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
-  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
-  <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-27"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
-
-
-
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-28" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
-  Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-28"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
-</div>
-
-
-
-<h4>Animations</h4>
-
-
-
-<p>Building animations from scratch is something difficult. You must write mathematical functions describing the transformation, then compute each frame and render them. Your goal is to achieve 60 images per second, which requires optimisations.</p>
-
-
-
-<p>Thanks to CSS3, animations are now easy to build. You just describe an initial and final state, and apply a built-in transformation function. The browser handle the rest. It even selects the best hardware available for the task and does concessions to maintain the framerate.</p>
-
-
-
-<p>Animations give feedback to the user. They also make the UI interaction fluid. Some examples:</p>
-
-
-
-<ul><li>The colour of a button changes on hover, on focus or on click.</li><li>Newly created elements inside the page are highlighted on append.</li></ul>
-
-
-
-<p>This example illustrates perfectly why web technologies are so efficient for UI/UX compared to dinosaurs 🦖. (Hi JAVA and its Swing UI framework !)</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/">3. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>2. Why are web technologies so popular ?</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sun, 24 Jan 2021 08:24:00 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
-		<category><![CDATA[Lectures]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1342</guid>
-
-					<description><![CDATA[<p>They are cross-platform. End user just needs a browser. The primary homes of front-end technologies are browsers themselves. Those browsers exist in almost any operating system. That is true for computers (Windows, MacOs, GNU/Linux&#8230;) as for phones and pads (Android, iOS&#8230;). If the end user is running an up-to-date browser, it immediately access all web &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Why are web technologies so popular ?</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/">2. Why are web technologies so popular ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>They are cross-platform. End user just needs a browser.</h4>
-
-
-
-<p>The primary homes of front-end technologies are browsers themselves. Those browsers exist in almost any operating system. That is true for computers (Windows, MacOs, GNU/Linux&#8230;) as for phones and pads (Android, iOS&#8230;).</p>
-
-
-
-<p>If the end user is running an up-to-date browser, it immediately access all web applications published on the Internet.</p>
-
-
-
-<h4>They are well known, mature and still evolving.</h4>
-
-
-
-<p>The web is not born yesterday. So the community learned from its experience. Nowadays, the web is a good place for standards. Standards ensure your projects will still work in decades if you strictly rely on them.</p>
-
-
-
-<p>Have you seen the <a href="http://info.cern.ch/" target="_blank" rel="noreferrer noopener">first website ever built</a> ? It is still online and fully functional because it followed standards.</p>
-
-
-
-<p>Of course, the web continues to grow and standards to evolve.</p>
-
-
-
-<h4>Building rich and responsive UI is easy.</h4>
-
-
-
-<p>The core business of web browsers is to render pages. As you can expect, browsers perform very well at this task.</p>
-
-
-
-<p>From the point of view of web developers, you first have to write your content (with HTML). Then, you build the layout and apply styles thanks to CSS. Those two languages are quick and easy to learn. And they are so powerful (specially CSS which handles all the complexity).</p>
-
-
-
-<h4>Javascript allows complex interaction inside the browser.</h4>
-
-
-
-<p>Javascript comes from the old days of the Web. At this time, HTML and CSS were produced on server. Javascript purpose was to add a bit of dynamicity on the client-side. For example, it allowed:</p>
-
-
-
-<ul><li>to animate elements (now replaced by CSS3 animations) ;</li><li>to apply minor changes to the page on user interaction (like showing or hiding a block when the clicks a button).</li></ul>
-
-
-
-<p>Last decade, the language and its ecosystem have matured. A lot of frameworks help developers to produce all HTML and CSS using only Javascript. Even when a user clicks a link, the new page is produced and replaced this way.</p>
-
-
-
-<blockquote class="wp-block-quote"><p>We call that kind of applications « Single Page Application ».</p></blockquote>
-
-
-
-<p>If building and rendering the page can be done on client-side, is there still a place for servers ? It depends on your need. Some tasks, like authentication and authorisation can only run in trusted environments. Some other requires infrastructure, like files and contents sharing.</p>
-
-
-
-<h4>Ecosystem is rich of tools</h4>
-
-
-
-<p>During this module, you will discover some tools. First of all, your browser includes a lot of utilities like an element inspector, a JavaScript debugger, a network analyser, etc. You will also import and manage dependencies (that contains reusable code) using package managers. And so much more.</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/">2. Why are web technologies so popular ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>1. Prerequisites</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sun, 24 Jan 2021 08:23:21 +0000</pubDate>
-				<category><![CDATA[Front-end web development (English)]]></category>
-		<category><![CDATA[Lectures]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=884</guid>
-
-					<description><![CDATA[<p>This course is about creating front-end applications, with modern web technologies. You will discover that such a rich environment, learn good practices, develop quality code, write modular code&#8230; Skills This teaching assumes you know the basics of HTML and CSS. If that is not the case, please consider the following resources. They are quick and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Prerequisites</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>This course is about creating front-end applications, with modern web technologies. You will discover that such a rich environment, learn good practices, develop quality code, write modular code&#8230;</p>
-
-
-
-<h4>Skills</h4>
-
-
-
-<p>This teaching assumes you know the basics of HTML and CSS. If that is not the case, please consider the following resources. They are quick and basic.</p>
-
-
-
-<ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="noreferrer noopener">Getting started with HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works" target="_blank" rel="noreferrer noopener">How CSS works</a></li></ul>
-
-
-
-<h4>Tools</h4>
-
-
-
-<p>For end users, Front-end web technologies only require a modern browser. In the same way, developers could use almost any operating system for building apps. Nonetheless, your experience may drastically differ, and some tools harder to install or unavailable.</p>
-
-
-
-<p>You are free to use Windows or MacOS. Or you could install a GNU/Linux distribution in a virtual machine. My demonstrations will occur on an Ubuntu system.</p>
-
-
-
-<p>Before the first lecture, please:</p>
-
-
-
-<ul><li>bring your own computer, you will need it;</li><li>install <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">Node.js</a>, as it is required for building applications. Use <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a> for installing it;</li><li>install a decent IDE or editor for web development like VSCode or WebStorm;</li></ul>
-
-
-
-<p>During practical works, you will install and use much more tools. For convenience, I already packaged some of them and my learning materials using Docker. </p>
-
-
-<a href=https://docs.google.com/presentation/d/1cjTmJwYxGxT5aW4noNiNxUYFBbvRMG_i9r1tHBjxlFY/edit?usp=sharing target="_blank">
-  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
-    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
-    <div>Open lecture slides</div>
-  </div>
-</a>
-
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
