@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 26 Feb 2021 06:03:51 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 26 Feb 2021 06:50:19 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -80,7 +80,19 @@
 
 
 
-<ul><li>This is a group work (3 or 4 students per team).</li><li>Use Angular or React. Material design is <strong>not</strong> mandatory.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check who commits, and when.</li><li>Use eslint. Recommended configuration is in <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">practical works</a>.</li></ul>
+<ul><li>This is a group work (3 or 4 students per team).</li><li>Use Angular or React. Material design is <strong>not</strong> mandatory.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check who commits, and when.</li><li>Use eslint. Recommended configuration is in <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">practical works</a>.</li><li>Document installation steps in README.md.</li></ul>
+
+
+
+<h4>README.md</h4>
+
+
+
+<p>I will follow steps in your README to build and run your project. For simple front-end projects, it could be really short: (ex. git clone, npm install, ng build).</p>
+
+
+
+<p>But if you implemented a backend or have special requirements, they must be explicit. If setup is complex, please provide an install script (targeting GNU/Linux).</p>
 
 
 
