@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/practical-works/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 26 Feb 2021 11:45:39 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 26 Feb 2021 17:00:51 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -252,7 +252,7 @@ git hf feature start authentication-<span class="hljs-keyword">and</span>-routin
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/2520313f41d90c53ca90e510b27b8a0d78679fdf/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/2520313f41d90c53ca90e510b27b8a0d78679fdf" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/2520313f41d90c53ca90e510b27b8a0d78679fdf/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/2520313f41d90c53ca90e510b27b8a0d78679fdf" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -283,7 +283,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/f9d1bd55c3069418a8d25c28c628c5e7d95112bf/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/f9d1bd55c3069418a8d25c28c628c5e7d95112bf" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/f9d1bd55c3069418a8d25c28c628c5e7d95112bf/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/f9d1bd55c3069418a8d25c28c628c5e7d95112bf" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -295,7 +295,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/04f07d3630867a0e483288b2bae1a6e12882c8e0/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/04f07d3630867a0e483288b2bae1a6e12882c8e0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/04f07d3630867a0e483288b2bae1a6e12882c8e0/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/04f07d3630867a0e483288b2bae1a6e12882c8e0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -321,7 +321,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/d87a674fddbf150030130be8939f2da71a409d08/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/d87a674fddbf150030130be8939f2da71a409d08" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/d87a674fddbf150030130be8939f2da71a409d08/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/d87a674fddbf150030130be8939f2da71a409d08" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -341,7 +341,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/419ccbb35fafeecc33a24e403830700c6521cc54/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/419ccbb35fafeecc33a24e403830700c6521cc54" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/419ccbb35fafeecc33a24e403830700c6521cc54/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/419ccbb35fafeecc33a24e403830700c6521cc54" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -365,7 +365,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/584e834ba044ac2c88b81c8df6f36edeb7eab798/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/584e834ba044ac2c88b81c8df6f36edeb7eab798" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/584e834ba044ac2c88b81c8df6f36edeb7eab798/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/584e834ba044ac2c88b81c8df6f36edeb7eab798" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -401,7 +401,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/3ad2dcdb56ac6c87d48081cd9bb73f88513a07f7/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/3ad2dcdb56ac6c87d48081cd9bb73f88513a07f7" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/3ad2dcdb56ac6c87d48081cd9bb73f88513a07f7/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/3ad2dcdb56ac6c87d48081cd9bb73f88513a07f7" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -459,7 +459,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9f6645b9cf8ca31cdd4996e439ab68d27ef87074/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9f6645b9cf8ca31cdd4996e439ab68d27ef87074" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9f6645b9cf8ca31cdd4996e439ab68d27ef87074/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9f6645b9cf8ca31cdd4996e439ab68d27ef87074" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -546,7 +546,7 @@ total 60K
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/0e5a4c0075f266ecc3f74016038887fa01c5cd21/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/0e5a4c0075f266ecc3f74016038887fa01c5cd21" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/0e5a4c0075f266ecc3f74016038887fa01c5cd21/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/0e5a4c0075f266ecc3f74016038887fa01c5cd21" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -599,7 +599,7 @@ total 60K
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/a3803b0dcef7fd9884ab7eb667db81f32f986e17/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/a3803b0dcef7fd9884ab7eb667db81f32f986e17" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/a3803b0dcef7fd9884ab7eb667db81f32f986e17/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/a3803b0dcef7fd9884ab7eb667db81f32f986e17" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -673,7 +673,7 @@ total 60K
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9d5075597a424d82a3e81363bab1445243369adb/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9d5075597a424d82a3e81363bab1445243369adb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/9d5075597a424d82a3e81363bab1445243369adb/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/9d5075597a424d82a3e81363bab1445243369adb" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -698,7 +698,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5460e9ffa5eaeb2c6ac470ffbd2916d0fef6b3ee" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -714,7 +714,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/bf79236edb6480168294c9fedc9816d08fc810e8/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/bf79236edb6480168294c9fedc9816d08fc810e8" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/bf79236edb6480168294c9fedc9816d08fc810e8/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/bf79236edb6480168294c9fedc9816d08fc810e8" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -734,7 +734,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/da4ce36840a24c86d5cfb79d6ab0844e9471e9c8/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/da4ce36840a24c86d5cfb79d6ab0844e9471e9c8" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/da4ce36840a24c86d5cfb79d6ab0844e9471e9c8/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/da4ce36840a24c86d5cfb79d6ab0844e9471e9c8" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -929,7 +929,7 @@ ng new --routing --strict --collection=@angular-eslint/schematics frontend
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
 <div>
-  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5444790f18c5e943fd9e6202c677b0db943e8ce0/corrections" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5444790f18c5e943fd9e6202c677b0db943e8ce0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5444790f18c5e943fd9e6202c677b0db943e8ce0/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5444790f18c5e943fd9e6202c677b0db943e8ce0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
 
@@ -1150,7 +1150,7 @@ git push -u origin master</code></div><small class="shcb-language" id="shcb-lang
 
 
 
-<ul><li>https://thomas-veillard.fr:8080/ for the HTTP API server. </li><li>https://thomas-veillard.fr:8081/ for phpmyadmin, to explore data stored into the DB</li></ul>
+<ul><li>http://127.0.0.1:8080/ for the HTTP API server. </li><li>http://127.0.0.1:8081/ for phpmyadmin, to explore data stored into the DB</li></ul>
 
 
 
@@ -1162,7 +1162,7 @@ git push -u origin master</code></div><small class="shcb-language" id="shcb-lang
 
 
 
-<p>If you properly built the angular project and started the web server via docker-compose, you can now reach <code>https://thomas-veillard.fr:8080/</code> in your browser. You will be welcomed with your own frontend application.</p>
+<p>If you properly built the angular project and started the web server via docker-compose, you can now reach <code>http://127.0.0.1:8080/</code> in your browser. You will be welcomed with your own frontend application.</p>
 
 
 
@@ -1170,7 +1170,7 @@ git push -u origin master</code></div><small class="shcb-language" id="shcb-lang
 
 
 
-<p>The API is self-documented and up to date. Open it at https://thomas-veillard.fr:8080/docs.</p>
+<p>The API is self-documented and up to date. Open it at http://127.0.0.1:8080/docs.</p>
 
 
 
