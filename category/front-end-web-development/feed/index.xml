@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 26 Feb 2021 06:50:19 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 26 Feb 2021 09:07:38 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1117,8 +1117,8 @@ git commit -a -m <span class="hljs-string">"configure linter and typescript"</sp
 
 <span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
 git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
-git branch -M main
-git push -u origin main</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+git branch -M master
+git push -u origin master</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
@@ -1129,15 +1129,15 @@ git push -u origin main</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p>All the code is currently committed on main branch (previously called master branch). In the GitFlow workflow, the main branch is dedicated to the production code only.</p>
+<p>All the code is currently committed on master branch (previously called master branch). In the GitFlow workflow, the master branch is dedicated to the production code only.</p>
 
 
 
-<p>This TPs series will use feature branches, develop and main. Each time you start a new feature (ex. adding authentification), you will start a feature branch. Once you completed your changes, open a pull request on github and merge the code to develop. Once the code on develop is well tested, it can be merged on main branch.</p>
+<p>This TPs series will use feature branches, develop and master. Each time you start a new feature (ex. adding authentification), you will start a feature branch. Once you completed your changes, open a pull request on github and merge the code to develop. Once the code on develop is well tested, it can be merged on master branch.</p>
 
 
 
-<p class="exercice"><strong>Exercise 5</strong> : Initialise git hf with the following command. Ensure you select &lsquo;main&rsquo; as primary branch (not master). You can find <a href="https://datasift.github.io/gitflow/index.html" target="_blank" rel="noreferrer noopener">documentation here</a>.</p>
+<p class="exercice"><strong>Exercise 5</strong> : Initialise git hf with the following command. You can find <a href="https://datasift.github.io/gitflow/index.html" target="_blank" rel="noreferrer noopener">documentation here</a>.</p>
 
 
 <pre class="wp-block-code"><div><code class="hljs">git hf init -a</code></div></pre>
