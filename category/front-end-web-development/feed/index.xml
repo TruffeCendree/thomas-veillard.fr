@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 26 Feb 2021 17:00:51 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 27 Feb 2021 07:48:45 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1322,6 +1322,167 @@ Register yourself as customer using public API.
 		
 			</item>
 		<item>
+		<title>6. Languages for the web</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 12:03:36 +0000</pubDate>
+				<category><![CDATA[Front-end web development]]></category>
+		<category><![CDATA[Lectures]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2074</guid>
+
+					<description><![CDATA[<p>Languages for browsers HTML: HyperText Markup Language As you already know, HTML is a markup language structuring the content of the page. It also describes the semantics. Search engines and accessibility tools rely on both to index contents, identify the main section, navigation&#8230; The following example creates 3 links &#60;a>. Each page may contain a &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/" class="more-link">Continuer la lecture de <span class="screen-reader-text">6. Languages for the web</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/">6. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h3>Languages for browsers</h3>
+
+
+
+<h4>HTML: HyperText Markup Language</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<figure class="wp-block-image"><img src="https://lh3.googleusercontent.com/BijLLGjEYsx_Rs7RGBzXRYHqeskzlOHCS5RkO4JEqwhGMadvpKOhnoBFE8ZS7LUXeEauP-qGZg-koSNgwutn6nZ9GzLwSHa2uocWAXMTTIR7qTJYRxn2TSnF18-aAyfAkcR6wEcZQ3Y" alt=""/></figure>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>As you already know, HTML is a markup language structuring the content of the page. It also describes the <strong>semantics</strong>. Search engines and <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" target="_blank" rel="noreferrer noopener">accessibility</a> tools rely on both to index contents, identify the main section, navigation&#8230;</p>
+</div>
+</div>
+
+
+
+<p>The following example creates 3 links <code>&lt;a></code>. Each page may contain a lot of links, with different meanings and purposes (navigation items in a menu, inner link from an article to another, quotation sourcing&#8230;). By putting them inside a <code>&lt;nav></code>, we semantically express those links are part of the same menu. So <strong>search engines</strong> and <strong>accessibility tools</strong> understand that <code>Home</code> and <code>About</code> are navigation items.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/contact-us"</span>&gt;</span>Contact us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The current standard is HTML Living Standard (post HTML5).</p>
+
+
+
+<h4>CSS: Cascading StyleSheet</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="157px;" height="222px;" src="https://lh5.googleusercontent.com/v8TBn52pLoYpWIIKZ8WPN7ZOUbhUZkqBLBhk9deU67YyL6t6hlbir3rEGD2PBLvBcZE3kKO-7lpmtF89HuBW1Bp1RV1XGZcmQtx4wDKi7aQOnZ20DEbnCKfb7k9vdKI-jCq_L8sZdF4"></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>CSS describes the <strong>style</strong> of the page. Its goal is to define the aesthetics of the web app:</p>
+
+
+
+<ul><li>Spatial organisation of the page (aka. layout) ;</li><li>Design, UX, UI.</li></ul>
+
+
+
+<p>« Cascading » refers to the way it merges CSS rules from various sources (external stylesheets, internal styles, inline styles&#8230;) and with different priorities (depending on the source, the selector, etc.).</p>
+</div>
+</div>
+
+
+
+<p>Supported CSS rules highly differ from one browser version to another. CSS2 took 10 years to be implemented. CSS3 implementation may still be incomplete across modern browsers. The fact is CSS is extremely simple to use as web developer, but also terribly complex for browser vendors. For that reason, I recommend you take advantage of <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">Can I Use.com</a> before using a CSS rule in your project. It gives you statistics about browsers that currently support it.</p>
+
+
+
+<h4>JavaScript</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="123px;" height="123px;" src="https://lh4.googleusercontent.com/BdaQt-ZIjTBm_80gI4948-UMujX7Sl64e0SaFsc1JHczn_nk_d6VnYwWPQBs_amF79S_sknUPw2oBPk1O5cexsUs00OGWqrCiE1v_cTHPRahzgOeLO_WLX6ly3U6QVlYI9K5cHXGxRQ"></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>Javascript is a full-featured language with variables, conditions, loops, functions, classes&#8230; It defines <strong>dynamicity</strong> of the page.</p>
+
+
+
+<p>In fact, it can manipulate the DOM  (Document Object Model, that is the « in memory » parsed HTML), making possible to modify the page.</p>
+</div>
+</div>
+
+
+
+<p>It has many goals but the most important are:</p>
+
+
+
+<ul><li>Enabling user interaction with the elements</li><li>Server &#8211; Client communication</li><li>Managing the state of the different views</li></ul>
+
+
+
+<p>JavaScript follows the ECMAScript specifications. There are as many JavaScript than engine that implement it (ex. V8 for Chrome, SpiderMonkey for Firefox&#8230;). But all implementations should follow ECMAScript specifications.</p>
+
+
+
+<p>The current version is ES12 (aka. ES2021 or ECMAScript 2021). But you cannot target the latest version, because a lot of users are out-of-date.</p>
+
+
+
+<ul><li>For wide compatibility, ES5 is commonly supported (even by Internet Explorer 11). But it lacks a lot of features commonly used in SPA and is more verbose.</li><li>ES6 is fine for <a href="https://caniuse.com/es6" target="_blank" rel="noreferrer noopener">97.24%</a> of browsers (but not for IE).</li></ul>
+
+
+
+<h3>Languages for web development</h3>
+
+
+
+<p>In this module, you will learn Typescript, which is not supported directly by the browser. This language has to be transpiled in JavaScript to be run.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="131px;" height="131px;" src="https://lh5.googleusercontent.com/twgojU7MhNhjfsT1Nf0j-3j6-xCMmXU_Dhb5yQa5EwcBS9Fwgu-iULzQplwC7EALKA-ubh2JqiL6fXACKqCLC6PxKREGFVhe300Yy--L3eZHlmUN5KsdX0qqrMOY7_1IUlKebVto-rE"> </p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>TypeScript extends JavaScript by adding types.</p>
+
+
+
+<p>The main goal is to write maintainable code despite web project growing complexity. </p>
+</div>
+</div>
+
+
+
+<p>It strictly follows ECMAScript specifications. A valid JavaScript code is also a valid TypeScript code (with most checks turned off). But TypeScript is statically aware of types, making possible to catch a lot of errors before the code reaches the browser (or the production&#8230;).</p>
+
+
+
+<p>As a developer, you can use the latest specifications (ex. ES6/ES7/ES2021). The <code>tsc</code> compiler translates your source code to a given target (ex. ES5). You can write clean and human readable code without the challenge of syntax compatibility, which becomes the responsibility of <code>tsc</code>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/">6. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>5. What can the web do today ?</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</link>
 		
@@ -1531,18 +1692,18 @@ Register yourself as customer using public API.
 
 
 <div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
   <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+}</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
 
 
 
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
@@ -1658,91 +1819,6 @@ Register yourself as customer using public API.
 
 <p>During this module, you will discover some tools. First of all, your browser includes a lot of utilities like an element inspector, a JavaScript debugger, a network analyser, etc. You will also import and manage dependencies (that contains reusable code) using package managers. And so much more.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/">2. Why are web technologies so popular ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>1. Introduction &#038; prerequisites</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sun, 24 Jan 2021 08:23:21 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<category><![CDATA[Lectures]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=884</guid>
-
-					<description><![CDATA[<p>This course is about creating front-end applications, with modern web technologies. Learning objectives Build modern web interfaces with Single Page Applications (focus on Angular). Understand the Event-oriented programming paradigm. Manage your code source and collaborate with Git and Git Flow workflow. Manage your dependencies with npm. Write quality code (good practices, modularity, static typing with &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Introduction &#038; prerequisites</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Introduction &#038; prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>This course is about creating front-end applications, with modern web technologies. </p>
-
-
-
-<h4>Learning objectives</h4>
-
-
-
-<ul><li>Build modern web interfaces with Single Page Applications (focus on Angular).</li><li>Understand the Event-oriented programming paradigm.</li><li>Manage your code source and collaborate with Git and Git Flow workflow.</li><li>Manage your dependencies with npm.</li><li>Write quality code (good practices, modularity, static typing with TS&#8230;)</li><li>Get an overview of web ecosystem (usages, tools, pro and cons&#8230;).</li></ul>
-
-
-
-<h4>Skills</h4>
-
-
-
-<p>This teaching assumes you know the basics of HTML and CSS, besides having knowledge of algorithmic and software programming. If that is not the case, please consider the following resources. They are quick and basic.</p>
-
-
-
-<ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="noreferrer noopener">Getting started with HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works" target="_blank" rel="noreferrer noopener">How CSS works</a></li></ul>
-
-
-
-<h4>Tools</h4>
-
-
-
-<p>For end users, Front-end web technologies only require a modern browser. The operating system is not revelant anymore.</p>
-
-
-
-<p>That is also true to a lesser extent for web developers. Most build tools work on any operating system. Nonetheless, your experience may drastically differ and some tasks harder to complete.</p>
-
-
-
-<p>You are free to use Windows, MacOS or Linux. If you use Windows, you may have some difficulties to install Docker, which is a strong requirement for practical works.</p>
-
-
-
-<p>My demonstrations will occur on a Linux Ubuntu system. You can get closer to this setup by installing a GNU/Linux distribution in a virtual machine.</p>
-
-
-
-<p><strong>Before the first lecture, please:</strong></p>
-
-
-
-<ul><li>bring your own computer, you will need it;</li><li>install <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">Node.js</a>, as it is required for building applications. On Linux, prefer using <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a>.</li><li>install a decent IDE or editor for web development like VSCode or WebStorm;</li></ul>
-
-
-
-<p>During practical works, you will install and use much more tools. For convenience, I already packaged some of them and my learning materials using Docker. </p>
-
-
-<a href=https://docs.google.com/presentation/d/1cjTmJwYxGxT5aW4noNiNxUYFBbvRMG_i9r1tHBjxlFY/edit?usp=sharing target="_blank">
-  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
-    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
-    <div>Open lecture slides</div>
-  </div>
-</a>
-
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">1. Introduction &#038; prerequisites</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
