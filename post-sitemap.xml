@@ -215,13 +215,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/</loc>
-		<lastmod>2021-02-23T06:27:03+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/the-project/</loc>
 		<lastmod>2021-02-26T06:50:19+00:00</lastmod>
 		<image:image>
@@ -285,6 +278,16 @@
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/web-languages.png</image:loc>
 			<image:title><![CDATA[web-languages]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/</loc>
+		<lastmod>2021-03-02T06:50:34+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/demo-coverage-check.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>

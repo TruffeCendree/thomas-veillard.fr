@@ -21,7 +21,7 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-02-09T09:00:02+00:00">
-	<meta property="article:modified_time" content="2021-02-23T06:27:03+00:00">
+	<meta property="article:modified_time" content="2021-03-02T06:50:34+00:00">
 	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
@@ -62,7 +62,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/#primaryimage"
 	            },
 	            "datePublished": "2021-02-09T09:00:02+00:00",
-	            "dateModified": "2021-02-23T06:27:03+00:00",
+	            "dateModified": "2021-03-02T06:50:34+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/#breadcrumb"
 	            },
@@ -113,7 +113,7 @@
 	            },
 	            "headline": "3. The booking experience",
 	            "datePublished": "2021-02-09T09:00:02+00:00",
-	            "dateModified": "2021-02-23T06:27:03+00:00",
+	            "dateModified": "2021-03-02T06:50:34+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/#webpage"
 	            },
@@ -538,6 +538,14 @@ h5 {
     ↳ services           <span class="hljs-comment"># contains angular services.</span>
     ↳ shared             <span class="hljs-comment"># empty for now. Will contain shared and reusable components.</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/24f0d2ac3d0754605b25769e5ec33d98698163f9/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/24f0d2ac3d0754605b25769e5ec33d98698163f9" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em"></i>Github.
+</div>
+</div>
+
+
 
 <h4>Home page</h4>
 
@@ -557,8 +565,8 @@ h5 {
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> NominatimResult {
   display_name: <span class="hljs-built_in">string</span>
   importance: <span class="hljs-built_in">number</span>  
-  lat: <span class="hljs-built_in">number</span>
-  lon: <span class="hljs-built_in">number</span>
+  lat: <span class="hljs-built_in">string</span>
+  lon: <span class="hljs-built_in">string</span>
 }
 
 <span class="hljs-meta">@Injectable</span>({
@@ -572,7 +580,7 @@ h5 {
     <span class="hljs-keyword">if</span> (postalAddress.length &lt; <span class="hljs-number">3</span>) <span class="hljs-keyword">return</span> [];
 
     <span class="hljs-comment">// find OpenStreetMap nominatim API documention at https://nominatim.org/release-docs/latest/api/Search/</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.httpClient.get(<span class="hljs-string">`https://nominatim.openstreetmap.org/search?format=json&amp;featuretype=administrative&amp;countrycodes=<span class="hljs-subst">${country}</span>&amp;q=<span class="hljs-subst">${postalAddress}</span>`</span>).toPromise() <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.httpClient.get(<span class="hljs-string">`https://nominatim.openstreetmap.org/search?format=json&amp;featuretype=city&amp;countrycodes=<span class="hljs-subst">${country}</span>&amp;q=<span class="hljs-subst">${postalAddress}</span>`</span>).toPromise() <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>;
   }
 }
 </code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
@@ -644,8 +652,28 @@ h5 {
 <p class="exercice"><strong>Exercise 3</strong>: Build such autocomplete input (as a reusable component) and use it on the home page. You <strong>must</strong> debounce API calls. Also take a few minutes, so your home page looks more friendly.</p>
 
 
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/cb4425eb3f2f655548c71609d4ac51c47bc0feec/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/cb4425eb3f2f655548c71609d4ac51c47bc0feec" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em"></i>Github.
+</div>
+</div>
 
-<p></p>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1231" height="489" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/demo-coverage-check.gif" alt="" class="wp-image-2123"><figcaption>The home page checks if zone is covered before continuing the booking process. </figcaption></figure>
+
+
+
+<p class="exercice"><strong>Exercise 4</strong>: Using the <code>POST /api/bookings/coverage</code> endpoint, check if the customer-entered zone is covered. You should handle at least &lsquo;check in progress&rsquo; and &lsquo;uncovered&rsquo; states.</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/83ceb34c503bdc8b3d63c01435e2f910a10f172f/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/83ceb34c503bdc8b3d63c01435e2f910a10f172f" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em"></i>Github.
+</div>
+</div>
 	</div>
 <!-- .entry-content -->
 
