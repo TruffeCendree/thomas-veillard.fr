@@ -223,16 +223,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</loc>
-		<lastmod>2021-02-26T17:00:51+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/</loc>
 		<lastmod>2021-02-27T07:48:45+00:00</lastmod>
 		<image:image>
@@ -251,8 +241,18 @@
 		</image:image>
 	</url>
 	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</loc>
+		<lastmod>2021-03-03T20:33:07+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</loc>
-		<lastmod>2021-03-03T10:15:39+00:00</lastmod>
+		<lastmod>2021-03-03T20:57:13+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/image.png</image:loc>
 		</image:image>
@@ -278,7 +278,7 @@
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/submit-error-handler-in-tempalte.gif</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif</image:loc>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/Demo-typings.gif</image:loc>
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-dynamic-navigation-items.gif</image:loc>

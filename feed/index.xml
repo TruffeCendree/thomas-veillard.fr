@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Wed, 03 Mar 2021 10:15:39 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 03 Mar 2021 20:57:13 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1055,11 +1055,17 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 <p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>authentication-and-routing</code>. On Github, you should see a branch called <code>feature/authentication-and-routing</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
-git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># ensure you are on develop branch.</span>
+git checkout develop
+
+<span class="hljs-comment"># create a new local branch, which is even with develop</span>
+git checkout -b feature/authentication-<span class="hljs-keyword">and</span>-routing
+
+<span class="hljs-comment"># push it to remote repository</span>
+git push --set-upstream origin feature/authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>I encourage you to commit regular your changes (for example, at the end of each question). You may also reset your workspace to last commit when things go wrong.</p>
+<p>I encourage you to commit regulary your changes (for example, at the end of each question). You may also reset your workspace to last commit when things go wrong.</p>
 
 
 
@@ -1294,74 +1300,46 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 
 
 
-<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. There are located at <code>frontend-web-development/dist-typings/</code>.</p>
+<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. You can <a href="https://backend.thomas-veillard.fr/typings.zip" target="_blank" rel="noreferrer noopener">download latest definitions</a> from the backend server.</p>
 
 
-<pre class="wp-block-code"><div><code class="hljs">ls -lhsa frontend-web-development/dist-typings
-total 60K
-4,0K drwxr-xr-x 6 root   root   4,0K févr.  9 11:26 .
-4,0K drwxrwxr-x 8 thomas thomas 4,0K févr.  9 11:25 ..
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 apidoc.d.ts
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 app.d.ts
-4,0K -rw-r--r-- 1 root   root    292 févr.  9 11:26 config.d.ts
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 ddl.d.ts
-4,0K drwxr-xr-x 2 root   root   4,0K févr.  9 11:26 docs
-4,0K drwxr-xr-x 4 root   root   4,0K févr.  9 11:26 models
-4,0K -rw-r--r-- 1 root   root    363 févr.  9 11:26 mysql-store.d.ts
-4,0K -rw-r--r-- 1 root   root    115 févr.  9 11:26 printable-error.d.ts
-4,0K drwxr-xr-x 5 root   root   4,0K févr.  9 11:24 routes
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 seeds.d.ts
-4,0K -rw-r--r-- 1 root   root     99 févr.  9 11:26 server.d.ts
-4,0K drwxr-xr-x 4 root   root   4,0K févr.  9 11:26 specs
-4,0K -rw-r--r-- 1 root   root    123 févr.  9 11:26 utils.d.ts</code></div></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># content of the typings.zip archive.</span>
+
+<span class="hljs-comment"># these files contain type definitions of parameters and results of API routes</span>
+./dist-typings/routes/auth/post.login.interfaces.d.ts
+./dist-typings/routes/api/bookings/post.coverage.interfaces.d.ts
+./dist-typings/routes/api/bookings/post.proposals.interfaces.d.ts
+
+<span class="hljs-comment"># these files describe the models</span>
+./dist-typings/models/delivery.d.ts
+./dist-typings/models/user.d.ts
+./dist-typings/models/booking.d.ts
+./dist-typings/models/employee-information.d.ts</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>You are most likely interested in API and models’ definitions. For example:</p>
+<p>Here a simple example of type definition for <code>POST /api/auth/login</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
-</span></span><span class='shcb-loc'><span><span class="hljs-keyword">import</span> { Request, Response } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
-</span></span><mark class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
-</span></mark><mark class='shcb-loc'><span>    email: <span class="hljs-built_in">string</span>;
-</span></mark><mark class='shcb-loc'><span>    password: <span class="hljs-built_in">string</span>;
-</span></mark><mark class='shcb-loc'><span>}
-</span></mark><span class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">req: Request, res: Response</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;</span>;
-</span></span></code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">/* ./dist-typings/routes/auth/post.login.interfaces.d.ts */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
+    email: <span class="hljs-built_in">string</span>;
+    password: <span class="hljs-built_in">string</span>;
+}</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the back-end is incompatible with the front-end usage, the typescript compiler catches it.</p>
+<p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the backend is incompatible with the front-end usage, the typescript compiler catches it.</p>
 
 
 
-<p>To use those definitions with angular, edit your <code>frontend/tsconfig.json</code> like this:</p>
+<p>To use those definitions with angular, please unzip the archive under the <code>src</code> folder.</p>
 
 
 
 <p> </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
-</span></span><span class='shcb-loc'><span>{
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compileOnSave"</span>: <span class="hljs-literal">false</span>,
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compilerOptions"</span>: {
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"baseUrl"</span>: <span class="hljs-string">"./"</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"./dist/out-tsc"</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-comment">/* ... */</span>
-</span></span><mark class='shcb-loc'><span>    <span class="hljs-attr">"paths"</span>: {
-</span></mark><mark class='shcb-loc'><span>      <span class="hljs-attr">"@backend/*"</span>: [ <span class="hljs-string">"../learning-materials/frontend-web-development/dist-typings/*"</span> ]
-</span></mark><mark class='shcb-loc'><span>    }
-</span></mark><span class='shcb-loc'><span>  },
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"angularCompilerOptions"</span>: {
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"enableI18nLegacyMessageIdFormat"</span>: <span class="hljs-literal">false</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictInjectionParameters"</span>: <span class="hljs-literal">true</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictInputAccessModifiers"</span>: <span class="hljs-literal">true</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictTemplates"</span>: <span class="hljs-literal">true</span>
-</span></span><span class='shcb-loc'><span>  }
-</span></span><span class='shcb-loc'><span>}
-</span></span></code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1141" height="777" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif" alt="" class="wp-image-1613"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" width="1273" height="767" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/Demo-typings.gif" alt="" class="wp-image-2152"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
 
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
@@ -1388,8 +1366,8 @@ total 60K
 <p class="exercice"><strong>Exercise 14</strong>: Using the <code>@angular/cli</code>, generate <code>me.service.ts</code> and implement <code>resolve</code>, <code>login</code> and <code>logout</code> methods. Finally, update accordly the <code>LoginComponent</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login.interfaces'</span>;
-<span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/models/user'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'src/dist-typings/routes/auth/post.login.interfaces'</span>;
+<span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'src/dist-typings/models/user'</span>;
 
 <span class="hljs-keyword">interface</span> IMeService {
   me: User
@@ -1573,13 +1551,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 
 
 
-<p>Once the code is reviewed, merge your pull request on Github and finalise your feature.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">git hf feature finish authentication-and-routing</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p></p>
+<p>Once the code is reviewed, merge your pull request on Github and return to develop branch.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					

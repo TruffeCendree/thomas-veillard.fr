@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/practical-works/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Wed, 03 Mar 2021 10:15:39 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 03 Mar 2021 20:57:13 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -258,11 +258,17 @@
 <p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>authentication-and-routing</code>. On Github, you should see a branch called <code>feature/authentication-and-routing</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># git hf has a high-level command to start a new feature branch</span>
-git hf feature start authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># ensure you are on develop branch.</span>
+git checkout develop
+
+<span class="hljs-comment"># create a new local branch, which is even with develop</span>
+git checkout -b feature/authentication-<span class="hljs-keyword">and</span>-routing
+
+<span class="hljs-comment"># push it to remote repository</span>
+git push --set-upstream origin feature/authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>I encourage you to commit regular your changes (for example, at the end of each question). You may also reset your workspace to last commit when things go wrong.</p>
+<p>I encourage you to commit regulary your changes (for example, at the end of each question). You may also reset your workspace to last commit when things go wrong.</p>
 
 
 
@@ -497,74 +503,46 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 
 
 
-<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. There are located at <code>frontend-web-development/dist-typings/</code>.</p>
+<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. You can <a href="https://backend.thomas-veillard.fr/typings.zip" target="_blank" rel="noreferrer noopener">download latest definitions</a> from the backend server.</p>
 
 
-<pre class="wp-block-code"><div><code class="hljs">ls -lhsa frontend-web-development/dist-typings
-total 60K
-4,0K drwxr-xr-x 6 root   root   4,0K févr.  9 11:26 .
-4,0K drwxrwxr-x 8 thomas thomas 4,0K févr.  9 11:25 ..
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 apidoc.d.ts
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 app.d.ts
-4,0K -rw-r--r-- 1 root   root    292 févr.  9 11:26 config.d.ts
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 ddl.d.ts
-4,0K drwxr-xr-x 2 root   root   4,0K févr.  9 11:26 docs
-4,0K drwxr-xr-x 4 root   root   4,0K févr.  9 11:26 models
-4,0K -rw-r--r-- 1 root   root    363 févr.  9 11:26 mysql-store.d.ts
-4,0K -rw-r--r-- 1 root   root    115 févr.  9 11:26 printable-error.d.ts
-4,0K drwxr-xr-x 5 root   root   4,0K févr.  9 11:24 routes
-4,0K -rw-r--r-- 1 root   root     11 févr.  9 11:26 seeds.d.ts
-4,0K -rw-r--r-- 1 root   root     99 févr.  9 11:26 server.d.ts
-4,0K drwxr-xr-x 4 root   root   4,0K févr.  9 11:26 specs
-4,0K -rw-r--r-- 1 root   root    123 févr.  9 11:26 utils.d.ts</code></div></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># content of the typings.zip archive.</span>
+
+<span class="hljs-comment"># these files contain type definitions of parameters and results of API routes</span>
+./dist-typings/routes/auth/post.login.interfaces.d.ts
+./dist-typings/routes/api/bookings/post.coverage.interfaces.d.ts
+./dist-typings/routes/api/bookings/post.proposals.interfaces.d.ts
+
+<span class="hljs-comment"># these files describe the models</span>
+./dist-typings/models/delivery.d.ts
+./dist-typings/models/user.d.ts
+./dist-typings/models/booking.d.ts
+./dist-typings/models/employee-information.d.ts</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>You are most likely interested in API and models’ definitions. For example:</p>
+<p>Here a simple example of type definition for <code>POST /api/auth/login</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table"><span class='shcb-loc'><span># frontend-web-development/dist-typings/routes/auth/post.login.d.ts
-</span></span><span class='shcb-loc'><span><span class="hljs-keyword">import</span> { Request, Response } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
-</span></span><mark class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
-</span></mark><mark class='shcb-loc'><span>    email: <span class="hljs-built_in">string</span>;
-</span></mark><mark class='shcb-loc'><span>    password: <span class="hljs-built_in">string</span>;
-</span></mark><mark class='shcb-loc'><span>}
-</span></mark><span class='shcb-loc'><span><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">req: Request, res: Response</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;</span>;
-</span></span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">/* ./dist-typings/routes/auth/post.login.interfaces.d.ts */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
+    email: <span class="hljs-built_in">string</span>;
+    password: <span class="hljs-built_in">string</span>;
+}</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the back-end is incompatible with the front-end usage, the typescript compiler catches it.</p>
+<p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the backend is incompatible with the front-end usage, the typescript compiler catches it.</p>
 
 
 
-<p>To use those definitions with angular, edit your <code>frontend/tsconfig.json</code> like this:</p>
+<p>To use those definitions with angular, please unzip the archive under the <code>src</code> folder.</p>
 
 
 
 <p> </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span><span class="hljs-comment">/* To learn more about this file see: https://angular.io/config/tsconfig. */</span>
-</span></span><span class='shcb-loc'><span>{
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compileOnSave"</span>: <span class="hljs-literal">false</span>,
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"compilerOptions"</span>: {
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"baseUrl"</span>: <span class="hljs-string">"./"</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"./dist/out-tsc"</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-comment">/* ... */</span>
-</span></span><mark class='shcb-loc'><span>    <span class="hljs-attr">"paths"</span>: {
-</span></mark><mark class='shcb-loc'><span>      <span class="hljs-attr">"@backend/*"</span>: [ <span class="hljs-string">"../learning-materials/frontend-web-development/dist-typings/*"</span> ]
-</span></mark><mark class='shcb-loc'><span>    }
-</span></mark><span class='shcb-loc'><span>  },
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"angularCompilerOptions"</span>: {
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"enableI18nLegacyMessageIdFormat"</span>: <span class="hljs-literal">false</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictInjectionParameters"</span>: <span class="hljs-literal">true</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictInputAccessModifiers"</span>: <span class="hljs-literal">true</span>,
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"strictTemplates"</span>: <span class="hljs-literal">true</span>
-</span></span><span class='shcb-loc'><span>  }
-</span></span><span class='shcb-loc'><span>}
-</span></span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1141" height="777" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-typings.gif" alt="" class="wp-image-1613"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" width="1273" height="767" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/Demo-typings.gif" alt="" class="wp-image-2152"/><figcaption>How to use my back-end type definitions in Angular to add strong types on HTTP calls.</figcaption></figure>
 
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
@@ -591,8 +569,8 @@ total 60K
 <p class="exercice"><strong>Exercise 14</strong>: Using the <code>@angular/cli</code>, generate <code>me.service.ts</code> and implement <code>resolve</code>, <code>login</code> and <code>logout</code> methods. Finally, update accordly the <code>LoginComponent</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/routes/auth/post.login.interfaces'</span>;
-<span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'@backend/models/user'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'src/dist-typings/routes/auth/post.login.interfaces'</span>;
+<span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'src/dist-typings/models/user'</span>;
 
 <span class="hljs-keyword">interface</span> IMeService {
   me: User
@@ -776,13 +754,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 
 
 
-<p>Once the code is reviewed, merge your pull request on Github and finalise your feature.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">git hf feature finish authentication-and-routing</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p></p>
+<p>Once the code is reviewed, merge your pull request on Github and return to develop branch.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -799,7 +771,7 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 		<category><![CDATA[Practical works]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
 
-					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools and learning materials ; start the mock back-end infrastructure (server, database&#8230;) and import seeds ; access to the back-end API documentation and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Setup your practical environment</span></a></p>
+					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools (git, node&#8230;) ; setup, build and run your angular application ; access to the back-end API documentation and interact manually with it &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Setup your practical environment</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
@@ -811,35 +783,39 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 
 
 
-<ul><li>install the necessary tools and learning materials ;</li><li>start the mock back-end infrastructure (server, database&#8230;) and import seeds ;</li><li>access to the back-end API documentation and interact manually with it ;</li><li>generate the angular project and serve compiled application to your browser ;</li><li>commit that angular project on git and push it to Github.</li></ul>
+<ul><li>install the necessary tools (git, node&#8230;) ;</li><li>setup, build and run your angular application ;</li><li>access to the back-end API documentation and interact manually with it ;</li><li>commit that angular project on git and push it to Github ;</li><li>push your code to Cloudflare Page.</li></ul>
 
 
 
-<h2>Required softwares installation</h2>
+<h3>Required softwares installation</h3>
 
 
 
-<p>Only git and docker require administration privileges to be installed. On Linux and macOS, this means you should not use sudo or root for anything else (even installing node.js).</p>
+<h4>Git</h4>
 
 
 
-<h4>Git &amp; git-hf</h4>
+<p><a href="https://git-scm.com/" target="_blank" rel="noreferrer noopener">Git</a> is a decentralised source version manager. A git repository stores the source code of a project and any of its changes. Typically, a contributor writes some code on its side. Once it has completed its task, it commits the changes (with a message) and push it to the remote repositories. Other contributors can update their base. Nowadays, teams centralise repositories hosting on SaaS platforms like Github and Gitlab.</p>
 
 
 
-<p>Git is a decentralised source version manager. A git repository stores the source code of a project and any of its changes. Typically, a contributor writes some code on its side. Once it has completed its task, it commits the changes (with a message) and push it to the remote repositories. Other contributors can update their base. Nowadays, teams centralise repositories hosting on SaaS platforms like Github and Gitlab.</p>
+<p>During the lecture, I expressed you follow the <a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html" target="_blank" rel="noreferrer noopener">gitflow</a> workflow. Take the time to understand it. In substance:</p>
 
 
 
-<p>During the lecture, I expressed you follow the <a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html" target="_blank" rel="noreferrer noopener">gitflow</a> workflow. Takes the time to understand it. Then, install the git extension <a href="https://datasift.github.io/gitflow/TheHubFlowTools.html" target="_blank" rel="noreferrer noopener">git-hf</a>. That tool creates high-level commands to manage features, releases and hotfixes branches.</p>
+<ul><li>All the code on master is designed for production.</li><li>The code for next release is on develop.</li><li>When your start a feature, you should open a feature branch.</li></ul>
 
 
 
-<p>Of course, you also need a Github account.</p>
+<p>Of course, you also need a Github (or Gitlab) account.</p>
 
 
 
-<h4>Node.js &amp; npm &amp; nvm</h4>
+<p class="exercice"><strong>Exercise 1</strong> : Install git on your machine. You should at least have the git command working. Test it with <code>git --version</code> for example.</p>
+
+
+
+<h4>Node.js &amp; npm</h4>
 
 
 
@@ -851,35 +827,11 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 
 
 
-<p>I personally use <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noreferrer noopener">nvm</a> for installing node. Nvm (Node Version Manager) installs and manages various versions of node (including latest one) without requiring root privileges.</p>
+<p class="exercice"><strong>Exercise 2</strong> : Install node.js. If installation successed, both commands <code>node --version</code> and <code>npm --version</code> should work. It is recommanded you use the <code>Node Command Prompt</code>.</p>
 
 
 
-<h4>Docker &amp; docker-compose</h4>
-
-
-
-<p><a href="https://docs.docker.com/engine/install/" target="_blank" rel="noreferrer noopener">Docker</a> is a container runtime. Everything running in the container is isolated from the host. Except the kernel which is shared with the host, the container contains a fully functional operating system (including software, shared libraries, users&#8230;).</p>
-
-
-
-<p>For example, consider an application only runs on Ubuntu version 20.04, with specific dependencies and a lot a setup. The distribution of that software will be complicated, as there are such requirements. What if you could directly distribute ready to use Ubuntu instance with the software installed ? That is what we call a container image.</p>
-
-
-
-<p>Docker maintains DockerHub, a public registry hosting tons of prebuilt images you can pull and instantiate.</p>
-
-
-
-<p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="noreferrer noopener">Docker-compose</a> is a higher-level tool, allowing the definition of infrastructure as code. You just have to write a config file, and docker compose will pull, configure and start all containers for you. It takes care of networking, exposing ports, storing persistent data, etc.</p>
-
-
-
-<p>Please install both tools. For Windows 10 users, docker-compose is already packaged with Docker Desktop.</p>
-
-
-
-<h4>Angular CLI</h4>
+<h4>Angular</h4>
 
 
 
@@ -890,57 +842,47 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 <p>A single command written in a terminal (Powershell or Node Command Prompt for Windows) do the job. Ensure node is installed first. We also install <a href="https://eslint.org/" target="_blank" rel="noreferrer noopener">eslint</a>, which ensure coding conventions are applied across codebase.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm i -g @angular/cli @angular-devkit/{core,schematics} @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># the following command install angular cli and required dependencies globally. They provide the ng command.</span>
+npm i -g @angular/cli @angular-devkit/core @angular-devkit/schematics @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<h2>Workspace overview</h2>
+<p class="exercice"><strong>Exercise 3</strong> : Install <code>@angular/cli</code> according the previous procedure. Then test it works with <code>ng version</code>. For everything related <code>node</code>, <code>npm</code> and <code>ng</code>, I recommand you use the <code>Node command prompt</code>.</p>
 
 
 
-<p>At the end of this seance, your workspace should match the following folder hierarchy.</p>
+<h3>Setup the angular project</h3>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
+
+<p>At the end of this step, your workspace should match the following folder hierarchy. </p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
  ↳ dist                        <span class="hljs-comment"># the folder containing your bundled app. Only exists after running `ng build` command.</span>
  ↳ node_modules                <span class="hljs-comment"># the folder containing local dependencies. See package.json file and npm command for more info.</span>
  ↳ src                         <span class="hljs-comment"># source code (HTML, CSS, TS). It includes components, services, etc.</span>
  ↳ angular.json                <span class="hljs-comment"># @angular/cli configuration</span>
  ↳ package.json                <span class="hljs-comment"># npm configuration, primary used for installing dependencies</span>
  ↳ tsconfig.json               <span class="hljs-comment"># typescript configuration, where are defined target, enabled syntax and type checking features.</span>
- ↳ .eslintrc.json              <span class="hljs-comment"># eslint configuration, where you set linter rules.</span>
-learning-materials             <span class="hljs-comment"># my git repository you have to clone, which contains backend server, database and some tools</span>
- ↳ frontend-web-development    <span class="hljs-comment"># the folder containing every materials related to this practical work.</span>
-    ↳ docker-compose.yml       <span class="hljs-comment"># configuration for docker-compose, that will take care of booting full backend infrastructure.</span>
-    ↳ ...                      <span class="hljs-comment"># everything else in this folder is outside the scope of this module.</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+ ↳ .eslintrc.json              <span class="hljs-comment"># eslint configuration, where you set linter rules.</span></code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Angular project&rsquo;s structure is standard (thanks to @angular/cli). For more information about it, please refer to <a href="https://angular.io/guide/file-structure" target="_blank" rel="noreferrer noopener">official documentation</a>.</p>
 
 
 
-<h2>Setup the angular project</h2>
+<h4>Generate the angular project</h4>
 
 
 
-<h4>Create the angular app using @angular/cli</h4>
+<p class="exercice"><strong>Exercise 4</strong> : Generating such project is easy. Just run the following command in a <code>Node Command Prompt</code>.</p>
 
 
-
-<p class="exercice"><strong>Exercise 1</strong> : Follow this process to create and configure a new angular app.</p>
-
-
-
-<ul><li>Linux/Mac: run a terminal</li><li>Windows: use PowerShell or “Node.js Command Prompt”</li></ul>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># install angular if not already done</span>
-npm i -g @angular/cli @angular-devkit/core @angular-devkit/schematics @angular-eslint/schematics
-
-<span class="hljs-comment"># creates a new project with angular router enabled</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># creates a new project with angular router enabled</span>
 ng new --routing --strict --collection=@angular-eslint/schematics frontend
 
-<span class="hljs-comment"># enter the 'frontend' folder</span>
-<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment"># enter the 'frontend' folder</span>
+<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The previous commands enabled the<code>:</code></p>
@@ -971,32 +913,42 @@ ng new --routing --strict --collection=@angular-eslint/schematics frontend
 
 
 
-<h4>Build the app</h4>
+<h4>Run your app</h4>
 
 
 
-<p>The following commands help you to build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
+<p>Once your project is generated, it is time to run it. <code>ng serve</code> incremently compile your project and reload on source change. It also starts a HTTP server on port 4200.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
+
+<p class="exercice"><strong>Exercise 5</strong> : Serve your app and open it in your favorite browser.</p>
+
+
+
+<p>Tips: always start your browser development tool and keep track of the console tab. If there is an error at runtime, that is the place to check.</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong> : Document yourself on the differences between <code>ng serve</code> and <code>ng build</code>.</p>
+
+
+
+<h4>Compare built application with various targets</h4>
+
+
+
+<p>The following commands build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
 ng build --prod   <span class="hljs-comment"># build the app for production. A lot of optimisations are processed, reducing bundle size.</span>
-ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<div class="exercice" style="margin-bottom: 1em">
-<p><strong>Exercise 2</strong> : I provided you an example of output of the <code>ng build</code> command. Run it on your side and check the content of  `frontend/dist` folder.</p>
-
-<ul style="margin-left: 1em; margin-bottom: 0">
-  <li>What are the languages used in output ?</li>
-  <li>Which source files have been transpiled and bundled into main.js ?</li>
-  <li>How many files were outputted ? Compare this count to the number of files in the source directory. Do you think adding new sources will increase outputted files count ?</li>
-<li>What is the purpose of .js.map files ?</li>
-<li>What is the purpose of polyfills in Javascript ?</li>
-</ul>
-</div>
+<p>I provided a sample output of the <code>ng build</code> command. It emitted its output under <code>dist/frontend</code> folder. Let&rsquo;s analyze it!</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># to run in frontend folder                                                        </span>
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># must be run in frontend folder                                                        </span>
 ✔ Browser application bundle generation complete.
 ✔ Copying assets complete.
 ✔ Index html generation complete.
@@ -1010,14 +962,22 @@ styles.css          | styles        | <span class="hljs-number">119</span> bytes
 
                     | Initial Total |   <span class="hljs-number">2.85</span> MB
 
-Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>At this step, you can open <code>frontend/dist/index.html</code> in your browser and explore the placeholder generated by <code>@angular/cli</code>.</p>
+<p class="exercice"><strong>Exercise 7</strong> : What is a bundle ? How does it differ from the source code?</p>
 
 
 
-<p class="exercice"><strong>Exercise 3</strong> : Build your app with <code>--prod</code> option and check differences in output.</p>
+<p class="exercice"><strong>Exercise 8</strong> : <code>.map.js</code> files have been emitted. What is the purpose of these map files?</p>
+
+
+
+<p class="exercice"><strong>Exercise 9</strong> : Can you spot some differences between <code>ng build</code> and <code>ng build --prod</code>?</p>
+
+
+
+<p class="exercice"><strong>Exercise 10</strong> : What is a javascript polyfill?</p>
 
 
 
@@ -1025,14 +985,14 @@ Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</sp
 
 
 
-<p class="exercice"><strong>Exercise 4</strong> : Register yourself on Github. Then create a private git repository on Github. Finally push you angular project to Github.</p>
+<p class="exercice"><strong>Exercise 11</strong> : Register yourself on Github. Then create a private git repository (for simplicity, <strong>do not create any file such as <code>README.md</code></strong> while initializing the github repository). Finally push all your changes to Github. </p>
 
 
 
 <p>The <code>ng new</code> command already initialised a local git repository. If you have any pending change, you have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
 git status
 
 <span class="hljs-comment"># you probably want to commit new files in your repository.</span>
@@ -1043,158 +1003,54 @@ git add .
 <span class="hljs-comment"># commit every pending change with a message</span>
 git commit -a -m <span class="hljs-string">"configure linter and typescript"</span>
 
-<span class="hljs-comment"># follow the Github guide to push commits to remote for the first time</span>
+<span class="hljs-comment"># commands extracted from the Github guide to push commits to remote</span>
+<span class="hljs-comment"># for the first time (do not forget to replace {UNDER BRACKETS} variables).</span>
 git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
 git branch -M master
-git push -u origin master</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+git push -u origin master</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
 
 
 
-<h4>Start using GitFlow and git-hf</h4>
+<h4>Gitflow workflow</h4>
 
 
 
-<p>All the code is currently committed on master branch (previously called master branch). In the GitFlow workflow, the master branch is dedicated to the production code only.</p>
+<p>All the code is currently committed on master branch. In the GitFlow workflow, the master branch is dedicated to the production code only.</p>
 
 
 
-<p>This TPs series will use feature branches, develop and master. Each time you start a new feature (ex. adding authentification), you will start a feature branch. Once you completed your changes, open a pull request on github and merge the code to develop. Once the code on develop is well tested, it can be merged on master branch.</p>
+<p>This TPs series will use feature branches, develop and master. Each time you start a new feature (ex. adding authentification), you will start a feature branch. Once you completed your changes, open a pull request on github and merge the code to develop. When the code on develop is well tested, it can be merged on master.</p>
 
 
 
-<p class="exercice"><strong>Exercise 5</strong> : Initialise git hf with the following command. You can find <a href="https://datasift.github.io/gitflow/index.html" target="_blank" rel="noreferrer noopener">documentation here</a>.</p>
+<p class="exercice"><strong>Exercise 12</strong> : Create a develop branch and push it to remote. Both master and develop branch should be visible in Github. The develop branch should be even with master.</p>
 
 
-<pre class="wp-block-code"><div><code class="hljs">git hf init -a</code></div></pre>
 
+<h2>Play with the backend</h2>
 
-<h2>Setup back-end infrastructure</h2>
 
 
+<p>Remember: you are building the frontend of a cleaning shop service. I provide you a simple backend for that. It is hosted under:</p>
 
-<p>Before cloning the repository, remember we want <code>frontend</code> and <code>learning-materials</code> in the same location. So ensure you see <code>frontend</code> folder when you write <code>ls</code> command. If not, use the <code>cd</code> command.</p>
 
 
+<p class="has-text-align-center"><em><a href="https://backend.thomas-veillard.fr/" target="_blank" rel="noreferrer noopener">https://backend.thomas-veillard.fr/</a></em></p>
 
-<p class="exercice"><strong>Exercise 6</strong> : create a folder dedicated to practical works and clone <a href="https://github.com/TruffeCendree/learning-materials" target="_blank" rel="noreferrer noopener">my git repository</a> in it.</p>
 
 
+<p>For your information, the code powering the backend is <a href="https://github.com/TruffeCendree/learning-materials/tree/master/frontend-web-development" target="_blank" rel="noreferrer noopener">publicly available</a>.</p>
 
-<p>This git repository is a <a href="https://en.wikipedia.org/wiki/Monorepo" target="_blank" rel="noreferrer noopener">monorepo</a>. It contains learning materials for multiple modules. You must focus on <code>learning-materials/frontend-web-development</code> folder.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># change directory to the folder containing the backend infrastructure (docker-compose.yml)</span>
-<span class="hljs-built_in">cd</span> learning-materials/frontend-web-development</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<h4>API documentation and playground</h4>
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Inside this folder, you will find <code>docker-compose.yml</code>. The file contains the configuration of back-end services (mariadb database, phpmyadmin, the back-end api&#8230;). Those services discuss together over an internal network and use passwords. Replace password as requested in the <code>docker-compose.yml</code> file.</p>
 
-
-
-<p>Do you know what is a safe password ? How long should they be ? ANSSI (Agence Nationale de la Sécurité des Systèmes d&rsquo;Information) provides explanations and a <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator</a>. I recommend generating random and unique password for each account (not just in this module 🧐).</p>
-
-
-
-<p class="exercice"><strong>Exercise 8</strong>: Start the mariadb database using the following command. On first launch, wait until the database reported a complete initialisation (highlighted in output).</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-comment"># only launch mariadb services defined in docker-compose.yml</span>
-</span></span><span class='shcb-loc'><span>$ docker-compose up mariadb
-</span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52+00:00 [Note] [Entrypoint]: Entrypoint script <span class="hljs-keyword">for</span> MySQL Server 1:10.5.8+maria~focal started.
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52+00:00 [Note] [Entrypoint]: Switching to dedicated user <span class="hljs-string">'mysql'</span>
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52+00:00 [Note] [Entrypoint]: Entrypoint script <span class="hljs-keyword">for</span> MySQL Server 1:10.5.8+maria~focal started.
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld (mysqld 10.5.8-MariaDB-1:10.5.8+maria~focal) starting as process 1 ...
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] InnoDB: Using Linux native AIO
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] InnoDB: Uses event mutexes
-</span></span><span class='shcb-loc'><span>[...] truncated
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Warning] <span class="hljs-string">'proxies_priv'</span> entry <span class="hljs-string">'@% root@d05a66d49a70'</span> ignored <span class="hljs-keyword">in</span> --skip-name-resolve mode.
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Reading of all Master_info entries succeeded
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] Added new Master_info <span class="hljs-string">''</span> to <span class="hljs-built_in">hash</span> table
-</span></span><mark class='shcb-loc'><span>mariadb_1     | 2021-01-24 12:05:52 0 [Note] mysqld: ready <span class="hljs-keyword">for</span> connections.
-</span></mark><mark class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></mark></code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="exercice"><strong>Exercise 9</strong> : Once database server is ready, exit docker (using <code>Ctrl + C</code>). Then start the full stack. The backend API should notify a successful startup.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>$ docker-compose up
-</span></span><span class='shcb-loc'><span>Building backend
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>Successfully built 48950e9da763
-</span></span><span class='shcb-loc'><span>Successfully tagged frontend-web-development_backend:latest
-</span></span><span class='shcb-loc'><span>WARNING: Image <span class="hljs-keyword">for</span> service backend was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>Starting frontend-web-development_mariadb_1 ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Creating frontend-web-development_backend_1    ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Creating frontend-web-development_phpmyadmin_1 ... <span class="hljs-keyword">done</span>
-</span></span><span class='shcb-loc'><span>Attaching to frontend-web-development_mariadb_1, frontend-web-development_phpmyadmin_1, frontend-web-development_backend_1
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>mariadb_1     | Version: <span class="hljs-string">'10.5.8-MariaDB-1:10.5.8+maria~focal'</span>  socket: <span class="hljs-string">'/run/mysqld/mysqld.sock'</span>  port: 3306  mariadb.org binary distribution
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>phpmyadmin_1  | [Sun Jan 24 14:01:37.687410 2021] [core:notice] [pid 1] AH00094: Command line: <span class="hljs-string">'apache2 -D FOREGROUND'</span>
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span>[... truncated]
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; frontend-web-development@1.0.0 db:prepare:prod /app
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; NODE_ENV=<span class="hljs-built_in">test</span> node -e <span class="hljs-string">"require('./build/server/mysql-store').default.rebuildDatabase('prod').then(() =&gt; process.exit()).catch(err =&gt; { console.error(err); process.exit(1) })"</span>
-</span></span><span class='shcb-loc'><span>backend_1     | 
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:53.387Z backend:mysql-store Upgrading SQL triggers...
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:53.401Z backend:mysql-store Triggers updated successfully
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 14:01:53 4 [Warning] Aborted connection 4 to db: <span class="hljs-string">'unconnected'</span> user: <span class="hljs-string">'root'</span> host: <span class="hljs-string">'172.24.0.3'</span> (Got an error reading communication packets)
-</span></span><span class='shcb-loc'><span>mariadb_1     | 2021-01-24 14:01:53 5 [Warning] Aborted connection 5 to db: <span class="hljs-string">'cleaningshop'</span> user: <span class="hljs-string">'root'</span> host: <span class="hljs-string">'172.24.0.3'</span> (Got an error reading communication packets)
-</span></span><span class='shcb-loc'><span>backend_1     | 
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; frontend-web-development@1.0.0 db:prepare:<span class="hljs-built_in">test</span> /app
-</span></span><span class='shcb-loc'><span>backend_1     | &gt; NODE_ENV=<span class="hljs-built_in">test</span> node -e <span class="hljs-string">"require('./build/server/mysql-store').default.rebuildDatabase('test').then(() =&gt; process.exit()).catch(err =&gt; { console.error(err); process.exit(1) })"</span>
-</span></span><span class='shcb-loc'><span>backend_1     | 
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.288Z backend:mysql-store Upgrading SQL triggers...
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.307Z backend:mysql-store Triggers updated successfully
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.549Z backend:mysql-store Upgrading SQL triggers...
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.577Z backend:mysql-store Triggers updated successfully
-</span></span><span class='shcb-loc'><span>backend_1     | 2021-01-24T14:01:54.582Z backend:app App listening on port 8080...
-</span></span></code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Let’s analyse logs above:</p>
-
-
-
-<ul><li>Lines 2 to 7: docker-compose builds the backend using scripts in <code>Dockerfile</code> (more explanation about Dockerfile <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noreferrer noopener">here</a>).</li><li>Lines 9 to 11: containers are booting.</li><li>Line 15: database reported a complete initialisation.</li><li>Line 18: phpmyadmin reported a complete initialisation.</li><li>Lines 22 and 30: the backend API creates databases and load schema.</li><li>Line 36: the backend API reported a complete initialisation. </li></ul>
-
-
-
-<p>You now have 2 locally exposed services you can reach from the browser:</p>
-
-
-
-<ul><li>http://127.0.0.1:8080/ for the HTTP API server. </li><li>http://127.0.0.1:8081/ for phpmyadmin, to explore data stored into the DB</li></ul>
-
-
-
-<h2>HTTP Server overview</h2>
-
-
-
-<p>HTTP server hosts the API and serves static files from <code>../../frontend/dist</code> (path relative to <code>docker-compose.yml</code>. That is why the location relative to <code>frontend</code> project was so important).</p>
-
-
-
-<p>If you properly built the angular project and started the web server via docker-compose, you can now reach <code>http://127.0.0.1:8080/</code> in your browser. You will be welcomed with your own frontend application.</p>
-
-
-
-<h2>API documentation and playground</h2>
-
-
-
-<p>The API is self-documented and up to date. Open it at http://127.0.0.1:8080/docs.</p>
+<p>The API is self-documented and up to date. Open it at <a href="https://backend.thomas-veillard.fr/docs" target="_blank" rel="noreferrer noopener">https://backend.thomas-veillard.fr/docs</a>.</p>
 
 
 
@@ -1234,11 +1090,7 @@ Register yourself as customer using public API.
 
 
 
-<p class="exercice"><strong>Exercise 11</strong> : Same exercise, but this time you will use <a href="https://www.postman.com/" target="_blank" rel="noreferrer noopener">Postman</a>. Why ? Because the API designer will not always implement a playground&#8230;</p>
-
-
-
-<p></p>
+<p class="exercice"><strong>Exercise 12</strong> : Same exercise, but this time you will use <a href="https://www.postman.com/" target="_blank" rel="noreferrer noopener">Postman</a>. This way, you are ready to test any kind of API over HTTP.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
