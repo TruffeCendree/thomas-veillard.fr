@@ -231,26 +231,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/</loc>
-		<lastmod>2021-03-02T06:50:34+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/demo-coverage-check.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</loc>
-		<lastmod>2021-03-03T20:33:07+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground.gif</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/</loc>
 		<lastmod>2021-03-03T20:57:13+00:00</lastmod>
 		<image:image>
@@ -288,6 +268,29 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-logout-button-with-fontawesome-and-mattooltip.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</loc>
+		<lastmod>2021-03-07T10:41:23+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/</loc>
+		<lastmod>2021-03-07T10:55:35+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/demo-input-with-geocoding.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/demo-coverage-check.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/Demo-step-1-booking.gif</image:loc>
 		</image:image>
 	</url>
 </urlset>
