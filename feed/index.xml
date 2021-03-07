@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 07 Mar 2021 10:55:35 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 07 Mar 2021 13:19:22 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1054,6 +1054,10 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 
 
 
+<p>Tips: for your further developments, you could directly access the step2 URL with valid parameters, instead of restarting your tests from the home page. This URL already serialises all parameters you need.</p>
+
+
+
 <p>Once the software has acquired delivery city and checked the coverage, the customer goes to the first step of booking form. Inside <code>BookingNewStep1Component</code>, the customer answers some questions:</p>
 
 
@@ -1075,6 +1079,46 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
   Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/bbe39c6fbef58874dd81c71fd0664a8d71f571f2/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/bbe39c6fbef58874dd81c71fd0664a8d71f571f2" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
 </div>
 </div>
+
+
+
+<p>Now, you will implement the submit logic and error handler of this step:</p>
+
+
+
+<ul><li>The button <code>Find employees</code> should only be visible if the form is fully completed. Else, a message is displayed (e.g. Please select a start date).</li><li>On submit, check at least one employee is available.<ul><li>If not, display an error which stays until the customer touched the form again. The API will always return <code>unavailable</code> for Sunday.</li><li>If any, redirect to the second step.</li></ul></li></ul>
+
+
+
+<p>The second step path could be something like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># pattern of the second step route</span>
+/bookings/<span class="hljs-keyword">new</span>/step2/:latitude/:longitude/at/:startDate/:startHour/duration/:duration
+
+<span class="hljs-comment"># example of path instance</span>
+/bookings/<span class="hljs-keyword">new</span>/step2/<span class="hljs-number">48.7921098</span>/<span class="hljs-number">48.7921098</span>/at/<span class="hljs-number">2021</span><span class="hljs-number">-03</span><span class="hljs-number">-27</span>/<span class="hljs-number">8</span>/duration/<span class="hljs-number">2</span>
+
+<span class="hljs-comment"># tips: new Date('2021-03-27').toISOString().split('T')[0] === '2021-03-27'</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1058" height="734" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/Demo-step-1-booking-submit.gif" alt="" class="wp-image-2202"/><figcaption>Expected behaviour for the submit method of step 1. It checks if any employee is available before redirecting to the second step. Else, it prints errors.</figcaption></figure>
+
+
+
+<p class="exercice"><strong>Exercise 8</strong>: Implement the submit method of step 1 component.</p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/55bf37d0a3d8219d16268c91f79d73105dab55ed/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/55bf37d0a3d8219d16268c91f79d73105dab55ed" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<p></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/">3. The booking experience</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -1118,14 +1162,14 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 <p class="exercice"><strong>Exercise 1</strong>: Start a new feature branch and call it <code>authentication-and-routing</code>. On Github, you should see a branch called <code>feature/authentication-and-routing</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># ensure you are on develop branch.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># ensure you are on develop branch.</span>
 git checkout develop
 
 <span class="hljs-comment"># create a new local branch, which is even with develop</span>
 git checkout -b feature/authentication-<span class="hljs-keyword">and</span>-routing
 
 <span class="hljs-comment"># push it to remote repository</span>
-git push --set-upstream origin feature/authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+git push --set-upstream origin feature/authentication-<span class="hljs-keyword">and</span>-routing</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>I encourage you to commit regulary your changes (for example, at the end of each question). You may also reset your workspace to last commit when things go wrong.</p>
@@ -1159,12 +1203,12 @@ git push --set-upstream origin feature/authentication-<span class="hljs-keyword"
 <p>The <code>@angular/cli</code> is able to generate some pieces of code, like a component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># generate a new component called 'navigation' and reference it in app.module.ts.</span>
 $ ng generate component navigation
 CREATE src/app/navigation/navigation.component.css (<span class="hljs-number">0</span> bytes)
 CREATE src/app/navigation/navigation.component.html (<span class="hljs-number">25</span> bytes)
 CREATE src/app/navigation/navigation.component.ts (<span class="hljs-number">291</span> bytes)
-UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 4</strong>: Commit any existing change on git, then generate a new component called <code>navigation</code>. Examine changes made by <code>@angular/cli</code> (you can use git and the output of <code>ng generate</code> command). Finally, move the mat-toolbar into <code>navigation.component</code>. Visually, the result should be identical.</p>
@@ -1304,7 +1348,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <p>The same way we prefer <code>routerLink</code> over <code>href</code> because it does not reload the <code>Single Page Application</code>, you should use the <code>@angular/router</code> from your typescript controller (ex. from your submit method in <code>LoginComponent</code>). Here an example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/router'</span>;
 
 <span class="hljs-meta">@Component</span>({
@@ -1318,7 +1362,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
   <span class="hljs-keyword">async</span> submit () {
     <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.router.navigateByUrl(<span class="hljs-string">'/profile'</span>);
   }
-}</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="margin-bottom: 1em;">
 <p><strong>Exercise 11</strong>: This example is rich of typescript and angular features. Let&rsquo;s analyse it.</p>
@@ -1366,7 +1410,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. You can <a href="https://backend.thomas-veillard.fr/typings.zip" target="_blank" rel="noreferrer noopener">download latest definitions</a> from the backend server.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># content of the typings.zip archive.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># content of the typings.zip archive.</span>
 
 <span class="hljs-comment"># these files contain type definitions of parameters and results of API routes</span>
 ./dist-typings/routes/auth/post.login.interfaces.d.ts
@@ -1377,17 +1421,17 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 ./dist-typings/models/delivery.d.ts
 ./dist-typings/models/user.d.ts
 ./dist-typings/models/booking.d.ts
-./dist-typings/models/employee-information.d.ts</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+./dist-typings/models/employee-information.d.ts</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Here a simple example of type definition for <code>POST /api/auth/login</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">/* ./dist-typings/routes/auth/post.login.interfaces.d.ts */</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">/* ./dist-typings/routes/auth/post.login.interfaces.d.ts */</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Auth$LoginParams {
     email: <span class="hljs-built_in">string</span>;
     password: <span class="hljs-built_in">string</span>;
-}</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Those definitions are up to date with the back-end implementation, since they are derived from it. If any change in the backend is incompatible with the front-end usage, the typescript compiler catches it.</p>
@@ -1429,7 +1473,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <p class="exercice"><strong>Exercise 14</strong>: Using the <code>@angular/cli</code>, generate <code>me.service.ts</code> and implement <code>resolve</code>, <code>login</code> and <code>logout</code> methods. Finally, update accordly the <code>LoginComponent</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'src/dist-typings/routes/auth/post.login.interfaces'</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { Auth$LoginParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'src/dist-typings/routes/auth/post.login.interfaces'</span>;
 <span class="hljs-keyword">import</span> User <span class="hljs-keyword">from</span> <span class="hljs-string">'src/dist-typings/models/user'</span>;
 
 <span class="hljs-keyword">interface</span> IMeService {
@@ -1456,7 +1500,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
    * Returns Promise&lt;void&gt; if success.
    */</span>
   logout: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt;
-}</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
   <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
@@ -1498,15 +1542,15 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 <p>You have to change your routes, so they look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
+<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">  { path: <span class="hljs-string">''</span>, component: HomeComponent, resolve: { me: MeService } },
   { path: <span class="hljs-string">'login'</span>, component: LoginComponent, resolve: { me: MeService } },
-  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+  { path: <span class="hljs-string">'profile'</span>, component: ProfileComponent, resolve: { me: MeService } }</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Now, components scoped inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>  can access the <code>me</code> property through <code>ActivatedRoute</code> service injection.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
+<pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> NavigationComponent {
   <span class="hljs-comment">// once initialized, you can use it to dynamically adapt the navigation template.</span>
   me: User;
 
@@ -1514,7 +1558,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
     <span class="hljs-comment">// When the NavigationComponent is mounted, the MeService has already been resolved.</span>
     <span class="hljs-keyword">this</span>.me = activatedRoute.snapshot.data.me;
   }
-}</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>For some reason, <code>ActivatedRoute</code> injection behaves properly only inside the <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. At this step, you include <code>app-navigation</code> in <code>app.component.html</code>. You must move it to <code>home-component</code>, <code>login-component</code>&#8230;</p>
