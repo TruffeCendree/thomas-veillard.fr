@@ -139,14 +139,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</loc>
-		<lastmod>2021-02-19T06:26:37+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Why-are-web-front-end-technologies-so-popular-.png</image:loc>
-			<image:title><![CDATA[Why-are-web-front-end-technologies-so-popular-]]></image:title>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/developpement-web-cote-client/cours/pourquoi-les-technologies-web-sont-elles-si-populaires/</loc>
 		<lastmod>2021-02-19T06:47:45+00:00</lastmod>
 		<image:image>
@@ -294,6 +286,14 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-logout-button-with-fontawesome-and-mattooltip.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</loc>
+		<lastmod>2021-03-10T09:32:34+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Why-are-web-front-end-technologies-so-popular-.png</image:loc>
+			<image:title><![CDATA[Why-are-web-front-end-technologies-so-popular-]]></image:title>
 		</image:image>
 	</url>
 </urlset>
