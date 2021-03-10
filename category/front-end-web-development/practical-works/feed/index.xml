@@ -12,13 +12,13 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/practical-works/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 07 Mar 2021 13:19:22 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 10 Mar 2021 07:40:32 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.6.2</generator>
+	<generator>https://wordpress.org/?v=5.7</generator>
 	<item>
 		<title>3. The booking experience</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/</link>
@@ -610,7 +610,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 
 
 
-<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. You can <a href="https://backend.thomas-veillard.fr/typings.zip" target="_blank" rel="noreferrer noopener">download latest definitions</a> from the backend server.</p>
+<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. You can <a href="https://backend.thomas-veillard.fr/assets/typings.zip" target="_blank" rel="noreferrer noopener">download latest definitions</a> from the backend server.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># content of the typings.zip archive.</span>

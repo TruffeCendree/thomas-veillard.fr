@@ -12,13 +12,13 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 07 Mar 2021 13:19:22 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 10 Mar 2021 07:40:32 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.6.2</generator>
+	<generator>https://wordpress.org/?v=5.7</generator>
 	<item>
 		<title>Quizzes</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/quizz/</link>
@@ -710,7 +710,7 @@ UPDATE src/app/app.module.ts (<span class="hljs-number">684</span> bytes)</code>
 
 
 
-<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. You can <a href="https://backend.thomas-veillard.fr/typings.zip" target="_blank" rel="noreferrer noopener">download latest definitions</a> from the backend server.</p>
+<p>Front-end and back-end share some technologies, including the Typescript language. The front-end can benefit from back-end type definition exported by the compiler. You can <a href="https://backend.thomas-veillard.fr/assets/typings.zip" target="_blank" rel="noreferrer noopener">download latest definitions</a> from the backend server.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># content of the typings.zip archive.</span>
@@ -1314,7 +1314,7 @@ Register yourself as customer using public API.
 		<category><![CDATA[Lectures]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2074</guid>
 
-					<description><![CDATA[<p>Languages for browsers HTML: HyperText Markup Language As you already know, HTML is a markup language structuring the content of the page. It also describes the semantics. Search engines and accessibility tools rely on both to index contents, identify the main section, navigation&#8230; The following example creates 3 links &#60;a>. Each page may contain a &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/" class="more-link">Continuer la lecture de <span class="screen-reader-text">6. Languages for the web</span></a></p>
+					<description><![CDATA[<p>Languages for browsers HTML: HyperText Markup Language As you already know, HTML is a markup language structuring the content of the page. It also describes the semantics. Search engines and accessibility tools rely on both to index contents, identify the main section, navigation&#8230; The following example creates 3 links &#60;a&#62;. Each page may contain a &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/" class="more-link">Continuer la lecture de <span class="screen-reader-text">6. Languages for the web</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/">6. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
@@ -1340,7 +1340,7 @@ Register yourself as customer using public API.
 
 
 
-<p>The following example creates 3 links <code>&lt;a></code>. Each page may contain a lot of links, with different meanings and purposes (navigation items in a menu, inner link from an article to another, quotation sourcing&#8230;). By putting them inside a <code>&lt;nav></code>, we semantically express those links are part of the same menu. So <strong>search engines</strong> and <strong>accessibility tools</strong> understand that <code>Home</code> and <code>About</code> are navigation items.</p>
+<p>The following example creates 3 links <code>&lt;a&gt;</code>. Each page may contain a lot of links, with different meanings and purposes (navigation items in a menu, inner link from an article to another, quotation sourcing&#8230;). By putting them inside a <code>&lt;nav&gt;</code>, we semantically express those links are part of the same menu. So <strong>search engines</strong> and <strong>accessibility tools</strong> understand that <code>Home</code> and <code>About</code> are navigation items.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
@@ -1428,7 +1428,7 @@ Register yourself as customer using public API.
 
 
 
-<h3>Languages for web development</h3>
+<h3>Other languages for web development</h3>
 
 
 
@@ -1459,6 +1459,26 @@ Register yourself as customer using public API.
 
 
 <p>As a developer, you can use the latest specifications (ex. ES6/ES7/ES2021). The <code>tsc</code> compiler translates your source code to a given target (ex. ES5). You can write clean and human readable code without the challenge of syntax compatibility, which becomes the responsibility of <code>tsc</code>.</p>
+
+
+
+<h3>On the importance of standards</h3>
+
+
+
+<p>Everything on the web has to be standard:</p>
+
+
+
+<ul><li>Physical Network: Link</li><li>Internet (IP)</li><li>Transport: TCP/UDP</li><li>Application: HTTP/S</li><li>Rendering and processing: HTML/CSS/JS</li></ul>
+
+
+
+<p>Because the web relies on standards, Web applications may work seamlessly across a variety of operating systems and browsers. Building standards is a common effort implying manufacturers (e.g. hardware, network), operating system vendors (e.g. TCP/UDP stack), browser vendors (e.g. HTTP/S, W3C, ECMAScript) and <strong>developers</strong>.</p>
+
+
+
+<p>Remember Internet Explorer 6. It did not follow W3C standards. For example, names of CSS properties and some CSS expressions differed from W3C specifications. There were a lot of rendering bugs. So developers had to develop their website both: IE6 and for other browsers.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/">6. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
