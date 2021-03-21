@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Wed, 10 Mar 2021 13:09:00 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 21 Mar 2021 16:49:24 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -761,7 +761,7 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 				<category><![CDATA[Front-end web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1576</guid>
 
-					<description><![CDATA[<p>Topic Your goal for this project is to build a client application that leverages publicly available APIs. You can choose as many public API you want. Try to build something new and useful, with a real added value. Rules This is a group work (3 or 4 students per team). Use Angular or React. Material &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project</span></a></p>
+					<description><![CDATA[<p>Topic Your goal for this project is to build a client application that leverages publicly available APIs. You can choose as many public API you want. Try to build something new and useful, with a real added value. Rules This is a group work (3 or 4 students per team). Use Angular or React. You &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
@@ -777,7 +777,11 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 
 
 
-<ul><li>This is a group work (3 or 4 students per team).</li><li>Use Angular or React. Material design is <strong>not</strong> mandatory.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check who commits, and when.</li><li>Use eslint. Recommended configuration is in <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">practical works</a>.</li><li>Document installation steps in README.md.</li></ul>
+<ul><li>This is a group work (3 or 4 students per team).</li><li>Use Angular or React. You are free to use any library you want.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check who commits, and when.</li><li>Document installation steps in README.md.</li></ul>
+
+
+
+<p>The same complexity and amount of work than the whole tutorial series is required. But this time, you are not alone anymore.</p>
 
 
 
@@ -793,6 +797,18 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 
 
 
+<h4>Examples</h4>
+
+
+
+<p>Here you have some examples of your peer&rsquo;s projects:</p>
+
+
+
+<ul><li>A photo gallery with firebase integration (authentication, file upload to firestore, structured data storage on firebase database) and gifly exploration. This project is more interesting for its technical stack than for its features. </li><li>A browsable index of meals, meals categories, ingredients and recipes using a public database. This application fills a need and may focus on user experience.</li><li>A cryptocurrency wallet application, tracking assets rates, rendering charts&#8230; Typically a project for enthusiasts.</li></ul>
+
+
+
 <h4>Delivery</h4>
 
 
@@ -805,11 +821,23 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 
 
 
+<h4>Graduation</h4>
+
+
+
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>Addressed technical challenges</td><td>3 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by your peers during oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>10 points</td></tr></tbody></table></figure>
+
+
+
 <h4>Bonuses</h4>
 
 
 
 <ul><li>Host your static website online (ex. Firebase Hosting, render.com, aws S3&#8230;).</li><li>Monitor client side errors in production (ex. Sentry, Rollbar, Stackdriver&#8230;).</li><li>Build your own backend on top of node.js. The same amount of work is still expected for the frontend.</li></ul>
+
+
+
+<p></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
