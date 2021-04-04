@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 03 Apr 2021 06:58:56 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 04 Apr 2021 09:57:42 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1697,7 +1697,7 @@ callArgument(myFunction); <span class="hljs-comment">// prints 10</span></code><
 <pre class="wp-block-code" aria-describedby="shcb-language-40" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-built_in">Date</span>.now(); <span class="hljs-comment">// returns the UNIX time in millisecond (nb of milliseconds since 01/01/1970)</span></code></div><small class="shcb-language" id="shcb-language-40"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p></p>
+<p>In fact, good documentation already exists about classes in JavaScript. Check <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noreferrer noopener">this guide on MDN</a>. It covers class declaration, constructors, instance methods, static methods and such more.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/fast-tour-of-javascript-variables/">09. JavaScript: variables and types</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					

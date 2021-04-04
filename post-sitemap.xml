@@ -279,34 +279,11 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/fast-tour-of-javascript-variables/</loc>
-		<lastmod>2021-03-28T11:28:03+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/the-project/</loc>
 		<lastmod>2021-03-30T11:04:10+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/js-html-js-warrior.png</image:loc>
 			<image:title><![CDATA[js html js warrior]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/10-fast-tour-of-javascript-coercion-comparison/</loc>
-		<lastmod>2021-04-03T06:40:01+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -347,6 +324,29 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Demo-logout-button-with-fontawesome-and-mattooltip.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/fast-tour-of-javascript-variables/</loc>
+		<lastmod>2021-04-04T08:34:51+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/10-fast-tour-of-javascript-coercion-comparison/</loc>
+		<lastmod>2021-04-04T09:57:42+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
