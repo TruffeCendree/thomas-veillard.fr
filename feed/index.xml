@@ -12,13 +12,13 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 03 Apr 2021 06:58:56 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 07 Apr 2021 10:15:48 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7</generator>
+	<generator>https://wordpress.org/?v=5.7.1</generator>
 	<item>
 		<title>5. Que peut faire le web aujourd&#8217;hui ?</title>
 		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/</link>
@@ -451,42 +451,6 @@
 		
 			</item>
 		<item>
-		<title>Quizzes</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/quizz/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 12 Feb 2021 19:43:27 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1695</guid>
-
-					<description><![CDATA[<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available. GitThe main (or master) branch for git hf workflow is dedicated to: Single page applicationsWhat produces HTML in an Single Page Application? ComparisonsWhich rows are output?What is the output? DependenciesWhat are the risks inherent to dependency import? Copy &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/quizz/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Quizzes</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizzes</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available.</p>
-
-
-<p><strong>Git</strong><br><a href="https://thomas-veillard.fr/quizz/4b2454cb-64fe-4885-9876-0d905b8333c1/">The main (or master) branch for git hf workflow is dedicated to:</a></p>
-<p><strong>Single page applications</strong><br><a href="https://thomas-veillard.fr/quizz/24a77c23-be4b-49bf-a27f-43381047bd08/">What produces HTML in an Single Page Application?</a></p>
-<p><strong>Comparisons</strong><br><a href="https://thomas-veillard.fr/quizz/7d1d50c8-22a6-44f5-92c3-ed8430a01519/">Which rows are output?</a><br><a href="https://thomas-veillard.fr/quizz/3f4c00ae-e590-46ad-80f9-9d03f16a0844/">What is the output?</a></p>
-<p><strong>Dependencies</strong><br><a href="https://thomas-veillard.fr/quizz/3068fbce-4414-49b5-ac29-e6b1e1f88f99/">What are the risks inherent to dependency import?</a></p>
-<p><strong>Copy vs reference</strong><br><a href="https://thomas-veillard.fr/quizz/0c7a0ba2-efc9-42d4-9d2d-3fd4bee2988d/">What is the result ?</a></p>
-<p><strong>Object destructuring</strong><br><a href="https://thomas-veillard.fr/quizz/9b4c2b05-1053-41be-a0b5-8f6e3984c0af/">What is the output ?</a></p>
-<p><strong>Function arguments</strong><br><a href="https://thomas-veillard.fr/quizz/ef17d3dd-3355-43ee-abad-9821a7c5e2ea/">What is the result of this code?</a></p>
-<p><strong>Callbacks</strong><br><a href="https://thomas-veillard.fr/quizz/b4a89b4d-f1e4-4830-a968-77ebb32a83ff/">In what order are the lines executed?</a></p>
-<p><strong>Async/await</strong><br><a href="https://thomas-veillard.fr/quizz/e256f6ff-28b8-4713-bad3-b1151b4a8669/">What is the content of result?</a></p>
-<p><strong>Mixed syntax &amp; promises</strong><br><a href="https://thomas-veillard.fr/quizz/1e9c9b35-dee4-4045-844c-e20c6327c31c/">Analyze this example</a>.</p>
-<p><strong>Arrow functions</strong><br><a href="https://thomas-veillard.fr/quizz/6f2fd75d-9ed3-4652-b447-9d89b1d83567/">What is the output?</a><br><a href="https://thomas-veillard.fr/quizz/6eafa1cb-8389-4ebc-8ad9-e87be0ce722e/">Where is the bug?</a></p>
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizzes</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
 		<title>3. La ligne de commande et les entrées / sorties</title>
 		<link>https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/</link>
 		
@@ -825,7 +789,7 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 
 
 
-<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>Addressed technical challenges</td><td>3 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by your peers during oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>10 points</td></tr></tbody></table></figure>
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by your peers during oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>13 points</td></tr></tbody></table></figure>
 
 
 
@@ -1688,6 +1652,342 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 
 <p>Once the code is reviewed, merge your pull request on Github and return to develop branch.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/">2. Managing authentication &#038; routing</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>1. Setup your practical environment</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Tue, 09 Feb 2021 09:00:00 +0000</pubDate>
+				<category><![CDATA[Front-end web development]]></category>
+		<category><![CDATA[Practical works]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
+
+					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools (git, node&#8230;) ; setup, build and run your angular application ; access to the back-end API documentation and interact manually with it &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Setup your practical environment</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided.</p>
+
+
+
+<p>During this first seance, you will:</p>
+
+
+
+<ul><li>install the necessary tools (git, node&#8230;) ;</li><li>setup, build and run your angular application ;</li><li>access to the back-end API documentation and interact manually with it ;</li><li>commit that angular project on git and push it to Github ;</li><li>push your code to Cloudflare Page.</li></ul>
+
+
+
+<h3>Required software installation</h3>
+
+
+
+<h4>Git</h4>
+
+
+
+<p><a href="https://git-scm.com/" target="_blank" rel="noreferrer noopener">Git</a> is a decentralised source version manager. A git repository stores the source code of a project and any of its changes. Typically, a contributor writes some code on its side. Once it has completed its task, it commits the changes (with a message) and push it to the remote repositories. Other contributors can update their base. Nowadays, teams centralise repositories hosting on SaaS platforms like Github and Gitlab.</p>
+
+
+
+<p>During the lecture, I expressed you follow the <a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html" target="_blank" rel="noreferrer noopener">gitflow</a> workflow. Take the time to understand it. In substance:</p>
+
+
+
+<ul><li>All the code on master is designed for production.</li><li>The code for next release is on develop.</li><li>When your start a feature, you should open a feature branch.</li></ul>
+
+
+
+<p>Of course, you also need a Github (or Gitlab) account.</p>
+
+
+
+<p class="exercice"><strong>Exercise 1</strong> : Install git on your machine. You should at least have the git command working. Test it with <code>git --version</code> for example.</p>
+
+
+
+<h4>Node.js &amp; npm</h4>
+
+
+
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">Node.js</a> is a platform that runs Javascript code outside the browser. It makes possible to write server applications in Javascript, allowing developers to use the same technologies for front and back. The back-end you will interface with is running on node.js.</p>
+
+
+
+<p>But here we are in front-end module. We are interested in node.js because it powers most tools we will use. Some of them are even shipped with the node installer. Node Package Manager (npm) is one of them. It manages dependencies of your project and installs cli softwares written for node.</p>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong> : Install node.js. If installation successed, both commands <code>node --version</code> and <code>npm --version</code> should work. It is recommended you use the <code>Node Command Prompt</code>.</p>
+
+
+
+<h4>Angular</h4>
+
+
+
+<p><a href="https://angular.io/" target="_blank" rel="noreferrer noopener">Angular</a> is a full-featured framework you will use for building your front application. Most actions, such as generating projects or components have been automatised in the « cli » tool.</p>
+
+
+
+<p>A single command written in a terminal (Powershell or Node Command Prompt for Windows) do the job. Ensure node is installed first. We also install <a href="https://eslint.org/" target="_blank" rel="noreferrer noopener">eslint</a>, which ensure coding conventions are applied across codebase.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># the following command install angular cli and required dependencies globally. They provide the ng command.</span>
+npm i -g @angular/cli @angular-devkit/core @angular-devkit/schematics @angular-eslint/schematics</code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="exercice"><strong>Exercise 3</strong> : Install <code>@angular/cli</code> according to the previous procedure. Then test it works with <code>ng version</code>. For everything related <code>node</code>, <code>npm</code> and <code>ng</code>, I recommend you use the <code>Node command prompt</code>.</p>
+
+
+
+<h3>Setup the angular project</h3>
+
+
+
+<p>At the end of this step, your workspace should match the following folder hierarchy. </p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-26" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">frontend                       <span class="hljs-comment"># angular projet (generated using @angular/cli)</span>
+ ↳ dist                        <span class="hljs-comment"># the folder containing your bundled app. Only exists after running `ng build` command.</span>
+ ↳ node_modules                <span class="hljs-comment"># the folder containing local dependencies. See package.json file and npm command for more info.</span>
+ ↳ src                         <span class="hljs-comment"># source code (HTML, CSS, TS). It includes components, services, etc.</span>
+ ↳ angular.json                <span class="hljs-comment"># @angular/cli configuration</span>
+ ↳ package.json                <span class="hljs-comment"># npm configuration, primary used for installing dependencies</span>
+ ↳ tsconfig.json               <span class="hljs-comment"># typescript configuration, where are defined target, enabled syntax and type checking features.</span>
+ ↳ .eslintrc.json              <span class="hljs-comment"># eslint configuration, where you set linter rules.</span></code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Angular project&rsquo;s structure is standard (thanks to @angular/cli). For more information about it, please refer to <a href="https://angular.io/guide/file-structure" target="_blank" rel="noreferrer noopener">official documentation</a>.</p>
+
+
+
+<h4>Generate the angular project</h4>
+
+
+
+<p class="exercice"><strong>Exercise 4</strong> : Generating such project is easy. Just run the following command in a <code>Node Command Prompt</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-27" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># creates a new project with angular router enabled</span>
+ng new --routing --strict --collection=@angular-eslint/schematics frontend
+
+<span class="hljs-comment"># enter the 'frontend' folder</span>
+<span class="hljs-built_in">cd</span> frontend</code></div><small class="shcb-language" id="shcb-language-27"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The previous commands enabled the<code>:</code></p>
+
+
+
+<ul><li><code>angular/router</code>, with argument <code>--routing</code> that lets our angular app overriding and intercepting the browser URLs through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="noreferrer noopener">HTML5 History API</a>.</li><li>the strict mode of typescript with <code>--strict</code> argument. Among other things, Typescript will expect to know the type of each variable, so it can enforce safety checks. See <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank" rel="noreferrer noopener">typescript reference</a> for more info.</li><li><code>eslint</code> support, with rules recommended by the angular community. Linter&rsquo;s objectives is to ensure codebase consistency across the team and collaborator turnover. It sets guidelines, detects some bad coding patterns, etc.</li></ul>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-life-ring" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  Need help? <a href="https://github.com/TruffeCendree/learning-materials/tree/5444790f18c5e943fd9e6202c677b0db943e8ce0/correction" target="_blank">Explore code</a> or <a href="https://github.com/TruffeCendree/learning-materials/commit/5444790f18c5e943fd9e6202c677b0db943e8ce0" target="_blank">list recent changes</a> on  <i class="fab fa-github" style="margin: 0 0.3em" ></i>Github.
+</div>
+</div>
+
+
+
+<h4>Configure your editor</h4>
+
+
+
+<p>If you are using VSCode, you will probably appreciate those extensions:</p>
+
+
+
+<ul><li>Angular Language Service (type inference in template)</li><li>Eslint checks that conventions are correctly applied</li><li>Gitlens (optional) for better git experience</li></ul>
+
+
+
+<h4>Run your app</h4>
+
+
+
+<p>Once your project is generated, it is time to run it. <code>ng serve</code> incrementaly compile your project and reload on source change. It also starts an HTTP server on port 4200.</p>
+
+
+
+<p class="exercice"><strong>Exercise 5</strong> : Serve your app and open it in your favourite browser.</p>
+
+
+
+<p>Tips: always start your browser development tool and keep track of the console tab. If there is an error at runtime, that is the place to check.</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong> : Document yourself on the differences between <code>ng serve</code> and <code>ng build</code>.</p>
+
+
+
+<h4>Compare built application with various targets</h4>
+
+
+
+<p>The following commands build your app. Many other parameters are available to customise the build process. This is just an overview of more useful.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-28" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">ng build          <span class="hljs-comment"># build the app for development, easy to debug in the browser and heavy bundle size.</span>
+ng build --prod   <span class="hljs-comment"># build the app for production. A lot of optimisations are processed, reducing bundle size.</span>
+ng build --watch  <span class="hljs-comment"># incrementally rebuild the app on each source code change (faster subsequent builds).</span></code></div><small class="shcb-language" id="shcb-language-28"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>I provided a sample output of the <code>ng build</code> command. It emitted its output under <code>dist/frontend</code> folder. Let&rsquo;s analyse it!</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-29" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">$ ng build <span class="hljs-comment"># must be run in frontend folder                                                        </span>
+✔ Browser application bundle generation complete.
+✔ Copying assets complete.
+✔ Index html generation complete.
+
+Initial Chunk Files | Names         |      Size
+vendor.js           | vendor        |   <span class="hljs-number">2.70</span> MB
+polyfills.js        | polyfills     | <span class="hljs-number">127.61</span> kB
+main.js             | main          |  <span class="hljs-number">20.85</span> kB
+runtime.js          | runtime       |   <span class="hljs-number">6.15</span> kB
+styles.css          | styles        | <span class="hljs-number">119</span> bytes
+
+                    | Initial Total |   <span class="hljs-number">2.85</span> MB
+
+Build at: <span class="hljs-number">2021</span><span class="hljs-number">-01</span><span class="hljs-number">-30</span>T08:<span class="hljs-number">46</span>:<span class="hljs-number">07.013</span>Z - Hash: <span class="hljs-number">2</span>b7174e3c646073c60a9 - Time: <span class="hljs-number">6285</span>ms</code></div><small class="shcb-language" id="shcb-language-29"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="exercice"><strong>Exercise 7</strong> : What is a bundle ? How does it differ from the source code?</p>
+
+
+
+<p class="exercice"><strong>Exercise 8</strong> : <code>.map.js</code> files have been emitted. What is the purpose of these map files?</p>
+
+
+
+<p class="exercice"><strong>Exercise 9</strong> : Can you spot some differences between <code>ng build</code> and <code>ng build --prod</code>?</p>
+
+
+
+<p class="exercice"><strong>Exercise 10</strong> : What is a javascript polyfill?</p>
+
+
+
+<h4>Commit your code and push it to Github</h4>
+
+
+
+<p class="exercice"><strong>Exercise 11</strong> : Register yourself on Github. Then create a private git repository (for simplicity, <strong>do not create any file such as <code>README.md</code></strong> while initialising the github repository). Finally push all your changes to Github. </p>
+
+
+
+<p>The <code>ng new</code> command already initialised a local git repository. If you have any pending change, you have to <code>commit</code> them. A commit validates and stores a list of changes (files created, updates&#8230;) and a message describing those changes. </p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-30" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># list all changes currently not committed. Check if you see some "untracked files" that need to be persisted.</span>
+git status
+
+<span class="hljs-comment"># you probably want to commit new files in your repository.</span>
+<span class="hljs-comment"># git add accepts a list of files or folder.</span>
+<span class="hljs-comment"># '.' designates the current directory.</span>
+git add .
+
+<span class="hljs-comment"># commit every pending change with a message</span>
+git commit -a -m <span class="hljs-string">"configure linter and typescript"</span>
+
+<span class="hljs-comment"># commands extracted from the Github guide to push commits to remote</span>
+<span class="hljs-comment"># for the first time (do not forget to replace {UNDER BRACKETS} variables).</span>
+git remote add origin https:<span class="hljs-comment">//github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}.git</span>
+git branch -M master
+git push -u origin master</code></div><small class="shcb-language" id="shcb-language-30"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="905" height="637" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-github-repository-exploration.gif" alt="" class="wp-image-1074"/><figcaption>At this step, your code is on Github. You can explore tracked files, show commit history, list changes in a particular commit, and so much more !</figcaption></figure>
+
+
+
+<h4>Gitflow workflow</h4>
+
+
+
+<p>All the code is currently committed on master branch. In the GitFlow workflow, the master branch is dedicated to the production code only.</p>
+
+
+
+<p>This TPs series will use feature branches, develop and master. Each time you start a new feature (ex. adding authentification), you will start a feature branch. Once you completed your changes, open a pull request on github and merge the code to develop. When the code on develop is well tested, it can be merged on master.</p>
+
+
+
+<p class="exercice"><strong>Exercise 12</strong> : Create a develop branch and push it to remote. Both master and develop branch should be visible in Github. The develop branch should be even with master.</p>
+
+
+
+<h2>Play with the backend</h2>
+
+
+
+<p>Remember: you are building the frontend of a cleaning shop service. I provide you a simple backend for that. It is hosted under:</p>
+
+
+
+<p class="has-text-align-center"><em><a href="https://backend.thomas-veillard.fr/" target="_blank" rel="noreferrer noopener">https://backend.thomas-veillard.fr/</a></em></p>
+
+
+
+<p>For your information, the code powering the backend is <a href="https://github.com/TruffeCendree/learning-materials/tree/master/frontend-web-development" target="_blank" rel="noreferrer noopener">publicly available</a>.</p>
+
+
+
+<h4>API documentation and playground</h4>
+
+
+
+<p>The API is self-documented and up to date. Open it at <a href="https://backend.thomas-veillard.fr/docs" target="_blank" rel="noreferrer noopener">https://backend.thomas-veillard.fr/docs</a>.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="835" src="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-1024x835.gif" alt="" class="wp-image-969" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-1024x835.gif 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-300x245.gif 300w, https://thomas-veillard.fr/wp-content/uploads/2021/01/demo-api-playground-768x626.gif 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>API playground and documentation demonstration</figcaption></figure>
+
+
+
+<p>During database population, some seeds were generated. These built-in accounts are designed for testing purposes:</p>
+
+
+
+<ul><li><strong>Operator</strong> (operator@cleaning.com / seedpass)</li><li><strong>Customer</strong> (customer@cleaning.com / seedpass)</li><li><strong>Employee</strong> (employee@cleaning.com / seedpass)</li></ul>
+
+
+
+<div class="exercice" style="padding-bottom: 0; margin-bottom: 1em">
+<p><strong>Exercise 10</strong> : Through the playground, manually execute the following scenario:</p>
+
+<code>POST /auth/login</code>
+<p>Connect yourself as operator.</p>
+
+<code>GET /api/users/me</code>
+<p>Query some information about your own account.</p>
+
+<code>GET /api/users</code>
+<p>List all users on the shop. That is only possible because you are an operator.</p>
+
+<code>POST /auth/logout</code>
+<p>Close your session.</p>
+
+<code>??? find paths and arguments yourself</code>
+<p>
+Try to call any endpoint behind authentication.<br>
+Register yourself as customer using public API.
+</p>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 13</strong> : Same exercise, but this time you will use <a href="https://www.postman.com/" target="_blank" rel="noreferrer noopener">Postman</a>. This way, you are ready to test any kind of API over HTTP.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

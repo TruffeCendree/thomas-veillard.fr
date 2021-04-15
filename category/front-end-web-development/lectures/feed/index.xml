@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7</generator>
+	<generator>https://wordpress.org/?v=5.7.1</generator>
 	<item>
 		<title>11. JavaScript: conditional control flows</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/lectures/11-javascript-conditional-control-flows/</link>

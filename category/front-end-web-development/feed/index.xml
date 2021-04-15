@@ -12,50 +12,14 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Mon, 05 Apr 2021 11:37:27 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 07 Apr 2021 10:15:48 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7</generator>
+	<generator>https://wordpress.org/?v=5.7.1</generator>
 	<item>
-		<title>Quizzes</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/quizz/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 12 Feb 2021 19:43:27 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1695</guid>
-
-					<description><![CDATA[<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available. GitThe main (or master) branch for git hf workflow is dedicated to: Single page applicationsWhat produces HTML in an Single Page Application? ComparisonsWhich rows are output?What is the output? DependenciesWhat are the risks inherent to dependency import? Copy &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/quizz/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Quizzes</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizzes</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<p>These quizzes are designed for in-class animation. Answers are reviewed during lectures. Corrections are not (yet) available.</p>
-
-
-<p><strong>Git</strong><br><a href="https://thomas-veillard.fr/quizz/4b2454cb-64fe-4885-9876-0d905b8333c1/">The main (or master) branch for git hf workflow is dedicated to:</a></p>
-<p><strong>Single page applications</strong><br><a href="https://thomas-veillard.fr/quizz/24a77c23-be4b-49bf-a27f-43381047bd08/">What produces HTML in an Single Page Application?</a></p>
-<p><strong>Comparisons</strong><br><a href="https://thomas-veillard.fr/quizz/7d1d50c8-22a6-44f5-92c3-ed8430a01519/">Which rows are output?</a><br><a href="https://thomas-veillard.fr/quizz/3f4c00ae-e590-46ad-80f9-9d03f16a0844/">What is the output?</a></p>
-<p><strong>Dependencies</strong><br><a href="https://thomas-veillard.fr/quizz/3068fbce-4414-49b5-ac29-e6b1e1f88f99/">What are the risks inherent to dependency import?</a></p>
-<p><strong>Copy vs reference</strong><br><a href="https://thomas-veillard.fr/quizz/0c7a0ba2-efc9-42d4-9d2d-3fd4bee2988d/">What is the result ?</a></p>
-<p><strong>Object destructuring</strong><br><a href="https://thomas-veillard.fr/quizz/9b4c2b05-1053-41be-a0b5-8f6e3984c0af/">What is the output ?</a></p>
-<p><strong>Function arguments</strong><br><a href="https://thomas-veillard.fr/quizz/ef17d3dd-3355-43ee-abad-9821a7c5e2ea/">What is the result of this code?</a></p>
-<p><strong>Callbacks</strong><br><a href="https://thomas-veillard.fr/quizz/b4a89b4d-f1e4-4830-a968-77ebb32a83ff/">In what order are the lines executed?</a></p>
-<p><strong>Async/await</strong><br><a href="https://thomas-veillard.fr/quizz/e256f6ff-28b8-4713-bad3-b1151b4a8669/">What is the content of result?</a></p>
-<p><strong>Mixed syntax &amp; promises</strong><br><a href="https://thomas-veillard.fr/quizz/1e9c9b35-dee4-4045-844c-e20c6327c31c/">Analyze this example</a>.</p>
-<p><strong>Arrow functions</strong><br><a href="https://thomas-veillard.fr/quizz/6f2fd75d-9ed3-4652-b447-9d89b1d83567/">What is the output?</a><br><a href="https://thomas-veillard.fr/quizz/6eafa1cb-8389-4ebc-8ad9-e87be0ce722e/">Where is the bug?</a></p>
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/quizz/">Quizzes</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
 		<title>Project</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/the-project/</link>
 		
@@ -128,7 +92,7 @@
 
 
 
-<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>Addressed technical challenges</td><td>3 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by your peers during oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>10 points</td></tr></tbody></table></figure>
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by your peers during oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>13 points</td></tr></tbody></table></figure>
 
 
 
@@ -2178,6 +2142,187 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 
 <p>This course is not a web design course, it will focus on architecture instead of “is this button big enough?”. That is the reason we use pre-designed components from Angular Material.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/7-environment-tools-languages-frameworks/">07. Environment (tools, languages, frameworks)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>06. Languages for the web</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:37 +0000</pubDate>
+				<category><![CDATA[Front-end web development]]></category>
+		<category><![CDATA[Lectures]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2074</guid>
+
+					<description><![CDATA[<p>Languages for browsers HTML: HyperText Markup Language As you already know, HTML is a markup language structuring the content of the page. It also describes the semantics. Search engines and accessibility tools rely on both to index contents, identify the main section, navigation&#8230; The following example creates 3 links &#60;a&#62;. Each page may contain a &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/" class="more-link">Continuer la lecture de <span class="screen-reader-text">06. Languages for the web</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/">06. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h3>Languages for browsers</h3>
+
+
+
+<h4>HTML: HyperText Markup Language</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<figure class="wp-block-image"><img src="https://lh3.googleusercontent.com/BijLLGjEYsx_Rs7RGBzXRYHqeskzlOHCS5RkO4JEqwhGMadvpKOhnoBFE8ZS7LUXeEauP-qGZg-koSNgwutn6nZ9GzLwSHa2uocWAXMTTIR7qTJYRxn2TSnF18-aAyfAkcR6wEcZQ3Y" alt=""/></figure>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>As you already know, HTML is a markup language structuring the content of the page. It also describes the <strong>semantics</strong>. Search engines and <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" target="_blank" rel="noreferrer noopener">accessibility</a> tools rely on both to index contents, identify the main section, navigation&#8230;</p>
+</div>
+</div>
+
+
+
+<p>The following example creates 3 links <code>&lt;a&gt;</code>. Each page may contain a lot of links, with different meanings and purposes (navigation items in a menu, inner link from an article to another, quotation sourcing&#8230;). By putting them inside a <code>&lt;nav&gt;</code>, we semantically express those links are part of the same menu. So <strong>search engines</strong> and <strong>accessibility tools</strong> understand that <code>Home</code> and <code>About</code> are navigation items.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-55" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/contact-us"</span>&gt;</span>Contact us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-55"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The current standard is HTML Living Standard (post HTML5).</p>
+
+
+
+<h4>CSS: Cascading StyleSheet</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="157px;" height="222px;" src="https://lh5.googleusercontent.com/v8TBn52pLoYpWIIKZ8WPN7ZOUbhUZkqBLBhk9deU67YyL6t6hlbir3rEGD2PBLvBcZE3kKO-7lpmtF89HuBW1Bp1RV1XGZcmQtx4wDKi7aQOnZ20DEbnCKfb7k9vdKI-jCq_L8sZdF4"></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>CSS describes the <strong>style</strong> of the page. Its goal is to define the aesthetics of the web app:</p>
+
+
+
+<ul><li>Spatial organisation of the page (aka. layout) ;</li><li>Design, UX, UI.</li></ul>
+
+
+
+<p>« Cascading » refers to the way it merges CSS rules from various sources (external stylesheets, internal styles, inline styles&#8230;) and with different priorities (depending on the source, the selector, etc.).</p>
+</div>
+</div>
+
+
+
+<p>Supported CSS rules highly differ from one browser version to another. CSS2 took 10 years to be implemented. CSS3 implementation may still be incomplete across modern browsers. The fact is CSS is extremely simple to use as web developer, but also terribly complex for browser vendors. For that reason, I recommend you take advantage of <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">Can I Use.com</a> before using a CSS rule in your project. It gives you statistics about browsers that currently support it.</p>
+
+
+
+<h4>JavaScript</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="123px;" height="123px;" src="https://lh4.googleusercontent.com/BdaQt-ZIjTBm_80gI4948-UMujX7Sl64e0SaFsc1JHczn_nk_d6VnYwWPQBs_amF79S_sknUPw2oBPk1O5cexsUs00OGWqrCiE1v_cTHPRahzgOeLO_WLX6ly3U6QVlYI9K5cHXGxRQ"></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>Javascript is a full-featured language with variables, conditions, loops, functions, classes&#8230; It defines <strong>dynamicity</strong> of the page.</p>
+
+
+
+<p>In fact, it can manipulate the DOM  (Document Object Model, that is the « in memory » parsed HTML), making possible to modify the page.</p>
+</div>
+</div>
+
+
+
+<p>It has many goals but the most important are:</p>
+
+
+
+<ul><li>Enabling user interaction with the elements</li><li>Server &#8211; Client communication</li><li>Managing the state of the different views</li></ul>
+
+
+
+<p>JavaScript follows the ECMAScript specifications. There are as many JavaScript than engine that implement it (ex. V8 for Chrome, SpiderMonkey for Firefox&#8230;). But all implementations should follow ECMAScript specifications.</p>
+
+
+
+<p>The current version is ES12 (aka. ES2021 or ECMAScript 2021). But you cannot target the latest version, because a lot of users are out-of-date.</p>
+
+
+
+<ul><li>For wide compatibility, ES5 is commonly supported (even by Internet Explorer 11). But it lacks a lot of features commonly used in SPA and is more verbose.</li><li>ES6 is fine for <a href="https://caniuse.com/es6" target="_blank" rel="noreferrer noopener">97.24%</a> of browsers (but not for IE).</li></ul>
+
+
+
+<h3>Other languages for web development</h3>
+
+
+
+<p>In this module, you will learn Typescript, which is not supported directly by the browser. This language has to be transpiled in JavaScript to be run.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="131px;" height="131px;" src="https://lh5.googleusercontent.com/twgojU7MhNhjfsT1Nf0j-3j6-xCMmXU_Dhb5yQa5EwcBS9Fwgu-iULzQplwC7EALKA-ubh2JqiL6fXACKqCLC6PxKREGFVhe300Yy--L3eZHlmUN5KsdX0qqrMOY7_1IUlKebVto-rE"> </p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>TypeScript extends JavaScript by adding types.</p>
+
+
+
+<p>The main goal is to write maintainable code despite web project growing complexity. </p>
+</div>
+</div>
+
+
+
+<p>It strictly follows ECMAScript specifications. A valid JavaScript code is also a valid TypeScript code (with most checks turned off). But TypeScript is statically aware of types, making possible to catch a lot of errors before the code reaches the browser (or the production&#8230;).</p>
+
+
+
+<p>As a developer, you can use the latest specifications (ex. ES6/ES7/ES2021). The <code>tsc</code> compiler translates your source code to a given target (ex. ES5). You can write clean and human readable code without the challenge of syntax compatibility, which becomes the responsibility of <code>tsc</code>.</p>
+
+
+
+<h3>On the importance of standards</h3>
+
+
+
+<p>Everything on the web has to be standard:</p>
+
+
+
+<ul><li>Physical Network: Link</li><li>Internet (IP)</li><li>Transport: TCP/UDP</li><li>Application: HTTP/S</li><li>Rendering and processing: HTML/CSS/JS</li></ul>
+
+
+
+<p>Because the web relies on standards, Web applications may work seamlessly across a variety of operating systems and browsers. Building standards is a common effort implying manufacturers (e.g. hardware, network), operating system vendors (e.g. TCP/UDP stack), browser vendors (e.g. HTTP/S, W3C, ECMAScript) and <strong>developers</strong>.</p>
+
+
+
+<p>Remember Internet Explorer 6. It did not follow W3C standards. For example, names of CSS properties and some CSS expressions differed from W3C specifications. There were a lot of rendering bugs. So developers had to develop their website both: IE6 and for other browsers.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/">06. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
