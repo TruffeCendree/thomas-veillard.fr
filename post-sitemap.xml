@@ -214,14 +214,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</loc>
-		<lastmod>2021-03-28T11:03:57+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Using-web-tools-to-build-something-else.png</image:loc>
-			<image:title><![CDATA[Using-web-tools-to-build-something-else]]></image:title>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</loc>
 		<lastmod>2021-03-28T11:04:05+00:00</lastmod>
 		<image:image>
@@ -334,15 +326,23 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/11-javascript-conditional-control-flows/</loc>
-		<lastmod>2021-04-05T11:37:27+00:00</lastmod>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/the-project/</loc>
 		<lastmod>2021-04-07T10:15:48+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/js-html-js-warrior.png</image:loc>
 			<image:title><![CDATA[js html js warrior]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/11-javascript-conditional-control-flows/</loc>
+		<lastmod>2021-07-04T20:41:46+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</loc>
+		<lastmod>2021-07-14T09:55:35+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Using-web-tools-to-build-something-else.png</image:loc>
+			<image:title><![CDATA[Using-web-tools-to-build-something-else]]></image:title>
 		</image:image>
 	</url>
 </urlset>
