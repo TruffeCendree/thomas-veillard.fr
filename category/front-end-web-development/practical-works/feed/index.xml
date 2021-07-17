@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>Practical works &#8211; Thomas VEILLARD</title>
+	<title>03. Angular tutorials (archived, need improvments) &#8211; Thomas VEILLARD</title>
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/practical-works/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
@@ -25,8 +25,8 @@
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:02 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<category><![CDATA[Practical works]]></category>
+				<category><![CDATA[03. Angular tutorials (archived, need improvments)]]></category>
+		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2008</guid>
 
 					<description><![CDATA[<p>Learning objectives &#38; expected results During this practical activity, you will build the booking experience and take care of business logic. That is the opportunity to: practice reverse engineering ; be more autonomous than during the last practical work ; build more complex forms than previous login component ; use @Input() and @Output() data bindings &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. The booking experience</span></a></p>
@@ -334,8 +334,8 @@
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:01 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<category><![CDATA[Practical works]]></category>
+				<category><![CDATA[03. Angular tutorials (archived, need improvments)]]></category>
+		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1125</guid>
 
 					<description><![CDATA[<p>You will build a basic navigation experience, with login capabilities and authenticated area. This is the opportunity to: create your first feature branch on git ; review the code of someone else pull request ; build components, forms and navigation ; write routing configuration with authorisation guards ; work with async processing and error handlers &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Managing authentication &#038; routing</span></a></p>
@@ -874,8 +874,8 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:00 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<category><![CDATA[Practical works]]></category>
+				<category><![CDATA[03. Angular tutorials (archived, need improvments)]]></category>
+		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
 
 					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools (git, node&#8230;) ; setup, build and run your angular application ; access to the back-end API documentation and interact manually with it &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Setup your practical environment</span></a></p>

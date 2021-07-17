@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Wed, 07 Apr 2021 10:15:48 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 17 Jul 2021 07:51:00 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -717,105 +717,13 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 		
 			</item>
 		<item>
-		<title>Project</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/the-project/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Tue, 09 Feb 2021 07:16:11 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1576</guid>
-
-					<description><![CDATA[<p>Topic Your goal for this project is to build a client application that leverages publicly available APIs. You can choose as many public API you want. Try to build something new and useful, with a real added value. Rules This is a group work (3 or 4 students per team). Use Angular or React. You &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/the-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>Topic</h4>
-
-
-
-<p>Your goal for this project is to build a client application that leverages <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noreferrer noopener">publicly available</a> APIs. You can choose as many public API you want. Try to build something new and useful, with a real added value.</p>
-
-
-
-<h4>Rules</h4>
-
-
-
-<ul><li>This is a group work (3 or 4 students per team).</li><li>Use Angular or React. You are free to use any library you want.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check who commits, and when.</li><li>Document installation steps in README.md.</li></ul>
-
-
-
-<p>The same complexity and amount of work than the whole tutorial series is required. But this time, you are not alone anymore.</p>
-
-
-
-<h4>README.md</h4>
-
-
-
-<p>I will follow steps in your README to build and run your project. For simple front-end projects, it could be really short: (ex. git clone, npm install, ng build).</p>
-
-
-
-<p>But if you implemented a backend or have special requirements, they must be explicit. If setup is complex, please provide an install script (targeting GNU/Linux).</p>
-
-
-
-<h4>Examples</h4>
-
-
-
-<p>Here you have some examples of your peer&rsquo;s projects:</p>
-
-
-
-<ul><li>A photo gallery with firebase integration (authentication, file upload to firestore, structured data storage on firebase database) and gifly exploration. This project is more interesting for its technical stack than for its features. </li><li>A browsable index of meals, meals categories, ingredients and recipes using a public database. This application fills a need and may focus on user experience.</li><li>A cryptocurrency wallet application, tracking assets rates, rendering charts&#8230; Typically a project for enthusiasts.</li></ul>
-
-
-
-<h4>Delivery</h4>
-
-
-
-<p>Your git repository is your delivery. Just share read-only access with me (my Github username is <code>TruffeCendree</code>). 2 deliveries are planned:</p>
-
-
-
-<ul><li><strong>On Sunday 21/03/2021 (23h59)</strong> for ungraduated reviews. I want to give you feedback as early as possible, catch issues and then help you during classes.</li><li><strong>On </strong><s>Friday 02/04/2021</s> <strong>Monday 05/04/2021 (23h59)</strong> for the final review before the oral presentation.</li></ul>
-
-
-
-<h4>Graduation</h4>
-
-
-
-<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by your peers during oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>13 points</td></tr></tbody></table></figure>
-
-
-
-<h4>Bonuses</h4>
-
-
-
-<ul><li>Host your static website online (ex. Firebase Hosting, render.com, aws S3&#8230;).</li><li>Monitor client side errors in production (ex. Sentry, Rollbar, Stackdriver&#8230;).</li><li>Build your own backend on top of node.js. The same amount of work is still expected for the frontend.</li></ul>
-
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/the-project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
 		<title>3. The booking experience</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:02 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<category><![CDATA[Practical works]]></category>
+				<category><![CDATA[03. Angular tutorials (archived, need improvments)]]></category>
+		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2008</guid>
 
 					<description><![CDATA[<p>Learning objectives &#38; expected results During this practical activity, you will build the booking experience and take care of business logic. That is the opportunity to: practice reverse engineering ; be more autonomous than during the last practical work ; build more complex forms than previous login component ; use @Input() and @Output() data bindings &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/the-booking-experience/" class="more-link">Continuer la lecture de <span class="screen-reader-text">3. The booking experience</span></a></p>
@@ -1123,8 +1031,8 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:01 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<category><![CDATA[Practical works]]></category>
+				<category><![CDATA[03. Angular tutorials (archived, need improvments)]]></category>
+		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=1125</guid>
 
 					<description><![CDATA[<p>You will build a basic navigation experience, with login capabilities and authenticated area. This is the opportunity to: create your first feature branch on git ; review the code of someone else pull request ; build components, forms and navigation ; write routing configuration with authorisation guards ; work with async processing and error handlers &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/managing-authentication-routing/" class="more-link">Continuer la lecture de <span class="screen-reader-text">2. Managing authentication &#038; routing</span></a></p>
@@ -1663,8 +1571,8 @@ CREATE src/app/unauthenticated.guard.ts (468 bytes)</code></div></pre>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Tue, 09 Feb 2021 09:00:00 +0000</pubDate>
-				<category><![CDATA[Front-end web development]]></category>
-		<category><![CDATA[Practical works]]></category>
+				<category><![CDATA[03. Angular tutorials (archived, need improvments)]]></category>
+		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=897</guid>
 
 					<description><![CDATA[<p>At the end of this practical works series, you will have built the front-end of a cleaning booking service. The back-end is provided. During this first seance, you will: install the necessary tools (git, node&#8230;) ; setup, build and run your angular application ; access to the back-end API documentation and interact manually with it &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" class="more-link">Continuer la lecture de <span class="screen-reader-text">1. Setup your practical environment</span></a></p>
@@ -1988,6 +1896,317 @@ Register yourself as customer using public API.
 
 <p class="exercice"><strong>Exercise 13</strong> : Same exercise, but this time you will use <a href="https://www.postman.com/" target="_blank" rel="noreferrer noopener">Postman</a>. This way, you are ready to test any kind of API over HTTP.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/">1. Setup your practical environment</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>06. JavaScript: conditional control flows</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:42 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2482</guid>
+
+					<description><![CDATA[<p>Truthy and falsy values Most control flows contains conditional logic. You express an expression, which is evaluated as a truthy or falsy value. Here a list of falsy values: false ; undefined ; null ; 0 ; NaN ; ''. Everything that is not falsy is truthy. If &#8230; else if &#8230; else Only one &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/" class="more-link">Continuer la lecture de <span class="screen-reader-text">06. JavaScript: conditional control flows</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Truthy and falsy values</h4>
+
+
+
+<p>Most control flows contains conditional logic. You express an expression, which is evaluated as a <strong>truthy or falsy</strong> value. Here a list of falsy values:</p>
+
+
+
+<ul><li><code>false</code> ;</li><li><code>undefined</code> ;</li><li><code>null</code> ;</li><li><code>0</code> ;</li><li><code>NaN</code> ;</li><li><code>''</code>.</li></ul>
+
+
+
+<p>Everything that is not falsy is truthy.</p>
+
+
+
+<h4>If &#8230; else if &#8230; else</h4>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> betweenZeroIncAndTenExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>); <span class="hljs-comment">// [0, 10[</span>
+
+<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'3 &lt;= betweenZeroIncAndTenExc &lt; 6'</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc === <span class="hljs-number">7</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>);
+}</code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<ul><li>Only one of the <code>console.log</code> statements will be executed.</li><li>Only the <code>if </code>block is mandatory. Any count of <code>else if</code> branches are allowed, but the <code>else</code> bloc is unique.</li></ul>
+
+
+
+<p>In the current example, curly brackets are optional because each block contains a single statement. That is also true for other control flows.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'3 &lt;= betweenZeroIncAndTenExc &lt; 6'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc === <span class="hljs-number">7</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>);</code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Tips: never mix block with and without curly brackets inside the same control flow. It makes it harder to read.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// BAD! Never mix block with and without curly inside the same control flow for readability reasons.</span>
+<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) {
+  <span class="hljs-keyword">const</span> nPlus1 = betweenZeroIncAndTenExc + <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">console</span>.log(nPlus1);
+}</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Previous examples only used booleans in conditions, but you could also use any truthy/falsy value:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// 0 is a falsy value</span>
+<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc is not 0'</span>);</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Switch case</h4>
+
+
+
+<p>The switch-case statement compares an expression to a list of cases. Even if it uses the safer strict comparison (<code>===</code>) internally, some areas of the switch-case control flow are still error-prone. At the same time, these edge cases make the switch so powerful. </p>
+
+
+
+<p>Let&rsquo;s discover these behaviours through examples and their if-elseif-else equivalents.</p>
+
+
+
+<h5>Example 1: Sometime, a simpler if is better&#8230;</h5>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> betweenZeroIncAndThreeExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>); <span class="hljs-comment">// [0, 3[</span>
+
+<span class="hljs-comment">// switch-case based condition branches</span>
+<span class="hljs-keyword">switch</span> (betweenZeroIncAndThreeExc) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
+}
+
+<span class="hljs-comment">// if-elseif-else equivalent</span>
+<span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">1</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);</code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In this example, the switch case statement is more verbose (mainly due to the repeated <code>break</code> instruction). But it is still interesting for readability if you increase the number of cases.</p>
+
+
+
+<h5>Example 2: The <code>break</code> statement, a small word behind big bugs&#8230;</h5>
+
+
+
+<p>Please reconsider the previous example, without the <code>break</code> statements. If a case is matched, all following blocks are executed until a <code>break</code> is executed or the end of control flow is reached.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-comment">// switch-case based condition branches</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-keyword">switch</span> (zero) {
+</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">default</span>:
+</span></span><span class='shcb-loc'><span>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
+</span></span><span class='shcb-loc'><span>}
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-comment">// if-elseif-else equivalent</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span> || zero === <span class="hljs-number">1</span>) {
+</span></span><span class='shcb-loc'><span>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+</span></span><span class='shcb-loc'><span>}
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
+</span></span></code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+<pre class="wp-block-code" aria-describedby="shcb-language-37" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">[LOG]: <span class="hljs-string">"is equal to 0"</span> 
+[LOG]: <span class="hljs-string">"is equal to 1"</span> 
+[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> 
+[LOG]: <span class="hljs-string">"is equal to 0"</span> 
+[LOG]: <span class="hljs-string">"is equal to 1"</span> 
+[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> </code></div><small class="shcb-language" id="shcb-language-37"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p> Just removing the <code>break</code> statement fully changed the conditional logic. That is probably the bigger risk of using <code>switch-case</code> if you are not aware of its specifications.</p>
+
+
+
+<ul><li>Line 5: the <code>case 0</code> is, of course, matched (remember <code>const zero = 0</code>) ;</li><li>Line 6 and 7: each block after <code>case 0</code> is executed because no break statement is found.</li><li>Line 7: whatever was the value of <code>zero</code>, the <code>default</code> case is always executed. It is executed if a previous <code>case</code> matched because of the lack of <code>break</code> statements. And even without matched <code>case</code>, it is still the <code>default</code> one!</li></ul>
+
+
+
+<p>But do not throw the baby out with the bathwater! This behaviour is powerful when properly used.</p>
+
+
+
+<h5>Example 3: When to use <code>break</code>, and when not.</h5>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// an HTTP error code is typically a number between 100 and 5xx.</span>
+<span class="hljs-keyword">const</span> httpErrorCode = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (<span class="hljs-number">550</span> - <span class="hljs-number">100</span>) + <span class="hljs-number">100</span>);
+<span class="hljs-keyword">let</span> httpCodeMessage = <span class="hljs-literal">null</span>;
+
+<span class="hljs-comment">// switch-case based condition branches</span>
+<span class="hljs-keyword">switch</span> (httpErrorCode) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">200</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">201</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a known success code'</span>);
+        <span class="hljs-keyword">break</span>;
+
+    <span class="hljs-keyword">case</span> <span class="hljs-number">403</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">404</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'403 and 404 errors may occure in normal operations'</span>);
+        <span class="hljs-keyword">break</span>;
+    
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Unexpected code (cannot occures in normal operation): '</span> + httpErrorCode);
+}
+
+<span class="hljs-comment">// if-elseif-else equivalent</span>
+<span class="hljs-keyword">if</span> (httpErrorCode === <span class="hljs-number">200</span> || httpErrorCode === <span class="hljs-number">201</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a known success code'</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (httpErrorCode === <span class="hljs-number">403</span> || httpErrorCode === <span class="hljs-number">404</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'403 and 404 errors may occure in normal operations'</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Unexpected code (cannot occures in normal operation): '</span> + httpErrorCode);
+}</code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>To conclude, missing a <code>break</code>, both when reading and write the code, is easy. You can mitigate this issue, thanks to a proper indentation and some line breaks (like in the previous example). Most of the time, you probably do not need a switch-case.</p>
+
+
+
+<p>Once that is said, the <code>switch</code> could sometimes be more readable. Internally, your JS engine may even optimise the switch-case to archive O(n) complexity (useful in performance critical parts of your app).</p>
+
+
+
+<h3>Loops</h3>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-39" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>];
+<span class="hljs-keyword">const</span> object = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">3</span> };
+
+<span class="hljs-comment">// C-style while</span>
+<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (i &lt; array.length) {
+  <span class="hljs-built_in">console</span>.log(i);
+  i++;
+}
+
+<span class="hljs-comment">// C-style do...while</span>
+<span class="hljs-keyword">do</span> {} <span class="hljs-keyword">while</span> (condition)
+
+<span class="hljs-comment">// C-style loops</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// 0, 1, 2</span>
+
+<span class="hljs-comment">// iterates on array index (note that each key is a string, even if array's index are normally number)</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> i <span class="hljs-keyword">in</span> array) <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// '0', '1', '2'</span>
+
+<span class="hljs-comment">// iterates on object keys</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> object) <span class="hljs-built_in">console</span>.log(key); <span class="hljs-comment">// 'a', 'b', 'c'</span>
+
+<span class="hljs-comment">// iterates on values</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> array) <span class="hljs-built_in">console</span>.log(value); <span class="hljs-comment">// 10, 20, 30</span></code></div><small class="shcb-language" id="shcb-language-39"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Tricks about logical expressions and truthy values</h4>
+
+
+
+<p>That are the kind of tricks you frequently find in code snippets&#8230;</p>
+
+
+
+<h5>About !!</h5>
+
+
+
+<p>Sometimes, you want a <code>boolean</code> instead of a random truthy or falsy value. Think about it like a cast to boolean operation.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-40" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(!!<span class="hljs-string">'input is present'</span>); <span class="hljs-comment">// prints true</span>
+<span class="hljs-built_in">console</span>.log(!!<span class="hljs-number">0</span>); <span class="hljs-comment">// prints false</span></code></div><small class="shcb-language" id="shcb-language-40"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5>About <code>||</code></h5>
+
+
+
+<p>The <code>||</code> operator returns the first truthy value from left to right and fallbacks to the right falsy value. The result is <strong>NOT</strong> casted to boolean.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-41" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> || <span class="hljs-literal">null</span> || <span class="hljs-number">1</span>); <span class="hljs-comment">// prints 1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-literal">undefined</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// prints 0</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-number">2</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// prints 2</span></code></div><small class="shcb-language" id="shcb-language-41"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>This behaviour is commonly used in functions accepting an <code>opts</code> parameter having optional fields. When a field is missing, it fallbacks to a default value instead.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-42" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
+  <span class="hljs-comment">// Example 1: a local variable that fallbacks to 'after'</span>
+  <span class="hljs-keyword">const</span> symbolPosition = opts.symbolPosition || <span class="hljs-string">'after'</span>;
+
+  <span class="hljs-comment">// Example 2: set symbol to '€' on `opts` object if `opts.symbol`</span>
+  <span class="hljs-comment">// is undefined or has a falsy value. Has obvious side effect.</span>
+  opts.symbol ||= <span class="hljs-string">'€'</span>;
+
+  <span class="hljs-comment">// Example 3: cannot use || because 0 is acceptable but falsy value.</span>
+  <span class="hljs-comment">// Instead, ?? operator takes the left operand if is neither</span>
+  <span class="hljs-comment">// null or undefined. Else, it takes right operand.</span>
+  <span class="hljs-keyword">const</span> precision = opts.precision ?? <span class="hljs-number">2</span>;
+
+  <span class="hljs-comment">// Here, format and return the price according to those options</span>
+}
+
+<span class="hljs-comment">// opts is optional</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>));
+
+<span class="hljs-comment">// opts.precision is optional (default 2)</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-string">'$'</span>, <span class="hljs-attr">symbolPosition</span>: <span class="hljs-string">'before'</span> }));
+
+<span class="hljs-comment">// 0 ?? 2 === 0, so opts.precision is not overwritten</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">round</span>: <span class="hljs-number">0</span> }));
+
+<span class="hljs-comment">// null || 'after' === 'after' because null is a falsy value</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-literal">null</span> }));</code></div><small class="shcb-language" id="shcb-language-42"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5>About &amp;&amp;</h5>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-43" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// try to print a.b, but do not crash if a is null or undefined</span>
+<span class="hljs-built_in">console</span>.log(a &amp;&amp; a.b);
+
+<span class="hljs-comment">// previous code prints false if a = false</span>
+<span class="hljs-comment">// previous code prints null if a = null</span>
+<span class="hljs-comment">// previous code prints undefined if a = {}</span>
+<span class="hljs-comment">// previous code prints 1 if a = { b: 1 }</span></code></div><small class="shcb-language" id="shcb-language-43"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

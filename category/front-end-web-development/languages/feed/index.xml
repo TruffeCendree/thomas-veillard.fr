@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>02. Languages &#8211; Thomas VEILLARD</title>
+	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/languages/feed/" rel="self" type="application/rss+xml" />
+	<link>https://thomas-veillard.fr/</link>
+	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
+	<lastBuildDate>Sat, 17 Jul 2021 07:51:00 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>06. JavaScript: conditional control flows</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:42 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2482</guid>
+
+					<description><![CDATA[<p>Truthy and falsy values Most control flows contains conditional logic. You express an expression, which is evaluated as a truthy or falsy value. Here a list of falsy values: false ; undefined ; null ; 0 ; NaN ; ''. Everything that is not falsy is truthy. If &#8230; else if &#8230; else Only one &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/" class="more-link">Continuer la lecture de <span class="screen-reader-text">06. JavaScript: conditional control flows</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Truthy and falsy values</h4>
+
+
+
+<p>Most control flows contains conditional logic. You express an expression, which is evaluated as a <strong>truthy or falsy</strong> value. Here a list of falsy values:</p>
+
+
+
+<ul><li><code>false</code> ;</li><li><code>undefined</code> ;</li><li><code>null</code> ;</li><li><code>0</code> ;</li><li><code>NaN</code> ;</li><li><code>''</code>.</li></ul>
+
+
+
+<p>Everything that is not falsy is truthy.</p>
+
+
+
+<h4>If &#8230; else if &#8230; else</h4>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> betweenZeroIncAndTenExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>); <span class="hljs-comment">// [0, 10[</span>
+
+<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'3 &lt;= betweenZeroIncAndTenExc &lt; 6'</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc === <span class="hljs-number">7</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>);
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<ul><li>Only one of the <code>console.log</code> statements will be executed.</li><li>Only the <code>if </code>block is mandatory. Any count of <code>else if</code> branches are allowed, but the <code>else</code> bloc is unique.</li></ul>
+
+
+
+<p>In the current example, curly brackets are optional because each block contains a single statement. That is also true for other control flows.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'3 &lt;= betweenZeroIncAndTenExc &lt; 6'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc === <span class="hljs-number">7</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>);</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Tips: never mix block with and without curly brackets inside the same control flow. It makes it harder to read.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// BAD! Never mix block with and without curly inside the same control flow for readability reasons.</span>
+<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) {
+  <span class="hljs-keyword">const</span> nPlus1 = betweenZeroIncAndTenExc + <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">console</span>.log(nPlus1);
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Previous examples only used booleans in conditions, but you could also use any truthy/falsy value:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// 0 is a falsy value</span>
+<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc is not 0'</span>);</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Switch case</h4>
+
+
+
+<p>The switch-case statement compares an expression to a list of cases. Even if it uses the safer strict comparison (<code>===</code>) internally, some areas of the switch-case control flow are still error-prone. At the same time, these edge cases make the switch so powerful. </p>
+
+
+
+<p>Let&rsquo;s discover these behaviours through examples and their if-elseif-else equivalents.</p>
+
+
+
+<h5>Example 1: Sometime, a simpler if is better&#8230;</h5>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> betweenZeroIncAndThreeExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>); <span class="hljs-comment">// [0, 3[</span>
+
+<span class="hljs-comment">// switch-case based condition branches</span>
+<span class="hljs-keyword">switch</span> (betweenZeroIncAndThreeExc) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
+}
+
+<span class="hljs-comment">// if-elseif-else equivalent</span>
+<span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">1</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In this example, the switch case statement is more verbose (mainly due to the repeated <code>break</code> instruction). But it is still interesting for readability if you increase the number of cases.</p>
+
+
+
+<h5>Example 2: The <code>break</code> statement, a small word behind big bugs&#8230;</h5>
+
+
+
+<p>Please reconsider the previous example, without the <code>break</code> statements. If a case is matched, all following blocks are executed until a <code>break</code> is executed or the end of control flow is reached.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-comment">// switch-case based condition branches</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-keyword">switch</span> (zero) {
+</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">default</span>:
+</span></span><span class='shcb-loc'><span>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
+</span></span><span class='shcb-loc'><span>}
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-comment">// if-elseif-else equivalent</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span> || zero === <span class="hljs-number">1</span>) {
+</span></span><span class='shcb-loc'><span>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
+</span></span><span class='shcb-loc'><span>}
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
+</span></span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">[LOG]: <span class="hljs-string">"is equal to 0"</span> 
+[LOG]: <span class="hljs-string">"is equal to 1"</span> 
+[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> 
+[LOG]: <span class="hljs-string">"is equal to 0"</span> 
+[LOG]: <span class="hljs-string">"is equal to 1"</span> 
+[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> </code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p> Just removing the <code>break</code> statement fully changed the conditional logic. That is probably the bigger risk of using <code>switch-case</code> if you are not aware of its specifications.</p>
+
+
+
+<ul><li>Line 5: the <code>case 0</code> is, of course, matched (remember <code>const zero = 0</code>) ;</li><li>Line 6 and 7: each block after <code>case 0</code> is executed because no break statement is found.</li><li>Line 7: whatever was the value of <code>zero</code>, the <code>default</code> case is always executed. It is executed if a previous <code>case</code> matched because of the lack of <code>break</code> statements. And even without matched <code>case</code>, it is still the <code>default</code> one!</li></ul>
+
+
+
+<p>But do not throw the baby out with the bathwater! This behaviour is powerful when properly used.</p>
+
+
+
+<h5>Example 3: When to use <code>break</code>, and when not.</h5>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// an HTTP error code is typically a number between 100 and 5xx.</span>
+<span class="hljs-keyword">const</span> httpErrorCode = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (<span class="hljs-number">550</span> - <span class="hljs-number">100</span>) + <span class="hljs-number">100</span>);
+<span class="hljs-keyword">let</span> httpCodeMessage = <span class="hljs-literal">null</span>;
+
+<span class="hljs-comment">// switch-case based condition branches</span>
+<span class="hljs-keyword">switch</span> (httpErrorCode) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">200</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">201</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a known success code'</span>);
+        <span class="hljs-keyword">break</span>;
+
+    <span class="hljs-keyword">case</span> <span class="hljs-number">403</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">404</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'403 and 404 errors may occure in normal operations'</span>);
+        <span class="hljs-keyword">break</span>;
+    
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Unexpected code (cannot occures in normal operation): '</span> + httpErrorCode);
+}
+
+<span class="hljs-comment">// if-elseif-else equivalent</span>
+<span class="hljs-keyword">if</span> (httpErrorCode === <span class="hljs-number">200</span> || httpErrorCode === <span class="hljs-number">201</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a known success code'</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (httpErrorCode === <span class="hljs-number">403</span> || httpErrorCode === <span class="hljs-number">404</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'403 and 404 errors may occure in normal operations'</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Unexpected code (cannot occures in normal operation): '</span> + httpErrorCode);
+}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>To conclude, missing a <code>break</code>, both when reading and write the code, is easy. You can mitigate this issue, thanks to a proper indentation and some line breaks (like in the previous example). Most of the time, you probably do not need a switch-case.</p>
+
+
+
+<p>Once that is said, the <code>switch</code> could sometimes be more readable. Internally, your JS engine may even optimise the switch-case to archive O(n) complexity (useful in performance critical parts of your app).</p>
+
+
+
+<h3>Loops</h3>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>];
+<span class="hljs-keyword">const</span> object = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">3</span> };
+
+<span class="hljs-comment">// C-style while</span>
+<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (i &lt; array.length) {
+  <span class="hljs-built_in">console</span>.log(i);
+  i++;
+}
+
+<span class="hljs-comment">// C-style do...while</span>
+<span class="hljs-keyword">do</span> {} <span class="hljs-keyword">while</span> (condition)
+
+<span class="hljs-comment">// C-style loops</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// 0, 1, 2</span>
+
+<span class="hljs-comment">// iterates on array index (note that each key is a string, even if array's index are normally number)</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> i <span class="hljs-keyword">in</span> array) <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// '0', '1', '2'</span>
+
+<span class="hljs-comment">// iterates on object keys</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> object) <span class="hljs-built_in">console</span>.log(key); <span class="hljs-comment">// 'a', 'b', 'c'</span>
+
+<span class="hljs-comment">// iterates on values</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> array) <span class="hljs-built_in">console</span>.log(value); <span class="hljs-comment">// 10, 20, 30</span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Tricks about logical expressions and truthy values</h4>
+
+
+
+<p>That are the kind of tricks you frequently find in code snippets&#8230;</p>
+
+
+
+<h5>About !!</h5>
+
+
+
+<p>Sometimes, you want a <code>boolean</code> instead of a random truthy or falsy value. Think about it like a cast to boolean operation.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(!!<span class="hljs-string">'input is present'</span>); <span class="hljs-comment">// prints true</span>
+<span class="hljs-built_in">console</span>.log(!!<span class="hljs-number">0</span>); <span class="hljs-comment">// prints false</span></code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5>About <code>||</code></h5>
+
+
+
+<p>The <code>||</code> operator returns the first truthy value from left to right and fallbacks to the right falsy value. The result is <strong>NOT</strong> casted to boolean.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> || <span class="hljs-literal">null</span> || <span class="hljs-number">1</span>); <span class="hljs-comment">// prints 1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-literal">undefined</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// prints 0</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-number">2</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// prints 2</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>This behaviour is commonly used in functions accepting an <code>opts</code> parameter having optional fields. When a field is missing, it fallbacks to a default value instead.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
+  <span class="hljs-comment">// Example 1: a local variable that fallbacks to 'after'</span>
+  <span class="hljs-keyword">const</span> symbolPosition = opts.symbolPosition || <span class="hljs-string">'after'</span>;
+
+  <span class="hljs-comment">// Example 2: set symbol to '€' on `opts` object if `opts.symbol`</span>
+  <span class="hljs-comment">// is undefined or has a falsy value. Has obvious side effect.</span>
+  opts.symbol ||= <span class="hljs-string">'€'</span>;
+
+  <span class="hljs-comment">// Example 3: cannot use || because 0 is acceptable but falsy value.</span>
+  <span class="hljs-comment">// Instead, ?? operator takes the left operand if is neither</span>
+  <span class="hljs-comment">// null or undefined. Else, it takes right operand.</span>
+  <span class="hljs-keyword">const</span> precision = opts.precision ?? <span class="hljs-number">2</span>;
+
+  <span class="hljs-comment">// Here, format and return the price according to those options</span>
+}
+
+<span class="hljs-comment">// opts is optional</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>));
+
+<span class="hljs-comment">// opts.precision is optional (default 2)</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-string">'$'</span>, <span class="hljs-attr">symbolPosition</span>: <span class="hljs-string">'before'</span> }));
+
+<span class="hljs-comment">// 0 ?? 2 === 0, so opts.precision is not overwritten</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">round</span>: <span class="hljs-number">0</span> }));
+
+<span class="hljs-comment">// null || 'after' === 'after' because null is a falsy value</span>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-literal">null</span> }));</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5>About &amp;&amp;</h5>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// try to print a.b, but do not crash if a is null or undefined</span>
+<span class="hljs-built_in">console</span>.log(a &amp;&amp; a.b);
+
+<span class="hljs-comment">// previous code prints false if a = false</span>
+<span class="hljs-comment">// previous code prints null if a = null</span>
+<span class="hljs-comment">// previous code prints undefined if a = {}</span>
+<span class="hljs-comment">// previous code prints 1 if a = { b: 1 }</span></code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>05. JavaScript: coercion &#038; comparison</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:41 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2376</guid>
+
+					<description><![CDATA[<p>This post focus on the difference between ==, !=, === and !== operators. All of them are equality (or difference) comparison operator. Automatic type coercion with == and != a == b returns true if a and b are equal after type coercion. a != b returns true if a and b are different after &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/" class="more-link">Continuer la lecture de <span class="screen-reader-text">05. JavaScript: coercion &#038; comparison</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/">05. JavaScript: coercion &#038; comparison</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>This post focus on the difference between <code>==</code>, <code>!=</code>, <code>===</code> and <code>!==</code> operators. All of them are equality (or difference) comparison operator.</p>
+
+
+
+<h4>Automatic type coercion with <code>==</code> and <code>!=</code></h4>
+
+
+
+<ul><li><code>a == b</code> returns <code>true</code> if a and b are equal after type coercion.</li><li><code>a != b</code> returns <code>true</code> if a and b are different after type coercion.</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">2</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'1'</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'2'</span>); <span class="hljs-comment">// false</span></code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Until that point, it looks basic. But what appends when comparing mixed types? The automatic type coercion mechanism dynamically casts operands before comparing them.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'1'</span>); <span class="hljs-comment">// true, internally compares 1 == 1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'2'</span>); <span class="hljs-comment">// false, internally compares 1 == 2</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The complexity of the truth table is evidence that the <code>weak equality operator</code> (aka <code>==</code>) is error-prone. </p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="674" height="674" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-.png" alt="" class="wp-image-2395" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-.png 674w, https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for--300x300.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for--150x150.png 150w" sizes="(max-width: 674px) 100vw, 674px" /><figcaption>Truth table of the <code>==</code> operator.</figcaption></figure>
+
+
+
+<h4>Strict equality operator</h4>
+
+
+
+<p>For that reason, it is a good practice to prefer the <code>strong type equality operator</code> (aka. <code>===</code>). This one works a more logical way.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">1</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">2</span>); <span class="hljs-comment">// false</span>
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'1'</span>); <span class="hljs-comment">// false, number is not string</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'2'</span>); <span class="hljs-comment">// false, number is not string</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'1'</span>); <span class="hljs-comment">// true, number is not string</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'2'</span>); <span class="hljs-comment">// true, number is not string</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="666" height="657" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png" alt="" class="wp-image-2396" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png 666w, https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1-300x296.png 300w" sizes="(max-width: 666px) 100vw, 666px" /><figcaption>Truth table of <code>===</code> operator, which is more logical than <code>==</code>.</figcaption></figure>
+
+
+
+<p>Except when you are aware of and you need type coercion,<strong> you should prefer the <code>===</code> operator over <code>==</code>.</strong></p>
+
+
+
+<h4>Automatic type coercion with other operators</h4>
+
+
+
+<p>The type coercion works with any numerical comparison:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// all these expressions are true (1 is greater than 0).</span>
+<span class="hljs-string">'1'</span> &gt; <span class="hljs-number">0</span>    <span class="hljs-comment">// left operand could be a string</span>
+<span class="hljs-number">1</span> &gt; <span class="hljs-string">'0'</span>    <span class="hljs-comment">// right operand could be a string</span>
+<span class="hljs-string">'1'</span> &gt; <span class="hljs-string">'0'</span>  <span class="hljs-comment">// both left and right are cast as numerics because '&gt;' only accepts numbers</span>
+
+<span class="hljs-comment">// these examples are of course applicable to '&gt;=', '&lt;' and '&lt;='.</span></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>More generally, it is also effective with any numeric operator:</p>
+
+
+
+<ul><li>power operator (<code>2 ** 0 = 1, 2 ** 1 = 2, 2 ** 2 = 4, 2 ** 3 = 8</code>)</li><li>bitwise operators, like binary union and intersection (<code>1 | 3 = 3, 1 &amp; 3 = 1</code>)</li><li>see mozilla&rsquo;s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank" rel="noreferrer noopener">list of operators in JavaScript</a></li></ul>
+
+
+
+<h4>Automatic type coercion with &lsquo;+&rsquo; operator: <span class="has-inline-color has-yellow-color">warning</span></h4>
+
+
+
+<p>Some lexems such as &lsquo;+&rsquo; are common to multiple operators, such as &lsquo;+&rsquo;.</p>
+
+
+
+<ul><li>&lsquo;string + string&rsquo; is the concatenation operator ;</li><li>&lsquo;number + number&rsquo; the sum operator.</li></ul>
+
+
+
+<p>But what appends when mixing operand types?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-number">1</span> + <span class="hljs-string">'1'</span> <span class="hljs-comment">// '11'</span>
+<span class="hljs-string">'1'</span> + <span class="hljs-number">1</span> <span class="hljs-comment">// '11'</span></code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>So, it could lead to some bugs&#8230;</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/** wrong, unsafe **/</span>
+<span class="hljs-keyword">const</span> yourAge = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">'Your age'</span>); <span class="hljs-comment">// user enters '17'</span>
+
+<span class="hljs-comment">// prints 'Next year, you will be 171 years old'.</span>
+<span class="hljs-keyword">if</span> (yourAge &lt; <span class="hljs-number">18</span>) <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Next year, you will be '</span> + (yourAge + <span class="hljs-number">1</span>) + <span class="hljs-string">' years old'</span>);</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>So, my tips is: <strong>when you expect to manipulate numbers, always parse them</strong>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// using the '+ unary operator'</span>
+<span class="hljs-keyword">const</span> number1 = +<span class="hljs-string">'10'</span>;    <span class="hljs-comment">// 10</span>
+<span class="hljs-keyword">const</span> number2 = +<span class="hljs-string">'10.5'</span>;  <span class="hljs-comment">// 10.5</span>
+
+<span class="hljs-comment">// using the parseInt(str, radius) method</span>
+<span class="hljs-keyword">const</span> number3 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10'</span>, <span class="hljs-number">10</span>);    <span class="hljs-comment">// 10</span>
+<span class="hljs-keyword">const</span> number4 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10.5'</span>, <span class="hljs-number">10</span>);  <span class="hljs-comment">// 10</span>
+<span class="hljs-keyword">const</span> number5 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10'</span>, <span class="hljs-number">16</span>);    <span class="hljs-comment">// 16, because the string '10' is analysed a hexadecimal string</span>
+
+<span class="hljs-comment">// using the parseFloat(str) method</span>
+<span class="hljs-keyword">const</span> number6 = <span class="hljs-built_in">parseFloat</span>(<span class="hljs-string">'10.5'</span>);    <span class="hljs-comment">// 10.5</span></code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/">05. JavaScript: coercion &#038; comparison</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>04. JavaScript: variables and types</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/fast-tour-of-javascript-variables/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:40 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2382</guid>
+
+					<description><![CDATA[<p>Local variable declarations The var keyword Historically (ES5 and before), JavaScript supports variable declarations thanks to the var keyword. However, the scope of var is a bit confusing, since the variable exists anywhere in the block (file or function). This means myVariable can be read and assigned before its declaration. Before the first assignment, variables &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/fast-tour-of-javascript-variables/" class="more-link">Continuer la lecture de <span class="screen-reader-text">04. JavaScript: variables and types</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/fast-tour-of-javascript-variables/">04. JavaScript: variables and types</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Local variable declarations</h4>
+
+
+
+<h5>The <code>var</code> keyword</h5>
+
+
+
+<p>Historically (ES5 and before), JavaScript supports variable declarations thanks to the <code>var</code> keyword.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">var</span> myVariable = <span class="hljs-string">'some string'</span>;
+<span class="hljs-keyword">var</span> myOtherVariable = <span class="hljs-number">0</span>;
+<span class="hljs-built_in">console</span>.log(myVariable, myOtherVariable); <span class="hljs-comment">// prints: some string 0</span></code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>However, the scope of <code>var</code> is a bit confusing, since the variable exists anywhere in the block (file or function). This means <code>myVariable</code> can be read and assigned before its declaration. Before the first assignment, variables have a special <code>undefined</code> value.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 1'</span>, myVariable, myOtherVariable);
+<span class="hljs-keyword">var</span> myVariable = <span class="hljs-string">'some string'</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 3'</span>, myVariable, myOtherVariable);
+myOtherVariable = <span class="hljs-number">5</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 5'</span>, myVariable, myOtherVariable);
+<span class="hljs-keyword">var</span> myOtherVariable = <span class="hljs-number">0</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 7'</span>, myVariable, myOtherVariable);</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="660" height="213" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js.png" alt="" class="wp-image-2327" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js.png 660w, https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js-300x97.png 300w" sizes="(max-width: 660px) 100vw, 660px" /><figcaption>With <code>var</code>, variables exist before the declaration. They are <code>undefined</code> until first assignment.</figcaption></figure>
+
+
+
+<h5>The <code>let</code> and <code>const</code> keywords</h5>
+
+
+
+<p>Since ES6, you can use <code>let</code> and <code>const</code> keywords. There work more logically and intent to replace <code>var</code> in most cases. This way, variables only exist after the declaration and for the rest of the block.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(myVariable); <span class="hljs-comment">// will crash because myVariable does not exist for now.</span>
+<span class="hljs-keyword">let</span> myVariable = <span class="hljs-string">'some string'</span>;
+<span class="hljs-built_in">console</span>.log(myVariable);</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="660" height="193" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration.png" alt="" class="wp-image-2325" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration.png 660w, https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration-300x88.png 300w" sizes="(max-width: 660px) 100vw, 660px" /><figcaption>A variable using <code>let</code> or <code>const</code> cannot be accessed before the declaration.</figcaption></figure>
+
+
+
+<p>Also, <code>const</code> prevents any further assignment. The value of the variable is definitively known during the declaration.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> constant = <span class="hljs-string">'some value'</span>;
+constant = <span class="hljs-string">'disallowed assignment'</span>;</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="660" height="171" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error.png" alt="" class="wp-image-2330" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error.png 660w, https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error-300x78.png 300w" sizes="(max-width: 660px) 100vw, 660px" /><figcaption>Constants cannot be assigned after the declaration.</figcaption></figure>
+
+
+
+<p>Definitely, you should:</p>
+
+
+
+<ul><li>prefer <code>const</code> over <code>let</code> if no reassignment is expected and value already known ;</li><li>prefer <code>let</code> over <code>var</code> because its scope is error-prone.</li></ul>
+
+
+
+<h4>The <code>typeof</code> operator</h4>
+
+
+
+<p>The most common types of JavaScript are <code>boolean</code>, <code>number</code>, <code>string</code>, <code>function</code>, <code>undefined</code> and <code>object</code>. </p>
+
+
+
+<p><strong>Booleans, numbers and strings</strong></p>
+
+
+
+<p>You are probably familiar with <code><code>boolean</code>, <code>number</code></code> and <code>string</code> types, as they have counterparts in most languages.</p>
+
+
+
+<p>Note that JavaScript stores all numbers, including integers, as <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format" target="_blank" rel="noreferrer noopener">double precision format (using IEEE 754 standard)</a> with the <code>number</code> type.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// Whatever the number is an integer, a decimal or an octal code,</span>
+<span class="hljs-comment">// 'typeof' returns 'number'.</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-number">1.0</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-number">0x10</span>);
+
+<span class="hljs-comment">// These examples print 'boolean'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">false</span>);
+
+<span class="hljs-comment">// These examples print 'string'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-string">''</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-string">'some message'</span>);</code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Undefined</strong></p>
+
+
+
+<p>In JavaScript, <code>undefined</code> means a variable has been declared but has not yet been assigned a value.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-26" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// `myVariable` is declared, but unitialized.</span>
+<span class="hljs-keyword">let</span> myVariable;
+
+<span class="hljs-comment">// before any value is assigned, `myVariable` is `undefined`</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable); <span class="hljs-comment">// prints 'undefined'</span>
+
+myVariable = <span class="hljs-number">10</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable); <span class="hljs-comment">// prints 'number'</span>
+
+<span class="hljs-comment">// you can reset the variable</span>
+myVariable = <span class="hljs-literal">undefined</span>;</code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>undefined</code> could also be the return value of a function returning nothing.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-27" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span> (<span class="hljs-params"></span>) </span>{}
+
+<span class="hljs-comment">// prints 'undefined' because myFunction has no 'return' instruction.</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myFunction());</code></div><small class="shcb-language" id="shcb-language-27"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Null</strong></p>
+
+
+
+<p>The <code>null</code> value is considered as an <code>object</code> by <code>typeof</code> operator. A variable can be  <code>null</code> only after an assignment.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-28" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">let</span> myVariable;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable); <span class="hljs-comment">// prints 'undefined'</span>
+
+myVariable = <span class="hljs-literal">null</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable); <span class="hljs-comment">// prints 'object'</span></code></div><small class="shcb-language" id="shcb-language-28"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Functions</strong></p>
+
+
+
+<p>In JavaScript, you can store a reference to a function inside a variable.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-29" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> myVariable = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random();
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable); <span class="hljs-comment">// prints 'function'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable()); <span class="hljs-comment">// prints 'number'</span></code></div><small class="shcb-language" id="shcb-language-29"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Everything assignable to a variable can also be passed as an argument. This includes functions and allows <strong>higher-order functions</strong> to work. We call higher-order function a function that accept as an argument or returns another functions.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-30" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// callArgument() accepts a function as argument, call it and prints its return value.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callArgument</span> (<span class="hljs-params">anotherFunc</span>) </span>{
+  <span class="hljs-keyword">const</span> result = anotherFunc();
+  <span class="hljs-built_in">console</span>.log(result);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">10</span>;
+}
+
+callArgument(myFunction); <span class="hljs-comment">// prints 10</span></code></div><small class="shcb-language" id="shcb-language-30"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Objects</strong></p>
+
+
+
+<p>We distinguish <strong>literal objects</strong> and <strong>instances of classes</strong>.</p>
+
+
+
+<ul><li>Literal objects are defined inline, with a list of properties and values. They are useful to group multiple fields under the same variable without the penalty of a class declaration.</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> literalObject = { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Thomas'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'VEILLARD'</span> };
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> literalObject); <span class="hljs-comment">// prints 'object'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> literalObject.firstName); <span class="hljs-comment">// prints 'string'</span>
+<span class="hljs-built_in">console</span>.log(literalObject.firstName); <span class="hljs-comment">// prints 'Thomas'</span></code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<ul><li>Instances are created using the <code>new</code> operator against an existing class.</li></ul>
+
+
+
+<p>In the following example, we use the standard <code>Date</code> class to build two instances: <code>now</code> and <code>firstDayOfYear</code>. Properties and methods can be called on each instance using the &lsquo;.&rsquo; operator (ex. <code>now.getFullYear()</code>).</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// current date, time and timezone</span>
+<span class="hljs-keyword">const</span> firstOfYear = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(now.getFullYear(), <span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// first of january</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> now); <span class="hljs-comment">// prints 'object'</span></code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Like most object-oriented languages, JavaScript classes may implement static methods and static properties.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-built_in">Date</span>.now(); <span class="hljs-comment">// returns the UNIX time in millisecond (nb of milliseconds since 01/01/1970)</span></code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In fact, good documentation already exists about classes in JavaScript. Check <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noreferrer noopener">this guide on MDN</a>. It covers class declaration, constructors, instance methods, static methods and such more.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/fast-tour-of-javascript-variables/">04. JavaScript: variables and types</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>03. JavaScript: browser entry point</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:39 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2294</guid>
+
+					<description><![CDATA[<p>This post supposes you already are familiar with another language, such as Java, Python or whatever. So it will focus on JavaScript syntax and specificities. This is a frontend module, so we will run our code in the browser. We will rely on ES6 (aka. ECMAScript 2015), which is well supported by browsers now. The &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. JavaScript: browser entry point</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">03. JavaScript: browser entry point</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>This post supposes you already are familiar with another language, such as Java, Python or whatever. So it will focus on JavaScript syntax and specificities.</p>
+
+
+
+<p>This is a frontend module, so we will run our code in the browser. We will rely on ES6 (aka. ECMAScript 2015), which is well supported by browsers now.</p>
+
+
+
+<h4>The entry point</h4>
+
+
+
+<p>The browser always starts by loading an HTML file. This one may include assets such as a JavaScript script. So, let’s create 2 files: <code>index.html</code> and <code>index.js</code>. </p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JS entry point<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// index.js</span>
+<span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'JS initialized successfully'</span>);</code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>We use the newer ES6 modules (see the <code>type="module"</code> attribute on script tag). This way, <code>index.js</code> may import dependencies via the <code>import ... from ...</code> syntax we will discuss later.</p>
+
+
+
+<p>The drawback of this approach is you cannot open <code>index.html</code> directly from your filesystem anymore, because ES6 modules must be served from an HTTP server.</p>
+
+
+
+<p>If it is not yet done, you should install <a href="https://nodejs.org/en/download/" target="_blank" rel="noreferrer noopener">node.js</a>. Then, open a terminal inside the folder containing <code>index.html</code> and <code>index.js</code>. This following command will start a local HTTP server reachable at <code>http://127.0.0.1:8080/</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># serve up the current directory </span>
+$ npx http-server -a <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>
+Starting up http-server, serving ./
+Available on:
+  http:<span class="hljs-comment">//127.0.0.1:8080</span>
+Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="711" height="329" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png" alt="" class="wp-image-2308" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png 711w, https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving-300x139.png 300w" sizes="(max-width: 711px) 100vw, 711px" /><figcaption>HTML &amp; JavaScript are served by http-server on port 8080. If everything works fine, a message should be prompted.</figcaption></figure>
+
+
+
+<h4>The browser console</h4>
+
+
+
+<p>Whatever your browser is, steps to open the JavaScript console look the same:</p>
+
+
+
+<ul><li>right click anywhere on the page</li><li>find a menu entry like &lsquo;inspect element&rsquo;</li><li>go on the &lsquo;console tab&rsquo;.</li></ul>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1115" height="668" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/open-browser-console.gif" alt="" class="wp-image-2311"/><figcaption>How to open the browser console.</figcaption></figure>
+
+
+
+<p>When developing JavaScript apps, <strong>you should always keep an eye on the console</strong>, where outputs and errors are revealed.</p>
+
+
+
+<p>A <code>console</code> object is also exposed inside your JavaScript context. It is useful for basic debugging and for logging.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-37" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a log entry reported in browser console'</span>);
+</span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'This is a warning reported with an orange background'</span>);
+</span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.error(<span class="hljs-string">'This time, you see a red background'</span>);
+</span></span></code></div><small class="shcb-language" id="shcb-language-37"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="749" height="204" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png" alt="" class="wp-image-2318" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png 749w, https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels-300x82.png 300w" sizes="(max-width: 749px) 100vw, 749px" /><figcaption>Output of the previous script, which sends messages to the console.</figcaption></figure>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">03. JavaScript: browser entry point</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>02. Environment (tools, languages, frameworks)</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:38 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2220</guid>
+
+					<description><![CDATA[<p>How looks a modern web frontend stack? Your project is composed of your own code and dependencies. They could be: runtime dependencies, which are shipped to the browser. @angular/core, vue.js, react or jquery are typical runtime libraries your code may rely on. They provide features you do not want to reimplement yourself. development dependencies, which &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Environment (tools, languages, frameworks)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/">02. Environment (tools, languages, frameworks)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>How looks a modern web frontend stack?</h4>
+
+
+
+<p>Your project is composed of your own code and dependencies. They could be:</p>
+
+
+
+<ul><li>runtime dependencies, which are shipped to the browser. <code>@angular/core</code>, <code>vue.js</code>, <code>react</code> or <code>jquery</code> are typical runtime libraries your code may rely on. They provide features you do not want to reimplement yourself.</li><li>development dependencies, which are required to update, build, optimise or check quality your application.</li></ul>
+
+
+
+<p>The browser only supports an exact version of HTML, CSS, JS and Web Assembly. Tools that transform your sources into a <strong>bundle natively executable by the browser</strong> is typically a development dependency.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="469" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-1024x469.png" alt="" class="wp-image-2259" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-1024x469.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-300x137.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-768x352.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack.png 1518w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Schema of a typical modern frontend application.</figcaption></figure>
+
+
+
+<h4>A few words about your source code</h4>
+
+
+
+<p>Because your code is transformed before it reaches the browser, you are free to:</p>
+
+
+
+<ul><li>use latest features and syntax for HTML, CSS and JavaScript ;</li><li>use another language that transpiles to JavaScript such as TypeScript or ScalaJS ;</li><li>use another language that transpiles to CSS such as Sass, Less or Stylus ;</li><li>document your code with comments, which are finally dropped during the build process to claim some kilobytes ;</li><li>split your code in multiple files, which are merged into a single bundle. This reduces the number of HTTP connections required to load your application in a browser (faster startup, lower server costs&#8230;).</li></ul>
+
+
+
+<h4>JavaScript Frameworks</h4>
+
+
+
+<p>Modern JavaScript frameworks are built around the concept of components (a self-contained piece for HTML, CSS and JS that you combine to build a view). The developer builds components while the framework makes them work together.</p>
+
+
+
+<p>According to the <a href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">introduction&rsquo;s notes</a>, I may explore each of them in optional sections depending on my in-class requirements.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="498" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-1024x498.png" alt="" class="wp-image-2240" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-1024x498.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-300x146.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-768x374.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-1536x748.png 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue.png 1580w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4>JavaScript environments and compilers</h4>
+
+
+
+<p>Most of the tools you will use are written in JavaScript or TypeScript. This includes command-line interfaces (aka. cli). These tools are regular software, running outside the browser thanks to node.js.</p>
+
+
+
+<p><strong>node.js</strong> encapsulates Chrome&rsquo;s JavaScript engine and extends it with more API. So, software using node.js can open TCP/UDP ports, access the filesystem, execute other applications, call native code written in C/C++, etc. </p>
+
+
+
+<p>Here some examples of applications requiring node.js:</p>
+
+
+
+<ul><li><strong>@angular/cli</strong> is the command line interface used to set up new angular project, manage and compile existing one, etc.</li><li><strong>npm</strong> is the package manager shipped with node. You specify which modules are required by your application in a <code>package.json</code> file. Then, you run npm to fetch all that stuff inside your local project. npm could also be used to install software globally.</li><li><strong>webpack</strong> is a bundler. It aggregates multiple source files into a single bundle and apply transformations on it. You can customise these transformations using plugins. The final bundle is generally optimised for speed and size (when building for production).</li><li><strong>babel</strong> is a standalone software, but also a plugin for webpack. It translates newest JavaScript syntax to older targets. So you can use latest syntax and features, and run your bundle on old browsers.</li><li><strong>tsc</strong> means « TypeScript Compiler ». This software compiles TypeScript code into regular JavaScript. Like babel, the typescript module can be used as a command line or a library.</li></ul>
+
+
+
+<p>In the tutorials, you will use the <code>@angular/cli</code>. Under the hood, it uses the <code>typescript</code> and <code>webpack</code>. When building your app, it accepts multiple HTML / CSS / TypeScript sources and compute bundles in pure HTML / CSS / JS.</p>
+
+
+
+<h4>The Node Package Manager (aka. npm)</h4>
+
+
+
+<p>npm can be used to:</p>
+
+
+
+<ul><li>install software globally (ex. <code>npm install --global typescript</code>). This makes the <code>tsc</code> command available on your system. In tutorials, you will use npm to globally install <code>@angular/cli</code>.</li><li>install local dependencies in your project (ex. <code>npm install lodash</code>). This downloads the <code>lodash</code> library in a local folder called <code>node_modules</code>.</li></ul>
+
+
+
+<p>Before using npm in a local project, you must initialise a <code>package.json</code> with the command <code>npn init</code>. The produced <code>package.json</code> looks like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"demo"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A sample application"</span>,
+  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+  },
+  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Thomas VEILLARD"</span>,
+  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>
+}</code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Then, you add dependencies (ex. <code>npm install lodash</code>). The <code>package.json</code> is updated and a <code>node_modules</code> folder is created. You should never commit the <code>node_modules</code> on git (as it could be heavy). Just commit the <code>package.json</code> and <code>package-lock.json</code> files.</p>
+
+
+
+<p>Running <code>npm install</code> reads the <code>package.json</code> and rebuilds the <code>node_modules</code> folder from scratch. If <code>package-lock.json</code> exists, npm uses exact version numbers of each module defined in that file.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-39" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span>{
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"demo"</span>,
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A sample application"</span>,
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"scripts"</span>: {
+</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+</span></span><span class='shcb-loc'><span>  },
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Thomas VEILLARD"</span>,
+</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>,
+</span></span><mark class='shcb-loc'><span>  <span class="hljs-attr">"dependencies"</span>: {
+</span></mark><mark class='shcb-loc'><span>    <span class="hljs-attr">"lodash"</span>: <span class="hljs-string">"^4.17.21"</span>
+</span></mark><mark class='shcb-loc'><span>  }
+</span></mark><span class='shcb-loc'><span>}
+</span></span></code></div><small class="shcb-language" id="shcb-language-39"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/">02. Environment (tools, languages, frameworks)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>01. Languages for the web</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/6-languages-for-the-web/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:37 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2074</guid>
+
+					<description><![CDATA[<p>Languages for browsers HTML: HyperText Markup Language As you already know, HTML is a markup language structuring the content of the page. It also describes the semantics. Search engines and accessibility tools rely on both to index contents, identify the main section, navigation&#8230; The following example creates 3 links &#60;a&#62;. Each page may contain a &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/6-languages-for-the-web/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Languages for the web</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/6-languages-for-the-web/">01. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h3>Languages for browsers</h3>
+
+
+
+<h4>HTML: HyperText Markup Language</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<figure class="wp-block-image"><img src="https://lh3.googleusercontent.com/BijLLGjEYsx_Rs7RGBzXRYHqeskzlOHCS5RkO4JEqwhGMadvpKOhnoBFE8ZS7LUXeEauP-qGZg-koSNgwutn6nZ9GzLwSHa2uocWAXMTTIR7qTJYRxn2TSnF18-aAyfAkcR6wEcZQ3Y" alt=""/></figure>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>As you already know, HTML is a markup language structuring the content of the page. It also describes the <strong>semantics</strong>. Search engines and <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" target="_blank" rel="noreferrer noopener">accessibility</a> tools rely on both to index contents, identify the main section, navigation&#8230;</p>
+</div>
+</div>
+
+
+
+<p>The following example creates 3 links <code>&lt;a&gt;</code>. Each page may contain a lot of links, with different meanings and purposes (navigation items in a menu, inner link from an article to another, quotation sourcing&#8230;). By putting them inside a <code>&lt;nav&gt;</code>, we semantically express those links are part of the same menu. So <strong>search engines</strong> and <strong>accessibility tools</strong> understand that <code>Home</code> and <code>About</code> are navigation items.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-40" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/contact-us"</span>&gt;</span>Contact us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-40"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The current standard is HTML Living Standard (post HTML5).</p>
+
+
+
+<h4>CSS: Cascading StyleSheet</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="157px;" height="222px;" src="https://lh5.googleusercontent.com/v8TBn52pLoYpWIIKZ8WPN7ZOUbhUZkqBLBhk9deU67YyL6t6hlbir3rEGD2PBLvBcZE3kKO-7lpmtF89HuBW1Bp1RV1XGZcmQtx4wDKi7aQOnZ20DEbnCKfb7k9vdKI-jCq_L8sZdF4"></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>CSS describes the <strong>style</strong> of the page. Its goal is to define the aesthetics of the web app:</p>
+
+
+
+<ul><li>Spatial organisation of the page (aka. layout) ;</li><li>Design, UX, UI.</li></ul>
+
+
+
+<p>« Cascading » refers to the way it merges CSS rules from various sources (external stylesheets, internal styles, inline styles&#8230;) and with different priorities (depending on the source, the selector, etc.).</p>
+</div>
+</div>
+
+
+
+<p>Supported CSS rules highly differ from one browser version to another. CSS2 took 10 years to be implemented. CSS3 implementation may still be incomplete across modern browsers. The fact is CSS is extremely simple to use as web developer, but also terribly complex for browser vendors. For that reason, I recommend you take advantage of <a href="https://caniuse.com/" target="_blank" rel="noreferrer noopener">Can I Use.com</a> before using a CSS rule in your project. It gives you statistics about browsers that currently support it.</p>
+
+
+
+<h4>JavaScript</h4>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="123px;" height="123px;" src="https://lh4.googleusercontent.com/BdaQt-ZIjTBm_80gI4948-UMujX7Sl64e0SaFsc1JHczn_nk_d6VnYwWPQBs_amF79S_sknUPw2oBPk1O5cexsUs00OGWqrCiE1v_cTHPRahzgOeLO_WLX6ly3U6QVlYI9K5cHXGxRQ"></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>Javascript is a full-featured language with variables, conditions, loops, functions, classes&#8230; It defines <strong>dynamicity</strong> of the page.</p>
+
+
+
+<p>In fact, it can manipulate the DOM  (Document Object Model, that is the « in memory » parsed HTML), making possible to modify the page.</p>
+</div>
+</div>
+
+
+
+<p>It has many goals but the most important are:</p>
+
+
+
+<ul><li>Enabling user interaction with the elements</li><li>Server &#8211; Client communication</li><li>Managing the state of the different views</li></ul>
+
+
+
+<p>JavaScript follows the ECMAScript specifications. There are as many JavaScript than engine that implement it (ex. V8 for Chrome, SpiderMonkey for Firefox&#8230;). But all implementations should follow ECMAScript specifications.</p>
+
+
+
+<p>The current version is ES12 (aka. ES2021 or ECMAScript 2021). But you cannot target the latest version, because a lot of users are out-of-date.</p>
+
+
+
+<ul><li>For wide compatibility, ES5 is commonly supported (even by Internet Explorer 11). But it lacks a lot of features commonly used in SPA and is more verbose.</li><li>ES6 is fine for <a href="https://caniuse.com/es6" target="_blank" rel="noreferrer noopener">97.24%</a> of browsers (but not for IE).</li></ul>
+
+
+
+<h3>Other languages for web development</h3>
+
+
+
+<p>In this module, you will learn Typescript, which is not supported directly by the browser. This language has to be transpiled in JavaScript to be run.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p><img loading="lazy" width="131px;" height="131px;" src="https://lh5.googleusercontent.com/twgojU7MhNhjfsT1Nf0j-3j6-xCMmXU_Dhb5yQa5EwcBS9Fwgu-iULzQplwC7EALKA-ubh2JqiL6fXACKqCLC6PxKREGFVhe300Yy--L3eZHlmUN5KsdX0qqrMOY7_1IUlKebVto-rE"> </p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:66.66%">
+<p>TypeScript extends JavaScript by adding types.</p>
+
+
+
+<p>The main goal is to write maintainable code despite web project growing complexity. </p>
+</div>
+</div>
+
+
+
+<p>It strictly follows ECMAScript specifications. A valid JavaScript code is also a valid TypeScript code (with most checks turned off). But TypeScript is statically aware of types, making possible to catch a lot of errors before the code reaches the browser (or the production&#8230;).</p>
+
+
+
+<p>As a developer, you can use the latest specifications (ex. ES6/ES7/ES2021). The <code>tsc</code> compiler translates your source code to a given target (ex. ES5). You can write clean and human readable code without the challenge of syntax compatibility, which becomes the responsibility of <code>tsc</code>.</p>
+
+
+
+<h3>On the importance of standards</h3>
+
+
+
+<p>Everything on the web has to be standard:</p>
+
+
+
+<ul><li>Physical Network: Link</li><li>Internet (IP)</li><li>Transport: TCP/UDP</li><li>Application: HTTP/S</li><li>Rendering and processing: HTML/CSS/JS</li></ul>
+
+
+
+<p>Because the web relies on standards, Web applications may work seamlessly across a variety of operating systems and browsers. Building standards is a common effort implying manufacturers (e.g. hardware, network), operating system vendors (e.g. TCP/UDP stack), browser vendors (e.g. HTTP/S, W3C, ECMAScript) and <strong>developers</strong>.</p>
+
+
+
+<p>Remember Internet Explorer 6. It did not follow W3C standards. For example, names of CSS properties and some CSS expressions differed from W3C specifications. There were a lot of rendering bugs. So developers had to develop their website both: IE6 and for other browsers.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/6-languages-for-the-web/">01. Languages for the web</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

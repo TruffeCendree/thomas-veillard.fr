@@ -191,14 +191,14 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/how-rich-interactive-and-complex-is-this-ui/</loc>
+		<loc>https://thomas-veillard.fr/front-end-web-development/introduction/how-rich-interactive-and-complex-is-this-ui/</loc>
 		<lastmod>2021-03-28T11:03:51+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif</image:loc>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/5-what-can-the-web-do-today/</loc>
+		<loc>https://thomas-veillard.fr/front-end-web-development/introduction/5-what-can-the-web-do-today/</loc>
 		<lastmod>2021-03-28T11:04:05+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/What-the-web-can-do-today.png</image:loc>
@@ -206,44 +206,6 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/6-languages-for-the-web/</loc>
-		<lastmod>2021-03-28T11:04:10+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/web-languages.png</image:loc>
-			<image:title><![CDATA[web-languages]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/7-environment-tools-languages-frameworks/</loc>
-		<lastmod>2021-03-28T11:04:16+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/Typical-web-frontend-stack.png</image:loc>
-			<image:title><![CDATA[Typical web frontend stack]]></image:title>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/Angular-material.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/8-fast-tour-of-javascript-setup/</loc>
-		<lastmod>2021-03-28T11:17:04+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/open-browser-console.gif</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -287,8 +249,67 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/fast-tour-of-javascript-variables/</loc>
-		<lastmod>2021-04-04T08:34:51+00:00</lastmod>
+		<loc>https://thomas-veillard.fr/front-end-web-development/introduction/using-web-technologies-to-build-something-else/</loc>
+		<lastmod>2021-07-14T11:38:31+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Using-web-tools-to-build-something-else.png</image:loc>
+			<image:title><![CDATA[Using-web-tools-to-build-something-else]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/introduction/why-are-web-technologies-so-popular/</loc>
+		<lastmod>2021-07-14T12:21:14+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Why-are-web-front-end-technologies-so-popular-.png</image:loc>
+			<image:title><![CDATA[Why-are-web-front-end-technologies-so-popular-]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/introduction/introduction/</loc>
+		<lastmod>2021-07-17T07:30:04+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Prerequisite.png</image:loc>
+			<image:title><![CDATA[Prerequisite]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/languages/6-languages-for-the-web/</loc>
+		<lastmod>2021-07-17T07:48:38+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/web-languages.png</image:loc>
+			<image:title><![CDATA[web-languages]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/</loc>
+		<lastmod>2021-07-17T07:49:19+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/Typical-web-frontend-stack.png</image:loc>
+			<image:title><![CDATA[Typical web frontend stack]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/</loc>
+		<lastmod>2021-07-17T07:49:37+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/open-browser-console.gif</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/languages/fast-tour-of-javascript-variables/</loc>
+		<lastmod>2021-07-17T07:50:03+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js.png</image:loc>
 		</image:image>
@@ -300,8 +321,8 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/10-fast-tour-of-javascript-coercion-comparison/</loc>
-		<lastmod>2021-04-04T09:57:42+00:00</lastmod>
+		<loc>https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/</loc>
+		<lastmod>2021-07-17T07:50:23+00:00</lastmod>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-.png</image:loc>
 		</image:image>
@@ -310,40 +331,8 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/the-project/</loc>
-		<lastmod>2021-04-07T10:15:48+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/js-html-js-warrior.png</image:loc>
-			<image:title><![CDATA[js html js warrior]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/11-javascript-conditional-control-flows/</loc>
-		<lastmod>2021-07-04T20:41:46+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/using-web-technologies-to-build-something-else/</loc>
-		<lastmod>2021-07-14T11:38:31+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Using-web-tools-to-build-something-else.png</image:loc>
-			<image:title><![CDATA[Using-web-tools-to-build-something-else]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/introduction/</loc>
-		<lastmod>2021-07-14T11:39:08+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Prerequisite.png</image:loc>
-			<image:title><![CDATA[Prerequisite]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/lectures/why-are-web-technologies-so-popular/</loc>
-		<lastmod>2021-07-14T12:21:14+00:00</lastmod>
-		<image:image>
-			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/02/Why-are-web-front-end-technologies-so-popular-.png</image:loc>
-			<image:title><![CDATA[Why-are-web-front-end-technologies-so-popular-]]></image:title>
-		</image:image>
+		<loc>https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/</loc>
+		<lastmod>2021-07-17T07:51:00+00:00</lastmod>
 	</url>
 </urlset>
 <!-- XML Sitemap generated by Yoast SEO -->
