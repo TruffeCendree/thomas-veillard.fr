@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 17 Jul 2021 07:51:00 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 18 Jul 2021 12:10:10 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1902,311 +1902,166 @@ Register yourself as customer using public API.
 		
 			</item>
 		<item>
-		<title>06. JavaScript: conditional control flows</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/</link>
+		<title>07. JavaScript: function basis</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 10:03:42 +0000</pubDate>
+		<pubDate>Fri, 05 Feb 2021 10:03:43 +0000</pubDate>
 				<category><![CDATA[02. Languages]]></category>
 		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2482</guid>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2643</guid>
 
-					<description><![CDATA[<p>Truthy and falsy values Most control flows contains conditional logic. You express an expression, which is evaluated as a truthy or falsy value. Here a list of falsy values: false ; undefined ; null ; 0 ; NaN ; ''. Everything that is not falsy is truthy. If &#8230; else if &#8230; else Only one &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/" class="more-link">Continuer la lecture de <span class="screen-reader-text">06. JavaScript: conditional control flows</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>Various ways to declare a function Consider a simple function that accepts two terms and sum them. Depending on your use case, you have various syntax available. For each of the previous declarations, you can call sum(1, 2) that returns 3. However, their behaviours sightly differ as we will see later. Function parameters Let&#8217;s analyse &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/" class="more-link">Continuer la lecture de <span class="screen-reader-text">07. JavaScript: function basis</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/">07. JavaScript: function basis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<h4>Truthy and falsy values</h4>
+<h4>Various ways to declare a function</h4>
 
 
 
-<p>Most control flows contains conditional logic. You express an expression, which is evaluated as a <strong>truthy or falsy</strong> value. Here a list of falsy values:</p>
+<p>Consider a simple <code>function</code> that accepts  two terms and sum them. Depending on your use case, you have various syntax available.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// named function</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b; }
+
+<span class="hljs-comment">// anonymous function assigned to a constant</span>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b; };
+
+<span class="hljs-comment">// arrow function assigned to a constant</span>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> { <span class="hljs-keyword">return</span> a + b; };
+
+<span class="hljs-comment">// arrow function assigned to a constant, with implicit return</span>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b;</code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>For each of the previous declarations, you can call <code>sum(1, 2)</code> that returns <code>3</code>. However, their behaviours sightly differ as we will see later.</p>
 
 
 
-<ul><li><code>false</code> ;</li><li><code>undefined</code> ;</li><li><code>null</code> ;</li><li><code>0</code> ;</li><li><code>NaN</code> ;</li><li><code>''</code>.</li></ul>
+<h4>Function parameters</h4>
 
 
 
-<p>Everything that is not falsy is truthy.</p>
+<p>Let&rsquo;s analyse the following named function declaration:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
+ opts.symbol ||= <span class="hljs-string">'€'</span>;
+ opts.precision ??= <span class="hljs-number">2</span>;
+ <span class="hljs-keyword">return</span> amount.toFixed(opts.precision) + <span class="hljs-string">' '</span> + opts.symbol;
+}</code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>2 named arguments are declared in the parameter list: <code>amount</code> and <code>opts</code>.</p>
 
 
 
-<h4>If &#8230; else if &#8230; else</h4>
+<p>In JavaScript, the declared parameters does not have to match those passed at runtime. In other words, those examples do not throw a syntax error:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> betweenZeroIncAndTenExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>); <span class="hljs-comment">// [0, 10[</span>
-
-<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'3 &lt;= betweenZeroIncAndTenExc &lt; 6'</span>);
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc === <span class="hljs-number">7</span>) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>);
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>);
-}</code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">formatPrice();
+formatPrice(<span class="hljs-number">10</span>);
+formatPrice(<span class="hljs-number">10</span>, {});
+formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'not declared'</span>);</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<ul><li>Only one of the <code>console.log</code> statements will be executed.</li><li>Only the <code>if </code>block is mandatory. Any count of <code>else if</code> branches are allowed, but the <code>else</code> bloc is unique.</li></ul>
+<p>When a parameter is missing, it fallbacks in priority to:</p>
 
 
 
-<p>In the current example, curly brackets are optional because each block contains a single statement. That is also true for other control flows.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
-<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'3 &lt;= betweenZeroIncAndTenExc &lt; 6'</span>);
-<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc === <span class="hljs-number">7</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>);
-<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>);</code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Tips: never mix block with and without curly brackets inside the same control flow. It makes it harder to read.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// BAD! Never mix block with and without curly inside the same control flow for readability reasons.</span>
-<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>);
-<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) {
-  <span class="hljs-keyword">const</span> nPlus1 = betweenZeroIncAndTenExc + <span class="hljs-number">1</span>;
-  <span class="hljs-built_in">console</span>.log(nPlus1);
-}</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Previous examples only used booleans in conditions, but you could also use any truthy/falsy value:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// 0 is a falsy value</span>
-<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc is not 0'</span>);</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h4>Switch case</h4>
+<ul><li>its default value if provided in function declaration (<code>{}</code> in the case of <code>opts</code>).</li><li><code>undefined</code> in last resort (that is the case of <code>amount</code>).</li></ul>
 
 
 
-<p>The switch-case statement compares an expression to a list of cases. Even if it uses the safer strict comparison (<code>===</code>) internally, some areas of the switch-case control flow are still error-prone. At the same time, these edge cases make the switch so powerful. </p>
+<h5>The <code>arguments</code> variable</h5>
 
 
 
-<p>Let&rsquo;s discover these behaviours through examples and their if-elseif-else equivalents.</p>
+<p>In addition, the runtime parameter list is available inside the function&rsquo;s body as the array-like <code>arguments</code> variable.</p>
 
 
 
-<h5>Example 1: Sometime, a simpler if is better&#8230;</h5>
+<figure class="wp-block-table is-style-stripes small-table"><table><thead><tr><th>Function call</th><th>amount</th><th>opts</th><th>arguments</th></tr></thead><tbody><tr><td><code>formatPrice();</code></td><td><code>undefined</code> *</td><td><code>{}</code></td><td><code>[]</code></td></tr><tr><td><code>formatPrice(10);</code></td><td><code>10</code></td><td><code>{}</code></td><td><code>[10]</code></td></tr><tr><td><code>formatPrice(10, { symbol: '$' });</code></td><td><code>10</code></td><td><code>{symbol: '$'}</code></td><td><code>[10, {symbol: '$'}]</code></td></tr><tr><td><code>formatPrice(10, {}, 'not declared');</code></td><td><code>10</code></td><td><code>{}</code></td><td>&nbsp;<code>[10, {}, "not declared"]</code></td></tr></tbody></table><figcaption>* <code>formatPrice</code> throws a error when calling <code>amount.toFixed()</code> on <code>undefined</code>.</figcaption></figure>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> betweenZeroIncAndThreeExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>); <span class="hljs-comment">// [0, 3[</span>
 
-<span class="hljs-comment">// switch-case based condition branches</span>
-<span class="hljs-keyword">switch</span> (betweenZeroIncAndThreeExc) {
-    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
-        <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
-        <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>:
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
+<style>.small-table { font-size: 80%; margin-bottom: 1em; }</style>
+
+
+
+<p>Using <code>arguments</code> in function&rsquo;s body requires use of the <code>function</code> keyword for declaration. That is why <code>arguments</code> is not defined inside an arrow function.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withKeyword</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>); <span class="hljs-comment">// OK</span>
 }
 
-<span class="hljs-comment">// if-elseif-else equivalent</span>
-<span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
-<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">1</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
-<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);</code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> arrowFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>); <span class="hljs-comment">// ReferenceError: arguments is not defined</span>
+}</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>In this example, the switch case statement is more verbose (mainly due to the repeated <code>break</code> instruction). But it is still interesting for readability if you increase the number of cases.</p>
-
-
-
-<h5>Example 2: The <code>break</code> statement, a small word behind big bugs&#8230;</h5>
+<h5>The Rest Parameter operator (<code>...</code>)</h5>
 
 
 
-<p>Please reconsider the previous example, without the <code>break</code> statements. If a case is matched, all following blocks are executed until a <code>break</code> is executed or the end of control flow is reached.</p>
+<p>Despite the <code>arguments</code> variable is very powerful, it may become error-prone.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span><span class="hljs-comment">// switch-case based condition branches</span>
-</span></span><span class='shcb-loc'><span><span class="hljs-keyword">switch</span> (zero) {
-</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
-</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
-</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">default</span>:
-</span></span><span class='shcb-loc'><span>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
-</span></span><span class='shcb-loc'><span>}
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span><span class="hljs-comment">// if-elseif-else equivalent</span>
-</span></span><span class='shcb-loc'><span><span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>);
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span><span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span> || zero === <span class="hljs-number">1</span>) {
-</span></span><span class='shcb-loc'><span>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>);
-</span></span><span class='shcb-loc'><span>}
-</span></span><span class='shcb-loc'><span>
-</span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>);
-</span></span></code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-<pre class="wp-block-code" aria-describedby="shcb-language-37" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">[LOG]: <span class="hljs-string">"is equal to 0"</span> 
-[LOG]: <span class="hljs-string">"is equal to 1"</span> 
-[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> 
-[LOG]: <span class="hljs-string">"is equal to 0"</span> 
-[LOG]: <span class="hljs-string">"is equal to 1"</span> 
-[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> </code></div><small class="shcb-language" id="shcb-language-37"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p> Just removing the <code>break</code> statement fully changed the conditional logic. That is probably the bigger risk of using <code>switch-case</code> if you are not aware of its specifications.</p>
-
-
-
-<ul><li>Line 5: the <code>case 0</code> is, of course, matched (remember <code>const zero = 0</code>) ;</li><li>Line 6 and 7: each block after <code>case 0</code> is executed because no break statement is found.</li><li>Line 7: whatever was the value of <code>zero</code>, the <code>default</code> case is always executed. It is executed if a previous <code>case</code> matched because of the lack of <code>break</code> statements. And even without matched <code>case</code>, it is still the <code>default</code> one!</li></ul>
-
-
-
-<p>But do not throw the baby out with the bathwater! This behaviour is powerful when properly used.</p>
-
-
-
-<h5>Example 3: When to use <code>break</code>, and when not.</h5>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// an HTTP error code is typically a number between 100 and 5xx.</span>
-<span class="hljs-keyword">const</span> httpErrorCode = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (<span class="hljs-number">550</span> - <span class="hljs-number">100</span>) + <span class="hljs-number">100</span>);
-<span class="hljs-keyword">let</span> httpCodeMessage = <span class="hljs-literal">null</span>;
-
-<span class="hljs-comment">// switch-case based condition branches</span>
-<span class="hljs-keyword">switch</span> (httpErrorCode) {
-    <span class="hljs-keyword">case</span> <span class="hljs-number">200</span>:
-    <span class="hljs-keyword">case</span> <span class="hljs-number">201</span>:
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a known success code'</span>);
-        <span class="hljs-keyword">break</span>;
-
-    <span class="hljs-keyword">case</span> <span class="hljs-number">403</span>:
-    <span class="hljs-keyword">case</span> <span class="hljs-number">404</span>:
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'403 and 404 errors may occure in normal operations'</span>);
-        <span class="hljs-keyword">break</span>;
-    
-    <span class="hljs-keyword">default</span>:
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Unexpected code (cannot occures in normal operation): '</span> + httpErrorCode);
+<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction1</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">childFunction</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>).join(<span class="hljs-string">','</span>); }
+  <span class="hljs-keyword">return</span> childFunction();
 }
 
-<span class="hljs-comment">// if-elseif-else equivalent</span>
-<span class="hljs-keyword">if</span> (httpErrorCode === <span class="hljs-number">200</span> || httpErrorCode === <span class="hljs-number">201</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a known success code'</span>);
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (httpErrorCode === <span class="hljs-number">403</span> || httpErrorCode === <span class="hljs-number">404</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'403 and 404 errors may occure in normal operations'</span>);
-} <span class="hljs-keyword">else</span> {
-    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Unexpected code (cannot occures in normal operation): '</span> + httpErrorCode);
-}</code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(parentFunction1(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// prints ''</span></code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
-
-<p>To conclude, missing a <code>break</code>, both when reading and write the code, is easy. You can mitigate this issue, thanks to a proper indentation and some line breaks (like in the previous example). Most of the time, you probably do not need a switch-case.</p>
-
-
-
-<p>Once that is said, the <code>switch</code> could sometimes be more readable. Internally, your JS engine may even optimise the switch-case to archive O(n) complexity (useful in performance critical parts of your app).</p>
-
-
-
-<h3>Loops</h3>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-39" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>];
-<span class="hljs-keyword">const</span> object = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">3</span> };
-
-<span class="hljs-comment">// C-style while</span>
-<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
-<span class="hljs-keyword">while</span> (i &lt; array.length) {
-  <span class="hljs-built_in">console</span>.log(i);
-  i++;
+<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction2</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> childFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>).join(<span class="hljs-string">','</span>); }
+  <span class="hljs-keyword">return</span> childFunction();
 }
 
-<span class="hljs-comment">// C-style do...while</span>
-<span class="hljs-keyword">do</span> {} <span class="hljs-keyword">while</span> (condition)
-
-<span class="hljs-comment">// C-style loops</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// 0, 1, 2</span>
-
-<span class="hljs-comment">// iterates on array index (note that each key is a string, even if array's index are normally number)</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> i <span class="hljs-keyword">in</span> array) <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// '0', '1', '2'</span>
-
-<span class="hljs-comment">// iterates on object keys</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> object) <span class="hljs-built_in">console</span>.log(key); <span class="hljs-comment">// 'a', 'b', 'c'</span>
-
-<span class="hljs-comment">// iterates on values</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> array) <span class="hljs-built_in">console</span>.log(value); <span class="hljs-comment">// 10, 20, 30</span></code></div><small class="shcb-language" id="shcb-language-39"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(parentFunction2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// prints '1,2,3'</span></code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<h4>Tricks about logical expressions and truthy values</h4>
+<p>First of all, <code>arguments</code> is an array-like, but not an array. It supports <code>arguments.length</code> and <code>arguments[index]</code>, but not other array&rsquo;s methods like <code>array.join(separator)</code>. That is why I needed <code>Array.from(arguments)</code> in the previous example.</p>
 
 
 
-<p>That are the kind of tricks you frequently find in code snippets&#8230;</p>
+<p>Then, you noticed that switching from <code>function</code> keyword to arrow function changed the behaviour of our code. Remember that an arrow function does not override <code>arguments</code> inside its body!</p>
 
 
 
-<h5>About !!</h5>
+<p>In addition, <code>arguments</code> is not a meaningful name from business logic perspective.</p>
 
 
 
-<p>Sometimes, you want a <code>boolean</code> instead of a random truthy or falsy value. Think about it like a cast to boolean operation.</p>
+<p>Hopefully, they are a room for improvement, thanks to the spread operator (<code>...</code>).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-40" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(!!<span class="hljs-string">'input is present'</span>); <span class="hljs-comment">// prints true</span>
-<span class="hljs-built_in">console</span>.log(!!<span class="hljs-number">0</span>); <span class="hljs-comment">// prints false</span></code></div><small class="shcb-language" id="shcb-language-40"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-37" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction</span> (<span class="hljs-params">...joinables</span>) </span>{
+  <span class="hljs-keyword">const</span> childFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-keyword">return</span> joinables.join(<span class="hljs-string">','</span>); }
+  <span class="hljs-keyword">return</span> childFunction();
+}</code></div><small class="shcb-language" id="shcb-language-37"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<h5>About <code>||</code></h5>
+<p>Finally, if your <code>parentFunction</code> accepted both fixed count of parameters followed by varying length list of parameters, you should work with index offset&#8230; But is it simple with the spread operator.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyOperator</span> (<span class="hljs-params">operator, ...operands</span>) </span>{}
+<span class="hljs-built_in">console</span>.log(applyOperator(<span class="hljs-string">'+'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// may output 6 once implemented</span></code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Return value</h4>
 
 
 
-<p>The <code>||</code> operator returns the first truthy value from left to right and fallbacks to the right falsy value. The result is <strong>NOT</strong> casted to boolean.</p>
+<ul><li>If a <code>return</code> statement is executed inside a function body, the function exits with evaluated expression.</li><li>For arrow function without curly brackets around the body expression, return is implicit. Example: <code>const sum = (a, b) =&gt; a + b</code>;</li><li>In absence of explicitly executed or implicit <code>return</code> statement, it fallbacks to <code>undefined</code>.</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-41" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> || <span class="hljs-literal">null</span> || <span class="hljs-number">1</span>); <span class="hljs-comment">// prints 1</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-literal">undefined</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// prints 0</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-number">2</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// prints 2</span></code></div><small class="shcb-language" id="shcb-language-41"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
-
-<p>This behaviour is commonly used in functions accepting an <code>opts</code> parameter having optional fields. When a field is missing, it fallbacks to a default value instead.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-42" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
-  <span class="hljs-comment">// Example 1: a local variable that fallbacks to 'after'</span>
-  <span class="hljs-keyword">const</span> symbolPosition = opts.symbolPosition || <span class="hljs-string">'after'</span>;
-
-  <span class="hljs-comment">// Example 2: set symbol to '€' on `opts` object if `opts.symbol`</span>
-  <span class="hljs-comment">// is undefined or has a falsy value. Has obvious side effect.</span>
-  opts.symbol ||= <span class="hljs-string">'€'</span>;
-
-  <span class="hljs-comment">// Example 3: cannot use || because 0 is acceptable but falsy value.</span>
-  <span class="hljs-comment">// Instead, ?? operator takes the left operand if is neither</span>
-  <span class="hljs-comment">// null or undefined. Else, it takes right operand.</span>
-  <span class="hljs-keyword">const</span> precision = opts.precision ?? <span class="hljs-number">2</span>;
-
-  <span class="hljs-comment">// Here, format and return the price according to those options</span>
-}
-
-<span class="hljs-comment">// opts is optional</span>
-<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>));
-
-<span class="hljs-comment">// opts.precision is optional (default 2)</span>
-<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-string">'$'</span>, <span class="hljs-attr">symbolPosition</span>: <span class="hljs-string">'before'</span> }));
-
-<span class="hljs-comment">// 0 ?? 2 === 0, so opts.precision is not overwritten</span>
-<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">round</span>: <span class="hljs-number">0</span> }));
-
-<span class="hljs-comment">// null || 'after' === 'after' because null is a falsy value</span>
-<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-literal">null</span> }));</code></div><small class="shcb-language" id="shcb-language-42"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h5>About &amp;&amp;</h5>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-43" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// try to print a.b, but do not crash if a is null or undefined</span>
-<span class="hljs-built_in">console</span>.log(a &amp;&amp; a.b);
-
-<span class="hljs-comment">// previous code prints false if a = false</span>
-<span class="hljs-comment">// previous code prints null if a = null</span>
-<span class="hljs-comment">// previous code prints undefined if a = {}</span>
-<span class="hljs-comment">// previous code prints 1 if a = { b: 1 }</span></code></div><small class="shcb-language" id="shcb-language-43"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/">07. JavaScript: function basis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

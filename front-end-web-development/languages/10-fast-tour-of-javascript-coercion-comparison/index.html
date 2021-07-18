@@ -21,7 +21,7 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-02-05T10:03:41+00:00">
-	<meta property="article:modified_time" content="2021-07-17T07:50:23+00:00">
+	<meta property="article:modified_time" content="2021-07-18T12:05:29+00:00">
 	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-.png">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
@@ -63,7 +63,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/#primaryimage"
 	            },
 	            "datePublished": "2021-02-05T10:03:41+00:00",
-	            "dateModified": "2021-07-17T07:50:23+00:00",
+	            "dateModified": "2021-07-18T12:05:29+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/#breadcrumb"
 	            },
@@ -105,7 +105,7 @@
 	            },
 	            "headline": "05. JavaScript: coercion &#038; comparison",
 	            "datePublished": "2021-02-05T10:03:41+00:00",
-	            "dateModified": "2021-07-17T07:50:23+00:00",
+	            "dateModified": "2021-07-18T12:05:29+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/#webpage"
 	            },
@@ -459,17 +459,17 @@ table {
 	user-select: none;
 	white-space: nowrap;
 	width: 1%;
-}</style><div><code class="hljs language-typescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">2</span>); <span class="hljs-comment">// false</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'1'</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'2'</span>); <span class="hljs-comment">// false</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</style><div><code class="hljs language-typescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">2</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'1'</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Until that point, it looks basic. But what appends when comparing mixed types? The automatic type coercion mechanism dynamically casts operands before comparing them.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'1'</span>); <span class="hljs-comment">// true, internally compares 1 == 1</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'2'</span>); <span class="hljs-comment">// false, internally compares 1 == 2</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'1'</span>) <span class="hljs-comment">// true, internally compares 1 == 1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false, internally compares 1 == 2</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The complexity of the truth table is evidence that the <code>weak equality operator</code> (aka <code>==</code>) is error-prone. </p>
@@ -487,13 +487,13 @@ table {
 <p>For that reason, it is a good practice to prefer the <code>strong type equality operator</code> (aka. <code>===</code>). This one works a more logical way.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">1</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">2</span>); <span class="hljs-comment">// false</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">1</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">2</span>) <span class="hljs-comment">// false</span>
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'1'</span>); <span class="hljs-comment">// false, number is not string</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'2'</span>); <span class="hljs-comment">// false, number is not string</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'1'</span>); <span class="hljs-comment">// true, number is not string</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'2'</span>); <span class="hljs-comment">// true, number is not string</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'1'</span>) <span class="hljs-comment">// false, number is not string</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false, number is not string</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'1'</span>) <span class="hljs-comment">// true, number is not string</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'2'</span>) <span class="hljs-comment">// true, number is not string</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="666" height="657" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png" alt="" class="wp-image-2396" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png 666w, https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1-300x296.png 300w" sizes="(max-width: 666px) 100vw, 666px"><figcaption>Truth table of <code>===</code> operator, which is more logical than <code>==</code>.</figcaption></figure>
@@ -559,26 +559,26 @@ table {
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/** wrong, unsafe **/</span>
-<span class="hljs-keyword">const</span> yourAge = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">'Your age'</span>); <span class="hljs-comment">// user enters '17'</span>
+<span class="hljs-keyword">const</span> yourAge = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">'Your age'</span>) <span class="hljs-comment">// user enters '17'</span>
 
 <span class="hljs-comment">// prints 'Next year, you will be 171 years old'.</span>
-<span class="hljs-keyword">if</span> (yourAge &lt; <span class="hljs-number">18</span>) <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Next year, you will be '</span> + (yourAge + <span class="hljs-number">1</span>) + <span class="hljs-string">' years old'</span>);</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">if</span> (yourAge &lt; <span class="hljs-number">18</span>) <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Next year, you will be '</span> + (yourAge + <span class="hljs-number">1</span>) + <span class="hljs-string">' years old'</span>)</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>So, my tips is: <strong>when you expect to manipulate numbers, always parse them</strong>.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// using the '+ unary operator'</span>
-<span class="hljs-keyword">const</span> number1 = +<span class="hljs-string">'10'</span>;    <span class="hljs-comment">// 10</span>
-<span class="hljs-keyword">const</span> number2 = +<span class="hljs-string">'10.5'</span>;  <span class="hljs-comment">// 10.5</span>
+<span class="hljs-keyword">const</span> number1 = +<span class="hljs-string">'10'</span>    <span class="hljs-comment">// 10</span>
+<span class="hljs-keyword">const</span> number2 = +<span class="hljs-string">'10.5'</span>  <span class="hljs-comment">// 10.5</span>
 
 <span class="hljs-comment">// using the parseInt(str, radius) method</span>
-<span class="hljs-keyword">const</span> number3 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10'</span>, <span class="hljs-number">10</span>);    <span class="hljs-comment">// 10</span>
-<span class="hljs-keyword">const</span> number4 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10.5'</span>, <span class="hljs-number">10</span>);  <span class="hljs-comment">// 10</span>
-<span class="hljs-keyword">const</span> number5 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10'</span>, <span class="hljs-number">16</span>);    <span class="hljs-comment">// 16, because the string '10' is analysed a hexadecimal string</span>
+<span class="hljs-keyword">const</span> number3 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10'</span>, <span class="hljs-number">10</span>)    <span class="hljs-comment">// 10</span>
+<span class="hljs-keyword">const</span> number4 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10.5'</span>, <span class="hljs-number">10</span>)  <span class="hljs-comment">// 10</span>
+<span class="hljs-keyword">const</span> number5 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10'</span>, <span class="hljs-number">16</span>)    <span class="hljs-comment">// 16, because the string '10' is analysed a hexadecimal string</span>
 
 <span class="hljs-comment">// using the parseFloat(str) method</span>
-<span class="hljs-keyword">const</span> number6 = <span class="hljs-built_in">parseFloat</span>(<span class="hljs-string">'10.5'</span>);    <span class="hljs-comment">// 10.5</span></code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>	</div>
+<span class="hljs-keyword">const</span> number6 = <span class="hljs-built_in">parseFloat</span>(<span class="hljs-string">'10.5'</span>)    <span class="hljs-comment">// 10.5</span></code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>	</div>
 <!-- .entry-content -->
 
 	
