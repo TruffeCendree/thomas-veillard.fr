@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 18 Jul 2021 12:10:10 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 24 Jul 2021 08:30:04 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1902,166 +1902,146 @@ Register yourself as customer using public API.
 		
 			</item>
 		<item>
-		<title>07. JavaScript: function basis</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/</link>
+		<title>08. JavaScript: higher order functions</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 10:03:43 +0000</pubDate>
+		<pubDate>Fri, 05 Feb 2021 10:03:44 +0000</pubDate>
 				<category><![CDATA[02. Languages]]></category>
 		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2643</guid>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2726</guid>
 
-					<description><![CDATA[<p>Various ways to declare a function Consider a simple function that accepts two terms and sum them. Depending on your use case, you have various syntax available. For each of the previous declarations, you can call sum(1, 2) that returns 3. However, their behaviours sightly differ as we will see later. Function parameters Let&#8217;s analyse &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/" class="more-link">Continuer la lecture de <span class="screen-reader-text">07. JavaScript: function basis</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/">07. JavaScript: function basis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>In the previous post, you noticed we can keep track of a function&#8217;s reference inside a variable: Whatever is the way you defined your function, it is always an instance of the Function class. So, functions are objects instances. They can be assigned to variables, passed as arguments, returned as values, mutated&#8230; Higher Order Function &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/" class="more-link">Continuer la lecture de <span class="screen-reader-text">08. JavaScript: higher order functions</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/">08. JavaScript: higher order functions</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<h4>Various ways to declare a function</h4>
+<p>In the previous post, you noticed we can keep track of a function&rsquo;s reference inside a variable:</p>
 
 
-
-<p>Consider a simple <code>function</code> that accepts  two terms and sum them. Depending on your use case, you have various syntax available.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// named function</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b; }
-
-<span class="hljs-comment">// anonymous function assigned to a constant</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b; };
+<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// anonymous function assigned to a constant</span>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
 
 <span class="hljs-comment">// arrow function assigned to a constant</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> { <span class="hljs-keyword">return</span> a + b; };
+<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> { <span class="hljs-keyword">return</span> a + b }
 
 <span class="hljs-comment">// arrow function assigned to a constant, with implicit return</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b;</code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b
+
+<span class="hljs-comment">// using the 'Function' constructor</span>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>For each of the previous declarations, you can call <code>sum(1, 2)</code> that returns <code>3</code>. However, their behaviours sightly differ as we will see later.</p>
+<p>Whatever is the way you defined your function, it is always an instance of the <code>Function</code> class. So, functions are objects instances. They can be assigned to variables, passed as arguments, returned as values, mutated&#8230;</p>
 
 
+<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
 
-<h4>Function parameters</h4>
+<span class="hljs-comment">// every function is an instance of the Function class</span>
+<span class="hljs-built_in">console</span>.log(sum <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Function</span>)
 
+<span class="hljs-comment">// however, typeof returns 'function' instead of 'object'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> sum)
 
+<span class="hljs-comment">// you can assign function's reference to another variable</span>
+<span class="hljs-keyword">const</span> newReference = sum
+<span class="hljs-built_in">console</span>.log(newReference === sum) <span class="hljs-comment">// prints true because same reference</span>
 
-<p>Let&rsquo;s analyse the following named function declaration:</p>
+<span class="hljs-comment">// you can call it the same way as the original `sum`</span>
+<span class="hljs-built_in">console</span>.log(newReference(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>));
 
+<span class="hljs-comment">// you can pass a function as a parameter (without executing it)</span>
+<span class="hljs-built_in">console</span>.log(newReference)
 
-<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
- opts.symbol ||= <span class="hljs-string">'€'</span>;
- opts.precision ??= <span class="hljs-number">2</span>;
- <span class="hljs-keyword">return</span> amount.toFixed(opts.precision) + <span class="hljs-string">' '</span> + opts.symbol;
-}</code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">// const, let, and var properties are, of course, still relevant.</span>
+newReference = <span class="hljs-string">'test'</span> <span class="hljs-comment">// TypeError: Assignment to constant variable.</span>
 
+<span class="hljs-comment">// like for any object instance, you can dynamically add properties</span>
+newReference.someAttribute = <span class="hljs-literal">true</span>
 
-<p>2 named arguments are declared in the parameter list: <code>amount</code> and <code>opts</code>.</p>
-
-
-
-<p>In JavaScript, the declared parameters does not have to match those passed at runtime. In other words, those examples do not throw a syntax error:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">formatPrice();
-formatPrice(<span class="hljs-number">10</span>);
-formatPrice(<span class="hljs-number">10</span>, {});
-formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'not declared'</span>);</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>When a parameter is missing, it fallbacks in priority to:</p>
+<span class="hljs-comment">// both `newReference` and `sum` reference the same object</span>
+<span class="hljs-built_in">console</span>.log(sum.someAttribute) <span class="hljs-comment">// prints true</span></code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-
-<ul><li>its default value if provided in function declaration (<code>{}</code> in the case of <code>opts</code>).</li><li><code>undefined</code> in last resort (that is the case of <code>amount</code>).</li></ul>
-
-
-
-<h5>The <code>arguments</code> variable</h5>
+<h4>Higher Order Function</h4>
 
 
 
-<p>In addition, the runtime parameter list is available inside the function&rsquo;s body as the array-like <code>arguments</code> variable.</p>
+<p>A <strong>Higher Order Function</strong> is a function accepting another function as an argument or returning it as a value. In contrast, any other function is simply called <strong>Single Order Function</strong>.</p>
 
 
 
-<figure class="wp-block-table is-style-stripes small-table"><table><thead><tr><th>Function call</th><th>amount</th><th>opts</th><th>arguments</th></tr></thead><tbody><tr><td><code>formatPrice();</code></td><td><code>undefined</code> *</td><td><code>{}</code></td><td><code>[]</code></td></tr><tr><td><code>formatPrice(10);</code></td><td><code>10</code></td><td><code>{}</code></td><td><code>[10]</code></td></tr><tr><td><code>formatPrice(10, { symbol: '$' });</code></td><td><code>10</code></td><td><code>{symbol: '$'}</code></td><td><code>[10, {symbol: '$'}]</code></td></tr><tr><td><code>formatPrice(10, {}, 'not declared');</code></td><td><code>10</code></td><td><code>{}</code></td><td>&nbsp;<code>[10, {}, "not declared"]</code></td></tr></tbody></table><figcaption>* <code>formatPrice</code> throws a error when calling <code>amount.toFixed()</code> on <code>undefined</code>.</figcaption></figure>
+<p>As you saw in previous examples, manipulating functions as references in dead simple in JavaScript. Developers heavily take advantage of this.</p>
 
 
 
-<style>.small-table { font-size: 80%; margin-bottom: 1em; }</style>
+<p>2 commons use cases are <strong>callbacks</strong> and <strong>customisers</strong> (probably not the official term if any official term exists).</p>
 
 
 
-<p>Using <code>arguments</code> in function&rsquo;s body requires use of the <code>function</code> keyword for declaration. That is why <code>arguments</code> is not defined inside an arrow function.</p>
+<ul><li><strong>Callbacks</strong> are functions to be called once an event occurs.</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withKeyword</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>); <span class="hljs-comment">// OK</span>
+
+<p>For example, you can register a function called when the user clicks on a button.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myButton'</span>)
+
+button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'My button has been clicked 🎉'</span>)
+})</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<ul><li><strong>Customisers</strong> sightly change the behaviour of generic algorithms.</li></ul>
+
+
+
+<p>For example, someone may write a highly optimised sorting function without worrying about how to compare sorted items. Then, the caller just needs to provide a comparator, which would be a function saying if <code>a</code> should be before <code>b</code>.</p>
+
+
+
+<p>If <code>compareFunction(a, b)</code> returns a value > than 0, sort <code>b</code> before <code>a</code>.<br>If <code>compareFunction(a, b)</code> returns a value ≤ 0, leave <code>a</code> and <code>b</code> in the same order.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>]
+
+<span class="hljs-comment">// sorts in numerically ascending order (0, 1, 4, 5)</span>
+array.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compareFunction</span> (<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a - b
+})
+
+<span class="hljs-comment">// sorts in numerically descending order (5, 4, 1, 0)</span>
+array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a)</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Closures</h4>
+
+
+
+<p>Closures makes variables from upper contexts availables into nested functions.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@returns </span>a function incrementing its input by `incrementStep`
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildIncrementer</span> (<span class="hljs-params">incrementStep</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-comment">// `value` is reachable because it is the argument of current function.</span>
+    <span class="hljs-comment">// `incrementStep` from parent function is reachable thanks to the closure?</span>
+    <span class="hljs-keyword">return</span> value + incrementStep
+  }
 }
 
-<span class="hljs-keyword">const</span> arrowFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>); <span class="hljs-comment">// ReferenceError: arguments is not defined</span>
-}</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> inc1 = buildIncrementer(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">const</span> inc2 = buildIncrementer(<span class="hljs-number">2</span>)
 
-
-<h5>The Rest Parameter operator (<code>...</code>)</h5>
-
-
-
-<p>Despite the <code>arguments</code> variable is very powerful, it may become error-prone.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction1</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">childFunction</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>).join(<span class="hljs-string">','</span>); }
-  <span class="hljs-keyword">return</span> childFunction();
-}
-
-<span class="hljs-built_in">console</span>.log(parentFunction1(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// prints ''</span></code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction2</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> childFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>).join(<span class="hljs-string">','</span>); }
-  <span class="hljs-keyword">return</span> childFunction();
-}
-
-<span class="hljs-built_in">console</span>.log(parentFunction2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// prints '1,2,3'</span></code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>First of all, <code>arguments</code> is an array-like, but not an array. It supports <code>arguments.length</code> and <code>arguments[index]</code>, but not other array&rsquo;s methods like <code>array.join(separator)</code>. That is why I needed <code>Array.from(arguments)</code> in the previous example.</p>
-
-
-
-<p>Then, you noticed that switching from <code>function</code> keyword to arrow function changed the behaviour of our code. Remember that an arrow function does not override <code>arguments</code> inside its body!</p>
-
-
-
-<p>In addition, <code>arguments</code> is not a meaningful name from business logic perspective.</p>
-
-
-
-<p>Hopefully, they are a room for improvement, thanks to the spread operator (<code>...</code>).</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-37" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction</span> (<span class="hljs-params">...joinables</span>) </span>{
-  <span class="hljs-keyword">const</span> childFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-keyword">return</span> joinables.join(<span class="hljs-string">','</span>); }
-  <span class="hljs-keyword">return</span> childFunction();
-}</code></div><small class="shcb-language" id="shcb-language-37"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Finally, if your <code>parentFunction</code> accepted both fixed count of parameters followed by varying length list of parameters, you should work with index offset&#8230; But is it simple with the spread operator.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyOperator</span> (<span class="hljs-params">operator, ...operands</span>) </span>{}
-<span class="hljs-built_in">console</span>.log(applyOperator(<span class="hljs-string">'+'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// may output 6 once implemented</span></code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h4>Return value</h4>
-
-
-
-<ul><li>If a <code>return</code> statement is executed inside a function body, the function exits with evaluated expression.</li><li>For arrow function without curly brackets around the body expression, return is implicit. Example: <code>const sum = (a, b) =&gt; a + b</code>;</li><li>In absence of explicitly executed or implicit <code>return</code> statement, it fallbacks to <code>undefined</code>.</li></ul>
-
+<span class="hljs-built_in">console</span>.log(inc1(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 11</span>
+<span class="hljs-built_in">console</span>.log(inc2(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 12</span>
+<span class="hljs-built_in">console</span>.log(inc2(inc1(<span class="hljs-number">10</span>))) <span class="hljs-comment">// prints 13</span></code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/">07. JavaScript: function basis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/">08. JavaScript: higher order functions</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
