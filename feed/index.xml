@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 24 Jul 2021 08:30:04 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 30 Jul 2021 10:50:32 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1902,146 +1902,139 @@ Register yourself as customer using public API.
 		
 			</item>
 		<item>
-		<title>08. JavaScript: higher order functions</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/</link>
+		<title>09. JavaScript: practical activity n°1</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 10:03:44 +0000</pubDate>
+		<pubDate>Fri, 05 Feb 2021 10:03:45 +0000</pubDate>
 				<category><![CDATA[02. Languages]]></category>
 		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2726</guid>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2775</guid>
 
-					<description><![CDATA[<p>In the previous post, you noticed we can keep track of a function&#8217;s reference inside a variable: Whatever is the way you defined your function, it is always an instance of the Function class. So, functions are objects instances. They can be assigned to variables, passed as arguments, returned as values, mutated&#8230; Higher Order Function &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/" class="more-link">Continuer la lecture de <span class="screen-reader-text">08. JavaScript: higher order functions</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/">08. JavaScript: higher order functions</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>Exercise 1. Implement sum(&#8230;terms) Implement a sum function that accepts any count of numerical arguments and return the sum. It raises a custom error in the absence of any argument. Exercise 2. Implement filter(array, predicate) Implement a filter(array, predicate) function that returns a new array only containing items from array for which predicate(item) is true. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/" class="more-link">Continuer la lecture de <span class="screen-reader-text">09. JavaScript: practical activity n°1</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/">09. JavaScript: practical activity n°1</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<p>In the previous post, you noticed we can keep track of a function&rsquo;s reference inside a variable:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// anonymous function assigned to a constant</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
-
-<span class="hljs-comment">// arrow function assigned to a constant</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> { <span class="hljs-keyword">return</span> a + b }
-
-<span class="hljs-comment">// arrow function assigned to a constant, with implicit return</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b
-
-<span class="hljs-comment">// using the 'Function' constructor</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Whatever is the way you defined your function, it is always an instance of the <code>Function</code> class. So, functions are objects instances. They can be assigned to variables, passed as arguments, returned as values, mutated&#8230;</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
-
-<span class="hljs-comment">// every function is an instance of the Function class</span>
-<span class="hljs-built_in">console</span>.log(sum <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Function</span>)
-
-<span class="hljs-comment">// however, typeof returns 'function' instead of 'object'</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> sum)
-
-<span class="hljs-comment">// you can assign function's reference to another variable</span>
-<span class="hljs-keyword">const</span> newReference = sum
-<span class="hljs-built_in">console</span>.log(newReference === sum) <span class="hljs-comment">// prints true because same reference</span>
-
-<span class="hljs-comment">// you can call it the same way as the original `sum`</span>
-<span class="hljs-built_in">console</span>.log(newReference(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>));
-
-<span class="hljs-comment">// you can pass a function as a parameter (without executing it)</span>
-<span class="hljs-built_in">console</span>.log(newReference)
-
-<span class="hljs-comment">// const, let, and var properties are, of course, still relevant.</span>
-newReference = <span class="hljs-string">'test'</span> <span class="hljs-comment">// TypeError: Assignment to constant variable.</span>
-
-<span class="hljs-comment">// like for any object instance, you can dynamically add properties</span>
-newReference.someAttribute = <span class="hljs-literal">true</span>
-
-<span class="hljs-comment">// both `newReference` and `sum` reference the same object</span>
-<span class="hljs-built_in">console</span>.log(sum.someAttribute) <span class="hljs-comment">// prints true</span></code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h4>Higher Order Function</h4>
+<h4>Exercise 1. Implement sum(&#8230;terms)</h4>
 
 
 
-<p>A <strong>Higher Order Function</strong> is a function accepting another function as an argument or returning it as a value. In contrast, any other function is simply called <strong>Single Order Function</strong>.</p>
+<p>Implement a <code>sum</code> function that accepts any count of numerical arguments and return the sum. It raises a custom error in the absence of any argument.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(sum()) <span class="hljs-comment">// throws Error('At least one number is expected')</span>
+<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>)) <span class="hljs-comment">// prints 1</span>
+<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints 6</span></code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Exercise 2. Implement filter(array, predicate)</h4>
 
 
 
-<p>As you saw in previous examples, manipulating functions as references in dead simple in JavaScript. Developers heavily take advantage of this.</p>
+<p>Implement a <code>filter(array, predicate)</code> function that returns a new array only containing items from <code>array</code> for which <code>predicate(item)</code> is true. The original <code>array</code> should not be mutated (no side effect allowed).</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-keyword">const</span> filteredArray = filter(array, item =&gt; item &gt; <span class="hljs-number">2</span>) <span class="hljs-comment">// [3, 4 5]</span></code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>After you implemented it, take a look to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noreferrer noopener">Array.filter</a>.</p>
 
 
 
-<p>2 commons use cases are <strong>callbacks</strong> and <strong>customisers</strong> (probably not the official term if any official term exists).</p>
+<h4>Excercise 3. Implement map(array, transform)</h4>
 
 
 
-<ul><li><strong>Callbacks</strong> are functions to be called once an event occurs.</li></ul>
+<p>Implement a <code>map(array, transform)</code> function that returns a new array with each <code>item</code> from <code>array</code> replaced by <code>transform(item)</code>. The original <code>array</code> should not be mutated (no side effect allowed).</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-keyword">const</span> doubled = map(array, item =&gt; item * <span class="hljs-number">2</span>) /: [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>]</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>After you implemented it, take a look to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noreferrer noopener">Array.map</a>.</p>
 
 
 
-<p>For example, you can register a function called when the user clicks on a button.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myButton'</span>)
-
-button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'My button has been clicked 🎉'</span>)
-})</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<ul><li><strong>Customisers</strong> sightly change the behaviour of generic algorithms.</li></ul>
+<h4>Excercise 4. Basic CSV parsing into literal objects</h4>
 
 
 
-<p>For example, someone may write a highly optimised sorting function without worrying about how to compare sorted items. Then, the caller just needs to provide a comparator, which would be a function saying if <code>a</code> should be before <code>b</code>.</p>
+<p>I share with you a simplified CSV dump of Apache contributors (<a href="http://flossdata.syr.edu/data/apache/2016/2016-May/" target="_blank" rel="noreferrer noopener">original source</a>). Because of the size of the file, you cannot simply inline it into your JavaScript code. Instead, I provide you a snippet that pulls the file from my website.</p>
 
 
 
-<p>If <code>compareFunction(a, b)</code> returns a value > than 0, sort <code>b</code> before <code>a</code>.<br>If <code>compareFunction(a, b)</code> returns a value ≤ 0, leave <code>a</code> and <code>b</code> in the same order.</p>
+<p>From your perspective, the entry point is the <code>processData</code> function.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>]
+<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// This code downloads a CSV file from my website, reads it as text</span>
+<span class="hljs-comment">// and calls `processData(csvText)` on success. Do not worry about</span>
+<span class="hljs-comment">// the details about `fetch` for now, as we will cover them later.</span>
+fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2021/07/apache-contributors-projects.csv'</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.text())
+  .then(processData)
+  .catch(<span class="hljs-built_in">console</span>.log)
 
-<span class="hljs-comment">// sorts in numerically ascending order (0, 1, 4, 5)</span>
-array.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compareFunction</span> (<span class="hljs-params">a, b</span>) </span>{
-  <span class="hljs-keyword">return</span> a - b
-})
-
-<span class="hljs-comment">// sorts in numerically descending order (5, 4, 1, 0)</span>
-array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a)</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h4>Closures</h4>
-
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processData</span> (<span class="hljs-params">csvText</span>) </span>{
+  <span class="hljs-comment">// write your code here</span>
+}</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>Closures makes variables from upper contexts availables into nested functions.</p>
+<p>For this question, parse <code>csvText</code> as an array of literal objects. Each object represents a contribution from someone to an Apache project. Therefore, each object should have the following properties:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@returns </span>a function incrementing its input by `incrementStep`
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildIncrementer</span> (<span class="hljs-params">incrementStep</span>) </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
-    <span class="hljs-comment">// `value` is reachable because it is the argument of current function.</span>
-    <span class="hljs-comment">// `incrementStep` from parent function is reachable thanks to the closure?</span>
-    <span class="hljs-keyword">return</span> value + incrementStep
-  }
-}
 
-<span class="hljs-keyword">const</span> inc1 = buildIncrementer(<span class="hljs-number">1</span>)
-<span class="hljs-keyword">const</span> inc2 = buildIncrementer(<span class="hljs-number">2</span>)
-
-<span class="hljs-built_in">console</span>.log(inc1(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 11</span>
-<span class="hljs-built_in">console</span>.log(inc2(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 12</span>
-<span class="hljs-built_in">console</span>.log(inc2(inc1(<span class="hljs-number">10</span>))) <span class="hljs-comment">// prints 13</span></code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<ul><li><strong>username</strong> of the contributor, originally called <code>svn_id</code> in the CSV ;</li><li><strong>realName</strong> of the contributor, originally called <code>real_name</code> in the CSV ;</li><li><strong>website</strong> of the contributor, which should be <code>null</code> if empty in CSV ;</li><li><strong>projectName</strong>, originally called <code>project_name</code> in the CSV ;</li></ul>
 
 
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/">08. JavaScript: higher order functions</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+
+<p>You must provide 2 implementations of the parsing function:</p>
+
+
+
+<ol><li><strong>Imperative-style programming</strong>: you can use variables (<code>let</code>, <code>var</code>&#8230;) and <code>control flows</code> such (<code>white</code>, <code>for</code>, <code>if</code>&#8230;).</li><li><strong>Functional-style programming</strong>: you can only use constants (no <code>let</code> or <code>var</code>) and are not allowed to mutate anything (ex <code>array[0] = 0</code> is prohibited). Methods such as <code>Array.map</code> are strongly encouraged.</li></ol>
+
+
+
+<h4>Excercise 5. Computes stats about contributions</h4>
+
+
+
+<p>Compute the following metrics. Use of the functional programming paradigm is encouraged.</p>
+
+
+
+<p><strong>Tips</strong>: There is not any built-in functions on <code>Array</code> to easily take unique values or grouping by criterion. For such processing, I recommend writing helper functions.</p>
+
+
+
+<p><strong>Tips</strong>: Try not to repeat yourself (DRY principal).  Some intermediate computations for a metric could be reused for another one. Also, some logic patterns may be factorised as functions (cf. previous tips).</p>
+
+
+
+<ol><li><strong>The first project&rsquo;s name in ascending alphabetic order</strong>. Ensure you compare in a case-insensitive manner and to handle diacritics correctly.</li><li><strong>The number of unique contributors</strong>. Unicity may be implemented with <code>array.filter()</code>.</li><li><strong>The average length of contributors&rsquo; name</strong>. Of course, you have to work on unique names. Remember the DRY principal.</li><li><strong>The most active contributor&rsquo;s name</strong> (by number of projects). This is like grouping contribution by contributors&rsquo; name, sorting by contribution count and eventually taking the first&#8230;</li><li><strong>TOP 10 of the most contributed projects</strong>. There is again a groupby under the hook. Let&rsquo;s DRY!</li></ol>
+
+
+
+<h4>Bonus tips</h4>
+
+
+
+<p>The previous exercise promoted the writing of helpers like <code>uniq()</code> or <code>groupBy()</code>. Popular libraries such as <a href="https://lodash.com/" target="_blank" rel="noreferrer noopener">lodash</a> implement them already. </p>
+
+
+
+<p>Before using them in your frontend projects, think about the weight penalty. At the time of writing, minified size of lodash is about 72kB (to distribute over the network and to execute each time the JS runs in the browser). </p>
+
+
+
+<p>In a general manner, lodash&rsquo;s functions cover edge cases that you will probably never meet in your project (which implies extra code). Also, some of them are now obsolete for the latest version of JavaScript.</p>
+
+
+
+<p>If the topic interests you, there is <a href="https://youmightnotneed.com/lodash/" target="_blank" rel="noreferrer noopener">good literature</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/">09. JavaScript: practical activity n°1</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

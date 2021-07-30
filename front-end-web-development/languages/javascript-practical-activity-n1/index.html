@@ -12,22 +12,21 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
 	<!-- This site is optimized with the Yoast SEO plugin v16.8 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>03. JavaScript: browser entry point | Thomas VEILLARD</title>
-	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">
+	<title>09. JavaScript: practical activity n°1 | Thomas VEILLARD</title>
+	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/">
 	<meta property="og:locale" content="fr_FR">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="03. JavaScript: browser entry point | Thomas VEILLARD">
-	<meta property="og:description" content="This post supposes you already are familiar with another language, such as Java, Python or whatever. So it will focus on JavaScript syntax and specificities. This is a frontend module, so we will run our code in the browser. We will rely on ES6 (aka. ECMAScript 2015), which is well supported by browsers now. The &hellip; Continuer la lecture de 03. JavaScript: browser entry point">
-	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">
+	<meta property="og:title" content="09. JavaScript: practical activity n°1 | Thomas VEILLARD">
+	<meta property="og:description" content="Exercise 1. Implement sum(&#8230;terms) Implement a sum function that accepts any count of numerical arguments and return the sum. It raises a custom error in the absence of any argument. Exercise 2. Implement filter(array, predicate) Implement a filter(array, predicate) function that returns a new array only containing items from array for which predicate(item) is true. &hellip; Continuer la lecture de 09. JavaScript: practical activity n°1">
+	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
-	<meta property="article:published_time" content="2021-02-05T10:03:39+00:00">
-	<meta property="article:modified_time" content="2021-07-18T12:02:40+00:00">
-	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png">
+	<meta property="article:published_time" content="2021-02-05T10:03:45+00:00">
+	<meta property="article:modified_time" content="2021-07-30T10:50:32+00:00">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture est.">
-	<meta name="twitter:data2" content="3 minutes">
+	<meta name="twitter:data2" content="4 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -43,43 +42,31 @@
 	            "inLanguage": "fr-FR"
 	        },
 	        {
-	            "@type": "ImageObject",
-	            "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#primaryimage",
-	            "inLanguage": "fr-FR",
-	            "url": "https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png",
-	            "contentUrl": "https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png",
-	            "width": 711,
-	            "height": 329
-	        },
-	        {
 	            "@type": "WebPage",
-	            "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#webpage",
-	            "url": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/",
-	            "name": "03. JavaScript: browser entry point | Thomas VEILLARD",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/#webpage",
+	            "url": "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/",
+	            "name": "09. JavaScript: practical activity n°1 | Thomas VEILLARD",
 	            "isPartOf": {
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
-	            "primaryImageOfPage": {
-	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#primaryimage"
-	            },
-	            "datePublished": "2021-02-05T10:03:39+00:00",
-	            "dateModified": "2021-07-18T12:02:40+00:00",
+	            "datePublished": "2021-02-05T10:03:45+00:00",
+	            "dateModified": "2021-07-30T10:50:32+00:00",
 	            "breadcrumb": {
-	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#breadcrumb"
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/#breadcrumb"
 	            },
 	            "inLanguage": "fr-FR",
 	            "potentialAction": [
 	                {
 	                    "@type": "ReadAction",
 	                    "target": [
-	                        "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/"
+	                        "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/"
 	                    ]
 	                }
 	            ]
 	        },
 	        {
 	            "@type": "BreadcrumbList",
-	            "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#breadcrumb",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/#breadcrumb",
 	            "itemListElement": [
 	                {
 	                    "@type": "ListItem",
@@ -90,33 +77,29 @@
 	                {
 	                    "@type": "ListItem",
 	                    "position": 2,
-	                    "name": "03. JavaScript: browser entry point"
+	                    "name": "09. JavaScript: practical activity n°1"
 	                }
 	            ]
 	        },
 	        {
 	            "@type": "Article",
-	            "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#article",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/#article",
 	            "isPartOf": {
-	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#webpage"
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/#webpage"
 	            },
 	            "author": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
-	            "headline": "03. JavaScript: browser entry point",
-	            "datePublished": "2021-02-05T10:03:39+00:00",
-	            "dateModified": "2021-07-18T12:02:40+00:00",
+	            "headline": "09. JavaScript: practical activity n°1",
+	            "datePublished": "2021-02-05T10:03:45+00:00",
+	            "dateModified": "2021-07-30T10:50:32+00:00",
 	            "mainEntityOfPage": {
-	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#webpage"
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/#webpage"
 	            },
-	            "wordCount": 268,
+	            "wordCount": 548,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
-	            "image": {
-	                "@id": "https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/#primaryimage"
-	            },
-	            "thumbnailUrl": "https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png",
 	            "articleSection": [
 	                "02. Languages",
 	                "Modern web development"
@@ -170,13 +153,13 @@
 <script src="https://thomas-veillard.fr/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
 <script src="https://thomas-veillard.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
 <link rel="https://api.w.org/" href="https://thomas-veillard.fr/wp-json/">
-<link rel="alternate" type="application/json" href="https://thomas-veillard.fr/wp-json/wp/v2/posts/2294">
+<link rel="alternate" type="application/json" href="https://thomas-veillard.fr/wp-json/wp/v2/posts/2775">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thomas-veillard.fr/xmlrpc.php?rsd">
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://thomas-veillard.fr/wp-includes/wlwmanifest.xml"> 
 <meta name="generator" content="WordPress 5.7.2">
-<link rel="shortlink" href="https://thomas-veillard.fr/?p=2294">
-<link rel="alternate" type="application/json+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2Flanguages%2F8-fast-tour-of-javascript-setup%2F">
-<link rel="alternate" type="text/xml+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2Flanguages%2F8-fast-tour-of-javascript-setup%2F&#038;format=xml">
+<link rel="shortlink" href="https://thomas-veillard.fr/?p=2775">
+<link rel="alternate" type="application/json+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2Flanguages%2Fjavascript-practical-activity-n1%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2Flanguages%2Fjavascript-practical-activity-n1%2F&#038;format=xml">
 		<style id="wp-custom-css">.entry-title {
 	font-size: 1.6em !important;
 	text-align: left;
@@ -310,7 +293,7 @@ table {
 }</style>
 		</head>
 
-<body class="post-template-default single single-post postid-2294 single-format-standard wp-embed-responsive">
+<body class="post-template-default single single-post postid-2775 single-format-standard wp-embed-responsive">
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content">Aller au contenu</a>
 
@@ -358,30 +341,22 @@ table {
 		<main id="main" class="site-main" role="main">
 
 		
-<article id="post-2294" class="post-2294 post type-post status-publish format-standard hentry category-languages category-front-end-web-development">
+<article id="post-2775" class="post-2775 post type-post status-publish format-standard hentry category-languages category-front-end-web-development">
 	
 	
 	<header class="entry-header">
-		<h1 class="entry-title">JavaScript: browser entry point</h1>	</header><!-- .entry-header -->
+		<h1 class="entry-title">JavaScript: practical activity n°1</h1>	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		
-<p>This post supposes you already are familiar with another language, such as Java, Python or whatever. So it will focus on JavaScript syntax and specificities.</p>
+<h4>Exercise 1. Implement sum(&#8230;terms)</h4>
 
 
 
-<p>This is a frontend module, so we will run our code in the browser. We will rely on ES6 (aka. ECMAScript 2015), which is well supported by browsers now.</p>
+<p>Implement a <code>sum</code> function that accepts any count of numerical arguments and return the sum. It raises a custom error in the absence of any argument.</p>
 
 
-
-<h4>The entry point</h4>
-
-
-
-<p>The browser always starts by loading an HTML file. This one may include assets such as a JavaScript script. So, let’s create 2 files: <code>index.html</code> and <code>index.js</code>. </p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><style>.wp-block-code {
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><style>.wp-block-code {
 	border: 0;
 	padding: 0;
 }
@@ -457,78 +432,143 @@ table {
 	user-select: none;
 	white-space: nowrap;
 	width: 1%;
-}</style><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
-<span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JS entry point<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
-
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// index.js</span>
-<span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'JS initialized successfully'</span>)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</style><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(sum()) <span class="hljs-comment">// throws Error('At least one number is expected')</span>
+<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>)) <span class="hljs-comment">// prints 1</span>
+<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints 6</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>We use the newer ES6 modules (see the <code>type="module"</code> attribute on script tag). This way, <code>index.js</code> may import dependencies via the <code>import ... from ...</code> syntax we will discuss later.</p>
+<h4>Exercise 2. Implement filter(array, predicate)</h4>
 
 
 
-<p>The drawback of this approach is you cannot open <code>index.html</code> directly from your filesystem anymore, because ES6 modules must be served from an HTTP server.</p>
+<p>Implement a <code>filter(array, predicate)</code> function that returns a new array only containing items from <code>array</code> for which <code>predicate(item)</code> is true. The original <code>array</code> should not be mutated (no side effect allowed).</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-keyword">const</span> filteredArray = filter(array, item =&gt; item &gt; <span class="hljs-number">2</span>) <span class="hljs-comment">// [3, 4 5]</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>After you implemented it, take a look to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noreferrer noopener">Array.filter</a>.</p>
 
 
 
-<p>If it is not yet done, you should install <a href="https://nodejs.org/en/download/" target="_blank" rel="noreferrer noopener">node.js</a>. Then, open a terminal inside the folder containing <code>index.html</code> and <code>index.js</code>. This following command will start a local HTTP server reachable at <code>http://127.0.0.1:8080</code>.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># serve up the current directory </span>
-$ npx http-server -a <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>
-Starting up http-server, serving ./
-Available on:
-  http:<span class="hljs-comment">//127.0.0.1:8080</span>
-Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="711" height="329" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png" alt="" class="wp-image-2308" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png 711w, https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving-300x139.png 300w" sizes="(max-width: 711px) 100vw, 711px"><figcaption>HTML &amp; JavaScript are served by http-server on port 8080. If everything works fine, a message should be prompted.</figcaption></figure>
+<h4>Excercise 3. Implement map(array, transform)</h4>
 
 
 
-<h4>The browser console</h4>
+<p>Implement a <code>map(array, transform)</code> function that returns a new array with each <code>item</code> from <code>array</code> replaced by <code>transform(item)</code>. The original <code>array</code> should not be mutated (no side effect allowed).</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-keyword">const</span> doubled = map(array, item =&gt; item * <span class="hljs-number">2</span>) /: [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>]</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>After you implemented it, take a look to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noreferrer noopener">Array.map</a>.</p>
 
 
 
-<p>Whatever your browser is, steps to open the JavaScript console look the same:</p>
+<h4>Excercise 4. Basic CSV parsing into literal objects</h4>
+
+
+
+<p>I share with you a simplified CSV dump of Apache contributors (<a href="http://flossdata.syr.edu/data/apache/2016/2016-May/" target="_blank" rel="noreferrer noopener">original source</a>). Because of the size of the file, you cannot simply inline it into your JavaScript code. Instead, I provide you a snippet that pulls the file from my website.</p>
+
+
+
+<p>From your perspective, the entry point is the <code>processData</code> function.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// This code downloads a CSV file from my website, reads it as text</span>
+<span class="hljs-comment">// and calls `processData(csvText)` on success. Do not worry about</span>
+<span class="hljs-comment">// the details about `fetch` for now, as we will cover them later.</span>
+fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2021/07/apache-contributors-projects.csv'</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.text())
+  .then(processData)
+  .catch(<span class="hljs-built_in">console</span>.log)
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processData</span> (<span class="hljs-params">csvText</span>) </span>{
+  <span class="hljs-comment">// write your code here</span>
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>For this question, parse <code>csvText</code> as an array of literal objects. Each object represents a contribution from someone to an Apache project. Therefore, each object should have the following properties:</p>
 
 
 
 <ul>
-<li>right click anywhere on the page</li>
-<li>find a menu entry like &lsquo;inspect element&rsquo;</li>
-<li>go on the &lsquo;console tab&rsquo;.</li>
+<li>
+<strong>username</strong> of the contributor, originally called <code>svn_id</code> in the CSV ;</li>
+<li>
+<strong>realName</strong> of the contributor, originally called <code>real_name</code> in the CSV ;</li>
+<li>
+<strong>website</strong> of the contributor, which should be <code>null</code> if empty in CSV ;</li>
+<li>
+<strong>projectName</strong>, originally called <code>project_name</code> in the CSV ;</li>
 </ul>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="1115" height="668" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/open-browser-console.gif" alt="" class="wp-image-2311"><figcaption>How to open the browser console.</figcaption></figure>
+<p>You must provide 2 implementations of the parsing function:</p>
 
 
 
-<p>When developing JavaScript apps, <strong>you should always keep an eye on the console</strong>, where outputs and errors are revealed.</p>
+<ol>
+<li>
+<strong>Imperative-style programming</strong>: you can use variables (<code>let</code>, <code>var</code>&#8230;) and <code>control flows</code> such (<code>white</code>, <code>for</code>, <code>if</code>&#8230;).</li>
+<li>
+<strong>Functional-style programming</strong>: you can only use constants (no <code>let</code> or <code>var</code>) and are not allowed to mutate anything (ex <code>array[0] = 0</code> is prohibited). Methods such as <code>Array.map</code> are strongly encouraged.</li>
+</ol>
 
 
 
-<p>A <code>console</code> object is also exposed inside your JavaScript context. It is useful for basic debugging and for logging.</p>
+<h4>Excercise 5. Computes stats about contributions</h4>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript shcb-code-table shcb-line-numbers"><span class="shcb-loc"><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a log entry reported in browser console'</span>)
-</span></span><span class="shcb-loc"><span><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'This is a warning reported with an orange background'</span>)
-</span></span><span class="shcb-loc"><span><span class="hljs-built_in">console</span>.error(<span class="hljs-string">'This time, you see a red background'</span>)
-</span></span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+<p>Compute the following metrics. Use of the functional programming paradigm is encouraged.</p>
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="749" height="204" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png" alt="" class="wp-image-2318" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png 749w, https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels-300x82.png 300w" sizes="(max-width: 749px) 100vw, 749px"><figcaption>Output of the previous script, which sends messages to the console.</figcaption></figure>
+
+<p><strong>Tips</strong>: There is not any built-in functions on <code>Array</code> to easily take unique values or grouping by criterion. For such processing, I recommend writing helper functions.</p>
+
+
+
+<p><strong>Tips</strong>: Try not to repeat yourself (DRY principal).  Some intermediate computations for a metric could be reused for another one. Also, some logic patterns may be factorised as functions (cf. previous tips).</p>
+
+
+
+<ol>
+<li>
+<strong>The first project&rsquo;s name in ascending alphabetic order</strong>. Ensure you compare in a case-insensitive manner and to handle diacritics correctly.</li>
+<li>
+<strong>The number of unique contributors</strong>. Unicity may be implemented with <code>array.filter()</code>.</li>
+<li>
+<strong>The average length of contributors&rsquo; name</strong>. Of course, you have to work on unique names. Remember the DRY principal.</li>
+<li>
+<strong>The most active contributor&rsquo;s name</strong> (by number of projects). This is like grouping contribution by contributors&rsquo; name, sorting by contribution count and eventually taking the first&#8230;</li>
+<li>
+<strong>TOP 10 of the most contributed projects</strong>. There is again a groupby under the hook. Let&rsquo;s DRY!</li>
+</ol>
+
+
+
+<h4>Bonus tips</h4>
+
+
+
+<p>The previous exercise promoted the writing of helpers like <code>uniq()</code> or <code>groupBy()</code>. Popular libraries such as <a href="https://lodash.com/" target="_blank" rel="noreferrer noopener">lodash</a> implement them already. </p>
+
+
+
+<p>Before using them in your frontend projects, think about the weight penalty. At the time of writing, minified size of lodash is about 72kB (to distribute over the network and to execute each time the JS runs in the browser). </p>
+
+
+
+<p>In a general manner, lodash&rsquo;s functions cover edge cases that you will probably never meet in your project (which implies extra code). Also, some of them are now obsolete for the latest version of JavaScript.</p>
+
+
+
+<p>If the topic interests you, there is <a href="https://youmightnotneed.com/lodash/" target="_blank" rel="noreferrer noopener">good literature</a>.</p>
 	</div>
 <!-- .entry-content -->
 
@@ -537,14 +577,14 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 	<footer class="entry-footer">
 		<span class="cat-links"><span class="screen-reader-text">Catégories </span><a href="https://thomas-veillard.fr/category/front-end-web-development/languages/" rel="category tag">02. Languages</a>, <a href="https://thomas-veillard.fr/category/front-end-web-development/" rel="category tag">Modern web development</a></span>			</footer><!-- .entry-footer -->
 
-</article><!-- #post-2294 -->
+</article><!-- #post-2775 -->
 
 
 	<nav class="navigation post-navigation" role="navigation" aria-label="Publications">
 		<h2 class="screen-reader-text">Navigation de l’article</h2>
 		<div class="nav-links">
-<div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">02. Environment (tools, languages, frameworks)</span></a></div>
-<div class="nav-next"><a href="https://thomas-veillard.fr/front-end-web-development/languages/fast-tour-of-javascript-variables/" rel="next"><span class="meta-nav" aria-hidden="true">Suivant</span> <span class="screen-reader-text">Article suivant&nbsp;:</span> <span class="post-title">04. JavaScript: variables and types</span></a></div>
+<div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/languages/avascript-higher-order-functions/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">08. JavaScript: higher order functions</span></a></div>
+<div class="nav-next"><a href="https://thomas-veillard.fr/front-end-web-development/practical-works/setup-your-practical-work-environment/" rel="next"><span class="meta-nav" aria-hidden="true">Suivant</span> <span class="screen-reader-text">Article suivant&nbsp;:</span> <span class="post-title">1. Setup your practical environment</span></a></div>
 </div>
 	</nav>
 		</main><!-- .site-main -->
