@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/languages/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Fri, 30 Jul 2021 10:50:32 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 08 Aug 2021 17:37:55 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,464 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.7.2</generator>
 	<item>
+		<title>10. JavaScript: Classes</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/languages/javascript-classes/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2021 10:03:46 +0000</pubDate>
+				<category><![CDATA[02. Languages]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2849</guid>
+
+					<description><![CDATA[<p>The class keyword was introduced in ES6 (2015 revision of the ESMAScript Standard). It is a syntactical sugar to easily create classes. Despite JavaScript is an Object-Oriented language from the beginning, the old way to declare a class is a bit tricky. That the reason this guide focuses on ES6+. We will discuss the older &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-classes/" class="more-link">Continuer la lecture de <span class="screen-reader-text">10. JavaScript: Classes</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-classes/">10. JavaScript: Classes</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>The <code>class</code> keyword was introduced in ES6 (2015 revision of the ESMAScript Standard). It is a syntactical sugar to easily create classes.</p>
+
+
+
+<p>Despite JavaScript is an <strong>Object-Oriented</strong> language from the beginning, the old way to declare a class is a bit tricky. That the reason this guide focuses on ES6+. We will discuss the older browser compatibility in a future lesson.</p>
+
+
+
+<p>As expressed in the <a href="https://thomas-veillard.fr/front-end-web-development/introduction/introduction/">Introduction&rsquo;s Prerequires</a>, I assume you are familiar with the object-oriented paradigm and will focus on the implementation details for JavaScript.</p>
+
+
+
+<h4>Class constructor</h4>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{
+    <span class="hljs-keyword">constructor</span>(id, startDate, endDate, title) {
+        <span class="hljs-keyword">this</span>.id = id
+        <span class="hljs-keyword">this</span>.startDate = startDate
+        <span class="hljs-keyword">this</span>.endDate = endDate
+        <span class="hljs-keyword">this</span>.title = title
+    }
+}
+
+<span class="hljs-keyword">const</span> start = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
+<span class="hljs-keyword">const</span> end = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T09:30:00'</span>)
+<span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>, start, end, <span class="hljs-string">'Prepare lessons'</span>)</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The constructor is a special function called <code>constructor</code> inside the class definition. It is unique and optional.</p>
+
+
+
+<p>It is called every time a new instance (ex.  <code>calendarEvent</code>) is created via the <code>new</code> operator. Its responsibility is to initialise the instance (ex. here, it sets <code>id</code>, <code>startDate</code>, <code>endDate</code> and <code>title</code> instance properties).</p>
+
+
+
+<h4>Instance properties</h4>
+
+
+
+<p>In the previous example, a few properties are initialised in the constructor. Those properties are publicly accessible using the same syntax as literal objects.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'Prepare lessons'</span>)
+
+<span class="hljs-comment">// assignation to an instance property</span>
+calendarEvent.startDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
+
+<span class="hljs-comment">// both accesses `startDate` and assigns `endDate`</span>
+calendarEvent.endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(calendarEvent.startDate.getTime() + <span class="hljs-number">1</span> * <span class="hljs-number">3600</span> * <span class="hljs-number">1000</span>)
+
+<span class="hljs-comment">// dynamically access a property by name</span>
+<span class="hljs-keyword">const</span> propertyName = <span class="hljs-built_in">Math</span>.random() &lt; <span class="hljs-number">0.5</span> ? <span class="hljs-string">'startDate'</span> : <span class="hljs-string">'endDate'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Event <span class="hljs-subst">${propertyName}</span> is <span class="hljs-subst">${calendarEvent[propertyName].toISOString()}</span>`</span>)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Due to the dynamic nature of JavaScript, the instance&rsquo;s property list is not frozen. You can add or delete any keys at any moment.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'Prepare lessons'</span>)
+
+<span class="hljs-comment">// notYetExistingAttribute property is created on demand</span>
+calendarEvent.notYetExistingAttribute = <span class="hljs-string">'now, it exists'</span>
+
+<span class="hljs-comment">// non existing attributes are just evaluated as `undefined`</span>
+<span class="hljs-built_in">console</span>.log(calendarEvent.stillNotYetExists)
+
+<span class="hljs-comment">// this makes JavaScript prone to typo-errors and may lead to silent bugs</span>
+<span class="hljs-built_in">console</span>.log(calendarEvent.tiitle) <span class="hljs-comment">// `undefined`, yes it is...</span>
+
+<span class="hljs-comment">// this delete a key</span>
+<span class="hljs-keyword">delete</span> calendarEvent.notYetExistingAttribute</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Tips</strong>: typo errors are difficult to detect. If your IDE implements static code analysis (such as Intellisense for VSCode), it may provide powerful autocompletion. That reduces the risk of a typo error at the time of writing the code.</p>
+
+
+
+<p><strong>Opinion</strong>: I switched all my projects from JavaScript to <strong>TypeScript</strong> to early catch those bugs. TypeScript is a superset of JavaScript with static type checks and a powerful compiler. The TypeScript ecosystem is a great foundation for writing <strong>maintainable</strong> JavaScript. Of course, learning curse from JavaScript to TypeScript is smooth. 🎉 Also, I grant bonus points for students using it. 🎉</p>
+
+
+
+<h4>Instance methods</h4>
+
+
+
+<p>Methods are functions declared inside the class and are executed in the context of an instance. The instance on which the method is currently called is referenced as <code>this</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{
+    <span class="hljs-keyword">constructor</span>(id, startDate, endDate, title) {
+        <span class="hljs-keyword">this</span>.id = id
+        <span class="hljs-keyword">this</span>.startDate = startDate
+        <span class="hljs-keyword">this</span>.endDate = endDate
+        <span class="hljs-keyword">this</span>.title = title
+    }
+
+    getDuration(unit) {
+        <span class="hljs-keyword">const</span> durationMs = <span class="hljs-keyword">this</span>.endDate.getTime() - <span class="hljs-keyword">this</span>.startDate.getTime()
+
+        <span class="hljs-keyword">switch</span> (unit) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'ms'</span>: <span class="hljs-keyword">return</span> durationMs
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'s'</span>: <span class="hljs-keyword">return</span> durationMs / <span class="hljs-number">1000</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'min'</span>: <span class="hljs-keyword">return</span> durationMs / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'h'</span>: <span class="hljs-keyword">return</span> durationMs / <span class="hljs-number">1000</span> / <span class="hljs-number">3600</span>
+            <span class="hljs-attr">default</span>: <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Unsupported unit <span class="hljs-subst">${unit}</span>`</span>)
+        }
+    }
+}
+
+<span class="hljs-keyword">const</span> start = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
+<span class="hljs-keyword">const</span> end = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T09:30:00'</span>)
+<span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>, start, end, <span class="hljs-string">'Prepare lessons'</span>)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Event's duration in hours:"</span>, calendarEvent.getDuration(<span class="hljs-string">'h'</span>))</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Static properties</h4>
+
+
+
+<p>An instance property is accessible on the instance itself. At the opposite, a class property is accessible from the class.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// accesses the instance attribute</span>
+<span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-comment">/* ... */</span>).instanceAttribute
+
+<span class="hljs-comment">// accesses the class attribute</span>
+CalendarEvent.classAttribute</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Tips: </strong>I recommend to initialise class attributes immediately after the class definition.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{ <span class="hljs-comment">/* */</span> }
+CalendarEvent.lastGeneratedId = <span class="hljs-number">0</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Despite the fact that functions are accessible and callable before the declaration, class declaration must be run before being referenced anywhere.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// Throws Uncaught ReferenceError: CalendarEvent is not defined</span>
+CalendarEvent.lastGeneratedId = <span class="hljs-number">0</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{ <span class="hljs-comment">/* */</span> }</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Static methods</h4>
+
+
+
+<p>Static methods are called against the class instead an instance. They are declared with the <code>static</code> modifier.</p>
+
+
+
+<p>Inside the static method&rsquo;s body, the current class is referenced as <code>this</code>. Use it to call another static method from that class or even the constructor.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{
+  <span class="hljs-keyword">constructor</span> (id, startDate, endDate, title) {
+    <span class="hljs-keyword">this</span>.id = id
+    <span class="hljs-keyword">this</span>.startDate = startDate
+    <span class="hljs-keyword">this</span>.endDate = endDate
+    <span class="hljs-keyword">this</span>.title = title
+  }
+
+  <span class="hljs-comment">/**
+   * Parses the ical VEVENT definition and returns a new instance.
+   * For now, it returns a mock CalendarEvent instance for demonstration purpose.
+   */</span>
+  <span class="hljs-keyword">static</span> fromIcalEvent (ical) {
+    <span class="hljs-comment">// In the context of a static method, `this` references the class itself.</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span> === CalendarEvent) <span class="hljs-comment">// true</span>
+
+    <span class="hljs-comment">// `this` can be used as constructor here</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">this</span>(<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>)
+  }
+}
+
+<span class="hljs-keyword">const</span> icalText = <span class="hljs-string">`
+BEGIN:VEVENT
+DTSTAMP:19960704T120000Z
+UID:uid1@example.com
+ORGANIZER:mailto:jsmith@example.com
+DTSTART:19960918T143000Z
+DTEND:19960920T220000Z
+STATUS:CONFIRMED
+SUMMARY:Prepare teaching
+DESCRIPTION:Write lessons and publish them online.
+END:VEVENT
+`</span>.trim()
+
+<span class="hljs-keyword">const</span> calendarEvent = CalendarEvent.fromIcalEvent(icalText)</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Side note:</strong> in JavaScript, a static method is like a static attribute of type &lsquo;function&rsquo;. Even the <code>this</code> behaviour is the same.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// alternative way to declare a static method</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{ <span class="hljs-comment">/** **/</span> }
+CalendarEvent.fromIcalEvent = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">ical</span>) </span>{
+  <span class="hljs-comment">// In the context of a static method, `this` references the class itself.</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span> === CalendarEvent) <span class="hljs-comment">// true</span>
+
+  <span class="hljs-comment">// `this` can be used as constructor here</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">this</span>(<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>)
+}
+
+<span class="hljs-built_in">console</span>.log(CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>))</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Inheritance</h4>
+
+
+
+<p>Let&rsquo;s build a special kind of <code>CalendarEvent</code> I will call <code>TeachingEvent</code>. This one will represent a teaching lesson with a potential graduation and additional teaching resources (ex. lecture slides).</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{
+  <span class="hljs-keyword">constructor</span> (id, startDate, endDate, title) {
+    <span class="hljs-keyword">this</span>.id = id
+    <span class="hljs-keyword">this</span>.startDate = startDate
+    <span class="hljs-keyword">this</span>.endDate = endDate
+    <span class="hljs-keyword">this</span>.title = title
+  }
+
+  <span class="hljs-keyword">static</span> fromIcalEvent (ical) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span> <span class="hljs-comment">// body cleared in example for readability</span>
+  }
+
+  getDurationInHours () {
+    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.endDate.getTime() - <span class="hljs-keyword">this</span>.startDate.getTime()) / <span class="hljs-number">1000</span> / <span class="hljs-number">3600</span>
+  }
+}
+
+<span class="hljs-comment">/**
+* TeachingEvent represents a teaching lesson.
+* It extends CalendarEvent (has a id, startDate, endDate and title).
+* In addition, it may be graduated (hasAssessment = true) or not (hasAssessment = false).
+* Additional resources may be available online on Moodle (moddleUrl = 'https://.../').
+*/</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TeachingEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CalendarEvent</span> </span>{
+  <span class="hljs-keyword">constructor</span> (id, startDate, endDate, title, hasAssessment, moodleUrl) {
+    <span class="hljs-comment">// call the parent constructor. super() call must be the first instruction.</span>
+    <span class="hljs-keyword">super</span>(id, startDate, endDate, title)
+
+    <span class="hljs-comment">// assigns the new attributes not handled in parent class</span>
+    <span class="hljs-keyword">this</span>.hasAssessment = hasAssessment
+    <span class="hljs-keyword">this</span>.moodleUrl = moodleUrl
+  }
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Let&rsquo;s analyse the previous code snippet:</p>
+
+
+
+<ul><li>You just need the <code>extends</code> keyword inside child class declaration.</li><li>Parent&rsquo;s constructor and methods are available through the <code>super</code> keyword.</li><li>The child constructor must pass arguments to the parent one (too verbose ?).</li></ul>
+
+
+
+<p>Now, let&rsquo;s see what has been inherited:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> start = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
+<span class="hljs-keyword">const</span> end = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T09:30:00'</span>)
+<span class="hljs-keyword">const</span> teachingEvent = <span class="hljs-keyword">new</span> TeachingEvent(<span class="hljs-number">1</span>, start, end, <span class="hljs-string">'How JS classes works'</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">null</span>)
+
+<span class="hljs-comment">// instance properties are inherited</span>
+<span class="hljs-built_in">console</span>.log(teachingEvent.id)
+
+<span class="hljs-comment">// instance methods are inherited</span>
+<span class="hljs-built_in">console</span>.log(teachingEvent.getDurationInHours())
+
+<span class="hljs-comment">// static methods are inherited as well.</span>
+<span class="hljs-comment">// `this` in method's body references the class used to invoke it.</span>
+TeachingEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hljs-comment">// outputs TeachingEvent</span>
+CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hljs-comment">// outputs CalendarEvent</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Tips: </strong> constructors with a lot of arguments may become difficult to invoke or extend. You run at risk of missing a parameter, confusing the order, etc. In such cases, literal objects and object destructuring are profitable. That is particalry true if many properties are nullable, optional or with default values.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{
+  <span class="hljs-keyword">constructor</span> ({ id, startDate, endDate, title }) {
+    <span class="hljs-keyword">this</span>.id = id
+    <span class="hljs-keyword">this</span>.startDate = startDate
+    <span class="hljs-keyword">this</span>.endDate = endDate
+    <span class="hljs-keyword">this</span>.title = title || <span class="hljs-literal">null</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TeachingEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CalendarEvent</span> </span>{
+  <span class="hljs-keyword">constructor</span> (params) {
+    <span class="hljs-keyword">super</span>(params)
+    <span class="hljs-keyword">this</span>.hasAssessment = params.hasAssessment ?? <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">this</span>.moodleUrl = params.moodleUrl || <span class="hljs-literal">null</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> startDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
+<span class="hljs-keyword">const</span> endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T09:30:00'</span>)
+
+<span class="hljs-comment">// title, hasAssessment, moodleUrl have default values, so may be omitted.</span>
+<span class="hljs-comment">// Properties are well named, so there is no risk of ordering issues.</span>
+<span class="hljs-comment">// Later, it is simpler to drop or add a parameter to the constructor.</span>
+<span class="hljs-keyword">const</span> teachingEvent = <span class="hljs-keyword">new</span> TeachingEvent({ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, startDate, endDate })</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Ascessors (getters &amp; setters)</h4>
+
+
+
+<h5>Please, do not write Java-style ascessors 🙏</h5>
+
+
+
+<p>The previous year, some students systematically added <code>getX</code> and <code>setX</code> methods to every class they built. It may make sense in other languages, such as Java, but not in JavaScript. Getters and setters are defined another way&#8230;</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// DON'T: those are Java-style ascessors</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{
+  <span class="hljs-comment">/** ... */</span>
+
+  getId () {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.id
+  }
+
+  setId (id) {
+    <span class="hljs-keyword">this</span>.id = id
+  }
+
+  getStartDate () {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.startDate
+  }
+
+  setStateDate (startDate) {
+    <span class="hljs-keyword">this</span>.startDate = startDate
+  }
+}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Now, let&rsquo;s see why this is not adapted to JavaScript:</p>
+
+
+
+<ol><li>JavaScript has a special syntax for writing assessors.</li><li>Outside the class, those assessors looks like normal properties. So, you can replace a property by a read-only getter without syntaxically break the code.</li><li>It unnecessary makes your code more verbose, which imply performance issues. Remember you code should be downloaded and executed by the browser everytime a page is loaded.</li><li>(<em>This assertion will become obselete in future version of JS</em>). Until very recently, there were no concept of <code>private</code> properties. So, the caller was always able to access and mutate the underlying attributes, making the class-encapsulation principal hardly applicable.</li></ol>
+
+
+
+<h5>Ascessors example in JavaScript</h5>
+
+
+
+<p>Using ascessors, I changed the <code>CalendarEvent</code> class, so:</p>
+
+
+
+<ul><li>The property <code>id</code> is initialised in the constructor and is publicly readable but not writable. </li><li>A virtual <code>duration</code> property is both publicly writable and writable. In fact, the getter computes duration in milliseconds as <code>endDate</code> &#8211; <code>startDate</code>. The setter mutates <code>endDate</code>.</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{
+  <span class="hljs-keyword">constructor</span> ({ id, startDate, endDate }) {
+    <span class="hljs-comment">// By convention, JS developers know fields with '_' are internal.</span>
+    <span class="hljs-comment">// Starting from ES2021, using a '#' as prefix will really make it private.</span>
+    <span class="hljs-comment">// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields</span>
+    <span class="hljs-keyword">this</span>._id = id
+    <span class="hljs-keyword">this</span>.startDate = startDate
+    <span class="hljs-keyword">this</span>.endDate = endDate
+  }
+
+  <span class="hljs-keyword">get</span> id () {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._id
+  }
+
+  <span class="hljs-comment">/**
+   * Without a setter, calling `calendarEvent.id = 1`  does nothing:
+   * - no change to the instance's properties;
+   * - no warning or error emitted.
+   * 
+   * Not that a getter can be defined without the corresponding setter, and vis-versa.
+   */</span>
+  <span class="hljs-keyword">set</span> id (_) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Cannot set id for CalendarEvent'</span>)
+  }
+
+  <span class="hljs-keyword">get</span> duration () {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.endDate.getTime() - <span class="hljs-keyword">this</span>.startDate.getTime()
+  }
+
+  <span class="hljs-keyword">set</span> duration (duration) {
+    <span class="hljs-keyword">this</span>.endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">this</span>.startDate.getTime() + duration)
+  }
+}</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Then, you can use <code>id</code> and <code>duration</code> virtual attributes with a convenient syntax.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> startDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
+<span class="hljs-keyword">const</span> endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T09:30:00'</span>)
+<span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent({ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, startDate, endDate })
+
+<span class="hljs-built_in">console</span>.log(calendarEvent.id) <span class="hljs-comment">// prints 1</span>
+calendarEvent.id = <span class="hljs-number">2</span> <span class="hljs-comment">// throws "Cannot set id for CalendarEvent"</span>
+
+<span class="hljs-built_in">console</span>.log(calendarEvent.duration) <span class="hljs-comment">// prints 5400000 ms (1.5h * 3600 s/h * 1000ms/s)</span>
+calendarEvent.duration -= <span class="hljs-number">30</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span> <span class="hljs-comment">// substract 30 minutes to duration.</span>
+<span class="hljs-built_in">console</span>.log(calendarEvent.endDate) <span class="hljs-comment">// prints '2021-07-31T09:00:00'</span>
+
+calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment">// still possible, but a JS developer knows it is ugly</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Bonus: any function is also a class&#8230;</h4>
+
+
+
+<p>For your personal information, classes were added to the language in 2015 (revision ES6, aka ES2015). But JavaScript is an Object-Oriented language from the beginning&#8230; That is strange, isn&rsquo;t it ?</p>
+
+
+
+<p>Without going deeply into that topic, just look at the following example:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// My function name starts with a capital letter only</span>
+<span class="hljs-comment">// because it is semantically a class. More exactly,</span>
+<span class="hljs-comment">// it is the constructor of the class.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">CalendarEvent</span> (<span class="hljs-params">id</span>) </span>{
+  <span class="hljs-keyword">this</span>.id = id
+}
+
+<span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>)
+<span class="hljs-built_in">console</span>.log(calendarEvent.id) <span class="hljs-comment">// prints 1</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>For the rest, please refer yourself to that post: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noreferrer noopener">JS, a prototype-based language?</a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-classes/">10. JavaScript: Classes</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>09. JavaScript: practical activity n°1</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/</link>
 		
@@ -40,9 +498,9 @@
 <p>Implement a <code>sum</code> function that accepts any count of numerical arguments and return the sum. It raises a custom error in the absence of any argument.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(sum()) <span class="hljs-comment">// throws Error('At least one number is expected')</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(sum()) <span class="hljs-comment">// throws Error('At least one number is expected')</span>
 <span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>)) <span class="hljs-comment">// prints 1</span>
-<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints 6</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints 6</span></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Exercise 2. Implement filter(array, predicate)</h4>
@@ -52,8 +510,8 @@
 <p>Implement a <code>filter(array, predicate)</code> function that returns a new array only containing items from <code>array</code> for which <code>predicate(item)</code> is true. The original <code>array</code> should not be mutated (no side effect allowed).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-<span class="hljs-keyword">const</span> filteredArray = filter(array, item =&gt; item &gt; <span class="hljs-number">2</span>) <span class="hljs-comment">// [3, 4 5]</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-keyword">const</span> filteredArray = filter(array, item =&gt; item &gt; <span class="hljs-number">2</span>) <span class="hljs-comment">// [3, 4 5]</span></code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>After you implemented it, take a look to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noreferrer noopener">Array.filter</a>.</p>
@@ -67,8 +525,8 @@
 <p>Implement a <code>map(array, transform)</code> function that returns a new array with each <code>item</code> from <code>array</code> replaced by <code>transform(item)</code>. The original <code>array</code> should not be mutated (no side effect allowed).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-<span class="hljs-keyword">const</span> doubled = map(array, item =&gt; item * <span class="hljs-number">2</span>) /: [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>]</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-keyword">const</span> doubled = map(array, item =&gt; item * <span class="hljs-number">2</span>) /: [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>]</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>After you implemented it, take a look to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noreferrer noopener">Array.map</a>.</p>
@@ -86,7 +544,7 @@
 <p>From your perspective, the entry point is the <code>processData</code> function.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// This code downloads a CSV file from my website, reads it as text</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// This code downloads a CSV file from my website, reads it as text</span>
 <span class="hljs-comment">// and calls `processData(csvText)` on success. Do not worry about</span>
 <span class="hljs-comment">// the details about `fetch` for now, as we will cover them later.</span>
 fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2021/07/apache-contributors-projects.csv'</span>)
@@ -96,7 +554,7 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processData</span> (<span class="hljs-params">csvText</span>) </span>{
   <span class="hljs-comment">// write your code here</span>
-}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>For this question, parse <code>csvText</code> as an array of literal objects. Each object represents a contribution from someone to an Apache project. Therefore, each object should have the following properties:</p>
@@ -175,7 +633,7 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 <p>In the previous post, you noticed we can keep track of a function&rsquo;s reference inside a variable:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// anonymous function assigned to a constant</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// anonymous function assigned to a constant</span>
 <span class="hljs-keyword">const</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
 
 <span class="hljs-comment">// arrow function assigned to a constant</span>
@@ -185,13 +643,13 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 <span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b
 
 <span class="hljs-comment">// using the 'Function' constructor</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Whatever is the way you defined your function, it is always an instance of the <code>Function</code> class. So, functions are objects instances. They can be assigned to variables, passed as arguments, returned as values, mutated&#8230;</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
 
 <span class="hljs-comment">// every function is an instance of the Function class</span>
 <span class="hljs-built_in">console</span>.log(sum <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Function</span>)
@@ -216,7 +674,7 @@ newReference = <span class="hljs-string">'test'</span> <span class="hljs-comment
 newReference.someAttribute = <span class="hljs-literal">true</span>
 
 <span class="hljs-comment">// both `newReference` and `sum` reference the same object</span>
-<span class="hljs-built_in">console</span>.log(sum.someAttribute) <span class="hljs-comment">// prints true</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(sum.someAttribute) <span class="hljs-comment">// prints true</span></code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Higher Order Function</h4>
@@ -242,11 +700,11 @@ newReference.someAttribute = <span class="hljs-literal">true</span>
 <p>For example, you can register a function called when the user clicks on a button.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myButton'</span>)
+<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myButton'</span>)
 
 button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'My button has been clicked 🎉'</span>)
-})</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+})</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <ul><li><strong>Customisers</strong> sightly change the behaviour of generic algorithms.</li></ul>
@@ -260,7 +718,7 @@ button.addEventListener(<span class="hljs-string">'click'</span>, <span class="h
 <p>If <code>compareFunction(a, b)</code> returns a value > than 0, sort <code>b</code> before <code>a</code>.<br>If <code>compareFunction(a, b)</code> returns a value ≤ 0, leave <code>a</code> and <code>b</code> in the same order.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>]
+<pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>]
 
 <span class="hljs-comment">// sorts in numerically ascending order (0, 1, 4, 5)</span>
 array.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compareFunction</span> (<span class="hljs-params">a, b</span>) </span>{
@@ -268,7 +726,7 @@ array.sort(<span class="hljs-function"><span class="hljs-keyword">function</span
 })
 
 <span class="hljs-comment">// sorts in numerically descending order (5, 4, 1, 0)</span>
-array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a)</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a)</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Closures</h4>
@@ -278,7 +736,7 @@ array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =
 <p>Closures makes variables from upper contexts availables into nested functions.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/**
+<pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/**
  * <span class="hljs-doctag">@returns </span>a function incrementing its input by `incrementStep`
  */</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildIncrementer</span> (<span class="hljs-params">incrementStep</span>) </span>{
@@ -294,7 +752,7 @@ array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =
 
 <span class="hljs-built_in">console</span>.log(inc1(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 11</span>
 <span class="hljs-built_in">console</span>.log(inc2(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 12</span>
-<span class="hljs-built_in">console</span>.log(inc2(inc1(<span class="hljs-number">10</span>))) <span class="hljs-comment">// prints 13</span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(inc2(inc1(<span class="hljs-number">10</span>))) <span class="hljs-comment">// prints 13</span></code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p></p>
@@ -325,7 +783,7 @@ array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =
 <p>Consider a simple <code>function</code> that accepts  two terms and sum them. Depending on your use case, you have various syntax available.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// named function</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-26" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// named function</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
 
 <span class="hljs-comment">// anonymous function assigned to a constant</span>
@@ -338,7 +796,7 @@ array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =
 <span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b
 
 <span class="hljs-comment">// using the 'Function' constructor</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>For each of the previous declarations, you can call <code>sum(1, 2)</code> that returns <code>3</code>. However, their behaviours sightly differ as we will see later.</p>
@@ -352,11 +810,11 @@ array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =
 <p>Let&rsquo;s analyse the following named function declaration:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-27" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
  opts.symbol ||= <span class="hljs-string">'€'</span>
  opts.precision ??= <span class="hljs-number">2</span>
  <span class="hljs-keyword">return</span> amount.toFixed(opts.precision) + <span class="hljs-string">' '</span> + opts.symbol
-}</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-27"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>2 named arguments are declared in the parameter list: <code>amount</code> and <code>opts</code>.</p>
@@ -366,10 +824,10 @@ array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =
 <p>In JavaScript, the declared parameters does not have to match those passed at runtime. In other words, those examples do not throw a syntax error:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">formatPrice()
+<pre class="wp-block-code" aria-describedby="shcb-language-28" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">formatPrice()
 formatPrice(<span class="hljs-number">10</span>)
 formatPrice(<span class="hljs-number">10</span>, {})
-formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'not declared'</span>)</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'not declared'</span>)</code></div><small class="shcb-language" id="shcb-language-28"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>When a parameter is missing, it fallbacks in priority to:</p>
@@ -399,13 +857,13 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>Using <code>arguments</code> in function&rsquo;s body requires use of the <code>function</code> keyword for declaration. That is why <code>arguments</code> is not defined inside an arrow function.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withKeyword</span> (<span class="hljs-params"></span>) </span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-29" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withKeyword</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>) <span class="hljs-comment">// OK</span>
 }
 
 <span class="hljs-keyword">const</span> arrowFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>) <span class="hljs-comment">// ReferenceError: arguments is not defined</span>
-}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-29"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h5>The Rest Parameter operator (<code>...</code>)</h5>
@@ -415,19 +873,19 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>Despite the <code>arguments</code> variable is very powerful, it may become error-prone.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction1</span> (<span class="hljs-params"></span>) </span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-30" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction1</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">childFunction</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>).join(<span class="hljs-string">','</span>) }
   <span class="hljs-keyword">return</span> childFunction()
 }
 
-<span class="hljs-built_in">console</span>.log(parentFunction1(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints ''</span></code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(parentFunction1(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints ''</span></code></div><small class="shcb-language" id="shcb-language-30"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction2</span> (<span class="hljs-params"></span>) </span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction2</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">const</span> childFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>).join(<span class="hljs-string">','</span>) }
   <span class="hljs-keyword">return</span> childFunction()
 }
 
-<span class="hljs-built_in">console</span>.log(parentFunction2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints '1,2,3'</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(parentFunction2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints '1,2,3'</span></code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>First of all, <code>arguments</code> is an array-like, but not an array. It supports <code>arguments.length</code> and <code>arguments[index]</code>, but not other array&rsquo;s methods like <code>array.join(separator)</code>. That is why I needed <code>Array.from(arguments)</code> in the previous example.</p>
@@ -445,17 +903,17 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>Hopefully, they are a room for improvement, thanks to the spread operator (<code>...</code>).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction</span> (<span class="hljs-params">...joinables</span>) </span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parentFunction</span> (<span class="hljs-params">...joinables</span>) </span>{
   <span class="hljs-keyword">const</span> childFunction = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-keyword">return</span> joinables.join(<span class="hljs-string">','</span>) }
   <span class="hljs-keyword">return</span> childFunction()
-}</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, if your <code>parentFunction</code> accepted both fixed count of parameters followed by varying length list of parameters, you should work with index offset&#8230; But is it simple with the spread operator.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyOperator</span> (<span class="hljs-params">operator, ...operands</span>) </span>{}
-<span class="hljs-built_in">console</span>.log(applyOperator(<span class="hljs-string">'+'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// may output 6 once implemented</span></code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyOperator</span> (<span class="hljs-params">operator, ...operands</span>) </span>{}
+<span class="hljs-built_in">console</span>.log(applyOperator(<span class="hljs-string">'+'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// may output 6 once implemented</span></code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Return value</h4>
@@ -502,7 +960,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <h4>If &#8230; else if &#8230; else</h4>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> betweenZeroIncAndTenExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>) <span class="hljs-comment">// [0, 10[</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> betweenZeroIncAndTenExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>) <span class="hljs-comment">// [0, 10[</span>
 
 <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>)
@@ -512,7 +970,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>)
 } <span class="hljs-keyword">else</span> {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>)
-}</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <ul><li>Only one of the <code>console.log</code> statements will be executed.</li><li>Only the <code>if </code>block is mandatory. Any count of <code>else if</code> branches are allowed, but the <code>else</code> bloc is unique.</li></ul>
@@ -522,28 +980,28 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>In the current example, curly brackets are optional because each block contains a single statement. That is also true for other control flows.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>)
+<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>)
 <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'3 &lt;= betweenZeroIncAndTenExc &lt; 6'</span>)
 <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc === <span class="hljs-number">7</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc = 7'</span>)
-<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>)</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'8 &lt;= betweenZeroIncAndTenExc &lt; 10'</span>)</code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Tips: never mix block with and without curly brackets inside the same control flow. It makes it harder to read.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// BAD! Never mix block with and without curly inside the same control flow for readability reasons.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// BAD! Never mix block with and without curly inside the same control flow for readability reasons.</span>
 <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">3</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'0 &lt;= betweenZeroIncAndTenExc &lt; 3'</span>)
 <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc &lt; <span class="hljs-number">6</span>) {
   <span class="hljs-keyword">const</span> nPlus1 = betweenZeroIncAndTenExc + <span class="hljs-number">1</span>
   <span class="hljs-built_in">console</span>.log(nPlus1)
-}</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Previous examples only used booleans in conditions, but you could also use any truthy/falsy value:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// 0 is a falsy value</span>
-<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc is not 0'</span>)</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-37" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// 0 is a falsy value</span>
+<span class="hljs-keyword">if</span> (betweenZeroIncAndTenExc) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'betweenZeroIncAndTenExc is not 0'</span>)</code></div><small class="shcb-language" id="shcb-language-37"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Switch case</h4>
@@ -561,7 +1019,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <h5>Example 1: Sometime, a simpler if is better&#8230;</h5>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> betweenZeroIncAndThreeExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>) <span class="hljs-comment">// [0, 3[</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> betweenZeroIncAndThreeExc = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>) <span class="hljs-comment">// [0, 3[</span>
 
 <span class="hljs-comment">// switch-case based condition branches</span>
 <span class="hljs-keyword">switch</span> (betweenZeroIncAndThreeExc) {
@@ -578,7 +1036,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <span class="hljs-comment">// if-elseif-else equivalent</span>
 <span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">0</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 0'</span>)
 <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (betweenZeroIncAndThreeExc === <span class="hljs-number">1</span>) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'is equal to 1'</span>)
-<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>)</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>)</code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>In this example, the switch case statement is more verbose (mainly due to the repeated <code>break</code> instruction). But it is still interesting for readability if you increase the number of cases.</p>
@@ -592,7 +1050,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>Please reconsider the previous example, without the <code>break</code> statements. If a case is matched, all following blocks are executed until a <code>break</code> is executed or the end of control flow is reached.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
+<pre class="wp-block-code" aria-describedby="shcb-language-39" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
 </span></span><span class='shcb-loc'><span>
 </span></span><span class='shcb-loc'><span><span class="hljs-comment">// switch-case based condition branches</span>
 </span></span><span class='shcb-loc'><span><span class="hljs-keyword">switch</span> (zero) {
@@ -610,14 +1068,14 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 </span></span><span class='shcb-loc'><span>}
 </span></span><span class='shcb-loc'><span>
 </span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Is neither equal to 0 nor 1'</span>)
-</span></span></code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-39"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
-<pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">[LOG]: <span class="hljs-string">"is equal to 0"</span> 
+<pre class="wp-block-code" aria-describedby="shcb-language-40" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">[LOG]: <span class="hljs-string">"is equal to 0"</span> 
 [LOG]: <span class="hljs-string">"is equal to 1"</span> 
 [LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> 
 [LOG]: <span class="hljs-string">"is equal to 0"</span> 
 [LOG]: <span class="hljs-string">"is equal to 1"</span> 
-[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> </code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+[LOG]: <span class="hljs-string">"Is neither equal to 0 nor 1"</span> </code></div><small class="shcb-language" id="shcb-language-40"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p> Just removing the <code>break</code> statement fully changed the conditional logic. That is probably the bigger risk of using <code>switch-case</code> if you are not aware of its specifications.</p>
@@ -635,7 +1093,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <h5>Example 3: When to use <code>break</code>, and when not.</h5>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// an HTTP error code is typically a number between 100 and 5xx.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-41" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// an HTTP error code is typically a number between 100 and 5xx.</span>
 <span class="hljs-keyword">const</span> httpErrorCode = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (<span class="hljs-number">550</span> - <span class="hljs-number">100</span>) + <span class="hljs-number">100</span>);
 <span class="hljs-keyword">let</span> httpCodeMessage = <span class="hljs-literal">null</span>;
 
@@ -662,7 +1120,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'403 and 404 errors may occure in normal operations'</span>)
 } <span class="hljs-keyword">else</span> {
     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Unexpected code (cannot occures in normal operation): '</span> + httpErrorCode)
-}</code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-41"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>To conclude, missing a <code>break</code>, both when reading and write the code, is easy. You can mitigate this issue, thanks to a proper indentation and some line breaks (like in the previous example). Most of the time, you probably do not need a switch-case.</p>
@@ -676,7 +1134,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <h3>Loops</h3>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-26" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>]
+<pre class="wp-block-code" aria-describedby="shcb-language-42" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>]
 <span class="hljs-keyword">const</span> object = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">3</span> }
 
 <span class="hljs-comment">// C-style while</span>
@@ -699,7 +1157,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> object) <span class="hljs-built_in">console</span>.log(key) <span class="hljs-comment">// 'a', 'b', 'c'</span>
 
 <span class="hljs-comment">// iterates on values</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> array) <span class="hljs-built_in">console</span>.log(value) <span class="hljs-comment">// 10, 20, 30</span></code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> array) <span class="hljs-built_in">console</span>.log(value) <span class="hljs-comment">// 10, 20, 30</span></code></div><small class="shcb-language" id="shcb-language-42"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Tricks about logical expressions and truthy values</h4>
@@ -717,8 +1175,8 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>Sometimes, you want a <code>boolean</code> instead of a random truthy or falsy value. Think about it like a cast to boolean operation.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-27" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(!!<span class="hljs-string">'input is present'</span>) <span class="hljs-comment">// prints true</span>
-<span class="hljs-built_in">console</span>.log(!!<span class="hljs-number">0</span>) <span class="hljs-comment">// prints false</span></code></div><small class="shcb-language" id="shcb-language-27"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-43" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(!!<span class="hljs-string">'input is present'</span>) <span class="hljs-comment">// prints true</span>
+<span class="hljs-built_in">console</span>.log(!!<span class="hljs-number">0</span>) <span class="hljs-comment">// prints false</span></code></div><small class="shcb-language" id="shcb-language-43"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h5>About <code>||</code></h5>
@@ -728,15 +1186,15 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>The <code>||</code> operator returns the first truthy value from left to right and fallbacks to the right falsy value. The result is <strong>NOT</strong> casted to boolean.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-28" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> || <span class="hljs-literal">null</span> || <span class="hljs-number">1</span>) <span class="hljs-comment">// prints 1</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-44" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> || <span class="hljs-literal">null</span> || <span class="hljs-number">1</span>) <span class="hljs-comment">// prints 1</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-literal">undefined</span> || <span class="hljs-number">0</span>) <span class="hljs-comment">// prints 0</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-number">2</span> || <span class="hljs-number">0</span>) <span class="hljs-comment">// prints 2</span></code></div><small class="shcb-language" id="shcb-language-28"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span> || <span class="hljs-number">2</span> || <span class="hljs-number">0</span>) <span class="hljs-comment">// prints 2</span></code></div><small class="shcb-language" id="shcb-language-44"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>This behaviour is commonly used in functions accepting an <code>opts</code> parameter having optional fields. When a field is missing, it fallbacks to a default value instead.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-29" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-45" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatPrice</span> (<span class="hljs-params">amount, opts = {}</span>) </span>{
   <span class="hljs-comment">// Example 1: a local variable that fallbacks to 'after'</span>
   <span class="hljs-keyword">const</span> symbolPosition = opts.symbolPosition || <span class="hljs-string">'after'</span>
 
@@ -762,19 +1220,19 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">round</span>: <span class="hljs-number">0</span> }))
 
 <span class="hljs-comment">// null || 'after' === 'after' because null is a falsy value</span>
-<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-literal">null</span> }))</code></div><small class="shcb-language" id="shcb-language-29"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(formatPrice(<span class="hljs-number">10</span>, { <span class="hljs-attr">symbol</span>: <span class="hljs-literal">null</span> }))</code></div><small class="shcb-language" id="shcb-language-45"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h5>About &amp;&amp;</h5>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-30" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// try to print a.b, but do not crash if a is null or undefined</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-46" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// try to print a.b, but do not crash if a is null or undefined</span>
 <span class="hljs-built_in">console</span>.log(a &amp;&amp; a.b)
 
 <span class="hljs-comment">// previous code prints false if a = false</span>
 <span class="hljs-comment">// previous code prints null if a = null</span>
 <span class="hljs-comment">// previous code prints undefined if a = {}</span>
-<span class="hljs-comment">// previous code prints 1 if a = { b: 1 }</span></code></div><small class="shcb-language" id="shcb-language-30"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<span class="hljs-comment">// previous code prints 1 if a = { b: 1 }</span></code></div><small class="shcb-language" id="shcb-language-46"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/11-javascript-conditional-control-flows/">06. JavaScript: conditional control flows</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -805,17 +1263,17 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <ul><li><code>a == b</code> returns <code>true</code> if a and b are equal after type coercion.</li><li><code>a != b</code> returns <code>true</code> if a and b are different after type coercion.</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-31" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>) <span class="hljs-comment">// true</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-47" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>) <span class="hljs-comment">// true</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-number">2</span>) <span class="hljs-comment">// false</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'1'</span>) <span class="hljs-comment">// true</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false</span></code></div><small class="shcb-language" id="shcb-language-31"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'1'</span> == <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false</span></code></div><small class="shcb-language" id="shcb-language-47"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Until that point, it looks basic. But what appends when comparing mixed types? The automatic type coercion mechanism dynamically casts operands before comparing them.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'1'</span>) <span class="hljs-comment">// true, internally compares 1 == 1</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false, internally compares 1 == 2</span></code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-48" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'1'</span>) <span class="hljs-comment">// true, internally compares 1 == 1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false, internally compares 1 == 2</span></code></div><small class="shcb-language" id="shcb-language-48"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The complexity of the truth table is evidence that the <code>weak equality operator</code> (aka <code>==</code>) is error-prone. </p>
@@ -833,13 +1291,13 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>For that reason, it is a good practice to prefer the <code>strong type equality operator</code> (aka. <code>===</code>). This one works a more logical way.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">1</span>) <span class="hljs-comment">// true</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-49" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">1</span>) <span class="hljs-comment">// true</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-number">2</span>) <span class="hljs-comment">// false</span>
 
 <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'1'</span>) <span class="hljs-comment">// false, number is not string</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-string">'2'</span>) <span class="hljs-comment">// false, number is not string</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'1'</span>) <span class="hljs-comment">// true, number is not string</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'2'</span>) <span class="hljs-comment">// true, number is not string</span></code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-string">'2'</span>) <span class="hljs-comment">// true, number is not string</span></code></div><small class="shcb-language" id="shcb-language-49"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="666" height="657" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png" alt="" class="wp-image-2396" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1.png 666w, https://thomas-veillard.fr/wp-content/uploads/2021/03/truth-table-for-1-1-300x296.png 300w" sizes="(max-width: 666px) 100vw, 666px" /><figcaption>Truth table of <code>===</code> operator, which is more logical than <code>==</code>.</figcaption></figure>
@@ -857,12 +1315,12 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>The type coercion works with any numerical comparison:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-34" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// all these expressions are true (1 is greater than 0).</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-50" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// all these expressions are true (1 is greater than 0).</span>
 <span class="hljs-string">'1'</span> &gt; <span class="hljs-number">0</span>    <span class="hljs-comment">// left operand could be a string</span>
 <span class="hljs-number">1</span> &gt; <span class="hljs-string">'0'</span>    <span class="hljs-comment">// right operand could be a string</span>
 <span class="hljs-string">'1'</span> &gt; <span class="hljs-string">'0'</span>  <span class="hljs-comment">// both left and right are cast as numerics because '&gt;' only accepts numbers</span>
 
-<span class="hljs-comment">// these examples are of course applicable to '&gt;=', '&lt;' and '&lt;='.</span></code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">// these examples are of course applicable to '&gt;=', '&lt;' and '&lt;='.</span></code></div><small class="shcb-language" id="shcb-language-50"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>More generally, it is also effective with any numeric operator:</p>
@@ -888,24 +1346,24 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>But what appends when mixing operand types?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-number">1</span> + <span class="hljs-string">'1'</span> <span class="hljs-comment">// '11'</span>
-<span class="hljs-string">'1'</span> + <span class="hljs-number">1</span> <span class="hljs-comment">// '11'</span></code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-51" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-number">1</span> + <span class="hljs-string">'1'</span> <span class="hljs-comment">// '11'</span>
+<span class="hljs-string">'1'</span> + <span class="hljs-number">1</span> <span class="hljs-comment">// '11'</span></code></div><small class="shcb-language" id="shcb-language-51"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>So, it could lead to some bugs&#8230;</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/** wrong, unsafe **/</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-52" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/** wrong, unsafe **/</span>
 <span class="hljs-keyword">const</span> yourAge = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">'Your age'</span>) <span class="hljs-comment">// user enters '17'</span>
 
 <span class="hljs-comment">// prints 'Next year, you will be 171 years old'.</span>
-<span class="hljs-keyword">if</span> (yourAge &lt; <span class="hljs-number">18</span>) <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Next year, you will be '</span> + (yourAge + <span class="hljs-number">1</span>) + <span class="hljs-string">' years old'</span>)</code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">if</span> (yourAge &lt; <span class="hljs-number">18</span>) <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Next year, you will be '</span> + (yourAge + <span class="hljs-number">1</span>) + <span class="hljs-string">' years old'</span>)</code></div><small class="shcb-language" id="shcb-language-52"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>So, my tips is: <strong>when you expect to manipulate numbers, always parse them</strong>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-37" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// using the '+ unary operator'</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-53" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// using the '+ unary operator'</span>
 <span class="hljs-keyword">const</span> number1 = +<span class="hljs-string">'10'</span>    <span class="hljs-comment">// 10</span>
 <span class="hljs-keyword">const</span> number2 = +<span class="hljs-string">'10.5'</span>  <span class="hljs-comment">// 10.5</span>
 
@@ -915,7 +1373,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <span class="hljs-keyword">const</span> number5 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'10'</span>, <span class="hljs-number">16</span>)    <span class="hljs-comment">// 16, because the string '10' is analysed a hexadecimal string</span>
 
 <span class="hljs-comment">// using the parseFloat(str) method</span>
-<span class="hljs-keyword">const</span> number6 = <span class="hljs-built_in">parseFloat</span>(<span class="hljs-string">'10.5'</span>)    <span class="hljs-comment">// 10.5</span></code></div><small class="shcb-language" id="shcb-language-37"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/">05. JavaScript: coercion &#038; comparison</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<span class="hljs-keyword">const</span> number6 = <span class="hljs-built_in">parseFloat</span>(<span class="hljs-string">'10.5'</span>)    <span class="hljs-comment">// 10.5</span></code></div><small class="shcb-language" id="shcb-language-53"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/10-fast-tour-of-javascript-coercion-comparison/">05. JavaScript: coercion &#038; comparison</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -946,21 +1404,21 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 <p>Historically (ES5 and before), JavaScript supports variable declarations thanks to the <code>var</code> keyword.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">var</span> myVariable = <span class="hljs-string">'some string'</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-54" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">var</span> myVariable = <span class="hljs-string">'some string'</span>
 <span class="hljs-keyword">var</span> myOtherVariable = <span class="hljs-number">0</span>
-<span class="hljs-built_in">console</span>.log(myVariable, myOtherVariable) <span class="hljs-comment">// prints: some string 0</span></code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(myVariable, myOtherVariable) <span class="hljs-comment">// prints: some string 0</span></code></div><small class="shcb-language" id="shcb-language-54"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>However, the scope of <code>var</code> is a bit confusing, since the variable exists anywhere in the block (file or function). This means <code>myVariable</code> can be read and assigned before its declaration. Before the first assignment, variables have a special <code>undefined</code> value.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-39" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 1'</span>, myVariable, myOtherVariable)
+<pre class="wp-block-code" aria-describedby="shcb-language-55" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 1'</span>, myVariable, myOtherVariable)
 <span class="hljs-keyword">var</span> myVariable = <span class="hljs-string">'some string'</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 3'</span>, myVariable, myOtherVariable)
 myOtherVariable = <span class="hljs-number">5</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 5'</span>, myVariable, myOtherVariable)
 <span class="hljs-keyword">var</span> myOtherVariable = <span class="hljs-number">0</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 7'</span>, myVariable, myOtherVariable)</code></div><small class="shcb-language" id="shcb-language-39"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'row 7'</span>, myVariable, myOtherVariable)</code></div><small class="shcb-language" id="shcb-language-55"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="660" height="213" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js.png" alt="" class="wp-image-2327" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js.png 660w, https://thomas-veillard.fr/wp-content/uploads/2021/03/var-scope-in-js-300x97.png 300w" sizes="(max-width: 660px) 100vw, 660px" /><figcaption>With <code>var</code>, variables exist before the declaration. They are <code>undefined</code> until first assignment.</figcaption></figure>
@@ -974,9 +1432,9 @@ myOtherVariable = <span class="hljs-number">5</span>
 <p>Since ES6, you can use <code>let</code> and <code>const</code> keywords. There work more logically and intent to replace <code>var</code> in most cases. This way, variables only exist after the declaration and for the rest of the block.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-40" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(myVariable) <span class="hljs-comment">// will crash because myVariable does not exist for now.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-56" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(myVariable) <span class="hljs-comment">// will crash because myVariable does not exist for now.</span>
 <span class="hljs-keyword">let</span> myVariable = <span class="hljs-string">'some string'</span>
-<span class="hljs-built_in">console</span>.log(myVariable)</code></div><small class="shcb-language" id="shcb-language-40"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(myVariable)</code></div><small class="shcb-language" id="shcb-language-56"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="660" height="193" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration.png" alt="" class="wp-image-2325" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration.png 660w, https://thomas-veillard.fr/wp-content/uploads/2021/03/crash-when-using-let-before-declaration-300x88.png 300w" sizes="(max-width: 660px) 100vw, 660px" /><figcaption>A variable using <code>let</code> or <code>const</code> cannot be accessed before the declaration.</figcaption></figure>
@@ -986,8 +1444,8 @@ myOtherVariable = <span class="hljs-number">5</span>
 <p>Also, <code>const</code> prevents any further assignment. The value of the variable is definitively known during the declaration.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-41" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> constant = <span class="hljs-string">'some value'</span>
-constant = <span class="hljs-string">'disallowed assignment'</span></code></div><small class="shcb-language" id="shcb-language-41"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-57" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> constant = <span class="hljs-string">'some value'</span>
+constant = <span class="hljs-string">'disallowed assignment'</span></code></div><small class="shcb-language" id="shcb-language-57"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="660" height="171" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error.png" alt="" class="wp-image-2330" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error.png 660w, https://thomas-veillard.fr/wp-content/uploads/2021/03/const-assignment-error-300x78.png 300w" sizes="(max-width: 660px) 100vw, 660px" /><figcaption>Constants cannot be assigned after the declaration.</figcaption></figure>
@@ -1021,7 +1479,7 @@ constant = <span class="hljs-string">'disallowed assignment'</span></code></div>
 <p>Note that JavaScript stores all numbers, including integers, as <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format" target="_blank" rel="noreferrer noopener">double precision format (using IEEE 754 standard)</a> with the <code>number</code> type.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-42" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// Whatever the number is an integer, a decimal or an octal code,</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-58" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// Whatever the number is an integer, a decimal or an octal code,</span>
 <span class="hljs-comment">// 'typeof' returns 'number'.</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span>)
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-number">1.0</span>)
@@ -1033,7 +1491,7 @@ constant = <span class="hljs-string">'disallowed assignment'</span></code></div>
 
 <span class="hljs-comment">// These examples print 'string'</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-string">''</span>)
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-string">'some message'</span>)</code></div><small class="shcb-language" id="shcb-language-42"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-string">'some message'</span>)</code></div><small class="shcb-language" id="shcb-language-58"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Undefined</strong></p>
@@ -1043,7 +1501,7 @@ constant = <span class="hljs-string">'disallowed assignment'</span></code></div>
 <p>In JavaScript, <code>undefined</code> means a variable has been declared but has not yet been assigned a value.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-43" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// `myVariable` is declared, but unitialized.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-59" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// `myVariable` is declared, but unitialized.</span>
 <span class="hljs-keyword">let</span> myVariable
 
 <span class="hljs-comment">// before any value is assigned, `myVariable` is `undefined`</span>
@@ -1053,16 +1511,16 @@ myVariable = <span class="hljs-number">10</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable) <span class="hljs-comment">// prints 'number'</span>
 
 <span class="hljs-comment">// you can reset the variable</span>
-myVariable = <span class="hljs-literal">undefined</span></code></div><small class="shcb-language" id="shcb-language-43"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+myVariable = <span class="hljs-literal">undefined</span></code></div><small class="shcb-language" id="shcb-language-59"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><code>undefined</code> could also be the return value of a function returning nothing.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-44" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span> (<span class="hljs-params"></span>) </span>{}
+<pre class="wp-block-code" aria-describedby="shcb-language-60" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span> (<span class="hljs-params"></span>) </span>{}
 
 <span class="hljs-comment">// prints 'undefined' because myFunction has no 'return' instruction.</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myFunction())</code></div><small class="shcb-language" id="shcb-language-44"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myFunction())</code></div><small class="shcb-language" id="shcb-language-60"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Null</strong></p>
@@ -1072,11 +1530,11 @@ myVariable = <span class="hljs-literal">undefined</span></code></div><small clas
 <p>The <code>null</code> value is considered as an <code>object</code> by <code>typeof</code> operator. A variable can be  <code>null</code> only after an assignment.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-45" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">let</span> myVariable
+<pre class="wp-block-code" aria-describedby="shcb-language-61" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">let</span> myVariable
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable) <span class="hljs-comment">// prints 'undefined'</span>
 
 myVariable = <span class="hljs-literal">null</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable) <span class="hljs-comment">// prints 'object'</span></code></div><small class="shcb-language" id="shcb-language-45"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable) <span class="hljs-comment">// prints 'object'</span></code></div><small class="shcb-language" id="shcb-language-61"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Functions</strong></p>
@@ -1086,18 +1544,18 @@ myVariable = <span class="hljs-literal">null</span>
 <p>In JavaScript, you can store a reference to a function inside a variable.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-46" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> myVariable = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-62" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> myVariable = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random()
 }
 
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable) <span class="hljs-comment">// prints 'function'</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable()) <span class="hljs-comment">// prints 'number'</span></code></div><small class="shcb-language" id="shcb-language-46"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> myVariable()) <span class="hljs-comment">// prints 'number'</span></code></div><small class="shcb-language" id="shcb-language-62"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Everything assignable to a variable can also be passed as an argument. This includes functions and allows <strong>higher-order functions</strong> to work. We call higher-order function a function that accept as an argument or returns another functions.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-47" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// callArgument() accepts a function as argument, call it and prints its return value.</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-63" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// callArgument() accepts a function as argument, call it and prints its return value.</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callArgument</span> (<span class="hljs-params">anotherFunc</span>) </span>{
   <span class="hljs-keyword">const</span> result = anotherFunc()
   <span class="hljs-built_in">console</span>.log(result)
@@ -1107,7 +1565,7 @@ myVariable = <span class="hljs-literal">null</span>
   <span class="hljs-keyword">return</span> <span class="hljs-number">10</span>
 }
 
-callArgument(myFunction) <span class="hljs-comment">// prints 10</span></code></div><small class="shcb-language" id="shcb-language-47"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+callArgument(myFunction) <span class="hljs-comment">// prints 10</span></code></div><small class="shcb-language" id="shcb-language-63"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Objects</strong></p>
@@ -1121,10 +1579,10 @@ callArgument(myFunction) <span class="hljs-comment">// prints 10</span></code></
 <ul><li>Literal objects are defined inline, with a list of properties and values. They are useful to group multiple fields under the same variable without the penalty of a class declaration.</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-48" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> literalObject = { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Thomas'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'VEILLARD'</span> }
+<pre class="wp-block-code" aria-describedby="shcb-language-64" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> literalObject = { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Thomas'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'VEILLARD'</span> }
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> literalObject) <span class="hljs-comment">// prints 'object'</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> literalObject.firstName) <span class="hljs-comment">// prints 'string'</span>
-<span class="hljs-built_in">console</span>.log(literalObject.firstName) <span class="hljs-comment">// prints 'Thomas'</span></code></div><small class="shcb-language" id="shcb-language-48"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(literalObject.firstName) <span class="hljs-comment">// prints 'Thomas'</span></code></div><small class="shcb-language" id="shcb-language-64"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <ul><li>Instances are created using the <code>new</code> operator against an existing class.</li></ul>
@@ -1134,15 +1592,15 @@ callArgument(myFunction) <span class="hljs-comment">// prints 10</span></code></
 <p>In the following example, we use the standard <code>Date</code> class to build two instances: <code>now</code> and <code>firstDayOfYear</code>. Properties and methods can be called on each instance using the &lsquo;.&rsquo; operator (ex. <code>now.getFullYear()</code>).</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-49" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() <span class="hljs-comment">// current date, time and timezone</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-65" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() <span class="hljs-comment">// current date, time and timezone</span>
 <span class="hljs-keyword">const</span> firstOfYear = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(now.getFullYear(), <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// first of january</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> now) <span class="hljs-comment">// prints 'object'</span></code></div><small class="shcb-language" id="shcb-language-49"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> now) <span class="hljs-comment">// prints 'object'</span></code></div><small class="shcb-language" id="shcb-language-65"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Like most object-oriented languages, JavaScript classes may implement static methods and static properties.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-50" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-built_in">Date</span>.now() <span class="hljs-comment">// returns the UNIX time in millisecond (nb of milliseconds since 01/01/1970)</span></code></div><small class="shcb-language" id="shcb-language-50"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-66" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-built_in">Date</span>.now() <span class="hljs-comment">// returns the UNIX time in millisecond (nb of milliseconds since 01/01/1970)</span></code></div><small class="shcb-language" id="shcb-language-66"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>In fact, good documentation already exists about classes in JavaScript. Check <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noreferrer noopener">this guide on MDN</a>. It covers class declaration, constructors, instance methods, static methods and such more.</p>
@@ -1181,7 +1639,7 @@ callArgument(myFunction) <span class="hljs-comment">// prints 10</span></code></
 <p>The browser always starts by loading an HTML file. This one may include assets such as a JavaScript script. So, let’s create 2 files: <code>index.html</code> and <code>index.js</code>. </p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-51" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-67" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
 <span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -1190,10 +1648,10 @@ callArgument(myFunction) <span class="hljs-comment">// prints 10</span></code></
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-51"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-67"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
-<pre class="wp-block-code" aria-describedby="shcb-language-52" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// index.js</span>
-<span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'JS initialized successfully'</span>)</code></div><small class="shcb-language" id="shcb-language-52"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-68" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// index.js</span>
+<span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'JS initialized successfully'</span>)</code></div><small class="shcb-language" id="shcb-language-68"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>We use the newer ES6 modules (see the <code>type="module"</code> attribute on script tag). This way, <code>index.js</code> may import dependencies via the <code>import ... from ...</code> syntax we will discuss later.</p>
@@ -1207,12 +1665,12 @@ callArgument(myFunction) <span class="hljs-comment">// prints 10</span></code></
 <p>If it is not yet done, you should install <a href="https://nodejs.org/en/download/" target="_blank" rel="noreferrer noopener">node.js</a>. Then, open a terminal inside the folder containing <code>index.html</code> and <code>index.js</code>. This following command will start a local HTTP server reachable at <code>http://127.0.0.1:8080/</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-53" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># serve up the current directory </span>
+<pre class="wp-block-code" aria-describedby="shcb-language-69" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># serve up the current directory </span>
 $ npx http-server -a <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>
 Starting up http-server, serving ./
 Available on:
   http:<span class="hljs-comment">//127.0.0.1:8080</span>
-Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-language-53"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-language-69"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="711" height="329" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png" alt="" class="wp-image-2308" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving.png 711w, https://thomas-veillard.fr/wp-content/uploads/2021/03/static-serving-300x139.png 300w" sizes="(max-width: 711px) 100vw, 711px" /><figcaption>HTML &amp; JavaScript are served by http-server on port 8080. If everything works fine, a message should be prompted.</figcaption></figure>
@@ -1242,10 +1700,10 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 <p>A <code>console</code> object is also exposed inside your JavaScript context. It is useful for basic debugging and for logging.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-54" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a log entry reported in browser console'</span>)
+<pre class="wp-block-code" aria-describedby="shcb-language-70" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'This is a log entry reported in browser console'</span>)
 </span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'This is a warning reported with an orange background'</span>)
 </span></span><span class='shcb-loc'><span><span class="hljs-built_in">console</span>.error(<span class="hljs-string">'This time, you see a red background'</span>)
-</span></span></code></div><small class="shcb-language" id="shcb-language-54"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+</span></span></code></div><small class="shcb-language" id="shcb-language-70"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="749" height="204" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png" alt="" class="wp-image-2318" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png 749w, https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels-300x82.png 300w" sizes="(max-width: 749px) 100vw, 749px" /><figcaption>Output of the previous script, which sends messages to the console.</figcaption></figure>
@@ -1356,7 +1814,7 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 <p>Before using npm in a local project, you must initialise a <code>package.json</code> with the command <code>npn init</code>. The produced <code>package.json</code> looks like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-55" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-71" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"demo"</span>,
   <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A sample application"</span>,
@@ -1366,7 +1824,7 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
   },
   <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Thomas VEILLARD"</span>,
   <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>
-}</code></div><small class="shcb-language" id="shcb-language-55"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-71"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, you add dependencies (ex. <code>npm install lodash</code>). The <code>package.json</code> is updated and a <code>node_modules</code> folder is created. You should never commit the <code>node_modules</code> on git (as it could be heavy). Just commit the <code>package.json</code> and <code>package-lock.json</code> files.</p>
@@ -1376,7 +1834,7 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 <p>Running <code>npm install</code> reads the <code>package.json</code> and rebuilds the <code>node_modules</code> folder from scratch. If <code>package-lock.json</code> exists, npm uses exact version numbers of each module defined in that file.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-56" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span>{
+<pre class="wp-block-code" aria-describedby="shcb-language-72" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span>{
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"demo"</span>,
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
 </span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A sample application"</span>,
@@ -1390,7 +1848,7 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 </span></mark><mark class='shcb-loc'><span>    <span class="hljs-attr">"lodash"</span>: <span class="hljs-string">"^4.17.21"</span>
 </span></mark><mark class='shcb-loc'><span>  }
 </span></mark><span class='shcb-loc'><span>}
-</span></span></code></div><small class="shcb-language" id="shcb-language-56"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/">02. Environment (tools, languages, frameworks)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+</span></span></code></div><small class="shcb-language" id="shcb-language-72"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/">02. Environment (tools, languages, frameworks)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -1435,13 +1893,13 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 <p>The following example creates 3 links <code>&lt;a&gt;</code>. Each page may contain a lot of links, with different meanings and purposes (navigation items in a menu, inner link from an article to another, quotation sourcing&#8230;). By putting them inside a <code>&lt;nav&gt;</code>, we semantically express those links are part of the same menu. So <strong>search engines</strong> and <strong>accessibility tools</strong> understand that <code>Home</code> and <code>About</code> are navigation items.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-57" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-73" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/contact-us"</span>&gt;</span>Contact us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-57"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-73"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The current standard is HTML Living Standard (post HTML5).</p>
