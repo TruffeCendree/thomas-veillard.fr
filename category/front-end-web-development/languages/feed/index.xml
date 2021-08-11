@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/languages/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 08 Aug 2021 17:37:55 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 09 Aug 2021 15:34:34 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -487,10 +487,18 @@ calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment
 		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2775</guid>
 
-					<description><![CDATA[<p>Exercise 1. Implement sum(&#8230;terms) Implement a sum function that accepts any count of numerical arguments and return the sum. It raises a custom error in the absence of any argument. Exercise 2. Implement filter(array, predicate) Implement a filter(array, predicate) function that returns a new array only containing items from array for which predicate(item) is true. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/" class="more-link">Continuer la lecture de <span class="screen-reader-text">09. JavaScript: practical activity n°1</span></a></p>
+					<description><![CDATA[<p>Learning outcomes Work with functions (variable arguments count, default parameters&#8230;) ; Build higher-order functions and look at the array&#8217;s standard methods ; Write code without side effect (ex. not mutating the input or global state) ; Introduce functional programming paradigm ; Create and manipulate literal objects ; Chrome DevTools demonstration (debugger, network tracing&#8230;). Exercise 1. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/" class="more-link">Continuer la lecture de <span class="screen-reader-text">09. JavaScript: practical activity n°1</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/">09. JavaScript: practical activity n°1</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
+<h4>Learning outcomes</h4>
+
+
+
+<ul><li>Work with functions (variable arguments count, default parameters&#8230;) ;</li><li>Build higher-order functions and look at the array&rsquo;s standard methods ;</li><li>Write code without side effect (ex. not mutating the input or global state) ;</li><li>Introduce functional programming paradigm ;</li><li>Create and manipulate literal objects ;</li><li>Chrome DevTools demonstration (debugger, network tracing&#8230;).</li></ul>
+
+
+
 <h4>Exercise 1. Implement sum(&#8230;terms)</h4>
 
 
