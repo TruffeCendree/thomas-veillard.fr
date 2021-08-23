@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 21 Aug 2021 05:22:56 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 23 Aug 2021 18:01:05 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,90 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.7.2</generator>
 	<item>
+		<title>Project</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/project/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Mon, 23 Aug 2021 17:59:03 +0000</pubDate>
+				<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3194</guid>
+
+					<description><![CDATA[<p>Topic Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting and filtering &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Topic</h4>
+
+
+
+<p>Build a web application to book, rent or buy something of your choice, like:</p>
+
+
+
+<ul><li><strong>A train ticket office</strong>. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets.</li><li><strong>A product shop</strong>. The application displays the catalogue, allows both sorting and filtering by various criteria. Each product has a dedicated presentation. Additionally, the customer may fill a cart and provide its delivery address.</li><li><strong>A clearing booking app</strong>. Allows customers to find available cleaners near their home at some date and time. Then, the customer picks a proposal, fills its address&#8230;</li><li><strong>A VPS builder</strong>. The customer builds its own VPS instance by selecting some amount of RAM, disk, CPU, IO bandwidth, additional volumes&#8230; The final configuration should be valid (ex. disallow too much RAM if not enough v-core, etc.).</li></ul>
+
+
+
+<h4>The rules</h4>
+
+
+
+<ul><li>Can be done alone or in groups of 2 students.</li><li>Use Vue.js, Angular or React. You are free to use any library you want.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check who commits, and when.</li><li>Document installation steps in README.md.</li><li>Produce a short demo video of your application in action.</li><li>Use API over HTTP (a public API, a mock server or your own backend).</li><li>Build various views (pages, modals&#8230;). At least 5 busy pages.</li><li>Setup various routes using HTML History API (ex. <code>/products/:productId</code>).</li></ul>
+
+
+
+<h4>README.md</h4>
+
+
+
+<p>I will follow steps in your README to build and run your project. For simple front-end projects, it could be really short: (ex. git clone, npm install&#8230;).</p>
+
+
+
+<p>But if you implemented a backend or have special requirements, they must be explicit. If setup is complex, please provide an install script (targeting Ubuntu).</p>
+
+
+
+<h4>Delivery (for groups G3, G4 and G5)</h4>
+
+
+
+<p>Your git repository is your delivery. Just share read-only access with me if the repository is private (my Github username is <code>TruffeCendree</code>). 2 deliveries are planned:</p>
+
+
+
+<ul><li><strong>At least one week before any in-class session</strong>, you can submit your work-in-progress for a ungraduated optional review. The number of projects I can review in a short time is of course limited, so please do not wait the last session.</li><li><strong>On Sunday, October 31 at 23h59 </strong>for a final review. Code to be graded must be on your master branch.</li></ul>
+
+
+
+<h4>Graduation</h4>
+
+
+
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by reviewing your demonstration video.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>13 points</td></tr></tbody></table></figure>
+
+
+
+<h4>Bonuses</h4>
+
+
+
+<p>The following list is not exhaustive. Be free to highlight challenges you overcame in a special section of your README.</p>
+
+
+
+<ul><li>Write a fully featured backend (higher bonus if built on node.js). Adding a backend does not reduce my expectation on the frontend part.</li><li>Switch from JavaScript to TypeScript (use strict mode, ban the <code>any</code> type).</li><li>Use high quality JSdoc comments, with <code>tsconfig.json</code> setup to check js all files.</li><li>Host your static website online (ex. Firebase Hosting, render.com, aws S3&#8230;).</li><li>Implement error tracking of hosted site with (ex. Sentry, Rollbar, Stackdriver&#8230;).</li><li>Write automatic specs (unit, e2e&#8230;).</li><li>Send emails with your backend (look at the <a href="https://mailcatcher.me/" target="_blank" rel="noreferrer noopener">mailcatcher</a> to mock the STMP server).</li><li>Generate high quality PDF with putteteer or selenium.</li></ul>
+
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>11. JavaScript: practical activity n°2</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/</link>
 		
@@ -2071,147 +2155,6 @@ Hit CTRL-C to stop the server</code></div><small class="shcb-language" id="shcb-
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="749" height="204" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png" alt="" class="wp-image-2318" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels.png 749w, https://thomas-veillard.fr/wp-content/uploads/2021/03/console-levels-300x82.png 300w" sizes="(max-width: 749px) 100vw, 749px" /><figcaption>Output of the previous script, which sends messages to the console.</figcaption></figure>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">03. JavaScript: browser entry point</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>02. Environment (tools, languages, frameworks)</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 10:03:38 +0000</pubDate>
-				<category><![CDATA[02. Languages]]></category>
-		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2220</guid>
-
-					<description><![CDATA[<p>How looks a modern web frontend stack? Your project is composed of your own code and dependencies. They could be: runtime dependencies, which are shipped to the browser. @angular/core, vue.js, react or jquery are typical runtime libraries your code may rely on. They provide features you do not want to reimplement yourself. development dependencies, which &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Environment (tools, languages, frameworks)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/">02. Environment (tools, languages, frameworks)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>How looks a modern web frontend stack?</h4>
-
-
-
-<p>Your project is composed of your own code and dependencies. They could be:</p>
-
-
-
-<ul><li>runtime dependencies, which are shipped to the browser. <code>@angular/core</code>, <code>vue.js</code>, <code>react</code> or <code>jquery</code> are typical runtime libraries your code may rely on. They provide features you do not want to reimplement yourself.</li><li>development dependencies, which are required to update, build, optimise or check quality your application.</li></ul>
-
-
-
-<p>The browser only supports an exact version of HTML, CSS, JS and Web Assembly. Tools that transform your sources into a <strong>bundle natively executable by the browser</strong> is typically a development dependency.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="469" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-1024x469.png" alt="" class="wp-image-2259" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-1024x469.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-300x137.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack-768x352.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/03/How-looks-a-modern-web-frontend-stack.png 1518w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Schema of a typical modern frontend application.</figcaption></figure>
-
-
-
-<h4>A few words about your source code</h4>
-
-
-
-<p>Because your code is transformed before it reaches the browser, you are free to:</p>
-
-
-
-<ul><li>use latest features and syntax for HTML, CSS and JavaScript ;</li><li>use another language that transpiles to JavaScript such as TypeScript or ScalaJS ;</li><li>use another language that transpiles to CSS such as Sass, Less or Stylus ;</li><li>document your code with comments, which are finally dropped during the build process to claim some kilobytes ;</li><li>split your code in multiple files, which are merged into a single bundle. This reduces the number of HTTP connections required to load your application in a browser (faster startup, lower server costs&#8230;).</li></ul>
-
-
-
-<h4>JavaScript Frameworks</h4>
-
-
-
-<p>Modern JavaScript frameworks are built around the concept of components (a self-contained piece for HTML, CSS and JS that you combine to build a view). The developer builds components while the framework makes them work together.</p>
-
-
-
-<p>According to the <a href="https://thomas-veillard.fr/front-end-web-development/lectures/introduction/">introduction&rsquo;s notes</a>, I may explore each of them in optional sections depending on my in-class requirements.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="498" src="https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-1024x498.png" alt="" class="wp-image-2240" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-1024x498.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-300x146.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-768x374.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue-1536x748.png 1536w, https://thomas-veillard.fr/wp-content/uploads/2021/03/angular-react-vue.png 1580w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4>JavaScript environments and compilers</h4>
-
-
-
-<p>Most of the tools you will use are written in JavaScript or TypeScript. This includes command-line interfaces (aka. cli). These tools are regular software, running outside the browser thanks to node.js.</p>
-
-
-
-<p><strong>node.js</strong> encapsulates Chrome&rsquo;s JavaScript engine and extends it with more API. So, software using node.js can open TCP/UDP ports, access the filesystem, execute other applications, call native code written in C/C++, etc. </p>
-
-
-
-<p>Here some examples of applications requiring node.js:</p>
-
-
-
-<ul><li><strong>@angular/cli</strong> is the command line interface used to set up new angular project, manage and compile existing one, etc.</li><li><strong>npm</strong> is the package manager shipped with node. You specify which modules are required by your application in a <code>package.json</code> file. Then, you run npm to fetch all that stuff inside your local project. npm could also be used to install software globally.</li><li><strong>webpack</strong> is a bundler. It aggregates multiple source files into a single bundle and apply transformations on it. You can customise these transformations using plugins. The final bundle is generally optimised for speed and size (when building for production).</li><li><strong>babel</strong> is a standalone software, but also a plugin for webpack. It translates newest JavaScript syntax to older targets. So you can use latest syntax and features, and run your bundle on old browsers.</li><li><strong>tsc</strong> means « TypeScript Compiler ». This software compiles TypeScript code into regular JavaScript. Like babel, the typescript module can be used as a command line or a library.</li></ul>
-
-
-
-<p>In the tutorials, you will use the <code>@angular/cli</code>. Under the hood, it uses the <code>typescript</code> and <code>webpack</code>. When building your app, it accepts multiple HTML / CSS / TypeScript sources and compute bundles in pure HTML / CSS / JS.</p>
-
-
-
-<h4>The Node Package Manager (aka. npm)</h4>
-
-
-
-<p>npm can be used to:</p>
-
-
-
-<ul><li>install software globally (ex. <code>npm install --global typescript</code>). This makes the <code>tsc</code> command available on your system. In tutorials, you will use npm to globally install <code>@angular/cli</code>.</li><li>install local dependencies in your project (ex. <code>npm install lodash</code>). This downloads the <code>lodash</code> library in a local folder called <code>node_modules</code>.</li></ul>
-
-
-
-<p>Before using npm in a local project, you must initialise a <code>package.json</code> with the command <code>npn init</code>. The produced <code>package.json</code> looks like:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-77" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"demo"</span>,
-  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A sample application"</span>,
-  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
-  <span class="hljs-attr">"scripts"</span>: {
-    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
-  },
-  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Thomas VEILLARD"</span>,
-  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>
-}</code></div><small class="shcb-language" id="shcb-language-77"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Then, you add dependencies (ex. <code>npm install lodash</code>). The <code>package.json</code> is updated and a <code>node_modules</code> folder is created. You should never commit the <code>node_modules</code> on git (as it could be heavy). Just commit the <code>package.json</code> and <code>package-lock.json</code> files.</p>
-
-
-
-<p>Running <code>npm install</code> reads the <code>package.json</code> and rebuilds the <code>node_modules</code> folder from scratch. If <code>package-lock.json</code> exists, npm uses exact version numbers of each module defined in that file.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-78" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json shcb-code-table"><span class='shcb-loc'><span>{
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"demo"</span>,
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A sample application"</span>,
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"scripts"</span>: {
-</span></span><span class='shcb-loc'><span>    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
-</span></span><span class='shcb-loc'><span>  },
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Thomas VEILLARD"</span>,
-</span></span><span class='shcb-loc'><span>  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>,
-</span></span><mark class='shcb-loc'><span>  <span class="hljs-attr">"dependencies"</span>: {
-</span></mark><mark class='shcb-loc'><span>    <span class="hljs-attr">"lodash"</span>: <span class="hljs-string">"^4.17.21"</span>
-</span></mark><mark class='shcb-loc'><span>  }
-</span></mark><span class='shcb-loc'><span>}
-</span></span></code></div><small class="shcb-language" id="shcb-language-78"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/7-environment-tools-languages-frameworks/">02. Environment (tools, languages, frameworks)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
