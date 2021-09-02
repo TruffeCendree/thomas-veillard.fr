@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/languages/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 21 Aug 2021 05:22:56 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 28 Aug 2021 11:55:44 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -858,7 +858,7 @@ calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment
 
 
 
-<p>Implement a <code>sum</code> function that accepts any count of numerical arguments and return the sum. It raises a custom error in the absence of any argument.</p>
+<p>Implement a <code>sum</code> function that accepts any count of numerical arguments and returns the sum. It raises a custom error in the absence of any argument.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(sum()) <span class="hljs-comment">// throws Error('At least one number is expected')</span>
@@ -870,7 +870,7 @@ calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment
 
 
 
-<p>Implement a <code>filter(array, predicate)</code> function that returns a new array only containing items from <code>array</code> for which <code>predicate(item)</code> is true. The original <code>array</code> should not be mutated (no side effect allowed).</p>
+<p>Implement a <code>filter(array, predicate)</code> function that returns a new array only containing items from <code>array</code> for which <code>predicate(item)</code> is truthy. The original <code>array</code> should not be mutated (no side effect allowed).</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
@@ -940,7 +940,11 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 
 
 
-<p>Compute the following metrics. Use of the functional programming paradigm is encouraged.</p>
+<p>Compute and output to console the following metrics. Use of the functional programming paradigm is encouraged.</p>
+
+
+
+<ol><li><strong>The first project&rsquo;s name in ascending alphabetic order</strong>. Ensure you compare in a case-insensitive manner and handle diacritics correctly.</li><li><strong>The number of unique contributors</strong>. Unicity may be implemented with <code>array.filter()</code>.</li><li><strong>The average length of contributors&rsquo; name</strong>. Of course, you have to work on unique names. Remember the DRY principal.</li><li><strong>The most active contributor&rsquo;s name</strong> (by number of projects). This is like grouping contribution by contributors&rsquo; name, sorting by contribution count and eventually taking the first&#8230;</li><li><strong>TOP 10 of the most contributed projects</strong>. There is again a groupby under the hook. Let&rsquo;s DRY!</li></ol>
 
 
 
@@ -949,10 +953,6 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 
 
 <p><strong>Tips</strong>: Try not to repeat yourself (DRY principal).  Some intermediate computations for a metric could be reused for another one. Also, some logic patterns may be factorised as functions (cf. previous tips).</p>
-
-
-
-<ol><li><strong>The first project&rsquo;s name in ascending alphabetic order</strong>. Ensure you compare in a case-insensitive manner and to handle diacritics correctly.</li><li><strong>The number of unique contributors</strong>. Unicity may be implemented with <code>array.filter()</code>.</li><li><strong>The average length of contributors&rsquo; name</strong>. Of course, you have to work on unique names. Remember the DRY principal.</li><li><strong>The most active contributor&rsquo;s name</strong> (by number of projects). This is like grouping contribution by contributors&rsquo; name, sorting by contribution count and eventually taking the first&#8230;</li><li><strong>TOP 10 of the most contributed projects</strong>. There is again a groupby under the hook. Let&rsquo;s DRY!</li></ol>
 
 
 
