@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>03. VueJS &#8211; Thomas VEILLARD</title>
+	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/vue/feed/" rel="self" type="application/rss+xml" />
+	<link>https://thomas-veillard.fr/</link>
+	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
+	<lastBuildDate>Sat, 04 Sep 2021 16:36:29 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>01. Vue: practical activity, part n°1</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sat, 04 Sep 2021 16:36:06 +0000</pubDate>
+				<category><![CDATA[03. VueJS]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3243</guid>
+
+					<description><![CDATA[<p>Learning outcomes Understand how Vue CLI is related to other well-known tools (webpack, babel&#8230;). Practise the Vue&#8217;s essentials (basic components, templates, scoped styles&#8230;). Properly split the source in various files and folders. Implement some routing capabilities. Expected result At the end of the tutorial series, you got a lightweight SPA client for exploring mails and &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Vue: practical activity, part n°1</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/">01. Vue: practical activity, part n°1</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Learning outcomes</h4>
+
+
+
+<ul><li>Understand how Vue CLI is related to other well-known tools (webpack, babel&#8230;).</li><li>Practise the Vue&rsquo;s essentials (basic components, templates, scoped styles&#8230;).</li><li>Properly split the source in various files and folders.</li><li>Implement some routing capabilities.</li></ul>
+
+
+
+<h4>Expected result</h4>
+
+
+
+<p>At the end of the tutorial series, you got a lightweight SPA client for exploring mails and contacts from the Outlook product, through the Microsoft Graph API. This SPA targets both computers and phones, requiring responsive capabilities and appreciating resilience to network issues.</p>
+
+
+
+<p>The first tutorial of the Vue&rsquo;s series focuses on setting up the project, understanding tools behind the Vue CLI (those discussed in last tutorial) and preparing routes for the OAuth2 authorisation flow.</p>
+
+
+
+<h4>Prepare your development environment</h4>
+
+
+
+<p>In a general manner, your productivity and code quality are affected by used tools. Personally:</p>
+
+
+
+<ul><li><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer noopener">vscode</a> as my primary code editor, especially suitable for JavaScript development.</li><li><a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank" rel="noreferrer noopener">Vetur</a> is a vscode extension enabling syntax and language servers for <code>.vue</code> files.</li><li><a href="https://devtools.vuejs.org/" target="_blank" rel="noreferrer noopener">vue-devtools</a> extends browser&rsquo;s debugging capabilities (beta channel for Vue3).</li><li><a href="https://cli.vuejs.org/" target="_blank" rel="noreferrer noopener">Vue CLI</a> for managed vue projects (from project creation to distribution).</li><li>npm, node, typescript and the rest of well-known JS tools&#8230;</li></ul>
+
+
+
+<h4>About the use of git with Moodle delivery</h4>
+
+
+
+<p>The Vue CLI automatically initiates a local git repository unless you explicitly refuse it. After each question, I strongly recommend you commit your work with a meaningful message. This provides at least 2 immediate benefits:</p>
+
+
+
+<ul><li>You can discard any change to your project since the last commit (for example, the last completed question). So, in the case you went in the wrong direction for a particular question, you can rollback to last clean state. This makes you confident while refactoring or deleting code.</li><li>As a teacher, I can « time travel » inside your code and see how it was at the end of some question.</li></ul>
+
+
+
+<p>Because of the graded nature of the tutorial, you cannot push your code on a public repository. On another side, sharing with me access to your private Github repository is a time consuming and error-prone.</p>
+
+
+
+<p>Instead, you will just upload the zip archive through the Moodle « assignment activity ». <span class="has-inline-color has-medium-pink-color">While building your zip, be sure to include the <code>.git</code> folder</span>. To be safe, just compress the parent folder and check the output archive.</p>
+
+
+
+<h4>Vue project setup</h4>
+
+
+
+<p class="question"><strong>Question 1</strong>: That is the main difference between local installation and global installation of packages with npm? What kind of packages do you generally install locally? What kind is generally installed globally?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
+npm install @vue/cli
+
+<span class="hljs-comment"># example of command to install the vue cli globally</span>
+npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>According to the <a href="https://cli.vuejs.org/guide/installation.html" target="_blank" rel="noreferrer noopener">docs</a>, the global installation is best suitable for Vue CLI.</p>
+
+
+
+<p class="exercice"><strong>Exercise 1</strong>: Create a new Vue project (called <code>vue-oauth-microsoft-graph</code>). Opt for the Vue3 recipe that relies on webpack and babel for the build chain.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> The Vue CLI as already committed the newly generated project.</p>
+
+
+
+<p class="question"><strong>Question 2</strong>: Webpack is internally used by the Vue CLI. Why is it required to deal with both multiples JavaScript files and special extensions like <code>.vue</code>?</p>
+
+
+
+<p>Babel is configured by default with <code>@vue/cli-plugin-babel/preset</code>, as specified in <code>babel.config.js</code>. By reading the package&rsquo;s documentation, you see it uses the <code>browserslist</code> configuration defined in <code>package.json</code>.</p>
+
+
+
+<p class="question"><strong>Question 3</strong>: What is the role of babel and how <code>browserslist</code> may configure its output?</p>
+
+
+
+<p class="question"><strong>Question 4</strong>: What is eslint and which set of rules are currently applied?</p>
+
+
+
+<p><strong>Tips</strong>: additionally to the previous tools installed by Vue CLI, you can enable static type checking in your project. See the appendix at the end of the tutorial. Of course, it is optional.</p>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong>: Run <code>npm run serve</code> and open the app in your browser. Remember that npm looks at the <code>package.json</code> file (specially the <code>scripts</code> object) to find which command to execute.</p>
+
+
+
+<p>Did you notice that <code>npm run serve</code> launches a program called  <code>vue-cli-service</code>? This is a cli locally installed by npm inside the <code>node_modules</code> folder. This dependency is dedicated to development experience, so it is a <code>devDependencies</code> in your <code>package.json</code>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 3:</strong> The newly generated project contains a few placeholders. Cleanup your project so it does not contain neither useless assets, nor the hello world.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 3: remove vue CLI placeholders »</p>
+
+
+
+<p>By default, only the <code>src/components</code> folder is intended for storing <code>.vue</code> files (aka. vue components). But we are free to use other directories depending on the nature of each component. Let&rsquo;s add <code>src/pages</code> to our code base.</p>
+
+
+
+<ul><li><code>src/pages</code> contains top level components that produce a particular page (ex. the home page, the index of mails page, the contact page&#8230;). Those components are intended to be mounted with vue-router.</li><li><code>src/components</code> contains shared components required by pages or other components (ex. navigation headers, buttons, user&rsquo;s cards, short preview of an email&#8230;).</li></ul>
+
+
+
+<p class="exercice"><strong>Exercise 4</strong>: Create the HomePage component inside the right folder. Do not spend too much time on the template content, as it could be a simple sentence. Import it inside <code>App.vue</code> and eventually cleanup any dead code (code not reachable anymore, for example a component no more imported).</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 4: create HomePage component »</p>
+
+
+
+<h4>Base layout</h4>
+
+
+
+<p><i class="fas fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> While my original intent was using Vuetify to not spent unnecessary time styling component, Vuetify for Vue 3 is still under active development. Sorry! 😇</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png" alt="" class="wp-image-3378" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-300x128.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-768x327.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png 1296w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Basic possible visual at the end of the next exercise and its components tree.</figcaption></figure>
+
+
+
+<p><strong>Tips</strong>: If you wish to use <a href="https://fontawesome.com/" target="_blank" rel="noreferrer noopener">font awesome</a> icons with Vue 3, <a href="https://stackoverflow.com/questions/66389974/using-font-awesome-in-vue-3" target="_blank" rel="noreferrer noopener">take a look at this thread</a>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 5</strong>: Let&rsquo;s begin with the root component, formally <code>App</code> (in <code>src/App.vue</code>). Replace its template with the following content and create missing components. Add some content to the header (ex. fake home link, fake user name&#8230;) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- file src/App.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">HomePage</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">base-footer</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: create BaseHeader and BaseFooter »</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong>: In order to keep the root component <code>App</code> as simple as possible, create a <code>BaseLayout</code> component. Using the <a href="https://v3.vuejs.org/guide/component-slots.html#slot-content" target="_blank" rel="noreferrer noopener">slot API</a>,  allow <code>BaseLayout</code> to receive children.</p>
+
+
+
+<p><strong>Tips</strong>: If you integrated font awesome, try extracting most logic out of <code>App</code>. When it comes to configure third party dependencies, I generally work with ES-modules inside a <code>src/lib</code> folder. Example: <code>src/lib/fontAwesome.js</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- file src/App.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">base-footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: create BaseLayout that uses slot API »</p>
+
+
+
+<h4>Add routing capabilities</h4>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, so vue-router v4 or higher.</p>
+
+
+
+<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, create 2 routes (<code>/</code> that loads <code>HomePage</code> and <code>/oauth2/callback</code> that loads <code>Oauth2CallbackPage</code>). You also have to create the missing page component. Define the router in its own module (ex. <code>src/lib/router.js</code>).</p>
+
+
+
+<p><strong>Tips</strong>: for the previous question, you need:</p>
+
+
+
+<ul><li>to add <code>src/lib/router.js</code> and export a router built with <code>createRouter()</code>.</li><li>to import the router in <code>src/main.js</code> and call <code>x.use(router)</code> somewhere&#8230;</li><li>to use <code>&lt;router-view /&gt;</code> instead of <code>&lt;home-page /&gt;</code> somewhere&#8230;</li><li>to create another component for the second page.</li></ul>
+
+
+
+<p><strong>Tips</strong>: I experienced issues with the default export of <code>vue-router</code>. See above:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> VueRouter <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-router'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router = VueRouter.createRouter(<span class="hljs-comment">/** ... */</span>) <span class="hljs-comment">// VueRouter is undefined</span>
+
+<span class="hljs-keyword">import</span> { createRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-router'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router = createRouter(<span class="hljs-comment">/** ... */</span>) <span class="hljs-comment">// works fine</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: add and set up vue-router »</p>
+
+
+
+<p class="question"><strong>Question 5</strong>: Why should you now use <code>&lt;router-link to="/"&gt;Home&lt;/router-link&gt;</code> instead of <code>&lt;a href="/"&gt;Home&lt;/a&gt;</code>?</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="786" height="564" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/Peek-04-09-2021-17-31.gif" alt="" class="wp-image-3441"/><figcaption>The routing is operational, including header navigation.</figcaption></figure>
+
+
+
+<h4>To continue&#8230;</h4>
+
+
+
+<p>Next time, let&rsquo;s connect some third party API through Oauth2. The user identity will be retrieved from it. Additionally, you will fetch data from Outlook through that API.</p>
+
+
+
+<p class="has-text-align-center">***</p>
+
+
+
+<h4>Appendix: about static type checking</h4>
+
+
+
+<p>In the previous tutorial, I introduced you static type checking with straightforward JavaScript and JSDoc. Badly, the <code>tsc</code> command does not handle <code>.vue</code> files. Despite the fact that it is partially working,  it does not worth the vue&rsquo;s typescript integration.</p>
+
+
+
+<p>A more robust approach would be moving the whole project to <code>typescript</code>. With the Vue CLI, it is just running <code>vue add typescript</code> at the beginning of the journey. Be sure every change is committed, since this command override some files without warning.</p>
+
+
+
+<p>Migrating to TypeScript at the beginning of the tutorial is not a big deal. Most types are already built in the Vue module. Eventually, the whole project is checked on serve and on build.</p>
+
+
+
+<p>Since TypeScript may save your time, catch bugs and give you bonus grade to the project, why not giving it a try?</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/">01. Vue: practical activity, part n°1</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
