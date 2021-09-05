@@ -17,17 +17,17 @@
 	<meta property="og:locale" content="fr_FR">
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="01. Vue: practical activity, part n°1 | Thomas VEILLARD">
-	<meta property="og:description" content="Learning outcomes Understand how Vue CLI is related to other well-known tools (webpack, babel&#8230;). Practise the Vue&rsquo;s essentials (basic components, templates, scoped styles&#8230;). Properly split the source in various files and folders. Implement some routing capabilities. Expected result At the end of the tutorial series, you got a lightweight SPA client for exploring mails and &hellip; Continuer la lecture de 01. Vue: practical activity, part n°1">
+	<meta property="og:description" content="Learning outcomes Understand how Vue CLI is related to other well-known tools (webpack, babel&#8230;). Practise the Vue&rsquo;s essentials (basic components, templates, scoped styles&#8230;). Organise your source code in various files and folders. Build reusable components (isolation, single responsibility, props and slots). Do not repeat yourself (DRY!) Work with Promise and events inside a Vue application. &hellip; Continuer la lecture de 01. Vue: practical activity, part n°1">
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-09-04T16:36:06+00:00">
-	<meta property="article:modified_time" content="2021-09-04T16:36:29+00:00">
+	<meta property="article:modified_time" content="2021-09-05T08:42:09+00:00">
 	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture est.">
-	<meta name="twitter:data2" content="7 minutes">
+	<meta name="twitter:data2" content="9 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -63,7 +63,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#primaryimage"
 	            },
 	            "datePublished": "2021-09-04T16:36:06+00:00",
-	            "dateModified": "2021-09-04T16:36:29+00:00",
+	            "dateModified": "2021-09-05T08:42:09+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#breadcrumb"
 	            },
@@ -105,11 +105,11 @@
 	            },
 	            "headline": "01. Vue: practical activity, part n°1",
 	            "datePublished": "2021-09-04T16:36:06+00:00",
-	            "dateModified": "2021-09-04T16:36:29+00:00",
+	            "dateModified": "2021-09-05T08:42:09+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#webpage"
 	            },
-	            "wordCount": 1254,
+	            "wordCount": 1510,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -379,8 +379,12 @@ table {
 <ul>
 <li>Understand how Vue CLI is related to other well-known tools (webpack, babel&#8230;).</li>
 <li>Practise the Vue&rsquo;s essentials (basic components, templates, scoped styles&#8230;).</li>
-<li>Properly split the source in various files and folders.</li>
-<li>Implement some routing capabilities.</li>
+<li>Organise your source code in various files and folders.</li>
+<li>Build reusable components (isolation, single responsibility, props and slots).</li>
+<li>Do not repeat yourself (DRY!)</li>
+<li>Work with Promise and events inside a Vue application.</li>
+<li>Import third party packages providing components with npm.</li>
+<li>Commit and reset staged changes with git.</li>
 </ul>
 
 
@@ -393,7 +397,7 @@ table {
 
 
 
-<p>The first tutorial of the Vue&rsquo;s series focuses on setting up the project, understanding tools behind the Vue CLI (those discussed in last tutorial) and preparing routes for the OAuth2 authorisation flow.</p>
+<p>The first tutorial of the Vue&rsquo;s series focuses on setting up the project, understanding tools behind the Vue CLI (those discussed in the last tutorial), setting up the layout and adding some shared reusable components.</p>
 
 
 
@@ -653,58 +657,143 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<h4>Add routing capabilities</h4>
+<h4>Reusable BaseButton</h4>
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, so vue-router v4 or higher.</p>
+<p>For the need of the UI, let&rsquo;s create a <code>BaseButton</code> component. Basically, this is just a styled <code>&lt;button></code>. Its usage should be mostly the same (possibility to pass children, styles, classes, role= »button » or role= »submit »&#8230;).</p>
 
 
 
-<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, create 2 routes (<code>/</code> that loads <code>HomePage</code> and <code>/oauth2/callback</code> that loads <code>Oauth2CallbackPage</code>). You also have to create the missing page component. Define the router in its own module (ex. <code>src/lib/router.js</code>).</p>
+<p class="question"><strong>Question 5</strong>: How behaves non-prop attributes (aka. HTML attributes) passed down to a component that template has a single root element?</p>
 
 
 
-<p><strong>Tips</strong>: for the previous question, you need:</p>
+<p class="exercice"><strong>Exercise 7</strong>: Implement such a <code>BaseButton</code>, animated on hover and focus. Do not forget the disabled state.</p>
 
 
 
-<ul>
-<li>to add <code>src/lib/router.js</code> and export a router built with <code>createRouter()</code>.</li>
-<li>to import the router in <code>src/main.js</code> and call <code>x.use(router)</code> somewhere&#8230;</li>
-<li>to use <code>&lt;router-view /&gt;</code> instead of <code>&lt;home-page /&gt;</code> somewhere&#8230;</li>
-<li>to create another component for the second page.</li>
-</ul>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button.gif" alt="" class="wp-image-3490"></figure></div>
 
 
 
-<p><strong>Tips</strong>: I experienced issues with the default export of <code>vue-router</code>. See above:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> VueRouter <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-router'</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router = VueRouter.createRouter(<span class="hljs-comment">/** ... */</span>) <span class="hljs-comment">// VueRouter is undefined</span>
-
-<span class="hljs-keyword">import</span> { createRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-router'</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router = createRouter(<span class="hljs-comment">/** ... */</span>) <span class="hljs-comment">// works fine</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: add and set up vue-router »</p>
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 7: create BaseButton with primary color »</p>
 
 
 
-<p class="question"><strong>Question 5</strong>: Why should you now use <code>&lt;router-link to="/"&gt;Home&lt;/router-link&gt;</code> instead of <code>&lt;a href="/"&gt;Home&lt;/a&gt;</code>?</p>
+<p class="exercice"><strong>Exercise 8</strong>: Add the <code>color</code> prop to <code>BaseButton</code>. This prop accepts one of <code>'primary', 'warn' or 'danger'</code> values. It defaults to  <code>primary</code> and you should validate the given value matches the enum. Then, dynamically apply styles to the button based on that prop.</p>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="786" height="564" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/Peek-04-09-2021-17-31.gif" alt="" class="wp-image-3441"><figcaption>The routing is operational, including header navigation.</figcaption></figure>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="331" height="219" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png" alt="" class="wp-image-3493" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png 331w, https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color-300x198.png 300w" sizes="(max-width: 331px) 100vw, 331px"></figure></div>
 
 
 
-<h4>To continue&#8230;</h4>
+<p><strong>Tips</strong>: According to the DRY principal (Don&rsquo;t Repeat Yourself), declare in a single place the allowed values for the color enum and its corresponding colors. Then, find <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. On my side, I just declared the above object and always take it as a single source of thruth in <code>BaseComponent</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
+  <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
+  <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
+  <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: color palette and prop for BaseButton »</p>
 
 
 
-<p>Next time, let&rsquo;s connect some third party API through Oauth2. The user identity will be retrieved from it. Additionally, you will fetch data from Outlook through that API.</p>
+<h4>Reusable AsyncButton</h4>
+
+
+
+<p>Now, let&rsquo;s add <code>AsyncButton</code> built on top of <code>BaseButton</code>. It prevents the user from clicking multiple times on the button while a Promise is in progress. That Promise is returned by the parent&rsquo;s <code>onClick</code> listener.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif" alt="" class="wp-image-3510"></figure></div>
+
+
+
+<p>Here you have its source code (if you did not install FontAwesome, just replace the <code>&lt;font-awesome-icon /></code> by a simple text, while preserving the <code>v-if</code> directive.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">base-button</span>
+    <span class="hljs-attr">:disabled</span>=<span class="hljs-string">"isPending"</span>
+    <span class="hljs-attr">:color</span>=<span class="hljs-string">"color"</span>
+    @<span class="hljs-attr">click.stop.prevent</span>=<span class="hljs-string">"handleClick"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">font-awesome-icon</span> 
+      <span class="hljs-attr">v-if</span>=<span class="hljs-string">"isPending"</span>
+      <span class="hljs-attr">:icon</span>=<span class="hljs-string">"['fas', 'circle-notch']"</span>
+      <span class="hljs-attr">pulse</span>
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">base-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> BaseButton <span class="hljs-keyword">from</span> <span class="hljs-string">'./BaseButton.vue'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'AsyncButton'</span>,
+  <span class="hljs-attr">components</span>: { BaseButton },
+  <span class="hljs-attr">inheritAttrs</span>: <span class="hljs-literal">false</span>,
+
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">color</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">default</span>: <span class="hljs-string">'primary'</span>
+    }
+  },
+
+  data () {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">isPending</span>: <span class="hljs-literal">false</span>
+    }
+  },
+
+  <span class="hljs-attr">methods</span>: {
+    <span class="hljs-keyword">async</span> handleClick () {
+      <span class="hljs-keyword">this</span>.isPending = <span class="hljs-literal">true</span>
+      <span class="hljs-keyword">await</span> <span class="hljs-comment">/** <span class="hljs-doctag">@type <span class="hljs-type">{() =&gt; Promise&lt;void&gt;}</span> </span>*/</span> (<span class="hljs-keyword">this</span>.$attrs.onClick)()
+      <span class="hljs-keyword">this</span>.isPending = <span class="hljs-literal">false</span>
+    }
+  }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 9: add AsyncButton »</p>
+
+
+
+<p><strong>Exercise 10</strong>. Change the behaviour of the previous button, so its waiting time increase by one second each it is clicked.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 10: slowing down the button on click »</p>
+
+
+
+<p class="question"><strong>Question 6</strong>: Analyse how works the <code>AsyncButton</code>. When is the parent <code>@click</code> event called? How the child component is aware of the returned Promise by the parent onClick handler? Why is the <code>await</code> necessary? Etc.</p>
+
+
+
+<p class="question"><strong>Question 7</strong>: Which bug is introduced if <code>inheritAttrs: false</code> is missing or set to <code>true</code> in <code>AsyncButton</code>. Why?</p>
+
+
+
+<h4>To continue</h4>
+
+
+
+<p>Next time, you will handle Oauth2 authentication against the Microsoft Graph API, fetch the user identity, use it at various locations of the UI and eventually implement some routes. Maybe improved state management will also be useful&#8230;</p>
 
 
 
