@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 05 Sep 2021 12:06:07 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 11 Sep 2021 08:00:07 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1400,6 +1400,30 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 
 
 <p><strong>Tips</strong>: Try not to repeat yourself (DRY principal).  Some intermediate computations for a metric could be reused for another one. Also, some logic patterns may be factorised as functions (cf. previous tips).</p>
+
+
+
+<h4>Bonus: test your code yourself</h4>
+
+
+
+<p>It is common to write specs (automatic tests) while producing your code, like I did. I share them, so you can test your own implementations. The test runner is mocha, so it runs your code with node.</p>
+
+
+
+<p><strong>Tips</strong>: of course, you need to adapt my tests, so they call your own code. This mainly depends on your code structure&#8230; </p>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/09/tp-1-mocha-specs.zip">Download mocha specs (source code)</a>
+</div>
+</div>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="718" height="710" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/spec-tp1-output.png" alt="" class="wp-image-3687" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/spec-tp1-output.png 718w, https://thomas-veillard.fr/wp-content/uploads/2021/09/spec-tp1-output-300x297.png 300w" sizes="(max-width: 718px) 100vw, 718px" /><figcaption>Expected output when all tests are green.</figcaption></figure>
 
 
 

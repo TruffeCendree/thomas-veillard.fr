@@ -293,10 +293,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/</loc>
-		<lastmod>2021-08-28T11:55:44+00:00</lastmod>
-	</url>
-	<url>
 		<loc>https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/</loc>
 		<lastmod>2021-09-05T12:06:07+00:00</lastmod>
 		<image:image>
@@ -310,6 +306,13 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/</loc>
+		<lastmod>2021-09-11T08:00:07+00:00</lastmod>
+		<image:image>
+			<image:loc>https://thomas-veillard.fr/wp-content/uploads/2021/09/spec-tp1-output.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
