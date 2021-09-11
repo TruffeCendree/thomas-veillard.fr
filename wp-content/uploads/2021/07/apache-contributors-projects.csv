@@ -23413,9 +23413,7 @@ samisa,Samisa Abeysinghe,http://www.bloglines.com/blog/samisa,Axis2/C
 samisa,Samisa Abeysinghe,http://www.bloglines.com/blog/samisa,Axis C++
 samisa,Samisa Abeysinghe,http://www.bloglines.com/blog/samisa,Axis2
 aadamchik,Andrei Adamchik,,Apache Software Foundation
-aadamchik,Andrei Adamchik,,
 rahul,Rahul Akolkar,,Apache Software Foundation
-rahul,Rahul Akolkar,,
 gregames,Greg Ames,,Apache Software Foundation
 gregames,Greg Ames,,httpd
 gregames,Greg Ames,,APR
@@ -23428,16 +23426,12 @@ danny,Danny Angus,http://blog.killerbees.co.uk,Apache Software Foundation
 danny,Danny Angus,http://blog.killerbees.co.uk,James
 danny,Danny Angus,http://blog.killerbees.co.uk,Jakarta
 assaf,Assaf Arkin,,Apache Software Foundation
-assaf,Assaf Arkin,,
 carnold,Curt Arnold,,Apache Software Foundation
-carnold,Curt Arnold,,
 azeez,Mohamed Afkham Azeez,,Apache Software Foundation
-azeez,Mohamed Afkham Azeez,,
 reto,Reto Bachmann-GmÃ¼r,,Apache Software Foundation
 reto,Reto Bachmann-GmÃ¼r,,clerezza
 reto,Reto Bachmann-GmÃ¼r,,stanbol
 sbailliez,Stephane Bailliez,,Apache Software Foundation
-sbailliez,Stephane Bailliez,,
 aaron,Aaron Bannert,http://www.clove.org/~aaron/,Apache Software Foundation
 aaron,Aaron Bannert,http://www.clove.org/~aaron/,httpd
 aaron,Aaron Bannert,http://www.clove.org/~aaron/,APR
@@ -23447,7 +23441,6 @@ aaron,Aaron Bannert,http://www.clove.org/~aaron/,incubator
 aaron,Aaron Bannert,http://www.clove.org/~aaron/,flood
 aaron,Aaron Bannert,http://www.clove.org/~aaron/,infrastructure
 billbarker,William Barker,,Apache Software Foundation
-billbarker,William Barker,,
 abayer,Andrew Bayer,,Apache Software Foundation
 abayer,Andrew Bayer,,Whirr
 abayer,Andrew Bayer,,Bigtop
@@ -23457,28 +23450,21 @@ sebb,Sebastian Bazley,,JMeter
 sebb,Sebastian Bazley,,HttpComponents
 sebb,Sebastian Bazley,,Commons
 cbegin,Clinton Begin,,Apache Software Foundation
-cbegin,Clinton Begin,,
 brianb,Brian Behlendorf,http://www.behlendorf.com/,Apache Software Foundation
-brianb,Brian Behlendorf,http://www.behlendorf.com/,
 mvdb,Martin van den Bemt,http://www.mvdb.org/,Apache Software Foundation
 mvdb,Martin van den Bemt,http://www.mvdb.org/,Jakarta
 mvdb,Martin van den Bemt,http://www.mvdb.org/,Db DDLUtils
 mvdb,Martin van den Bemt,http://www.mvdb.org/,Gump
 mbenson,Matt Benson,,Apache Software Foundation
-mbenson,Matt Benson,,
 noel,Noel J. Bergman,,Apache Software Foundation
 noel,Noel J. Bergman,,ApacheCon
 noel,Noel J. Bergman,,incubator
 noel,Noel J. Bergman,,infrastructure
 noel,Noel J. Bergman,,James
 dbertoni,David Bertoni,,Apache Software Foundation
-dbertoni,David Bertoni,,
 ndbeyer,Nathan Beyer,,Apache Software Foundation
-ndbeyer,Nathan Beyer,,
 ab,Andrzej Bialecki,,Apache Software Foundation
-ab,Andrzej Bialecki,,
 dblevins,David Blevins,,Apache Software Foundation
-dblevins,David Blevins,,
 tripod,Tobias Bocanegra,,Apache Software Foundation
 tripod,Tobias Bocanegra,,Jackrabbit
 bodewig,Stefan Bodewig,http://stefan.samaflost.de/,Apache Software Foundation
@@ -23488,12 +23474,10 @@ bodewig,Stefan Bodewig,http://stefan.samaflost.de/,Jakarta
 bommel,Bernd Bohmann,,Apache Software Foundation
 bommel,Bernd Bohmann,,MyFaces
 boisvert,Alex Boisvert,,Apache Software Foundation
-boisvert,Alex Boisvert,,
 ieb,Ian Boston,http://www.tfd.co.uk/,Apache Software Foundation
 ieb,Ian Boston,http://www.tfd.co.uk/,Sling
 ieb,Ian Boston,http://www.tfd.co.uk/,Shindig
 ebourg,Emmanuel Bourg,,Apache Software Foundation
-ebourg,Emmanuel Bourg,,
 hboutemy,HervÃ© Boutemy,,Apache Software Foundation
 hboutemy,HervÃ© Boutemy,,Maven
 rbowen,Rich Bowen,http://www.rcbowen.com/,Apache Software Foundation
@@ -23504,34 +23488,23 @@ mrdon,[Don Brown],,Apache Software Foundation
 mrdon,[Don Brown],,Struts
 mrdon,[Don Brown],,Jakarta
 maxb,Max Oliver Bowsher,,Apache Software Foundation
-maxb,Max Oliver Bowsher,,
 gbrown,Gregory K. Brown,,Apache Software Foundation
-gbrown,Gregory K. Brown,,
 nbubna,Nathan Bubna,,Apache Software Foundation
-nbubna,Nathan Bubna,,
 pburba,Paul Burba,,Apache Software Foundation
-pburba,Paul Burba,,
 nick,Nick Burch,,Apache Software Foundation
-nick,Nick Burch,,
 buschmi,Michael Busch,,Apache Software Foundation
-buschmi,Michael Busch,,
 sbutler,Stephen O'Neil Butler,,Apache Software Foundation
-sbutler,Stephen O'Neil Butler,,
 adc,Alan D. Cabrera,,Apache Software Foundation
-adc,Alan D. Cabrera,,
 arje,ArjÃ© Cahn,http://www.onehippo.com,Apache Software Foundation
 arje,ArjÃ© Cahn,http://www.onehippo.com,Portals
 arje,ArjÃ© Cahn,http://www.onehippo.com,Cocoon
 arje,ArjÃ© Cahn,http://www.onehippo.com,Jackrabbit
 arje,ArjÃ© Cahn,http://www.onehippo.com,Wicket
 caijunj,Jun Jie Cai,,Apache Software Foundation
-caijunj,Jun Jie Cai,,
 jacopoc,Jacopo Cappellato,,Apache Software Foundation
 jacopoc,Jacopo Cappellato,,OFBiz
 jcarman,James W. Carman,,Apache Software Foundation
-jcarman,James W. Carman,,
 jdcasey,John Casey,,Apache Software Foundation
-jdcasey,John Casey,,
 ugo,Ugo Cei,http://agylen.com/,Apache Software Foundation
 ugo,Ugo Cei,http://agylen.com/,Cocoon
 ugo,Ugo Cei,http://agylen.com/,POI
@@ -23540,19 +23513,16 @@ gozer,Philippe M. Chiasson,http://gozer.ectoplasm.org/,mod_perl
 chipchilders,Chip Childers,http://www.chipchilders.com/,Apache Software Foundation
 chipchilders,Chip Childers,http://www.chipchilders.com/,CloudStack
 oching,Maria Odea B. Ching,,Apache Software Foundation
-oching,Maria Odea B. Ching,,
 chinthaka,Eran Chinthaka,http://people.apache.org/~chinthaka/,Apache Software Foundation
 chinthaka,Eran Chinthaka,http://people.apache.org/~chinthaka/,Axis2
 chinthaka,Eran Chinthaka,http://people.apache.org/~chinthaka/,Axiom
 chinthaka,Eran Chinthaka,http://people.apache.org/~chinthaka/,Neethi
 chirino,Hiram Chirino,,Apache Software Foundation
-chirino,Hiram Chirino,,
 fchrist,Fabian Christ,http://people.apache.org/~fchrist/,Apache Software Foundation
 fchrist,Fabian Christ,http://people.apache.org/~fchrist/,Stanbol
 jan,Jan Lehnardt,,Apache Software Foundation
 jan,Jan Lehnardt,,CouchDB
 jfclere,Jean-Frederic Clere,,Apache Software Foundation
-jfclere,Jean-Frederic Clere,,
 coar,[Ken Coar],,Apache Software Foundation
 coar,[Ken Coar],,ApacheCon
 coar,[Ken Coar],,APR
@@ -23562,22 +23532,16 @@ coar,[Ken Coar],,httpd-docs
 coar,[Ken Coar],,incubator
 coar,[Ken Coar],,PHP
 scolebourne,Stephen Colebourne,,Apache Software Foundation
-scolebourne,Stephen Colebourne,,
 sussman,Ben Collins-Sussman,,Apache Software Foundation
-sussman,Ben Collins-Sussman,,
 danese,Danese Cooper,,Apache Software Foundation
-danese,Danese Cooper,,
 martinc,Martin Cooper,,Apache Software Foundation
 martinc,Martin Cooper,,Jakarta
 martinc,Martin Cooper,,Struts
 covener,Eric Covener,,Apache Software Foundation
-covener,Eric Covener,,
 mjc,Mark Cox,http://www.awe.com/mark/,Apache Software Foundation
 mjc,Mark Cox,http://www.awe.com/mark/,httpd
 adrianocrestani,Adriano Crestani Campos,,Apache Software Foundation
-adrianocrestani,Adriano Crestani Campos,,
 crichton,Dan Crichton,,Apache Software Foundation
-crichton,Dan Crichton,,
 crossley,David Crossley,http://www.indexgeo.com.au/apache/,Apache Software Foundation
 crossley,David Crossley,http://www.indexgeo.com.au/apache/,Cocoon
 crossley,David Crossley,http://www.indexgeo.com.au/apache/,Forrest
@@ -23595,19 +23559,13 @@ ccustine,Chris Custine,http://blog.organicelement.com/,Karaf
 ccustine,Chris Custine,http://blog.organicelement.com/,Felix
 ccustine,Chris Custine,http://blog.organicelement.com/,Directory Server
 cutting,Doug Cutting,http://blog.lucene.com/,Apache Software Foundation
-cutting,Doug Cutting,http://blog.lucene.com/,
 nigel,Nigel Daley,,Apache Software Foundation
-nigel,Nigel Daley,,
 gdaniels,Glen Daniels,,Apache Software Foundation
 gdaniels,Glen Daniels,,Axis
 dashorst,Martijn Dashorst,,Apache Software Foundation
-dashorst,Martijn Dashorst,,
 davisp,Paul Joseph Davis,,Apache Software Foundation
-davisp,Paul Joseph Davis,,
 sdeboy,Scott Deboy,,Apache Software Foundation
-sdeboy,Scott Deboy,,
 djd,Daniel Debrunner,,Apache Software Foundation
-djd,Daniel Debrunner,,
 bdelacretaz,Bertrand DelacrÃ©taz,http://www.codeconsult.ch/,Apache Software Foundation
 bdelacretaz,Bertrand DelacrÃ©taz,http://www.codeconsult.ch/,Cocoon
 bdelacretaz,Bertrand DelacrÃ©taz,http://www.codeconsult.ch/,FOP
@@ -23624,27 +23582,20 @@ rdonkin,Robert Burrell Donkin,,James
 rdonkin,Robert Burrell Donkin,,Incubator
 rdonkin,Robert Burrell Donkin,,Commons
 cdouglas,Chris Douglas,,Apache Software Foundation
-cdouglas,Chris Douglas,,
 ate,Ate Douma,http://www.apache.org/~ate/,Apache Software Foundation
 ate,Ate Douma,http://www.apache.org/~ate/,Portals
 ate,Ate Douma,http://www.apache.org/~ate/,WSRP4J
 ate,Ate Douma,http://www.apache.org/~ate/,Wicket
 isabel,Isabel Drost,,Apache Software Foundation
-isabel,Isabel Drost,,
 tdunning,Ted Dunning,,Apache Software Foundation
-tdunning,Ted Dunning,,
 tomdz,Thomas Dudziak,,Apache Software Foundation
-tomdz,Thomas Dudziak,,
 bruno,Bruno Dumon,,Apache Software Foundation
-bruno,Bruno Dumon,,
 grahamd,Graham Dumpleton,,Apache Software Foundation
-grahamd,Graham Dumpleton,,
 mduerig,Michael DÃ¼rig,,Apache Software Foundation
 mduerig,Michael DÃ¼rig,,Jackrabbit
 mduerig,Michael DÃ¼rig,,Chemistry
 mduerig,Michael DÃ¼rig,,Sling
 bryanduxbury,Bryan Duxbury,,Apache Software Foundation
-bryanduxbury,Bryan Duxbury,,
 seade,Scott Eade,,Apache Software Foundation
 seade,Scott Eade,,DB
 seade,Scott Eade,,Jakarta
@@ -23654,13 +23605,9 @@ lars,Lars Eilebrecht,,httpd
 lars,Lars Eilebrecht,,httpd-docs
 lars,Lars Eilebrecht,,ApacheCon
 antelder,Ant Elder,,Apache Software Foundation
-antelder,Ant Elder,,
 mnour,Mohammad Nour El-Din,,Apache Software Foundation
-mnour,Mohammad Nour El-Din,,
 jbellis,Jonathan Ellis,,Apache Software Foundation
-jbellis,Jonathan Ellis,,
 tellison,Tim Ellison,,Apache Software Foundation
-tellison,Tim Ellison,,
 gerdogdu,Gurkan Erdogdu,http://gurkanerdogdu.blogspot.com,Apache Software Foundation
 gerdogdu,Gurkan Erdogdu,http://gurkanerdogdu.blogspot.com,OpenWebBeans
 jerenkrantz,Justin Erenkrantz,http://www.erenkrantz.com/,Apache Software Foundation
@@ -23669,11 +23616,8 @@ jerenkrantz,Justin Erenkrantz,http://www.erenkrantz.com/,APR
 jerenkrantz,Justin Erenkrantz,http://www.erenkrantz.com/,commons
 jerenkrantz,Justin Erenkrantz,http://www.erenkrantz.com/,infrastructure
 danielf,Daniel Fagerstrom,,Apache Software Foundation
-danielf,Daniel Fagerstrom,,
 farra,J. Aaron Farr,,Apache Software Foundation
-farra,J. Aaron Farr,,
 ruchithf,Ruchith Fernando,,Apache Software Foundation
-ruchithf,Ruchith Fernando,,
 senaka,Senaka Fernando,http://senaka.tel/,Apache Software Foundation
 senaka,Senaka Fernando,http://senaka.tel/,Axis
 senaka,Senaka Fernando,http://senaka.tel/,Stonehenge
@@ -23683,7 +23627,6 @@ fielding,Roy T. Fielding,http://roy.gbiv.com/,httpd
 fielding,Roy T. Fielding,http://roy.gbiv.com/,APR
 fielding,Roy T. Fielding,http://roy.gbiv.com/,incubator
 tfischer,Thomas Fischer,,Apache Software Foundation
-tfischer,Thomas Fischer,,
 wave,Dave Fisher,,Apache Software Foundation
 wave,Dave Fisher,,poi
 wave,Dave Fisher,,incubator
@@ -23694,26 +23637,18 @@ fitz,Brian W. Fitzpatrick,http://www.red-bean.com/fitz/,incubator
 rony,Rony G. Flatscher,,Apache Software Foundation
 rony,Rony G. Flatscher,,Jakarta
 julianfoad,Julian Foad,,Apache Software Foundation
-julianfoad,Julian Foad,,
 kfogel,Karl Fogel,,Apache Software Foundation
-kfogel,Karl Fogel,,
 berndf,Bernd Fondermann,http://brainlounge.de,Apache Software Foundation
-berndf,Bernd Fondermann,http://brainlounge.de,
 brianf,Brian Fox,http://www.sonatype.com/people/author/brian/,Apache Software Foundation
-brianf,Brian Fox,http://www.sonatype.com/people/author/brian/,
 mfranklin,Matt Franklin,http://twitter.com/mattfranklin,Apache Software Foundation
 mfranklin,Matt Franklin,http://twitter.com/mattfranklin,Rave
 mfranklin,Matt Franklin,http://twitter.com/mattfranklin,Incubator
 pzf,Paul Fremantle,,Apache Software Foundation
-pzf,Paul Fremantle,,
 rfrovarp,Richard Frovarp,,Apache Software Foundation
-rfrovarp,Richard Frovarp,,
 sgala,Santiago Gala,http://memojo.com/memojowiki/Wiki.jsp?page=SantiagoGala,Apache Software Foundation
 sgala,Santiago Gala,http://memojo.com/memojowiki/Wiki.jsp?page=SantiagoGala,Jakarta
 igalic,Igor GaliÄ‡,,Apache Software Foundation
-igalic,Igor GaliÄ‡,,
 jgallacher,Jim Gallacher,,Apache Software Foundation
-jgallacher,Jim Gallacher,,
 antonio,Antonio Gallardo Rivera,http://www.apache.org/~antonio/,Apache Software Foundation
 antonio,Antonio Gallardo Rivera,http://www.apache.org/~antonio/,Cocoon
 antonio,Antonio Gallardo Rivera,http://www.apache.org/~antonio/,Forrest
@@ -23722,24 +23657,18 @@ rgardler,Ross Gardler,http://www.oss-watch.ac.uk/about/staff.xml,Apache Software
 rgardler,Ross Gardler,http://www.oss-watch.ac.uk/about/staff.xml,Cocoon
 rgardler,Ross Gardler,http://www.oss-watch.ac.uk/about/staff.xml,Forrest
 gates,Alan Gates,,Apache Software Foundation
-gates,Alan Gates,,
 gawor,Jarek Gawor,http://www.apache.org/~gawor/,Apache Software Foundation
-gawor,Jarek Gawor,http://www.apache.org/~gawor/,
 manolito,Manfred Geiler,,Apache Software Foundation
 manolito,Manfred Geiler,,MyFaces
 chrisg,Christian Geisert,,Apache Software Foundation
 chrisg,Christian Geisert,,XML Graphics
 chrisg,Christian Geisert,,FOP
 jgenender,[Jeff Genender],,Apache Software Foundation
-jgenender,[Jeff Genender],,
 simoneg,Simone Gianni,,Apache Software Foundation
-simoneg,Simone Gianni,,
 rgielen,RenÃ© Gielen,http://twitter.com/rgielen,Apache Software Foundation
 rgielen,RenÃ© Gielen,http://twitter.com/rgielen,Struts
 wglass,William Glass-Husain,,Apache Software Foundation
-wglass,William Glass-Husain,,
 glasser,David Samuel Glasser,,Apache Software Foundation
-glasser,David Samuel Glasser,,
 mrglavas,Michael Glavassevich,http://people.apache.org/~mrglavas/,Apache Software Foundation
 mrglavas,Michael Glavassevich,http://people.apache.org/~mrglavas/,Xerces-J
 mrglavas,Michael Glavassevich,http://people.apache.org/~mrglavas/,XML Commons
@@ -23750,32 +23679,24 @@ rgoers,Ralph Goers,,Logging
 rgoers,Ralph Goers,,Maven
 rgoers,Ralph Goers,,Portals
 sgoeschl,Siegfried Goeschl,,Apache Software Foundation
-sgoeschl,Siegfried Goeschl,,
 pgollucci,Philip M. Gollucci,http://p6m7g8.com,Apache Software Foundation
 pgollucci,Philip M. Gollucci,http://p6m7g8.com,mod_perl
 pgollucci,Philip M. Gollucci,http://p6m7g8.com,httpd-apreq
 pgollucci,Philip M. Gollucci,http://p6m7g8.com,infrastructure
 hgomez,Henri Gomez,http://blog.hgomez.net,Apache Software Foundation
-hgomez,Henri Gomez,http://blog.hgomez.net,
 otis,Otis Gospodnetic,,Apache Software Foundation
-otis,Otis Gospodnetic,,
 neilg,Neil Graham,,Apache Software Foundation
-neilg,Neil Graham,,
 ggregory,Gary Gregory,,Apache Software Foundation
-ggregory,Gary Gregory,,
 vgritsenko,Vadim Gritsenko,http://www.apache.org/~vgritsenko/,Apache Software Foundation
 vgritsenko,Vadim Gritsenko,http://www.apache.org/~vgritsenko/,Cocoon
 vgritsenko,Vadim Gritsenko,http://www.apache.org/~vgritsenko/,Regexp
 vgritsenko,Vadim Gritsenko,http://www.apache.org/~vgritsenko/,Xindice
 grobmeier,Christian Grobmeier,http://www.grobmeier.de,Apache Software Foundation
-grobmeier,Christian Grobmeier,http://www.grobmeier.de,
 humbedooh,Daniel Gruno,,Apache Software Foundation
 humbedooh,Daniel Gruno,,httpd
 humbedooh,Daniel Gruno,,Traffic Server
 lgo,Lieven Govaerts,,Apache Software Foundation
-lgo,Lieven Govaerts,,
 jgray,Jonathan Gray,,Apache Software Foundation
-jgray,Jonathan Gray,,
 stefan,Stefan Guggisberg,,Apache Software Foundation
 stefan,Stefan Guggisberg,,Jackrabbit
 ceki,Ceki GÃ¼lcÃ¼,,Apache Software Foundation
@@ -23786,11 +23707,8 @@ dirkx,Dirk-Willem van Gulik,,XML
 ngn,Niklas Gustavsson,http://protocol7.com,Apache Software Foundation
 ngn,Niklas Gustavsson,http://protocol7.com,MINA
 rickhall,Richard Hall,,Apache Software Foundation
-rickhall,Richard Hall,,
 hammant,Paul Hammant,,Apache Software Foundation
-hammant,Paul Hammant,,
 fhanik,Filip Hanik,,Apache Software Foundation
-fhanik,Filip Hanik,,
 perrin,Perrin Harkins,,Apache Software Foundation
 perrin,Perrin Harkins,,mod_perl
 ehatcher,Erik Hatcher,,Apache Software Foundation
@@ -23801,23 +23719,18 @@ bjh,Brian Havard,http://silk.apana.org.au,APR
 yoshiki,Yoshiki Hayashi,,Apache Software Foundation
 yoshiki,Yoshiki Hayashi,,httpd-docs
 niclas,Niclas Hedhman,,Apache Software Foundation
-niclas,Niclas Hedhman,,
 zwoop,Leif Hedstrom,http://www.ogre.com,Apache Software Foundation
-zwoop,Leif Hedstrom,http://www.ogre.com,
 oheger,Oliver Heger,,Apache Software Foundation
-oheger,Oliver Heger,,
 aheritier,Arnaud HÃ©ritier,http://aheritier.net/,Apache Software Foundation
 aheritier,Arnaud HÃ©ritier,http://aheritier.net/,Maven
 aheritier,Arnaud HÃ©ritier,http://aheritier.net/,Archiva
 rhillegas,Rick Hillegas,,Apache Software Foundation
 rhillegas,Rick Hillegas,,Derby
 hindessm,Mark Hindess,,Apache Software Foundation
-hindessm,Mark Hindess,,
 rhirsch,Richard Hirsch,,Apache Software Foundation
 rhirsch,Richard Hirsch,,ESME
 rhirsch,Richard Hirsch,,Incubator
 hogstrom,Matt Hogstrom,http://blog.hogstrom.org,Apache Software Foundation
-hogstrom,Matt Hogstrom,http://blog.hogstrom.org,
 ianh,Ian Holsman,http://people.apache.org/~ianh/,Apache Software Foundation
 ianh,Ian Holsman,http://people.apache.org/~ianh/,httpd
 ianh,Ian Holsman,http://people.apache.org/~ianh/,APR
@@ -23827,16 +23740,13 @@ hossman,Chris Hostetter,http://people.apache.org/~hossman/,Apache Software Found
 hossman,Chris Hostetter,http://people.apache.org/~hossman/,Lucene
 hossman,Chris Hostetter,http://people.apache.org/~hossman/,Solr
 ghudson,Greg Hudson,,Apache Software Foundation
-ghudson,Greg Hudson,,
 hughesj,Jeremy Hughes,,Apache Software Foundation
-hughesj,Jeremy Hughes,,
 rhuijben,Bert Huijben,,Apache Software Foundation
 rhuijben,Bert Huijben,,Subversion
 marvin,Marvin Humphrey,,Apache Software Foundation
 marvin,Marvin Humphrey,,Lucy
 marvin,Marvin Humphrey,,Incubator
 phunt,Patrick D. Hunt,,Apache Software Foundation
-phunt,Patrick D. Hunt,,
 jhunter,Jason Hunter,,Apache Software Foundation
 jhunter,Jason Hunter,,Jakarta
 gsingers,Grant Ingersoll,http://www.grantingersoll.com,Apache Software Foundation
@@ -23844,25 +23754,16 @@ gsingers,Grant Ingersoll,http://www.grantingersoll.com,Lucene
 gsingers,Grant Ingersoll,http://www.grantingersoll.com,Mahout
 gsingers,Grant Ingersoll,http://www.grantingersoll.com,Solr
 ajack,Adam Jack,,Apache Software Foundation
-ajack,Adam Jack,,
 kevj,Kevin Jackson,,Apache Software Foundation
-kevj,Kevin Jackson,,
 nandika,Korale Gamaralalage Nandika Chandrasiri Jayawardan,,Apache Software Foundation
-nandika,Korale Gamaralalage Nandika Chandrasiri Jayawardan,,
 jim,Jim Jagielski,http://www.jaguNET.com/jim.html,Apache Software Foundation
 jim,Jim Jagielski,http://www.jaguNET.com/jim.html,lots
 jalkanen,Janne Jalkanen,http://www.ecyrd.com/ButtUgly/,Apache Software Foundation
-jalkanen,Janne Jalkanen,http://www.ecyrd.com/ButtUgly/,
 deepal,Deepal Jayasinghe,http://blogs.deepal.org/,Apache Software Foundation
-deepal,Deepal Jayasinghe,http://blogs.deepal.org/,
 djencks,David Jencks,,Apache Software Foundation
-djencks,David Jencks,,
 ningjiang,Willem Ning Jiang,,Apache Software Foundation
-ningjiang,Willem Ning Jiang,,
 snoopdave,Dave Johnson,,Apache Software Foundation
-snoopdave,Dave Johnson,,
 jonesde,David E. Jones,,Apache Software Foundation
-jonesde,David E. Jones,,
 tomj,Tom Jordahl,http://tjordahl.blogspot.com/,Apache Software Foundation
 tomj,Tom Jordahl,http://tjordahl.blogspot.com/,Axis
 rjung,Rainer Jung,,Apache Software Foundation
@@ -23870,63 +23771,48 @@ rjung,Rainer Jung,,httpd
 rjung,Rainer Jung,,APR
 rjung,Rainer Jung,,Tomcat
 olegk,Oleg Kalnichevski,,Apache Software Foundation
-olegk,Oleg Kalnichevski,,
 supun,Supun Kamburugamuva,,Apache Software Foundation
-supun,Supun Kamburugamuva,,
 akarasulu,Alex Karasulu,mailto:akarasulu@apache.org,Apache Software Foundation
 akarasulu,Alex Karasulu,mailto:akarasulu@apache.org,directory
 manoj,Manoj Kasichainula,http://www.io.com/~manojk/,Apache Software Foundation
 manoj,Manoj Kasichainula,http://www.io.com/~manojk/,httpd
 damien,Damien F. Katz,,Apache Software Foundation
-damien,Damien F. Katz,,
 kelly,Sean Kelly,,Apache Software Foundation
-kelly,Sean Kelly,,
 niq,Nick Kew,http://people.apache.org/~niq/,Apache Software Foundation
 niq,Nick Kew,http://people.apache.org/~niq/,APR
 sk,Sally Khudairi,,Apache Software Foundation
-sk,Sally Khudairi,,
 mkienenb,Mike Kienenberger,,Apache Software Foundation
 mkienenb,Mike Kienenberger,,Cayenne
 skitching,Simon Kitching,,Apache Software Foundation
-skitching,Simon Kitching,,
 fuankg,Guenter Knauf,,Apache Software Foundation
-fuankg,Guenter Knauf,,
 serge,Serge Knystautas,mailto:sergek@lokitech.com,Apache Software Foundation
 serge,Serge Knystautas,mailto:sergek@lokitech.com,James
 ed,Ed Korthof,mailto:ed@apache.org,Apache Software Foundation
 ed,Ed Korthof,mailto:ed@apache.org,httpd
 gkossakowski,Grzegorz Kossakowski,,Apache Software Foundation
-gkossakowski,Grzegorz Kossakowski,,
 yegor,Yegor Kozlov,,Apache Software Foundation
-yegor,Yegor Kozlov,,
 martin,Martin Kraemer,,Apache Software Foundation
 martin,Martin Kraemer,,httpd
 kkrugler,Kenneth William Krugler,,Apache Software Foundation
-kkrugler,Kenneth William Krugler,,
 dkulp,J. Daniel Kulp,http://www.dankulp.com/blog,Apache Software Foundation
 dkulp,J. Daniel Kulp,http://www.dankulp.com/blog,CXF
 damitha,Damitha N.M. Kumarage,,Apache Software Foundation
-damitha,Damitha N.M. Kumarage,,
 olamy,Olivier Lamy,http://olamy.blogspot.com/,Apache Software Foundation
 olamy,Olivier Lamy,http://olamy.blogspot.com/,Maven
 jlaskowski,Jacek Laskowski,,Apache Software Foundation
-jlaskowski,Jacek Laskowski,,
 ben,Ben Laurie,,Apache Software Foundation
 ben,Ben Laurie,,httpd
 blautenb,Berin Lautenbach,,Apache Software Foundation
 blautenb,Berin Lautenbach,,XML
 slaws,Simon Laws,,Apache Software Foundation
-slaws,Simon Laws,,
 elecharny,Emmanuel LÃ©charny,http://hrabal.blogspot.com/,Apache Software Foundation
 elecharny,Emmanuel LÃ©charny,http://hrabal.blogspot.com/,Directory
 trustin,Trustin Lee,http://gleamynode.net/,Apache Software Foundation
-trustin,Trustin Lee,http://gleamynode.net/,
 minfrin,Graham Leggett,,Apache Software Foundation
 minfrin,Graham Leggett,,httpd apr
 lehmi,Andreas LehmkÃ¼hler,,Apache Software Foundation
 lehmi,Andreas LehmkÃ¼hler,,PDFBox
 nlehuen,Nicolas Lehuen,,Apache Software Foundation
-nlehuen,Nicolas Lehuen,,
 rasmus,Rasmus Lerdorf,http://lerdorf.com,Apache Software Foundation
 rasmus,Rasmus Lerdorf,http://lerdorf.com,PHP
 vanto,Tammo van Lessen,http://www.taval.de/,Apache Software Foundation
@@ -23934,13 +23820,9 @@ vanto,Tammo van Lessen,http://www.taval.de/,ODE
 twl,Theodore W. Leung,http://www.sauria.com/~twl,Apache Software Foundation
 twl,Theodore W. Leung,http://www.sauria.com/~twl,XML
 antoine,Antoine Levy-Lambert,,Apache Software Foundation
-antoine,Antoine Levy-Lambert,,
 hlship,Howard M. Lewis Ship,,Apache Software Foundation
-hlship,Howard M. Lewis Ship,,
 xli,Xiao-Feng Li,,Apache Software Foundation
-xli,Xiao-Feng Li,,
 lindner,Paul Lindner,,Apache Software Foundation
-lindner,Paul Lindner,,
 ruwan,Ruwan Linton,http://blog.ruwan.org,Apache Software Foundation
 ruwan,Ruwan Linton,http://blog.ruwan.org,Synapse
 ridruejo,Daniel LÃ³pez Ridruejo,mailto:ridruejo@(no-spam)apache.org,Apache Software Foundation
@@ -23950,13 +23832,9 @@ bloritsch,Berin Loritsch,mailto:bloritsch@apache.org,Cocoon
 stevel,Steve Loughran,,Apache Software Foundation
 stevel,Steve Loughran,,Ant
 dennisl,Dennis Lundberg,,Apache Software Foundation
-dennisl,Dennis Lundberg,,
 raphael,RaphaÃ«l Luta,,Apache Software Foundation
-raphael,RaphaÃ«l Luta,,
 lvjing,Jing Lv,,Apache Software Foundation
-lvjing,Jing Lv,,
 colm,Colm MacCÃ¡rthaigh,mailto:colm@(anti-spam)stdlib.net,Apache Software Foundation
-colm,Colm MacCÃ¡rthaigh,mailto:colm@(anti-spam)stdlib.net,
 conor,Conor MacNeill,,Apache Software Foundation
 conor,Conor MacNeill,,Ant
 geirm,Geir Magnusson Jr.,mailto:geirm@apache.org,Apache Software Foundation
@@ -23968,21 +23846,16 @@ nd,AndrÃ© L. Malo,,httpd
 amaniatis,Aristedes Maniatis,,Apache Software Foundation
 amaniatis,Aristedes Maniatis,,Cayenne
 costin,Doru Costin Manolache,,Apache Software Foundation
-costin,Doru Costin Manolache,,
 pamarcelot,Pierre-Arnaud Marcelot,,Apache Software Foundation
 pamarcelot,Pierre-Arnaud Marcelot,,Directory
 bimargulies,Benson Margulies,,Apache Software Foundation
-bimargulies,Benson Margulies,,
 mmarinschek,Martin Marinschek,,Apache Software Foundation
-mmarinschek,Martin Marinschek,,
 jeremias,Jeremias MÃ¤rki,http://www.jeremias-maerki.ch,Apache Software Foundation
 jeremias,Jeremias MÃ¤rki,http://www.jeremias-maerki.ch,XML Graphics
 smarru,Suresh Marru,http://people.apache.org/~smarru/,Apache Software Foundation
 smarru,Suresh Marru,http://people.apache.org/~smarru/,Airavata
 kmarsden,Katherine Marsden,,Apache Software Foundation
-kmarsden,Katherine Marsden,,
 philip,Philip Martin,,Apache Software Foundation
-philip,Philip Martin,,
 jm,Justin Mason,http://jmason.org/,Apache Software Foundation
 jm,Justin Mason,http://jmason.org/,SpamAssassin
 mattmann,Chris A. Mattmann,http://sunset.usc.edu/~mattmann/,Apache Software Foundation
@@ -23990,71 +23863,51 @@ mattmann,Chris A. Mattmann,http://sunset.usc.edu/~mattmann/,Tika
 remm,Remy Maucherat,,Apache Software Foundation
 remm,Remy Maucherat,,Jakarta
 norman,Norman Maurer,,Apache Software Foundation
-norman,Norman Maurer,,
 thommay,[Thom May],,Apache Software Foundation
 thommay,[Thom May],,httpd
 brianm,Brian McCallister,http://www.apache.org/~brianm/,Apache Software Foundation
-brianm,Brian McCallister,http://www.apache.org/~brianm/,
 mikemccand,Michael McCandless,,Apache Software Foundation
-mikemccand,Michael McCandless,,
 craigmcc,Craig R. McClanahan,,Apache Software Foundation
 craigmcc,Craig R. McClanahan,,Jakarta
 gmcdonald,Gavin McDonald,http://16degrees.com.au,Apache Software Foundation
-gmcdonald,Gavin McDonald,http://16degrees.com.au,
 rickmcguire,Rick McGuire,,Apache Software Foundation
 rickmcguire,Rick McGuire,,Geronimo
 jmcnally,John McNally,,Apache Software Foundation
 jmcnally,John McNally,,Jakarta
 kmenard,Kevin Joseph Menard, Jr.,,Apache Software Foundation
-kmenard,Kevin Joseph Menard, Jr.,,
 fmeschbe,Felix Meschberger,,Apache Software Foundation
-fmeschbe,Felix Meschberger,,
 markrmiller,Mark Robert Miller,,Apache Software Foundation
-markrmiller,Mark Robert Miller,,
 kevan,Kevan Miller,,Apache Software Foundation
-kevan,Kevan Miller,,
 minchau,Brian James Minchau,,Apache Software Foundation
-minchau,Brian James Minchau,,
 awm,Aram W. Mirzadeh,,Apache Software Foundation
 awm,Aram W. Mirzadeh,,httpd
 phred,Fred Moyer,,Apache Software Foundation
-phred,Fred Moyer,,
 fmui,Florian MÃ¼ller,,Apache Software Foundation
-fmui,Florian MÃ¼ller,,
 acmurthy,Arun Murthy,,Apache Software Foundation
-acmurthy,Arun Murthy,,
 nash,Simon Nash,,Apache Software Foundation
-nash,Simon Nash,,
 bnicholes,Bradley Nicholes,,Apache Software Foundation
 bnicholes,Bradley Nicholes,,httpd
 jnioche,Julien Nioche,,Apache Software Foundation
-jnioche,Julien Nioche,,
 gnodet,Guillaume Nodet,http://www.apache.org/~gnodet/,Apache Software Foundation
 gnodet,Guillaume Nodet,http://www.apache.org/~gnodet/,ActiveMQ
 stevenn,Steven Noels,,Apache Software Foundation
 stevenn,Steven Noels,,Cocoon
 uncled,David Nuescheler,,Apache Software Foundation
-uncled,David Nuescheler,,
 omalley,Owen O'Malley,http://www.apache.org/~omalley,Apache Software Foundation
-omalley,Owen O'Malley,http://www.apache.org/~omalley,
 ekoneil,Eddie O'Neil,,Apache Software Foundation
-ekoneil,Eddie O'Neil,,
 dos,Daryl C. W. O'Shea,http://daryl.dostech.ca/,Apache Software Foundation
 dos,Daryl C. W. O'Shea,http://daryl.dostech.ca/,SpamAssassin
 marrs,Marcel Offermans,,Apache Software Foundation
 marrs,Marcel Offermans,,ACE
 jbonofre,Jean-Baptiste OnofrÃ©,,Apache Software Foundation
-jbonofre,Jean-Baptiste OnofrÃ©,,
 orlikowski,Victor J. Orlikowski,,Apache Software Foundation
 orlikowski,Victor J. Orlikowski,,httpd
 jorton,Joe Orton,,Apache Software Foundation
 jorton,Joe Orton,,APR
 johan,Johan Oskarsson,,Apache Software Foundation
-johan,Johan Oskarsson,,
 giacomo,Giacomo Pati,,Apache Software Foundation
 giacomo,Giacomo Pati,,Cocoon
 pauls,Karl Pauls,,Apache Software Foundation
-pauls,Karl Pauls,,
 niallp,Niall Pemberton,,Apache Software Foundation
 niallp,Niall Pemberton,,Jakarta
 henkp,Henk P. Penning,http://www.apache.org/~henkp/,Apache Software Foundation
@@ -24062,29 +23915,19 @@ henkp,Henk P. Penning,http://www.apache.org/~henkp/,infrastructure
 spepping,Simon Pepping,http://www.leverkruid.eu/,Apache Software Foundation
 spepping,Simon Pepping,http://www.leverkruid.eu/,XML Graphics
 asankha,Asankha Perera,http://esbmagic.blogspot.com,Apache Software Foundation
-asankha,Asankha Perera,http://esbmagic.blogspot.com,
 hemapani,Srinath Perera,mailto:hperera@cs.indiana.edu,Apache Software Foundation
-hemapani,Srinath Perera,mailto:hperera@cs.indiana.edu,
 gpetracek,Gerhard Petracek,,Apache Software Foundation
-gpetracek,Gerhard Petracek,,
 pietsch,Joerg Pietschmann,,Apache Software Foundation
-pietsch,Joerg Pietschmann,,
 cmpilato,C. Michael Pilato,,Apache Software Foundation
-cmpilato,C. Michael Pilato,,
 jplevyak,John Bradley Plevyak,,Apache Software Foundation
-jplevyak,John Bradley Plevyak,,
 rpluem,RÃ¼diger PlÃ¼m,mailto:rpluem@apache.org,Apache Software Foundation
-rpluem,RÃ¼diger PlÃ¼m,mailto:rpluem@apache.org,
 noirin,Noirin Plunkett,,Apache Software Foundation
-noirin,Noirin Plunkett,,
 reinhard,Reinhard Poetz,,Apache Software Foundation
-reinhard,Reinhard Poetz,,
 brett,Brett Porter,http://brettporter.wordpress.com/,Apache Software Foundation
 brett,Brett Porter,http://brettporter.wordpress.com/,Maven
 arvind,Arvind Prabhakar,http://people.apache.org/~arvind,Apache Software Foundation
 arvind,Arvind Prabhakar,http://people.apache.org/~arvind,Sqoop
 pquerna,Paul Querna,http://paul.querna.org/,Apache Software Foundation
-pquerna,Paul Querna,http://paul.querna.org/,
 jeremy,Jeremy Quinn,http://www.fiveone.org,Apache Software Foundation
 jeremy,Jeremy Quinn,http://www.fiveone.org,Cocoon
 gianugo,Gianugo Rabellino,http://www.rabellino.it/blog/,Apache Software Foundation
@@ -24092,45 +23935,32 @@ gianugo,Gianugo Rabellino,http://www.rabellino.it/blog/,Cocoon
 dlr,Daniel L. Rall,,Apache Software Foundation
 dlr,Daniel L. Rall,,Turbine
 pramirez,Paul Michael Ramirez,,Apache Software Foundation
-pramirez,Paul Michael Ramirez,,
 ajith,Ajith H Ranabahu,,Apache Software Foundation
-ajith,Ajith H Ranabahu,,
 dreid,[David Reid],,Apache Software Foundation
 dreid,[David Reid],,httpd
 gareth,Gareth Reakes,,Apache Software Foundation
-gareth,Gareth Reakes,,
 greddin,Gregory D. Reddin,,Apache Software Foundation
-greddin,Gregory D. Reddin,,
 reschke,Julian Reschke,,Apache Software Foundation
-reschke,Julian Reschke,,
 lresende,Luciano Resende,,Apache Software Foundation
-lresende,Luciano Resende,,
 mreutegg,Marcel Reutegger,,Apache Software Foundation
-mreutegg,Marcel Reutegger,,
 arreyder,Christopher R. Rhodes,http://arreyder.com,Apache Software Foundation
-arreyder,Christopher R. Rhodes,http://arreyder.com,
 billie,Billie Rinaldi,,Apache Software Foundation
 billie,Billie Rinaldi,,Accumulo
 mriou,Matthieu Riou,http://offthelip.org,Apache Software Foundation
-mriou,Matthieu Riou,http://offthelip.org,
 rooneg,Garrett Rooney,,Apache Software Foundation
 rooneg,Garrett Rooney,,APR
 lrosen,Lawrence Rosen,,Apache Software Foundation
-lrosen,Lawrence Rosen,,
 pero,Peter Rossbach,,Apache Software Foundation
-pero,Peter Rossbach,,
 gregor,Gregor J. Rothfuss,http://greg.abstrakt.ch,Apache Software Foundation
 gregor,Gregor J. Rothfuss,http://greg.abstrakt.ch,Lenya
 wrowe,William A. Rowe, Jr.,,Apache Software Foundation
 wrowe,William A. Rowe, Jr.,,httpd
 proyal,Peter Royal,http://fotap.org/~osi,Apache Software Foundation
-proyal,Peter Royal,http://fotap.org/~osi,
 rubys,Sam Ruby,http://www.intertwingly.net/blog/,Apache Software Foundation
 rubys,Sam Ruby,http://www.intertwingly.net/blog/,Ant
 clr,Craig L Russell,,Apache Software Foundation
 clr,Craig L Russell,,JDO
 peters,Peter Samuelson,,Apache Software Foundation
-peters,Peter Samuelson,,
 carlos,Carlos Sanchez,http://www.carlossanchez.eu,Apache Software Foundation
 carlos,Carlos Sanchez,http://www.carlossanchez.eu,Maven
 wsanchez,Wilfredo SÃ¡nchez,http://www.mit.edu/people/wsanchez/,Apache Software Foundation
@@ -24138,29 +23968,20 @@ wsanchez,Wilfredo SÃ¡nchez,http://www.mit.edu/people/wsanchez/,httpd
 sanders,Scott Sanders,http://dotnot.org/blog/,Apache Software Foundation
 sanders,Scott Sanders,http://dotnot.org/blog/,Jakarta
 asavory,Andrew Savory,http://www.andrewsavory.com/blog/,Apache Software Foundation
-asavory,Andrew Savory,http://www.andrewsavory.com/blog/,
 joes,Joe Schaefer,,Apache Software Foundation
 joes,Joe Schaefer,,httpd-apreq
 joehni,JÃ¶rg Schaible,,Apache Software Foundation
-joehni,JÃ¶rg Schaible,,
 sabob,Bob Schellink,,Apache Software Foundation
-sabob,Bob Schellink,,
 thorsten,Thorsten Scherler,,Apache Software Foundation
-thorsten,Thorsten Scherler,,
 jesus,Theo Schlossnagle,,Apache Software Foundation
-jesus,Theo Schlossnagle,,
 cliffs,Cliff Schmidt,,Apache Software Foundation
-cliffs,Cliff Schmidt,,
 henning,Henning P. Schmiedehausen,http://henning.schmiedehausen.org/,Apache Software Foundation
-henning,Henning P. Schmiedehausen,http://henning.schmiedehausen.org/,
 schof,Sean Schofield,,Apache Software Foundation
-schof,Sean Schofield,,
 angela,Angela Schreiber,,Apache Software Foundation
 angela,Angela Schreiber,,Jackrabbit
 sascha,Sascha Schumann,http://www.schumann.cx/,Apache Software Foundation
 sascha,Sascha Schumann,http://www.schumann.cx/,PHP
 sebor,Martin Sebor,,Apache Software Foundation
-sebor,Martin Sebor,,
 yonik,Yonik Seeley,,Apache Software Foundation
 yonik,Yonik Seeley,,Lucene
 seelmann,Stefan Seelmann,,Apache Software Foundation
@@ -24179,29 +24000,21 @@ cliff,[Cliff Skolnick],,httpd
 nslater,Noah Slater,http://tumbolia.org/,Apache Software Foundation
 nslater,Noah Slater,http://tumbolia.org/,CouchDB
 zoe,Zoe Slattery,,Apache Software Foundation
-zoe,Zoe Slattery,,
 slive,Joshua Slive,http://slive.ca/,Apache Software Foundation
 slive,Joshua Slive,http://slive.ca/,httpd-docs
 aslom,[Alek Slominski],,Apache Software Foundation
-aslom,[Alek Slominski],,
 psmith,Paul Jeffrey Smith,,Apache Software Foundation
-psmith,Paul Jeffrey Smith,,
 wsmoak,Wendy Smoak,http://www.wendysmoak.com,Apache Software Foundation
 wsmoak,Wendy Smoak,http://www.wendysmoak.com,Struts
 bojan,Bojan Smojver,http://people.apache.org/~bojan/,Apache Software Foundation
-bojan,Bojan Smojver,http://people.apache.org/~bojan/,
 bsnyder,Bruce Snyder,http://bruceblog.org/,Apache Software Foundation
 bsnyder,Bruce Snyder,http://bruceblog.org/,ActiveMQ
 enis,Enis SÃ¶ztutar,,Apache Software Foundation
-enis,Enis SÃ¶ztutar,,
 stsp,Stefan Sperling,,Apache Software Foundation
-stsp,Stefan Sperling,,
 dims,Davanum Srinivas,,Apache Software Foundation
 dims,Davanum Srinivas,,XML
 stack,Michael Stack,,Apache Software Foundation
-stack,Michael Stack,,
 uli,Ulrich StÃ¤rk,,Apache Software Foundation
-uli,Ulrich StÃ¤rk,,
 gstein,Greg Stein,http://www.lyra.org/greg/,Apache Software Foundation
 gstein,Greg Stein,http://www.lyra.org/greg/,httpd
 psteitz,Phil Steitz,,Apache Software Foundation
@@ -24209,7 +24022,6 @@ psteitz,Phil Steitz,,Jakarta
 jon,Jon Scott Stevens,http://www.whichever.com/,Apache Software Foundation
 jon,Jon Scott Stevens,http://www.whichever.com/,Ant
 pctony,Tony Stevenson,http://blog.pc-tony.com/,Apache Software Foundation
-pctony,Tony Stevenson,http://blog.pc-tony.com/,
 stoddard,[Bill Stoddard],,Apache Software Foundation
 stoddard,[Bill Stoddard],,APR
 kess,Astrid Stolper,mailto:kess@apache.org,Apache Software Foundation
@@ -24219,11 +24031,8 @@ jstrachan,James Strachan,http://www.apache.org/~jstrachan/,Jakarta
 striker,Sander Striker,,Apache Software Foundation
 striker,Sander Striker,,APR
 struberg,Mark Struberg,,Apache Software Foundation
-struberg,Mark Struberg,,
 dain,Dain Sundstrom,,Apache Software Foundation
-dain,Dain Sundstrom,,
 amilas,Amila Suriarachchi,,Apache Software Foundation
-amilas,Amila Suriarachchi,,
 pcs,Paul Sutton,http://www.awe.com/~paul/,Apache Software Foundation
 pcs,Paul Sutton,http://www.awe.com/~paul/,httpd
 taylor,David Sean Taylor,http://www.apache.org/~taylor/,Apache Software Foundation
@@ -24231,25 +24040,18 @@ taylor,David Sean Taylor,http://www.apache.org/~taylor/,Portals
 sctemme,Sander Temme,http://www.temme.net/sander/,Apache Software Foundation
 sctemme,Sander Temme,http://www.temme.net/sander/,httpd
 tommaso,Tommaso Teofili,,Apache Software Foundation
-tommaso,Tommaso Teofili,,
 markt,Mark Thomas,,Apache Software Foundation
-markt,Mark Thomas,,
 jrthomerson,Jeremy Thomerson,http://jeremythomerson.com,Apache Software Foundation
-jrthomerson,Jeremy Thomerson,http://jeremythomerson.com,
 mads,Mads Toftum,http://www.toftum.org/,Apache Software Foundation
 mads,Mads Toftum,http://www.toftum.org/,httpd-docs
 trawick,Jeff Trawick,,Apache Software Foundation
 trawick,Jeff Trawick,,httpd
 cctrieloff,Carl Trieloff,,Apache Software Foundation
-cctrieloff,Carl Trieloff,,
 simonetripodi,Simone Tripodi,,Apache Software Foundation
-simonetripodi,Simone Tripodi,,
 grisha,Gregory Trubetskoy,http://www.ispol.com/home/grisha/,Apache Software Foundation
 grisha,Gregory Trubetskoy,http://www.ispol.com/home/grisha/,httpd
 mturk,Mladen Turk,,Apache Software Foundation
-mturk,Mladen Turk,,
 jefft,Jeff Turner,,Apache Software Foundation
-jefft,Jeff Turner,,
 upayavira,Upayavira,,Apache Software Foundation
 upayavira,Upayavira,,Cocoon
 shankar,Selvaratnam Uthaiyashankar,,Apache Software Foundation
@@ -24257,11 +24059,8 @@ shankar,Selvaratnam Uthaiyashankar,,Axis
 tv,Thomas Vandahl,,Apache Software Foundation
 tv,Thomas Vandahl,,Turbine
 gertv,Gert Vanthienen,,Apache Software Foundation
-gertv,Gert Vanthienen,,
 ivaynberg,Igor Vaynberg,,Apache Software Foundation
-ivaynberg,Igor Vaynberg,,
 evenisse,Emmanuel Venisse,,Apache Software Foundation
-evenisse,Emmanuel Venisse,,
 jvermillard,Julien Vermillard,http://people.apache.org/~jvermillard,Apache Software Foundation
 jvermillard,Julien Vermillard,http://people.apache.org/~jvermillard,MINA
 kristwaa,Kristian Waagan,,Apache Software Foundation
@@ -24269,49 +24068,34 @@ kristwaa,Kristian Waagan,,Derby
 sylvain,Sylvain Wallez,http://www.apache.org/~sylvain,Apache Software Foundation
 sylvain,Sylvain Wallez,http://www.apache.org/~sylvain,Cocoon
 keith,Keith Wannamaker,,Apache Software Foundation
-keith,Keith Wannamaker,,
 michi,Michael Wechner,http://www.wyona.com/people/michael-wechner/index.html,Apache Software Foundation
 michi,Michael Wechner,http://www.wyona.com/people/michael-wechner/index.html,Lenya
 sanjiva,Sanjiva Weerawarana,,Apache Software Foundation
 sanjiva,Sanjiva Weerawarana,,XML
 kanchana,Kanchana Pradeepika Welagedara,,Apache Software Foundation
-kanchana,Kanchana Pradeepika Welagedara,,
 nwellnhof,Nick Wellnhofer,,Apache Software Foundation
 nwellnhof,Nick Wellnhofer,,lucy
 davidw,David N. Welton,http://www.dedasys.com/davidw/,Apache Software Foundation
 davidw,David N. Welton,http://www.dedasys.com/davidw/,tcl
 matzew,Matthias Wessendorf,http://matthiaswessendorf.wordpress.com/,Apache Software Foundation
-matzew,Matthias Wessendorf,http://matthiaswessendorf.wordpress.com/,
 tomwhite,Tom White,http://lexemetech.com/,Apache Software Foundation
 tomwhite,Tom White,http://lexemetech.com/,Hadoop
 twilliams,Tim Williams,http://williamstw.blogspot.com,Apache Software Foundation
-twilliams,Tim Williams,http://williamstw.blogspot.com,
 simonw,Simon Willnauer,,Apache Software Foundation
-simonw,Simon Willnauer,,
 mwomack,Mark Dwayne Womack,,Apache Software Foundation
-mwomack,Mark Dwayne Womack,,
 dwoods,Donald Woods,http://people.apache.org/~dwoods/,Apache Software Foundation
-dwoods,Donald Woods,http://people.apache.org/~dwoods/,
 woollard,David Matthew Woollard,,Apache Software Foundation
-woollard,David Matthew Woollard,,
 hwright,Hyrum K. Wright,http://www.hyrumwright.org/,Apache Software Foundation
-hwright,Hyrum K. Wright,http://www.hyrumwright.org/,
 tonywu,Yue Hao Wu,,Apache Software Foundation
-tonywu,Yue Hao Wu,,
 susie,Susan Wu,,Apache Software Foundation
-susie,Susan Wu,,
 vinodkv,Vinod Kumar Vavilapalli,http://people.apache.org/~vinodkv,Apache Software Foundation
 vinodkv,Vinod Kumar Vavilapalli,http://people.apache.org/~vinodkv,Hadoop
 bayard,[Henri Yandell],,Apache Software Foundation
-bayard,[Henri Yandell],,
 geoff,Geoffrey Young,http://www.modperlcookbook.org/,Apache Software Foundation
 geoff,Geoffrey Young,http://www.modperlcookbook.org/,mod_perl
 blair,Blair Zajac,,Apache Software Foundation
-blair,Blair Zajac,,
 hadrian,Hadrian Zbarcea,,Apache Software Foundation
-hadrian,Hadrian Zbarcea,,
 ivan,Ivan Zhakov,,Apache Software Foundation
-ivan,Ivan Zhakov,,
 cziegeler,Carsten Ziegeler,mailto:cziegeler@apache.org,Apache Software Foundation
 cziegeler,Carsten Ziegeler,mailto:cziegeler@apache.org,Sling
 cziegeler,Carsten Ziegeler,mailto:cziegeler@apache.org,Felix
@@ -24321,9 +24105,7 @@ jukka,Jukka Zitting,http://jukkaz.wordpress.com/,Jackrabbit
 andrei,Andrei Zmievski,mailto:andrei@php.net,Apache Software Foundation
 andrei,Andrei Zmievski,mailto:andrei@php.net,PHP
 brane,Branko ÄŒibej,,Apache Software Foundation
-brane,Branko ÄŒibej,,
 coheigea,Colm Ã“ hÃ‰igeartaigh,,Apache Software Foundation
-coheigea,Colm Ã“ hÃ‰igeartaigh,,
 ilgrosso,Francesco ChicchiriccÃ²,,Apache Software Foundation
 ilgrosso,Francesco ChicchiriccÃ²,,Cocoon
 schor,Marshall Schor,,Apache Software Foundation
@@ -24331,7 +24113,6 @@ schor,Marshall Schor,,UIMA
 mgrigorov,Martin Tzvetanov Grigorov,,Apache Software Foundation
 mgrigorov,Martin Tzvetanov Grigorov,,Wicket
 todd,Todd Lipcon,,Apache Software Foundation
-todd,Todd Lipcon,,
 scottcarey,Scott Carey,,Apache Software Foundation
 scottcarey,Scott Carey,,Avro
 chenpei,Pei Chen,mailto:chenpei@apache.org,Apache Software Foundation
@@ -24343,7 +24124,6 @@ tn,Thomas Neidhart,,Commons
 rnewson,Robert Newson,,Apache Software Foundation
 rnewson,Robert Newson,,CouchDB
 tucu,Alejandro Abdelnur,,Apache Software Foundation
-tucu,Alejandro Abdelnur,,
 pescetti,Andrea Pescetti,,Apache Software Foundation
 pescetti,Andrea Pescetti,,OpenOffice
 afuchs,Adam Fuchs,,Apache Software Foundation
