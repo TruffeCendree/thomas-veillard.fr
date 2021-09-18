@@ -21,13 +21,13 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-09-04T16:36:06+00:00">
-	<meta property="article:modified_time" content="2021-09-05T12:06:07+00:00">
-	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png">
+	<meta property="article:modified_time" content="2021-09-18T09:15:16+00:00">
+	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture est.">
-	<meta name="twitter:data2" content="9 minutes">
+	<meta name="twitter:data2" content="10 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -46,9 +46,9 @@
 	            "@type": "ImageObject",
 	            "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#primaryimage",
 	            "inLanguage": "fr-FR",
-	            "url": "https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png",
-	            "contentUrl": "https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png",
-	            "width": 1296,
+	            "url": "https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png",
+	            "contentUrl": "https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png",
+	            "width": 1501,
 	            "height": 551
 	        },
 	        {
@@ -63,7 +63,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#primaryimage"
 	            },
 	            "datePublished": "2021-09-04T16:36:06+00:00",
-	            "dateModified": "2021-09-05T12:06:07+00:00",
+	            "dateModified": "2021-09-18T09:15:16+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#breadcrumb"
 	            },
@@ -105,18 +105,18 @@
 	            },
 	            "headline": "01. Vue: practical activity, part n°1",
 	            "datePublished": "2021-09-04T16:36:06+00:00",
-	            "dateModified": "2021-09-05T12:06:07+00:00",
+	            "dateModified": "2021-09-18T09:15:16+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#webpage"
 	            },
-	            "wordCount": 1510,
+	            "wordCount": 1618,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
 	            "image": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#primaryimage"
 	            },
-	            "thumbnailUrl": "https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png",
+	            "thumbnailUrl": "https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png",
 	            "articleSection": [
 	                "03. VueJS",
 	                "Modern web development"
@@ -552,7 +552,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="question"><strong>Question 2</strong>: Webpack is internally used by the Vue CLI. Why is it required to deal with both multiples JavaScript files and special extensions like <code>.vue</code>?</p>
+<p class="question"><strong>Question 2</strong>: Webpack is internally used by the Vue CLI. Why is it required to deal with both multiple JavaScript files and special extensions like <code>.vue</code>?</p>
 
 
 
@@ -564,7 +564,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="question"><strong>Question 4</strong>: What is eslint and which set of rules are currently applied?</p>
+<p class="question"><strong>Question 4</strong>: What is eslint and which set of rules are currently applied? The eslint configuration may be defined in a <code>eslint.config.js</code> or in <code>package.json</code> depending on the setup.</p>
 
 
 
@@ -580,11 +580,15 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="exercice"><strong>Exercise 3:</strong> The newly generated project contains a few placeholders. Cleanup your project so it does not contain neither useless assets, nor the hello world.</p>
+<p class="exercice"><strong>Exercise 3:</strong> The newly generated project contains a few placeholders. Cleanup your project so it does not contain neither useless assets, nor the hello world. In other words, delete <code>HelloWorld.vue</code>, its related assets and all its references. As at the end of each exercise, the vue cli should not report any error or warning.</p>
 
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 3: remove vue CLI placeholders »</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="376" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png" alt="" class="wp-image-3762" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-300x110.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-768x282.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png 1501w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption>On the left, the vue app with placeholders. On the right, result after cleanup.</figcaption></figure>
 
 
 
@@ -594,14 +598,14 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 <ul>
 <li>
-<code>src/pages</code> contains top level components that produce a particular page (ex. the home page, the index of mails page, the contact page&#8230;). Those components are intended to be mounted with vue-router.</li>
+<code>src/pages</code> contains top level components that produce a particular page (ex. the home page, the index of mails page, the contact page&#8230;). Those components are intended to be mounted with vue-router in the future.</li>
 <li>
 <code>src/components</code> contains shared components required by pages or other components (ex. navigation headers, buttons, user&rsquo;s cards, short preview of an email&#8230;).</li>
 </ul>
 
 
 
-<p class="exercice"><strong>Exercise 4</strong>: Create the HomePage component inside the right folder. Do not spend too much time on the template content, as it could be a simple sentence. Import it inside <code>App.vue</code> and eventually cleanup any dead code (code not reachable anymore, for example a component no more imported).</p>
+<p class="exercice"><strong>Exercise 4</strong>: Create the <code>HomePage</code> component inside the right folder. Do not spend too much time on the template content, as it could be a simple sentence. Import it inside <code>App.vue</code>.</p>
 
 
 
@@ -625,35 +629,41 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="exercice"><strong>Exercise 5</strong>: Let&rsquo;s begin with the root component, formally <code>App</code> (in <code>src/App.vue</code>). Replace its template with the following content and create missing components. Add some content to the header (ex. fake home link, fake user name&#8230;) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.</p>
+<p class="exercice"><strong>Exercise 5</strong>: Let&rsquo;s begin with the root component, formally <code>App</code> (in <code>src/App.vue</code>). Replace its template with the following content and create the missing components. Add some content to the header (ex. fake home link, fake user name&#8230;) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- file src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HomePage</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">base-footer</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: create BaseHeader and BaseFooter »</p>
 
 
 
-<p class="exercice"><strong>Exercise 6</strong>: In order to keep the root component <code>App</code> as simple as possible, create a <code>BaseLayout</code> component. Using the <a href="https://v3.vuejs.org/guide/component-slots.html#slot-content" target="_blank" rel="noreferrer noopener">slot API</a>,  allow <code>BaseLayout</code> to receive children.</p>
+<p class="question"><strong>Question 5</strong>: What is the difference between scoped and non-scoped CSS?</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong>: In order to keep the root component <code>App</code> as simple as possible, extract everything related to the layout into a <code>BaseLayout</code> component. Using the <a href="https://v3.vuejs.org/guide/component-slots.html#slot-content" target="_blank" rel="noreferrer noopener">slot API</a>,  allow <code>BaseLayout</code> to receive children (to be rendered between the header and the footer).</p>
 
 
 
 <p><strong>Tips</strong>: If you integrated font awesome, try extracting most logic out of <code>App</code>. When it comes to configure third party dependencies, I generally work with ES-modules inside a <code>src/lib</code> folder. Example: <code>src/lib/fontAwesome.js</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- file src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">base-footer</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
@@ -665,15 +675,15 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p>For the need of the UI, let&rsquo;s create a <code>BaseButton</code> component. Basically, this is just a styled <code>&lt;button&gt;</code>. Its usage should be mostly the same (possibility to pass children, styles, classes, role= »button » or role= »submit »&#8230;).</p>
+<p>For the need of the UI, let&rsquo;s create a <code>BaseButton</code> component. Basically, this is just a styled <code>&lt;button></code>. Its usage should be mostly the same (possibility to pass children, styles, classes, <code>role="button"</code> or <code>role="submit"</code>&#8230;).</p>
 
 
 
-<p class="question"><strong>Question 5</strong>: How behaves non-prop attributes (aka. HTML attributes) passed down to a component that template has a single root element?</p>
+<p class="question"><strong>Question 6</strong>: How behaves non-prop attributes (aka. HTML attributes) passed down to a component, when its template has a single root element? <strong>Tips</strong>: it is well documented by vue, but you can also try it youself by passing the <code>style</code> attribute with a straight visual effect.</p>
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Implement such a <code>BaseButton</code>, animated on hover and focus. Do not forget the disabled state.</p>
+<p class="exercice"><strong>Exercise 7</strong>: Implement such a <code>BaseButton</code>, animated on hover and focus. Do not forget the disabled state. You may try these buttons on your <code>HomePage</code> for now.</p>
 
 
 
@@ -682,6 +692,10 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 7: create BaseButton with primary color »</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="850" height="166" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-used-in-header.gif" alt="" class="wp-image-3804"><figcaption>Tips: it makes sense to use them in the navigation in header.</figcaption></figure>
 
 
 
@@ -785,11 +799,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="question"><strong>Question 6</strong>: Analyse how works the <code>AsyncButton</code>. When is the parent <code>@click</code> event called? How the child component is aware of the returned Promise by the parent onClick handler? Why is the <code>await</code> necessary? Etc.</p>
+<p class="question"><strong>Question 7</strong>: Analyse how works the <code>AsyncButton</code>. When is the parent <code>@click</code> event called? How the child component is aware of the returned Promise by the parent onClick handler? Why is the <code>await</code> necessary? Etc.</p>
 
 
 
-<p class="question"><strong>Question 7</strong>: Which bug is introduced if <code>inheritAttrs: false</code> is missing or set to <code>true</code> in <code>AsyncButton</code>. Why?</p>
+<p class="question"><strong>Question 8</strong>: Which bug is introduced if <code>inheritAttrs: false</code> is missing or set to <code>true</code> in <code>AsyncButton</code>. Why?</p>
 
 
 
