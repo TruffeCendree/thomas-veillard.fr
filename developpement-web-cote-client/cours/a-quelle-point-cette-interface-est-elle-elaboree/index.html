@@ -11,7 +11,7 @@
 	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-	<!-- This site is optimized with the Yoast SEO plugin v17.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<!-- This site is optimized with the Yoast SEO plugin v17.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>3. À quelle point cette interface est-elle élaborée ? - Thomas VEILLARD</title>
 	<link rel="canonical" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">
 	<meta property="og:locale" content="fr_FR">
@@ -26,7 +26,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
-	<meta name="twitter:label2" content="Durée de lecture est.">
+	<meta name="twitter:label2" content="Durée de lecture estimée">
 	<meta name="twitter:data2" content="3 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
@@ -156,6 +156,7 @@
 <link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux des commentaires" href="https://thomas-veillard.fr/comments/feed/">
 <link rel="stylesheet" id="wp-block-library-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.7.3" media="all">
 <link rel="stylesheet" id="wp-block-library-theme-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/theme.min.css?ver=5.7.3" media="all">
+<link rel="stylesheet" id="dashicons-css" href="https://thomas-veillard.fr/wp-includes/css/dashicons.min.css?ver=5.7.3" media="all">
 <link rel="stylesheet" id="vlp-public-css" href="https://thomas-veillard.fr/wp-content/plugins/visual-link-preview/dist/public.css?ver=2.2.1" media="all">
 <link rel="stylesheet" id="twentyfifteen-fonts-css" href="https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;display=fallback" media="all">
 <link rel="stylesheet" id="genericons-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=20201208" media="all">
@@ -317,6 +318,10 @@ table {
 
 blockquote, cite {
 	font-size: 1em !important;
+}
+
+.ui-accordion-header h4 {
+	margin-top: 0 !important;
 }</style>
 		</head>
 
@@ -421,19 +426,60 @@ blockquote, cite {
 
 
 
-<style>.my-rounded-block {
-  background-color: #ffecb8;
-  border: 1px solid #795548;
-  border-radius: 3px;
-  text-align: center;
-}</style>
+
 
 <p class="my-rounded-block">Example of paragraph with background and rounded border.</p>
 
 
 
 <div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><style>.wp-block-code {
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+
+
+
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+  Example of paragraph with background and rounded border.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+</div>
+
+
+
+<h4>Les animations</h4>
+
+
+
+<p>Créer une animation à partir de zéro est difficile. Il faut poser des formules mathématiques décrivant la transformation de la cible en fonction du temps. Ensuite, il faut calculer chacune des images tout en visant un débit stable de 60 images par seconde. Cela implique beaucoup d&rsquo;optimisations, d&rsquo;autant plus que les animations peuvent coexister.</p>
+
+
+
+<p>Heureusement, CSS3 vient encore une fois à la rescousse. Il suffira de lui décrire les états initiaux et finaux de l&rsquo;élément à animer. Le navigateur s&rsquo;occupe du reste, notamment du choix du matériel le plus adapté (comme un accélérateur graphique si disponible) et des éventuelles concessions pour maintenir un débit d&rsquo;images satisfaisant.</p>
+
+
+
+<p>Les animations donnent un retour à l&rsquo;utilisateur, lui procurant le sentiment que l&rsquo;interface est réactive et prête à accepter de nouvelles instructions.</p>
+
+
+
+<ul>
+<li>Le changement de couleur d&rsquo;un bouton au survol de la souris invite l&rsquo;utilisateur à interagir avec.</li>
+<li>Une animation de chargement l&rsquo;avertit que l&rsquo;application travaille normalement, même si le résultat est un peu long à obtenir.</li>
+</ul>
+
+
+
+<p>Finalement, cet exemple d&rsquo;application illustre parfaitement l&rsquo;efficacité du couple HTML/CSS pour la construction d&rsquo;interfaces graphiques. Rien à voir, donc, avec des dinosaures 🦖 comme swing de Java !</p>
+<style class="advgb-styles-renderer">.my-rounded-block {
+  background-color: #ffecb8;
+  border: 1px solid #795548;
+  border-radius: 3px;
+  text-align: center;
+}
+.wp-block-code {
 	border: 0;
 	padding: 0;
 }
@@ -509,47 +555,7 @@ blockquote, cite {
 	user-select: none;
 	white-space: nowrap;
 	width: 1%;
-}</style><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
-  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
-  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
-  <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
-
-
-
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
-  Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
-</div>
-
-
-
-<h4>Les animations</h4>
-
-
-
-<p>Créer une animation à partir de zéro est difficile. Il faut poser des formules mathématiques décrivant la transformation de la cible en fonction du temps. Ensuite, il faut calculer chacune des images tout en visant un débit stable de 60 images par seconde. Cela implique beaucoup d&rsquo;optimisations, d&rsquo;autant plus que les animations peuvent coexister.</p>
-
-
-
-<p>Heureusement, CSS3 vient encore une fois à la rescousse. Il suffira de lui décrire les états initiaux et finaux de l&rsquo;élément à animer. Le navigateur s&rsquo;occupe du reste, notamment du choix du matériel le plus adapté (comme un accélérateur graphique si disponible) et des éventuelles concessions pour maintenir un débit d&rsquo;images satisfaisant.</p>
-
-
-
-<p>Les animations donnent un retour à l&rsquo;utilisateur, lui procurant le sentiment que l&rsquo;interface est réactive et prête à accepter de nouvelles instructions.</p>
-
-
-
-<ul>
-<li>Le changement de couleur d&rsquo;un bouton au survol de la souris invite l&rsquo;utilisateur à interagir avec.</li>
-<li>Une animation de chargement l&rsquo;avertit que l&rsquo;application travaille normalement, même si le résultat est un peu long à obtenir.</li>
-</ul>
-
-
-
-<p>Finalement, cet exemple d&rsquo;application illustre parfaitement l&rsquo;efficacité du couple HTML/CSS pour la construction d&rsquo;interfaces graphiques. Rien à voir, donc, avec des dinosaures 🦖 comme swing de Java !</p>
-	</div>
+}</style>	</div>
 <!-- .entry-content -->
 
 	

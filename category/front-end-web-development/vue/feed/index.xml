@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/vue/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 18 Sep 2021 09:15:16 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 02 Oct 2021 02:46:38 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -229,7 +229,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p>For the need of the UI, let&rsquo;s create a <code>BaseButton</code> component. Basically, this is just a styled <code>&lt;button></code>. Its usage should be mostly the same (possibility to pass children, styles, classes, <code>role="button"</code> or <code>role="submit"</code>&#8230;).</p>
+<p>For the need of the UI, let&rsquo;s create a <code>BaseButton</code> component. Basically, this is just a styled <code>&lt;button&gt;</code>. Its usage should be mostly the same (possibility to pass children, styles, classes, <code>role="button"</code> or <code>role="submit"</code>&#8230;).</p>
 
 
 
@@ -261,17 +261,50 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p><strong>Tips</strong>: According to the DRY principal (Don&rsquo;t Repeat Yourself), declare in a single place the allowed values for the color enum and its corresponding colors. Then, find <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. On my side, I just declared the above object and always take it as a single source of thruth in <code>BaseComponent</code>.</p>
+<p><strong>Tips</strong>: in a first time, ensure you can pass the props from <code>PageHeader</code> template to the <code>BaseButton</code> component (ex. by temporary rendering the color name in the template). Then, use that value to apply some conditional styles (2 proposed solutions above). Remember the DRY principal (Don&rsquo;t Repeat Yourself) and do not duplicate code sections.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
+
+<div class="wp-block-advgb-accordions advgb-accordion-wrapper">
+<div class="wp-block-advgb-accordion-item advgb-accordion-item" style="margin-bottom:15px"><div class="advgb-accordion-header" style="background-color:#000;color:#eee;border-style:solid;border-width:1px;border-radius:2px"><span class="advgb-accordion-header-icon"><svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path fill="none" d="M0,0h24v24H0V0z"></path><path d="M12,5.83L15.17,9l1.41-1.41L12,3L7.41,7.59L8.83,9L12,5.83z M12,18.17L8.83,15l-1.41,1.41L12,21l4.59-4.59L15.17,15 L12,18.17z"></path></svg></span><h4 class="advgb-accordion-header-title" style="color:inherit">Solution 1: using CSS classes (simpler)</h4></div><div class="advgb-accordion-body" style="border-style:solid !important;border-width:1px !important;border-color:undefined !important;border-top:none !important;border-radius:2px !important">
+<p>You may split your scoped CSS in 2 parts: the styles common to all components, and specific classes for each color in the palette. So, the component&rsquo;s style could look like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.button</span> {
+  <span class="hljs-comment">/* css properties common to all buttons */</span>
+}
+
+<span class="hljs-selector-class">.button-primary</span> {
+  <span class="hljs-comment">/* css properties specific to the primary color */</span>
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#42b983</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Finally, you just need to conditionally bind the CSS classes (<a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">explained here</a>).</p>
+</div></div>
+
+
+
+<div class="wp-block-advgb-accordion-item advgb-accordion-item" style="margin-bottom:15px"><div class="advgb-accordion-header" style="background-color:#000;color:#eee;border-style:solid;border-width:1px;border-radius:2px"><span class="advgb-accordion-header-icon"><svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path fill="none" d="M0,0h24v24H0V0z"></path><path d="M12,5.83L15.17,9l1.41-1.41L12,3L7.41,7.59L8.83,9L12,5.83z M12,18.17L8.83,15l-1.41,1.41L12,21l4.59-4.59L15.17,15 L12,18.17z"></path></svg></span><h4 class="advgb-accordion-header-title" style="color:inherit">Solution 2: using CSS variables &amp; computed properties</h4></div><div class="advgb-accordion-body" style="border-style:solid !important;border-width:1px !important;border-color:undefined !important;border-top:none !important;border-radius:2px !important">
+<p>Declare in a single place the allowed values for the colour enum and its corresponding colours. On my side, I just declared the above object and always take it as a single source of truth in <code>BaseComponent</code>. In other words, this object contains the colour palette indexed by names I use as reference everywhere in the component.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
   <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
   <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
   <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
-}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: color palette and prop for BaseButton »</p>
+<p>Then, you need <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. In short, this is a conjugaison of <a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">style binding</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noreferrer noopener">CSS variables</a>, <a href="https://v3.vuejs.org/guide/computed.html" target="_blank" rel="noreferrer noopener">computed properties</a> and scoped styles.</p>
+</div></div>
+</div>
+
+
+
+<p style="margin-top: -0.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: color palette and prop for BaseButton »</p>
 
 
 
@@ -290,7 +323,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Here you have its source code (if you did not install FontAwesome, just replace the <code>&lt;font-awesome-icon /&gt;</code> by a simple text, while preserving the <code>v-if</code> directive.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-button</span>
     <span class="hljs-attr">:disabled</span>=<span class="hljs-string">"isPending"</span>
     <span class="hljs-attr">:color</span>=<span class="hljs-string">"color"</span>
@@ -334,10 +367,10 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
     }
   }
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked.</p>
+<p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the <code>@click</code> event listener attached to the instance of <code>AsyncComponent</code> instance returns a Promise that waits for 2 seconds before resolving. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noreferrer noopener">You can create such a Promise using its constructor and a setTimeou</a>t. Also, please <a href="https://v3.vuejs.org/guide/events.html#method-event-handlers" target="_blank" rel="noreferrer noopener">write the event handler inside a dedicated method</a> since at is a bit complex.</p>
 
 
 
@@ -345,7 +378,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p><strong>Exercise 10</strong>. Change the behaviour of the previous button, so its waiting time increase by one second each it is clicked.</p>
+<p class="exercice"><strong>Exercise 10</strong>. Change the behaviour of the previous button, so its waiting time increases by one second each it is clicked. Because <code>AsyncButton</code> waits for any promise, whatever how long it takes to resolve, you do not need and you should not change it. Instead, keep trace of the number of clicks in the internal state (data) of the <code>HomePage</code> component (<a href="https://v3.vuejs.org/guide/events.html#listening-to-events" target="_blank" rel="noreferrer noopener">see the counter app example</a>) and use it while forging new promises.</p>
 
 
 
@@ -353,11 +386,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="question"><strong>Question 7</strong>: Analyse how works the <code>AsyncButton</code>. When is the parent <code>@click</code> event called? How the child component is aware of the returned Promise by the parent onClick handler? Why is the <code>await</code> necessary? Etc.</p>
+<p class="question"><strong>Question 7</strong>: Analyse how works the <code>AsyncButton</code>. How the child component is aware of the returned Promise by the parent onClick handler? When is executed the callback passed to <code>.finally()</code>? Why use <code>.finally()</code> instead of <code>.then()</code>? Etc.</p>
 
 
 
-<p class="question"><strong>Question 8</strong>: Which bug is introduced if <code>inheritAttrs: false</code> is missing or set to <code>true</code> in <code>AsyncButton</code>. Why?</p>
+<p class="question"><strong>Question 8</strong>: Which bug is introduced if <code>inheritAttrs: false</code> is missing or set to <code>true</code> in <code>AsyncButton</code>? Why?</p>
 
 
 

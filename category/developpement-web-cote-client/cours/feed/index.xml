@@ -215,14 +215,7 @@
 
 
 
-<style>
-.my-rounded-block {
-  background-color: #ffecb8;
-  border: 1px solid #795548;
-  border-radius: 3px;
-  text-align: center;
-}
-</style>
+
 
 <p class="my-rounded-block">Example of paragraph with background and rounded border.</p>
 
@@ -266,7 +259,14 @@
 
 
 <p>Finalement, cet exemple d&rsquo;application illustre parfaitement l&rsquo;efficacité du couple HTML/CSS pour la construction d&rsquo;interfaces graphiques. Rien à voir, donc, avec des dinosaures 🦖 comme swing de Java !</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<style class="advgb-styles-renderer">
+.my-rounded-block {
+  background-color: #ffecb8;
+  border: 1px solid #795548;
+  border-radius: 3px;
+  text-align: center;
+}
+</style><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

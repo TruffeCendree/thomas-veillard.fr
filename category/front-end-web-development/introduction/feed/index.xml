@@ -235,14 +235,7 @@
 
 
 
-<style>
-.my-rounded-block {
-  background-color: #ffecb8;
-  border: 1px solid #795548;
-  border-radius: 3px;
-  text-align: center;
-}
-</style>
+
 
 <p class="my-rounded-block">Example of paragraph with background and rounded border.</p>
 
@@ -286,7 +279,14 @@
 
 
 <p>This example of app illustrates perfectly why web technologies are so efficient for UI/UX compared to dinosaurs 🦖. (Hi JAVA and its Swing UI framework !)</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/introduction/how-rich-interactive-and-complex-is-this-ui/">03. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<style class="advgb-styles-renderer">
+.my-rounded-block {
+  background-color: #ffecb8;
+  border: 1px solid #795548;
+  border-radius: 3px;
+  text-align: center;
+}
+</style><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/introduction/how-rich-interactive-and-complex-is-this-ui/">03. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

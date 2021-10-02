@@ -11,7 +11,7 @@
 	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-	<!-- This site is optimized with the Yoast SEO plugin v17.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<!-- This site is optimized with the Yoast SEO plugin v17.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>09. JavaScript: practical activity n°1 - Thomas VEILLARD</title>
 	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/">
 	<meta property="og:locale" content="fr_FR">
@@ -26,7 +26,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
-	<meta name="twitter:label2" content="Durée de lecture est.">
+	<meta name="twitter:label2" content="Durée de lecture estimée">
 	<meta name="twitter:data2" content="4 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
@@ -156,6 +156,7 @@
 <link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux des commentaires" href="https://thomas-veillard.fr/comments/feed/">
 <link rel="stylesheet" id="wp-block-library-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.7.3" media="all">
 <link rel="stylesheet" id="wp-block-library-theme-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/theme.min.css?ver=5.7.3" media="all">
+<link rel="stylesheet" id="dashicons-css" href="https://thomas-veillard.fr/wp-includes/css/dashicons.min.css?ver=5.7.3" media="all">
 <link rel="stylesheet" id="vlp-public-css" href="https://thomas-veillard.fr/wp-content/plugins/visual-link-preview/dist/public.css?ver=2.2.1" media="all">
 <link rel="stylesheet" id="twentyfifteen-fonts-css" href="https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;display=fallback" media="all">
 <link rel="stylesheet" id="genericons-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=20201208" media="all">
@@ -317,6 +318,10 @@ table {
 
 blockquote, cite {
 	font-size: 1em !important;
+}
+
+.ui-accordion-header h4 {
+	margin-top: 0 !important;
 }</style>
 		</head>
 
@@ -398,83 +403,7 @@ blockquote, cite {
 <p>Implement a <code>sum</code> function that accepts any count of numerical arguments and returns the sum. It raises a custom error in the absence of any argument.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><style>.wp-block-code {
-	border: 0;
-	padding: 0;
-}
-
-.wp-block-code > div {
-	overflow: auto;
-}
-
-.shcb-language {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	word-wrap: normal;
-	word-break: normal;
-}
-
-.hljs {
-	box-sizing: border-box;
-}
-
-.hljs.shcb-code-table {
-	display: table;
-	width: 100%;
-}
-
-.hljs.shcb-code-table > .shcb-loc {
-	color: inherit;
-	display: table-row;
-	width: 100%;
-}
-
-.hljs.shcb-code-table .shcb-loc > span {
-	display: table-cell;
-}
-
-.wp-block-code code.hljs:not(.shcb-wrap-lines) {
-	white-space: pre;
-}
-
-.wp-block-code code.hljs.shcb-wrap-lines {
-	white-space: pre-wrap;
-}
-
-.hljs.shcb-line-numbers {
-	border-spacing: 0;
-	counter-reset: line;
-}
-
-.hljs.shcb-line-numbers > .shcb-loc {
-	counter-increment: line;
-}
-
-.hljs.shcb-line-numbers .shcb-loc > span {
-	padding-left: 0.75em;
-}
-
-.hljs.shcb-line-numbers .shcb-loc::before {
-	border-right: 1px solid #ddd;
-	content: counter(line);
-	display: table-cell;
-	padding: 0 0.75em;
-	text-align: right;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	white-space: nowrap;
-	width: 1%;
-}</style><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(sum()) <span class="hljs-comment">// throws Error('At least one number is expected')</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-javascript"><span class="hljs-built_in">console</span>.log(sum()) <span class="hljs-comment">// throws Error('At least one number is expected')</span>
 <span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>)) <span class="hljs-comment">// prints 1</span>
 <span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">// prints 6</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
@@ -635,7 +564,83 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 
 
 <p>If the topic interests you, there is <a href="https://youmightnotneed.com/lodash/" target="_blank" rel="noreferrer noopener">good literature</a>.</p>
-	</div>
+<style class="advgb-styles-renderer">.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}</style>	</div>
 <!-- .entry-content -->
 
 	

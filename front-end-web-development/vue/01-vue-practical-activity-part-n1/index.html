@@ -11,7 +11,7 @@
 	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-	<!-- This site is optimized with the Yoast SEO plugin v17.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<!-- This site is optimized with the Yoast SEO plugin v17.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>01. Vue: practical activity, part n°1 - Thomas VEILLARD</title>
 	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/">
 	<meta property="og:locale" content="fr_FR">
@@ -21,13 +21,13 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-09-04T16:36:06+00:00">
-	<meta property="article:modified_time" content="2021-09-18T09:15:16+00:00">
+	<meta property="article:modified_time" content="2021-10-02T02:46:38+00:00">
 	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
-	<meta name="twitter:label2" content="Durée de lecture est.">
-	<meta name="twitter:data2" content="10 minutes">
+	<meta name="twitter:label2" content="Durée de lecture estimée">
+	<meta name="twitter:data2" content="11 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -63,7 +63,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#primaryimage"
 	            },
 	            "datePublished": "2021-09-04T16:36:06+00:00",
-	            "dateModified": "2021-09-18T09:15:16+00:00",
+	            "dateModified": "2021-10-02T02:46:38+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#breadcrumb"
 	            },
@@ -105,11 +105,11 @@
 	            },
 	            "headline": "01. Vue: practical activity, part n°1",
 	            "datePublished": "2021-09-04T16:36:06+00:00",
-	            "dateModified": "2021-09-18T09:15:16+00:00",
+	            "dateModified": "2021-10-02T02:46:38+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/#webpage"
 	            },
-	            "wordCount": 1618,
+	            "wordCount": 1856,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -156,6 +156,7 @@
 <link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux des commentaires" href="https://thomas-veillard.fr/comments/feed/">
 <link rel="stylesheet" id="wp-block-library-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.7.3" media="all">
 <link rel="stylesheet" id="wp-block-library-theme-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/theme.min.css?ver=5.7.3" media="all">
+<link rel="stylesheet" id="dashicons-css" href="https://thomas-veillard.fr/wp-includes/css/dashicons.min.css?ver=5.7.3" media="all">
 <link rel="stylesheet" id="vlp-public-css" href="https://thomas-veillard.fr/wp-content/plugins/visual-link-preview/dist/public.css?ver=2.2.1" media="all">
 <link rel="stylesheet" id="twentyfifteen-fonts-css" href="https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;display=fallback" media="all">
 <link rel="stylesheet" id="genericons-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=20201208" media="all">
@@ -317,6 +318,10 @@ table {
 
 blockquote, cite {
 	font-size: 1em !important;
+}
+
+.ui-accordion-header h4 {
+	margin-top: 0 !important;
 }</style>
 		</head>
 
@@ -457,83 +462,7 @@ blockquote, cite {
 <p class="question"><strong>Question 1</strong>: That is the main difference between local installation and global installation of packages with npm? What kind of packages do you generally install locally? What kind is generally installed globally?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><style>.wp-block-code {
-	border: 0;
-	padding: 0;
-}
-
-.wp-block-code > div {
-	overflow: auto;
-}
-
-.shcb-language {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	word-wrap: normal;
-	word-break: normal;
-}
-
-.hljs {
-	box-sizing: border-box;
-}
-
-.hljs.shcb-code-table {
-	display: table;
-	width: 100%;
-}
-
-.hljs.shcb-code-table > .shcb-loc {
-	color: inherit;
-	display: table-row;
-	width: 100%;
-}
-
-.hljs.shcb-code-table .shcb-loc > span {
-	display: table-cell;
-}
-
-.wp-block-code code.hljs:not(.shcb-wrap-lines) {
-	white-space: pre;
-}
-
-.wp-block-code code.hljs.shcb-wrap-lines {
-	white-space: pre-wrap;
-}
-
-.hljs.shcb-line-numbers {
-	border-spacing: 0;
-	counter-reset: line;
-}
-
-.hljs.shcb-line-numbers > .shcb-loc {
-	counter-increment: line;
-}
-
-.hljs.shcb-line-numbers .shcb-loc > span {
-	padding-left: 0.75em;
-}
-
-.hljs.shcb-line-numbers .shcb-loc::before {
-	border-right: 1px solid #ddd;
-	content: counter(line);
-	display: table-cell;
-	padding: 0 0.75em;
-	text-align: right;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	white-space: nowrap;
-	width: 1%;
-}</style><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
 npm install @vue/cli
 
 <span class="hljs-comment"># example of command to install the vue cli globally</span>
@@ -675,7 +604,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p>For the need of the UI, let&rsquo;s create a <code>BaseButton</code> component. Basically, this is just a styled <code>&lt;button></code>. Its usage should be mostly the same (possibility to pass children, styles, classes, <code>role="button"</code> or <code>role="submit"</code>&#8230;).</p>
+<p>For the need of the UI, let&rsquo;s create a <code>BaseButton</code> component. Basically, this is just a styled <code>&lt;button&gt;</code>. Its usage should be mostly the same (possibility to pass children, styles, classes, <code>role="button"</code> or <code>role="submit"</code>&#8230;).</p>
 
 
 
@@ -707,17 +636,60 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p><strong>Tips</strong>: According to the DRY principal (Don&rsquo;t Repeat Yourself), declare in a single place the allowed values for the color enum and its corresponding colors. Then, find <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. On my side, I just declared the above object and always take it as a single source of thruth in <code>BaseComponent</code>.</p>
+<p><strong>Tips</strong>: in a first time, ensure you can pass the props from <code>PageHeader</code> template to the <code>BaseButton</code> component (ex. by temporary rendering the color name in the template). Then, use that value to apply some conditional styles (2 proposed solutions above). Remember the DRY principal (Don&rsquo;t Repeat Yourself) and do not duplicate code sections.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
+
+<div class="wp-block-advgb-accordions advgb-accordion-wrapper">
+<div class="wp-block-advgb-accordion-item advgb-accordion-item" style="margin-bottom:15px">
+<div class="advgb-accordion-header" style="background-color:#000;color:#eee;border-style:solid;border-width:1px;border-radius:2px">
+<span class="advgb-accordion-header-icon"><svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path fill="none" d="M0,0h24v24H0V0z"></path><path d="M12,5.83L15.17,9l1.41-1.41L12,3L7.41,7.59L8.83,9L12,5.83z M12,18.17L8.83,15l-1.41,1.41L12,21l4.59-4.59L15.17,15 L12,18.17z"></path></svg></span><h4 class="advgb-accordion-header-title" style="color:inherit">Solution 1: using CSS classes (simpler)</h4>
+</div>
+<div class="advgb-accordion-body" style="border-style:solid !important;border-width:1px !important;border-color:undefined !important;border-top:none !important;border-radius:2px !important">
+<p>You may split your scoped CSS in 2 parts: the styles common to all components, and specific classes for each color in the palette. So, the component&rsquo;s style could look like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.button</span> {
+  <span class="hljs-comment">/* css properties common to all buttons */</span>
+}
+
+<span class="hljs-selector-class">.button-primary</span> {
+  <span class="hljs-comment">/* css properties specific to the primary color */</span>
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#42b983</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Finally, you just need to conditionally bind the CSS classes (<a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">explained here</a>).</p>
+</div>
+</div>
+
+
+
+<div class="wp-block-advgb-accordion-item advgb-accordion-item" style="margin-bottom:15px">
+<div class="advgb-accordion-header" style="background-color:#000;color:#eee;border-style:solid;border-width:1px;border-radius:2px">
+<span class="advgb-accordion-header-icon"><svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path fill="none" d="M0,0h24v24H0V0z"></path><path d="M12,5.83L15.17,9l1.41-1.41L12,3L7.41,7.59L8.83,9L12,5.83z M12,18.17L8.83,15l-1.41,1.41L12,21l4.59-4.59L15.17,15 L12,18.17z"></path></svg></span><h4 class="advgb-accordion-header-title" style="color:inherit">Solution 2: using CSS variables &amp; computed properties</h4>
+</div>
+<div class="advgb-accordion-body" style="border-style:solid !important;border-width:1px !important;border-color:undefined !important;border-top:none !important;border-radius:2px !important">
+<p>Declare in a single place the allowed values for the colour enum and its corresponding colours. On my side, I just declared the above object and always take it as a single source of truth in <code>BaseComponent</code>. In other words, this object contains the colour palette indexed by names I use as reference everywhere in the component.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
   <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
   <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
   <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
-}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: color palette and prop for BaseButton »</p>
+<p>Then, you need <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. In short, this is a conjugaison of <a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">style binding</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noreferrer noopener">CSS variables</a>, <a href="https://v3.vuejs.org/guide/computed.html" target="_blank" rel="noreferrer noopener">computed properties</a> and scoped styles.</p>
+</div>
+</div>
+</div>
+
+
+
+<p style="margin-top: -0.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: color palette and prop for BaseButton »</p>
 
 
 
@@ -736,7 +708,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Here you have its source code (if you did not install FontAwesome, just replace the <code>&lt;font-awesome-icon /&gt;</code> by a simple text, while preserving the <code>v-if</code> directive.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-button</span>
     <span class="hljs-attr">:disabled</span>=<span class="hljs-string">"isPending"</span>
     <span class="hljs-attr">:color</span>=<span class="hljs-string">"color"</span>
@@ -780,10 +752,10 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
     }
   }
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked.</p>
+<p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the <code>@click</code> event listener attached to the instance of <code>AsyncComponent</code> instance returns a Promise that waits for 2 seconds before resolving. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noreferrer noopener">You can create such a Promise using its constructor and a setTimeou</a>t. Also, please <a href="https://v3.vuejs.org/guide/events.html#method-event-handlers" target="_blank" rel="noreferrer noopener">write the event handler inside a dedicated method</a> since at is a bit complex.</p>
 
 
 
@@ -791,7 +763,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p><strong>Exercise 10</strong>. Change the behaviour of the previous button, so its waiting time increase by one second each it is clicked.</p>
+<p class="exercice"><strong>Exercise 10</strong>. Change the behaviour of the previous button, so its waiting time increases by one second each it is clicked. Because <code>AsyncButton</code> waits for any promise, whatever how long it takes to resolve, you do not need and you should not change it. Instead, keep trace of the number of clicks in the internal state (data) of the <code>HomePage</code> component (<a href="https://v3.vuejs.org/guide/events.html#listening-to-events" target="_blank" rel="noreferrer noopener">see the counter app example</a>) and use it while forging new promises.</p>
 
 
 
@@ -799,11 +771,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="question"><strong>Question 7</strong>: Analyse how works the <code>AsyncButton</code>. When is the parent <code>@click</code> event called? How the child component is aware of the returned Promise by the parent onClick handler? Why is the <code>await</code> necessary? Etc.</p>
+<p class="question"><strong>Question 7</strong>: Analyse how works the <code>AsyncButton</code>. How the child component is aware of the returned Promise by the parent onClick handler? When is executed the callback passed to <code>.finally()</code>? Why use <code>.finally()</code> instead of <code>.then()</code>? Etc.</p>
 
 
 
-<p class="question"><strong>Question 8</strong>: Which bug is introduced if <code>inheritAttrs: false</code> is missing or set to <code>true</code> in <code>AsyncButton</code>. Why?</p>
+<p class="question"><strong>Question 8</strong>: Which bug is introduced if <code>inheritAttrs: false</code> is missing or set to <code>true</code> in <code>AsyncButton</code>? Why?</p>
 
 
 
@@ -836,7 +808,83 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 <p>Since TypeScript may save your time, catch bugs and give you bonus grade to the project, why not giving it a try?</p>
-	</div>
+<style class="advgb-styles-renderer">.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}</style>	</div>
 <!-- .entry-content -->
 
 	
@@ -875,12 +923,27 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
   gtag('config', 'G-NH45PR7ELJ');
 </script>
+<link rel="stylesheet" id="advgb_blocks_styles-css" href="https://thomas-veillard.fr/wp-content/plugins/advanced-gutenberg/assets/css/blocks.css?ver=2.10.5" media="all">
 <script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141028" id="twentyfifteen-skip-link-focus-fix-js"></script>
 <script id="twentyfifteen-script-js-extra">
 var screenReaderText = {"expand":"<span class=\"screen-reader-text\">ouvrir le sous-menu<\/span>","collapse":"<span class=\"screen-reader-text\">fermer le sous-menu<\/span>"};
 </script>
 <script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/functions.js?ver=20171218" id="twentyfifteen-script-js"></script>
 <script src="https://thomas-veillard.fr/wp-includes/js/wp-embed.min.js?ver=5.7.3" id="wp-embed-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1" id="jquery-ui-core-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/ui/accordion.min.js?ver=1.12.1" id="jquery-ui-accordion-js"></script>
+<script id="jquery-ui-accordion-js-after">
+jQuery(document).ready(function($){
+                    $(".advgb-accordion-wrapper").each(function() {
+                        $(this).accordion({
+                            header: "> div > .advgb-accordion-header",
+                            heightStyle: "content",
+                            collapsible: true,
+                            active: $(this).data("collapsed") ? false : 0,
+                        });
+                    });
+                });
+</script>
 
 </body>
 </html>

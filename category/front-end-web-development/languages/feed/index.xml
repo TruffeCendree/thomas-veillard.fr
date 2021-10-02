@@ -1237,7 +1237,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 
 
 
-<style>.small-table { font-size: 80%; margin-bottom: 1em; }</style>
+
 
 
 
@@ -1308,7 +1308,7 @@ formatPrice(<span class="hljs-number">10</span>, {}, <span class="hljs-string">'
 
 
 <ul><li>If a <code>return</code> statement is executed inside a function body, the function exits with evaluated expression.</li><li>For arrow function without curly brackets around the body expression, return is implicit. Example: <code>const sum = (a, b) =&gt; a + b</code>;</li><li>In absence of explicitly executed or implicit <code>return</code> statement, it fallbacks to <code>undefined</code>.</li></ul>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/">07. JavaScript: function basis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<style class="advgb-styles-renderer">.small-table { font-size: 80%; margin-bottom: 1em; }</style><p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-function-basis/">07. JavaScript: function basis</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
