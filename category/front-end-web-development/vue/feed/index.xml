@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/vue/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 02 Oct 2021 02:46:38 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 11 Oct 2021 05:11:53 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,331 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.7.3</generator>
 	<item>
+		<title>02. Vue: practical activity, part n°2 (for your information)</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Mon, 11 Oct 2021 05:11:51 +0000</pubDate>
+				<category><![CDATA[03. VueJS]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3522</guid>
+
+					<description><![CDATA[<p>Learning outcomes Getting started with Oauth2, OpenID, etc. Understand the need for a state management in your app. Exploring various state management strategies. Discuss pros and cons of various state management patterns. The expected result At the end of the tutorial, the user will be able to login with its Microsoft account. The application will &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Vue: practical activity, part n°2 (for your information)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">02. Vue: practical activity, part n°2 (for your information)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Learning outcomes</h4>
+
+
+
+<ul><li>Getting started with Oauth2, OpenID, etc.</li><li>Understand the need for a state management in your app.</li><li>Exploring various state management strategies.</li><li>Discuss pros and cons of various state management patterns.</li></ul>
+
+
+
+<h4>The expected result</h4>
+
+
+
+<p>At the end of the tutorial, the user will be able to login with its Microsoft account. The application will fetch and display its identity (basically its id, email and name). The current user identity is something you need in the whole app, so you will explore and discuss various ways to manage this.</p>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> During this tutorial, you will only grant access to your basic profile (name and email). API secrets stay in your browser, except when calling the API of course. You can revoke permissions at any time in the confidentiality screen of your Microsoft account.</p>
+
+
+
+<h4>Oauth2, OpenID, Microsoft Graph API&#8230; What is it?</h4>
+
+
+
+<p>In the continuation of the previous tutorial, the application will gain access to the Microsoft Graph API. This one give access to a large panel of microsoft&rsquo;s SaaS products, including Outlook.</p>
+
+
+
+<p>The <strong>Microsoft Graph API</strong> acts on the side of a logged-in user, that must grant permission to the application. The<strong> Oauth2 protocol </strong>is responsive to the authentification and collection user&rsquo;s confirmation before granting a set of permissions to the application. In the terminology of Oauth2, a permission is called a <strong>scope</strong>.</p>
+
+
+
+<p>Once authorised, the application gets an <strong>access token</strong> (aka. <strong>Bearer</strong>). This is just a long random string you must provide within each API query. The API knows everything about it (which user, scopes, application&#8230;). This short living key is strictly confidential and expires in about 1 hour, unless the user manually revokes it. Note that the oauth2 protocol also allows the app renewing it without user interaction.</p>
+
+
+
+<p><strong>OpenID</strong> is another protocol built on top of Oauth2. It allows the user to share its identity (just the name and email) to the application. This way, the application just trusts the identity provider. This is widely used to implement <strong>SSO</strong> (aka. <strong>Single Sign On</strong>), allowing using a single account to sign-in on any application supporting this identity provider.</p>
+
+
+
+<h4>The SigninButton component</h4>
+
+
+
+<p>Let&rsquo;s build a <code>SigninButton</code> responsive of retrieving an <strong>access token</strong> and the associated user identity. Microsoft provides a library making this process easier: <a href="https://www.npmjs.com/package/@azure/msal-browser" target="_blank" rel="noreferrer noopener">@azure/msal-browser</a>.</p>
+
+
+
+<p>Acquiring the user authorisation and fetching identity from the API is typically an async task that lasts a few seconds. So it is an opportunity to use <code>AsyncButton</code>.</p>
+
+
+
+<p>Additionally, the SPA should be registered on Azure Active Directory portal. But do not worry too much about it, since I have already done it. Each integration (the name given to an external application registered on Azure AD) has a <strong>clientId</strong> used in Oauth2 protocol.</p>
+
+
+
+<p>From a security and maintainability perspective, you should never let secrets and configurations hardcoded in your code. Instead, extract them to a configuration file ignored by git. Even better, allow those settings to be different depending on the environment (ex. test, development, staging, production&#8230;). The Vue assets pipeline has a built-in feature for this: <a href="https://cli.vuejs.org/guide/mode-and-env.html" target="_blank" rel="noreferrer noopener">env variables</a>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.developent.local</span>
+VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><i class="fas fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> Unfortunately, changes appyed to .env files cannot be watched by the cli. Each time, you must restart the building process (ex. npm run serve).</p>
+
+
+
+<p class="question"><strong>Question 1</strong>: Why you should not commit credentials on git?</p>
+
+
+
+<p class="question"><strong>Question 2</strong>: Why may you want different configurations depending on the environment? Give an example.</p>
+
+
+
+<p class="exercice"><strong>Exercice 1</strong>: I already wrote helpers on top of msla (see the file <code>src/lib/microsoftGraph.js</code> above). Import them for use in your <code>SigninButton</code> component.  For now, <code>SigninButton</code> stores the resolved user inside its own state (the <code>data</code> property of your component) and displays it in the template.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 1: add SigninButton »</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// file src/lib/microsoftGraph.js</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msal <span class="hljs-keyword">from</span> <span class="hljs-string">'@azure/msal-browser'</span>
+
+<span class="hljs-comment">/**
+ * List the requested scopes (aka. the requested permissions)
+ */</span>
+<span class="hljs-keyword">const</span> requestedScopes = {
+  <span class="hljs-attr">scopes</span>: [<span class="hljs-string">"User.Read"</span>]
+}
+
+<span class="hljs-keyword">const</span> msalInstance = <span class="hljs-keyword">new</span> msal.PublicClientApplication({
+  <span class="hljs-attr">auth</span>: {
+    <span class="hljs-attr">clientId</span>: process.env.VUE_APP_OAUTH_CLIENT_ID
+  },
+  <span class="hljs-attr">cache</span>: {
+    <span class="hljs-attr">cacheLocation</span>: <span class="hljs-string">"sessionStorage"</span>
+  }
+})
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signInAndGetUser</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> authResult = <span class="hljs-keyword">await</span> msalInstance.loginPopup(requestedScopes)
+  msalInstance.setActiveAccount(authResult.account)
+  <span class="hljs-keyword">return</span> authResult.account
+}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1060" height="836" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif" alt="" class="wp-image-3576"/></figure>
+
+
+
+<h4>State management for the current user</h4>
+
+
+
+<p>Currently, the identity fetched from Microsoft Graph is stored inside the local state of the  <code>SigninButton</code> component.</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/09/user-stored-in-the-signin-button-component.png" alt="" class="wp-image-3586"/><figcaption>Screensheet of vue-devtools, showing the data property of <code>SigninButton</code>.</figcaption></figure>
+
+
+
+<p>This means, only that component is currently aware of the connected user:</p>
+
+
+
+<ul><li>If the component is unmounted, its internal state is, of course, lost.</li><li>Only children of <code>SigninButton</code> may potentially get access to that user through <code>props</code>. </li></ul>
+
+
+
+<p>The current user identity is typically something that should be shared across the whole application (aka. a global state). Any component may read it and a few one (the existing <code>SigninButton</code>, a potential <code>SignoutButton</code>&#8230;) needs to update it.</p>
+
+
+
+<p class="has-text-align-center">***</p>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> Now, we want to display the current user name fetched by <code>SigninButton</code> inside the template of <code>HomePage</code>. Let&rsquo;s explore 3 ways to accomplish this.</p>
+
+
+
+<h5><span style="color:#a2870d" class="has-inline-color">First solution, use props and events through component tree.</span></h5>
+
+
+
+<p>Before going further, read first <a href="https://v3.vuejs.org/guide/component-basics.html#base-example" target="_blank" rel="noreferrer noopener">Components Basics</a>, <a href="https://v3.vuejs.org/guide/component-props.html#prop-types" target="_blank" rel="noreferrer noopener">Props</a> and <a href="https://v3.vuejs.org/guide/component-custom-events.html" target="_blank" rel="noreferrer noopener">Custom Events</a>.</p>
+
+
+
+<p>The first solution massively uses props and events. The user object is stored at the root of the component tree (inside the <code>App</code> component). Any child that has to read the user object should receive it through props. If the child is nested, every component of the branch must pass the <code>user</code> prop down.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/props-goes-down.gif" alt="" class="wp-image-3609"/><figcaption>Animated flow of props propagation from <code>App</code> to deeply nested children.</figcaption></figure>
+
+
+
+<p>Then, the user interacts with the <code>SigninButton</code>. Once <code>SigninButton</code> knows the user identity, it emits a custom event called <code>userChanged</code>. Events travel the component tree from bottom to top. Each parent component should handle or propagate the event (or it will be discarded). Eventually, the event reaches to root component <code>App</code>, which uses it to update its internal state. This triggers a new rendering and the updated identity travels again the tree down through props.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/event-goes-up.gif" alt="" class="wp-image-3613"/><figcaption>Animated flow of events going up, getting handled in App and trigering a view update.</figcaption></figure>
+
+
+<a href=https://docs.google.com/presentation/d/1FhBhkHADZAE-DtDQU2qk6MczPhqDVYRIyk7ysPOFdA8/edit#slide=id.gebafa763cd_0_119 target="_blank">
+  <div style="display: flex; align-items: center; padding: 1em; border-radius: 3px; border: 1px solid #f5ba16; background: #f7f7f7">
+    <div style="margin-right: 0.5em"><img src="/wp-content/uploads/2021/01/google_slide.svg" /></div>
+    <div>Open the animations in Google Slide</div>
+  </div>
+</a>
+
+
+
+<p></p>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong>: Use props to share the user with both  <code>SigninComponent</code> and <code>HomePage</code>. Then use events to update the shared user from <code>SigninComponent</code>. Eventually, display the user name in <code>HomePage</code>.</p>
+
+
+
+<p class="question"><strong>Question 3</strong>: Is it the best way of doing things? Why?</p>
+
+
+
+<p><strong>Spoiler</strong>: Of course, not. In addition to the reason you may have already found, there is a performance penalty. Did you notice <code>BaseLayout</code> was rendered again because its props changed? But <code>BaseLayout</code> does not need the <code>user</code> props for itself. It just forwards it to children&#8230;</p>
+
+
+
+<h5><span style="color:#a2870d" class="has-inline-color">Second solution, use <code>provide</code> and <code>inject</code>.</span></h5>
+
+
+
+<p>Read the official documentation carefully for <a href="https://v3.vuejs.org/guide/component-provide-inject.html" target="_blank" rel="noreferrer noopener">Provide &amp; Inject</a>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 4</strong>: Replace every needed <code>user</code> props by an <code>inject</code> and remove transitional props that are not useful anymore. For now, you can keep the <code>userChanged</code> event chain. Be sure to make your <code>inject</code> reactive.</p>
+
+
+
+<p class="question"><strong>Question 4</strong>: What is the bug if the <code>inject</code> is not reactive?</p>
+
+
+
+<p>Actually, you provide the <code>user</code> objet to the <code>App</code> children, whatever how deep are the consumer components. But updating the value of <code>user</code> inside <code>App</code> still requires to manually propagate events through some component branches.</p>
+
+
+
+<p>There are various ways, just by using <code>provide</code> and <code>inject</code>, to trigger a change from a deeply nested component without emitting a chain of events. One of them is to provide a setter, which is just a function. This will be demonstrated by the teacher.</p>
+
+
+
+<h5><span style="color:#a2870d" class="has-inline-color">Third solution, use a store library like vuex.</span></h5>
+
+
+
+<p>The third proposed solution is using a store library. With stores, your global state is both readable and writable anywhere in your application. The business logic related to data manipulation is extracted to those stores. One of those libraries, <a href="https://next.vuex.vuejs.org/#what-is-a-state-management-pattern" target="_blank" rel="noreferrer noopener">Vuex</a>, is specially crafted to work with Vue and its internals.</p>
+
+
+
+<blockquote class="wp-block-quote is-style-default"><p>Vuex helps us deal with shared state management with the cost of more concepts and boilerplate. It&rsquo;s a trade-off between short term and long term productivity.</p><cite>Quoted from vuex documentation: « When Should I Use It? »</cite></blockquote>
+
+
+
+<p>According to this quote, vuex is probably not necessary for our dead-simple application. Using props, custom events, provide and inject may gracefully to cover our needs.</p>
+
+
+
+<p>But it is still revelant to explore Vuex from a pedagogical point of view. So let&rsquo;s give it a try for this tutorial series.</p>
+
+
+
+<p class="exercice"><strong>Exercise 5</strong>: Move the <code>user</code> property from the <code>App</code> component state to a store managed with vuex. Drop the event chain and let <code>SigninButton</code> directly call a <a href="https://next.vuex.vuejs.org/guide/mutations.html" target="_blank" rel="noreferrer noopener">mutation</a> in the store.</p>
+
+
+
+<p class="question"><strong>Question 5</strong>: Build a comparison table between the various state management strategies available, especially about pro and cons. Optionally, feel free to explore other ways not covered in that tutorial.</p>
+
+
+
+<p class="question"><strong>Question 6</strong>: Imagine a developer in your team proposes to exclusively manage the state with stores. Therefore, it recommends not to rely on <code>props</code> and <code>provide</code> anymore. Would you accept this? An argued response is expected.</p>
+
+
+
+<h4>Client-side routing</h4>
+
+
+
+<p><i class="fas fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> Unfortunately, we are running out of time. Client-side routing was supposed to be the main part of the next tutorial. Instead, this section will cover the basis of vue-router.</p>
+
+
+
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td>/</td><td>Displays the <code>HomePage</code> component as it is currently defined.</td></tr><tr><td>/conversations</td><td>Displays the <code>ConversationsIndexPage</code> component that displays the more recent conversations inside the user&rsquo;s mailbox.</td></tr><tr><td>/conversations/:id</td><td>Displays the <code>ConversationShowPage</code> component that fetches and render the content of a given conversation (id retrived from the API).</td></tr></tbody></table><figcaption>Expected routes at the end of the tutorial</figcaption></figure>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, so vue-router v4 or higher.</p>
+
+
+
+<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router in its own module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
+
+
+
+<p><strong>Tips</strong>: for the previous question, you need:</p>
+
+
+
+<ul><li>to add <code>src/router/index.js</code> and export a router built with <code>createRouter()</code>.</li><li>to import the router in <code>src/main.js</code> and call <code>.use(router)</code> somewhere&#8230;</li><li>to use <code>&lt;router-view /&gt;</code> instead of <code>&lt;home-page /&gt;</code> somewhere&#8230;</li><li>to create another component for the new page.</li></ul>
+
+
+
+<p class="exercice"><strong>Exercise 9</strong>: You probably tested your routes by directly changing the URL. Now, you will add a link in the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. Its must use the <code>&lt;router-link /&gt;</code>.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column question">
+<p><strong>Question 7</strong>: What is the performance difference between:</p>
+
+
+
+<ul style="margin-left: 1em; margin-bottom: 0"><li><code>&lt;a href="/conversations"&gt;Conversation&lt;/a&gt;</code></li><li><code>&lt;router-link to="/conversations"&gt;Conversations&lt;/router-link&gt;</code></li></ul>
+</div>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 10</strong>: In the case the user tries to access <code>/conversations</code> without being logged-in, it should be redirected to the home page. Use a <a href="https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards" target="_blank" rel="noreferrer noopener">guard</a> to implement this behaviour.</p>
+
+
+
+<p class="exercice"><strong>Exercise 11</strong>: Implement the <code>/conversations/:id</code> route. For now, the newly created <code>ConversationShowPage</code> component should access the id given in the URL and display it inside the template.</p>
+
+
+
+<p>At this step, the routing capabilities are fine. The next step would be to really fetch conversations from Outlook using the API and eventually display them in the UI. Unfortunately, we do not have anymore in-class session for that.</p>
+
+
+
+<p><strong>Tips</strong>: If you want to complet the tutorial yourself, you must ask another authorisation for the API. The scope <em><code>Mail.Read</code></em> is need to fetch mails (see <code>src/lib/microsoftGraph.js</code>).</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">02. Vue: practical activity, part n°2 (for your information)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>01. Vue: practical activity, part n°1</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/</link>
 		
@@ -92,11 +417,11 @@
 <p class="question"><strong>Question 1</strong>: That is the main difference between local installation and global installation of packages with npm? What kind of packages do you generally install locally? What kind is generally installed globally?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
 npm install @vue/cli
 
 <span class="hljs-comment"># example of command to install the vue cli globally</span>
-npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>According to the <a href="https://cli.vuejs.org/guide/installation.html" target="_blank" rel="noreferrer noopener">docs</a>, the global installation is best suitable for Vue CLI.</p>
@@ -186,7 +511,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 5</strong>: Let&rsquo;s begin with the root component, formally <code>App</code> (in <code>src/App.vue</code>). Replace its template with the following content and create the missing components. Add some content to the header (ex. fake home link, fake user name&#8230;) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span> /&gt;</span>
@@ -195,7 +520,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: create BaseHeader and BaseFooter »</p>
@@ -213,12 +538,12 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p><strong>Tips</strong>: If you integrated font awesome, try extracting most logic out of <code>App</code>. When it comes to configure third party dependencies, I generally work with ES-modules inside a <code>src/lib</code> folder. Example: <code>src/lib/fontAwesome.js</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: create BaseLayout that uses slot API »</p>
@@ -270,7 +595,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>You may split your scoped CSS in 2 parts: the styles common to all components, and specific classes for each color in the palette. So, the component&rsquo;s style could look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
 <span class="hljs-selector-class">.button</span> {
   <span class="hljs-comment">/* css properties common to all buttons */</span>
 }
@@ -279,7 +604,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-comment">/* css properties specific to the primary color */</span>
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#42b983</span>;
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, you just need to conditionally bind the CSS classes (<a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">explained here</a>).</p>
@@ -291,11 +616,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Declare in a single place the allowed values for the colour enum and its corresponding colours. On my side, I just declared the above object and always take it as a single source of truth in <code>BaseComponent</code>. In other words, this object contains the colour palette indexed by names I use as reference everywhere in the component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
   <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
   <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
   <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
-}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, you need <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. In short, this is a conjugaison of <a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">style binding</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noreferrer noopener">CSS variables</a>, <a href="https://v3.vuejs.org/guide/computed.html" target="_blank" rel="noreferrer noopener">computed properties</a> and scoped styles.</p>
@@ -323,7 +648,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Here you have its source code (if you did not install FontAwesome, just replace the <code>&lt;font-awesome-icon /&gt;</code> by a simple text, while preserving the <code>v-if</code> directive.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-button</span>
     <span class="hljs-attr">:disabled</span>=<span class="hljs-string">"isPending"</span>
     <span class="hljs-attr">:color</span>=<span class="hljs-string">"color"</span>
@@ -367,7 +692,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
     }
   }
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the <code>@click</code> event listener attached to the instance of <code>AsyncComponent</code> instance returns a Promise that waits for 2 seconds before resolving. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noreferrer noopener">You can create such a Promise using its constructor and a setTimeou</a>t. Also, please <a href="https://v3.vuejs.org/guide/events.html#method-event-handlers" target="_blank" rel="noreferrer noopener">write the event handler inside a dedicated method</a> since at is a bit complex.</p>
