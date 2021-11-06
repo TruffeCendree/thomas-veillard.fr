@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Mon, 25 Oct 2021 05:57:17 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 06 Nov 2021 15:59:44 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -755,7 +755,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 		
 			</item>
 		<item>
-		<title>Project</title>
+		<title>Project (frontend)</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/project/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
@@ -763,8 +763,8 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 				<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3194</guid>
 
-					<description><![CDATA[<p>Topic Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting and filtering &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>Topic Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting and filtering &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project (frontend)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project (frontend)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <h4>Topic</h4>
@@ -807,7 +807,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<ul><li><strong>At least one week before any in-class session</strong>, you can submit your work-in-progress for a ungraduated optional review. The number of projects I can review in a short time is of course limited, so please do not wait the last session.</li><li><strong>On Friday, November 5 at 23h59 </strong>for a final review. Code to be graded must be on your master branch.</li></ul>
+<ul><li><strong>At least one week before any in-class session</strong>, you can submit your work-in-progress for a ungraduated optional review. The number of projects I can review in a short time is of course limited, so please do not wait the last session.</li><li><strong>On Friday, November 7 at 23h59 </strong>for a final review. Code to be graded must be on your master branch.</li></ul>
 
 
 
@@ -832,7 +832,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project (frontend)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
