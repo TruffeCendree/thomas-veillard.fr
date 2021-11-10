@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>04. Backend &#8211; Thomas VEILLARD</title>
+	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/04-backend/feed/" rel="self" type="application/rss+xml" />
+	<link>https://thomas-veillard.fr/</link>
+	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
+	<lastBuildDate>Wed, 10 Nov 2021 19:34:37 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.3</generator>
+	<item>
+		<title>01. Backend project</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Wed, 10 Nov 2021 13:43:54 +0000</pubDate>
+				<category><![CDATA[04. Backend]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3861</guid>
+
+					<description><![CDATA[<p>You have to build a web server on the node.js platform with code quality, performance and security in mind. The kind of application is your choice (could be a game, a productivity tool, a personal utility&#8230;). I only have technical concerns. Requirements are always given in a generic manner, so you are free to use &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Backend project</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">01. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>You have to build a web server on the node.js platform with code quality, performance and security in mind. The kind of application is your choice (could be a game, a productivity tool, a personal utility&#8230;). I only have technical concerns.</p>
+
+
+
+<p>Requirements are always given in a generic manner, so you are free to use any library you want. For the REST subject, leveraging <a href="https://www.fastify.io/" target="_blank" rel="noreferrer noopener">fastify</a> built-in features may solve some of them (schema validation, documentation generation&#8230;).</p>
+
+
+
+<p>Please prefer the quality over the quantity of code. Handle the above issues once and for all, as if you were building a long-term project.</p>
+
+
+
+<p class="has-text-align-center">***</p>
+
+
+
+<p><strong>No need for a frontend, use a test runner instead</strong>:</p>
+
+
+
+<ul><li>Only the backend-related code is reviewed and graded. Front-end is out of topic.</li><li>In the absence of a frontend, use postman and test runner to test your endpoints.</li><li>The code coverage goal is 75% or more, with all routes triggered at least once.</li><li>Useful resources: <a href="https://istanbul.js.org/" target="_blank" rel="noreferrer noopener">istanbul</a>, <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a>, <a href="https://www.chaijs.com/" target="_blank" rel="noreferrer noopener">chai</a>, <a href="https://www.npmjs.com/package/faker" target="_blank" rel="noreferrer noopener">faker</a>&#8230;</li></ul>
+
+
+
+<p><strong>If you build a RESTful API:</strong></p>
+
+
+
+<ul><li>Strictly follow the REST standard for routes (path, method&#8230;). Take the <a href="https://guides.rubyonrails.org/routing.html#crud-verbs-and-actions" target="_blank" rel="noreferrer noopener">Rails routing conventions</a> for CRUD operations as reference.</li></ul>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>HTTP Verb</td><td>Path</td><td>Action name</td><td>Description</td></tr><tr><td>GET</td><td>/photos</td><td>index</td><td>returns a list of photos</td></tr><tr><td>GET</td><td>/photos/:id</td><td>show</td><td>returns a specific photo</td></tr><tr><td>POST</td><td>/photos</td><td>create</td><td>creates a new photo</td></tr><tr><td>PATCH/PUT</td><td>/photos/:id</td><td>update</td><td>updates a specific photo</td></tr><tr><td>DELETE</td><td>/photos/:id</td><td>destroy</td><td>destroys a specific photo</td></tr></tbody></table><figcaption>Example of REST endpoints for a photo resource.</figcaption></figure>
+
+
+
+<ul><li>Nested resources are also allowed. For example: <code>POST /users/:id/photos</code></li><li>Only implement CRUD endpoints you really need to cover your use-case.</li><li>Add non-CRUD endpoints, with server-side computations. For example: <code>POST /employees/:id/is_available_at</code>.</li></ul>
+
+
+
+<p><strong>If you build a GraphQL API:</strong></p>
+
+
+
+<p>You are warned that the GraphQL is more challenging than the REST API.</p>
+
+
+
+<ul><li>Do not maintain the GraphQL schema manually. Find a way to generate it from your code, so it is always synced with the underlying implementation. To achieve this in my experiments, I used <a href="https://typegraphql.com/docs/introduction.html" target="_blank" rel="noreferrer noopener">TypeGraphQL</a>.</li></ul>
+
+
+
+<ul><li>Optionally, you may look for:<ul><li>a maximal depth of nested accesses (to prevent DoS due to recursive calls).</li><li>a caching system for the query parser and execution plan.</li><li>a whitelist of trusted queries if the API is dedicated to your own frontend.</li><li>a static check of the graphql queries in your sources against your schema.</li></ul></li></ul>
+
+
+
+<p><strong>Input validation:</strong></p>
+
+
+
+<ul><li>Check every <code>params</code>, <code>querystring</code>, <code>body</code> at runtime before it is consumed.</li><li>Ensure static types are synced with runtime validations (by generating or inferring one from the other). Check the presence, the nullability, the type&#8230;</li><li>Respond with the validation errors if any. The API consumer will thank you.</li><li>Useful resources: <a href="https://www.npmjs.com/package/json-schema-to-typescript" target="_blank" rel="noreferrer noopener">json-schema-to-typescript</a> + <a href="https://www.fastify.io/docs/latest/TypeScript/#schemas-in-json-files" target="_blank" rel="noreferrer noopener">fastify doc</a> or <a href="https://www.npmjs.com/package/io-ts" target="_blank" rel="noreferrer noopener">io-ts</a> for express.</li></ul>
+
+
+
+<p><strong>Authorisation:</strong></p>
+
+
+
+<p>To ensure your authorisation part is a bit consistent, do not rely only on roles.</p>
+
+
+
+<ul><li>Check the current user is allowed to call this endpoint.</li><li>Check the current user is allowed to perform the action on a specific resource.</li><li>Always do it, regardless of the nature of the operation.</li></ul>
+
+
+
+<p><strong>Secret management:</strong></p>
+
+
+
+<ul><li>A part of your API should be restricted to logged-in users.</li><li>When possible, do not store secrets (ex. no raw password in the DB and logs).</li><li>Use environment variables and environment files (<a href="https://www.npmjs.com/package/dotenv" target="_blank" rel="noreferrer noopener">dotenv</a>).</li></ul>
+
+
+
+<p>Tips: You probably wrote enough authentication endpoints in your previous projects&#8230; You may just implement a key-based auth using the <a href="https://swagger.io/docs/specification/authentication/api-keys/" target="_blank" rel="noreferrer noopener">X-API-Key</a> header.</p>
+
+
+
+<p><strong>Package management:</strong></p>
+
+
+
+<ul><li>Properly use <code>dependencies</code> and <code>devDevepencies</code> in your <code>package.json</code>.</li><li>Do not use any package with less than 50k downloads a week.</li></ul>
+
+
+
+<p><strong>Documentation:</strong></p>
+
+
+
+<ul><li>For an API, the documentation should include for each endpoint:<ul><li>a description for non-obvious endpoints.</li><li>the schema of accepted <code>params</code>, <code>querystring</code> and <code>body</code>.</li><li>the schema of a successful response.</li></ul></li></ul>
+
+
+
+<ul><li>The documentation should be generated from your source code.</li><li>Optionally, you may build a playground integrated to the documentation site.</li><li>Optionally, you may build and publish the documentation using Github Actions.</li></ul>
+
+
+
+<p><strong>Error management:</strong></p>
+
+
+
+<ul><li>Do not expose internal application state or code (no sent stacktrace!).</li><li>Optionally, you may report errors to Sentry, Rollbar, Stackdriver&#8230;</li></ul>
+
+
+
+<p><strong>Log management:</strong></p>
+
+
+
+<ul><li>Record relevant activities to logs (could be printed on STDOUT).</li><li>Record beginning time, execution duration, source IP, path, method, parameters (from URL and body), result status code, user identity…</li><li>Do not print secrets (like password, cookies) to the logs.</li><li>Optionally, report them as JSON in production, so they are queriable once digest.</li></ul>
+
+
+
+<p><strong>Asynchronous first</strong></p>
+
+
+
+<ul><li>Always use the async implementations (<code>fs.readFile</code> instead of <code>fs.readFileSync</code>).</li><li>No unhandled promise rejections, no uncaught exceptions&#8230;</li></ul>
+
+
+
+<p><strong>DRY &amp; code consistency:</strong></p>
+
+
+
+<ul><li>The previous requirements should be addressed at the project scale, not on a route per route basis. Your endpoints&rsquo; controllers should be as simple as possible, delegate those tasks and be consistent across the whole code base. </li></ul>
+
+
+
+<p>For example: an endpoint could declare its input schema and delegate the validation, with the assurance its controller is called only in case of success.</p>
+
+
+
+<ul><li>More generally, you should not repeat yourself. Do not duplicate your code!</li></ul>
+
+
+
+<p><strong>Typescript + eslint</strong></p>
+
+
+
+<ul><li>You should use Typescript in strict mode. As much as possible, ban the <code>any</code> type.</li><li>Use eslint + @typescript-eslint, with at least those sets of rules:</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">  extends: [
+    <span class="hljs-string">'eslint:recommended'</span>,
+    <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,
+    <span class="hljs-string">'plugin:@typescript-eslint/recommended-requiring-type-checking'</span>
+  ]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Tips: you can disable/configure some rules of those sets.</p>
+
+
+
+<p class="has-text-align-center">***</p>
+
+
+
+<p><strong>Expected delivery content:</strong></p>
+
+
+
+<ul><li>Host your source code on Github or Gitlab.</li></ul>
+
+
+
+<ul><li>Add a direct link in your <code>README.md</code> to:<ul><li>the latest log of the Github Action running your tests and reporting coverage.</li><li>the latest generated documentation (may be a folder in your git repository&#8230;).</li></ul></li></ul>
+
+
+
+<ul><li>A section inside your <code>README.md</code> should explain how you solved my requirements at the project scale. This section is written by a developer for a developer. It may contain code examples, schemae, engineering concerns&#8230; No minimum size required, no need to be verbose.</li></ul>
+
+
+
+<p><strong>Grading criteria:</strong></p>
+
+
+
+<p>Coming soon</p>
+
+
+
+<p><strong>Delivery date:</strong></p>
+
+
+
+<p>Delivery date unset, but will be as late as possible.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">01. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

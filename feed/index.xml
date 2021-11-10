@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 06 Nov 2021 15:59:44 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 10 Nov 2021 19:34:37 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,225 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.7.3</generator>
 	<item>
+		<title>01. Backend project</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Wed, 10 Nov 2021 13:43:54 +0000</pubDate>
+				<category><![CDATA[04. Backend]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3861</guid>
+
+					<description><![CDATA[<p>You have to build a web server on the node.js platform with code quality, performance and security in mind. The kind of application is your choice (could be a game, a productivity tool, a personal utility&#8230;). I only have technical concerns. Requirements are always given in a generic manner, so you are free to use &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Backend project</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">01. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>You have to build a web server on the node.js platform with code quality, performance and security in mind. The kind of application is your choice (could be a game, a productivity tool, a personal utility&#8230;). I only have technical concerns.</p>
+
+
+
+<p>Requirements are always given in a generic manner, so you are free to use any library you want. For the REST subject, leveraging <a href="https://www.fastify.io/" target="_blank" rel="noreferrer noopener">fastify</a> built-in features may solve some of them (schema validation, documentation generation&#8230;).</p>
+
+
+
+<p>Please prefer the quality over the quantity of code. Handle the above issues once and for all, as if you were building a long-term project.</p>
+
+
+
+<p class="has-text-align-center">***</p>
+
+
+
+<p><strong>No need for a frontend, use a test runner instead</strong>:</p>
+
+
+
+<ul><li>Only the backend-related code is reviewed and graded. Front-end is out of topic.</li><li>In the absence of a frontend, use postman and test runner to test your endpoints.</li><li>The code coverage goal is 75% or more, with all routes triggered at least once.</li><li>Useful resources: <a href="https://istanbul.js.org/" target="_blank" rel="noreferrer noopener">istanbul</a>, <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a>, <a href="https://www.chaijs.com/" target="_blank" rel="noreferrer noopener">chai</a>, <a href="https://www.npmjs.com/package/faker" target="_blank" rel="noreferrer noopener">faker</a>&#8230;</li></ul>
+
+
+
+<p><strong>If you build a RESTful API:</strong></p>
+
+
+
+<ul><li>Strictly follow the REST standard for routes (path, method&#8230;). Take the <a href="https://guides.rubyonrails.org/routing.html#crud-verbs-and-actions" target="_blank" rel="noreferrer noopener">Rails routing conventions</a> for CRUD operations as reference.</li></ul>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>HTTP Verb</td><td>Path</td><td>Action name</td><td>Description</td></tr><tr><td>GET</td><td>/photos</td><td>index</td><td>returns a list of photos</td></tr><tr><td>GET</td><td>/photos/:id</td><td>show</td><td>returns a specific photo</td></tr><tr><td>POST</td><td>/photos</td><td>create</td><td>creates a new photo</td></tr><tr><td>PATCH/PUT</td><td>/photos/:id</td><td>update</td><td>updates a specific photo</td></tr><tr><td>DELETE</td><td>/photos/:id</td><td>destroy</td><td>destroys a specific photo</td></tr></tbody></table><figcaption>Example of REST endpoints for a photo resource.</figcaption></figure>
+
+
+
+<ul><li>Nested resources are also allowed. For example: <code>POST /users/:id/photos</code></li><li>Only implement CRUD endpoints you really need to cover your use-case.</li><li>Add non-CRUD endpoints, with server-side computations. For example: <code>POST /employees/:id/is_available_at</code>.</li></ul>
+
+
+
+<p><strong>If you build a GraphQL API:</strong></p>
+
+
+
+<p>You are warned that the GraphQL is more challenging than the REST API.</p>
+
+
+
+<ul><li>Do not maintain the GraphQL schema manually. Find a way to generate it from your code, so it is always synced with the underlying implementation. To achieve this in my experiments, I used <a href="https://typegraphql.com/docs/introduction.html" target="_blank" rel="noreferrer noopener">TypeGraphQL</a>.</li></ul>
+
+
+
+<ul><li>Optionally, you may look for:<ul><li>a maximal depth of nested accesses (to prevent DoS due to recursive calls).</li><li>a caching system for the query parser and execution plan.</li><li>a whitelist of trusted queries if the API is dedicated to your own frontend.</li><li>a static check of the graphql queries in your sources against your schema.</li></ul></li></ul>
+
+
+
+<p><strong>Input validation:</strong></p>
+
+
+
+<ul><li>Check every <code>params</code>, <code>querystring</code>, <code>body</code> at runtime before it is consumed.</li><li>Ensure static types are synced with runtime validations (by generating or inferring one from the other). Check the presence, the nullability, the type&#8230;</li><li>Respond with the validation errors if any. The API consumer will thank you.</li><li>Useful resources: <a href="https://www.npmjs.com/package/json-schema-to-typescript" target="_blank" rel="noreferrer noopener">json-schema-to-typescript</a> + <a href="https://www.fastify.io/docs/latest/TypeScript/#schemas-in-json-files" target="_blank" rel="noreferrer noopener">fastify doc</a> or <a href="https://www.npmjs.com/package/io-ts" target="_blank" rel="noreferrer noopener">io-ts</a> for express.</li></ul>
+
+
+
+<p><strong>Authorisation:</strong></p>
+
+
+
+<p>To ensure your authorisation part is a bit consistent, do not rely only on roles.</p>
+
+
+
+<ul><li>Check the current user is allowed to call this endpoint.</li><li>Check the current user is allowed to perform the action on a specific resource.</li><li>Always do it, regardless of the nature of the operation.</li></ul>
+
+
+
+<p><strong>Secret management:</strong></p>
+
+
+
+<ul><li>A part of your API should be restricted to logged-in users.</li><li>When possible, do not store secrets (ex. no raw password in the DB and logs).</li><li>Use environment variables and environment files (<a href="https://www.npmjs.com/package/dotenv" target="_blank" rel="noreferrer noopener">dotenv</a>).</li></ul>
+
+
+
+<p>Tips: You probably wrote enough authentication endpoints in your previous projects&#8230; You may just implement a key-based auth using the <a href="https://swagger.io/docs/specification/authentication/api-keys/" target="_blank" rel="noreferrer noopener">X-API-Key</a> header.</p>
+
+
+
+<p><strong>Package management:</strong></p>
+
+
+
+<ul><li>Properly use <code>dependencies</code> and <code>devDevepencies</code> in your <code>package.json</code>.</li><li>Do not use any package with less than 50k downloads a week.</li></ul>
+
+
+
+<p><strong>Documentation:</strong></p>
+
+
+
+<ul><li>For an API, the documentation should include for each endpoint:<ul><li>a description for non-obvious endpoints.</li><li>the schema of accepted <code>params</code>, <code>querystring</code> and <code>body</code>.</li><li>the schema of a successful response.</li></ul></li></ul>
+
+
+
+<ul><li>The documentation should be generated from your source code.</li><li>Optionally, you may build a playground integrated to the documentation site.</li><li>Optionally, you may build and publish the documentation using Github Actions.</li></ul>
+
+
+
+<p><strong>Error management:</strong></p>
+
+
+
+<ul><li>Do not expose internal application state or code (no sent stacktrace!).</li><li>Optionally, you may report errors to Sentry, Rollbar, Stackdriver&#8230;</li></ul>
+
+
+
+<p><strong>Log management:</strong></p>
+
+
+
+<ul><li>Record relevant activities to logs (could be printed on STDOUT).</li><li>Record beginning time, execution duration, source IP, path, method, parameters (from URL and body), result status code, user identity…</li><li>Do not print secrets (like password, cookies) to the logs.</li><li>Optionally, report them as JSON in production, so they are queriable once digest.</li></ul>
+
+
+
+<p><strong>Asynchronous first</strong></p>
+
+
+
+<ul><li>Always use the async implementations (<code>fs.readFile</code> instead of <code>fs.readFileSync</code>).</li><li>No unhandled promise rejections, no uncaught exceptions&#8230;</li></ul>
+
+
+
+<p><strong>DRY &amp; code consistency:</strong></p>
+
+
+
+<ul><li>The previous requirements should be addressed at the project scale, not on a route per route basis. Your endpoints&rsquo; controllers should be as simple as possible, delegate those tasks and be consistent across the whole code base. </li></ul>
+
+
+
+<p>For example: an endpoint could declare its input schema and delegate the validation, with the assurance its controller is called only in case of success.</p>
+
+
+
+<ul><li>More generally, you should not repeat yourself. Do not duplicate your code!</li></ul>
+
+
+
+<p><strong>Typescript + eslint</strong></p>
+
+
+
+<ul><li>You should use Typescript in strict mode. As much as possible, ban the <code>any</code> type.</li><li>Use eslint + @typescript-eslint, with at least those sets of rules:</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">  extends: [
+    <span class="hljs-string">'eslint:recommended'</span>,
+    <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,
+    <span class="hljs-string">'plugin:@typescript-eslint/recommended-requiring-type-checking'</span>
+  ]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Tips: you can disable/configure some rules of those sets.</p>
+
+
+
+<p class="has-text-align-center">***</p>
+
+
+
+<p><strong>Expected delivery content:</strong></p>
+
+
+
+<ul><li>Host your source code on Github or Gitlab.</li></ul>
+
+
+
+<ul><li>Add a direct link in your <code>README.md</code> to:<ul><li>the latest log of the Github Action running your tests and reporting coverage.</li><li>the latest generated documentation (may be a folder in your git repository&#8230;).</li></ul></li></ul>
+
+
+
+<ul><li>A section inside your <code>README.md</code> should explain how you solved my requirements at the project scale. This section is written by a developer for a developer. It may contain code examples, schemae, engineering concerns&#8230; No minimum size required, no need to be verbose.</li></ul>
+
+
+
+<p><strong>Grading criteria:</strong></p>
+
+
+
+<p>Coming soon</p>
+
+
+
+<p><strong>Delivery date:</strong></p>
+
+
+
+<p>Delivery date unset, but will be as late as possible.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">01. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>02. Vue: practical activity, part n°2 (for your information)</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/</link>
 		
@@ -92,8 +311,8 @@
 <p>From a security and maintainability perspective, you should never let secrets and configurations hardcoded in your code. Instead, extract them to a configuration file ignored by git. Even better, allow those settings to be different depending on the environment (ex. test, development, staging, production&#8230;). The Vue assets pipeline has a built-in feature for this: <a href="https://cli.vuejs.org/guide/mode-and-env.html" target="_blank" rel="noreferrer noopener">env variables</a>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.developent.local</span>
-VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.developent.local</span>
+VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><i class="fas fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> Unfortunately, changes appyed to .env files cannot be watched by the cli. Each time, you must restart the building process (ex. npm run serve).</p>
@@ -115,7 +334,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 1: add SigninButton »</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// file src/lib/microsoftGraph.js</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// file src/lib/microsoftGraph.js</span>
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msal <span class="hljs-keyword">from</span> <span class="hljs-string">'@azure/msal-browser'</span>
 
 <span class="hljs-comment">/**
@@ -138,7 +357,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
   <span class="hljs-keyword">const</span> authResult = <span class="hljs-keyword">await</span> msalInstance.loginPopup(requestedScopes)
   msalInstance.setActiveAccount(authResult.account)
   <span class="hljs-keyword">return</span> authResult.account
-}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="1060" height="836" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif" alt="" class="wp-image-3576"/></figure>
@@ -417,11 +636,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 <p class="question"><strong>Question 1</strong>: That is the main difference between local installation and global installation of packages with npm? What kind of packages do you generally install locally? What kind is generally installed globally?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
 npm install @vue/cli
 
 <span class="hljs-comment"># example of command to install the vue cli globally</span>
-npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>According to the <a href="https://cli.vuejs.org/guide/installation.html" target="_blank" rel="noreferrer noopener">docs</a>, the global installation is best suitable for Vue CLI.</p>
@@ -511,7 +730,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 5</strong>: Let&rsquo;s begin with the root component, formally <code>App</code> (in <code>src/App.vue</code>). Replace its template with the following content and create the missing components. Add some content to the header (ex. fake home link, fake user name&#8230;) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span> /&gt;</span>
@@ -520,7 +739,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: create BaseHeader and BaseFooter »</p>
@@ -538,12 +757,12 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p><strong>Tips</strong>: If you integrated font awesome, try extracting most logic out of <code>App</code>. When it comes to configure third party dependencies, I generally work with ES-modules inside a <code>src/lib</code> folder. Example: <code>src/lib/fontAwesome.js</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: create BaseLayout that uses slot API »</p>
@@ -595,7 +814,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>You may split your scoped CSS in 2 parts: the styles common to all components, and specific classes for each color in the palette. So, the component&rsquo;s style could look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
 <span class="hljs-selector-class">.button</span> {
   <span class="hljs-comment">/* css properties common to all buttons */</span>
 }
@@ -604,7 +823,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-comment">/* css properties specific to the primary color */</span>
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#42b983</span>;
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, you just need to conditionally bind the CSS classes (<a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">explained here</a>).</p>
@@ -616,11 +835,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Declare in a single place the allowed values for the colour enum and its corresponding colours. On my side, I just declared the above object and always take it as a single source of truth in <code>BaseComponent</code>. In other words, this object contains the colour palette indexed by names I use as reference everywhere in the component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
   <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
   <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
   <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
-}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, you need <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. In short, this is a conjugaison of <a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">style binding</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noreferrer noopener">CSS variables</a>, <a href="https://v3.vuejs.org/guide/computed.html" target="_blank" rel="noreferrer noopener">computed properties</a> and scoped styles.</p>
@@ -648,7 +867,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Here you have its source code (if you did not install FontAwesome, just replace the <code>&lt;font-awesome-icon /&gt;</code> by a simple text, while preserving the <code>v-if</code> directive.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-button</span>
     <span class="hljs-attr">:disabled</span>=<span class="hljs-string">"isPending"</span>
     <span class="hljs-attr">:color</span>=<span class="hljs-string">"color"</span>
@@ -692,7 +911,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
     }
   }
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the <code>@click</code> event listener attached to the instance of <code>AsyncComponent</code> instance returns a Promise that waits for 2 seconds before resolving. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noreferrer noopener">You can create such a Promise using its constructor and a setTimeou</a>t. Also, please <a href="https://v3.vuejs.org/guide/events.html#method-event-handlers" target="_blank" rel="noreferrer noopener">write the event handler inside a dedicated method</a> since at is a bit complex.</p>
@@ -755,16 +974,17 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 		
 			</item>
 		<item>
-		<title>Project (frontend)</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/project/</link>
+		<title>03. Vue.js project</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/vue/project/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Mon, 23 Aug 2021 17:59:03 +0000</pubDate>
-				<category><![CDATA[Modern web development]]></category>
+				<category><![CDATA[03. VueJS]]></category>
+		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3194</guid>
 
-					<description><![CDATA[<p>Topic Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting and filtering &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">Project (frontend)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project (frontend)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>Topic Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting and filtering &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. Vue.js project</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/project/">03. Vue.js project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <h4>Topic</h4>
@@ -832,7 +1052,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 <p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/project/">Project (frontend)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/project/">03. Vue.js project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -1041,18 +1261,18 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 <div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
   <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
 
 
 
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
@@ -1334,11 +1554,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p><strong><span style="color:#741b47" class="has-inline-color">Les options</span></strong> permettent de personnaliser le comportement. Pour ls, d’après le manuel:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># extrait de "man ls", commande qui permet d'accéder à la documentation de "ls"</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># extrait de "man ls", commande qui permet d'accéder à la documentation de "ls"</span>
 -l	use a long listing format
 -s	<span class="hljs-built_in">print</span> the allocated size of each file, <span class="hljs-keyword">in</span> blocks
 -a	<span class="hljs-keyword">do</span> not ignore entries starting with .
--h 	with -l and -s, <span class="hljs-built_in">print</span> sizes like 1K 234M 2G etc.</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+-h 	with -l and -s, <span class="hljs-built_in">print</span> sizes like 1K 234M 2G etc.</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong><span style="color:#bf9000" class="has-inline-color">Les arguments</span></strong> permettent généralement de spécifier la cible du traitement. Par exemple, ls attend optionnellement une liste de chemins de dossiers et de fichiers à examiner.</p>
@@ -1384,7 +1604,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Toujours dans notre exemple <code>ls -lhsa /etc</code>, le résultat du processus est un texte. On regardera au passage que ce format autorise une mise en page en colonne ou un rendu de couleurs.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell">thomas@thinkpad-laptop:~$ ls -lhsa /etc
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell">thomas@thinkpad-laptop:~$ ls -lhsa /etc
 total 1,3M
  12K drwxr-xr-x 156 root root    12K janv. 18 19:06 .
 4,0K drwxr-xr-x  20 root root   4,0K mai   31  2020 ..
@@ -1396,7 +1616,7 @@ total 1,3M
 4,0K -rw-r--r--   1 root root    244 oct.   7 10:42 antidote.conf
 4,0K drwxr-xr-x   3 root root   4,0K oct.  23 10:19 apache2
 4,0K -rw-r--r--   1 root root    433 oct.   2  2017 apg.conf
-[...] sortie tronquée</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
+[...] sortie tronquée</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>D&rsquo;ailleurs, la sortie console d&rsquo;un processus est un flux. La commande <code>ls</code> laisse penser qu&rsquo;il faut attendre la complétion de l&rsquo;exécution du programme pour avoir le résultat. C&rsquo;est faux, et une commande que <code>htop</code> le démontre. Un processus peut envoyer des messages par intermittence.</p>
@@ -1466,38 +1686,38 @@ total 1,3M
 <p>Ces deux exemples sont équivalents. Ils redirigent STDOUT (flux n°1) vers un fichier. En cas d&rsquo;erreur sur STDERR, les messages s&rsquo;affichent toujours en console.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt; sortie_redirigee.txt
-ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt; sortie_redirigee.txt
+ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Il est aussi possible de rediriger le flux STDERR (flux n°2) avec cette syntaxe.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>On peut rediriger séparément STDOUT et STDERR vers deux fichiers différents.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 1&gt; sortie_redirigee.txt 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 1&gt; sortie_redirigee.txt 2&gt; sortie_erreur_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Une syntaxe permet de rediriger STDERR vers STDOUT. Dans le cas présent, STDOUT restant affiché en console, toute la sortie du programme est en console.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>On peut chaîner la redirection STDERR vers STDOUT, puis STDOUT vers un fichier.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1 &gt; sortie_fusionnee_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa 2&amp;&gt;1 &gt; sortie_fusionnee_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Les redirections avec un simple &lsquo;>&rsquo; détruisent le fichier existant. À l&rsquo;inverse, la syntaxe avec deux chevrons permet d&rsquo;ajouter le contenu en fin de fichier.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt;&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">ls -lhsa &gt;&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Envoyer un fichier vers STDIN</h4>
@@ -1530,361 +1750,6 @@ ls -lhsa 1&gt; sortie_redirigee.txt</code></div><small class="shcb-language" id=
 
 <ol><li>Tout d&rsquo;abord, je crée un nouveau fichier sobrement nommé <code>fichier.txt</code>. Il contient l&rsquo;introduction de cette séance.</li><li>Ensuite, je lance <code>wc -l</code> en redirigeant le contenu du fichier vers STDIN. Et le tour est joué. Simple, n&rsquo;est-ce pas ?</li></ol>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/3-la-ligne-de-commande-et-les-entrees-sorties/">3. La ligne de commande et les entrées / sorties</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>11. JavaScript: practical activity n°2</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 10:03:47 +0000</pubDate>
-				<category><![CDATA[02. Languages]]></category>
-		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=2958</guid>
-
-					<description><![CDATA[<p>Learning outcomes Manage dependencies with npm (install, check updates, find vulnerabilities&#8230;) ; Run cli optionally shipped with your dependencies with npx ; Split your application into multiple ES modules ; Merge those ES-modules into a single bundle and run it into your browser ; Use modern syntax while targeting older browsers using code transpilation ; &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/" class="more-link">Continuer la lecture de <span class="screen-reader-text">11. JavaScript: practical activity n°2</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/">11. JavaScript: practical activity n°2</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>Learning outcomes</h4>
-
-
-
-<ul><li>Manage dependencies with npm (install, check updates, find vulnerabilities&#8230;) ;</li><li>Run cli optionally shipped with your dependencies with npx ;</li><li>Split your application into multiple ES modules ;</li><li>Merge those ES-modules into a single bundle and run it into your browser ;</li><li>Use modern syntax while targeting older browsers using code transpilation ;</li><li>Use modern features while targeting older browsers using polyfills ;</li><li>Catch bugs and formatting issues using a linter ;</li><li>Introduce JSDoc comments (generate docs, improve IDE suggestion, catch bugs) ;</li><li>Build your application for production (optimisations, source maps&#8230;).</li></ul>
-
-
-
-<h4>Download the source code</h4>
-
-
-
-<p>I provide you a simple frontend application that renders a few stock price tables and charts. This small project is a specially crafted as a playground for this tutorial.</p>
-
-
-<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
-  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
-<div>
-  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/08/basic-rate-graph.zip">Download the learning material (source code)</a>
-</div>
-</div>
-
-
-
-<h4>Run the unbundled sources</h4>
-
-
-
-<p>Look at the sources under the <code>src</code> folder. The <code>index.js</code> is the entry point (the only script imported inside <code>index-es6-modules.html</code>). It imports the other files it needs via the <code>import ... from ...</code> statement. Each imported file is called a module.</p>
-
-
-
-<p>Any module can import and/or export references. Those references could be variables, functions, classes, symbols, etc. For more information, both about the concept and the syntax, I recommend <a href="https://www.sitepoint.com/understanding-es6-modules/" target="_blank" rel="noreferrer noopener">this post about ES6-modules</a>.</p>
-
-
-
-<p class="exercice"><strong>Exercise 1:</strong> Open <code>index-es6-modules.html</code> in your browser from the file browser (using « open with Chrome / Firefox / Edge » contextual menu). What is the error revealed inside the browser console?</p>
-
-
-
-<div class="exercice"><p><strong>Excercise 2</strong>: Launch a local HTTP server (seen <a href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">in the lecture</a>) and run the application from it. Then, inspect the HTTP traffic and record some statistics:</p><ul style="margin-left: 1em; margin-bottom: 0"><li>How many JS files were loaded ?</li><li>How long does it take on average to load one ES6-module ?</li><li>What is the total completion time to load all JS files ?</li><li>Did the browser load JS files sequentially or in parallel ?</li></ul></div><br>
-
-
-
-<p><strong>Tips</strong>: your development tools record traffic network only when opened. You may refresh your tab with development tools opened to capture the whole network activity.</p>
-
-
-
-<p class="exercice"><strong>Excercise 3</strong>: Discuss the performance penalty of serving ES6-modules as independent files to the browser. How to mitigate this performance issue?</p>
-
-
-
-<h4>Getting familiar with npm features</h4>
-
-
-
-<p>npm stands for « Node Package Manager ». This utility is shipped with the node.js installer and is a foundation of modern JavaScript ecosystem.</p>
-
-
-
-<p>The primary goal of a package manager is making the installation of dependencies easy. Those dependencies may be libraries, frameworks, command line software, etc.</p>
-
-
-
-<ul><li>A library can be imported like any ES6-module in your code.</li><li>A command line software is run from the terminal as a standalone software.</li><li>A framework is generally a set of multiple libraries, cli scripts and guidelines, that comes with strong opinions on how to use it.</li></ul>
-
-
-
-<p class="has-text-align-center">***</p>
-
-
-
-<p>First of all, npm is tightly coupled to the <code>package.json</code> file, which is both a manifest of the project and a configuration file for npm. Both your project using npm, and any dependency you install this way have it. A sample is included into the historical rates explorer app.</p>
-
-
-
-<p>Any <code>package.json</code> contains basic information about the project, such as its <code>name</code>, <code>version</code> (which should follow <a href="https://semver.org/" target="_blank" rel="noreferrer noopener">semantic versioning</a> standard), <code>author</code> and <code>license</code>. Such a basic <code>package.json</code> can be created with the command <code>npm init</code>.</p>
-
-
-
-<p>Then, you may specify dependencies (each one is identified with a name and an assertion about accepted versions). Just with that information, npm can pull dependencies from the <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer noopener">public registry</a>.</p>
-
-
-
-<p>The <code>package.json</code> of the sample app contains 2 groups of dependencies:</p>
-
-
-
-<ul><li>those under the <code>dependencies</code> key, that are used by your code at runtime ;</li><li>those under the <code>devDependencies</code> key, that are part of the developer experience (for building your app, check code quality, execute automated testing, etc.).</li></ul>
-
-
-
-<p>Depending on the npm&rsquo;s command you use, you can install each or all groups.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># Installs all dependencies from package.json (dependencies and devDependencies)</span>
-npm install
-
-<span class="hljs-comment"># Installs only production dependencies from package.json (ignores devDependencies)</span>
-npm install --prod
-
-<span class="hljs-comment"># Installs a new package (called webpack-cli) and appends it to package.json (inside devDependencies)</span>
-npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="exercice"><strong>Excercise 4</strong>: Install dependencies using the <code>npm install</code> command. Dependencies are locally stored inside the <code>node_modules</code> folder. Why is there far more many modules into <code>node_modules</code> that those declared in <code>package.json</code> ?</p>
-
-
-
-<p class="has-text-align-center">***</p>
-
-
-
-<p>Because dependencies and versions are listed in a single place and installable through a single command, you can ensure every replica of the installation use consistent dependencies.</p>
-
-
-
-<p>Another great benefit is automated tasks and analysis you can run on it:</p>
-
-
-
-<ul><li>track updates and install them easily (using <code>npm outdated</code>) ;</li><li>be alerted in case of security advice about one of your dependencies (find the command yourself).</li></ul>
-
-
-
-<p class="exercice"><strong>Excercise 5</strong>: The rate history app is potentially vulnerable to a high-level security issue through one of its dependencies. Using npm, find all vulnerable packages and associated version.  In which release those bug have been fixed?</p>
-
-
-
-<p><strong>Tips</strong>: Before npm exists, developers frequently used CDN (Content Delivery Network) to include libraries. A CDN hosts a JS script you may include just before your own script (ex. by appending <code>&lt;script src="https://CDN_HOST/jquery.min.js" /&gt;</code> to the HTML source). As a result, the library exposes its functions by populating the global scope. Using CDN generally leads to outdated and inconsistent dependency versions across the project, and finally to security issues and technical dept. The bundler (kind of tool we discuss later) cannot optimise your app. For those and various other reasons, <strong>prefer npm over CDN</strong>.</p>
-
-
-
-<p class="has-text-align-center">***</p>
-
-
-
-<p>Did you notice the <code>scripts</code> key in my <code>package</code>.json? It points to an object whose keys are user-defined names and values are the bash commands to execute. The value can make reference to cli software installed inside <code>node_modules</code>.</p>
-
-
-
-<p>For example, running <code>npm run serve-es6-sources</code> will start a local http server (using the <code>http-server</code> package).</p>
-
-
-
-<p>Very common script&rsquo;s names are:</p>
-
-
-
-<ul><li><code>build</code>: to produce a distributable bundle, sometime with many transformations ;</li><li><code>watch</code>: mostly the same than <code>build</code>, but efficiently re-emits bundle on change ;</li><li><code>test</code>: to execute a suite of automated tests you wrote yourself.</li></ul>
-
-
-
-<p>The <code>build</code> script can target both the production (by generating more optimised bundles) and development (by preferring fastly emitted bundles and easier debugging in the browser). The <code>watch</code> script is intended for development, of course.</p>
-
-
-
-<h4>Bundle the sources using webpack</h4>
-
-
-
-<p class="exercice"><strong>Excercise 6</strong>: Look at the webpack documentation (both <a href="https://webpack.js.org/" target="_blank" rel="noreferrer noopener">home page</a> and the <a href="https://webpack.js.org/concepts/" target="_blank" rel="noreferrer noopener">concepts</a>). What is its primary purpose and how does it fix our performance issue previously encountered with ES6-modules?</p>
-
-
-
-<p class="exercice"><strong>Excercise 7</strong>: The <code>webpack.config.js</code> file is ready to build the aggregated bundle in development mode. The entry point is <code>src/index.js</code>. Bundle should be output at <code>dist/index.js</code>. You can run webpack using <code>npm run build</code>.</p>
-
-
-
-<p><strong>Tips</strong>: look at the emitted <code>dist/index.js</code> and be sure to understand what webpack did. Remember to question the teacher when necessary.</p>
-
-
-
-<p class="exercice"><strong>Exercise 8</strong>: Open <code>index-bundled.html</code> in your browser (could be from the disc or from HTTP server). Does it actually fix the ES-module fetching performance issue ? Please provide some evidence in your answer.</p>
-
-
-
-<p class="exercice"><strong>Excercise 9</strong>: Compare webpack&rsquo;s output in development and in production mode.</p>
-
-
-
-<h4>The browser compatibility issue</h4>
-
-
-
-<p>The 2 major kinds of compatibility issues are <strong>unsupported syntax</strong> and <strong>missing features</strong>.</p>
-
-
-
-<ul><li>Fixing an <strong>unsupported syntax</strong> error imply transforming your code not to use that syntax anymore. For example, you could write classes without the <code>class</code> keyword.</li></ul>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// ES6 code (using the class keyword)</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-  <span class="hljs-keyword">constructor</span> (id, firstName, lastName) {
-    <span class="hljs-keyword">this</span>.id = id
-    <span class="hljs-keyword">this</span>.firstName = firstName
-    <span class="hljs-keyword">this</span>.lastName = lastName
-  }
-  
-  getName () {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">' '</span> + <span class="hljs-keyword">this</span>.lastName.toUpperCase() 
-  }
-}</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// Isofunctional ES5 code (defining the same class without using the `class` keyword)</span>
-
-<span class="hljs-keyword">var</span> User = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">User</span>(<span class="hljs-params">id, firstName, lastName</span>) </span>{
-        <span class="hljs-keyword">this</span>.id = id
-        <span class="hljs-keyword">this</span>.firstName = firstName
-        <span class="hljs-keyword">this</span>.lastName = lastName
-    }
-
-    User.prototype.getName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">' '</span> + <span class="hljs-keyword">this</span>.lastName.toUpperCase()
-    }
-
-    <span class="hljs-keyword">return</span> User
-}())</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>But instead of writing old, verbose, ugly and potentially buggy code, it is common to <strong>transpile</strong> from recent syntax to older one. That the purpose of <a href="https://babeljs.io/" target="_blank" rel="noreferrer noopener">babeljs</a>, which can work as a plugin for webpack. This will be one of your next job 🤗.</p>
-
-
-
-<ul><li>Fixing a <strong>missing feature</strong> issue is more complicated depending on your use case. You cannot implement yourself the support of NFC hardware if the browser does not have this feature. But you can implement yourself some utility methods introduced recently.</li></ul>
-
-
-
-<p>Let&rsquo;s suppose your code uses the <code>array.includes(item)</code> methods, which returns <code>true</code> if <code>item</code> is in <code>array</code>. This method has been introduced in ES7 (released in 2016).</p>
-
-
-
-<p>That method can easily be implemented with a one-liner snippet. Then, you can add it to the Array&rsquo;s prototype and make it callable on any array instance.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// ⛔️ you CANNOT use [1, 2, 3].includes(2) on old browser</span>
-
-<span class="hljs-built_in">Array</span>.prototype.includes = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">search</span>) </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.indexOf(search) !== <span class="hljs-number">-1</span>
-}
-
-<span class="hljs-comment">// 🚀 you CAN use [1, 2, 3].includes(2) (if array.indexOf() is supported)</span></code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p><strong>Tips</strong>: Extending prototypes is generally a bad practice as it leads to conflicts with someone else&rsquo;s code using the same name. Nevertheless, it is allowed to backport missing standard methods (as long as it strictly behaves the same way). Those backported methods are called <strong>polyfills</strong>. Also, the community shares npm package with ready to import polyfills, like the popular <a href="https://github.com/zloirock/core-js" target="_blank" rel="noreferrer noopener">core-js</a>.</p>
-
-
-
-<p class="has-text-align-center">***</p>
-
-
-
-<p>For the next questions, you need an obsolete browser. More exactly, we will use Internet Explorer 11. If not available on your system, you can:</p>
-
-
-
-<ol><li>run a free IE 11 instance on the cloud with <a href="https://www.browserling.com/" target="_blank" rel="noreferrer noopener">browserling.com</a> ;</li><li>forward your local HTTP server with <a href="https://ngrok.com/" target="_blank" rel="noreferrer noopener">ngrok.com</a>.</li></ol>
-
-
-
-<p><strong>Tips</strong>: If you need to set up browserling + ngrok combo before the teacher demonstrated their usage, notify him!</p>
-
-
-
-<p class="has-text-align-center">***</p>
-
-
-
-<p class="exercice"><strong>Exercise 10</strong>: Try the bundled app with Internet Explorer 11. Why IE does it fail to run the bundled app?</p>
-
-
-
-<p class="exercice"><strong>Exercice 11</strong>: The following webpack&rsquo;s configuration sends every <code>.js</code> to <code>babel-loader</code>. Babel transforms any syntax not supported by IE 11. Is it enough to ensure compatibility with IE? Why?</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// updated webpack.config.js that integrates babel to assets pipeline.</span>
-<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
-
-<span class="hljs-built_in">module</span>.exports = {
-  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./src/index.js'</span>,
-  <span class="hljs-attr">mode</span>: <span class="hljs-string">'development'</span>,
-  <span class="hljs-attr">target</span>: [<span class="hljs-string">'web'</span>, <span class="hljs-string">'es5'</span>],
-  <span class="hljs-attr">output</span>: {
-    <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),
-    <span class="hljs-attr">filename</span>: <span class="hljs-string">'index.js'</span>
-  },
-  <span class="hljs-attr">module</span>: {
-    <span class="hljs-attr">rules</span>: [
-      {
-        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.m?js$/</span>,
-        <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>,
-        <span class="hljs-attr">use</span>: {
-          <span class="hljs-attr">loader</span>: <span class="hljs-string">'babel-loader'</span>,
-          <span class="hljs-attr">options</span>: {
-            <span class="hljs-attr">targets</span>: <span class="hljs-string">'ie &gt;= 11'</span>,
-            <span class="hljs-attr">presets</span>: [<span class="hljs-string">'@babel/preset-env'</span>]
-          }
-        }
-      }
-    ]
-  }
-}</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>You also need in import the babel utilties (transformed code uses them):</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// add this at the beginning of index.js</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">'regenerator-runtime/runtime'</span></code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="exercice"><strong>Exercice 12</strong>: Import the required polyfills from <a href="https://github.com/zloirock/core-js" target="_blank" rel="noreferrer noopener">core-js</a> and <a href="https://github.com/github/fetch" target="_blank" rel="noreferrer noopener">whatwg-fetch</a> in <code>index.js</code>. Now, the app should work on IE 11.</p>
-
-
-
-<p class="exercice"><strong>Exercise 13</strong>: List at least 2 issues of transpiling the code and adding polyfills like we did. Try to mention a mitigation or a solution for each issue.</p>
-
-
-
-<h4>Hey! Still alive?</h4>
-
-
-
-<p>Congratulations for going so far! Despite there is still a lot uncovered learning outcomes, you have completed the mandatory part. The rest of the topics will be explained by the teacher at the end of the activity.</p>
-
-
-
-<p>In case you are ahead of time, feel free to reach yourself the above goals:</p>
-
-
-
-<ol><li>Catch some code smells and improved code formatting with <a href="https://standardjs.com/" target="_blank" rel="noreferrer noopener">standard.js</a>.</li><li>Generate documentation using JSDoc.</li><li>Test the quality of autocomplete with vscode, intellisense and JSDoc.</li><li>Catch errors using types described in JSDoc comments with the typescript compiler in JS-compatible mode.</li><li>Improve debugging experience for transformed code with source-maps.</li></ol>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/">11. JavaScript: practical activity n°2</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
