@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/04-backend/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Wed, 10 Nov 2021 19:34:37 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 11 Nov 2021 10:31:09 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,7 +20,321 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.7.3</generator>
 	<item>
-		<title>01. Backend project</title>
+		<title>01. Simple plagiarism detection CLI (pratical activity)</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Wed, 10 Nov 2021 20:13:12 +0000</pubDate>
+				<category><![CDATA[04. Backend]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=4051</guid>
+
+					<description><![CDATA[<p>Learning outcomes Parsing command line with the popular yargs module. Working with external module definitions, such as @types/yargs. Basic filesystem manipulations (CRUD operations of files and folders). Getting familiar with the glob filepath matching expressions and library. Working with Promise, util.promisify(), async, await, etc. Getting starting with natural language manipulation (see the natural module). Packaging &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Simple plagiarism detection CLI (pratical activity)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">01. Simple plagiarism detection CLI (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Learning outcomes</h4>
+
+
+
+<ul><li>Parsing command line with the popular <code>yargs</code> module.</li><li>Working with external module definitions, such as <code>@types/yargs</code>.</li><li>Basic filesystem manipulations (CRUD operations of files and folders).</li><li>Getting familiar with the <code>glob</code> filepath matching expressions and library.</li><li>Working with <code>Promise</code>, <code>util.promisify()</code>, <code>async</code>, <code>await</code>, etc.</li><li>Getting starting with natural language manipulation (see the <code>natural</code> module).</li><li>Packaging a Typescript library to be installable with <code>npm</code>.</li><li>Writing mocha specs against the library.</li></ul>
+
+
+
+<h4>Context</h4>
+
+
+
+<p>While I was personally reviewing submissions from a degraded examination context, I suspected fraudulent behaviours. Various tools exist to detect plagiarism, but are highly expensive. I expected a basic analysis to catch the most obvious cases easily.</p>
+
+
+
+<p class="u-mbs">Such tools generally provide 2 primary features:</p>
+
+
+
+<ol class="u-mlm"><li>comparing together various submissions to the same exercise;</li><li>comparing a single submission to online contents.</li></ol>
+
+
+
+<p>Point (2.) implies using expensive search API such as Google (max 100 free queries a day) or Bind (max 1000 free queries a month).</p>
+
+
+
+<p>This adds extra layer of complexity, caching strategy and performance concerns. For those reasons, you will <strong>exclusively focus on point (1.)</strong>.</p>
+
+
+
+<h4>Provided assets</h4>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/6-samples.zip">Download the submission samples (ZIP of TXT files)</a>
+</div>
+</div>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/node-typescript-template.zip">Download the template for node + typescript projects (source code)</a>
+</div>
+</div>
+
+
+
+<h4>Specifications</h4>
+
+
+
+<p>The CLI software should accept the following command-line options:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">Options:
+  --inputFiles    Glob expression to files containing answers. Each file
+                  contains a single text to compare to each others. It assumes
+                  all texts refer to the same question.      [string] [required]
+  --outputFile    Path to the output file. If missing, output to console.
+                                                                        [string]
+  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
+  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
+                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
+                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
+                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="u-mbs">You will extract IO-related code and plagiarism detection code in 2 distinct modules:</p>
+
+
+
+<ul><li><strong>IO-related code</strong>: includes argument parsing, files reading, outputs (both to console and filesystem);</li><li><strong>Plagiarism detection code</strong>: the function accepting a set of submissions and returns cluster metered with matching score.</li></ul>
+
+
+
+<p>Later on, the <strong>Plagiarism detection code</strong> will become a self-packaged module (similar to those on <code>npm registry</code>, but not released).</p>
+
+
+
+<p>This allows reusing the library anywhere and replace the IO-presentation layer by a webserver (💲 think about an anti-plagiarism SaaS API 💲).</p>
+
+
+
+<p>Side note: As for now, the <strong>Plagiarism detection code</strong> only performs on in-memory data, especially string transformations. This is CPU-bound task.</p>
+
+
+
+<h4><strong>PoC Implementation (step by step)</strong></h4>
+
+
+
+<p>Despite a lot of topics are covered in this tutorial, the resulting codebase (excluding specs) could be fewer than 100 lines of code.</p>
+
+
+
+<p>Before getting deeper in the code, let&rsquo;s try some experiments. The final delivery will just be a smart assembly of all those experiments.</p>
+
+
+
+<h5><strong>Parse options, provide their descriptions and requireness.</strong></h5>
+
+
+
+<p>Calling your script without mandatory options should print the documentation:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index.js
+Options:
+  --<span class="hljs-built_in">help</span>          Show <span class="hljs-built_in">help</span>                                            [boolean]
+  --version       Show version number                                  [boolean]
+  --inputFiles    Glob expression to files containing answers. Each file
+                  contains a single text to compare to each others. It assumes
+                  all texts refer to the same question.      [string] [required]
+  --outputFile    Path to the output file. If missing, output to console.
+                                                                        [string]
+  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
+  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
+                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
+                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
+                                                         [number] [default: 0.9]
+
+Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="u-mbs">Tips:</p>
+
+
+
+<ul><li>Note that <code>yargs(...).parse()</code>&nbsp;returns a Promise. Unless you use <a href="https://dev.to/mikeesto/top-level-await-in-node-2jad" target="_blank" rel="noreferrer noopener">node 14.8.0</a>+, you cannot <code>await</code> a Promise outside an <code>async</code> function (ex. in a&nbsp;<a href="https://stackabuse.com/javascripts-immediately-invoked-function-expressions">IIFE</a>).</li><li>Let&rsquo;s&nbsp;<code>yargs</code>&nbsp;infer&nbsp;<code>format: 'json' | 'text'</code>&nbsp;for you. In facts,&nbsp;<code>yargs</code>&nbsp;type definition infers attributes&rsquo; names and types. It even supports&nbsp;<a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types" target="_blank" rel="noreferrer noopener">literal union</a>, as shown in this&nbsp;<a href="https://github.com/yargs/yargs/blob/main/docs/typescript.md#more-specific-typing-for-choices" target="_blank" rel="noreferrer noopener">example</a>.</li><li>Use the&nbsp;<code>demandOption</code> method to require an option&nbsp;(and not&nbsp;<code>requiresArg</code>, that is for another purpose).</li><li>You do&nbsp;<strong>NOT</strong>&nbsp;need the&nbsp;<code>any</code>&nbsp;type, so do not use it.</li></ul>
+
+
+
+<p>Here the template to help you:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> yargs <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs'</span>
+<span class="hljs-keyword">import</span> { hideBin } <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs/helpers'</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> argv = <span class="hljs-keyword">await</span> yargs(hideBin(process.argv))
+  .option(<span class="hljs-string">'inputFiles'</span>, { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span>, demandOption: <span class="hljs-literal">true</span> <span class="hljs-comment">/* ... */</span> })
+  .parse()
+
+  <span class="hljs-built_in">console</span>.log(argv)
+}
+
+run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Once completed, the <code>argv</code>&lsquo;s type should be inferred as:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Argv {
+  inputFiles: <span class="hljs-built_in">string</span>
+  outputFile: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>
+  format: <span class="hljs-string">'json'</span> | <span class="hljs-string">'text'</span>
+  clusterScore: <span class="hljs-built_in">number</span>
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5><strong>List all files that match the glob expression from <code>--inputFiles</code></strong></h5>
+
+
+
+<p><strong>Tips</strong>: Use the&nbsp;<code>glob</code>&nbsp;module. <code>glob(cb)</code>&nbsp;is callback-based asynchronous function. Promise are easier to maintain. The  built-in&nbsp;<code>util</code>&nbsp;module provides a very useful helper called&nbsp;<code>util.promisify(callbackBasedFunc)</code>. See the&nbsp;<a href="https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original" target="_blank" rel="noreferrer noopener">documentation</a>.</p>
+
+
+
+<p>Example of valid glob expressions:</p>
+
+
+
+<ul><li><code>./path/to/file.txt</code>&nbsp;matches only a single file.</li><li><code>./path/to/*.txt</code>&nbsp;matches&nbsp;<code>./path/to/file.txt</code>, but not&nbsp;<code>./path/to/deep/file.txt</code>.</li><li><code>./path/to/**/*.txt</code> matches&nbsp;<code>./path/to/file.txt</code> and <code>./path/to/deep/file.txt</code>.</li></ul>
+
+
+
+<p>The expected output:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index --inputFiles=<span class="hljs-string">'../samples/*.txt'</span>
+[
+  <span class="hljs-string">'../samples/1.txt'</span>,  <span class="hljs-string">'../samples/10.txt'</span>, <span class="hljs-string">'../samples/11.txt'</span>,
+  <span class="hljs-string">'../samples/12.txt'</span>, <span class="hljs-string">'../samples/13.txt'</span>, <span class="hljs-string">'../samples/14.txt'</span>,
+  <span class="hljs-string">'../samples/15.txt'</span>, <span class="hljs-string">'../samples/16.txt'</span>, <span class="hljs-string">'../samples/17.txt'</span>,
+  <span class="hljs-string">'../samples/18.txt'</span>, <span class="hljs-string">'../samples/19.txt'</span>, <span class="hljs-string">'../samples/2.txt'</span>,
+  <span class="hljs-string">'../samples/20.txt'</span>, <span class="hljs-string">'../samples/21.txt'</span>, <span class="hljs-string">'../samples/22.txt'</span>,
+  <span class="hljs-string">'../samples/23.txt'</span>, <span class="hljs-string">'../samples/24.txt'</span>, <span class="hljs-string">'../samples/25.txt'</span>,
+  <span class="hljs-string">'../samples/26.txt'</span>, <span class="hljs-string">'../samples/27.txt'</span>, <span class="hljs-string">'../samples/28.txt'</span>,
+  <span class="hljs-string">'../samples/29.txt'</span>, <span class="hljs-string">'../samples/3.txt'</span>,  <span class="hljs-string">'../samples/30.txt'</span>,
+  <span class="hljs-string">'../samples/31.txt'</span>, <span class="hljs-string">'../samples/32.txt'</span>, <span class="hljs-string">'../samples/33.txt'</span>,
+  <span class="hljs-string">'../samples/34.txt'</span>, <span class="hljs-string">'../samples/35.txt'</span>, <span class="hljs-string">'../samples/36.txt'</span>,
+  <span class="hljs-string">'../samples/37.txt'</span>, <span class="hljs-string">'../samples/38.txt'</span>, <span class="hljs-string">'../samples/39.txt'</span>,
+  <span class="hljs-string">'../samples/4.txt'</span>,  <span class="hljs-string">'../samples/40.txt'</span>, <span class="hljs-string">'../samples/41.txt'</span>,
+  <span class="hljs-string">'../samples/42.txt'</span>, <span class="hljs-string">'../samples/43.txt'</span>, <span class="hljs-string">'../samples/44.txt'</span>,
+  <span class="hljs-string">'../samples/45.txt'</span>, <span class="hljs-string">'../samples/46.txt'</span>, <span class="hljs-string">'../samples/47.txt'</span>,
+  <span class="hljs-string">'../samples/48.txt'</span>, <span class="hljs-string">'../samples/49.txt'</span>, <span class="hljs-string">'../samples/5.txt'</span>,
+  <span class="hljs-string">'../samples/50.txt'</span>, <span class="hljs-string">'../samples/51.txt'</span>, <span class="hljs-string">'../samples/52.txt'</span>,
+  <span class="hljs-string">'../samples/53.txt'</span>, <span class="hljs-string">'../samples/54.txt'</span>, <span class="hljs-string">'../samples/55.txt'</span>,
+  <span class="hljs-string">'../samples/56.txt'</span>, <span class="hljs-string">'../samples/57.txt'</span>, <span class="hljs-string">'../samples/58.txt'</span>,
+  <span class="hljs-string">'../samples/59.txt'</span>, <span class="hljs-string">'../samples/6.txt'</span>,  <span class="hljs-string">'../samples/60.txt'</span>,
+  <span class="hljs-string">'../samples/61.txt'</span>, <span class="hljs-string">'../samples/62.txt'</span>, <span class="hljs-string">'../samples/63.txt'</span>,
+  <span class="hljs-string">'../samples/64.txt'</span>, <span class="hljs-string">'../samples/65.txt'</span>, <span class="hljs-string">'../samples/66.txt'</span>,
+  <span class="hljs-string">'../samples/67.txt'</span>, <span class="hljs-string">'../samples/68.txt'</span>, <span class="hljs-string">'../samples/69.txt'</span>,
+  <span class="hljs-string">'../samples/7.txt'</span>,  <span class="hljs-string">'../samples/70.txt'</span>, <span class="hljs-string">'../samples/71.txt'</span>,
+  <span class="hljs-string">'../samples/8.txt'</span>,  <span class="hljs-string">'../samples/9.txt'</span>
+]</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5><strong>Read each <code>inputFile</code> and put its content into an array</strong></h5>
+
+
+
+<p>Each item of the array should contain both a way to locate original file (such a path) and, of course, the file content:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4><strong>Implement a function that finds clusters of similar submissions</strong></h4>
+
+
+
+<p>This function must be implemented into its own module, with that prototype:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Sample {
+  content: <span class="hljs-built_in">string</span>
+  path: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-comment">/**
+ * Groups samples into cluster depending on how similar they are.
+ * If a sample not far from all other samples, it is not returned.
+ * A cluster is basically an array of samples, and this function returns a array of clusters.
+ * Each sample has both an identifier (ex. the path to the original file) and a content.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computePlagiarismClusters</span> (<span class="hljs-params">
+  samples: Sample[],
+  options: { clusterScore: <span class="hljs-built_in">number</span> }
+</span>): <span class="hljs-title">Sample</span>[][] </span>{
+  <span class="hljs-keyword">return</span> []
+}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>You are encouraged to think this algorithm the way you want. It will not be graded.</p>
+
+
+
+<p>If you do not know how to start, you can look the following naive, but yet efficient algorithm. It heavily relies on&nbsp;<code>natural</code>&nbsp;package features.</p>
+
+
+
+<ol><li>Install the&nbsp;<code>natural</code>&nbsp;package, which is natural language manipulation library;</li><li>Split input texts into arrays of tokens&nbsp;<a href="https://naturalnode.github.io/natural/Tokenizers.html">using Tokenizers</a>;</li><li>Reduce each token to its&nbsp;<a href="https://en.wikipedia.org/wiki/Word_stem">word stem</a>&nbsp;through&nbsp;<a href="http://naturalnode.github.io/natural/stemmers.html">Stemmers</a>;</li><li>Compute similarity score of 2 cleaned inputs based on&nbsp;<a href="http://naturalnode.github.io/natural/string_distance.html">Levenshtein distance</a>.</li><li>Group in clusters detected fraudulent samples using the previous scoring method (remember a cluster may contain more than 2 samples).</li></ol>
+
+
+
+<figure class="wp-block-table"><table><thead><tr><th>&#8211;clusterScore</th><th>Nb of discovered clusters</th><th>Files</th></tr></thead><tbody><tr><td>0.9</td><td>1</td><td>&#8211; 5.txt, 63.txt, 69.txt</td></tr><tr><td>0.8</td><td>2</td><td>&#8211; 5.txt, 63.txt, 69.txt<br>&#8211; 18.txt, 32.txt</td></tr></tbody></table><figcaption>By applying myself the previous tips, I was able to detect those clusters.</figcaption></figure>
+
+
+
+<h5>Code demonstration: adding automated specs 🎯</h5>
+
+
+
+<p>I will write some specs using <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a> for <code>computePlagiarismClusters</code>.</p>
+
+
+
+<h5><strong>Output the result depending on CLI arguments</strong></h5>
+
+
+
+<p>For that exercise, you can use your own implementation of <code>computePlagiarismClusters</code> or my proposal of correction.</p>
+
+
+
+<p>Properly implement&nbsp;<code>format</code>&nbsp;and&nbsp;<code>outputFile</code>.</p>
+
+
+
+<h5>Code demonstration: create a standalone npm package 🎯</h5>
+
+
+
+<p class="u-mbs">I will extract <strong>Plagiarism detection code</strong> to its own package:</p>
+
+
+
+<ul><li>As a local folder that I may manually install using <a href="https://docs.npmjs.com/cli/v7/commands/npm-link" target="_blank" rel="noreferrer noopener">npm link</a>.</li><li>As a git repository that I may reference in my package.json.</li></ul>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">01. Simple plagiarism detection CLI (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>02. Backend project</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
@@ -29,8 +343,8 @@
 		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3861</guid>
 
-					<description><![CDATA[<p>You have to build a web server on the node.js platform with code quality, performance and security in mind. The kind of application is your choice (could be a game, a productivity tool, a personal utility&#8230;). I only have technical concerns. Requirements are always given in a generic manner, so you are free to use &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Backend project</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">01. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>You have to build a web server on the node.js platform with code quality, performance and security in mind. The kind of application is your choice (could be a game, a productivity tool, a personal utility&#8230;). I only have technical concerns. Requirements are always given in a generic manner, so you are free to use &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Backend project</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">02. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <p>You have to build a web server on the node.js platform with code quality, performance and security in mind. The kind of application is your choice (could be a game, a productivity tool, a personal utility&#8230;). I only have technical concerns.</p>
@@ -188,11 +502,11 @@
 <ul><li>You should use Typescript in strict mode. As much as possible, ban the <code>any</code> type.</li><li>Use eslint + @typescript-eslint, with at least those sets of rules:</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">  extends: [
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">  extends: [
     <span class="hljs-string">'eslint:recommended'</span>,
     <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,
     <span class="hljs-string">'plugin:@typescript-eslint/recommended-requiring-type-checking'</span>
-  ]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+  ]</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Tips: you can disable/configure some rules of those sets.</p>
@@ -232,7 +546,7 @@
 
 
 <p>Delivery date unset, but will be as late as possible.</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">01. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">02. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		

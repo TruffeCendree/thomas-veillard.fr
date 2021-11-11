@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://thomas-veillard.fr/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/html5.js?ver=3.7.0"></script>
+	<![endif]-->
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>01. Simple plagiarism detection CLI (pratical activity) - Thomas VEILLARD</title>
+	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="01. Simple plagiarism detection CLI (pratical activity) - Thomas VEILLARD">
+	<meta property="og:description" content="Learning outcomes Parsing command line with the popular yargs module. Working with external module definitions, such as @types/yargs. Basic filesystem manipulations (CRUD operations of files and folders). Getting familiar with the glob filepath matching expressions and library. Working with Promise, util.promisify(), async, await, etc. Getting starting with natural language manipulation (see the natural module). Packaging &hellip; Continuer la lecture de 01. Simple plagiarism detection CLI (pratical activity)">
+	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">
+	<meta property="og:site_name" content="Thomas VEILLARD">
+	<meta property="article:published_time" content="2021-11-10T20:13:12+00:00">
+	<meta property="article:modified_time" content="2021-11-11T10:31:09+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Écrit par">
+	<meta name="twitter:data1" content="Thomas Veillard">
+	<meta name="twitter:label2" content="Durée de lecture est.">
+	<meta name="twitter:data2" content="6 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{
+	    "@context": "https://schema.org",
+	    "@graph": [
+	        {
+	            "@type": "WebSite",
+	            "@id": "https://thomas-veillard.fr/#website",
+	            "url": "https://thomas-veillard.fr/",
+	            "name": "Thomas VEILLARD",
+	            "description": "Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.",
+	            "publisher": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "inLanguage": "fr-FR"
+	        },
+	        {
+	            "@type": "WebPage",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/#webpage",
+	            "url": "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/",
+	            "name": "01. Simple plagiarism detection CLI (pratical activity) - Thomas VEILLARD",
+	            "isPartOf": {
+	                "@id": "https://thomas-veillard.fr/#website"
+	            },
+	            "datePublished": "2021-11-10T20:13:12+00:00",
+	            "dateModified": "2021-11-11T10:31:09+00:00",
+	            "breadcrumb": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/#breadcrumb"
+	            },
+	            "inLanguage": "fr-FR",
+	            "potentialAction": [
+	                {
+	                    "@type": "ReadAction",
+	                    "target": [
+	                        "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/"
+	                    ]
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "BreadcrumbList",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/#breadcrumb",
+	            "itemListElement": [
+	                {
+	                    "@type": "ListItem",
+	                    "position": 1,
+	                    "name": "Accueil",
+	                    "item": "https://thomas-veillard.fr/"
+	                },
+	                {
+	                    "@type": "ListItem",
+	                    "position": 2,
+	                    "name": "01. Simple plagiarism detection CLI (pratical activity)"
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "Article",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/#article",
+	            "isPartOf": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/#webpage"
+	            },
+	            "author": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "headline": "01. Simple plagiarism detection CLI (pratical activity)",
+	            "datePublished": "2021-11-10T20:13:12+00:00",
+	            "dateModified": "2021-11-11T10:31:09+00:00",
+	            "mainEntityOfPage": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/#webpage"
+	            },
+	            "wordCount": 812,
+	            "publisher": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "articleSection": [
+	                "04. Backend",
+	                "Modern web development"
+	            ],
+	            "inLanguage": "fr-FR"
+	        },
+	        {
+	            "@type": [
+	                "Person",
+	                "Organization"
+	            ],
+	            "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb",
+	            "name": "Thomas Veillard",
+	            "image": {
+	                "@type": "ImageObject",
+	                "@id": "https://thomas-veillard.fr/#personlogo",
+	                "inLanguage": "fr-FR",
+	                "url": "http://2.gravatar.com/avatar/2008ad33ccb3924190bb884024ca6114?s=96&d=mm&r=g",
+	                "contentUrl": "http://2.gravatar.com/avatar/2008ad33ccb3924190bb884024ca6114?s=96&d=mm&r=g",
+	                "caption": "Thomas Veillard"
+	            },
+	            "logo": {
+	                "@id": "https://thomas-veillard.fr/#personlogo"
+	            },
+	            "sameAs": [
+	                "https://thomas-veillard.fr:8080"
+	            ]
+	        }
+	    ]
+	}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href="https://fonts.gstatic.com/" crossorigin rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux" href="https://thomas-veillard.fr/feed/">
+<link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux des commentaires" href="https://thomas-veillard.fr/comments/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.7.3" media="all">
+<link rel="stylesheet" id="wp-block-library-theme-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/theme.min.css?ver=5.7.3" media="all">
+<link rel="stylesheet" id="dashicons-css" href="https://thomas-veillard.fr/wp-includes/css/dashicons.min.css?ver=5.7.3" media="all">
+<link rel="stylesheet" id="vlp-public-css" href="https://thomas-veillard.fr/wp-content/plugins/visual-link-preview/dist/public.css?ver=2.2.1" media="all">
+<link rel="stylesheet" id="twentyfifteen-fonts-css" href="https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;display=fallback" media="all">
+<link rel="stylesheet" id="genericons-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=20201208" media="all">
+<link rel="stylesheet" id="twentyfifteen-style-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/style.css?ver=20201208" media="all">
+<link rel="stylesheet" id="twentyfifteen-block-style-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/blocks.css?ver=20190102" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/ie.css?ver=20170916' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141210' media='all' />
+<![endif]-->
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://thomas-veillard.fr/wp-json/">
+<link rel="alternate" type="application/json" href="https://thomas-veillard.fr/wp-json/wp/v2/posts/4051">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thomas-veillard.fr/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://thomas-veillard.fr/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.7.3">
+<link rel="shortlink" href="https://thomas-veillard.fr/?p=4051">
+<link rel="alternate" type="application/json+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2F04-backend%2Fpractical-activity-simple-plagiarism-detection-cli%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2F04-backend%2Fpractical-activity-simple-plagiarism-detection-cli%2F&#038;format=xml">
+		<style id="wp-custom-css">.entry-title {
+	font-size: 1.6em !important;
+	text-align: left;
+}
+
+article {
+	text-align: justify;
+	font-size: 0.9em;
+}
+
+@media screen and (min-width: 59.6875em) {
+	.site-header {
+		padding: 0 1em;
+	}
+
+	.main-navigation {
+		margin: 1em;
+	}
+}
+
+.main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a {
+	font-weight: unset;
+	color: black;
+}
+
+.main-navigation a {
+	color: #666;
+}
+
+.no-puce, .no-puce ul {
+	list-style-type: none;
+}
+
+table {
+	margin-bottom: 0;
+}
+
+figcaption {
+	margin-bottom: 1em !important;
+}
+
+h4 {
+	margin-top: 1em !important;
+	font-size: 1.25em !important;
+}
+
+h5 {
+	font-size: 1em !important;
+	text-transform: none !important;
+	margin-top: 1em !important;
+}
+
+.exercice {
+  padding: 1em;
+  border-radius: 3px;
+  border: 1px solid #795548;
+  background: #f7f7f7;
+}
+
+.question {
+  padding: 1em;
+  border-radius: 3px;
+  border: 1px solid #ab47bc;
+  background: #f3e5f5;
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+	margin-bottom: 1em;
+}
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  padding: 2rem 1rem;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1-hoverable:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.post-thumbnail {
+	margin-bottom: 0;
+}
+
+.entry-header {
+	color: rgba(51, 51, 51, 0.7);
+	font-family: "Noto Sans", sans-serif;
+	background-color: #f7f7f7;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-bottom: 1em;
+}
+
+.entry-title {
+	margin: 0;
+	font-weight: normal;
+}
+
+.hentry {
+	padding-top: 0 !important;
+}
+
+table {
+	table-layout: auto;
+}
+
+.menu-fr > a:before,
+.menu-en > a:before {
+	content: '';
+	display: inline-block;
+	width: 1.3em;
+	height: 1em;
+	margin-right: 0.5em;
+}
+
+.menu-fr > a:before {
+	background-image: url('https://thomas-veillard.fr/wp-content/uploads/2021/04/fr.svg');
+}
+
+.menu-en > a:before {
+	background-image: url('https://thomas-veillard.fr/wp-content/uploads/2021/04/en.svg');
+}
+
+blockquote, cite {
+	font-size: 1em !important;
+}
+
+.ui-accordion-header h4 {
+	margin-top: 0 !important;
+}
+
+.u-mbs { margin-bottom: 0.25em; }
+.u-mlm { margin-left: 1em; }</style>
+		</head>
+
+<body class="post-template-default single single-post postid-4051 single-format-standard wp-embed-responsive">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Aller au contenu</a>
+
+	<div id="sidebar" class="sidebar">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+										<p class="site-title"><a href="https://thomas-veillard.fr/" rel="home">Thomas VEILLARD</a></p>
+												<p class="site-description">Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</p>
+										<button class="secondary-toggle">Menu			</button>
+</div>
+<!-- .site-branding -->
+		</header><!-- .site-header -->
+
+			<div id="secondary" class="secondary">
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux-container"><ul id="menu-theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux" class="nav-menu">
+<li id="menu-item-135" class="menu-fr menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-135">
+<a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/">Théorie des systèmes d’exploitation et pratique de GNU/Linux</a>
+<ul class="sub-menu">
+	<li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49"><a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/">Chapitre 1. Introduction</a></li>
+	<li id="menu-item-558" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-558"><a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/">Chapitre 2. Les interfaces utilisateur</a></li>
+</ul>
+</li>
+<li id="menu-item-1097" class="menu-en menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-1097">
+<a href="https://thomas-veillard.fr/category/front-end-web-development/">Modern web development</a>
+<ul class="sub-menu">
+	<li id="menu-item-1366" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1366"><a href="https://thomas-veillard.fr/category/front-end-web-development/introduction/">Introduction</a></li>
+	<li id="menu-item-2642" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2642"><a href="https://thomas-veillard.fr/category/front-end-web-development/languages/">Languages</a></li>
+</ul>
+</li>
+</ul></div>			</nav><!-- .main-navigation -->
+		
+		
+		
+	</div>
+<!-- .secondary -->
+
+	</div>
+<!-- .sidebar -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-4051" class="post-4051 post type-post status-publish format-standard hentry category-04-backend category-front-end-web-development">
+	
+	
+	<header class="entry-header">
+		<h1 class="entry-title">Simple plagiarism detection CLI (pratical activity)</h1>	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<h4>Learning outcomes</h4>
+
+
+
+<ul>
+<li>Parsing command line with the popular <code>yargs</code> module.</li>
+<li>Working with external module definitions, such as <code>@types/yargs</code>.</li>
+<li>Basic filesystem manipulations (CRUD operations of files and folders).</li>
+<li>Getting familiar with the <code>glob</code> filepath matching expressions and library.</li>
+<li>Working with <code>Promise</code>, <code>util.promisify()</code>, <code>async</code>, <code>await</code>, etc.</li>
+<li>Getting starting with natural language manipulation (see the <code>natural</code> module).</li>
+<li>Packaging a Typescript library to be installable with <code>npm</code>.</li>
+<li>Writing mocha specs against the library.</li>
+</ul>
+
+
+
+<h4>Context</h4>
+
+
+
+<p>While I was personally reviewing submissions from a degraded examination context, I suspected fraudulent behaviours. Various tools exist to detect plagiarism, but are highly expensive. I expected a basic analysis to catch the most obvious cases easily.</p>
+
+
+
+<p class="u-mbs">Such tools generally provide 2 primary features:</p>
+
+
+
+<ol class="u-mlm">
+<li>comparing together various submissions to the same exercise;</li>
+<li>comparing a single submission to online contents.</li>
+</ol>
+
+
+
+<p>Point (2.) implies using expensive search API such as Google (max 100 free queries a day) or Bind (max 1000 free queries a month).</p>
+
+
+
+<p>This adds extra layer of complexity, caching strategy and performance concerns. For those reasons, you will <strong>exclusively focus on point (1.)</strong>.</p>
+
+
+
+<h4>Provided assets</h4>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/6-samples.zip">Download the submission samples (ZIP of TXT files)</a>
+</div>
+</div>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/node-typescript-template.zip">Download the template for node + typescript projects (source code)</a>
+</div>
+</div>
+
+
+
+<h4>Specifications</h4>
+
+
+
+<p>The CLI software should accept the following command-line options:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-bash">Options:
+  --inputFiles    Glob expression to files containing answers. Each file
+                  contains a single text to compare to each others. It assumes
+                  all texts refer to the same question.      [string] [required]
+  --outputFile    Path to the output file. If missing, output to console.
+                                                                        [string]
+  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
+  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
+                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
+                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
+                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="u-mbs">You will extract IO-related code and plagiarism detection code in 2 distinct modules:</p>
+
+
+
+<ul>
+<li>
+<strong>IO-related code</strong>: includes argument parsing, files reading, outputs (both to console and filesystem);</li>
+<li>
+<strong>Plagiarism detection code</strong>: the function accepting a set of submissions and returns cluster metered with matching score.</li>
+</ul>
+
+
+
+<p>Later on, the <strong>Plagiarism detection code</strong> will become a self-packaged module (similar to those on <code>npm registry</code>, but not released).</p>
+
+
+
+<p>This allows reusing the library anywhere and replace the IO-presentation layer by a webserver (💲 think about an anti-plagiarism SaaS API 💲).</p>
+
+
+
+<p>Side note: As for now, the <strong>Plagiarism detection code</strong> only performs on in-memory data, especially string transformations. This is CPU-bound task.</p>
+
+
+
+<h4><strong>PoC Implementation (step by step)</strong></h4>
+
+
+
+<p>Despite a lot of topics are covered in this tutorial, the resulting codebase (excluding specs) could be fewer than 100 lines of code.</p>
+
+
+
+<p>Before getting deeper in the code, let&rsquo;s try some experiments. The final delivery will just be a smart assembly of all those experiments.</p>
+
+
+
+<h5><strong>Parse options, provide their descriptions and requireness.</strong></h5>
+
+
+
+<p>Calling your script without mandatory options should print the documentation:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index.js
+Options:
+  --<span class="hljs-built_in">help</span>          Show <span class="hljs-built_in">help</span>                                            [boolean]
+  --version       Show version number                                  [boolean]
+  --inputFiles    Glob expression to files containing answers. Each file
+                  contains a single text to compare to each others. It assumes
+                  all texts refer to the same question.      [string] [required]
+  --outputFile    Path to the output file. If missing, output to console.
+                                                                        [string]
+  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
+  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
+                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
+                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
+                                                         [number] [default: 0.9]
+
+Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="u-mbs">Tips:</p>
+
+
+
+<ul>
+<li>Note that <code>yargs(...).parse()</code>&nbsp;returns a Promise. Unless you use <a href="https://dev.to/mikeesto/top-level-await-in-node-2jad" target="_blank" rel="noreferrer noopener">node 14.8.0</a>+, you cannot <code>await</code> a Promise outside an <code>async</code> function (ex. in a&nbsp;<a href="https://stackabuse.com/javascripts-immediately-invoked-function-expressions">IIFE</a>).</li>
+<li>Let&rsquo;s&nbsp;<code>yargs</code>&nbsp;infer&nbsp;<code>format: 'json' | 'text'</code>&nbsp;for you. In facts,&nbsp;<code>yargs</code>&nbsp;type definition infers attributes&rsquo; names and types. It even supports&nbsp;<a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types" target="_blank" rel="noreferrer noopener">literal union</a>, as shown in this&nbsp;<a href="https://github.com/yargs/yargs/blob/main/docs/typescript.md#more-specific-typing-for-choices" target="_blank" rel="noreferrer noopener">example</a>.</li>
+<li>Use the&nbsp;<code>demandOption</code> method to require an option&nbsp;(and not&nbsp;<code>requiresArg</code>, that is for another purpose).</li>
+<li>You do&nbsp;<strong>NOT</strong>&nbsp;need the&nbsp;<code>any</code>&nbsp;type, so do not use it.</li>
+</ul>
+
+
+
+<p>Here the template to help you:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> yargs <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs'</span>
+<span class="hljs-keyword">import</span> { hideBin } <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs/helpers'</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> argv = <span class="hljs-keyword">await</span> yargs(hideBin(process.argv))
+  .option(<span class="hljs-string">'inputFiles'</span>, { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span>, demandOption: <span class="hljs-literal">true</span> <span class="hljs-comment">/* ... */</span> })
+  .parse()
+
+  <span class="hljs-built_in">console</span>.log(argv)
+}
+
+run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Once completed, the <code>argv</code>&lsquo;s type should be inferred as:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Argv {
+  inputFiles: <span class="hljs-built_in">string</span>
+  outputFile: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>
+  format: <span class="hljs-string">'json'</span> | <span class="hljs-string">'text'</span>
+  clusterScore: <span class="hljs-built_in">number</span>
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5><strong>List all files that match the glob expression from <code>--inputFiles</code></strong></h5>
+
+
+
+<p><strong>Tips</strong>: Use the&nbsp;<code>glob</code>&nbsp;module. <code>glob(cb)</code>&nbsp;is callback-based asynchronous function. Promise are easier to maintain. The  built-in&nbsp;<code>util</code>&nbsp;module provides a very useful helper called&nbsp;<code>util.promisify(callbackBasedFunc)</code>. See the&nbsp;<a href="https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original" target="_blank" rel="noreferrer noopener">documentation</a>.</p>
+
+
+
+<p>Example of valid glob expressions:</p>
+
+
+
+<ul>
+<li>
+<code>./path/to/file.txt</code>&nbsp;matches only a single file.</li>
+<li>
+<code>./path/to/*.txt</code>&nbsp;matches&nbsp;<code>./path/to/file.txt</code>, but not&nbsp;<code>./path/to/deep/file.txt</code>.</li>
+<li>
+<code>./path/to/**/*.txt</code> matches&nbsp;<code>./path/to/file.txt</code> and <code>./path/to/deep/file.txt</code>.</li>
+</ul>
+
+
+
+<p>The expected output:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index --inputFiles=<span class="hljs-string">'../samples/*.txt'</span>
+[
+  <span class="hljs-string">'../samples/1.txt'</span>,  <span class="hljs-string">'../samples/10.txt'</span>, <span class="hljs-string">'../samples/11.txt'</span>,
+  <span class="hljs-string">'../samples/12.txt'</span>, <span class="hljs-string">'../samples/13.txt'</span>, <span class="hljs-string">'../samples/14.txt'</span>,
+  <span class="hljs-string">'../samples/15.txt'</span>, <span class="hljs-string">'../samples/16.txt'</span>, <span class="hljs-string">'../samples/17.txt'</span>,
+  <span class="hljs-string">'../samples/18.txt'</span>, <span class="hljs-string">'../samples/19.txt'</span>, <span class="hljs-string">'../samples/2.txt'</span>,
+  <span class="hljs-string">'../samples/20.txt'</span>, <span class="hljs-string">'../samples/21.txt'</span>, <span class="hljs-string">'../samples/22.txt'</span>,
+  <span class="hljs-string">'../samples/23.txt'</span>, <span class="hljs-string">'../samples/24.txt'</span>, <span class="hljs-string">'../samples/25.txt'</span>,
+  <span class="hljs-string">'../samples/26.txt'</span>, <span class="hljs-string">'../samples/27.txt'</span>, <span class="hljs-string">'../samples/28.txt'</span>,
+  <span class="hljs-string">'../samples/29.txt'</span>, <span class="hljs-string">'../samples/3.txt'</span>,  <span class="hljs-string">'../samples/30.txt'</span>,
+  <span class="hljs-string">'../samples/31.txt'</span>, <span class="hljs-string">'../samples/32.txt'</span>, <span class="hljs-string">'../samples/33.txt'</span>,
+  <span class="hljs-string">'../samples/34.txt'</span>, <span class="hljs-string">'../samples/35.txt'</span>, <span class="hljs-string">'../samples/36.txt'</span>,
+  <span class="hljs-string">'../samples/37.txt'</span>, <span class="hljs-string">'../samples/38.txt'</span>, <span class="hljs-string">'../samples/39.txt'</span>,
+  <span class="hljs-string">'../samples/4.txt'</span>,  <span class="hljs-string">'../samples/40.txt'</span>, <span class="hljs-string">'../samples/41.txt'</span>,
+  <span class="hljs-string">'../samples/42.txt'</span>, <span class="hljs-string">'../samples/43.txt'</span>, <span class="hljs-string">'../samples/44.txt'</span>,
+  <span class="hljs-string">'../samples/45.txt'</span>, <span class="hljs-string">'../samples/46.txt'</span>, <span class="hljs-string">'../samples/47.txt'</span>,
+  <span class="hljs-string">'../samples/48.txt'</span>, <span class="hljs-string">'../samples/49.txt'</span>, <span class="hljs-string">'../samples/5.txt'</span>,
+  <span class="hljs-string">'../samples/50.txt'</span>, <span class="hljs-string">'../samples/51.txt'</span>, <span class="hljs-string">'../samples/52.txt'</span>,
+  <span class="hljs-string">'../samples/53.txt'</span>, <span class="hljs-string">'../samples/54.txt'</span>, <span class="hljs-string">'../samples/55.txt'</span>,
+  <span class="hljs-string">'../samples/56.txt'</span>, <span class="hljs-string">'../samples/57.txt'</span>, <span class="hljs-string">'../samples/58.txt'</span>,
+  <span class="hljs-string">'../samples/59.txt'</span>, <span class="hljs-string">'../samples/6.txt'</span>,  <span class="hljs-string">'../samples/60.txt'</span>,
+  <span class="hljs-string">'../samples/61.txt'</span>, <span class="hljs-string">'../samples/62.txt'</span>, <span class="hljs-string">'../samples/63.txt'</span>,
+  <span class="hljs-string">'../samples/64.txt'</span>, <span class="hljs-string">'../samples/65.txt'</span>, <span class="hljs-string">'../samples/66.txt'</span>,
+  <span class="hljs-string">'../samples/67.txt'</span>, <span class="hljs-string">'../samples/68.txt'</span>, <span class="hljs-string">'../samples/69.txt'</span>,
+  <span class="hljs-string">'../samples/7.txt'</span>,  <span class="hljs-string">'../samples/70.txt'</span>, <span class="hljs-string">'../samples/71.txt'</span>,
+  <span class="hljs-string">'../samples/8.txt'</span>,  <span class="hljs-string">'../samples/9.txt'</span>
+]</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5><strong>Read each <code>inputFile</code> and put its content into an array</strong></h5>
+
+
+
+<p>Each item of the array should contain both a way to locate original file (such a path) and, of course, the file content:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4><strong>Implement a function that finds clusters of similar submissions</strong></h4>
+
+
+
+<p>This function must be implemented into its own module, with that prototype:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Sample {
+  content: <span class="hljs-built_in">string</span>
+  path: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-comment">/**
+ * Groups samples into cluster depending on how similar they are.
+ * If a sample not far from all other samples, it is not returned.
+ * A cluster is basically an array of samples, and this function returns a array of clusters.
+ * Each sample has both an identifier (ex. the path to the original file) and a content.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computePlagiarismClusters</span> (<span class="hljs-params">
+  samples: Sample[],
+  options: { clusterScore: <span class="hljs-built_in">number</span> }
+</span>): <span class="hljs-title">Sample</span>[][] </span>{
+  <span class="hljs-keyword">return</span> []
+}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>You are encouraged to think this algorithm the way you want. It will not be graded.</p>
+
+
+
+<p>If you do not know how to start, you can look the following naive, but yet efficient algorithm. It heavily relies on&nbsp;<code>natural</code>&nbsp;package features.</p>
+
+
+
+<ol>
+<li>Install the&nbsp;<code>natural</code>&nbsp;package, which is natural language manipulation library;</li>
+<li>Split input texts into arrays of tokens&nbsp;<a href="https://naturalnode.github.io/natural/Tokenizers.html">using Tokenizers</a>;</li>
+<li>Reduce each token to its&nbsp;<a href="https://en.wikipedia.org/wiki/Word_stem">word stem</a>&nbsp;through&nbsp;<a href="http://naturalnode.github.io/natural/stemmers.html">Stemmers</a>;</li>
+<li>Compute similarity score of 2 cleaned inputs based on&nbsp;<a href="http://naturalnode.github.io/natural/string_distance.html">Levenshtein distance</a>.</li>
+<li>Group in clusters detected fraudulent samples using the previous scoring method (remember a cluster may contain more than 2 samples).</li>
+</ol>
+
+
+
+<figure class="wp-block-table"><table>
+<thead><tr>
+<th>&#8211;clusterScore</th>
+<th>Nb of discovered clusters</th>
+<th>Files</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>0.9</td>
+<td>1</td>
+<td>&#8211; 5.txt, 63.txt, 69.txt</td>
+</tr>
+<tr>
+<td>0.8</td>
+<td>2</td>
+<td>&#8211; 5.txt, 63.txt, 69.txt<br>&#8211; 18.txt, 32.txt</td>
+</tr>
+</tbody>
+</table>
+<figcaption>By applying myself the previous tips, I was able to detect those clusters.</figcaption></figure>
+
+
+
+<h5>Code demonstration: adding automated specs 🎯</h5>
+
+
+
+<p>I will write some specs using <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a> for <code>computePlagiarismClusters</code>.</p>
+
+
+
+<h5><strong>Output the result depending on CLI arguments</strong></h5>
+
+
+
+<p>For that exercise, you can use your own implementation of <code>computePlagiarismClusters</code> or my proposal of correction.</p>
+
+
+
+<p>Properly implement&nbsp;<code>format</code>&nbsp;and&nbsp;<code>outputFile</code>.</p>
+
+
+
+<h5>Code demonstration: create a standalone npm package 🎯</h5>
+
+
+
+<p class="u-mbs">I will extract <strong>Plagiarism detection code</strong> to its own package:</p>
+
+
+
+<ul>
+<li>As a local folder that I may manually install using <a href="https://docs.npmjs.com/cli/v7/commands/npm-link" target="_blank" rel="noreferrer noopener">npm link</a>.</li>
+<li>As a git repository that I may reference in my package.json.</li>
+</ul>
+<style class="advgb-styles-renderer">.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}</style>	</div>
+<!-- .entry-content -->
+
+	
+	<img width="100%" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/great-job.jpg">
+	<footer class="entry-footer">
+		<span class="cat-links"><span class="screen-reader-text">Catégories </span><a href="https://thomas-veillard.fr/category/front-end-web-development/04-backend/" rel="category tag">04. Backend</a>, <a href="https://thomas-veillard.fr/category/front-end-web-development/" rel="category tag">Modern web development</a></span>			</footer><!-- .entry-footer -->
+
+</article><!-- #post-4051 -->
+
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Publications">
+		<h2 class="screen-reader-text">Navigation de l’article</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">02. Backend project</span></a></div></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div>
+<!-- .content-area -->
+
+
+	</div>
+<!-- .site-content -->
+
+</div>
+<!-- .site -->
+
+<script src="https://kit.fontawesome.com/f02a77f3db.js" crossorigin="anonymous"></script>
+<script src="https://thomas-veillard.fr/wp-content/plugins/thomas/js/main.js"></script>
+<script data-ad-client="ca-pub-9505048372269906" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NH45PR7ELJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NH45PR7ELJ');
+</script>
+<script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141028" id="twentyfifteen-skip-link-focus-fix-js"></script>
+<script id="twentyfifteen-script-js-extra">
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">ouvrir le sous-menu<\/span>","collapse":"<span class=\"screen-reader-text\">fermer le sous-menu<\/span>"};
+</script>
+<script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/functions.js?ver=20171218" id="twentyfifteen-script-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/wp-embed.min.js?ver=5.7.3" id="wp-embed-js"></script>
+
+</body>
+</html>
