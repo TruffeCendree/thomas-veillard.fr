@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://thomas-veillard.fr/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/html5.js?ver=3.7.0"></script>
+	<![endif]-->
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>02. Invoice PDF generation HTTP API (practical activity) - Thomas VEILLARD</title>
+	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="02. Invoice PDF generation HTTP API (practical activity) - Thomas VEILLARD">
+	<meta property="og:description" content="Learning outcomes Build a simple HTTP server using fastify. Validate inputs and serialise payloads using JSON schemas. Generate TypeScript interfaces from JSON schemas. Serve text/html, application/json and application/pdf content-types. Write server-side statically checkable templates (thanks to JSX). Generate high quality PDF using puppeteer. Work with promises, async error handling, error serialisation, etc. Write specs, compute &hellip; Continuer la lecture de 02. Invoice PDF generation HTTP API (practical activity)">
+	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/">
+	<meta property="og:site_name" content="Thomas VEILLARD">
+	<meta property="article:published_time" content="2021-12-05T15:19:24+00:00">
+	<meta property="article:modified_time" content="2021-12-05T15:19:26+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Écrit par">
+	<meta name="twitter:data1" content="Thomas Veillard">
+	<meta name="twitter:label2" content="Durée de lecture estimée">
+	<meta name="twitter:data2" content="7 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{
+	    "@context": "https://schema.org",
+	    "@graph": [
+	        {
+	            "@type": "WebSite",
+	            "@id": "https://thomas-veillard.fr/#website",
+	            "url": "https://thomas-veillard.fr/",
+	            "name": "Thomas VEILLARD",
+	            "description": "Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.",
+	            "publisher": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "inLanguage": "fr-FR"
+	        },
+	        {
+	            "@type": "WebPage",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/#webpage",
+	            "url": "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/",
+	            "name": "02. Invoice PDF generation HTTP API (practical activity) - Thomas VEILLARD",
+	            "isPartOf": {
+	                "@id": "https://thomas-veillard.fr/#website"
+	            },
+	            "datePublished": "2021-12-05T15:19:24+00:00",
+	            "dateModified": "2021-12-05T15:19:26+00:00",
+	            "breadcrumb": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/#breadcrumb"
+	            },
+	            "inLanguage": "fr-FR",
+	            "potentialAction": [
+	                {
+	                    "@type": "ReadAction",
+	                    "target": [
+	                        "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/"
+	                    ]
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "BreadcrumbList",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/#breadcrumb",
+	            "itemListElement": [
+	                {
+	                    "@type": "ListItem",
+	                    "position": 1,
+	                    "name": "Accueil",
+	                    "item": "https://thomas-veillard.fr/"
+	                },
+	                {
+	                    "@type": "ListItem",
+	                    "position": 2,
+	                    "name": "02. Invoice PDF generation HTTP API (practical activity)"
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "Article",
+	            "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/#article",
+	            "isPartOf": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/#webpage"
+	            },
+	            "author": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "headline": "02. Invoice PDF generation HTTP API (practical activity)",
+	            "datePublished": "2021-12-05T15:19:24+00:00",
+	            "dateModified": "2021-12-05T15:19:26+00:00",
+	            "mainEntityOfPage": {
+	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/#webpage"
+	            },
+	            "wordCount": 1221,
+	            "publisher": {
+	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
+	            },
+	            "articleSection": [
+	                "04. Backend",
+	                "Modern web development"
+	            ],
+	            "inLanguage": "fr-FR"
+	        },
+	        {
+	            "@type": [
+	                "Person",
+	                "Organization"
+	            ],
+	            "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb",
+	            "name": "Thomas Veillard",
+	            "image": {
+	                "@type": "ImageObject",
+	                "@id": "https://thomas-veillard.fr/#personlogo",
+	                "inLanguage": "fr-FR",
+	                "url": "http://2.gravatar.com/avatar/2008ad33ccb3924190bb884024ca6114?s=96&d=mm&r=g",
+	                "contentUrl": "http://2.gravatar.com/avatar/2008ad33ccb3924190bb884024ca6114?s=96&d=mm&r=g",
+	                "caption": "Thomas Veillard"
+	            },
+	            "logo": {
+	                "@id": "https://thomas-veillard.fr/#personlogo"
+	            },
+	            "sameAs": [
+	                "https://thomas-veillard.fr:8080"
+	            ]
+	        }
+	    ]
+	}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href="https://fonts.gstatic.com/" crossorigin rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux" href="https://thomas-veillard.fr/feed/">
+<link rel="alternate" type="application/rss+xml" title="Thomas VEILLARD &raquo; Flux des commentaires" href="https://thomas-veillard.fr/comments/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.7.4" media="all">
+<link rel="stylesheet" id="wp-block-library-theme-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/theme.min.css?ver=5.7.4" media="all">
+<link rel="stylesheet" id="dashicons-css" href="https://thomas-veillard.fr/wp-includes/css/dashicons.min.css?ver=5.7.4" media="all">
+<link rel="stylesheet" id="vlp-public-css" href="https://thomas-veillard.fr/wp-content/plugins/visual-link-preview/dist/public.css?ver=2.2.1" media="all">
+<link rel="stylesheet" id="twentyfifteen-fonts-css" href="https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;display=fallback" media="all">
+<link rel="stylesheet" id="genericons-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=20201208" media="all">
+<link rel="stylesheet" id="twentyfifteen-style-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/style.css?ver=20201208" media="all">
+<link rel="stylesheet" id="twentyfifteen-block-style-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/blocks.css?ver=20190102" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/ie.css?ver=20170916' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://thomas-veillard.fr/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141210' media='all' />
+<![endif]-->
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://thomas-veillard.fr/wp-json/">
+<link rel="alternate" type="application/json" href="https://thomas-veillard.fr/wp-json/wp/v2/posts/4225">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thomas-veillard.fr/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://thomas-veillard.fr/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.7.4">
+<link rel="shortlink" href="https://thomas-veillard.fr/?p=4225">
+<link rel="alternate" type="application/json+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2F04-backend%2Finvoice-pdf-generation-http-api%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://thomas-veillard.fr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhttps://thomas-veillard.fr%2Ffront-end-web-development%2F04-backend%2Finvoice-pdf-generation-http-api%2F&#038;format=xml">
+		<style id="wp-custom-css">.entry-title {
+	font-size: 1.6em !important;
+	text-align: left;
+}
+
+article {
+	text-align: justify;
+	font-size: 0.9em;
+}
+
+@media screen and (min-width: 59.6875em) {
+	.site-header {
+		padding: 0 1em;
+	}
+
+	.main-navigation {
+		margin: 1em;
+	}
+}
+
+.main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a {
+	font-weight: unset;
+	color: black;
+}
+
+.main-navigation a {
+	color: #666;
+}
+
+.no-puce, .no-puce ul {
+	list-style-type: none;
+}
+
+table {
+	margin-bottom: 0;
+}
+
+figcaption {
+	margin-bottom: 1em !important;
+}
+
+h4 {
+	margin-top: 1em !important;
+	font-size: 1.25em !important;
+}
+
+h5 {
+	font-size: 1em !important;
+	text-transform: none !important;
+	margin-top: 1em !important;
+}
+
+.exercice {
+  padding: 1em;
+  border-radius: 3px;
+  border: 1px solid #795548;
+  background: #f7f7f7;
+}
+
+.question {
+  padding: 1em;
+  border-radius: 3px;
+  border: 1px solid #ab47bc;
+  background: #f3e5f5;
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+	margin-bottom: 1em;
+}
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  padding: 2rem 1rem;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1-hoverable:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.post-thumbnail {
+	margin-bottom: 0;
+}
+
+.entry-header {
+	color: rgba(51, 51, 51, 0.7);
+	font-family: "Noto Sans", sans-serif;
+	background-color: #f7f7f7;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-bottom: 1em;
+}
+
+.entry-title {
+	margin: 0;
+	font-weight: normal;
+}
+
+.hentry {
+	padding-top: 0 !important;
+}
+
+table {
+	table-layout: auto;
+}
+
+.menu-fr > a:before,
+.menu-en > a:before {
+	content: '';
+	display: inline-block;
+	width: 1.3em;
+	height: 1em;
+	margin-right: 0.5em;
+}
+
+.menu-fr > a:before {
+	background-image: url('https://thomas-veillard.fr/wp-content/uploads/2021/04/fr.svg');
+}
+
+.menu-en > a:before {
+	background-image: url('https://thomas-veillard.fr/wp-content/uploads/2021/04/en.svg');
+}
+
+blockquote, cite {
+	font-size: 1em !important;
+}
+
+.ui-accordion-header h4 {
+	margin-top: 0 !important;
+}
+
+.u-mbs { margin-bottom: 0.25em; }
+.u-mlm { margin-left: 1em; }</style>
+		</head>
+
+<body class="post-template-default single single-post postid-4225 single-format-standard wp-embed-responsive">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Aller au contenu</a>
+
+	<div id="sidebar" class="sidebar">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+										<p class="site-title"><a href="https://thomas-veillard.fr/" rel="home">Thomas VEILLARD</a></p>
+												<p class="site-description">Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</p>
+										<button class="secondary-toggle">Menu			</button>
+</div>
+<!-- .site-branding -->
+		</header><!-- .site-header -->
+
+			<div id="secondary" class="secondary">
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux-container"><ul id="menu-theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux" class="nav-menu">
+<li id="menu-item-135" class="menu-fr menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-135">
+<a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/">Théorie des systèmes d’exploitation et pratique de GNU/Linux</a>
+<ul class="sub-menu">
+	<li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49"><a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-1-introduction/">Chapitre 1. Introduction</a></li>
+	<li id="menu-item-558" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-558"><a href="https://thomas-veillard.fr/category/theorie-des-systemes-dexploitation-et-pratique-de-gnu-linux/chapitre-2-les-interfaces-utilisateur/">Chapitre 2. Les interfaces utilisateur</a></li>
+</ul>
+</li>
+<li id="menu-item-1097" class="menu-en menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-1097">
+<a href="https://thomas-veillard.fr/category/front-end-web-development/">Modern web development</a>
+<ul class="sub-menu">
+	<li id="menu-item-1366" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1366"><a href="https://thomas-veillard.fr/category/front-end-web-development/introduction/">Introduction</a></li>
+	<li id="menu-item-2642" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2642"><a href="https://thomas-veillard.fr/category/front-end-web-development/languages/">Languages</a></li>
+</ul>
+</li>
+</ul></div>			</nav><!-- .main-navigation -->
+		
+		
+		
+	</div>
+<!-- .secondary -->
+
+	</div>
+<!-- .sidebar -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-4225" class="post-4225 post type-post status-publish format-standard hentry category-04-backend category-front-end-web-development">
+	
+	
+	<header class="entry-header">
+		<h1 class="entry-title">Invoice PDF generation HTTP API (practical activity)</h1>	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<h4>Learning outcomes</h4>
+
+
+
+<ul>
+<li>Build a simple HTTP server using fastify.</li>
+<li>Validate inputs and serialise payloads using JSON schemas.</li>
+<li>Generate TypeScript interfaces from JSON schemas.</li>
+<li>Serve <code>text/html</code>,  <code>application/json</code> and <code>application/pdf</code> content-types.</li>
+<li>Write server-side statically checkable templates (thanks to JSX).</li>
+<li>Generate high quality PDF using puppeteer.</li>
+<li>Work with promises, async error handling, error serialisation, etc.</li>
+<li>Write specs, compute a test coverage report.</li>
+<li>Generate OpenAPI documentation (fastify-swagger).</li>
+</ul>
+
+
+
+<h4>Context</h4>
+
+
+
+<p>Necessarily, companies have to produce invoices and other kinds of formal documents.  Because this is error-prone and time consuming, they may establish automated workflows. Through this tutorial, you will implement an invoice PDF renderer API.</p>
+
+
+
+<p>At the end of the tutorial, no persistence is expected. You do not have to implement any database connection or session management. All is about core fastify features, PDF generation and TypeScript support.</p>
+
+
+
+<p>A single endpoint is expected. It accepts a JSON payload as POST body and may return a JSON response, an HTML rendered preview or a PDF blob depending on the <code>Accept</code> header.</p>
+
+
+
+<h4>Data schema</h4>
+
+
+
+<p>In a real-world application, the data could be formalised as multiple entities: <code>Address</code>, <code>Customer</code>, <code>Biller</code>, <code>ItemInvoice</code> and finally <code>Invoice</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Address {
+  street: <span class="hljs-built_in">string</span>
+  city: <span class="hljs-built_in">string</span>
+  zipcode: <span class="hljs-built_in">string</span>
+  country: <span class="hljs-built_in">string</span>
+  state: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>
+  additional: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>
+}
+
+<span class="hljs-keyword">interface</span> Customer {
+  name: <span class="hljs-built_in">string</span>
+  address: Address
+}
+
+<span class="hljs-keyword">interface</span> Biller {
+  address: Address
+  phoneNumber: <span class="hljs-built_in">string</span>
+  email: <span class="hljs-built_in">string</span>
+  invoiceLegalFooter: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-keyword">interface</span> ItemInvoice {
+  description: <span class="hljs-built_in">string</span>
+  quantity: <span class="hljs-built_in">number</span>
+  unitPriceWithoutTax: <span class="hljs-built_in">number</span>
+  taxPercent: <span class="hljs-built_in">number</span>
+}
+
+<span class="hljs-keyword">interface</span> Invoice {
+  reference: <span class="hljs-built_in">string</span>
+  date: <span class="hljs-built_in">Date</span>
+  customer: Customer
+  biller: Biller
+  itemInvoices: ItemInvoice[]
+  paymenDelayInDays: <span class="hljs-built_in">number</span>
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our case, the endpoint will receive a single payload with nested properties matching the above <code>Invoice</code> interface. Also, note that the JSON format encodes dates as strings. For example:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+  <span class="hljs-attr">"reference"</span>: <span class="hljs-string">"2021-001"</span>,
+  <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2021-12-01"</span>,
+  <span class="hljs-attr">"paymenDelayInDays"</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-attr">"customer"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Andrew SMITH"</span>,
+    <span class="hljs-attr">"address"</span>: {
+      <span class="hljs-attr">"street"</span>: <span class="hljs-string">"1111 Woodvale Drive"</span>,
+      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Rodney"</span>,
+      <span class="hljs-attr">"zipcode"</span>: <span class="hljs-string">"N0L 2C0"</span>,
+      <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Ontario"</span>,
+      <span class="hljs-attr">"country"</span>: <span class="hljs-string">"Canada"</span>,
+      <span class="hljs-attr">"additional"</span>: <span class="hljs-string">"Appartement B110"</span>
+    }
+  },
+  <span class="hljs-attr">"biller"</span>: {
+    <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"+33123456789"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"seller@myshop.com"</span>,
+    <span class="hljs-attr">"invoiceLegalFooter"</span>: <span class="hljs-string">"IBAN to pay: FRXX XXXX XXXX XXXX XXXX\n SIRET: XXXXXXXXXXXX, TVA number: XXXXXXXXXXXXXXXX"</span>,
+    <span class="hljs-attr">"address"</span>: {
+      <span class="hljs-attr">"street"</span>: <span class="hljs-string">"92 rue du Clair Bocage"</span>,
+      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"LA ROCHE-SUR-YON"</span>,
+      <span class="hljs-attr">"zipcode"</span>: <span class="hljs-string">"85000"</span>,
+      <span class="hljs-attr">"state"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"country"</span>: <span class="hljs-string">"France"</span>,
+      <span class="hljs-attr">"additional"</span>: <span class="hljs-literal">null</span>
+    }
+  },
+  <span class="hljs-attr">"itemInvoices"</span>: [
+    {
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"APhone Z001"</span>,
+      <span class="hljs-attr">"quantity"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"unitPriceWithoutTax"</span>: <span class="hljs-number">300</span>,
+      <span class="hljs-attr">"taxPercent"</span>: <span class="hljs-number">20</span>
+    }
+  ]
+}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Simple echo server</h4>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/node-typescript-template.zip">Download the template for node + typescript projects (source code)</a>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column exercice">
+<p id="exercice"><strong>Exercise 1</strong>: Now the context is given, please create a simple HTTP server with <a href="https://www.fastify.io/" target="_blank" rel="noreferrer noopener">fastify</a>, that:</p>
+
+
+
+<ul class="u-mlm u-mbs">
+<li>implements a single route (POST: /invoices);</li>
+<li>accepts any JSON entity on that endpoint;</li>
+<li>responds with the input JSON (like an echo server).</li>
+</ul>
+</div>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong>: Then, write a JSON schema that matches the invoice entity (as described previously). There are plenty of examples <a href="https://json-schema.org/learn/miscellaneous-examples.html" target="_blank" rel="noreferrer noopener">here</a>. In addition, you can manually test your schema against a payload <a href="https://www.jsonschemavalidator.net/" target="_blank" rel="noreferrer noopener">here</a>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 3</strong>: Finally, use that schema as part of input validation <strong>and</strong> output serialisation (<a href="https://www.fastify.io/docs/latest/Validation-and-Serialization/" target="_blank" rel="noreferrer noopener">see the fastify&rsquo;s documentation</a>).</p>
+
+
+
+<p>The JSON schema validates inputs at runtime (it is a core feature of fastify). But Typescript cannot infer the type by its own. You could of course write static type definitions&#8230; But they may become obsolete. Anyway, code duplication is mostly always a bad idea.</p>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> Instead, I will show in class how to generate typescript interfaces from JSON schemas using <a href="https://www.npmjs.com/package/json-schema-to-typescript" target="_blank" rel="noreferrer noopener">json-schema-to-typescript</a>.</p>
+
+
+
+<h4>Hand-testing the fastify&rsquo;s JSON-schema algorithms.</h4>
+
+
+
+<p>Since input validation and output serialisation are critical points for the application security, we must understand how it behaves on « edge » cases (when things do not follow the nominal case).</p>
+
+
+
+<p>Please answer the above questions in your <code>README.md</code>.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column question">
+<p><strong>Question 1</strong>: About input validation:</p>
+
+
+
+<ul class="u-mlm u-mbs">
+<li>How fastify processes unknown properties?</li>
+<li>How fastify behaves if a known property is missing in the payload?</li>
+<li>What happens if an input property is <code>null</code>?</li>
+</ul>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column question">
+<p><strong>Question 2</strong>: About response serialisation:</p>
+
+
+
+<ul class="u-mlm u-mbs">
+<li>How fastify processes unknown properties?</li>
+<li>How fastify behaves if a known property is missing in the payload?</li>
+</ul>
+</div>
+</div>
+
+
+
+<p class="question"><strong>Question 3</strong>: Is input validation just a matter of types and schemae?</p>
+
+
+
+<h4>Setting up tests with fastify</h4>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> We will set up together a first automated spec for this endpoint. Starting from now, you are strongly encouraged to systematically write specs for any further work during this module.</p>
+
+
+
+<p>Useful resources: <a href="https://istanbul.js.org/" target="_blank" rel="noreferrer noopener">istanbul</a>, <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a>, <a href="https://www.chaijs.com/" target="_blank" rel="noreferrer noopener">chai</a>, <a href="https://www.npmjs.com/package/faker" target="_blank" rel="noreferrer noopener">faker</a>, <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank" rel="noreferrer noopener">debugging</a>…</p>
+
+
+
+<h4>Conditional response format</h4>
+
+
+
+<p>Depending on the mimetype provided in the request <code>Accept</code> header, the server may respond with another type of content. Currently, whatever the value of this header, your current implementation outputs a JSON payload.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">enum</span> MIME_TYPES {
+  HTML = <span class="hljs-string">'text/html'</span>,
+  <span class="hljs-built_in">JSON</span> = <span class="hljs-string">'application/json'</span>,
+  PDF = <span class="hljs-string">'application/pdf'</span>
+}
+
+instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, reply</span>) </span>{
+  <span class="hljs-keyword">switch</span> (request.headers.accept) {
+    <span class="hljs-keyword">case</span> MIME_TYPES.JSON:
+      <span class="hljs-keyword">return</span> request.body;
+
+    <span class="hljs-keyword">case</span> MIME_TYPES.PDF:
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'PDF are not yet implemented'</span>);
+    
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> reply.type(MIME_TYPES.HTML).send(<span class="hljs-string">'&lt;!doctype html&gt;&lt;html&gt;&lt;body&gt;Hello world&lt;/body&gt;&lt;/html&gt;'</span>)
+  }
+})</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The core topic of this section is rendering the HTML template on the server side. There are plenty of ways:</p>
+
+
+
+<ul>
+<li>Working with raw string concatenation: zero-dependency solution, with readability and maintainability issues. It can easily lead to XSS injections.</li>
+<li>Working with a template rendering engine, such as <a href="https://ejs.co/" target="_blank" rel="noreferrer noopener">ejs</a>: robust solution with built-in HTML special character escapement, preventing most (but not all) XSS. That template engine was built for JS, so is basically out of the scope of TypeScript!</li>
+<li>Working with JSX (or more exactly TSX in case of TypeScript). This is a way to write a kind of HTML in JavaScript. Plenty of tools can render the HTML from a JSX source. One of them is <a href="https://fr.reactjs.org/docs/react-dom-server.html" target="_blank" rel="noreferrer noopener">react-dom/server</a>. All TypeScript features work natively in .tsx files.</li>
+</ul>
+
+
+
+<p class="exercice"><strong>Exercise 4</strong>: Render the invoice as an HTML page if the request asks for HTML format. JSX should be preferred because of static type checks. But it is also more complex to start with. Ejs is also a valid option to fulfil the exercise at time. For the review, please include a screenshot of the rendered page: the feature coverage, the visual result and the code quality* all matter.</p>
+
+
+
+<p>* proper use of typescript checking, addition of specs, etc.</p>
+
+
+
+<h4>Render as PDF</h4>
+
+
+
+<p class="exercice"><strong>Exercise 5</strong>: Using Google <a href="https://www.npmjs.com/package/puppeteer" target="_blank" rel="noreferrer noopener">puppeteer</a> (a headless chromium instance with a nodejs driver), render your HTML payload as PDF. Unlike previous content types, a PDF is a binary file. So you have to deal with binary <a href="https://nodejs.org/api/buffer.html" target="_blank" rel="noreferrer noopener">Buffer</a>. In addition, puppeteer uses promises. Add a spec for this case.</p>
+
+
+
+<p class="question"><strong>Question 4</strong>: Why should you disable JavaScript in the headless browser instance? And, of course, disable it!</p>
+
+
+
+<h4>Safer error handling</h4>
+
+
+
+<p>As for the final project, we will take care of the security of error handling. Web applications should not leak sensitive information. One of the attack vectors is error serialisation when the app sends internal errors messages.</p>
+
+
+
+<p>A status code 400 notifies an invalid request. It is acceptable to send the failure&rsquo;s reason to the user. If the server provides an API consumed by developers, this is a welcome help for them.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">400</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Bad Request"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"body should have required property 'hello'"</span>
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>But is it OK to serve this?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Unable to connect to database on root@localhost, with password authentication"</span>
+}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Or this?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Ambiguous column name \"id\"; SQL statement: SELECT * FROM exhibit JOIN exhibit ON (id = previous_id); [90059-176]"</span>
+}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Everything that is related to <code>Internal Server Error</code> (HTTP code 500) should never reach the end user (unless you are in development environment). But if you try yourself, you will notice fastify sends those errors in production mode (<code>NODE_ENV=production</code>)! As a web developer, I saw this on publicly routed servers!</p>
+
+
+
+<p>This is because of the default <a href="https://github.com/fastify/fastify/blob/1e94070992d911a81a26597c25f2d35ae65f3d91/fastify.js#L74" target="_blank" rel="noreferrer noopener">error handler (the link redirects to fastify source code)</a> . You should override the handler globally using <a href="https://www.fastify.io/docs/latest/Server/#seterrorhandler" target="_blank" rel="noreferrer noopener">setErrorHandler</a>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong>: override the default error handler, with security in mind.</p>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> Then I will show you how to use the error handler and Promise rejection to cover various failures scenario in a DRY* way (from invalid phone numbers validation to illegal accesses&#8230;). Thanks to that, you will say goodbye to verbose and overcomplicated errors management in HTTP controllers.</p>
+
+
+
+<p>* DRY = Don&rsquo;t Repeat Yourself (and I would like to not repeat this anymore 🙂)</p>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: Accoding to my previous demonstration, validate that the phone number is valid (using <a href="https://www.npmjs.com/package/libphonenumber-js" target="_blank" rel="noreferrer noopener">libphonenumber-js</a>), that emails match <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email#basic_validation" target="_blank" rel="noreferrer noopener">HTML5 official regex</a> and that all prices are positive. Else, throw an error the message of which is sent to the client. The HTTP status code should be 422 in case of rejection.</p>
+
+
+
+<p>In facts, the previous validations should not be in the controller&#8230; but moved inside models. This is much cleaner, DRY and consistent across the app (checked every time an entity is persisted, whatever the code calling it). But we do not have models yet, so that is for another day!</p>
+
+
+
+<p><strong>Bonus</strong>: If we have enough time. I will show how to write unit tests using stubs (from the <a href="https://sinonjs.org/releases/latest/stubs/" target="_blank" rel="noreferrer noopener">sinon</a> package) against the custom error handler.</p>
+
+
+
+<h4>Swagger documentation</h4>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> <a href="https://github.com/fastify/fastify-swagger" target="_blank" rel="noreferrer noopener">Fastify-swagger</a> automatically extracts the JSON-schema you provided for your routes, then produces an OpenAPI document. The ore information you provide in your JSON-schema (like description of each field), the better is the resulting documentation. Try it yourself if you completed the tutorial before your teammates.</p>
+<style class="advgb-styles-renderer">.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}</style>	</div>
+<!-- .entry-content -->
+
+	
+	<img width="100%" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/great-job.jpg">
+	<footer class="entry-footer">
+		<span class="cat-links"><span class="screen-reader-text">Catégories </span><a href="https://thomas-veillard.fr/category/front-end-web-development/04-backend/" rel="category tag">04. Backend</a>, <a href="https://thomas-veillard.fr/category/front-end-web-development/" rel="category tag">Modern web development</a></span>			</footer><!-- .entry-footer -->
+
+</article><!-- #post-4225 -->
+
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Publications">
+		<h2 class="screen-reader-text">Navigation de l’article</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">01. Simple plagiarism detection CLI (pratical activity)</span></a></div></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div>
+<!-- .content-area -->
+
+
+	</div>
+<!-- .site-content -->
+
+</div>
+<!-- .site -->
+
+<script src="https://kit.fontawesome.com/f02a77f3db.js" crossorigin="anonymous"></script>
+<script src="https://thomas-veillard.fr/wp-content/plugins/thomas/js/main.js"></script>
+<script data-ad-client="ca-pub-9505048372269906" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NH45PR7ELJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NH45PR7ELJ');
+</script>
+<script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141028" id="twentyfifteen-skip-link-focus-fix-js"></script>
+<script id="twentyfifteen-script-js-extra">
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">ouvrir le sous-menu<\/span>","collapse":"<span class=\"screen-reader-text\">fermer le sous-menu<\/span>"};
+</script>
+<script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/functions.js?ver=20171218" id="twentyfifteen-script-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/wp-embed.min.js?ver=5.7.4" id="wp-embed-js"></script>
+
+</body>
+</html>

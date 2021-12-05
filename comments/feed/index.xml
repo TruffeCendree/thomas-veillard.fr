@@ -11,11 +11,11 @@
 	<atom:link href="https://thomas-veillard.fr/comments/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Thu, 11 Nov 2021 10:31:09 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 05 Dec 2021 15:20:23 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7.3</generator>
+	<generator>https://wordpress.org/?v=5.7.4</generator>
 </channel>
 </rss>
