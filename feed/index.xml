@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sun, 05 Dec 2021 15:20:23 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Dec 2021 20:12:19 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -98,7 +98,7 @@
   customer: Customer
   biller: Biller
   itemInvoices: ItemInvoice[]
-  paymenDelayInDays: <span class="hljs-built_in">number</span>
+  paymentDelayInDays: <span class="hljs-built_in">number</span>
 }</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
@@ -108,7 +108,7 @@
 <pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
   <span class="hljs-attr">"reference"</span>: <span class="hljs-string">"2021-001"</span>,
   <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2021-12-01"</span>,
-  <span class="hljs-attr">"paymenDelayInDays"</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-attr">"paymentDelayInDays"</span>: <span class="hljs-number">30</span>,
   <span class="hljs-attr">"customer"</span>: {
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Andrew SMITH"</span>,
     <span class="hljs-attr">"address"</span>: {
@@ -232,7 +232,7 @@
 
 
 
-<p>Useful resources: <a href="https://istanbul.js.org/" target="_blank" rel="noreferrer noopener">istanbul</a>, <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a>, <a href="https://www.chaijs.com/" target="_blank" rel="noreferrer noopener">chai</a>, <a href="https://www.npmjs.com/package/faker" target="_blank" rel="noreferrer noopener">faker</a>, <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank" rel="noreferrer noopener">debugging</a>…</p>
+<p>Useful resources:&nbsp;<a href="https://istanbul.js.org/" target="_blank" rel="noreferrer noopener">istanbul</a>,&nbsp;<a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a>,&nbsp;<a href="https://www.chaijs.com/" target="_blank" rel="noreferrer noopener">chai</a>,&nbsp;<a href="https://www.npmjs.com/package/faker" target="_blank" rel="noreferrer noopener">faker</a>, <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank" rel="noreferrer noopener">debugging</a>…</p>
 
 
 
