@@ -11,7 +11,7 @@
 	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-	<!-- This site is optimized with the Yoast SEO plugin v17.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<!-- This site is optimized with the Yoast SEO plugin v17.9 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>03. Backend project - Thomas VEILLARD</title>
 	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">
 	<meta property="og:locale" content="fr_FR">
@@ -21,12 +21,12 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-11-10T13:43:54+00:00">
-	<meta property="article:modified_time" content="2021-12-05T15:20:23+00:00">
+	<meta property="article:modified_time" content="2022-01-24T18:20:11+00:00">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture estimée">
-	<meta name="twitter:data2" content="5 minutes">
+	<meta name="twitter:data2" content="11 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -50,7 +50,7 @@
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
 	            "datePublished": "2021-11-10T13:43:54+00:00",
-	            "dateModified": "2021-12-05T15:20:23+00:00",
+	            "dateModified": "2022-01-24T18:20:11+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/#breadcrumb"
 	            },
@@ -92,11 +92,11 @@
 	            },
 	            "headline": "03. Backend project",
 	            "datePublished": "2021-11-10T13:43:54+00:00",
-	            "dateModified": "2021-12-05T15:20:23+00:00",
+	            "dateModified": "2022-01-24T18:20:11+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/#webpage"
 	            },
-	            "wordCount": 902,
+	            "wordCount": 888,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -308,7 +308,11 @@ blockquote, cite {
 }
 
 .u-mbs { margin-bottom: 0.25em; }
-.u-mlm { margin-left: 1em; }</style>
+.u-mlm { margin-left: 1em; }
+
+.strikethrough {
+	text-decoration: line-through;
+}</style>
 		</head>
 
 <body class="post-template-default single single-post postid-3861 single-format-standard wp-embed-responsive">
@@ -450,8 +454,15 @@ blockquote, cite {
 <li>Nested resources are also allowed. For example: <code>POST /users/:id/photos</code>
 </li>
 <li>Only implement CRUD endpoints you really need to cover your use-case.</li>
-<li>Add non-CRUD endpoints, with server-side computations. For example: <code>POST /employees/:id/is_available_at</code>.</li>
 </ul>
+
+
+
+<p></p>
+
+
+
+<ul class="strikethrough"><li>Add non-CRUD endpoints, with server-side computations. For example: <code>POST /employees/:id/is_available_at</code>.</li></ul>
 
 
 
@@ -569,10 +580,13 @@ blockquote, cite {
 
 
 
-<ul>
+<ul><li>Do not print secrets (like password, cookies) to the logs.</li></ul>
+
+
+
+<ul class="strikethrough">
 <li>Record relevant activities to logs (could be printed on STDOUT).</li>
 <li>Record beginning time, execution duration, source IP, path, method, parameters (from URL and body), result status code, user identity…</li>
-<li>Do not print secrets (like password, cookies) to the logs.</li>
 <li>Optionally, report them as JSON in production, so they are queriable once digest.</li>
 </ul>
 
@@ -639,7 +653,7 @@ blockquote, cite {
 
 
 <ul><li>Add a direct link in your <code>README.md</code> to:<ul>
-<li>the latest log of the Github Action running your tests and reporting coverage.</li>
+<li>the latest log of your tests and reporting coverage.</li>
 <li>the latest generated documentation (may be a folder in your git repository&#8230;).</li>
 </ul>
 </li></ul>
@@ -653,16 +667,159 @@ blockquote, cite {
 <p><strong>Grading criteria:</strong></p>
 
 
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="Markdown" data-shcb-language-slug="markdown"><div><code class="hljs language-markdown"><span class="hljs-section"># Checkpoints report for the project</span>
 
-<p>Coming soon</p>
+You <span class="hljs-strong">**MUST**</span> append a filled copy of this document at the end of your <span class="hljs-code">`README.MD`</span>.
 
+This document serves three main purposes:
+<span class="hljs-bullet">- </span>providing you a clear list of my expectations (check each point when done) ;
+<span class="hljs-bullet">- </span>ensuring I do not miss some of your engineering during the review ;
+<span class="hljs-bullet">- </span>asking for additional information that helps me during the review.
+
+<span class="hljs-section">## Notice</span>
+
+Check every applicable checkbox in the above list. For each one, provide the requested additional information.
+
+In your explanation, please provide links (file + line) to relevant parts of your source code and tests if applicable.
+
+<span class="hljs-section">### Caption</span>
+
+🔵 means the checkbox is mandatory. If missing or absolutely not satisfying, it may cost you 0.5 penalty point.
+
+<span class="hljs-section">## Expectations</span>
+
+<span class="hljs-section">### GraphQL API only</span>
+<span class="hljs-bullet">
+- </span>[ ] Reduce code duplication for the various involved schemas (of the database, of the ORM, of GraphQL...). <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Mitigation(s) against too complex GraphQL queries, arbitrary deep nested object fetching or related DoS. <span class="hljs-strong">**[1 point per mitigation, up to 2]**</span>
+<span class="hljs-quote">&gt; Quote and explain each mitigation.</span>
+<span class="hljs-bullet">
+- </span>[ ] Any security or performance improvement related to your GraphQL implementation, as optionally highlighted in the subject? points]**
+<span class="hljs-quote">&gt; Explain each improvement.</span>
+
+<span class="hljs-section">### Input validation</span>
+<span class="hljs-bullet">
+- </span>[ ] Strictly and deeply validate the type of every input (<span class="hljs-code">`params, querystring, body`</span>) at runtime before any processing. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Ensure the type of every input can be inferred by Typescript at any time and properly propagates across the app. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Ensure the static and runtime input types are always synced. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this? If extra commands must be run before the typescript checking, how do you ensure there are run?</span>
+
+<span class="hljs-section">### Authorisation</span>
+<span class="hljs-bullet">
+- </span>[ ] Check the current user is allowed to call this endpoint. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Check the current user is allowed to perform the action on a specific resource. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Did you build or use an authorisation framework, making the authorisation widely used in your code base? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Do you have any way to ensure authorisation is checked on every endpoint? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; It is pretty easy to forget authorising some action.</span>
+<span class="hljs-quote">&gt; For obvious reasons, it may lead to security issues and bugs.</span>
+<span class="hljs-quote">&gt; At work, we use `varvet/pundit` in our `Ruby on Rails` stack. It can raise exception just before answering the client if authorisation is not checked.</span>
+<span class="hljs-quote">&gt; https://github.com/varvet/pundit#ensuring-policies-and-scopes-are-used</span>
+<span class="hljs-quote">&gt; 
+&gt; How did you achieve this?</span>
+
+<span class="hljs-section">### Secret and configuration management</span>
+<span class="hljs-bullet">
+- </span>[ ] Use a hash for any sensitive data you do not need to store as plain text. 🔵
+<span class="hljs-quote">&gt; Also check this if you do not store any password or such data (and say it here).</span>
+<span class="hljs-bullet">
+- </span>[ ] Store your configuration entries in environment variables or outside the git scope. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Do you provide a way to list every configuration entries (setup instructions, documentation, requireness... are appreciated)? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Do you have a kind of configuration validation with meaningful error messages? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+
+<span class="hljs-section">### Package management</span>
+<span class="hljs-bullet">
+- </span>[ ] Do not use any package with less than 50k downloads a week. 🔵
+<span class="hljs-bullet">
+- </span>[ ] Did you write some automated tools that check no unpopular dependency was installed? If yes, ensure it runs frequently. <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this? A Github Action (or similar) and compliance rule for pull requests are appreciated.</span>
+<span class="hljs-bullet">
+- </span>[ ] Properly use dependencies and devDevepencies in your package.json. <span class="hljs-strong">**[0.5 points]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+
+<span class="hljs-section">### Automated API generation</span>
+<span class="hljs-bullet">
+- </span>[ ] Do you have automated documentation generation for your API (such as OpenAPI/Swagger...)? <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-quote">&gt; You must link your documentation for review (a Github page, a ZIP archive, an attachment to the release notes...).</span>
+<span class="hljs-bullet">
+- </span>[ ] In addition to requireness and types, do you provide a comment for every property of your documentation? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Do you document the schema of responses (at least for success codes) and provide examples of payloads? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Is your documentation automatically built and published when a commit reach the develop or master branches? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+
+<span class="hljs-section">### Error management</span>
+<span class="hljs-bullet">
+- </span>[ ] Do not expose internal application state or code (no sent stacktrace in production!). <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Do you report errors to Sentry, Rollbar, Stackdriver… <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+
+<span class="hljs-section">### Log management</span>
+<span class="hljs-bullet">
+- </span>[ ] Mention everything you put in place for a better debugging experience based on the logs collection and analysis. <span class="hljs-strong">**[3 points]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Mention everything you put in place to ensure no sensitive data were recorded to the log. <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+
+<span class="hljs-section">### Asynchronous first</span>
+<span class="hljs-bullet">
+- </span>[ ] Always use the async implementations when available. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; List all the functions you call in their async implementation instead of the sync one.</span>
+<span class="hljs-quote">&gt; 
+&gt; Ex: I used `await fs.readFile` in file `folder/xxx.ts:120` instead of `fs.readFileSync`.</span>
+<span class="hljs-bullet">
+- </span>[ ] No unhandled promise rejections, no uncaught exceptions… <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; For example, how do you ensure every promise rejection is caught and properly handled?</span>
+<span class="hljs-quote">&gt; Tips: one part of the answer could be the use of a linter.</span>
+
+<span class="hljs-section">### Code quality</span>
+<span class="hljs-bullet">
+- </span>[ ] Did you put a focus on reducing code duplication? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; How did you achieve this?</span>
+<span class="hljs-bullet">
+- </span>[ ] Eslint rules are checked for any pushed commit to develop or master branch. <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; Please provide a link to the sample of Github Action logs (or similar).</span>
+
+<span class="hljs-section">### Automated tests</span>
+<span class="hljs-bullet">
+- </span>[ ] You implemented automated specs. <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; Please provide a link to the more complete summary you have.</span>
+<span class="hljs-bullet">
+- </span>[ ] Your test code coverage is 75% or more.  <span class="hljs-strong">**[1 point]**</span> 🔵
+<span class="hljs-quote">&gt; Please provide a link to the `istanbul` HTML coverage summary (or from a similar tool).</span>
+<span class="hljs-bullet">
+- </span>[ ] Do you run the test on a CD/CI, such as Github Action? <span class="hljs-strong">**[1 point]**</span>
+<span class="hljs-quote">&gt; Please provide a link to the latest test summary you have, hosted on Github Action or similar.</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Markdown</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">markdown</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Delivery date:</strong></p>
 
 
 
-<p>Delivery date unset, but will be as late as possible.</p>
+<p>2022-03-08</p>
 <style class="advgb-styles-renderer">.wp-block-code {
 	border: 0;
 	padding: 0;
