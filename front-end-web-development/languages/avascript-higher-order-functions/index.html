@@ -384,7 +384,7 @@ blockquote, cite {
 <span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b
 
 <span class="hljs-comment">// using the 'Function' constructor</span>
-<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> sum = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'return a + b'</span>)</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Whatever is the way you defined your function, it is always an instance of the <code>Function</code> class. So, functions are objects instances. They can be assigned to variables, passed as arguments, returned as values, mutated&#8230;</p>
@@ -415,7 +415,7 @@ newReference = <span class="hljs-string">'test'</span> <span class="hljs-comment
 newReference.someAttribute = <span class="hljs-literal">true</span>
 
 <span class="hljs-comment">// both `newReference` and `sum` reference the same object</span>
-<span class="hljs-built_in">console</span>.log(sum.someAttribute) <span class="hljs-comment">// prints true</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(sum.someAttribute) <span class="hljs-comment">// prints true</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Higher Order Function</h4>
@@ -446,7 +446,7 @@ newReference.someAttribute = <span class="hljs-literal">true</span>
 
 button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'My button has been clicked 🎉'</span>)
-})</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+})</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <ul><li>
@@ -469,7 +469,7 @@ array.sort(<span class="hljs-function"><span class="hljs-keyword">function</span
 })
 
 <span class="hljs-comment">// sorts in numerically descending order (5, 4, 1, 0)</span>
-array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a)</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a)</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Closures</h4>
@@ -495,7 +495,7 @@ array.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =
 
 <span class="hljs-built_in">console</span>.log(inc1(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 11</span>
 <span class="hljs-built_in">console</span>.log(inc2(<span class="hljs-number">10</span>)) <span class="hljs-comment">// prints 12</span>
-<span class="hljs-built_in">console</span>.log(inc2(inc1(<span class="hljs-number">10</span>))) <span class="hljs-comment">// prints 13</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(inc2(inc1(<span class="hljs-number">10</span>))) <span class="hljs-comment">// prints 13</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p></p>

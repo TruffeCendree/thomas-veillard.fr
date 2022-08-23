@@ -397,7 +397,7 @@ blockquote, cite {
 
 <span class="hljs-keyword">const</span> start = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
 <span class="hljs-keyword">const</span> end = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T09:30:00'</span>)
-<span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>, start, end, <span class="hljs-string">'Prepare lessons'</span>)</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>, start, end, <span class="hljs-string">'Prepare lessons'</span>)</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The constructor is a special function called <code>constructor</code> inside the class definition. It is unique and optional.</p>
@@ -425,7 +425,7 @@ calendarEvent.endDate = <span class="hljs-keyword">new</span> <span class="hljs-
 
 <span class="hljs-comment">// dynamically access a property by name</span>
 <span class="hljs-keyword">const</span> propertyName = <span class="hljs-built_in">Math</span>.random() &lt; <span class="hljs-number">0.5</span> ? <span class="hljs-string">'startDate'</span> : <span class="hljs-string">'endDate'</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Event <span class="hljs-subst">${propertyName}</span> is <span class="hljs-subst">${calendarEvent[propertyName].toISOString()}</span>`</span>)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Event <span class="hljs-subst">${propertyName}</span> is <span class="hljs-subst">${calendarEvent[propertyName].toISOString()}</span>`</span>)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Due to the dynamic nature of JavaScript, the instance&rsquo;s property list is not frozen. You can add or delete any keys at any moment.</p>
@@ -443,7 +443,7 @@ calendarEvent.notYetExistingAttribute = <span class="hljs-string">'now, it exist
 <span class="hljs-built_in">console</span>.log(calendarEvent.tiitle) <span class="hljs-comment">// `undefined`, yes it is...</span>
 
 <span class="hljs-comment">// this delete a key</span>
-<span class="hljs-keyword">delete</span> calendarEvent.notYetExistingAttribute</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">delete</span> calendarEvent.notYetExistingAttribute</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Tips</strong>: typo errors are difficult to detect. If your IDE implements static code analysis (such as Intellisense for VSCode), it may provide powerful autocompletion. That reduces the risk of a typo error at the time of writing the code.</p>
@@ -485,7 +485,7 @@ calendarEvent.notYetExistingAttribute = <span class="hljs-string">'now, it exist
 <span class="hljs-keyword">const</span> start = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T08:00:00'</span>)
 <span class="hljs-keyword">const</span> end = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2021-07-31T09:30:00'</span>)
 <span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>, start, end, <span class="hljs-string">'Prepare lessons'</span>)
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Event's duration in hours:"</span>, calendarEvent.getDuration(<span class="hljs-string">'h'</span>))</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Event's duration in hours:"</span>, calendarEvent.getDuration(<span class="hljs-string">'h'</span>))</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Static properties</h4>
@@ -499,14 +499,14 @@ calendarEvent.notYetExistingAttribute = <span class="hljs-string">'now, it exist
 <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-comment">/* ... */</span>).instanceAttribute
 
 <span class="hljs-comment">// accesses the class attribute</span>
-CalendarEvent.classAttribute</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+CalendarEvent.classAttribute</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Tips: </strong>I recommend to initialise class attributes immediately after the class definition.</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{ <span class="hljs-comment">/* */</span> }
-CalendarEvent.lastGeneratedId = <span class="hljs-number">0</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+CalendarEvent.lastGeneratedId = <span class="hljs-number">0</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Despite the fact that functions are accessible and callable before the declaration, class declaration must be run before being referenced anywhere.</p>
@@ -514,7 +514,7 @@ CalendarEvent.lastGeneratedId = <span class="hljs-number">0</span></code></div><
 
 <pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// Throws Uncaught ReferenceError: CalendarEvent is not defined</span>
 CalendarEvent.lastGeneratedId = <span class="hljs-number">0</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{ <span class="hljs-comment">/* */</span> }</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalendarEvent</span> </span>{ <span class="hljs-comment">/* */</span> }</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Static methods</h4>
@@ -563,7 +563,7 @@ DESCRIPTION:Write lessons and publish them online.
 END:VEVENT
 `</span>.trim()
 
-<span class="hljs-keyword">const</span> calendarEvent = CalendarEvent.fromIcalEvent(icalText)</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> calendarEvent = CalendarEvent.fromIcalEvent(icalText)</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Side note:</strong> in JavaScript, a static method is like a static attribute of type &lsquo;function&rsquo;. Even the <code>this</code> behaviour is the same.</p>
@@ -580,7 +580,7 @@ CalendarEvent.fromIcalEvent = <span class="hljs-function"><span class="hljs-keyw
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>)
 }
 
-<span class="hljs-built_in">console</span>.log(CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>))</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>))</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Inheritance</h4>
@@ -623,7 +623,7 @@ CalendarEvent.fromIcalEvent = <span class="hljs-function"><span class="hljs-keyw
     <span class="hljs-keyword">this</span>.hasAssessment = hasAssessment
     <span class="hljs-keyword">this</span>.moodleUrl = moodleUrl
   }
-}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Let&rsquo;s analyse the previous code snippet:</p>
@@ -654,7 +654,7 @@ CalendarEvent.fromIcalEvent = <span class="hljs-function"><span class="hljs-keyw
 <span class="hljs-comment">// static methods are inherited as well.</span>
 <span class="hljs-comment">// `this` in method's body references the class used to invoke it.</span>
 TeachingEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hljs-comment">// outputs TeachingEvent</span>
-CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hljs-comment">// outputs CalendarEvent</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hljs-comment">// outputs CalendarEvent</span></code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Tips: </strong> constructors with a lot of arguments may become difficult to invoke or extend. You run at risk of missing a parameter, confusing the order, etc. In such cases, literal objects and object destructuring are profitable. That is particalry true if many properties are nullable, optional or with default values.</p>
@@ -683,7 +683,7 @@ CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hl
 <span class="hljs-comment">// title, hasAssessment, moodleUrl have default values, so may be omitted.</span>
 <span class="hljs-comment">// Properties are well named, so there is no risk of ordering issues.</span>
 <span class="hljs-comment">// Later, it is simpler to drop or add a parameter to the constructor.</span>
-<span class="hljs-keyword">const</span> teachingEvent = <span class="hljs-keyword">new</span> TeachingEvent({ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, startDate, endDate })</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">const</span> teachingEvent = <span class="hljs-keyword">new</span> TeachingEvent({ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, startDate, endDate })</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Ascessors (getters &amp; setters)</h4>
@@ -716,7 +716,7 @@ CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hl
   setStateDate (startDate) {
     <span class="hljs-keyword">this</span>.startDate = startDate
   }
-}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Now, let&rsquo;s see why this is not adapted to JavaScript:</p>
@@ -778,7 +778,7 @@ CalendarEvent.fromIcalEvent(<span class="hljs-string">''</span>) <span class="hl
   <span class="hljs-keyword">set</span> duration (duration) {
     <span class="hljs-keyword">this</span>.endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">this</span>.startDate.getTime() + duration)
   }
-}</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, you can use <code>id</code> and <code>duration</code> virtual attributes with a convenient syntax.</p>
@@ -795,7 +795,7 @@ calendarEvent.id = <span class="hljs-number">2</span> <span class="hljs-comment"
 calendarEvent.duration -= <span class="hljs-number">30</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span> <span class="hljs-comment">// substract 30 minutes to duration.</span>
 <span class="hljs-built_in">console</span>.log(calendarEvent.endDate) <span class="hljs-comment">// prints '2021-07-31T09:00:00'</span>
 
-calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment">// still possible, but a JS developer knows it is ugly</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment">// still possible, but a JS developer knows it is ugly</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Bonus: any function is also a class&#8230;</h4>
@@ -817,7 +817,7 @@ calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment
 }
 
 <span class="hljs-keyword">const</span> calendarEvent = <span class="hljs-keyword">new</span> CalendarEvent(<span class="hljs-number">1</span>)
-<span class="hljs-built_in">console</span>.log(calendarEvent.id) <span class="hljs-comment">// prints 1</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-built_in">console</span>.log(calendarEvent.id) <span class="hljs-comment">// prints 1</span></code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>For the rest, please refer yourself to that post: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noreferrer noopener">JS, a prototype-based language?</a></p>

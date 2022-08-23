@@ -12,22 +12,22 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
 	<!-- This site is optimized with the Yoast SEO plugin v17.9 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>02. Vue: practical activity, part n°2 (for your information) - Thomas VEILLARD</title>
+	<title>02. Vue: practical activity, part n°2 - Thomas VEILLARD</title>
 	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">
 	<meta property="og:locale" content="fr_FR">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="02. Vue: practical activity, part n°2 (for your information) - Thomas VEILLARD">
-	<meta property="og:description" content="Learning outcomes Getting started with Oauth2, OpenID, etc. Understand the need for a state management in your app. Exploring various state management strategies. Discuss pros and cons of various state management patterns. The expected result At the end of the tutorial, the user will be able to login with its Microsoft account. The application will &hellip; Continuer la lecture de 02. Vue: practical activity, part n°2 (for your information)">
+	<meta property="og:title" content="02. Vue: practical activity, part n°2 - Thomas VEILLARD">
+	<meta property="og:description" content="Learning outcomes Getting started with Oauth2, OpenID, etc. Understand the need for a state management layer in your app. Exploring various state management strategies. Discuss pros and cons of various state management patterns. Handle in-browser routing and discuss its performance concerns. Using route guards to prevent activation of some routes. The expected result At the &hellip; Continuer la lecture de 02. Vue: practical activity, part n°2">
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-10-11T05:11:51+00:00">
-	<meta property="article:modified_time" content="2021-10-11T05:11:53+00:00">
+	<meta property="article:modified_time" content="2022-08-23T16:05:43+00:00">
 	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture estimée">
-	<meta name="twitter:data2" content="9 minutes">
+	<meta name="twitter:data2" content="11 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -55,7 +55,7 @@
 	            "@type": "WebPage",
 	            "@id": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/#webpage",
 	            "url": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/",
-	            "name": "02. Vue: practical activity, part n°2 (for your information) - Thomas VEILLARD",
+	            "name": "02. Vue: practical activity, part n°2 - Thomas VEILLARD",
 	            "isPartOf": {
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
@@ -63,7 +63,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/#primaryimage"
 	            },
 	            "datePublished": "2021-10-11T05:11:51+00:00",
-	            "dateModified": "2021-10-11T05:11:53+00:00",
+	            "dateModified": "2022-08-23T16:05:43+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/#breadcrumb"
 	            },
@@ -90,7 +90,7 @@
 	                {
 	                    "@type": "ListItem",
 	                    "position": 2,
-	                    "name": "02. Vue: practical activity, part n°2 (for your information)"
+	                    "name": "02. Vue: practical activity, part n°2"
 	                }
 	            ]
 	        },
@@ -103,13 +103,13 @@
 	            "author": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
-	            "headline": "02. Vue: practical activity, part n°2 (for your information)",
+	            "headline": "02. Vue: practical activity, part n°2",
 	            "datePublished": "2021-10-11T05:11:51+00:00",
-	            "dateModified": "2021-10-11T05:11:53+00:00",
+	            "dateModified": "2022-08-23T16:05:43+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/#webpage"
 	            },
-	            "wordCount": 1690,
+	            "wordCount": 1795,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -384,7 +384,7 @@ blockquote, cite {
 	
 	
 	<header class="entry-header">
-		<h1 class="entry-title">Vue: practical activity, part n°2 (for your information)</h1>	</header><!-- .entry-header -->
+		<h1 class="entry-title">Vue: practical activity, part n°2</h1>	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		
@@ -394,9 +394,11 @@ blockquote, cite {
 
 <ul>
 <li>Getting started with Oauth2, OpenID, etc.</li>
-<li>Understand the need for a state management in your app.</li>
+<li>Understand the need for a state management layer in your app.</li>
 <li>Exploring various state management strategies.</li>
 <li>Discuss pros and cons of various state management patterns.</li>
+<li>Handle in-browser routing and discuss its performance concerns.</li>
+<li>Using route guards to prevent activation of some routes.</li>
 </ul>
 
 
@@ -405,11 +407,11 @@ blockquote, cite {
 
 
 
-<p>At the end of the tutorial, the user will be able to login with its Microsoft account. The application will fetch and display its identity (basically its id, email and name). The current user identity is something you need in the whole app, so you will explore and discuss various ways to manage this.</p>
+<p>At the end of the tutorial, the user will be able to login with its Microsoft account. The application will fetch and display its identity (basically its id, email and name). The current user identity is something you need in the whole app. You will explore various ways to achieve this.</p>
 
 
 
-<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> During this tutorial, you will only grant access to your basic profile (name and email). API secrets stay in your browser, except when calling the API of course. You can revoke permissions at any time in the confidentiality screen of your Microsoft account.</p>
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> A test microsoft account will be provided in session by your teacher, but you are free to use your own account. During this tutorial, you will only grant access to basic profile information (name and email). API secrets stay in your browser, except when calling the API of course. You can revoke permissions at any time in the confidentiality screen of the Microsoft account.</p>
 
 
 
@@ -417,11 +419,11 @@ blockquote, cite {
 
 
 
-<p>In the continuation of the previous tutorial, the application will gain access to the Microsoft Graph API. This one give access to a large panel of microsoft&rsquo;s SaaS products, including Outlook.</p>
+<p>In the continuation of the previous tutorial, the application will gain access to the Microsoft Graph API. This one exposes a large panel of Microsoft&rsquo;s SaaS products, including Outlook.</p>
 
 
 
-<p>The <strong>Microsoft Graph API</strong> acts on the side of a logged-in user, that must grant permission to the application. The<strong> Oauth2 protocol </strong>is responsive to the authentification and collection user&rsquo;s confirmation before granting a set of permissions to the application. In the terminology of Oauth2, a permission is called a <strong>scope</strong>.</p>
+<p>The <strong>Microsoft Graph API</strong> acts on the side of a logged-in user, that must grant permission to the application. The<strong> Oauth2 protocol </strong>is responsible for authentication and collection of user&rsquo;s consent. In the terminology of Oauth2, a permission is called a <strong>scope</strong>. The application must explicitly declare which <strong>scopes</strong> it needs.</p>
 
 
 
@@ -437,7 +439,7 @@ blockquote, cite {
 
 
 
-<p>Let&rsquo;s build a <code>SigninButton</code> responsive of retrieving an <strong>access token</strong> and the associated user identity. Microsoft provides a library making this process easier: <a href="https://www.npmjs.com/package/@azure/msal-browser" target="_blank" rel="noreferrer noopener">@azure/msal-browser</a>.</p>
+<p>Let&rsquo;s build a <code>SigninButton</code> responsible for retrieving an <strong>access token</strong> and the associated user identity. Microsoft provides a library making this process easier: <a href="https://www.npmjs.com/package/@azure/msal-browser" target="_blank" rel="noreferrer noopener">@azure/msal-browser</a>.</p>
 
 
 
@@ -452,8 +454,8 @@ blockquote, cite {
 <p>From a security and maintainability perspective, you should never let secrets and configurations hardcoded in your code. Instead, extract them to a configuration file ignored by git. Even better, allow those settings to be different depending on the environment (ex. test, development, staging, production&#8230;). The Vue assets pipeline has a built-in feature for this: <a href="https://cli.vuejs.org/guide/mode-and-env.html" target="_blank" rel="noreferrer noopener">env variables</a>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.developent.local</span>
-VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.development.local</span>
+VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><i class="fas fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> Unfortunately, changes appyed to .env files cannot be watched by the cli. Each time, you must restart the building process (ex. npm run serve).</p>
@@ -498,7 +500,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
   <span class="hljs-keyword">const</span> authResult = <span class="hljs-keyword">await</span> msalInstance.loginPopup(requestedScopes)
   msalInstance.setActiveAccount(authResult.account)
   <span class="hljs-keyword">return</span> authResult.account
-}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="1060" height="836" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif" alt="" class="wp-image-3576"></figure>
@@ -528,7 +530,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>The current user identity is typically something that should be shared across the whole application (aka. a global state). Any component may read it and a few one (the existing <code>SigninButton</code>, a potential <code>SignoutButton</code>&#8230;) needs to update it.</p>
+<p>The current user identity is typically something that should be shared across the whole application (aka. global state). Any component may read it and a few one (the existing <code>SigninButton</code>, a potential <code>SignoutButton</code>&#8230;) need to update it.</p>
 
 
 
@@ -544,11 +546,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>Before going further, read first <a href="https://v3.vuejs.org/guide/component-basics.html#base-example" target="_blank" rel="noreferrer noopener">Components Basics</a>, <a href="https://v3.vuejs.org/guide/component-props.html#prop-types" target="_blank" rel="noreferrer noopener">Props</a> and <a href="https://v3.vuejs.org/guide/component-custom-events.html" target="_blank" rel="noreferrer noopener">Custom Events</a>.</p>
+<p>Before going further, please read first <a href="https://v3.vuejs.org/guide/component-basics.html#base-example" target="_blank" rel="noreferrer noopener">Components Basics</a>, <a href="https://v3.vuejs.org/guide/component-props.html#prop-types" target="_blank" rel="noreferrer noopener">Props</a> and <a href="https://v3.vuejs.org/guide/component-custom-events.html" target="_blank" rel="noreferrer noopener">Custom Events</a>. The first proposed solution massively relies on props and events.</p>
 
 
 
-<p>The first solution massively uses props and events. The user object is stored at the root of the component tree (inside the <code>App</code> component). Any child that has to read the user object should receive it through props. If the child is nested, every component of the branch must pass the <code>user</code> prop down.</p>
+<p>The user object is stored at the root of the component tree (inside the <code>App</code> component). When the page loads, the <code>user</code> is <code>null</code> (user not yet logged-in). Any child component that has to read the user object should receive it through props. If the child is nested, every component of the branch must pass the <code>user</code> prop down.</p>
 
 
 
@@ -556,7 +558,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>Then, the user interacts with the <code>SigninButton</code>. Once <code>SigninButton</code> knows the user identity, it emits a custom event called <code>userChanged</code>. Events travel the component tree from bottom to top. Each parent component should handle or propagate the event (or it will be discarded). Eventually, the event reaches to root component <code>App</code>, which uses it to update its internal state. This triggers a new rendering and the updated identity travels again the tree down through props.</p>
+<p>Let&rsquo;s suppose now that the user interacts with the <code>SigninButton</code> and sign in. As soon as <code>SigninButton</code> knows the user identity, it emits a custom event called <code>userChanged</code>. Events travel the component tree from bottom to top. Each parent component should handle or propagate the event (or it will be discarded). Eventually, the event reaches the root component <code>App</code>, which consumes it to update its internal state. This triggers a new rendering and the updated identity travels again the tree down through props.</p>
 
 
 
@@ -580,11 +582,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="question"><strong>Question 3</strong>: Is it the best way of doing things? Why?</p>
+<p class="question"><strong>Question 3</strong>: While being a well-working solution, it suffers from maintainability issues. Please expose and discuss them.</p>
 
 
 
-<p><strong>Spoiler</strong>: Of course, not. In addition to the reason you may have already found, there is a performance penalty. Did you notice <code>BaseLayout</code> was rendered again because its props changed? But <code>BaseLayout</code> does not need the <code>user</code> props for itself. It just forwards it to children&#8230;</p>
+<p>In addition to the reason you may have already found, there is a performance penalty. Did you notice <code>BaseLayout</code> was rendered again because its props changed? But <code>BaseLayout</code> does not need the <code>user</code> props for itself. It just forwards it to children&#8230;</p>
 
 
 
@@ -604,7 +606,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>Actually, you provide the <code>user</code> objet to the <code>App</code> children, whatever how deep are the consumer components. But updating the value of <code>user</code> inside <code>App</code> still requires to manually propagate events through some component branches.</p>
+<p>Actually, you provide the <code>user</code> objet to the <code>App</code>&lsquo;s children, whatever how deep are the consumer components. But updating the value of <code>user</code> inside <code>App</code> still requires to manually propagate events through some component branches.</p>
 
 
 
@@ -616,7 +618,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>The third proposed solution is using a store library. With stores, your global state is both readable and writable anywhere in your application. The business logic related to data manipulation is extracted to those stores. One of those libraries, <a href="https://next.vuex.vuejs.org/#what-is-a-state-management-pattern" target="_blank" rel="noreferrer noopener">Vuex</a>, is specially crafted to work with Vue and its internals.</p>
+<p>The third proposed solution is using a store library. With stores, your global state is both readable and writable anywhere in your application. The business logic related to data manipulation is moved to those stores. One of those libraries, <a href="https://next.vuex.vuejs.org/#what-is-a-state-management-pattern" target="_blank" rel="noreferrer noopener">Vuex</a>, is specially crafted to work with Vue and its internals.</p>
 
 
 
@@ -631,7 +633,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>But it is still revelant to explore Vuex from a pedagogical point of view. So let&rsquo;s give it a try for this tutorial series.</p>
+<p>However, it is still revelant to explore Vuex from a pedagogical point of view. So let&rsquo;s give it a try for this tutorial series.</p>
 
 
 
@@ -643,7 +645,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="question"><strong>Question 6</strong>: Imagine a developer in your team proposes to exclusively manage the state with stores. Therefore, it recommends not to rely on <code>props</code> and <code>provide</code> anymore. Would you accept this? An argued response is expected.</p>
+<p class="question"><strong>Question 6</strong>: Imagine a developer in your team suggests to exclusively manage the state with stores. Therefore, it recommends not to rely on <code>props</code> and <code>provide</code> anymore. Would you accept this? An argued answer is expected.</p>
 
 
 
@@ -666,18 +668,18 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 </tr>
 <tr>
 <td>/conversations/:id</td>
-<td>Displays the <code>ConversationShowPage</code> component that fetches and render the content of a given conversation (id retrived from the API).</td>
+<td>Displays the <code>ConversationShowPage</code> component that fetches and renders the content of a given conversation (id retrieved from the API).</td>
 </tr>
 </tbody></table>
 <figcaption>Expected routes at the end of the tutorial</figcaption></figure>
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, so vue-router v4 or higher.</p>
+<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+).</p>
 
 
 
-<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router in its own module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
+<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router inside its own ES module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
 
 
 
@@ -694,7 +696,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 9</strong>: You probably tested your routes by directly changing the URL. Now, you will add a link in the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. Its must use the <code>&lt;router-link /&gt;</code>.</p>
+<p class="exercice"><strong>Exercise 9</strong>: You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. It must use the <code>&lt;router-link /></code>.</p>
 
 
 
@@ -717,15 +719,19 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
+<p class="exercice">In a real-world app, I would require a UI feedback, so the user knows it was not allowed to access the previous URL and was redirected. While not being part of the tutorial, it is part of the project UX!</p>
+
+
+
 <p class="exercice"><strong>Exercise 11</strong>: Implement the <code>/conversations/:id</code> route. For now, the newly created <code>ConversationShowPage</code> component should access the id given in the URL and display it inside the template.</p>
 
 
 
-<p>At this step, the routing capabilities are fine. The next step would be to really fetch conversations from Outlook using the API and eventually display them in the UI. Unfortunately, we do not have anymore in-class session for that.</p>
+<p>At this step, the routing capabilities are fine. The next step would be to fetch conversations from Outlook using the API and eventually display them in the UI. Unfortunately, we do not have any more in-class session for that.</p>
 
 
 
-<p><strong>Tips</strong>: If you want to complet the tutorial yourself, you must ask another authorisation for the API. The scope <em><code>Mail.Read</code></em> is need to fetch mails (see <code>src/lib/microsoftGraph.js</code>).</p>
+<p><strong>Tips</strong>: If you want to complete the tutorial yourself, you must ask another authorisation for the API. The scope <em><code>Mail.Read</code></em> is needed to fetch mails (see <code>src/lib/microsoftGraph.js</code>).</p>
 <style class="advgb-styles-renderer">.wp-block-code {
 	border: 0;
 	padding: 0;

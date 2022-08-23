@@ -499,7 +499,7 @@ npm install
 npm install --prod
 
 <span class="hljs-comment"># Installs a new package (called webpack-cli) and appends it to package.json (inside devDependencies)</span>
-npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Excercise 4</strong>: Install dependencies using the <code>npm install</code> command. Dependencies are locally stored inside the <code>node_modules</code> folder. Why is there far more many modules into <code>node_modules</code> that those declared in <code>package.json</code> ?</p>
@@ -611,7 +611,7 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
   getName () {
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">' '</span> + <span class="hljs-keyword">this</span>.lastName.toUpperCase() 
   }
-}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 <pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// Isofunctional ES5 code (defining the same class without using the `class` keyword)</span>
 
@@ -627,7 +627,7 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
     }
 
     <span class="hljs-keyword">return</span> User
-}())</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}())</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>But instead of writing old, verbose, ugly and potentially buggy code, it is common to <strong>transpile</strong> from recent syntax to older one. That the purpose of <a href="https://babeljs.io/" target="_blank" rel="noreferrer noopener">babeljs</a>, which can work as a plugin for webpack. This will be one of your next job 🤗.</p>
@@ -651,7 +651,7 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.indexOf(search) !== <span class="hljs-number">-1</span>
 }
 
-<span class="hljs-comment">// 🚀 you CAN use [1, 2, 3].includes(2) (if array.indexOf() is supported)</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">// 🚀 you CAN use [1, 2, 3].includes(2) (if array.indexOf() is supported)</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Tips</strong>: Extending prototypes is generally a bad practice as it leads to conflicts with someone else&rsquo;s code using the same name. Nevertheless, it is allowed to backport missing standard methods (as long as it strictly behaves the same way). Those backported methods are called <strong>polyfills</strong>. Also, the community shares npm package with ready to import polyfills, like the popular <a href="https://github.com/zloirock/core-js" target="_blank" rel="noreferrer noopener">core-js</a>.</p>
@@ -714,14 +714,14 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
       }
     ]
   }
-}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>You also need in import the babel utilties (transformed code uses them):</p>
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// add this at the beginning of index.js</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">'regenerator-runtime/runtime'</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'regenerator-runtime/runtime'</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercice 12</strong>: Import the required polyfills from <a href="https://github.com/zloirock/core-js" target="_blank" rel="noreferrer noopener">core-js</a> and <a href="https://github.com/github/fetch" target="_blank" rel="noreferrer noopener">whatwg-fetch</a> in <code>index.js</code>. Now, the app should work on IE 11.</p>

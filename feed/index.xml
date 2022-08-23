@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Mon, 24 Jan 2022 18:20:11 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 23 Aug 2022 16:32:10 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -99,13 +99,13 @@
   biller: Biller
   itemInvoices: ItemInvoice[]
   paymentDelayInDays: <span class="hljs-built_in">number</span>
-}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>In our case, the endpoint will receive a single payload with nested properties matching the above <code>Invoice</code> interface. Also, note that the JSON format encodes dates as strings. For example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
   <span class="hljs-attr">"reference"</span>: <span class="hljs-string">"2021-001"</span>,
   <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2021-12-01"</span>,
   <span class="hljs-attr">"paymentDelayInDays"</span>: <span class="hljs-number">30</span>,
@@ -141,7 +141,7 @@
       <span class="hljs-attr">"taxPercent"</span>: <span class="hljs-number">20</span>
     }
   ]
-}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Simple echo server</h4>
@@ -260,7 +260,7 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
     <span class="hljs-keyword">default</span>:
       <span class="hljs-keyword">return</span> reply.type(MIME_TYPES.HTML).send(<span class="hljs-string">'&lt;!doctype html&gt;&lt;html&gt;&lt;body&gt;Hello world&lt;/body&gt;&lt;/html&gt;'</span>)
   }
-})</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+})</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The core topic of this section is rendering the HTML template on the server side. There are plenty of ways:</p>
@@ -302,31 +302,31 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
 <p>A status code 400 notifies an invalid request. It is acceptable to send the failure&rsquo;s reason to the user. If the server provides an API consumed by developers, this is a welcome help for them.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
     <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">400</span>,
     <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Bad Request"</span>,
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"body should have required property 'hello'"</span>
-}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>But is it OK to serve this?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
     <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
     <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Unable to connect to database on root@localhost, with password authentication"</span>
-}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Or this?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
     <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
     <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Ambiguous column name \"id\"; SQL statement: SELECT * FROM exhibit JOIN exhibit ON (id = previous_id); [90059-176]"</span>
-}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Everything that is related to <code>Internal Server Error</code> (HTTP code 500) should never reach the end user (unless you are in development environment). But if you try yourself, you will notice fastify sends those errors in production mode (<code>NODE_ENV=production</code>)! As a web developer, I saw this on publicly routed servers!</p>
@@ -455,7 +455,7 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
   --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
                   report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
                   similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
-                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="u-mbs">You will extract IO-related code and plagiarism detection code in 2 distinct modules:</p>
@@ -512,7 +512,7 @@ Options:
                   similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
                                                          [number] [default: 0.9]
 
-Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="u-mbs">Tips:</p>
@@ -537,7 +537,7 @@ Missing required argument: inputFiles</code></div><small class="shcb-language" i
   <span class="hljs-built_in">console</span>.log(argv)
 }
 
-run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Once completed, the <code>argv</code>&lsquo;s type should be inferred as:</p>
@@ -548,7 +548,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
   outputFile: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>
   format: <span class="hljs-string">'json'</span> | <span class="hljs-string">'text'</span>
   clusterScore: <span class="hljs-built_in">number</span>
-}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h5><strong>List all files that match the glob expression from <code>--inputFiles</code></strong></h5>
@@ -596,7 +596,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
   <span class="hljs-string">'../samples/67.txt'</span>, <span class="hljs-string">'../samples/68.txt'</span>, <span class="hljs-string">'../samples/69.txt'</span>,
   <span class="hljs-string">'../samples/7.txt'</span>,  <span class="hljs-string">'../samples/70.txt'</span>, <span class="hljs-string">'../samples/71.txt'</span>,
   <span class="hljs-string">'../samples/8.txt'</span>,  <span class="hljs-string">'../samples/9.txt'</span>
-]</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+]</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h5><strong>Read each <code>inputFile</code> and put its content into an array</strong></h5>
@@ -606,7 +606,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
 <p>Each item of the array should contain both a way to locate original file (such a path) and, of course, the file content:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4><strong>Implement a function that finds clusters of similar submissions</strong></h4>
@@ -632,7 +632,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
   options: { clusterScore: <span class="hljs-built_in">number</span> }
 </span>): <span class="hljs-title">Sample</span>[][] </span>{
   <span class="hljs-keyword">return</span> []
-}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>You are encouraged to think this algorithm the way you want. It will not be graded.</p>
@@ -871,7 +871,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
     <span class="hljs-string">'eslint:recommended'</span>,
     <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,
     <span class="hljs-string">'plugin:@typescript-eslint/recommended-requiring-type-checking'</span>
-  ]</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+  ]</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Tips: you can disable/configure some rules of those sets.</p>
@@ -1046,7 +1046,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 <span class="hljs-quote">&gt; Please provide a link to the `istanbul` HTML coverage summary (or from a similar tool).</span>
 <span class="hljs-bullet">
 - </span>[ ] Do you run the test on a CD/CI, such as Github Action? <span class="hljs-strong">**[1 point]**</span>
-<span class="hljs-quote">&gt; Please provide a link to the latest test summary you have, hosted on Github Action or similar.</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Markdown</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">markdown</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-quote">&gt; Please provide a link to the latest test summary you have, hosted on Github Action or similar.</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Markdown</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">markdown</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Delivery date:</strong></p>
@@ -1061,7 +1061,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 		
 			</item>
 		<item>
-		<title>02. Vue: practical activity, part n°2 (for your information)</title>
+		<title>02. Vue: practical activity, part n°2</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
@@ -1070,15 +1070,15 @@ In your explanation, please provide links (file + line) to relevant parts of you
 		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3522</guid>
 
-					<description><![CDATA[<p>Learning outcomes Getting started with Oauth2, OpenID, etc. Understand the need for a state management in your app. Exploring various state management strategies. Discuss pros and cons of various state management patterns. The expected result At the end of the tutorial, the user will be able to login with its Microsoft account. The application will &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Vue: practical activity, part n°2 (for your information)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">02. Vue: practical activity, part n°2 (for your information)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>Learning outcomes Getting started with Oauth2, OpenID, etc. Understand the need for a state management layer in your app. Exploring various state management strategies. Discuss pros and cons of various state management patterns. Handle in-browser routing and discuss its performance concerns. Using route guards to prevent activation of some routes. The expected result At the &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Vue: practical activity, part n°2</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">02. Vue: practical activity, part n°2</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <h4>Learning outcomes</h4>
 
 
 
-<ul><li>Getting started with Oauth2, OpenID, etc.</li><li>Understand the need for a state management in your app.</li><li>Exploring various state management strategies.</li><li>Discuss pros and cons of various state management patterns.</li></ul>
+<ul><li>Getting started with Oauth2, OpenID, etc.</li><li>Understand the need for a state management layer in your app.</li><li>Exploring various state management strategies.</li><li>Discuss pros and cons of various state management patterns.</li><li>Handle in-browser routing and discuss its performance concerns.</li><li>Using route guards to prevent activation of some routes.</li></ul>
 
 
 
@@ -1086,11 +1086,11 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 
 
-<p>At the end of the tutorial, the user will be able to login with its Microsoft account. The application will fetch and display its identity (basically its id, email and name). The current user identity is something you need in the whole app, so you will explore and discuss various ways to manage this.</p>
+<p>At the end of the tutorial, the user will be able to login with its Microsoft account. The application will fetch and display its identity (basically its id, email and name). The current user identity is something you need in the whole app. You will explore various ways to achieve this.</p>
 
 
 
-<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> During this tutorial, you will only grant access to your basic profile (name and email). API secrets stay in your browser, except when calling the API of course. You can revoke permissions at any time in the confidentiality screen of your Microsoft account.</p>
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> A test microsoft account will be provided in session by your teacher, but you are free to use your own account. During this tutorial, you will only grant access to basic profile information (name and email). API secrets stay in your browser, except when calling the API of course. You can revoke permissions at any time in the confidentiality screen of the Microsoft account.</p>
 
 
 
@@ -1098,11 +1098,11 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 
 
-<p>In the continuation of the previous tutorial, the application will gain access to the Microsoft Graph API. This one give access to a large panel of microsoft&rsquo;s SaaS products, including Outlook.</p>
+<p>In the continuation of the previous tutorial, the application will gain access to the Microsoft Graph API. This one exposes a large panel of Microsoft&rsquo;s SaaS products, including Outlook.</p>
 
 
 
-<p>The <strong>Microsoft Graph API</strong> acts on the side of a logged-in user, that must grant permission to the application. The<strong> Oauth2 protocol </strong>is responsive to the authentification and collection user&rsquo;s confirmation before granting a set of permissions to the application. In the terminology of Oauth2, a permission is called a <strong>scope</strong>.</p>
+<p>The <strong>Microsoft Graph API</strong> acts on the side of a logged-in user, that must grant permission to the application. The<strong> Oauth2 protocol </strong>is responsible for authentication and collection of user&rsquo;s consent. In the terminology of Oauth2, a permission is called a <strong>scope</strong>. The application must explicitly declare which <strong>scopes</strong> it needs.</p>
 
 
 
@@ -1118,7 +1118,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 
 
-<p>Let&rsquo;s build a <code>SigninButton</code> responsive of retrieving an <strong>access token</strong> and the associated user identity. Microsoft provides a library making this process easier: <a href="https://www.npmjs.com/package/@azure/msal-browser" target="_blank" rel="noreferrer noopener">@azure/msal-browser</a>.</p>
+<p>Let&rsquo;s build a <code>SigninButton</code> responsible for retrieving an <strong>access token</strong> and the associated user identity. Microsoft provides a library making this process easier: <a href="https://www.npmjs.com/package/@azure/msal-browser" target="_blank" rel="noreferrer noopener">@azure/msal-browser</a>.</p>
 
 
 
@@ -1133,8 +1133,8 @@ In your explanation, please provide links (file + line) to relevant parts of you
 <p>From a security and maintainability perspective, you should never let secrets and configurations hardcoded in your code. Instead, extract them to a configuration file ignored by git. Even better, allow those settings to be different depending on the environment (ex. test, development, staging, production&#8230;). The Vue assets pipeline has a built-in feature for this: <a href="https://cli.vuejs.org/guide/mode-and-env.html" target="_blank" rel="noreferrer noopener">env variables</a>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.developent.local</span>
-VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.development.local</span>
+VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><i class="fas fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> Unfortunately, changes appyed to .env files cannot be watched by the cli. Each time, you must restart the building process (ex. npm run serve).</p>
@@ -1179,7 +1179,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
   <span class="hljs-keyword">const</span> authResult = <span class="hljs-keyword">await</span> msalInstance.loginPopup(requestedScopes)
   msalInstance.setActiveAccount(authResult.account)
   <span class="hljs-keyword">return</span> authResult.account
-}</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img loading="lazy" width="1060" height="836" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif" alt="" class="wp-image-3576"/></figure>
@@ -1206,7 +1206,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>The current user identity is typically something that should be shared across the whole application (aka. a global state). Any component may read it and a few one (the existing <code>SigninButton</code>, a potential <code>SignoutButton</code>&#8230;) needs to update it.</p>
+<p>The current user identity is typically something that should be shared across the whole application (aka. global state). Any component may read it and a few one (the existing <code>SigninButton</code>, a potential <code>SignoutButton</code>&#8230;) need to update it.</p>
 
 
 
@@ -1222,11 +1222,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>Before going further, read first <a href="https://v3.vuejs.org/guide/component-basics.html#base-example" target="_blank" rel="noreferrer noopener">Components Basics</a>, <a href="https://v3.vuejs.org/guide/component-props.html#prop-types" target="_blank" rel="noreferrer noopener">Props</a> and <a href="https://v3.vuejs.org/guide/component-custom-events.html" target="_blank" rel="noreferrer noopener">Custom Events</a>.</p>
+<p>Before going further, please read first <a href="https://v3.vuejs.org/guide/component-basics.html#base-example" target="_blank" rel="noreferrer noopener">Components Basics</a>, <a href="https://v3.vuejs.org/guide/component-props.html#prop-types" target="_blank" rel="noreferrer noopener">Props</a> and <a href="https://v3.vuejs.org/guide/component-custom-events.html" target="_blank" rel="noreferrer noopener">Custom Events</a>. The first proposed solution massively relies on props and events.</p>
 
 
 
-<p>The first solution massively uses props and events. The user object is stored at the root of the component tree (inside the <code>App</code> component). Any child that has to read the user object should receive it through props. If the child is nested, every component of the branch must pass the <code>user</code> prop down.</p>
+<p>The user object is stored at the root of the component tree (inside the <code>App</code> component). When the page loads, the <code>user</code> is <code>null</code> (user not yet logged-in). Any child component that has to read the user object should receive it through props. If the child is nested, every component of the branch must pass the <code>user</code> prop down.</p>
 
 
 
@@ -1234,7 +1234,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>Then, the user interacts with the <code>SigninButton</code>. Once <code>SigninButton</code> knows the user identity, it emits a custom event called <code>userChanged</code>. Events travel the component tree from bottom to top. Each parent component should handle or propagate the event (or it will be discarded). Eventually, the event reaches to root component <code>App</code>, which uses it to update its internal state. This triggers a new rendering and the updated identity travels again the tree down through props.</p>
+<p>Let&rsquo;s suppose now that the user interacts with the <code>SigninButton</code> and sign in. As soon as <code>SigninButton</code> knows the user identity, it emits a custom event called <code>userChanged</code>. Events travel the component tree from bottom to top. Each parent component should handle or propagate the event (or it will be discarded). Eventually, the event reaches the root component <code>App</code>, which consumes it to update its internal state. This triggers a new rendering and the updated identity travels again the tree down through props.</p>
 
 
 
@@ -1258,11 +1258,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="question"><strong>Question 3</strong>: Is it the best way of doing things? Why?</p>
+<p class="question"><strong>Question 3</strong>: While being a well-working solution, it suffers from maintainability issues. Please expose and discuss them.</p>
 
 
 
-<p><strong>Spoiler</strong>: Of course, not. In addition to the reason you may have already found, there is a performance penalty. Did you notice <code>BaseLayout</code> was rendered again because its props changed? But <code>BaseLayout</code> does not need the <code>user</code> props for itself. It just forwards it to children&#8230;</p>
+<p>In addition to the reason you may have already found, there is a performance penalty. Did you notice <code>BaseLayout</code> was rendered again because its props changed? But <code>BaseLayout</code> does not need the <code>user</code> props for itself. It just forwards it to children&#8230;</p>
 
 
 
@@ -1282,7 +1282,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>Actually, you provide the <code>user</code> objet to the <code>App</code> children, whatever how deep are the consumer components. But updating the value of <code>user</code> inside <code>App</code> still requires to manually propagate events through some component branches.</p>
+<p>Actually, you provide the <code>user</code> objet to the <code>App</code>&lsquo;s children, whatever how deep are the consumer components. But updating the value of <code>user</code> inside <code>App</code> still requires to manually propagate events through some component branches.</p>
 
 
 
@@ -1294,7 +1294,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>The third proposed solution is using a store library. With stores, your global state is both readable and writable anywhere in your application. The business logic related to data manipulation is extracted to those stores. One of those libraries, <a href="https://next.vuex.vuejs.org/#what-is-a-state-management-pattern" target="_blank" rel="noreferrer noopener">Vuex</a>, is specially crafted to work with Vue and its internals.</p>
+<p>The third proposed solution is using a store library. With stores, your global state is both readable and writable anywhere in your application. The business logic related to data manipulation is moved to those stores. One of those libraries, <a href="https://next.vuex.vuejs.org/#what-is-a-state-management-pattern" target="_blank" rel="noreferrer noopener">Vuex</a>, is specially crafted to work with Vue and its internals.</p>
 
 
 
@@ -1306,7 +1306,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p>But it is still revelant to explore Vuex from a pedagogical point of view. So let&rsquo;s give it a try for this tutorial series.</p>
+<p>However, it is still revelant to explore Vuex from a pedagogical point of view. So let&rsquo;s give it a try for this tutorial series.</p>
 
 
 
@@ -1318,7 +1318,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="question"><strong>Question 6</strong>: Imagine a developer in your team proposes to exclusively manage the state with stores. Therefore, it recommends not to rely on <code>props</code> and <code>provide</code> anymore. Would you accept this? An argued response is expected.</p>
+<p class="question"><strong>Question 6</strong>: Imagine a developer in your team suggests to exclusively manage the state with stores. Therefore, it recommends not to rely on <code>props</code> and <code>provide</code> anymore. Would you accept this? An argued answer is expected.</p>
 
 
 
@@ -1330,15 +1330,15 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td>/</td><td>Displays the <code>HomePage</code> component as it is currently defined.</td></tr><tr><td>/conversations</td><td>Displays the <code>ConversationsIndexPage</code> component that displays the more recent conversations inside the user&rsquo;s mailbox.</td></tr><tr><td>/conversations/:id</td><td>Displays the <code>ConversationShowPage</code> component that fetches and render the content of a given conversation (id retrived from the API).</td></tr></tbody></table><figcaption>Expected routes at the end of the tutorial</figcaption></figure>
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td>/</td><td>Displays the <code>HomePage</code> component as it is currently defined.</td></tr><tr><td>/conversations</td><td>Displays the <code>ConversationsIndexPage</code> component that displays the more recent conversations inside the user&rsquo;s mailbox.</td></tr><tr><td>/conversations/:id</td><td>Displays the <code>ConversationShowPage</code> component that fetches and renders the content of a given conversation (id retrieved from the API).</td></tr></tbody></table><figcaption>Expected routes at the end of the tutorial</figcaption></figure>
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, so vue-router v4 or higher.</p>
+<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+).</p>
 
 
 
-<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router in its own module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
+<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router inside its own ES module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
 
 
 
@@ -1350,7 +1350,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 9</strong>: You probably tested your routes by directly changing the URL. Now, you will add a link in the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. Its must use the <code>&lt;router-link /&gt;</code>.</p>
+<p class="exercice"><strong>Exercise 9</strong>: You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. It must use the <code>&lt;router-link /></code>.</p>
 
 
 
@@ -1370,16 +1370,20 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
+<p class="exercice">In a real-world app, I would require a UI feedback, so the user knows it was not allowed to access the previous URL and was redirected. While not being part of the tutorial, it is part of the project UX!</p>
+
+
+
 <p class="exercice"><strong>Exercise 11</strong>: Implement the <code>/conversations/:id</code> route. For now, the newly created <code>ConversationShowPage</code> component should access the id given in the URL and display it inside the template.</p>
 
 
 
-<p>At this step, the routing capabilities are fine. The next step would be to really fetch conversations from Outlook using the API and eventually display them in the UI. Unfortunately, we do not have anymore in-class session for that.</p>
+<p>At this step, the routing capabilities are fine. The next step would be to fetch conversations from Outlook using the API and eventually display them in the UI. Unfortunately, we do not have any more in-class session for that.</p>
 
 
 
-<p><strong>Tips</strong>: If you want to complet the tutorial yourself, you must ask another authorisation for the API. The scope <em><code>Mail.Read</code></em> is need to fetch mails (see <code>src/lib/microsoftGraph.js</code>).</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">02. Vue: practical activity, part n°2 (for your information)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p><strong>Tips</strong>: If you want to complete the tutorial yourself, you must ask another authorisation for the API. The scope <em><code>Mail.Read</code></em> is needed to fetch mails (see <code>src/lib/microsoftGraph.js</code>).</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">02. Vue: practical activity, part n°2</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -1462,7 +1466,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 npm install @vue/cli
 
 <span class="hljs-comment"># example of command to install the vue cli globally</span>
-npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>According to the <a href="https://cli.vuejs.org/guide/installation.html" target="_blank" rel="noreferrer noopener">docs</a>, the global installation is best suitable for Vue CLI.</p>
@@ -1561,7 +1565,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: create BaseHeader and BaseFooter »</p>
@@ -1584,7 +1588,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: create BaseLayout that uses slot API »</p>
@@ -1645,7 +1649,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-comment">/* css properties specific to the primary color */</span>
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#42b983</span>;
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, you just need to conditionally bind the CSS classes (<a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">explained here</a>).</p>
@@ -1661,7 +1665,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
   <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
   <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
-}</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, you need <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. In short, this is a conjugaison of <a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">style binding</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noreferrer noopener">CSS variables</a>, <a href="https://v3.vuejs.org/guide/computed.html" target="_blank" rel="noreferrer noopener">computed properties</a> and scoped styles.</p>
@@ -1733,7 +1737,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
     }
   }
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the <code>@click</code> event listener attached to the instance of <code>AsyncComponent</code> instance returns a Promise that waits for 2 seconds before resolving. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noreferrer noopener">You can create such a Promise using its constructor and a setTimeou</a>t. Also, please <a href="https://v3.vuejs.org/guide/events.html#method-event-handlers" target="_blank" rel="noreferrer noopener">write the event handler inside a dedicated method</a> since at is a bit complex.</p>
@@ -1805,11 +1809,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3194</guid>
 
-					<description><![CDATA[<p>Topic Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting and filtering &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. Vue.js project</span></a></p>
+					<description><![CDATA[<p>Topic (SE groups) Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. Vue.js project</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/project/">03. Vue.js project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<h4>Topic</h4>
+<h4>Topic (SE groups)</h4>
 
 
 
@@ -1821,11 +1825,19 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
+<h4>Topic (non-SE groups)</h4>
+
+
+
+<p>Check with your teachers for topic requirements. They may enforce a relevant topic according to your academic major.</p>
+
+
+
 <h4>The rules</h4>
 
 
 
-<ul><li>Can be done alone or in groups of 2 students.</li><li>Use Vue.js, Angular or React. You are free to use any library you want.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>I will check who commits, and when.</li><li>Document installation steps in README.md.</li><li>Produce a short demo video of your application in action.</li><li>Use API over HTTP (a public API, a mock server or your own backend).</li><li>Build various views (pages, modals&#8230;). At least 5 busy pages.</li><li>Setup various routes using vue-router or such a lib (ex. <code>/products/:productId</code>).</li><li><a href="https://blog.sonatype.com/open-source-attacks-on-the-rise-top-8-malicious-packages-found-in-npm" target="_blank" rel="noreferrer noopener">For your security</a>, do not install dependencies with <span class="has-inline-color has-medium-pink-color"><strong>less than 50 000 downloads per week</strong></span>.</li></ul>
+<ul><li>Can be done in groups of 4 students (3 exceptionally allowed).</li><li>Use Vue.js, Angular or React. You are free to use any library you want.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>Do not be surprised if I check who commits, and when&#8230;</li><li>Document installation steps in <code>README.md</code>.</li><li>Use API over HTTP or HTTPS (a public API, a mock server or your own backend).</li><li>Build various views (pages, modals&#8230;). At least 5 pages with valuable logic.</li><li>Set up various routes using vue-router or such a lib (ex. <code>/products/:productId</code>).</li><li><a href="https://blog.sonatype.com/open-source-attacks-on-the-rise-top-8-malicious-packages-found-in-npm" target="_blank" rel="noreferrer noopener">For your security</a>, do not install dependencies having <span class="has-inline-color has-medium-pink-color"><strong>fewer than 50 000 downloads per week</strong></span>. If you trust a dependency that does not meet my arbitrary expectation, please ask first (during class session) and record my acquaintance in your <code>README</code>.</li></ul>
 
 
 
@@ -1833,7 +1845,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p>I will follow steps in your README to build and run your project. For simple front-end projects, it could be really short: (ex. git clone, npm install&#8230;).</p>
+<p>Describe the steps in your README to build and run your project. For simple front-end projects, it could be really short: (ex. git clone, npm install&#8230;).</p>
 
 
 
@@ -1841,15 +1853,19 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<h4>Delivery (for groups G3, G4 and G5)</h4>
+<h4>Delivery</h4>
 
 
 
-<p>Your git repository is your delivery. Just share read-only access with me if the repository is private (my Github username is <code>TruffeCendree</code>). 2 deliveries are planned:</p>
+<p>Your git repository is your main delivery. Just share read-only access with your teacher if the repository is private.</p>
 
 
 
-<ul><li><strong>At least one week before any in-class session</strong>, you can submit your work-in-progress for a ungraduated optional review. The number of projects I can review in a short time is of course limited, so please do not wait the last session.</li><li><strong>On Friday, November 7 at 23h59 </strong>for a final review. Code to be graded must be on your master branch.</li></ul>
+<ul><li>For SE groups, share your private repository with <code>TruffeCendree</code>.</li><li>For other groups: information not yet available.</li></ul>
+
+
+
+<p>The code must be available at least 2 hours before the oral presentation, which occurs during the last class session.</p>
 
 
 
@@ -1857,7 +1873,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded by reviewing your demonstration video.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs&#8230;<br><em>You will receive a detailled code review report.</em></td><td>13 points</td></tr></tbody></table></figure>
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded based on your oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs, challenges&#8230;<br><em>Graded based on the source code on git master/main branch</em></td><td>13 points</td></tr></tbody></table></figure>
 
 
 
@@ -2088,13 +2104,13 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
   <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+}</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
 
 
 
 <div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
