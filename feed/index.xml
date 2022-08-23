@@ -20,678 +20,11 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.7.4</generator>
 	<item>
-		<title>02. Invoice PDF generation HTTP API (practical activity)</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Sun, 05 Dec 2021 15:19:24 +0000</pubDate>
-				<category><![CDATA[04. Backend]]></category>
-		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=4225</guid>
-
-					<description><![CDATA[<p>Learning outcomes Build a simple HTTP server using fastify. Validate inputs and serialise payloads using JSON schemas. Generate TypeScript interfaces from JSON schemas. Serve text/html, application/json and application/pdf content-types. Write server-side statically checkable templates (thanks to JSX). Generate high quality PDF using puppeteer. Work with promises, async error handling, error serialisation, etc. Write specs, compute &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Invoice PDF generation HTTP API (practical activity)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/">02. Invoice PDF generation HTTP API (practical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>Learning outcomes</h4>
-
-
-
-<ul><li>Build a simple HTTP server using fastify.</li><li>Validate inputs and serialise payloads using JSON schemas.</li><li>Generate TypeScript interfaces from JSON schemas.</li><li>Serve <code>text/html</code>,  <code>application/json</code> and <code>application/pdf</code> content-types.</li><li>Write server-side statically checkable templates (thanks to JSX).</li><li>Generate high quality PDF using puppeteer.</li><li>Work with promises, async error handling, error serialisation, etc.</li><li>Write specs, compute a test coverage report.</li><li>Generate OpenAPI documentation (fastify-swagger).</li></ul>
-
-
-
-<h4>Context</h4>
-
-
-
-<p>Necessarily, companies have to produce invoices and other kinds of formal documents.  Because this is error-prone and time consuming, they may establish automated workflows. Through this tutorial, you will implement an invoice PDF renderer API.</p>
-
-
-
-<p>At the end of the tutorial, no persistence is expected. You do not have to implement any database connection or session management. All is about core fastify features, PDF generation and TypeScript support.</p>
-
-
-
-<p>A single endpoint is expected. It accepts a JSON payload as POST body and may return a JSON response, an HTML rendered preview or a PDF blob depending on the <code>Accept</code> header.</p>
-
-
-
-<h4>Data schema</h4>
-
-
-
-<p>In a real-world application, the data could be formalised as multiple entities: <code>Address</code>, <code>Customer</code>, <code>Biller</code>, <code>ItemInvoice</code> and finally <code>Invoice</code>.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Address {
-  street: <span class="hljs-built_in">string</span>
-  city: <span class="hljs-built_in">string</span>
-  zipcode: <span class="hljs-built_in">string</span>
-  country: <span class="hljs-built_in">string</span>
-  state: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>
-  additional: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>
-}
-
-<span class="hljs-keyword">interface</span> Customer {
-  name: <span class="hljs-built_in">string</span>
-  address: Address
-}
-
-<span class="hljs-keyword">interface</span> Biller {
-  address: Address
-  phoneNumber: <span class="hljs-built_in">string</span>
-  email: <span class="hljs-built_in">string</span>
-  invoiceLegalFooter: <span class="hljs-built_in">string</span>
-}
-
-<span class="hljs-keyword">interface</span> ItemInvoice {
-  description: <span class="hljs-built_in">string</span>
-  quantity: <span class="hljs-built_in">number</span>
-  unitPriceWithoutTax: <span class="hljs-built_in">number</span>
-  taxPercent: <span class="hljs-built_in">number</span>
-}
-
-<span class="hljs-keyword">interface</span> Invoice {
-  reference: <span class="hljs-built_in">string</span>
-  date: <span class="hljs-built_in">Date</span>
-  customer: Customer
-  biller: Biller
-  itemInvoices: ItemInvoice[]
-  paymentDelayInDays: <span class="hljs-built_in">number</span>
-}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>In our case, the endpoint will receive a single payload with nested properties matching the above <code>Invoice</code> interface. Also, note that the JSON format encodes dates as strings. For example:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
-  <span class="hljs-attr">"reference"</span>: <span class="hljs-string">"2021-001"</span>,
-  <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2021-12-01"</span>,
-  <span class="hljs-attr">"paymentDelayInDays"</span>: <span class="hljs-number">30</span>,
-  <span class="hljs-attr">"customer"</span>: {
-    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Andrew SMITH"</span>,
-    <span class="hljs-attr">"address"</span>: {
-      <span class="hljs-attr">"street"</span>: <span class="hljs-string">"1111 Woodvale Drive"</span>,
-      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Rodney"</span>,
-      <span class="hljs-attr">"zipcode"</span>: <span class="hljs-string">"N0L 2C0"</span>,
-      <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Ontario"</span>,
-      <span class="hljs-attr">"country"</span>: <span class="hljs-string">"Canada"</span>,
-      <span class="hljs-attr">"additional"</span>: <span class="hljs-string">"Appartement B110"</span>
-    }
-  },
-  <span class="hljs-attr">"biller"</span>: {
-    <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"+33123456789"</span>,
-    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"seller@myshop.com"</span>,
-    <span class="hljs-attr">"invoiceLegalFooter"</span>: <span class="hljs-string">"IBAN to pay: FRXX XXXX XXXX XXXX XXXX\n SIRET: XXXXXXXXXXXX, TVA number: XXXXXXXXXXXXXXXX"</span>,
-    <span class="hljs-attr">"address"</span>: {
-      <span class="hljs-attr">"street"</span>: <span class="hljs-string">"92 rue du Clair Bocage"</span>,
-      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"LA ROCHE-SUR-YON"</span>,
-      <span class="hljs-attr">"zipcode"</span>: <span class="hljs-string">"85000"</span>,
-      <span class="hljs-attr">"state"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"country"</span>: <span class="hljs-string">"France"</span>,
-      <span class="hljs-attr">"additional"</span>: <span class="hljs-literal">null</span>
-    }
-  },
-  <span class="hljs-attr">"itemInvoices"</span>: [
-    {
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"APhone Z001"</span>,
-      <span class="hljs-attr">"quantity"</span>: <span class="hljs-number">1</span>,
-      <span class="hljs-attr">"unitPriceWithoutTax"</span>: <span class="hljs-number">300</span>,
-      <span class="hljs-attr">"taxPercent"</span>: <span class="hljs-number">20</span>
-    }
-  ]
-}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h4>Simple echo server</h4>
-
-
-<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
-  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
-<div>
-  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/node-typescript-template.zip">Download the template for node + typescript projects (source code)</a>
-</div>
-</div>
-
-
-
-<div class="wp-block-columns">
-<div class="wp-block-column exercice">
-<p id="exercice"><strong>Exercise 1</strong>: Now the context is given, please create a simple HTTP server with <a href="https://www.fastify.io/" target="_blank" rel="noreferrer noopener">fastify</a>, that:</p>
-
-
-
-<ul class="u-mlm u-mbs"><li>implements a single route (POST: /invoices);</li><li>accepts any JSON entity on that endpoint;</li><li>responds with the input JSON (like an echo server).</li></ul>
-</div>
-</div>
-
-
-
-<p class="exercice"><strong>Exercise 2</strong>: Then, write a JSON schema that matches the invoice entity (as described previously). There are plenty of examples <a href="https://json-schema.org/learn/miscellaneous-examples.html" target="_blank" rel="noreferrer noopener">here</a>. In addition, you can manually test your schema against a payload <a href="https://www.jsonschemavalidator.net/" target="_blank" rel="noreferrer noopener">here</a>.</p>
-
-
-
-<p class="exercice"><strong>Exercise 3</strong>: Finally, use that schema as part of input validation <strong>and</strong> output serialisation (<a href="https://www.fastify.io/docs/latest/Validation-and-Serialization/" target="_blank" rel="noreferrer noopener">see the fastify&rsquo;s documentation</a>).</p>
-
-
-
-<p>The JSON schema validates inputs at runtime (it is a core feature of fastify). But Typescript cannot infer the type by its own. You could of course write static type definitions&#8230; But they may become obsolete. Anyway, code duplication is mostly always a bad idea.</p>
-
-
-
-<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> Instead, I will show in class how to generate typescript interfaces from JSON schemas using <a href="https://www.npmjs.com/package/json-schema-to-typescript" target="_blank" rel="noreferrer noopener">json-schema-to-typescript</a>.</p>
-
-
-
-<h4>Hand-testing the fastify&rsquo;s JSON-schema algorithms.</h4>
-
-
-
-<p>Since input validation and output serialisation are critical points for the application security, we must understand how it behaves on « edge » cases (when things do not follow the nominal case).</p>
-
-
-
-<p>Please answer the above questions in your <code>README.md</code>.</p>
-
-
-
-<div class="wp-block-columns">
-<div class="wp-block-column question">
-<p><strong>Question 1</strong>: About input validation:</p>
-
-
-
-<ul class="u-mlm u-mbs"><li>How fastify processes unknown properties?</li><li>How fastify behaves if a known property is missing in the payload?</li><li>What happens if an input property is <code>null</code>?</li></ul>
-</div>
-</div>
-
-
-
-<div class="wp-block-columns">
-<div class="wp-block-column question">
-<p><strong>Question 2</strong>: About response serialisation:</p>
-
-
-
-<ul class="u-mlm u-mbs"><li>How fastify processes unknown properties?</li><li>How fastify behaves if a known property is missing in the payload?</li></ul>
-</div>
-</div>
-
-
-
-<p class="question"><strong>Question 3</strong>: Is input validation just a matter of types and schemae?</p>
-
-
-
-<h4>Setting up tests with fastify</h4>
-
-
-
-<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> We will set up together a first automated spec for this endpoint. Starting from now, you are strongly encouraged to systematically write specs for any further work during this module.</p>
-
-
-
-<p>Useful resources:&nbsp;<a href="https://istanbul.js.org/" target="_blank" rel="noreferrer noopener">istanbul</a>,&nbsp;<a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a>,&nbsp;<a href="https://www.chaijs.com/" target="_blank" rel="noreferrer noopener">chai</a>,&nbsp;<a href="https://www.npmjs.com/package/faker" target="_blank" rel="noreferrer noopener">faker</a>, <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank" rel="noreferrer noopener">debugging</a>…</p>
-
-
-
-<h4>Conditional response format</h4>
-
-
-
-<p>Depending on the mimetype provided in the request <code>Accept</code> header, the server may respond with another type of content. Currently, whatever the value of this header, your current implementation outputs a JSON payload.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">enum</span> MIME_TYPES {
-  HTML = <span class="hljs-string">'text/html'</span>,
-  <span class="hljs-built_in">JSON</span> = <span class="hljs-string">'application/json'</span>,
-  PDF = <span class="hljs-string">'application/pdf'</span>
-}
-
-instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, reply</span>) </span>{
-  <span class="hljs-keyword">switch</span> (request.headers.accept) {
-    <span class="hljs-keyword">case</span> MIME_TYPES.JSON:
-      <span class="hljs-keyword">return</span> request.body;
-
-    <span class="hljs-keyword">case</span> MIME_TYPES.PDF:
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'PDF are not yet implemented'</span>);
-    
-    <span class="hljs-keyword">default</span>:
-      <span class="hljs-keyword">return</span> reply.type(MIME_TYPES.HTML).send(<span class="hljs-string">'&lt;!doctype html&gt;&lt;html&gt;&lt;body&gt;Hello world&lt;/body&gt;&lt;/html&gt;'</span>)
-  }
-})</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>The core topic of this section is rendering the HTML template on the server side. There are plenty of ways:</p>
-
-
-
-<ul><li>Working with raw string concatenation: zero-dependency solution, with readability and maintainability issues. It can easily lead to XSS injections.</li><li>Working with a template rendering engine, such as <a href="https://ejs.co/" target="_blank" rel="noreferrer noopener">ejs</a>: robust solution with built-in HTML special character escapement, preventing most (but not all) XSS. That template engine was built for JS, so is basically out of the scope of TypeScript!</li><li>Working with JSX (or more exactly TSX in case of TypeScript). This is a way to write a kind of HTML in JavaScript. Plenty of tools can render the HTML from a JSX source. One of them is <a href="https://fr.reactjs.org/docs/react-dom-server.html" target="_blank" rel="noreferrer noopener">react-dom/server</a>. All TypeScript features work natively in .tsx files.</li></ul>
-
-
-
-<p class="exercice"><strong>Exercise 4</strong>: Render the invoice as an HTML page if the request asks for HTML format. JSX should be preferred because of static type checks. But it is also more complex to start with. Ejs is also a valid option to fulfil the exercise at time. For the review, please include a screenshot of the rendered page: the feature coverage, the visual result and the code quality* all matter.</p>
-
-
-
-<p>* proper use of typescript checking, addition of specs, etc.</p>
-
-
-
-<h4>Render as PDF</h4>
-
-
-
-<p class="exercice"><strong>Exercise 5</strong>: Using Google <a href="https://www.npmjs.com/package/puppeteer" target="_blank" rel="noreferrer noopener">puppeteer</a> (a headless chromium instance with a nodejs driver), render your HTML payload as PDF. Unlike previous content types, a PDF is a binary file. So you have to deal with binary <a href="https://nodejs.org/api/buffer.html" target="_blank" rel="noreferrer noopener">Buffer</a>. In addition, puppeteer uses promises. Add a spec for this case.</p>
-
-
-
-<p class="question"><strong>Question 4</strong>: Why should you disable JavaScript in the headless browser instance? And, of course, disable it!</p>
-
-
-
-<h4>Safer error handling</h4>
-
-
-
-<p>As for the final project, we will take care of the security of error handling. Web applications should not leak sensitive information. One of the attack vectors is error serialisation when the app sends internal errors messages.</p>
-
-
-
-<p>A status code 400 notifies an invalid request. It is acceptable to send the failure&rsquo;s reason to the user. If the server provides an API consumed by developers, this is a welcome help for them.</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
-    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">400</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Bad Request"</span>,
-    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"body should have required property 'hello'"</span>
-}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>But is it OK to serve this?</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
-    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
-    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Unable to connect to database on root@localhost, with password authentication"</span>
-}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Or this?</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
-    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
-    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Ambiguous column name \"id\"; SQL statement: SELECT * FROM exhibit JOIN exhibit ON (id = previous_id); [90059-176]"</span>
-}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Everything that is related to <code>Internal Server Error</code> (HTTP code 500) should never reach the end user (unless you are in development environment). But if you try yourself, you will notice fastify sends those errors in production mode (<code>NODE_ENV=production</code>)! As a web developer, I saw this on publicly routed servers!</p>
-
-
-
-<p>This is because of the default <a href="https://github.com/fastify/fastify/blob/1e94070992d911a81a26597c25f2d35ae65f3d91/fastify.js#L74" target="_blank" rel="noreferrer noopener">error handler (the link redirects to fastify source code)</a> . You should override the handler globally using <a href="https://www.fastify.io/docs/latest/Server/#seterrorhandler" target="_blank" rel="noreferrer noopener">setErrorHandler</a>.</p>
-
-
-
-<p class="exercice"><strong>Exercise 6</strong>: override the default error handler, with security in mind.</p>
-
-
-
-<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> Then I will show you how to use the error handler and Promise rejection to cover various failures scenario in a DRY* way (from invalid phone numbers validation to illegal accesses&#8230;). Thanks to that, you will say goodbye to verbose and overcomplicated errors management in HTTP controllers.</p>
-
-
-
-<p>* DRY = Don&rsquo;t Repeat Yourself (and I would like to not repeat this anymore 🙂)</p>
-
-
-
-<p class="exercice"><strong>Exercise 7</strong>: Accoding to my previous demonstration, validate that the phone number is valid (using <a href="https://www.npmjs.com/package/libphonenumber-js" target="_blank" rel="noreferrer noopener">libphonenumber-js</a>), that emails match <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email#basic_validation" target="_blank" rel="noreferrer noopener">HTML5 official regex</a> and that all prices are positive. Else, throw an error the message of which is sent to the client. The HTTP status code should be 422 in case of rejection.</p>
-
-
-
-<p>In facts, the previous validations should not be in the controller&#8230; but moved inside models. This is much cleaner, DRY and consistent across the app (checked every time an entity is persisted, whatever the code calling it). But we do not have models yet, so that is for another day!</p>
-
-
-
-<p><strong>Bonus</strong>: If we have enough time. I will show how to write unit tests using stubs (from the <a href="https://sinonjs.org/releases/latest/stubs/" target="_blank" rel="noreferrer noopener">sinon</a> package) against the custom error handler.</p>
-
-
-
-<h4>Swagger documentation</h4>
-
-
-
-<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> <a href="https://github.com/fastify/fastify-swagger" target="_blank" rel="noreferrer noopener">Fastify-swagger</a> automatically extracts the JSON-schema you provided for your routes, then produces an OpenAPI document. The ore information you provide in your JSON-schema (like description of each field), the better is the resulting documentation. Try it yourself if you completed the tutorial before your teammates.</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/">02. Invoice PDF generation HTTP API (practical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>01. Simple plagiarism detection CLI (pratical activity)</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Wed, 10 Nov 2021 20:13:12 +0000</pubDate>
-				<category><![CDATA[04. Backend]]></category>
-		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=4051</guid>
-
-					<description><![CDATA[<p>Learning outcomes Parsing command line with the popular yargs module. Working with external module definitions, such as @types/yargs. Basic filesystem manipulations (CRUD operations of files and folders). Getting familiar with the glob filepath matching expressions and library. Working with Promise, util.promisify(), async, await, etc. Getting starting with natural language manipulation (see the natural module). Packaging &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Simple plagiarism detection CLI (pratical activity)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">01. Simple plagiarism detection CLI (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>Learning outcomes</h4>
-
-
-
-<ul><li>Parsing command line with the popular <code>yargs</code> module.</li><li>Working with external module definitions, such as <code>@types/yargs</code>.</li><li>Basic filesystem manipulations (CRUD operations of files and folders).</li><li>Getting familiar with the <code>glob</code> filepath matching expressions and library.</li><li>Working with <code>Promise</code>, <code>util.promisify()</code>, <code>async</code>, <code>await</code>, etc.</li><li>Getting starting with natural language manipulation (see the <code>natural</code> module).</li><li>Packaging a Typescript library to be installable with <code>npm</code>.</li><li>Writing mocha specs against the library.</li></ul>
-
-
-
-<h4>Context</h4>
-
-
-
-<p>While I was personally reviewing submissions from a degraded examination context, I suspected fraudulent behaviours. Various tools exist to detect plagiarism, but are highly expensive. I expected a basic analysis to catch the most obvious cases easily.</p>
-
-
-
-<p class="u-mbs">Such tools generally provide 2 primary features:</p>
-
-
-
-<ol class="u-mlm"><li>comparing together various submissions to the same exercise;</li><li>comparing a single submission to online contents.</li></ol>
-
-
-
-<p>Point (2.) implies using expensive search API such as Google (max 100 free queries a day) or Bind (max 1000 free queries a month).</p>
-
-
-
-<p>This adds extra layer of complexity, caching strategy and performance concerns. For those reasons, you will <strong>exclusively focus on point (1.)</strong>.</p>
-
-
-
-<h4>Provided assets</h4>
-
-
-<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
-  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
-<div>
-  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/6-samples.zip">Download the submission samples (ZIP of TXT files)</a>
-</div>
-</div>
-
-
-<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
-  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
-<div>
-  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/node-typescript-template.zip">Download the template for node + typescript projects (source code)</a>
-</div>
-</div>
-
-
-
-<h4>Specifications</h4>
-
-
-
-<p>The CLI software should accept the following command-line options:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">Options:
-  --inputFiles    Glob expression to files containing answers. Each file
-                  contains a single text to compare to each others. It assumes
-                  all texts refer to the same question.      [string] [required]
-  --outputFile    Path to the output file. If missing, output to console.
-                                                                        [string]
-  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
-  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
-                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
-                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
-                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="u-mbs">You will extract IO-related code and plagiarism detection code in 2 distinct modules:</p>
-
-
-
-<ul><li><strong>IO-related code</strong>: includes argument parsing, files reading, outputs (both to console and filesystem);</li><li><strong>Plagiarism detection code</strong>: the function accepting a set of submissions and returns cluster metered with matching score.</li></ul>
-
-
-
-<p>Later on, the <strong>Plagiarism detection code</strong> will become a self-packaged module (similar to those on <code>npm registry</code>, but not released).</p>
-
-
-
-<p>This allows reusing the library anywhere and replace the IO-presentation layer by a webserver (💲 think about an anti-plagiarism SaaS API 💲).</p>
-
-
-
-<p>Side note: As for now, the <strong>Plagiarism detection code</strong> only performs on in-memory data, especially string transformations. This is CPU-bound task.</p>
-
-
-
-<h4><strong>PoC Implementation (step by step)</strong></h4>
-
-
-
-<p>Despite a lot of topics are covered in this tutorial, the resulting codebase (excluding specs) could be fewer than 100 lines of code.</p>
-
-
-
-<p>Before getting deeper in the code, let&rsquo;s try some experiments. The final delivery will just be a smart assembly of all those experiments.</p>
-
-
-
-<h5><strong>Parse options, provide their descriptions and requireness.</strong></h5>
-
-
-
-<p>Calling your script without mandatory options should print the documentation:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index.js
-Options:
-  --<span class="hljs-built_in">help</span>          Show <span class="hljs-built_in">help</span>                                            [boolean]
-  --version       Show version number                                  [boolean]
-  --inputFiles    Glob expression to files containing answers. Each file
-                  contains a single text to compare to each others. It assumes
-                  all texts refer to the same question.      [string] [required]
-  --outputFile    Path to the output file. If missing, output to console.
-                                                                        [string]
-  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
-  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
-                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
-                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
-                                                         [number] [default: 0.9]
-
-Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p class="u-mbs">Tips:</p>
-
-
-
-<ul><li>Note that <code>yargs(...).parse()</code>&nbsp;returns a Promise. Unless you use <a href="https://dev.to/mikeesto/top-level-await-in-node-2jad" target="_blank" rel="noreferrer noopener">node 14.8.0</a>+, you cannot <code>await</code> a Promise outside an <code>async</code> function (ex. in a&nbsp;<a href="https://stackabuse.com/javascripts-immediately-invoked-function-expressions">IIFE</a>).</li><li>Let&rsquo;s&nbsp;<code>yargs</code>&nbsp;infer&nbsp;<code>format: 'json' | 'text'</code>&nbsp;for you. In facts,&nbsp;<code>yargs</code>&nbsp;type definition infers attributes&rsquo; names and types. It even supports&nbsp;<a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types" target="_blank" rel="noreferrer noopener">literal union</a>, as shown in this&nbsp;<a href="https://github.com/yargs/yargs/blob/main/docs/typescript.md#more-specific-typing-for-choices" target="_blank" rel="noreferrer noopener">example</a>.</li><li>Use the&nbsp;<code>demandOption</code> method to require an option&nbsp;(and not&nbsp;<code>requiresArg</code>, that is for another purpose).</li><li>You do&nbsp;<strong>NOT</strong>&nbsp;need the&nbsp;<code>any</code>&nbsp;type, so do not use it.</li></ul>
-
-
-
-<p>Here the template to help you:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> yargs <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs'</span>
-<span class="hljs-keyword">import</span> { hideBin } <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs/helpers'</span>
-
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> argv = <span class="hljs-keyword">await</span> yargs(hideBin(process.argv))
-  .option(<span class="hljs-string">'inputFiles'</span>, { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span>, demandOption: <span class="hljs-literal">true</span> <span class="hljs-comment">/* ... */</span> })
-  .parse()
-
-  <span class="hljs-built_in">console</span>.log(argv)
-}
-
-run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>Once completed, the <code>argv</code>&lsquo;s type should be inferred as:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Argv {
-  inputFiles: <span class="hljs-built_in">string</span>
-  outputFile: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>
-  format: <span class="hljs-string">'json'</span> | <span class="hljs-string">'text'</span>
-  clusterScore: <span class="hljs-built_in">number</span>
-}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h5><strong>List all files that match the glob expression from <code>--inputFiles</code></strong></h5>
-
-
-
-<p><strong>Tips</strong>: Use the&nbsp;<code>glob</code>&nbsp;module. <code>glob(cb)</code>&nbsp;is callback-based asynchronous function. Promise are easier to maintain. The  built-in&nbsp;<code>util</code>&nbsp;module provides a very useful helper called&nbsp;<code>util.promisify(callbackBasedFunc)</code>. See the&nbsp;<a href="https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original" target="_blank" rel="noreferrer noopener">documentation</a>.</p>
-
-
-
-<p>Example of valid glob expressions:</p>
-
-
-
-<ul><li><code>./path/to/file.txt</code>&nbsp;matches only a single file.</li><li><code>./path/to/*.txt</code>&nbsp;matches&nbsp;<code>./path/to/file.txt</code>, but not&nbsp;<code>./path/to/deep/file.txt</code>.</li><li><code>./path/to/**/*.txt</code> matches&nbsp;<code>./path/to/file.txt</code> and <code>./path/to/deep/file.txt</code>.</li></ul>
-
-
-
-<p>The expected output:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index --inputFiles=<span class="hljs-string">'../samples/*.txt'</span>
-[
-  <span class="hljs-string">'../samples/1.txt'</span>,  <span class="hljs-string">'../samples/10.txt'</span>, <span class="hljs-string">'../samples/11.txt'</span>,
-  <span class="hljs-string">'../samples/12.txt'</span>, <span class="hljs-string">'../samples/13.txt'</span>, <span class="hljs-string">'../samples/14.txt'</span>,
-  <span class="hljs-string">'../samples/15.txt'</span>, <span class="hljs-string">'../samples/16.txt'</span>, <span class="hljs-string">'../samples/17.txt'</span>,
-  <span class="hljs-string">'../samples/18.txt'</span>, <span class="hljs-string">'../samples/19.txt'</span>, <span class="hljs-string">'../samples/2.txt'</span>,
-  <span class="hljs-string">'../samples/20.txt'</span>, <span class="hljs-string">'../samples/21.txt'</span>, <span class="hljs-string">'../samples/22.txt'</span>,
-  <span class="hljs-string">'../samples/23.txt'</span>, <span class="hljs-string">'../samples/24.txt'</span>, <span class="hljs-string">'../samples/25.txt'</span>,
-  <span class="hljs-string">'../samples/26.txt'</span>, <span class="hljs-string">'../samples/27.txt'</span>, <span class="hljs-string">'../samples/28.txt'</span>,
-  <span class="hljs-string">'../samples/29.txt'</span>, <span class="hljs-string">'../samples/3.txt'</span>,  <span class="hljs-string">'../samples/30.txt'</span>,
-  <span class="hljs-string">'../samples/31.txt'</span>, <span class="hljs-string">'../samples/32.txt'</span>, <span class="hljs-string">'../samples/33.txt'</span>,
-  <span class="hljs-string">'../samples/34.txt'</span>, <span class="hljs-string">'../samples/35.txt'</span>, <span class="hljs-string">'../samples/36.txt'</span>,
-  <span class="hljs-string">'../samples/37.txt'</span>, <span class="hljs-string">'../samples/38.txt'</span>, <span class="hljs-string">'../samples/39.txt'</span>,
-  <span class="hljs-string">'../samples/4.txt'</span>,  <span class="hljs-string">'../samples/40.txt'</span>, <span class="hljs-string">'../samples/41.txt'</span>,
-  <span class="hljs-string">'../samples/42.txt'</span>, <span class="hljs-string">'../samples/43.txt'</span>, <span class="hljs-string">'../samples/44.txt'</span>,
-  <span class="hljs-string">'../samples/45.txt'</span>, <span class="hljs-string">'../samples/46.txt'</span>, <span class="hljs-string">'../samples/47.txt'</span>,
-  <span class="hljs-string">'../samples/48.txt'</span>, <span class="hljs-string">'../samples/49.txt'</span>, <span class="hljs-string">'../samples/5.txt'</span>,
-  <span class="hljs-string">'../samples/50.txt'</span>, <span class="hljs-string">'../samples/51.txt'</span>, <span class="hljs-string">'../samples/52.txt'</span>,
-  <span class="hljs-string">'../samples/53.txt'</span>, <span class="hljs-string">'../samples/54.txt'</span>, <span class="hljs-string">'../samples/55.txt'</span>,
-  <span class="hljs-string">'../samples/56.txt'</span>, <span class="hljs-string">'../samples/57.txt'</span>, <span class="hljs-string">'../samples/58.txt'</span>,
-  <span class="hljs-string">'../samples/59.txt'</span>, <span class="hljs-string">'../samples/6.txt'</span>,  <span class="hljs-string">'../samples/60.txt'</span>,
-  <span class="hljs-string">'../samples/61.txt'</span>, <span class="hljs-string">'../samples/62.txt'</span>, <span class="hljs-string">'../samples/63.txt'</span>,
-  <span class="hljs-string">'../samples/64.txt'</span>, <span class="hljs-string">'../samples/65.txt'</span>, <span class="hljs-string">'../samples/66.txt'</span>,
-  <span class="hljs-string">'../samples/67.txt'</span>, <span class="hljs-string">'../samples/68.txt'</span>, <span class="hljs-string">'../samples/69.txt'</span>,
-  <span class="hljs-string">'../samples/7.txt'</span>,  <span class="hljs-string">'../samples/70.txt'</span>, <span class="hljs-string">'../samples/71.txt'</span>,
-  <span class="hljs-string">'../samples/8.txt'</span>,  <span class="hljs-string">'../samples/9.txt'</span>
-]</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h5><strong>Read each <code>inputFile</code> and put its content into an array</strong></h5>
-
-
-
-<p>Each item of the array should contain both a way to locate original file (such a path) and, of course, the file content:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<h4><strong>Implement a function that finds clusters of similar submissions</strong></h4>
-
-
-
-<p>This function must be implemented into its own module, with that prototype:</p>
-
-
-<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Sample {
-  content: <span class="hljs-built_in">string</span>
-  path: <span class="hljs-built_in">string</span>
-}
-
-<span class="hljs-comment">/**
- * Groups samples into cluster depending on how similar they are.
- * If a sample not far from all other samples, it is not returned.
- * A cluster is basically an array of samples, and this function returns a array of clusters.
- * Each sample has both an identifier (ex. the path to the original file) and a content.
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computePlagiarismClusters</span> (<span class="hljs-params">
-  samples: Sample[],
-  options: { clusterScore: <span class="hljs-built_in">number</span> }
-</span>): <span class="hljs-title">Sample</span>[][] </span>{
-  <span class="hljs-keyword">return</span> []
-}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
-
-
-<p>You are encouraged to think this algorithm the way you want. It will not be graded.</p>
-
-
-
-<p>If you do not know how to start, you can look the following naive, but yet efficient algorithm. It heavily relies on&nbsp;<code>natural</code>&nbsp;package features.</p>
-
-
-
-<ol><li>Install the&nbsp;<code>natural</code>&nbsp;package, which is natural language manipulation library;</li><li>Split input texts into arrays of tokens&nbsp;<a href="https://naturalnode.github.io/natural/Tokenizers.html">using Tokenizers</a>;</li><li>Reduce each token to its&nbsp;<a href="https://en.wikipedia.org/wiki/Word_stem">word stem</a>&nbsp;through&nbsp;<a href="http://naturalnode.github.io/natural/stemmers.html">Stemmers</a>;</li><li>Compute similarity score of 2 cleaned inputs based on&nbsp;<a href="http://naturalnode.github.io/natural/string_distance.html">Levenshtein distance</a>.</li><li>Group in clusters detected fraudulent samples using the previous scoring method (remember a cluster may contain more than 2 samples).</li></ol>
-
-
-
-<figure class="wp-block-table"><table><thead><tr><th>&#8211;clusterScore</th><th>Nb of discovered clusters</th><th>Files</th></tr></thead><tbody><tr><td>0.9</td><td>1</td><td>&#8211; 5.txt, 63.txt, 69.txt</td></tr><tr><td>0.8</td><td>2</td><td>&#8211; 5.txt, 63.txt, 69.txt<br>&#8211; 18.txt, 32.txt</td></tr></tbody></table><figcaption>By applying myself the previous tips, I was able to detect those clusters.</figcaption></figure>
-
-
-
-<h5>Code demonstration: adding automated specs 🎯</h5>
-
-
-
-<p>I will write some specs using <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a> for <code>computePlagiarismClusters</code>.</p>
-
-
-
-<h5><strong>Output the result depending on CLI arguments</strong></h5>
-
-
-
-<p>For that exercise, you can use your own implementation of <code>computePlagiarismClusters</code> or my proposal of correction.</p>
-
-
-
-<p>Properly implement&nbsp;<code>format</code>&nbsp;and&nbsp;<code>outputFile</code>.</p>
-
-
-
-<h5>Code demonstration: create a standalone npm package 🎯</h5>
-
-
-
-<p class="u-mbs">I will extract <strong>Plagiarism detection code</strong> to its own package:</p>
-
-
-
-<ul><li>As a local folder that I may manually install using <a href="https://docs.npmjs.com/cli/v7/commands/npm-link" target="_blank" rel="noreferrer noopener">npm link</a>.</li><li>As a git repository that I may reference in my package.json.</li></ul>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">01. Simple plagiarism detection CLI (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
 		<title>03. Backend project</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Wed, 10 Nov 2021 13:43:54 +0000</pubDate>
+		<pubDate>Sun, 05 Dec 2021 15:19:24 +0000</pubDate>
 				<category><![CDATA[04. Backend]]></category>
 		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3861</guid>
@@ -867,11 +200,11 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
 <ul><li>You should use Typescript in strict mode. As much as possible, ban the <code>any</code> type.</li><li>Use eslint + @typescript-eslint, with at least those sets of rules:</li></ul>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">  extends: [
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">  extends: [
     <span class="hljs-string">'eslint:recommended'</span>,
     <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,
     <span class="hljs-string">'plugin:@typescript-eslint/recommended-requiring-type-checking'</span>
-  ]</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+  ]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Tips: you can disable/configure some rules of those sets.</p>
@@ -901,7 +234,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
 <p><strong>Grading criteria:</strong></p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="Markdown" data-shcb-language-slug="markdown"><div><code class="hljs language-markdown"><span class="hljs-section"># Checkpoints report for the project</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="Markdown" data-shcb-language-slug="markdown"><div><code class="hljs language-markdown"><span class="hljs-section"># Checkpoints report for the project</span>
 
 You <span class="hljs-strong">**MUST**</span> append a filled copy of this document at the end of your <span class="hljs-code">`README.MD`</span>.
 
@@ -1046,7 +379,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 <span class="hljs-quote">&gt; Please provide a link to the `istanbul` HTML coverage summary (or from a similar tool).</span>
 <span class="hljs-bullet">
 - </span>[ ] Do you run the test on a CD/CI, such as Github Action? <span class="hljs-strong">**[1 point]**</span>
-<span class="hljs-quote">&gt; Please provide a link to the latest test summary you have, hosted on Github Action or similar.</span></code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Markdown</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">markdown</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-quote">&gt; Please provide a link to the latest test summary you have, hosted on Github Action or similar.</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Markdown</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">markdown</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Delivery date:</strong></p>
@@ -1055,6 +388,770 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 <p>2022-03-08</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/backend-project/">03. Backend project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>02. Invoice PDF generation HTTP API (practical activity)</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Sun, 05 Dec 2021 15:19:24 +0000</pubDate>
+				<category><![CDATA[04. Backend]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=4225</guid>
+
+					<description><![CDATA[<p>Learning outcomes Build a simple HTTP server using fastify. Validate inputs and serialise payloads using JSON schemas. Generate TypeScript interfaces from JSON schemas. Serve text/html, application/json and application/pdf content-types. Write server-side statically checkable templates (thanks to JSX). Generate high quality PDF using puppeteer. Work with promises, async error handling, error serialisation, etc. Write specs, compute &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/" class="more-link">Continuer la lecture de <span class="screen-reader-text">02. Invoice PDF generation HTTP API (practical activity)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/">02. Invoice PDF generation HTTP API (practical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Learning outcomes</h4>
+
+
+
+<ul><li>Build a simple HTTP server using fastify.</li><li>Validate inputs and serialise payloads using JSON schemas.</li><li>Generate TypeScript interfaces from JSON schemas.</li><li>Serve <code>text/html</code>,  <code>application/json</code> and <code>application/pdf</code> content-types.</li><li>Write server-side statically checkable templates (thanks to JSX).</li><li>Generate high quality PDF using puppeteer.</li><li>Work with promises, async error handling, error serialisation, etc.</li><li>Write specs, compute a test coverage report.</li><li>Generate OpenAPI documentation (fastify-swagger).</li></ul>
+
+
+
+<h4>Context</h4>
+
+
+
+<p>Necessarily, companies have to produce invoices and other kinds of formal documents.  Because this is error-prone and time consuming, they may establish automated workflows. Through this tutorial, you will implement an invoice PDF renderer API.</p>
+
+
+
+<p>At the end of the tutorial, no persistence is expected. You do not have to implement any database connection or session management. All is about core fastify features, PDF generation and TypeScript support.</p>
+
+
+
+<p>A single endpoint is expected. It accepts a JSON payload as POST body and may return a JSON response, an HTML rendered preview or a PDF blob depending on the <code>Accept</code> header.</p>
+
+
+
+<h4>Data schema</h4>
+
+
+
+<p>In a real-world application, the data could be formalised as multiple entities: <code>Address</code>, <code>Customer</code>, <code>Biller</code>, <code>ItemInvoice</code> and finally <code>Invoice</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Address {
+  street: <span class="hljs-built_in">string</span>
+  city: <span class="hljs-built_in">string</span>
+  zipcode: <span class="hljs-built_in">string</span>
+  country: <span class="hljs-built_in">string</span>
+  state: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>
+  additional: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>
+}
+
+<span class="hljs-keyword">interface</span> Customer {
+  name: <span class="hljs-built_in">string</span>
+  address: Address
+}
+
+<span class="hljs-keyword">interface</span> Biller {
+  address: Address
+  phoneNumber: <span class="hljs-built_in">string</span>
+  email: <span class="hljs-built_in">string</span>
+  invoiceLegalFooter: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-keyword">interface</span> ItemInvoice {
+  description: <span class="hljs-built_in">string</span>
+  quantity: <span class="hljs-built_in">number</span>
+  unitPriceWithoutTax: <span class="hljs-built_in">number</span>
+  taxPercent: <span class="hljs-built_in">number</span>
+}
+
+<span class="hljs-keyword">interface</span> Invoice {
+  reference: <span class="hljs-built_in">string</span>
+  date: <span class="hljs-built_in">Date</span>
+  customer: Customer
+  biller: Biller
+  itemInvoices: ItemInvoice[]
+  paymentDelayInDays: <span class="hljs-built_in">number</span>
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our case, the endpoint will receive a single payload with nested properties matching the above <code>Invoice</code> interface. Also, note that the JSON format encodes dates as strings. For example:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+  <span class="hljs-attr">"reference"</span>: <span class="hljs-string">"2021-001"</span>,
+  <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2021-12-01"</span>,
+  <span class="hljs-attr">"paymentDelayInDays"</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-attr">"customer"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Andrew SMITH"</span>,
+    <span class="hljs-attr">"address"</span>: {
+      <span class="hljs-attr">"street"</span>: <span class="hljs-string">"1111 Woodvale Drive"</span>,
+      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Rodney"</span>,
+      <span class="hljs-attr">"zipcode"</span>: <span class="hljs-string">"N0L 2C0"</span>,
+      <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Ontario"</span>,
+      <span class="hljs-attr">"country"</span>: <span class="hljs-string">"Canada"</span>,
+      <span class="hljs-attr">"additional"</span>: <span class="hljs-string">"Appartement B110"</span>
+    }
+  },
+  <span class="hljs-attr">"biller"</span>: {
+    <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"+33123456789"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"seller@myshop.com"</span>,
+    <span class="hljs-attr">"invoiceLegalFooter"</span>: <span class="hljs-string">"IBAN to pay: FRXX XXXX XXXX XXXX XXXX\n SIRET: XXXXXXXXXXXX, TVA number: XXXXXXXXXXXXXXXX"</span>,
+    <span class="hljs-attr">"address"</span>: {
+      <span class="hljs-attr">"street"</span>: <span class="hljs-string">"92 rue du Clair Bocage"</span>,
+      <span class="hljs-attr">"city"</span>: <span class="hljs-string">"LA ROCHE-SUR-YON"</span>,
+      <span class="hljs-attr">"zipcode"</span>: <span class="hljs-string">"85000"</span>,
+      <span class="hljs-attr">"state"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"country"</span>: <span class="hljs-string">"France"</span>,
+      <span class="hljs-attr">"additional"</span>: <span class="hljs-literal">null</span>
+    }
+  },
+  <span class="hljs-attr">"itemInvoices"</span>: [
+    {
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"APhone Z001"</span>,
+      <span class="hljs-attr">"quantity"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"unitPriceWithoutTax"</span>: <span class="hljs-number">300</span>,
+      <span class="hljs-attr">"taxPercent"</span>: <span class="hljs-number">20</span>
+    }
+  ]
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>Simple echo server</h4>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/node-typescript-template.zip">Download the template for node + typescript projects (source code)</a>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column exercice">
+<p id="exercice"><strong>Exercise 1</strong>: Now the context is given, please create a simple HTTP server with <a href="https://www.fastify.io/" target="_blank" rel="noreferrer noopener">fastify</a>, that:</p>
+
+
+
+<ul class="u-mlm u-mbs"><li>implements a single route (POST: /invoices);</li><li>accepts any JSON entity on that endpoint;</li><li>responds with the input JSON (like an echo server).</li></ul>
+</div>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 2</strong>: Then, write a JSON schema that matches the invoice entity (as described previously). There are plenty of examples <a href="https://json-schema.org/learn/miscellaneous-examples.html" target="_blank" rel="noreferrer noopener">here</a>. In addition, you can manually test your schema against a payload <a href="https://www.jsonschemavalidator.net/" target="_blank" rel="noreferrer noopener">here</a>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 3</strong>: Finally, use that schema as part of input validation <strong>and</strong> output serialisation (<a href="https://www.fastify.io/docs/latest/Validation-and-Serialization/" target="_blank" rel="noreferrer noopener">see the fastify&rsquo;s documentation</a>).</p>
+
+
+
+<p>The JSON schema validates inputs at runtime (it is a core feature of fastify). But Typescript cannot infer the type by its own. You could of course write static type definitions&#8230; But they may become obsolete. Anyway, code duplication is mostly always a bad idea.</p>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> Instead, I will show in class how to generate typescript interfaces from JSON schemas using <a href="https://www.npmjs.com/package/json-schema-to-typescript" target="_blank" rel="noreferrer noopener">json-schema-to-typescript</a>.</p>
+
+
+
+<h4>Hand-testing the fastify&rsquo;s JSON-schema algorithms.</h4>
+
+
+
+<p>Since input validation and output serialisation are critical points for the application security, we must understand how it behaves on « edge » cases (when things do not follow the nominal case).</p>
+
+
+
+<p>Please answer the above questions in your <code>README.md</code>.</p>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column question">
+<p><strong>Question 1</strong>: About input validation:</p>
+
+
+
+<ul class="u-mlm u-mbs"><li>How fastify processes unknown properties?</li><li>How fastify behaves if a known property is missing in the payload?</li><li>What happens if an input property is <code>null</code>?</li></ul>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns">
+<div class="wp-block-column question">
+<p><strong>Question 2</strong>: About response serialisation:</p>
+
+
+
+<ul class="u-mlm u-mbs"><li>How fastify processes unknown properties?</li><li>How fastify behaves if a known property is missing in the payload?</li></ul>
+</div>
+</div>
+
+
+
+<p class="question"><strong>Question 3</strong>: Is input validation just a matter of types and schemae?</p>
+
+
+
+<h4>Setting up tests with fastify</h4>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> We will set up together a first automated spec for this endpoint. Starting from now, you are strongly encouraged to systematically write specs for any further work during this module.</p>
+
+
+
+<p>Useful resources:&nbsp;<a href="https://istanbul.js.org/" target="_blank" rel="noreferrer noopener">istanbul</a>,&nbsp;<a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a>,&nbsp;<a href="https://www.chaijs.com/" target="_blank" rel="noreferrer noopener">chai</a>,&nbsp;<a href="https://www.npmjs.com/package/faker" target="_blank" rel="noreferrer noopener">faker</a>, <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank" rel="noreferrer noopener">debugging</a>…</p>
+
+
+
+<h4>Conditional response format</h4>
+
+
+
+<p>Depending on the mimetype provided in the request <code>Accept</code> header, the server may respond with another type of content. Currently, whatever the value of this header, your current implementation outputs a JSON payload.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">enum</span> MIME_TYPES {
+  HTML = <span class="hljs-string">'text/html'</span>,
+  <span class="hljs-built_in">JSON</span> = <span class="hljs-string">'application/json'</span>,
+  PDF = <span class="hljs-string">'application/pdf'</span>
+}
+
+instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, reply</span>) </span>{
+  <span class="hljs-keyword">switch</span> (request.headers.accept) {
+    <span class="hljs-keyword">case</span> MIME_TYPES.JSON:
+      <span class="hljs-keyword">return</span> request.body;
+
+    <span class="hljs-keyword">case</span> MIME_TYPES.PDF:
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'PDF are not yet implemented'</span>);
+    
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> reply.type(MIME_TYPES.HTML).send(<span class="hljs-string">'&lt;!doctype html&gt;&lt;html&gt;&lt;body&gt;Hello world&lt;/body&gt;&lt;/html&gt;'</span>)
+  }
+})</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The core topic of this section is rendering the HTML template on the server side. There are plenty of ways:</p>
+
+
+
+<ul><li>Working with raw string concatenation: zero-dependency solution, with readability and maintainability issues. It can easily lead to XSS injections.</li><li>Working with a template rendering engine, such as <a href="https://ejs.co/" target="_blank" rel="noreferrer noopener">ejs</a>: robust solution with built-in HTML special character escapement, preventing most (but not all) XSS. That template engine was built for JS, so is basically out of the scope of TypeScript!</li><li>Working with JSX (or more exactly TSX in case of TypeScript). This is a way to write a kind of HTML in JavaScript. Plenty of tools can render the HTML from a JSX source. One of them is <a href="https://fr.reactjs.org/docs/react-dom-server.html" target="_blank" rel="noreferrer noopener">react-dom/server</a>. All TypeScript features work natively in .tsx files.</li></ul>
+
+
+
+<p class="exercice"><strong>Exercise 4</strong>: Render the invoice as an HTML page if the request asks for HTML format. JSX should be preferred because of static type checks. But it is also more complex to start with. Ejs is also a valid option to fulfil the exercise at time. For the review, please include a screenshot of the rendered page: the feature coverage, the visual result and the code quality* all matter.</p>
+
+
+
+<p>* proper use of typescript checking, addition of specs, etc.</p>
+
+
+
+<h4>Render as PDF</h4>
+
+
+
+<p class="exercice"><strong>Exercise 5</strong>: Using Google <a href="https://www.npmjs.com/package/puppeteer" target="_blank" rel="noreferrer noopener">puppeteer</a> (a headless chromium instance with a nodejs driver), render your HTML payload as PDF. Unlike previous content types, a PDF is a binary file. So you have to deal with binary <a href="https://nodejs.org/api/buffer.html" target="_blank" rel="noreferrer noopener">Buffer</a>. In addition, puppeteer uses promises. Add a spec for this case.</p>
+
+
+
+<p class="question"><strong>Question 4</strong>: Why should you disable JavaScript in the headless browser instance? And, of course, disable it!</p>
+
+
+
+<h4>Safer error handling</h4>
+
+
+
+<p>As for the final project, we will take care of the security of error handling. Web applications should not leak sensitive information. One of the attack vectors is error serialisation when the app sends internal errors messages.</p>
+
+
+
+<p>A status code 400 notifies an invalid request. It is acceptable to send the failure&rsquo;s reason to the user. If the server provides an API consumed by developers, this is a welcome help for them.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">400</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Bad Request"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"body should have required property 'hello'"</span>
+}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>But is it OK to serve this?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Unable to connect to database on root@localhost, with password authentication"</span>
+}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Or this?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Ambiguous column name \"id\"; SQL statement: SELECT * FROM exhibit JOIN exhibit ON (id = previous_id); [90059-176]"</span>
+}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Everything that is related to <code>Internal Server Error</code> (HTTP code 500) should never reach the end user (unless you are in development environment). But if you try yourself, you will notice fastify sends those errors in production mode (<code>NODE_ENV=production</code>)! As a web developer, I saw this on publicly routed servers!</p>
+
+
+
+<p>This is because of the default <a href="https://github.com/fastify/fastify/blob/1e94070992d911a81a26597c25f2d35ae65f3d91/fastify.js#L74" target="_blank" rel="noreferrer noopener">error handler (the link redirects to fastify source code)</a> . You should override the handler globally using <a href="https://www.fastify.io/docs/latest/Server/#seterrorhandler" target="_blank" rel="noreferrer noopener">setErrorHandler</a>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong>: override the default error handler, with security in mind.</p>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> Then I will show you how to use the error handler and Promise rejection to cover various failures scenario in a DRY* way (from invalid phone numbers validation to illegal accesses&#8230;). Thanks to that, you will say goodbye to verbose and overcomplicated errors management in HTTP controllers.</p>
+
+
+
+<p>* DRY = Don&rsquo;t Repeat Yourself (and I would like to not repeat this anymore 🙂)</p>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: Accoding to my previous demonstration, validate that the phone number is valid (using <a href="https://www.npmjs.com/package/libphonenumber-js" target="_blank" rel="noreferrer noopener">libphonenumber-js</a>), that emails match <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email#basic_validation" target="_blank" rel="noreferrer noopener">HTML5 official regex</a> and that all prices are positive. Else, throw an error the message of which is sent to the client. The HTTP status code should be 422 in case of rejection.</p>
+
+
+
+<p>In facts, the previous validations should not be in the controller&#8230; but moved inside models. This is much cleaner, DRY and consistent across the app (checked every time an entity is persisted, whatever the code calling it). But we do not have models yet, so that is for another day!</p>
+
+
+
+<p><strong>Bonus</strong>: If we have enough time. I will show how to write unit tests using stubs (from the <a href="https://sinonjs.org/releases/latest/stubs/" target="_blank" rel="noreferrer noopener">sinon</a> package) against the custom error handler.</p>
+
+
+
+<h4>Swagger documentation</h4>
+
+
+
+<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> <a href="https://github.com/fastify/fastify-swagger" target="_blank" rel="noreferrer noopener">Fastify-swagger</a> automatically extracts the JSON-schema you provided for your routes, then produces an OpenAPI document. The ore information you provide in your JSON-schema (like description of each field), the better is the resulting documentation. Try it yourself if you completed the tutorial before your teammates.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/">02. Invoice PDF generation HTTP API (practical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>01. Simple plagiarism detection CLI (pratical activity)</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Wed, 10 Nov 2021 20:13:12 +0000</pubDate>
+				<category><![CDATA[04. Backend]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=4051</guid>
+
+					<description><![CDATA[<p>Learning outcomes Parsing command line with the popular yargs module. Working with external module definitions, such as @types/yargs. Basic filesystem manipulations (CRUD operations of files and folders). Getting familiar with the glob filepath matching expressions and library. Working with Promise, util.promisify(), async, await, etc. Getting starting with natural language manipulation (see the natural module). Packaging &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/" class="more-link">Continuer la lecture de <span class="screen-reader-text">01. Simple plagiarism detection CLI (pratical activity)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">01. Simple plagiarism detection CLI (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Learning outcomes</h4>
+
+
+
+<ul><li>Parsing command line with the popular <code>yargs</code> module.</li><li>Working with external module definitions, such as <code>@types/yargs</code>.</li><li>Basic filesystem manipulations (CRUD operations of files and folders).</li><li>Getting familiar with the <code>glob</code> filepath matching expressions and library.</li><li>Working with <code>Promise</code>, <code>util.promisify()</code>, <code>async</code>, <code>await</code>, etc.</li><li>Getting starting with natural language manipulation (see the <code>natural</code> module).</li><li>Packaging a Typescript library to be installable with <code>npm</code>.</li><li>Writing mocha specs against the library.</li></ul>
+
+
+
+<h4>Context</h4>
+
+
+
+<p>While I was personally reviewing submissions from a degraded examination context, I suspected fraudulent behaviours. Various tools exist to detect plagiarism, but are highly expensive. I expected a basic analysis to catch the most obvious cases easily.</p>
+
+
+
+<p class="u-mbs">Such tools generally provide 2 primary features:</p>
+
+
+
+<ol class="u-mlm"><li>comparing together various submissions to the same exercise;</li><li>comparing a single submission to online contents.</li></ol>
+
+
+
+<p>Point (2.) implies using expensive search API such as Google (max 100 free queries a day) or Bind (max 1000 free queries a month).</p>
+
+
+
+<p>This adds extra layer of complexity, caching strategy and performance concerns. For those reasons, you will <strong>exclusively focus on point (1.)</strong>.</p>
+
+
+
+<h4>Provided assets</h4>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/6-samples.zip">Download the submission samples (ZIP of TXT files)</a>
+</div>
+</div>
+
+
+<div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
+  <i class="fad fa-download" style="font-size: 3em; color: #ffb300; margin-right: 16px"></i>
+<div>
+  <a href="https://thomas-veillard.fr/wp-content/uploads/2021/11/node-typescript-template.zip">Download the template for node + typescript projects (source code)</a>
+</div>
+</div>
+
+
+
+<h4>Specifications</h4>
+
+
+
+<p>The CLI software should accept the following command-line options:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">Options:
+  --inputFiles    Glob expression to files containing answers. Each file
+                  contains a single text to compare to each others. It assumes
+                  all texts refer to the same question.      [string] [required]
+  --outputFile    Path to the output file. If missing, output to console.
+                                                                        [string]
+  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
+  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
+                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
+                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
+                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="u-mbs">You will extract IO-related code and plagiarism detection code in 2 distinct modules:</p>
+
+
+
+<ul><li><strong>IO-related code</strong>: includes argument parsing, files reading, outputs (both to console and filesystem);</li><li><strong>Plagiarism detection code</strong>: the function accepting a set of submissions and returns cluster metered with matching score.</li></ul>
+
+
+
+<p>Later on, the <strong>Plagiarism detection code</strong> will become a self-packaged module (similar to those on <code>npm registry</code>, but not released).</p>
+
+
+
+<p>This allows reusing the library anywhere and replace the IO-presentation layer by a webserver (💲 think about an anti-plagiarism SaaS API 💲).</p>
+
+
+
+<p>Side note: As for now, the <strong>Plagiarism detection code</strong> only performs on in-memory data, especially string transformations. This is CPU-bound task.</p>
+
+
+
+<h4><strong>PoC Implementation (step by step)</strong></h4>
+
+
+
+<p>Despite a lot of topics are covered in this tutorial, the resulting codebase (excluding specs) could be fewer than 100 lines of code.</p>
+
+
+
+<p>Before getting deeper in the code, let&rsquo;s try some experiments. The final delivery will just be a smart assembly of all those experiments.</p>
+
+
+
+<h5><strong>Parse options, provide their descriptions and requireness.</strong></h5>
+
+
+
+<p>Calling your script without mandatory options should print the documentation:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index.js
+Options:
+  --<span class="hljs-built_in">help</span>          Show <span class="hljs-built_in">help</span>                                            [boolean]
+  --version       Show version number                                  [boolean]
+  --inputFiles    Glob expression to files containing answers. Each file
+                  contains a single text to compare to each others. It assumes
+                  all texts refer to the same question.      [string] [required]
+  --outputFile    Path to the output file. If missing, output to console.
+                                                                        [string]
+  --format        The output format. [choices: <span class="hljs-string">"json"</span>, <span class="hljs-string">"text"</span>] [default: <span class="hljs-string">"text"</span>]
+  --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
+                  report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
+                  similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
+                                                         [number] [default: 0.9]
+
+Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="u-mbs">Tips:</p>
+
+
+
+<ul><li>Note that <code>yargs(...).parse()</code>&nbsp;returns a Promise. Unless you use <a href="https://dev.to/mikeesto/top-level-await-in-node-2jad" target="_blank" rel="noreferrer noopener">node 14.8.0</a>+, you cannot <code>await</code> a Promise outside an <code>async</code> function (ex. in a&nbsp;<a href="https://stackabuse.com/javascripts-immediately-invoked-function-expressions">IIFE</a>).</li><li>Let&rsquo;s&nbsp;<code>yargs</code>&nbsp;infer&nbsp;<code>format: 'json' | 'text'</code>&nbsp;for you. In facts,&nbsp;<code>yargs</code>&nbsp;type definition infers attributes&rsquo; names and types. It even supports&nbsp;<a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types" target="_blank" rel="noreferrer noopener">literal union</a>, as shown in this&nbsp;<a href="https://github.com/yargs/yargs/blob/main/docs/typescript.md#more-specific-typing-for-choices" target="_blank" rel="noreferrer noopener">example</a>.</li><li>Use the&nbsp;<code>demandOption</code> method to require an option&nbsp;(and not&nbsp;<code>requiresArg</code>, that is for another purpose).</li><li>You do&nbsp;<strong>NOT</strong>&nbsp;need the&nbsp;<code>any</code>&nbsp;type, so do not use it.</li></ul>
+
+
+
+<p>Here the template to help you:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> yargs <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs'</span>
+<span class="hljs-keyword">import</span> { hideBin } <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs/helpers'</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> argv = <span class="hljs-keyword">await</span> yargs(hideBin(process.argv))
+  .option(<span class="hljs-string">'inputFiles'</span>, { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span>, demandOption: <span class="hljs-literal">true</span> <span class="hljs-comment">/* ... */</span> })
+  .parse()
+
+  <span class="hljs-built_in">console</span>.log(argv)
+}
+
+run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Once completed, the <code>argv</code>&lsquo;s type should be inferred as:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Argv {
+  inputFiles: <span class="hljs-built_in">string</span>
+  outputFile: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>
+  format: <span class="hljs-string">'json'</span> | <span class="hljs-string">'text'</span>
+  clusterScore: <span class="hljs-built_in">number</span>
+}</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5><strong>List all files that match the glob expression from <code>--inputFiles</code></strong></h5>
+
+
+
+<p><strong>Tips</strong>: Use the&nbsp;<code>glob</code>&nbsp;module. <code>glob(cb)</code>&nbsp;is callback-based asynchronous function. Promise are easier to maintain. The  built-in&nbsp;<code>util</code>&nbsp;module provides a very useful helper called&nbsp;<code>util.promisify(callbackBasedFunc)</code>. See the&nbsp;<a href="https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original" target="_blank" rel="noreferrer noopener">documentation</a>.</p>
+
+
+
+<p>Example of valid glob expressions:</p>
+
+
+
+<ul><li><code>./path/to/file.txt</code>&nbsp;matches only a single file.</li><li><code>./path/to/*.txt</code>&nbsp;matches&nbsp;<code>./path/to/file.txt</code>, but not&nbsp;<code>./path/to/deep/file.txt</code>.</li><li><code>./path/to/**/*.txt</code> matches&nbsp;<code>./path/to/file.txt</code> and <code>./path/to/deep/file.txt</code>.</li></ul>
+
+
+
+<p>The expected output:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index --inputFiles=<span class="hljs-string">'../samples/*.txt'</span>
+[
+  <span class="hljs-string">'../samples/1.txt'</span>,  <span class="hljs-string">'../samples/10.txt'</span>, <span class="hljs-string">'../samples/11.txt'</span>,
+  <span class="hljs-string">'../samples/12.txt'</span>, <span class="hljs-string">'../samples/13.txt'</span>, <span class="hljs-string">'../samples/14.txt'</span>,
+  <span class="hljs-string">'../samples/15.txt'</span>, <span class="hljs-string">'../samples/16.txt'</span>, <span class="hljs-string">'../samples/17.txt'</span>,
+  <span class="hljs-string">'../samples/18.txt'</span>, <span class="hljs-string">'../samples/19.txt'</span>, <span class="hljs-string">'../samples/2.txt'</span>,
+  <span class="hljs-string">'../samples/20.txt'</span>, <span class="hljs-string">'../samples/21.txt'</span>, <span class="hljs-string">'../samples/22.txt'</span>,
+  <span class="hljs-string">'../samples/23.txt'</span>, <span class="hljs-string">'../samples/24.txt'</span>, <span class="hljs-string">'../samples/25.txt'</span>,
+  <span class="hljs-string">'../samples/26.txt'</span>, <span class="hljs-string">'../samples/27.txt'</span>, <span class="hljs-string">'../samples/28.txt'</span>,
+  <span class="hljs-string">'../samples/29.txt'</span>, <span class="hljs-string">'../samples/3.txt'</span>,  <span class="hljs-string">'../samples/30.txt'</span>,
+  <span class="hljs-string">'../samples/31.txt'</span>, <span class="hljs-string">'../samples/32.txt'</span>, <span class="hljs-string">'../samples/33.txt'</span>,
+  <span class="hljs-string">'../samples/34.txt'</span>, <span class="hljs-string">'../samples/35.txt'</span>, <span class="hljs-string">'../samples/36.txt'</span>,
+  <span class="hljs-string">'../samples/37.txt'</span>, <span class="hljs-string">'../samples/38.txt'</span>, <span class="hljs-string">'../samples/39.txt'</span>,
+  <span class="hljs-string">'../samples/4.txt'</span>,  <span class="hljs-string">'../samples/40.txt'</span>, <span class="hljs-string">'../samples/41.txt'</span>,
+  <span class="hljs-string">'../samples/42.txt'</span>, <span class="hljs-string">'../samples/43.txt'</span>, <span class="hljs-string">'../samples/44.txt'</span>,
+  <span class="hljs-string">'../samples/45.txt'</span>, <span class="hljs-string">'../samples/46.txt'</span>, <span class="hljs-string">'../samples/47.txt'</span>,
+  <span class="hljs-string">'../samples/48.txt'</span>, <span class="hljs-string">'../samples/49.txt'</span>, <span class="hljs-string">'../samples/5.txt'</span>,
+  <span class="hljs-string">'../samples/50.txt'</span>, <span class="hljs-string">'../samples/51.txt'</span>, <span class="hljs-string">'../samples/52.txt'</span>,
+  <span class="hljs-string">'../samples/53.txt'</span>, <span class="hljs-string">'../samples/54.txt'</span>, <span class="hljs-string">'../samples/55.txt'</span>,
+  <span class="hljs-string">'../samples/56.txt'</span>, <span class="hljs-string">'../samples/57.txt'</span>, <span class="hljs-string">'../samples/58.txt'</span>,
+  <span class="hljs-string">'../samples/59.txt'</span>, <span class="hljs-string">'../samples/6.txt'</span>,  <span class="hljs-string">'../samples/60.txt'</span>,
+  <span class="hljs-string">'../samples/61.txt'</span>, <span class="hljs-string">'../samples/62.txt'</span>, <span class="hljs-string">'../samples/63.txt'</span>,
+  <span class="hljs-string">'../samples/64.txt'</span>, <span class="hljs-string">'../samples/65.txt'</span>, <span class="hljs-string">'../samples/66.txt'</span>,
+  <span class="hljs-string">'../samples/67.txt'</span>, <span class="hljs-string">'../samples/68.txt'</span>, <span class="hljs-string">'../samples/69.txt'</span>,
+  <span class="hljs-string">'../samples/7.txt'</span>,  <span class="hljs-string">'../samples/70.txt'</span>, <span class="hljs-string">'../samples/71.txt'</span>,
+  <span class="hljs-string">'../samples/8.txt'</span>,  <span class="hljs-string">'../samples/9.txt'</span>
+]</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h5><strong>Read each <code>inputFile</code> and put its content into an array</strong></h5>
+
+
+
+<p>Each item of the array should contain both a way to locate original file (such a path) and, of course, the file content:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4><strong>Implement a function that finds clusters of similar submissions</strong></h4>
+
+
+
+<p>This function must be implemented into its own module, with that prototype:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Sample {
+  content: <span class="hljs-built_in">string</span>
+  path: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-comment">/**
+ * Groups samples into cluster depending on how similar they are.
+ * If a sample not far from all other samples, it is not returned.
+ * A cluster is basically an array of samples, and this function returns a array of clusters.
+ * Each sample has both an identifier (ex. the path to the original file) and a content.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computePlagiarismClusters</span> (<span class="hljs-params">
+  samples: Sample[],
+  options: { clusterScore: <span class="hljs-built_in">number</span> }
+</span>): <span class="hljs-title">Sample</span>[][] </span>{
+  <span class="hljs-keyword">return</span> []
+}</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>You are encouraged to think this algorithm the way you want. It will not be graded.</p>
+
+
+
+<p>If you do not know how to start, you can look the following naive, but yet efficient algorithm. It heavily relies on&nbsp;<code>natural</code>&nbsp;package features.</p>
+
+
+
+<ol><li>Install the&nbsp;<code>natural</code>&nbsp;package, which is natural language manipulation library;</li><li>Split input texts into arrays of tokens&nbsp;<a href="https://naturalnode.github.io/natural/Tokenizers.html">using Tokenizers</a>;</li><li>Reduce each token to its&nbsp;<a href="https://en.wikipedia.org/wiki/Word_stem">word stem</a>&nbsp;through&nbsp;<a href="http://naturalnode.github.io/natural/stemmers.html">Stemmers</a>;</li><li>Compute similarity score of 2 cleaned inputs based on&nbsp;<a href="http://naturalnode.github.io/natural/string_distance.html">Levenshtein distance</a>.</li><li>Group in clusters detected fraudulent samples using the previous scoring method (remember a cluster may contain more than 2 samples).</li></ol>
+
+
+
+<figure class="wp-block-table"><table><thead><tr><th>&#8211;clusterScore</th><th>Nb of discovered clusters</th><th>Files</th></tr></thead><tbody><tr><td>0.9</td><td>1</td><td>&#8211; 5.txt, 63.txt, 69.txt</td></tr><tr><td>0.8</td><td>2</td><td>&#8211; 5.txt, 63.txt, 69.txt<br>&#8211; 18.txt, 32.txt</td></tr></tbody></table><figcaption>By applying myself the previous tips, I was able to detect those clusters.</figcaption></figure>
+
+
+
+<h5>Code demonstration: adding automated specs 🎯</h5>
+
+
+
+<p>I will write some specs using <a href="https://mochajs.org/" target="_blank" rel="noreferrer noopener">mocha</a> for <code>computePlagiarismClusters</code>.</p>
+
+
+
+<h5><strong>Output the result depending on CLI arguments</strong></h5>
+
+
+
+<p>For that exercise, you can use your own implementation of <code>computePlagiarismClusters</code> or my proposal of correction.</p>
+
+
+
+<p>Properly implement&nbsp;<code>format</code>&nbsp;and&nbsp;<code>outputFile</code>.</p>
+
+
+
+<h5>Code demonstration: create a standalone npm package 🎯</h5>
+
+
+
+<p class="u-mbs">I will extract <strong>Plagiarism detection code</strong> to its own package:</p>
+
+
+
+<ul><li>As a local folder that I may manually install using <a href="https://docs.npmjs.com/cli/v7/commands/npm-link" target="_blank" rel="noreferrer noopener">npm link</a>.</li><li>As a git repository that I may reference in my package.json.</li></ul>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/practical-activity-simple-plagiarism-detection-cli/">01. Simple plagiarism detection CLI (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>03. Vue.js project</title>
+		<link>https://thomas-veillard.fr/front-end-web-development/vue/project/</link>
+		
+		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
+		<pubDate>Mon, 11 Oct 2021 06:11:51 +0000</pubDate>
+				<category><![CDATA[03. VueJS]]></category>
+		<category><![CDATA[Modern web development]]></category>
+		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3194</guid>
+
+					<description><![CDATA[<p>Topic (SE groups) Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. Vue.js project</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/project/">03. Vue.js project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h4>Topic (SE groups)</h4>
+
+
+
+<p>Build a web application to book, rent or buy something of your choice, like:</p>
+
+
+
+<ul><li><strong>A train ticket office</strong>. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets.</li><li><strong>A product shop</strong>. The application displays the catalogue, allows both sorting and filtering by various criteria. Each product has a dedicated presentation. Additionally, the customer may fill a cart and provide its delivery address.</li><li><strong>A clearing booking app</strong>. Allows customers to find available cleaners near their home at some date and time. Then, the customer picks a proposal, fills its address&#8230;</li><li><strong>A VPS builder</strong>. The customer builds its own VPS instance by selecting some amount of RAM, disk, CPU, IO bandwidth, additional volumes&#8230; The final configuration should be valid (ex. disallow too much RAM if not enough v-core, etc.).</li></ul>
+
+
+
+<h4>Topic (non-SE groups)</h4>
+
+
+
+<p>Check with your teachers for topic requirements. They may enforce a relevant topic according to your academic major.</p>
+
+
+
+<h4>The rules</h4>
+
+
+
+<ul><li>Can be done in groups of 4 students (3 exceptionally allowed).</li><li>Use Vue.js, Angular or React. You are free to use any library you want.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>Do not be surprised if I check who commits, and when&#8230;</li><li>Document installation steps in <code>README.md</code>.</li><li>Use API over HTTP or HTTPS (a public API, a mock server or your own backend).</li><li>Build various views (pages, modals&#8230;). At least 5 pages with valuable logic.</li><li>Set up various routes using vue-router or such a lib (ex. <code>/products/:productId</code>).</li><li><a href="https://blog.sonatype.com/open-source-attacks-on-the-rise-top-8-malicious-packages-found-in-npm" target="_blank" rel="noreferrer noopener">For your security</a>, do not install dependencies having <span class="has-inline-color has-medium-pink-color"><strong>fewer than 50 000 downloads per week</strong></span>. If you trust a dependency that does not meet my arbitrary expectation, please ask first (during class session) and record my acquaintance in your <code>README</code>.</li></ul>
+
+
+
+<h4>README.md</h4>
+
+
+
+<p>Describe the steps in your README to build and run your project. For simple front-end projects, it could be really short: (ex. git clone, npm install&#8230;).</p>
+
+
+
+<p>But if you implemented a backend or have special requirements, they must be explicit. If setup is complex, please provide an install script (targeting Ubuntu).</p>
+
+
+
+<h4>Delivery</h4>
+
+
+
+<p>Your git repository is your main delivery. Just share read-only access with your teacher if the repository is private.</p>
+
+
+
+<ul><li>For SE groups, share your private repository with <code>TruffeCendree</code>.</li><li>For other groups: information not yet available.</li></ul>
+
+
+
+<p>The code must be available at least 2 hours before the oral presentation, which occurs during the last class session.</p>
+
+
+
+<h4>Graduation</h4>
+
+
+
+<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded based on your oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs, challenges&#8230;<br><em>Graded based on the source code on git master/main branch</em></td><td>13 points</td></tr></tbody></table></figure>
+
+
+
+<h4>Bonuses</h4>
+
+
+
+<p>The following list is not exhaustive. Be free to highlight challenges you overcame in a special section of your README.</p>
+
+
+
+<ul><li>Write a fully featured backend (higher bonus if built on node.js). Adding a backend does not reduce my expectation on the frontend part.</li><li>Switch from JavaScript to TypeScript (use strict mode, ban the <code>any</code> type).</li><li>Use high quality JSdoc comments, with <code>tsconfig.json</code> setup to check js all files.</li><li>Host your static website online (ex. Firebase Hosting, render.com, aws S3&#8230;).</li><li>Implement error tracking of hosted site with (ex. Sentry, Rollbar, Stackdriver&#8230;).</li><li>Write automatic specs (unit, e2e&#8230;).</li><li>Send emails with your backend (look at the <a href="https://mailcatcher.me/" target="_blank" rel="noreferrer noopener">mailcatcher</a> to mock the STMP server).</li><li>Generate high quality PDF with putteteer or selenium.</li></ul>
+
+
+
+<p></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/project/">03. Vue.js project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -1794,103 +1891,6 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 <p>Since TypeScript may save your time, catch bugs and give you bonus grade to the project, why not giving it a try?</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/">01. Vue: practical activity, part n°1</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>03. Vue.js project</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/vue/project/</link>
-		
-		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
-		<pubDate>Mon, 23 Aug 2021 17:59:03 +0000</pubDate>
-				<category><![CDATA[03. VueJS]]></category>
-		<category><![CDATA[Modern web development]]></category>
-		<guid isPermaLink="false">https://thomas-veillard.fr/?p=3194</guid>
-
-					<description><![CDATA[<p>Topic (SE groups) Build a web application to book, rent or buy something of your choice, like: A train ticket office. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets. A product shop. The application displays the catalogue, allows both sorting &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/vue/project/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. Vue.js project</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/project/">03. Vue.js project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[
-<h4>Topic (SE groups)</h4>
-
-
-
-<p>Build a web application to book, rent or buy something of your choice, like:</p>
-
-
-
-<ul><li><strong>A train ticket office</strong>. Using public API, it may find routes between 2 train stations at some date and time. Then, the customer can book required tickets.</li><li><strong>A product shop</strong>. The application displays the catalogue, allows both sorting and filtering by various criteria. Each product has a dedicated presentation. Additionally, the customer may fill a cart and provide its delivery address.</li><li><strong>A clearing booking app</strong>. Allows customers to find available cleaners near their home at some date and time. Then, the customer picks a proposal, fills its address&#8230;</li><li><strong>A VPS builder</strong>. The customer builds its own VPS instance by selecting some amount of RAM, disk, CPU, IO bandwidth, additional volumes&#8230; The final configuration should be valid (ex. disallow too much RAM if not enough v-core, etc.).</li></ul>
-
-
-
-<h4>Topic (non-SE groups)</h4>
-
-
-
-<p>Check with your teachers for topic requirements. They may enforce a relevant topic according to your academic major.</p>
-
-
-
-<h4>The rules</h4>
-
-
-
-<ul><li>Can be done in groups of 4 students (3 exceptionally allowed).</li><li>Use Vue.js, Angular or React. You are free to use any library you want.</li><li>Use <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noreferrer noopener">this</a> git workflow model (at least master and develop branches).</li><li>Do not be surprised if I check who commits, and when&#8230;</li><li>Document installation steps in <code>README.md</code>.</li><li>Use API over HTTP or HTTPS (a public API, a mock server or your own backend).</li><li>Build various views (pages, modals&#8230;). At least 5 pages with valuable logic.</li><li>Set up various routes using vue-router or such a lib (ex. <code>/products/:productId</code>).</li><li><a href="https://blog.sonatype.com/open-source-attacks-on-the-rise-top-8-malicious-packages-found-in-npm" target="_blank" rel="noreferrer noopener">For your security</a>, do not install dependencies having <span class="has-inline-color has-medium-pink-color"><strong>fewer than 50 000 downloads per week</strong></span>. If you trust a dependency that does not meet my arbitrary expectation, please ask first (during class session) and record my acquaintance in your <code>README</code>.</li></ul>
-
-
-
-<h4>README.md</h4>
-
-
-
-<p>Describe the steps in your README to build and run your project. For simple front-end projects, it could be really short: (ex. git clone, npm install&#8230;).</p>
-
-
-
-<p>But if you implemented a backend or have special requirements, they must be explicit. If setup is complex, please provide an install script (targeting Ubuntu).</p>
-
-
-
-<h4>Delivery</h4>
-
-
-
-<p>Your git repository is your main delivery. Just share read-only access with your teacher if the repository is private.</p>
-
-
-
-<ul><li>For SE groups, share your private repository with <code>TruffeCendree</code>.</li><li>For other groups: information not yet available.</li></ul>
-
-
-
-<p>The code must be available at least 2 hours before the oral presentation, which occurs during the last class session.</p>
-
-
-
-<h4>Graduation</h4>
-
-
-
-<figure class="wp-block-table is-style-stripes"><table><tbody><tr><td><strong>Criteria</strong></td><td><strong>Points</strong></td></tr><tr><td>Git and workflow</td><td>2 points</td></tr><tr><td>User experience (UX), user interface (UI)<br><em>Graded based on your oral presentation.</em></td><td>5 points</td></tr><tr><td>Code quality, maintenability, bugs, challenges&#8230;<br><em>Graded based on the source code on git master/main branch</em></td><td>13 points</td></tr></tbody></table></figure>
-
-
-
-<h4>Bonuses</h4>
-
-
-
-<p>The following list is not exhaustive. Be free to highlight challenges you overcame in a special section of your README.</p>
-
-
-
-<ul><li>Write a fully featured backend (higher bonus if built on node.js). Adding a backend does not reduce my expectation on the frontend part.</li><li>Switch from JavaScript to TypeScript (use strict mode, ban the <code>any</code> type).</li><li>Use high quality JSdoc comments, with <code>tsconfig.json</code> setup to check js all files.</li><li>Host your static website online (ex. Firebase Hosting, render.com, aws S3&#8230;).</li><li>Implement error tracking of hosted site with (ex. Sentry, Rollbar, Stackdriver&#8230;).</li><li>Write automatic specs (unit, e2e&#8230;).</li><li>Send emails with your backend (look at the <a href="https://mailcatcher.me/" target="_blank" rel="noreferrer noopener">mailcatcher</a> to mock the STMP server).</li><li>Generate high quality PDF with putteteer or selenium.</li></ul>
-
-
-
-<p></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/vue/project/">03. Vue.js project</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
