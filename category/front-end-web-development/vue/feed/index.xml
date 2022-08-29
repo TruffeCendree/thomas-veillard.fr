@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/vue/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Tue, 23 Aug 2022 16:32:10 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 29 Aug 2022 15:35:01 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -314,6 +314,10 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 2: state management with props/events »</p>
+
+
+
 <p class="question"><strong>Question 3</strong>: While being a well-working solution, it suffers from maintainability issues. Please expose and discuss them.</p>
 
 
@@ -330,7 +334,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 4</strong>: Replace every needed <code>user</code> props by an <code>inject</code> and remove transitional props that are not useful anymore. For now, you can keep the <code>userChanged</code> event chain. Be sure to make your <code>inject</code> reactive.</p>
+<p class="exercice"><strong>Exercise 3</strong>: Replace every needed <code>user</code> props by an <code>inject</code> and remove transitional props that are not useful anymore. For now, you can keep the <code>userChanged</code> event chain. Be sure to make your <code>inject</code> reactive.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 3: state management with provide/inject »</p>
 
 
 
@@ -366,7 +374,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 5</strong>: Move the <code>user</code> property from the <code>App</code> component state to a store managed with vuex. Drop the event chain and let <code>SigninButton</code> directly call a <a href="https://next.vuex.vuejs.org/guide/mutations.html" target="_blank" rel="noreferrer noopener">mutation</a> in the store.</p>
+<p class="exercice"><strong>Exercise 4</strong>: Move the <code>user</code> property from the <code>App</code> component state to a store managed with vuex. Drop the event chain and let <code>SigninButton</code> directly call a <a href="https://next.vuex.vuejs.org/guide/mutations.html" target="_blank" rel="noreferrer noopener">mutation</a> in the store.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 4: state management with a store »</p>
 
 
 
@@ -390,11 +402,15 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+).</p>
+<p class="exercice"><strong>Exercise 5</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+).</p>
 
 
 
-<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router inside its own ES module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: add vue-router dependency »</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router inside its own ES module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
 
 
 
@@ -406,7 +422,15 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 9</strong>: You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. It must use the <code>&lt;router-link /></code>.</p>
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: add / and /conversations routes »</p>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. It must use the <code>&lt;router-link /></code>.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 7: add header navigation »</p>
 
 
 
@@ -422,7 +446,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 10</strong>: In the case the user tries to access <code>/conversations</code> without being logged-in, it should be redirected to the home page. Use a <a href="https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards" target="_blank" rel="noreferrer noopener">guard</a> to implement this behaviour.</p>
+<p class="exercice"><strong>Exercise 8</strong>: In the case the user tries to access <code>/conversations</code> without being logged-in, it should be redirected to the home page. Use a <a href="https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards" target="_blank" rel="noreferrer noopener">guard</a> to implement this behaviour.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: add guards for authenticated routes »</p>
 
 
 
@@ -430,7 +458,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 11</strong>: Implement the <code>/conversations/:id</code> route. For now, the newly created <code>ConversationShowPage</code> component should access the id given in the URL and display it inside the template.</p>
+<p class="exercice"><strong>Exercise 9</strong>: Implement the <code>/conversations/:id</code> route. For now, the newly created <code>ConversationShowPage</code> component should access the id given in the URL and display it inside the template.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 9: add /conversations/:id route »</p>
 
 
 

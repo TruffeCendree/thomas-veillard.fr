@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/languages/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 11 Sep 2021 08:00:07 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 29 Aug 2022 15:28:05 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -73,7 +73,7 @@
 
 
 
-<div class="exercice"><p><strong>Excercise 2</strong>: Launch a local HTTP server (seen <a href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">in the lecture</a>) and run the application from it. Then, inspect the HTTP traffic and record some statistics:</p><ul style="margin-left: 1em; margin-bottom: 0"><li>How many JS files were loaded ?</li><li>How long does it take on average to load one ES6-module ?</li><li>What is the total completion time to load all JS files ?</li><li>Did the browser load JS files sequentially or in parallel ?</li></ul></div><br>
+<div class="exercice"><p><strong>Excercise 2</strong>: Launch a local HTTP server (seen <a href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">in the lecture</a>) and run the application from it. Then, inspect the HTTP traffic and record some statistics:</p><ul style="margin-left: 1em; margin-bottom: 0"><li>How many JS files were loaded ?</li><li>How long does it take on average to load one ES6-module ?</li><li>What is the total completion time to load all JS files ?</li><li>Did the browser download JS files sequentially or in parallel ?</li></ul></div><br>
 
 
 

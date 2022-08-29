@@ -21,13 +21,13 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2021-10-11T05:11:51+00:00">
-	<meta property="article:modified_time" content="2022-08-23T16:05:43+00:00">
+	<meta property="article:modified_time" content="2022-08-29T15:35:01+00:00">
 	<meta property="og:image" content="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture estimée">
-	<meta name="twitter:data2" content="11 minutes">
+	<meta name="twitter:data2" content="12 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -63,7 +63,7 @@
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/#primaryimage"
 	            },
 	            "datePublished": "2021-10-11T05:11:51+00:00",
-	            "dateModified": "2022-08-23T16:05:43+00:00",
+	            "dateModified": "2022-08-29T15:35:01+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/#breadcrumb"
 	            },
@@ -105,11 +105,11 @@
 	            },
 	            "headline": "02. Vue: practical activity, part n°2",
 	            "datePublished": "2021-10-11T05:11:51+00:00",
-	            "dateModified": "2022-08-23T16:05:43+00:00",
+	            "dateModified": "2022-08-29T15:35:01+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/vue/02-vue-practical-activity-part-n2/#webpage"
 	            },
-	            "wordCount": 1795,
+	            "wordCount": 1869,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -157,7 +157,7 @@
 <link rel="stylesheet" id="wp-block-library-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.7.4" media="all">
 <link rel="stylesheet" id="wp-block-library-theme-css" href="https://thomas-veillard.fr/wp-includes/css/dist/block-library/theme.min.css?ver=5.7.4" media="all">
 <link rel="stylesheet" id="dashicons-css" href="https://thomas-veillard.fr/wp-includes/css/dashicons.min.css?ver=5.7.4" media="all">
-<link rel="stylesheet" id="vlp-public-css" href="https://thomas-veillard.fr/wp-content/plugins/visual-link-preview/dist/public.css?ver=2.2.1" media="all">
+<link rel="stylesheet" id="vlp-public-css" href="https://thomas-veillard.fr/wp-content/plugins/visual-link-preview/dist/public.css?ver=2.2.4" media="all">
 <link rel="stylesheet" id="twentyfifteen-fonts-css" href="https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;display=fallback" media="all">
 <link rel="stylesheet" id="genericons-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=20201208" media="all">
 <link rel="stylesheet" id="twentyfifteen-style-css" href="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/style.css?ver=20201208" media="all">
@@ -582,6 +582,10 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 2: state management with props/events »</p>
+
+
+
 <p class="question"><strong>Question 3</strong>: While being a well-working solution, it suffers from maintainability issues. Please expose and discuss them.</p>
 
 
@@ -598,7 +602,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 4</strong>: Replace every needed <code>user</code> props by an <code>inject</code> and remove transitional props that are not useful anymore. For now, you can keep the <code>userChanged</code> event chain. Be sure to make your <code>inject</code> reactive.</p>
+<p class="exercice"><strong>Exercise 3</strong>: Replace every needed <code>user</code> props by an <code>inject</code> and remove transitional props that are not useful anymore. For now, you can keep the <code>userChanged</code> event chain. Be sure to make your <code>inject</code> reactive.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 3: state management with provide/inject »</p>
 
 
 
@@ -637,7 +645,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 5</strong>: Move the <code>user</code> property from the <code>App</code> component state to a store managed with vuex. Drop the event chain and let <code>SigninButton</code> directly call a <a href="https://next.vuex.vuejs.org/guide/mutations.html" target="_blank" rel="noreferrer noopener">mutation</a> in the store.</p>
+<p class="exercice"><strong>Exercise 4</strong>: Move the <code>user</code> property from the <code>App</code> component state to a store managed with vuex. Drop the event chain and let <code>SigninButton</code> directly call a <a href="https://next.vuex.vuejs.org/guide/mutations.html" target="_blank" rel="noreferrer noopener">mutation</a> in the store.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 4: state management with a store »</p>
 
 
 
@@ -675,11 +687,15 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+).</p>
+<p class="exercice"><strong>Exercise 5</strong>: Install vue-router v4+ according to <a href="https://next.router.vuejs.org/installation.html" target="_blank" rel="noreferrer noopener">official documentation</a>. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+).</p>
 
 
 
-<p class="exercice"><strong>Exercise 8</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router inside its own ES module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: add vue-router dependency »</p>
+
+
+
+<p class="exercice"><strong>Exercise 6</strong>: Using the <a href="https://next.router.vuejs.org/guide/" target="_blank" rel="noreferrer noopener">Getting Started</a> guide, add <code>/</code> and <code>/conversations</code> routes. Define the router inside its own ES module (ex. <code>src/router/index.js</code>). For now, the <code>ConversationsIndexPage</code> should just contain a placeholder (a small message to visually see that the route works fine).</p>
 
 
 
@@ -696,7 +712,15 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 9</strong>: You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. It must use the <code>&lt;router-link /></code>.</p>
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: add / and /conversations routes »</p>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the <code>/conversations</code> routes. That link should only be visible for logged users. It must use the <code>&lt;router-link /></code>.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 7: add header navigation »</p>
 
 
 
@@ -715,7 +739,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 10</strong>: In the case the user tries to access <code>/conversations</code> without being logged-in, it should be redirected to the home page. Use a <a href="https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards" target="_blank" rel="noreferrer noopener">guard</a> to implement this behaviour.</p>
+<p class="exercice"><strong>Exercise 8</strong>: In the case the user tries to access <code>/conversations</code> without being logged-in, it should be redirected to the home page. Use a <a href="https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards" target="_blank" rel="noreferrer noopener">guard</a> to implement this behaviour.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 8: add guards for authenticated routes »</p>
 
 
 
@@ -723,7 +751,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<p class="exercice"><strong>Exercise 11</strong>: Implement the <code>/conversations/:id</code> route. For now, the newly created <code>ConversationShowPage</code> component should access the id given in the URL and display it inside the template.</p>
+<p class="exercice"><strong>Exercise 9</strong>: Implement the <code>/conversations/:id</code> route. For now, the newly created <code>ConversationShowPage</code> component should access the id given in the URL and display it inside the template.</p>
+
+
+
+<p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 9: add /conversations/:id route »</p>
 
 
 
