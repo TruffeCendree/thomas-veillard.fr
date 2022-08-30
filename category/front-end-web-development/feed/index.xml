@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Mon, 29 Aug 2022 15:35:01 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 30 Aug 2022 12:27:28 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1982,7 +1982,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="exercice"><p><strong>Excercise 2</strong>: Launch a local HTTP server (seen <a href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">in the lecture</a>) and run the application from it. Then, inspect the HTTP traffic and record some statistics:</p><ul style="margin-left: 1em; margin-bottom: 0"><li>How many JS files were loaded ?</li><li>How long does it take on average to load one ES6-module ?</li><li>What is the total completion time to load all JS files ?</li><li>Did the browser download JS files sequentially or in parallel ?</li></ul></div><br>
+<div class="exercice"><p><strong>Exercise 2</strong>: Launch a local HTTP server (seen <a href="https://thomas-veillard.fr/front-end-web-development/languages/8-fast-tour-of-javascript-setup/">in the lecture</a>) and run the application from it. Then, inspect the HTTP traffic and record some statistics:</p><ul style="margin-left: 1em; margin-bottom: 0"><li>How many JS files were loaded ?</li><li>How long does it take on average to load one ES6-module ?</li><li>What is the total completion time to load all JS files ?</li><li>Did the browser download JS files sequentially or in parallel ?</li></ul></div><br>
 
 
 
@@ -1990,7 +1990,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<p class="exercice"><strong>Excercise 3</strong>: Discuss the performance penalty of serving ES6-modules as independent files to the browser. How to mitigate this performance issue?</p>
+<p class="exercice"><strong>Exercise 3</strong>: Discuss the performance penalty of serving ES6-modules as independent files to the browser. How to mitigate this performance issue?</p>
 
 
 
@@ -2047,7 +2047,7 @@ npm install --prod
 npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p class="exercice"><strong>Excercise 4</strong>: Install dependencies using the <code>npm install</code> command. Dependencies are locally stored inside the <code>node_modules</code> folder. Why is there far more many modules into <code>node_modules</code> that those declared in <code>package.json</code> ?</p>
+<p class="exercice"><strong>Exercise 4</strong>: Install dependencies using the <code>npm install</code> command. Dependencies are locally stored inside the <code>node_modules</code> folder. Why is there far more many modules into <code>node_modules</code> that those declared in <code>package.json</code> ?</p>
 
 
 
@@ -2067,7 +2067,7 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
 
 
 
-<p class="exercice"><strong>Excercise 5</strong>: The rate history app is potentially vulnerable to a high-level security issue through one of its dependencies. Using npm, find all vulnerable packages and associated version.  In which release those bug have been fixed?</p>
+<p class="exercice"><strong>Exercise 5</strong>: The rate history app is potentially vulnerable to a high-level security issue through one of its dependencies. Using npm, find all vulnerable packages and associated version.  In which release those bug have been fixed?</p>
 
 
 
@@ -2103,11 +2103,11 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
 
 
 
-<p class="exercice"><strong>Excercise 6</strong>: Look at the webpack documentation (both <a href="https://webpack.js.org/" target="_blank" rel="noreferrer noopener">home page</a> and the <a href="https://webpack.js.org/concepts/" target="_blank" rel="noreferrer noopener">concepts</a>). What is its primary purpose and how does it fix our performance issue previously encountered with ES6-modules?</p>
+<p class="exercice"><strong>Exercise 6</strong>: Look at the webpack documentation (both <a href="https://webpack.js.org/" target="_blank" rel="noreferrer noopener">home page</a> and the <a href="https://webpack.js.org/concepts/" target="_blank" rel="noreferrer noopener">concepts</a>). What is its primary purpose and how does it fix our performance issue previously encountered with ES6-modules?</p>
 
 
 
-<p class="exercice"><strong>Excercise 7</strong>: The <code>webpack.config.js</code> file is ready to build the aggregated bundle in development mode. The entry point is <code>src/index.js</code>. Bundle should be output at <code>dist/index.js</code>. You can run webpack using <code>npm run build</code>.</p>
+<p class="exercice"><strong>Exercise 7</strong>: The <code>webpack.config.js</code> file is ready to build the aggregated bundle in development mode. The entry point is <code>src/index.js</code>. Bundle should be output at <code>dist/index.js</code>. You can run webpack using <code>npm run build</code>.</p>
 
 
 
@@ -2119,7 +2119,7 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
 
 
 
-<p class="exercice"><strong>Excercise 9</strong>: Compare webpack&rsquo;s output in development and in production mode.</p>
+<p class="exercice"><strong>Exercise 9</strong>: Compare webpack&rsquo;s output in development and in production mode.</p>
 
 
 
@@ -2790,7 +2790,7 @@ calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment
 
 
 
-<h4>Excercise 3. Implement map(array, transform)</h4>
+<h4>Exercise 3. Implement map(array, transform)</h4>
 
 
 
@@ -2805,7 +2805,7 @@ calendarEvent._id = <span class="hljs-number">2</span> <span class="hljs-comment
 
 
 
-<h4>Excercise 4. Basic CSV parsing into literal objects</h4>
+<h4>Exercise 4. Basic CSV parsing into literal objects</h4>
 
 
 
@@ -2845,7 +2845,7 @@ fetch(<span class="hljs-string">'https://thomas-veillard.fr/wp-content/uploads/2
 
 
 
-<h4>Excercise 5. Computes stats about contributions</h4>
+<h4>Exercise 5. Computes stats about contributions</h4>
 
 
 
