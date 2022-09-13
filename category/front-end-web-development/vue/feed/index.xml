@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/vue/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Mon, 29 Aug 2022 15:35:01 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 12 Sep 2022 18:41:05 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -544,6 +544,10 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 <h4>Vue project setup</h4>
+
+
+
+<p><i class="fa fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> The Vue-CLI has been deprecated at the beginning of the year. Because some questions still rely on it, please use it exceptionnally.</p>
 
 
 

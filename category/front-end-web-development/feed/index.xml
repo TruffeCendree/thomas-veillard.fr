@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Tue, 30 Aug 2022 12:27:28 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 12 Sep 2022 18:41:05 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -1588,6 +1588,10 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
+<p><i class="fa fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> The Vue-CLI has been deprecated at the beginning of the year. Because some questions still rely on it, please use it exceptionnally.</p>
+
+
+
 <p class="question"><strong>Question 1</strong>: That is the main difference between local installation and global installation of packages with npm? What kind of packages do you generally install locally? What kind is generally installed globally?</p>
 
 
@@ -2277,6 +2281,14 @@ npm install webpack-cli --save-dev</code></div><small class="shcb-language" id="
 
 
 <ol><li>Catch some code smells and improved code formatting with <a href="https://standardjs.com/" target="_blank" rel="noreferrer noopener">standard.js</a>.</li><li>Generate documentation using JSDoc.</li><li>Test the quality of autocomplete with vscode, intellisense and JSDoc.</li><li>Catch errors using types described in JSDoc comments with the typescript compiler in JS-compatible mode.</li><li>Improve debugging experience for transformed code with source-maps.</li></ol>
+
+
+
+<h4>Breaking change! Vue moved from Vue-CLI to <code>vue-create</code>.</h4>
+
+
+
+<p>My initial intent while writing this tutorial was to explain the tools behind <code>Vue-CLI</code>, the official command line tool to create and manage vue applications. As of September 2022, the <code><a href="https://cli.vuejs.org/guide/installation.html" target="_blank" rel="noreferrer noopener">vue-cli</a></code> is now deprecated in favour of <code><a href="https://vuejs.org/guide/quick-start.html#with-build-tools" target="_blank" rel="noreferrer noopener">vue-create</a></code>. It does not use webpack under the hook anymore. Still, the background exposed in the current tutorial still helps to understand the benefits of <a href="https://vitejs.dev/guide/why.html" target="_blank" rel="noreferrer noopener">Vite</a> and <a href="https://rollupjs.org/guide/en/" target="_blank" rel="noreferrer noopener">Rollup</a> internally used by the new tool chain.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/">11. JavaScript: practical activity n°2</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
