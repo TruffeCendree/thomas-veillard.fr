@@ -8,9 +8,9 @@
 	>
 
 <channel>
-	<title>Cours &#8211; Thomas VEILLARD</title>
+	<title>Archives des Cours - Thomas VEILLARD</title>
 	<atom:link href="https://thomas-veillard.fr/category/developpement-web-cote-client/cours/feed/" rel="self" type="application/rss+xml" />
-	<link>https://thomas-veillard.fr/</link>
+	<link>https://thomas-veillard.fr/category/developpement-web-cote-client/cours/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
 	<lastBuildDate>Sat, 20 Feb 2021 12:53:13 +0000</lastBuildDate>
 	<language>fr-FR</language>
@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7.4</generator>
+	<generator>https://wordpress.org/?v=6.1</generator>
 	<item>
 		<title>5. Que peut faire le web aujourd&#8217;hui ?</title>
 		<link>https://thomas-veillard.fr/developpement-web-cote-client/cours/que-peut-faire-le-web-aujourdhui/</link>
@@ -41,7 +41,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="658" height="515" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1790" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png 658w, https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments-300x235.png 300w" sizes="(max-width: 658px) 100vw, 658px" /><figcaption>Démonstration de la <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, qui permet au site web de déléguer tout le processus de commande et de paiement en ligne. Cela inclut l&rsquo;affichage du détail des prix, l&rsquo;enregistrement des cartes bancaires et le traitement du paiement.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="658" height="515" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1790" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png 658w, https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments-300x235.png 300w" sizes="(max-width: 658px) 100vw, 658px" /><figcaption>Démonstration de la <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, qui permet au site web de déléguer tout le processus de commande et de paiement en ligne. Cela inclut l&rsquo;affichage du détail des prix, l&rsquo;enregistrement des cartes bancaires et le traitement du paiement.</figcaption></figure>
 
 
 
@@ -175,7 +175,7 @@
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<figure class="wp-block-image size-large"><img loading="lazy" width="1058" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1406"/><figcaption>L&rsquo;interface de gestion d&rsquo;Hetzner Cloud est un bel exemple de Single Page Application.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1058" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1406"/><figcaption>L&rsquo;interface de gestion d&rsquo;Hetzner Cloud est un bel exemple de Single Page Application.</figcaption></figure>
 
 
 
@@ -221,8 +221,8 @@
 
 
 
-<div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+<div class="is-layout-flex wp-container-5 wp-block-columns">
+<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
@@ -231,9 +231,9 @@
 
 
 
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 

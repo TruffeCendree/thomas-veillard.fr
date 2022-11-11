@@ -8,9 +8,9 @@
 	>
 
 <channel>
-	<title>01. Introduction &#8211; Thomas VEILLARD</title>
+	<title>Archives des 01. Introduction - Thomas VEILLARD</title>
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/introduction/feed/" rel="self" type="application/rss+xml" />
-	<link>https://thomas-veillard.fr/</link>
+	<link>https://thomas-veillard.fr/category/front-end-web-development/introduction/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
 	<lastBuildDate>Sat, 31 Jul 2021 05:01:55 +0000</lastBuildDate>
 	<language>fr-FR</language>
@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7.4</generator>
+	<generator>https://wordpress.org/?v=6.1</generator>
 	<item>
 		<title>05. What can the web do today ?</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/introduction/5-what-can-the-web-do-today/</link>
@@ -41,7 +41,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1788"/><figcaption>Demonstration of <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, allowing app to delegate all the shipping process to the browser. This includes price summary, payment card registration, etc.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1788"/><figcaption>Demonstration of <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, allowing app to delegate all the shipping process to the browser. This includes price summary, payment card registration, etc.</figcaption></figure>
 
 
 
@@ -199,7 +199,7 @@
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/introduction/how-rich-interactive-and-complex-is-this-ui/">03. How rich and interactive is this UI ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1395"/><figcaption>The control panel of Hetzner Cloud, which is a nice example of Single Page Application.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1395"/><figcaption>The control panel of Hetzner Cloud, which is a nice example of Single Page Application.</figcaption></figure>
 
 
 
@@ -241,8 +241,8 @@
 
 
 
-<div class="wp-block-columns">
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+<div class="is-layout-flex wp-container-5 wp-block-columns">
+<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
@@ -251,9 +251,9 @@
 
 
 
-<div class="wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 

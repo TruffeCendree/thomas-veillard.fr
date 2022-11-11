@@ -8,9 +8,9 @@
 	>
 
 <channel>
-	<title>03. VueJS &#8211; Thomas VEILLARD</title>
+	<title>Archives des 03. VueJS - Thomas VEILLARD</title>
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/vue/feed/" rel="self" type="application/rss+xml" />
-	<link>https://thomas-veillard.fr/</link>
+	<link>https://thomas-veillard.fr/category/front-end-web-development/vue/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
 	<lastBuildDate>Mon, 12 Sep 2022 18:41:05 +0000</lastBuildDate>
 	<language>fr-FR</language>
@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7.4</generator>
+	<generator>https://wordpress.org/?v=6.1</generator>
 	<item>
 		<title>03. Vue.js project</title>
 		<link>https://thomas-veillard.fr/front-end-web-development/vue/project/</link>
@@ -238,7 +238,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 }</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="1060" height="836" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif" alt="" class="wp-image-3576"/></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1060" height="836" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif" alt="" class="wp-image-3576"/></figure>
 
 
 
@@ -250,7 +250,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-image size-large"><img src="https://thomas-veillard.fr/wp-content/uploads/2021/09/user-stored-in-the-signin-button-component.png" alt="" class="wp-image-3586"/><figcaption>Screensheet of vue-devtools, showing the data property of <code>SigninButton</code>.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/user-stored-in-the-signin-button-component.png" alt="" class="wp-image-3586"/><figcaption>Screensheet of vue-devtools, showing the data property of <code>SigninButton</code>.</figcaption></figure>
 
 
 
@@ -286,7 +286,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/props-goes-down.gif" alt="" class="wp-image-3609"/><figcaption>Animated flow of props propagation from <code>App</code> to deeply nested children.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/props-goes-down.gif" alt="" class="wp-image-3609"/><figcaption>Animated flow of props propagation from <code>App</code> to deeply nested children.</figcaption></figure>
 
 
 
@@ -294,7 +294,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/event-goes-up.gif" alt="" class="wp-image-3613"/><figcaption>Animated flow of events going up, getting handled in App and trigering a view update.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/event-goes-up.gif" alt="" class="wp-image-3613"/><figcaption>Animated flow of events going up, getting handled in App and trigering a view update.</figcaption></figure>
 
 
 <a href=https://docs.google.com/presentation/d/1FhBhkHADZAE-DtDQU2qk6MczPhqDVYRIyk7ysPOFdA8/edit#slide=id.gebafa763cd_0_119 target="_blank">
@@ -434,8 +434,8 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<div class="wp-block-columns">
-<div class="wp-block-column question">
+<div class="is-layout-flex wp-container-4 wp-block-columns">
+<div class="is-layout-flow wp-block-column question">
 <p><strong>Question 7</strong>: What is the performance difference between:</p>
 
 
@@ -554,11 +554,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 <p class="question"><strong>Question 1</strong>: That is the main difference between local installation and global installation of packages with npm? What kind of packages do you generally install locally? What kind is generally installed globally?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
 npm install @vue/cli
 
 <span class="hljs-comment"># example of command to install the vue cli globally</span>
-npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>According to the <a href="https://cli.vuejs.org/guide/installation.html" target="_blank" rel="noreferrer noopener">docs</a>, the global installation is best suitable for Vue CLI.</p>
@@ -609,7 +609,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="376" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png" alt="" class="wp-image-3762" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-300x110.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-768x282.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png 1501w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>On the left, the vue app with placeholders. On the right, result after cleanup.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="376" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png" alt="" class="wp-image-3762" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-300x110.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-768x282.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png 1501w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>On the left, the vue app with placeholders. On the right, result after cleanup.</figcaption></figure>
 
 
 
@@ -637,7 +637,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png" alt="" class="wp-image-3378" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-300x128.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-768x327.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png 1296w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Basic possible visual at the end of the next exercise and its components tree.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png" alt="" class="wp-image-3378" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-300x128.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-768x327.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png 1296w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Basic possible visual at the end of the next exercise and its components tree.</figcaption></figure>
 
 
 
@@ -648,7 +648,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 5</strong>: Let&rsquo;s begin with the root component, formally <code>App</code> (in <code>src/App.vue</code>). Replace its template with the following content and create the missing components. Add some content to the header (ex. fake home link, fake user name&#8230;) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span> /&gt;</span>
@@ -657,7 +657,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: create BaseHeader and BaseFooter »</p>
@@ -675,12 +675,12 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p><strong>Tips</strong>: If you integrated font awesome, try extracting most logic out of <code>App</code>. When it comes to configure third party dependencies, I generally work with ES-modules inside a <code>src/lib</code> folder. Example: <code>src/lib/fontAwesome.js</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: create BaseLayout that uses slot API »</p>
@@ -703,7 +703,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button.gif" alt="" class="wp-image-3490"/></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button.gif" alt="" class="wp-image-3490"/></figure></div>
 
 
 
@@ -711,7 +711,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" width="850" height="166" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-used-in-header.gif" alt="" class="wp-image-3804"/><figcaption>Tips: it makes sense to use them in the navigation in header.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="850" height="166" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-used-in-header.gif" alt="" class="wp-image-3804"/><figcaption>Tips: it makes sense to use them in the navigation in header.</figcaption></figure>
 
 
 
@@ -719,7 +719,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="331" height="219" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png" alt="" class="wp-image-3493" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png 331w, https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color-300x198.png 300w" sizes="(max-width: 331px) 100vw, 331px" /></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="331" height="219" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png" alt="" class="wp-image-3493" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png 331w, https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color-300x198.png 300w" sizes="(max-width: 331px) 100vw, 331px" /></figure></div>
 
 
 
@@ -732,7 +732,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>You may split your scoped CSS in 2 parts: the styles common to all components, and specific classes for each color in the palette. So, the component&rsquo;s style could look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
 <span class="hljs-selector-class">.button</span> {
   <span class="hljs-comment">/* css properties common to all buttons */</span>
 }
@@ -741,7 +741,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-comment">/* css properties specific to the primary color */</span>
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#42b983</span>;
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, you just need to conditionally bind the CSS classes (<a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">explained here</a>).</p>
@@ -753,11 +753,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Declare in a single place the allowed values for the colour enum and its corresponding colours. On my side, I just declared the above object and always take it as a single source of truth in <code>BaseComponent</code>. In other words, this object contains the colour palette indexed by names I use as reference everywhere in the component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
   <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
   <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
   <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
-}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, you need <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. In short, this is a conjugaison of <a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">style binding</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noreferrer noopener">CSS variables</a>, <a href="https://v3.vuejs.org/guide/computed.html" target="_blank" rel="noreferrer noopener">computed properties</a> and scoped styles.</p>
@@ -778,14 +778,14 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif" alt="" class="wp-image-3510"/></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif" alt="" class="wp-image-3510"/></figure></div>
 
 
 
 <p>Here you have its source code (if you did not install FontAwesome, just replace the <code>&lt;font-awesome-icon /&gt;</code> by a simple text, while preserving the <code>v-if</code> directive.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-button</span>
     <span class="hljs-attr">:disabled</span>=<span class="hljs-string">"isPending"</span>
     <span class="hljs-attr">:color</span>=<span class="hljs-string">"color"</span>
@@ -829,7 +829,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
     }
   }
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the <code>@click</code> event listener attached to the instance of <code>AsyncComponent</code> instance returns a Promise that waits for 2 seconds before resolving. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noreferrer noopener">You can create such a Promise using its constructor and a setTimeou</a>t. Also, please <a href="https://v3.vuejs.org/guide/events.html#method-event-handlers" target="_blank" rel="noreferrer noopener">write the event handler inside a dedicated method</a> since at is a bit complex.</p>
