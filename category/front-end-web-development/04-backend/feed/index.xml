@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/category/front-end-web-development/04-backend/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/category/front-end-web-development/04-backend/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Sat, 12 Nov 2022 10:13:32 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 12 Nov 2022 16:48:08 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -21,7 +21,7 @@
 	<generator>https://wordpress.org/?v=6.1</generator>
 	<item>
 		<title>03. IAM App: database &#038; model bootstraping (pratical activity)</title>
-		<link>https://thomas-veillard.fr/front-end-web-development/03-iam-app-database-model-bootstraping-pratical-activity/</link>
+		<link>https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/</link>
 		
 		<dc:creator><![CDATA[Thomas Veillard]]></dc:creator>
 		<pubDate>Sat, 12 Nov 2022 10:13:31 +0000</pubDate>
@@ -29,8 +29,8 @@
 		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=4542</guid>
 
-					<description><![CDATA[<p>Learning outcomes Specifications In this tutorial, you will prepare the foundations for the Identity and Access Management layer for a future RestAPI. The start point is user registration and cookies-based session management. The following tutorials will leverage those capabilities to build an Oauth2 authorisation server and fine-grained permission management in front of a Rest API. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/03-iam-app-database-model-bootstraping-pratical-activity/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. IAM App: database &#38; model bootstraping (pratical activity)</span></a></p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/03-iam-app-database-model-bootstraping-pratical-activity/">03. IAM App: database &amp; model bootstraping (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+					<description><![CDATA[<p>Learning outcomes Specifications In this tutorial, you will prepare the foundations for the Identity and Access Management layer for a future RestAPI. The start point is user registration and cookies-based session management. The following tutorials will leverage those capabilities to build an Oauth2 authorisation server and fine-grained permission management in front of a Rest API. &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/" class="more-link">Continuer la lecture de <span class="screen-reader-text">03. IAM App: database &#38; model bootstraping (pratical activity)</span></a></p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">03. IAM App: database &amp; model bootstraping (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
 <h4>Learning outcomes</h4>
@@ -338,7 +338,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 <p class="exercice">The next tutorial session will focus on implementing the login and registration http endpoints. Development being driven by tests, you will create new test files. Move what will be common to the whole test suite into  <code>specs/spec-helper.ts</code>.</p>
-<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/03-iam-app-database-model-bootstraping-pratical-activity/">03. IAM App: database &amp; model bootstraping (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
+<p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">03. IAM App: database &amp; model bootstraping (pratical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
 		
