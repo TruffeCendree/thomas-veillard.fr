@@ -12,22 +12,22 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
 	<!-- This site is optimized with the Yoast SEO plugin v19.10 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>03. IAM App: database &amp; model bootstraping (pratical activity) - Thomas VEILLARD</title>
+	<title>03. IAM App: database &amp; model bootstraping (practical activity) - Thomas VEILLARD</title>
 	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">
 	<meta property="og:locale" content="fr_FR">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="03. IAM App: database &amp; model bootstraping (pratical activity) - Thomas VEILLARD">
-	<meta property="og:description" content="Learning outcomes Specifications In this tutorial, you will prepare the foundations for the Identity and Access Management layer for a future RestAPI. The start point is user registration and cookies-based session management. The following tutorials will leverage those capabilities to build an Oauth2 authorisation server and fine-grained permission management in front of a Rest API. &hellip; Continuer la lecture de 03. IAM App: database &amp; model bootstraping (pratical activity)">
+	<meta property="og:title" content="03. IAM App: database &amp; model bootstraping (practical activity) - Thomas VEILLARD">
+	<meta property="og:description" content="Learning outcomes Specifications In this tutorial, you will prepare the foundations for the Identity and Access Management layer for a future RestAPI. The start point is user registration and cookies-based session management. The following tutorials will leverage those capabilities to build an Oauth2 authorisation server and fine-grained permission management in front of a Rest API. &hellip; Continuer la lecture de 03. IAM App: database &amp; model bootstraping (practical activity)">
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2022-11-12T10:13:31+00:00">
-	<meta property="article:modified_time" content="2022-11-12T16:48:08+00:00">
+	<meta property="article:modified_time" content="2022-11-13T09:10:38+00:00">
 	<meta name="author" content="Thomas Veillard">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture estimée">
-	<meta name="twitter:data2" content="10 minutes">
+	<meta name="twitter:data2" content="12 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -41,13 +41,13 @@
 	                "name": "Thomas Veillard",
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
-	            "headline": "03. IAM App: database & model bootstraping (pratical activity)",
+	            "headline": "03. IAM App: database & model bootstraping (practical activity)",
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-12T16:48:08+00:00",
+	            "dateModified": "2022-11-13T09:10:38+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/"
 	            },
-	            "wordCount": 1600,
+	            "wordCount": 1986,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -61,12 +61,12 @@
 	            "@type": "WebPage",
 	            "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/",
 	            "url": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/",
-	            "name": "03. IAM App: database & model bootstraping (pratical activity) - Thomas VEILLARD",
+	            "name": "03. IAM App: database & model bootstraping (practical activity) - Thomas VEILLARD",
 	            "isPartOf": {
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-12T16:48:08+00:00",
+	            "dateModified": "2022-11-13T09:10:38+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/#breadcrumb"
 	            },
@@ -93,7 +93,7 @@
 	                {
 	                    "@type": "ListItem",
 	                    "position": 2,
-	                    "name": "03. IAM App: database & model bootstraping (pratical activity)"
+	                    "name": "03. IAM App: database & model bootstraping (practical activity)"
 	                }
 	            ]
 	        },
@@ -375,7 +375,7 @@ blockquote, cite {
 	
 	
 	<header class="entry-header">
-		<h1 class="entry-title">IAM App: database &amp; model bootstraping (pratical activity)</h1>	</header><!-- .entry-header -->
+		<h1 class="entry-title">IAM App: database &amp; model bootstraping (practical activity)</h1>	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		
@@ -472,11 +472,7 @@ blockquote, cite {
 
 
 
-<li>Then install those dependencies using <code>npm install</code>. In a general manner, you should check the code you are about to pull and run before actually running it.
-<ul>
-<li>
-</ul>
-</li>
+<li>Then install those dependencies using <code>npm install</code>. In a general manner, you should check the code you are about to pull and run before actually running it.</li>
 
 
 
@@ -555,13 +551,13 @@ blockquote, cite {
 <p>TDD supposes you set up asap a test runner (a library responsible for preparing the scenario of each test case and actually run the code of the test). Let&rsquo;s do this by installing <code>mocha</code> (the test runner) and <code>chai</code> (an assertion library). Those familiar with <code>jest</code> can rely on it instead.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm install --save-dev mocha @types/mocha chai @types/chai</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm install --save-dev mocha @types/mocha chai @types/chai chai-as-promised @types/chai-as-promised</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>In addition, you can register additional scripts in <code>package.json</code>. Above is my command to run the whole test suite. Windows users: you may need to change the way the <code>NODE_ENV</code> environment variable is set.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">NODE_ENV=test mocha --recursive dist/server/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">NODE_ENV=test mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>You will map the test file based on the original source (ex. <code>src/entities/user.ts</code> will be covered by <code>src/specs/entities/user.spec.ts</code>). While this structure plays well for unit testing and integration tests, you are also allowed to create additional files into the <code>src/specs</code> folder.</p>
@@ -572,21 +568,28 @@ blockquote, cite {
 
 
 <pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/specs/entities/user.ts</span>
-<span class="hljs-keyword">import</span> { expect } <span class="hljs-keyword">from</span> <span class="hljs-string">'chai'</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> chai <span class="hljs-keyword">from</span> <span class="hljs-string">'chai'</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> chaiAsPromised <span class="hljs-keyword">from</span> <span class="hljs-string">'chai-as-promised'</span>
 <span class="hljs-keyword">import</span> { User } <span class="hljs-keyword">from</span> <span class="hljs-string">'...'</span>
 
+chai.use(chaiAsPromised)
+
 describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  beforeAll(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  before(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> initialise the datasource (database connection)</span>
   })
     
-  before(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  beforeEach(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> drop the content of the user table between each it().</span>
   })
 
   describe(<span class="hljs-string">'validations'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     it(<span class="hljs-string">'should create a new User in database'</span>)
-    it(<span class="hljs-string">'should raise error if email is missing'</span>)
+
+    it(<span class="hljs-string">'should raise error if email is missing'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// hint to check if a promise fails with chai + chai-as-promise:</span>
+      <span class="hljs-comment">// await chai.expect(promise).to.eventually.be.rejectedWith(QueryFailedError, "message")</span>
+    })
   })
 })
 </code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
@@ -600,27 +603,128 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<h4>Adding validations and cover them with test cases</h4>
+<h4>Adding presence validations and cover them with test cases</h4>
 
 
 
-<p class="question"><strong>Question 2</strong>: What kind of error is currently thrown in test case <code> "should raise error if email is missing"</code>? Is it an SQL error (occurring in the database server) or a validation error? What should it be, so it is easy and secure to format an error message to the end user?</p>
+<p class="question"><strong>Question 2</strong>: What kind of error is currently thrown in test case <code> "should raise error if email is missing"</code>? Is it an SQL error (occurring in the database server) or a validation error before the query got executed? What should it be, so it is easy and secure to format an error message to the end user (considering security, message internationalisation, etc.)?</p>
 
 
 
-<div class="is-layout-flex wp-container-8 wp-block-columns">
+<div class="is-layout-flex wp-container-9 wp-block-columns">
 <div class="is-layout-flow wp-block-column exercice">
-<p><strong>Exercise 3</strong>: Implement a <code>ValidationError</code> class (with appropriate inheritance) that will be raised when trying to save (both on creation and update) an invalid user object. You can take advantage of <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">typeorm listeners</a>, especially <code>@BeforeInsert</code> and <code>@BeforeUpdate</code> on purpose. Your first use case is checking that required properties are present. Update the corresponding integration test.</p>
+<p><strong>Exercise 3</strong>: Implement a custom <code>ValidationError</code> class (with appropriate inheritance) that will be raised when trying to save (both on creation and update) an invalid user object. You can take advantage of <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">typeorm listeners</a>, especially <code>@BeforeInsert</code> and <code>@BeforeUpdate</code> on purpose. Your first use case is checking that required properties are present (not null, nor empty string).</p>
 
 
 
-<p class="u-mbn">Bonus: most advanced developers may infer the requireness of properties based on null acceptance defined in <a href="https://typeorm.delightful.studio/classes/_metadata_entitymetadata_.entitymetadata.html" target="_blank" rel="noreferrer noopener">typeorm column metadata</a>. Metadata are collected when using typescript annotation like <code>@Column()</code> and can be retrieved from <code>datasource.entityMetadatas</code>.</p>
+<p>An instance of <code>ValidationError</code> should expose the following properties:</p>
+
+
+
+<ul class="u-mlm">
+<li>
+<code>error.message</code> of type string;</li>
+
+
+
+<li>
+<code>error.stack</code> of type string;</li>
+
+
+
+<li>
+<code>error.target</code> of type object (ex. an instance of <code>User</code>);</li>
+
+
+
+<li>
+<code>error.property</code> of type string (ex. <code>'email', 'firstname'</code>, etc.).
+<ul></ul>
+</li>
+</ul>
+
+
+
+<p>Update the corresponding integration test. I give you a part of it:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually
+  .be.rejectedWith(ValidationError, <span class="hljs-string">"The email is required"</span>)
+  .and.include({ target: user, property: <span class="hljs-string">'email'</span> })</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>Tips</strong>: do not use <code>class-validator</code> yet, as it is described in the typeorm documentation about validations. That is for the next exercise.</p>
+
+
+
+<p class="u-mbn"><strong>Bonus</strong>: most advanced developers may infer the requireness of properties based on null acceptance defined in <a href="https://typeorm.delightful.studio/classes/_metadata_entitymetadata_.entitymetadata.html" target="_blank" rel="noreferrer noopener">typeorm column metadata</a>. Metadata are collected when using typescript annotation like <code>@Column()</code> and can be retrieved from the global metadata store via <code>getMetadataArgsStorage()</code>.</p>
 </div>
 </div>
 
 
 
-<p>The next attribute to validate is the email. It must be unique (case insensitive) in the whole table. For integrity reasons, we will validate this at the database level. But since the error messages from the database are hard to manage (and should not be disclosed), we will also implement throw a <code>ValidationError</code> if the case is detected by node.</p>
+<h4>Support for asynchronous validations and refactoring using <code>class-validator</code>
+</h4>
+
+
+
+<p>The typeorm team recommends using  <code>class-validator</code>, as described <a href="https://typeorm.io/validation" target="_blank" rel="noreferrer noopener">here</a>. The validations are then defined as decorators on properties. Once defined, you can validate any <code>user</code> this way:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> errors = <span class="hljs-keyword">await</span> validate(user)
+<span class="hljs-keyword">if</span> (errors.length) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Validation failed!`</span>)</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Things to note about this way of doing:</p>
+
+
+
+<ul>
+<li>the code that will persist an entity must not forget to manually run the validation, while your own implementation triggers them as part of the life-cycle of the entity;</li>
+
+
+
+<li>the <code>validate()</code> function is asynchronous (because decorators are able to validate promises and because you can write async validations);</li>
+
+
+
+<li>the annotations are a convenient and highly readable way of expression;</li>
+
+
+
+<li>the <code>class-validator</code> contains a lot of built-in validations that can be extended and other features such as validation groups (see doc for details);</li>
+
+
+
+<li>it is possible to know if an entity seems valid, without actually trying to save it;</li>
+
+
+
+<li>the reported validations errors are structured, allowing processing them semantically (for example in http error responses).</li>
+</ul>
+
+
+
+<div class="is-layout-flex wp-container-13 wp-block-columns">
+<div class="is-layout-flow wp-block-column exercice">
+<p><strong>Exercise 4</strong>: you will migrate to <code>class-validator</code>, why preserving the systematic validation on persist. You cannot call the <code>async validate(this)</code> instruction inside an Entity Listener like <code>@BeforeUpdate</code>, because any returned promise is not awaited. Instead, you will need a <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">Subscriber</a>. Of course, you have to write the corresponding specs. Your custom error class defined in <code>errors/validation-error.ts</code> will become obsolete, replaced with a class managed by the <code>class-validator</code> package. For performance reasons, it would be nice to raise on the first validation error.</p>
+
+
+
+<p>Here a hint for the updated spec:</p>
+
+
+<pre class="wp-block-code u-mbn" aria-describedby="shcb-language-11" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually.be.rejected.and.deep.include({
+  target: user,
+  property: <span class="hljs-string">'email'</span>,
+  constraints: { isNotEmpty: <span class="hljs-string">'email should not be empty'</span> }
+})</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+</div>
+</div>
+
+
+
+<p>The next attribute to validate is the email. It must be unique (case insensitive) in the whole table. For integrity reasons, we will validate this at the database level. But since the error messages from the database are hard to manage (and should not be disclosed), we will prefer throwing a <code>ValidationError</code> (the class from <code>class-validator</code>) before even running the SQL query.</p>
 
 
 
@@ -628,7 +732,11 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice"><strong>Exercise 4:</strong> Implement validation that ensures the uniqueness (case insensitive) of the email. That validation will trigger a DB call, so is async by nature. You cannot use Entity Listener like <code>@BeforeUpdate</code>, because any returned promise is not awaited. Instead, you will need a <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">Subscriber</a>. Of course, you have to write the corresponding specs.</p>
+<p class="exercice"><strong>Exercise 5:</strong> Implement a validation that ensures the uniqueness (case insensitive) of the email. That validation will trigger a DB call, so is async by nature. That the reason the <code>validate(user)</code> function is async. Take a look at <a href="https://www.npmjs.com/package/class-validator#custom-validation-decorators" target="_blank" rel="noreferrer noopener">custom validation decorators</a>, then implement an <code>@UniqueInColumn()</code> decorator to be applied on <code>email</code>. Keep in mind this decorator may become more generic over time (ex. with a parameter to toggle on/off the case insensitivity, the other columns for uniqueness key, etc.).</p>
+
+
+
+<p>In exercise 5, you probably relied on a global <code>datasource</code> object to query your database. This works only if your validation is not executed inside a transaction. In the <a href="https://github.com/typestack/class-validator/issues/631" target="_blank" rel="noreferrer noopener">absence of a context being passed to the custom validation</a>, I will show you a monkey patch in a <strong>code demonstration</strong>. Ideas are welcome.</p>
 
 
 
@@ -636,7 +744,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-10 wp-block-columns">
+<div class="is-layout-flex wp-container-15 wp-block-columns">
 <div class="is-layout-flow wp-block-column question">
 <p><strong>Question 4</strong>: how models validations, such as the one you just wrote, can serve the security of your application? Give an example.</p>
 
@@ -672,15 +780,15 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice"><strong>Exercise 5</strong>: add an <code>async setPassword(password, passwordConfirmation)</code> method in the <code>User</code> class. <code>Bcrypt</code> can offload the hashing work outside of the main thread, allowing the main thread to process other tasks during that time (from security criteria, it matters for the <strong>availability</strong> of your app because nodejs is single-threaded). If the password does not match, raise a semantic error (instance of  <code>ValidationError</code>). Else, hash the password and discard the inputs. Improve your test suite.</p>
+<p class="exercice"><strong>Exercise 6</strong>: add an <code>async setPassword(password, passwordConfirmation)</code> method in the <code>User</code> class. <code>Bcrypt</code> can offload the hashing work outside of the main thread, allowing the main thread to process other tasks during that time (from security criteria, it matters for the <strong>availability</strong> of your app because nodejs is single-threaded). If the password does not match, raise a semantic error (instance of  <code>ValidationError</code>). Else, hash the password and discard the inputs. Improve your test suite.</p>
 
 
 
-<p class="exercice"><strong>Exercise 6</strong>: Compute the strength (entropy) of the password being set in bits. Use can play with the <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator provided by ANSSI</a> and get more familiar with the criteria that improve password robustness. Then, implement a validation so password has at least 80 bits of entropy (with TDD).  Unit tests against the function computing the entropy would be appreciated. PS: you do not need any <code>npm</code> package for that.</p>
+<p class="exercice"><strong>Exercise 7</strong>: Compute the strength (entropy) of the password being set in bits. Use can play with the <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator provided by ANSSI</a> and get more familiar with the criteria that improve password robustness. Then, implement a validation so password has at least 80 bits of entropy (with TDD).  Unit tests against the function computing the entropy would be appreciated. PS: you do not need any <code>npm</code> package for that.</p>
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean&gt;</code>. Cover this method with tests.</p>
+<p class="exercice"><strong>Exercise 8</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean></code>. Cover this method with tests.</p>
 
 
 
@@ -802,7 +910,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
   gtag('js', new Date());
 
   gtag('config', 'G-NH45PR7ELJ');</script>
-<style id="core-block-supports-inline-css">.wp-block-columns.wp-container-3,.wp-block-columns.wp-container-8,.wp-block-columns.wp-container-10{flex-wrap:nowrap;}</style>
+<style id="core-block-supports-inline-css">.wp-block-columns.wp-container-3,.wp-block-columns.wp-container-9,.wp-block-columns.wp-container-13,.wp-block-columns.wp-container-15{flex-wrap:nowrap;}</style>
 <script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141028" id="twentyfifteen-skip-link-focus-fix-js"></script>
 <script id="twentyfifteen-script-js-extra">
 var screenReaderText = {"expand":"<span class=\"screen-reader-text\">ouvrir le sous-menu<\/span>","collapse":"<span class=\"screen-reader-text\">fermer le sous-menu<\/span>"};
