@@ -21,7 +21,7 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2022-11-12T10:13:31+00:00">
-	<meta property="article:modified_time" content="2022-11-13T09:10:38+00:00">
+	<meta property="article:modified_time" content="2022-11-13T10:51:37+00:00">
 	<meta name="author" content="Thomas Veillard">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
@@ -43,11 +43,11 @@
 	            },
 	            "headline": "03. IAM App: database & model bootstraping (practical activity)",
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-13T09:10:38+00:00",
+	            "dateModified": "2022-11-13T10:51:37+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/"
 	            },
-	            "wordCount": 1986,
+	            "wordCount": 2068,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -66,7 +66,7 @@
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-13T09:10:38+00:00",
+	            "dateModified": "2022-11-13T10:51:37+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/#breadcrumb"
 	            },
@@ -732,7 +732,11 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice"><strong>Exercise 5:</strong> Implement a validation that ensures the uniqueness (case insensitive) of the email. That validation will trigger a DB call, so is async by nature. That the reason the <code>validate(user)</code> function is async. Take a look at <a href="https://www.npmjs.com/package/class-validator#custom-validation-decorators" target="_blank" rel="noreferrer noopener">custom validation decorators</a>, then implement an <code>@UniqueInColumn()</code> decorator to be applied on <code>email</code>. Keep in mind this decorator may become more generic over time (ex. with a parameter to toggle on/off the case insensitivity, the other columns for uniqueness key, etc.).</p>
+<p class="exercice"><strong>Exercise 5</strong>: Implement a unique index on the <code>email</code> column directly in the database. TypeORM does not support out-of-the-box transformations such as <code>LOWER(email)</code> in the index definition (<a href="https://typeorm.io/indices#disabling-synchronization" target="_blank" rel="noreferrer noopener">see. the doc</a>). One way could be using migrations to define the index with pure SQL, but I do not want you to play with this complexity yet. Another solution would be using <code>transformer</code>s as defined in the <a href="https://typeorm.io/entities#column-options" target="_blank" rel="noreferrer noopener"><code>@Column</code> options</a>. You could also define setters or try <code>@BeforeInsert</code>, etc. Last, but not least, you know what I think about testing&#8230;</p>
+
+
+
+<p class="exercice"><strong>Exercise 6:</strong> Implement a validation that ensures the uniqueness (case insensitive) of the email. That validation will trigger a DB call, so is async by nature. That the reason the <code>validate(user)</code> function is async. Take a look at <a href="https://www.npmjs.com/package/class-validator#custom-validation-decorators" target="_blank" rel="noreferrer noopener">custom validation decorators</a>, then implement an <code>@UniqueInColumn()</code> decorator to be applied on <code>email</code>. Keep in mind this decorator may become more generic over time (ex. with a parameter to toggle on/off the case insensitivity, the other columns for uniqueness key, etc.).</p>
 
 
 
@@ -780,15 +784,15 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice"><strong>Exercise 6</strong>: add an <code>async setPassword(password, passwordConfirmation)</code> method in the <code>User</code> class. <code>Bcrypt</code> can offload the hashing work outside of the main thread, allowing the main thread to process other tasks during that time (from security criteria, it matters for the <strong>availability</strong> of your app because nodejs is single-threaded). If the password does not match, raise a semantic error (instance of  <code>ValidationError</code>). Else, hash the password and discard the inputs. Improve your test suite.</p>
+<p class="exercice"><strong>Exercise 7</strong>: add an <code>async setPassword(password, passwordConfirmation)</code> method in the <code>User</code> class. <code>Bcrypt</code> can offload the hashing work outside of the main thread, allowing the main thread to process other tasks during that time (from security criteria, it matters for the <strong>availability</strong> of your app because nodejs is single-threaded). If the password does not match, raise a semantic error (instance of  <code>ValidationError</code>). Else, hash the password and discard the inputs. Improve your test suite.</p>
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: Compute the strength (entropy) of the password being set in bits. Use can play with the <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator provided by ANSSI</a> and get more familiar with the criteria that improve password robustness. Then, implement a validation so password has at least 80 bits of entropy (with TDD).  Unit tests against the function computing the entropy would be appreciated. PS: you do not need any <code>npm</code> package for that.</p>
+<p class="exercice"><strong>Exercise 8</strong>: Compute the strength (entropy) of the password being set in bits. Use can play with the <a href="https://www.ssi.gouv.fr/administration/precautions-elementaires/calculer-la-force-dun-mot-de-passe/" target="_blank" rel="noreferrer noopener">strength calculator provided by ANSSI</a> and get more familiar with the criteria that improve password robustness. Then, implement a validation so password has at least 80 bits of entropy (with TDD).  Unit tests against the function computing the entropy would be appreciated. PS: you do not need any <code>npm</code> package for that.</p>
 
 
 
-<p class="exercice"><strong>Exercise 8</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean></code>. Cover this method with tests.</p>
+<p class="exercice"><strong>Exercise 9</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean></code>. Cover this method with tests.</p>
 
 
 
