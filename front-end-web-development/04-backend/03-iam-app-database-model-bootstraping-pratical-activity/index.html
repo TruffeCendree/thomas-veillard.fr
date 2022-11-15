@@ -21,13 +21,13 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2022-11-12T10:13:31+00:00">
-	<meta property="article:modified_time" content="2022-11-13T10:51:37+00:00">
+	<meta property="article:modified_time" content="2022-11-15T15:21:27+00:00">
 	<meta name="author" content="Thomas Veillard">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture estimée">
-	<meta name="twitter:data2" content="12 minutes">
+	<meta name="twitter:data2" content="13 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -43,11 +43,11 @@
 	            },
 	            "headline": "03. IAM App: database & model bootstraping (practical activity)",
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-13T10:51:37+00:00",
+	            "dateModified": "2022-11-15T15:21:27+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/"
 	            },
-	            "wordCount": 2068,
+	            "wordCount": 2220,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -66,7 +66,7 @@
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-13T10:51:37+00:00",
+	            "dateModified": "2022-11-15T15:21:27+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/#breadcrumb"
 	            },
@@ -430,7 +430,7 @@ blockquote, cite {
 
 
 
-<li>Operate a relational database server.  During code demonstrations, I will use a dockerized <code>mariadb</code> instance, but a regular <code>mysql</code> or a <code>postgresql</code> should be fine. Of course, <code>PostgreSQL</code> requires another nodejs driver.</li>
+<li>Operate a relational database server.  During code demonstrations, I will use a dockerized <code>postgresql</code> instance. This engine is strongly recommended, but a regular <code>mysql</code> or <code>mariadb</code> instance should be fine (except for the ungraded exercise for <code>uuid</code> primary keys).</li>
 </ul>
 
 
@@ -438,17 +438,29 @@ blockquote, cite {
 <p>You are free to install the RDBMS the way you want (docker, system wide install, etc.). For the users of <code>docker-compose</code>, here is a ready-to-use recipe:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="YAML" data-shcb-language-slug="yaml"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">"2"</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="YAML" data-shcb-language-slug="yaml"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://thomas-veillard.fr/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"><div><code class="hljs language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
 
 <span class="hljs-attr">services:</span>
-  <span class="hljs-attr">mariadb:</span>
-    <span class="hljs-attr">image:</span> <span class="hljs-string">mariadb</span>
-    <span class="hljs-attr">volumes:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">./data/mariadb:/var/lib/mysql:rw</span>
+  <span class="hljs-attr">postgres:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">postgres</span>
     <span class="hljs-attr">environment:</span>
-      <span class="hljs-attr">MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">privatepassword</span>
+      <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">tutorial</span>
+      <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">iam</span>
+      <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">privatepassword</span>
     <span class="hljs-attr">ports:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-string">:3306:3306</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">YAML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">yaml</span><span class="shcb-language__paren">)</span></small></pre>
+      <span class="hljs-bullet">-</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-string">:5432:5432</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">./docker/postgres:/var/lib/postgresql/data</span>
+
+  <span class="hljs-attr">pgadmin:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">dpage/pgadmin4</span>
+    <span class="hljs-attr">links:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">postgres</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-attr">PGADMIN_DEFAULT_EMAIL:</span> <span class="hljs-string">admin@admin.com</span>
+      <span class="hljs-attr">PGADMIN_DEFAULT_PASSWORD:</span> <span class="hljs-string">privatepassword</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-string">:8000:80</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">YAML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">yaml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Basic typescript project template</h4>
@@ -639,7 +651,9 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 <li>
 <code>error.property</code> of type string (ex. <code>'email', 'firstname'</code>, etc.).
-<ul></ul>
+<ul>
+<li>
+</ul>
 </li>
 </ul>
 
@@ -784,7 +798,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice"><strong>Exercise 7</strong>: add an <code>async setPassword(password, passwordConfirmation)</code> method in the <code>User</code> class. <code>Bcrypt</code> can offload the hashing work outside of the main thread, allowing the main thread to process other tasks during that time (from security criteria, it matters for the <strong>availability</strong> of your app because nodejs is single-threaded). If the password does not match, raise a semantic error (instance of  <code>ValidationError</code>). Else, hash the password and discard the inputs. Improve your test suite.</p>
+<p class="exercice"><strong>Exercise 7</strong>: add an <code>async setPassword(password, passwordConfirmation)</code> method in the <code>User</code> class. <code>Bcrypt</code> can offload the hashing work outside of the main thread, allowing the main thread to process other tasks during that time (from security criteria, it matters for the <strong>availability</strong> of your app because nodejs is single-threaded). If the password does not match, raise a semantic error (instance of  <code>ValidationError</code>). Else, hash the password and discard the inputs. Improve your test suite. <strong>Tips</strong>: implement a <code>SetPasswordDTO</code> class.</p>
 
 
 
@@ -792,7 +806,24 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice"><strong>Exercise 9</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean></code>. Cover this method with tests.</p>
+<p class="exercice"><strong>Exercise 9</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean></code>. The promise resolves as <code>true</code> if the input matches the stored hashed password. Cover this method with tests.</p>
+
+
+
+<h4>Mitigation against OWASP <code><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html" target="_blank" rel="noreferrer noopener">A5:2017-Broken Access Control</a></code>
+</h4>
+
+
+
+<p>When using sequential integer <code>id</code> primary key, it is obviously easy for an attacker to guess other entities id and enumerable them. Of course, your app must implement a policy mechanism able to reject access to an unauthorised entity, but bugs happen. What if the bad actor was unable to find the ids in the first place, by making them more random?</p>
+
+
+
+<p>A de facto standard is <code>uuid</code> version 4 (ex. <code>123e4567-e89b-12d3-a456-426614174000</code>). An <code>uuid</code> can be stored as a 16 bytes integer, while biginteger used for primary keys are 8 bytes length. The spacial performance impact is reasonable as long as you use the appropriate database type (<code>uuid</code> for postgresql, raw array of bytes for mysql).</p>
+
+
+
+<p class="exercice"><strong>Exercise 10</strong>: If your RDBMS provides a transparent <code>uuid</code> datatype (so if you use postgresql), change your schema definition.</p>
 
 
 
@@ -800,7 +831,11 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice">The next tutorial session will focus on implementing the login and registration http endpoints. Development being driven by tests, you will create new test files. Move what will be common to the whole test suite into  <code>specs/spec-helper.ts</code>.</p>
+<p>The next tutorial session will focus on implementing the login and registration http endpoints. Development being driven by tests, you will create new test files.</p>
+
+
+
+<p class="exercice">Move what will be common to the whole test suite into  <code>specs/spec-helper.ts</code> now.</p>
 <style class="advgb-styles-renderer">.wp-block-code {
 	border: 0;
 	padding: 0;
