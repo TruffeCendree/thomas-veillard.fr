@@ -11,7 +11,7 @@
 	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-	<!-- This site is optimized with the Yoast SEO plugin v19.10 - https://yoast.com/wordpress/plugins/seo/ -->
+	<!-- This site is optimized with the Yoast SEO plugin v19.11 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>03. IAM App: database &amp; model bootstraping (practical activity) - Thomas VEILLARD</title>
 	<link rel="canonical" href="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">
 	<meta property="og:locale" content="fr_FR">
@@ -21,7 +21,7 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2022-11-12T10:13:31+00:00">
-	<meta property="article:modified_time" content="2022-11-15T15:21:27+00:00">
+	<meta property="article:modified_time" content="2022-11-27T10:51:23+00:00">
 	<meta name="author" content="Thomas Veillard">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
@@ -43,11 +43,11 @@
 	            },
 	            "headline": "03. IAM App: database & model bootstraping (practical activity)",
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-15T15:21:27+00:00",
+	            "dateModified": "2022-11-27T10:51:23+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/"
 	            },
-	            "wordCount": 2220,
+	            "wordCount": 2218,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -66,7 +66,7 @@
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
 	            "datePublished": "2022-11-12T10:13:31+00:00",
-	            "dateModified": "2022-11-15T15:21:27+00:00",
+	            "dateModified": "2022-11-27T10:51:23+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/03-iam-app-database-model-bootstraping-pratical-activity/#breadcrumb"
 	            },
@@ -317,6 +317,7 @@ blockquote, cite {
 .u-mbn { margin-bottom: 0; }
 .u-mbs { margin-bottom: 0.25em; }
 .u-mlm { margin-left: 1em; }
+.u-mtm { margin-top: 1em; }
 
 .strikethrough {
 	text-decoration: line-through;
@@ -379,7 +380,7 @@ blockquote, cite {
 
 	<div class="entry-content">
 		
-<h4>Learning outcomes</h4>
+<h4 id="learning-outcomes-22fe96de-17a6-47dd-b994-892140f60adf">Learning outcomes</h4>
 
 
 
@@ -405,7 +406,7 @@ blockquote, cite {
 
 
 
-<h4>Specifications</h4>
+<h4 id="specifications-7cd64c34-70c7-4db1-8b89-03b47e9bb8f1">Specifications</h4>
 
 
 
@@ -421,7 +422,7 @@ blockquote, cite {
 
 
 
-<h4>Prerequires</h4>
+<h4 id="prerequires-0ea8aa86-8d6d-40db-8c1c-38a7de79705c">Prerequires</h4>
 
 
 
@@ -463,7 +464,7 @@ blockquote, cite {
       <span class="hljs-bullet">-</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-string">:8000:80</span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">YAML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">yaml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<h4>Basic typescript project template</h4>
+<h4 id="basic-typescript-project-template-e14f4a83-6fe4-4e4f-82ab-b0fb7a49bd42">Basic typescript project template</h4>
 
 
 <div class="exercice" style="display: flex; align-items: center; margin-bottom: 3em; background-color: #ffecb8">
@@ -497,7 +498,7 @@ blockquote, cite {
 
 
 
-<h4>What is an ORM?</h4>
+<h4 id="what-is-an-orm-22d368f0-dcf5-4fbb-b45f-17151281015a">What is an ORM?</h4>
 
 
 
@@ -556,7 +557,7 @@ blockquote, cite {
 
 
 
-<h4>Test Driven Development</h4>
+<h4 id="test-driven-development-d6000b50-5aad-45e8-aa9a-503eab65152d">Test Driven Development</h4>
 
 
 
@@ -566,20 +567,40 @@ blockquote, cite {
 <pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm install --save-dev mocha @types/mocha chai @types/chai chai-as-promised @types/chai-as-promised</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p>In addition, you can register additional scripts in <code>package.json</code>. Above is my command to run the whole test suite. Windows users: you may need to change the way the <code>NODE_ENV</code> environment variable is set.</p>
+<p>In addition, you can register additional scripts in <code>package.json</code>. Above is my command to run the whole test suite. <code>NODE_ENV</code> is an environment variable.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">NODE_ENV=test mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+<div class="wp-block-advgb-adv-tabs advgb-tabs-wrapper advgb-tab-horz-desktop advgb-tab-vert-tablet advgb-tab-stack-mobile advgb-tabs-aa5513b0-ad8e-46ed-8b8f-bbdf12120995 u-mbn" data-tab-active="0">
+<ul class="advgb-tabs-panel">
+<li class="advgb-tab" style="background-color:#e0e0e0;border-style:solid;border-width:1px;border-radius:10px"><a id="" href="#advgb-tabs-tab0" style="color:/#fff"><span>Linux &amp; Max</span></a></li>
+<li class="advgb-tab" style="background-color:#e0e0e0;border-style:solid;border-width:1px;border-radius:10px"><a id="" href="#advgb-tabs-tab1" style="color:/#fff"><span>Windows</span></a></li>
+</ul>
+<div class="advgb-tab-body-wrapper" style="border-style:solid;border-width:1px;border-radius:10px">
+<div class="wp-block-advgb-tab advgb-tab-body-container">
+<div class="advgb-tab-body-header advgb-tab-class-">Linux &amp; Max</div>
+<div class="advgb-tab-_5513b0-ad advgb-tab-body" aria-labelledby="advgb-tabs-tab0"><pre class="wp-block-code u-mbn" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">NODE_ENV=test mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre></div>
+</div>
 
 
-<p>You will map the test file based on the original source (ex. <code>src/entities/user.ts</code> will be covered by <code>src/specs/entities/user.spec.ts</code>). While this structure plays well for unit testing and integration tests, you are also allowed to create additional files into the <code>src/specs</code> folder.</p>
+
+<div class="wp-block-advgb-tab advgb-tab-body-container">
+<div class="advgb-tab-body-header advgb-tab-class-">Windows</div>
+<div class="advgb-tab-_342930-e8 advgb-tab-body" aria-labelledby="advgb-tabs-tab1"><pre class="wp-block-code u-mbn" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">SET NODE_ENV=test&amp;&amp;mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre></div>
+</div>
+</div>
+</div>
+
+
+
+<p class="u-mtm">You will map the test file based on the original source (ex. <code>src/entities/user.ts</code> will be covered by <code>src/specs/entities/user.spec.ts</code>). While this structure plays well for unit testing and integration tests, you are also allowed to create additional files into the <code>src/specs</code> folder.</p>
 
 
 
 <p>Here a start point for the source code of your test:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/specs/entities/user.ts</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/specs/entities/user.ts</span>
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> chai <span class="hljs-keyword">from</span> <span class="hljs-string">'chai'</span>
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> chaiAsPromised <span class="hljs-keyword">from</span> <span class="hljs-string">'chai-as-promised'</span>
 <span class="hljs-keyword">import</span> { User } <span class="hljs-keyword">from</span> <span class="hljs-string">'...'</span>
@@ -604,7 +625,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
     })
   })
 })
-</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 2</strong>: Please first focus on implementing (and passing green) the two test cases. Once done, you can think about DRY (don&rsquo;t repeat yourself principle) and mutualise the test database management across the whole test suite (only composed of <code>src/specs/entities/user.spec.ts</code> for now). In addition, you could rely on <code>NODE_ENV=test</code> to override the database name (and potentially more configurations).</p>
@@ -615,7 +636,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<h4>Adding presence validations and cover them with test cases</h4>
+<h4 id="adding-presence-validations-and-cover-them-with-test-cases-1f191e55-ad4e-47ee-afc3-a2ca841d8e1a">Adding presence validations and cover them with test cases</h4>
 
 
 
@@ -623,7 +644,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-9 wp-block-columns">
+<div class="is-layout-flex wp-container-10 wp-block-columns">
 <div class="is-layout-flow wp-block-column exercice">
 <p><strong>Exercise 3</strong>: Implement a custom <code>ValidationError</code> class (with appropriate inheritance) that will be raised when trying to save (both on creation and update) an invalid user object. You can take advantage of <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">typeorm listeners</a>, especially <code>@BeforeInsert</code> and <code>@BeforeUpdate</code> on purpose. Your first use case is checking that required properties are present (not null, nor empty string).</p>
 
@@ -662,9 +683,9 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>Update the corresponding integration test. I give you a part of it:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually
   .be.rejectedWith(ValidationError, <span class="hljs-string">"The email is required"</span>)
-  .and.include({ target: user, property: <span class="hljs-string">'email'</span> })</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+  .and.include({ target: user, property: <span class="hljs-string">'email'</span> })</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Tips</strong>: do not use <code>class-validator</code> yet, as it is described in the typeorm documentation about validations. That is for the next exercise.</p>
@@ -677,7 +698,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<h4>Support for asynchronous validations and refactoring using <code>class-validator</code>
+<h4 id="support-for-asynchronous-validations-and-refactoring-using-classvalidator-f5e9daf7-c466-411b-a011-dc660a11638e">Support for asynchronous validations and refactoring using <code>class-validator</code>
 </h4>
 
 
@@ -685,8 +706,8 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>The typeorm team recommends using  <code>class-validator</code>, as described <a href="https://typeorm.io/validation" target="_blank" rel="noreferrer noopener">here</a>. The validations are then defined as decorators on properties. Once defined, you can validate any <code>user</code> this way:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> errors = <span class="hljs-keyword">await</span> validate(user)
-<span class="hljs-keyword">if</span> (errors.length) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Validation failed!`</span>)</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> errors = <span class="hljs-keyword">await</span> validate(user)
+<span class="hljs-keyword">if</span> (errors.length) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Validation failed!`</span>)</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Things to note about this way of doing:</p>
@@ -719,7 +740,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-13 wp-block-columns">
+<div class="is-layout-flex wp-container-14 wp-block-columns">
 <div class="is-layout-flow wp-block-column exercice">
 <p><strong>Exercise 4</strong>: you will migrate to <code>class-validator</code>, why preserving the systematic validation on persist. You cannot call the <code>async validate(this)</code> instruction inside an Entity Listener like <code>@BeforeUpdate</code>, because any returned promise is not awaited. Instead, you will need a <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">Subscriber</a>. Of course, you have to write the corresponding specs. Your custom error class defined in <code>errors/validation-error.ts</code> will become obsolete, replaced with a class managed by the <code>class-validator</code> package. For performance reasons, it would be nice to raise on the first validation error.</p>
 
@@ -728,11 +749,11 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>Here a hint for the updated spec:</p>
 
 
-<pre class="wp-block-code u-mbn" aria-describedby="shcb-language-11" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually.be.rejected.and.deep.include({
+<pre class="wp-block-code u-mbn" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually.be.rejected.and.deep.include({
   target: user,
   property: <span class="hljs-string">'email'</span>,
   constraints: { isNotEmpty: <span class="hljs-string">'email should not be empty'</span> }
-})</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+})</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 </div>
 </div>
 
@@ -758,11 +779,11 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<h4>Validations and security considerations</h4>
+<h4 id="validations-and-security-considerations-108a4b65-97a6-4a14-b918-a9bbb7f3264d">Validations and security considerations</h4>
 
 
 
-<div class="is-layout-flex wp-container-15 wp-block-columns">
+<div class="is-layout-flex wp-container-16 wp-block-columns">
 <div class="is-layout-flow wp-block-column question">
 <p><strong>Question 4</strong>: how models validations, such as the one you just wrote, can serve the security of your application? Give an example.</p>
 
@@ -774,7 +795,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<h4>The <code><code>setPassword(password, passwordConfirmation)</code></code> method</h4>
+<h4 id="the-setpasswordpassword-passwordconfirmation-method-79e8f655-e68b-4ff0-8b9f-13fc969a7154">The <code><code>setPassword(password, passwordConfirmation)</code></code> method</h4>
 
 
 
@@ -806,11 +827,11 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<p class="exercice"><strong>Exercise 9</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean></code>. The promise resolves as <code>true</code> if the input matches the stored hashed password. Cover this method with tests.</p>
+<p class="exercice"><strong>Exercise 9</strong>: add an <code>async isPasswordValid(password)</code> method in the <code>User</code> class, that returns a <code>Promise&lt;boolean&gt;</code>. The promise resolves as <code>true</code> if the input matches the stored hashed password. Cover this method with tests.</p>
 
 
 
-<h4>Mitigation against OWASP <code><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html" target="_blank" rel="noreferrer noopener">A5:2017-Broken Access Control</a></code>
+<h4 id="mitigation-against-owasp-a52017broken-access-control-22679fe3-4b14-4008-9ff6-a840540bbaf2">Mitigation against OWASP <code><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html" target="_blank" rel="noreferrer noopener">A5:2017-Broken Access Control</a></code>
 </h4>
 
 
@@ -827,7 +848,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<h4>Prepare the arrival of new specs files</h4>
+<h4 id="prepare-the-arrival-of-new-specs-files-f69f7c3e-718d-4c9d-ae46-952190872130">Prepare the arrival of new specs files</h4>
 
 
 
@@ -912,7 +933,8 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 	user-select: none;
 	white-space: nowrap;
 	width: 1%;
-}</style>	</div>
+}
+.advgb-tabs-aa5513b0-ad8e-46ed-8b8f-bbdf12120995 ul.advgb-tabs-panel li.advgb-tab.advgb-tab-active {background-color:#f4ca16 !important;color:#fff !important;}#advgb-tabs-aa5513b0-ad8e-46ed-8b8f-bbdf12120995 .advgb-tab-body-header.header-active, .advgb-tabs-aa5513b0-ad8e-46ed-8b8f-bbdf12120995 .advgb-tab-body-header.header-active{background-color:#f4ca16 !important;color:#fff !important;}</style>	</div>
 <!-- .entry-content -->
 
 	
@@ -925,7 +947,10 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 	<nav class="navigation post-navigation" aria-label="Publications">
 		<h2 class="screen-reader-text">Navigation de l’article</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">02. Invoice PDF generation HTTP API (practical activity)</span></a></div></div>
+		<div class="nav-links">
+<div class="nav-previous"><a href="https://thomas-veillard.fr/front-end-web-development/04-backend/invoice-pdf-generation-http-api/" rel="prev"><span class="meta-nav" aria-hidden="true">Précédent</span> <span class="screen-reader-text">Article précédent&nbsp;:</span> <span class="post-title">02. Invoice PDF generation HTTP API (practical activity)</span></a></div>
+<div class="nav-next"><a href="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/" rel="next"><span class="meta-nav" aria-hidden="true">Suivant</span> <span class="screen-reader-text">Article suivant&nbsp;:</span> <span class="post-title">04. IAM App: http server bootstraping (practical activity)</span></a></div>
+</div>
 	</nav>
 		</main><!-- .site-main -->
 	</div>
@@ -949,12 +974,16 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
   gtag('js', new Date());
 
   gtag('config', 'G-NH45PR7ELJ');</script>
-<style id="core-block-supports-inline-css">.wp-block-columns.wp-container-3,.wp-block-columns.wp-container-9,.wp-block-columns.wp-container-13,.wp-block-columns.wp-container-15{flex-wrap:nowrap;}</style>
+<link rel="stylesheet" id="advgb_blocks_styles-css" href="https://thomas-veillard.fr/wp-content/plugins/advanced-gutenberg/assets/css/blocks.css?ver=3.1.0" media="all">
+<style id="core-block-supports-inline-css">.wp-block-columns.wp-container-3,.wp-block-columns.wp-container-10,.wp-block-columns.wp-container-14,.wp-block-columns.wp-container-16{flex-wrap:nowrap;}</style>
 <script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141028" id="twentyfifteen-skip-link-focus-fix-js"></script>
 <script id="twentyfifteen-script-js-extra">
 var screenReaderText = {"expand":"<span class=\"screen-reader-text\">ouvrir le sous-menu<\/span>","collapse":"<span class=\"screen-reader-text\">fermer le sous-menu<\/span>"};
 </script>
 <script src="https://thomas-veillard.fr/wp-content/themes/twentyfifteen/js/functions.js?ver=20221101" id="twentyfifteen-script-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
+<script src="https://thomas-veillard.fr/wp-includes/js/jquery/ui/tabs.min.js?ver=1.13.2" id="jquery-ui-tabs-js"></script>
+<script src="https://thomas-veillard.fr/wp-content/plugins/advanced-gutenberg/assets/blocks/advtabs/frontend.js?ver=3.1.0" id="advgb_tabs_js-js"></script>
 
 </body>
 </html>
