@@ -21,13 +21,13 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2022-11-30T06:59:17+00:00">
-	<meta property="article:modified_time" content="2022-12-04T08:30:46+00:00">
+	<meta property="article:modified_time" content="2022-12-04T13:39:47+00:00">
 	<meta name="author" content="Thomas Veillard">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture estimée">
-	<meta name="twitter:data2" content="12 minutes">
+	<meta name="twitter:data2" content="14 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -43,11 +43,11 @@
 	            },
 	            "headline": "04. IAM App: http server bootstraping (practical activity)",
 	            "datePublished": "2022-11-30T06:59:17+00:00",
-	            "dateModified": "2022-12-04T08:30:46+00:00",
+	            "dateModified": "2022-12-04T13:39:47+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/"
 	            },
-	            "wordCount": 1883,
+	            "wordCount": 2249,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -66,7 +66,7 @@
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
 	            "datePublished": "2022-11-30T06:59:17+00:00",
-	            "dateModified": "2022-12-04T08:30:46+00:00",
+	            "dateModified": "2022-12-04T13:39:47+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/#breadcrumb"
 	            },
@@ -819,6 +819,43 @@ repo.merge(user, req.body.user)
 
 
 <p>*<code>EntityNotFoundError</code> would be triggered when the ID (or email&#8230;) does not match any entity in the database. You can instruct <code>typeorm</code> to raise an exception (ex. <code>findOneOrFail</code>) and gracefully format the message in the default error handler. Despite the absence of such endpoint yet, I wanted you got familiar with throwing semantic errors and process them. Because non-failing methods (ex. <code>findOne</code>) may return <code>null</code>, using the failing one discharges you adding redundant runtime assertions with typescript&rsquo;s <code>strictNullCheck: true</code>.</p>
+
+
+
+<h4>Comparing session management solutions</h4>
+
+
+
+<p>The next endpoint to be implemented is <code>POST /web-api/sessions</code>, used to create a new session (aka. sign in). This tutorial will use cookies storing a unique identifier of a backed-persisted session object.</p>
+
+
+
+<p>I decided to store the <code>session</code> object inside the database, using <code>typeorm</code>. A redis (or memcached) in-memory database may be suitable too, with the benefice of greater performance and scalability, but at the cost of additional stack complexity and the lacks of foreign keys (and interoperability with relational data).</p>
+
+
+
+<p>So that is the session topology you will set up today, whereas other solutions were also available. Before jumping into the code, let&rsquo;s step back and see how it compares to other solutions.</p>
+
+
+
+<p class="question"><strong>Question 5</strong>: compare the stateful session persisted in a backend service with a stateless session management like JWT. Recommendation: summarise the comparison as a grid. For criteria, consider among others: the scalability, the architecture complexity, the type and quantity of information known by the client, revocation strategy, impact if a session leaks, common weaknesses due to misconfigurations, client-side strategy to protect and submit the token (or session identifier), additional library requirements, etc.</p>
+
+
+
+<p class="question"><strong>Question 6</strong>: search and summarise solutions to protect the confidentiality of the session identifier stored in a browser&rsquo;s cookie. Focus on the actions you can take as a backend developer or server-side infrastructure engineer.</p>
+
+
+
+<h4>Implementing <code>POST /web-api/sessions</code>
+</h4>
+
+
+
+<p class="exercice"><strong>Exercise 9</strong>: implement a <code>Session</code> class managed by <code>typeorm</code>. The database table must have a <code>token</code> column storing  a base64-encoded secret (known by the client). Set the column length containing exactly 512 bits of entropy token encoded in base64. In addition, <code>Session</code> references <code>User</code> with a <code>ManyToMany</code> relationship. Finally, it has <code>createdAt</code>, <code>expiresAt</code> and <code>revokedAt</code> columns. The <code>token</code> should be generated using the <code>crypto</code> built-in module. The initialisation process (setting <code>expiredAt</code>, generating <code>token</code>s) can be moved inside the <code>Session</code> class (transparently generated on create using <code>Subscribers</code> or by calling <code>await session.init()</code> outside the entity). Prefer <code>@CreateDateColumn</code> decorator for <code>createdAt</code>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 10</strong>: implement and test <code>POST /web-api/sessions</code>. The endpoint may return an empty object or the user as you wish. Anyway, it will persist the session in the database and leave a secure cookie for the <code>token</code>. In addition to the cookie signing and proper cookie attribute definition, security hardening you proposed earlier are welcomed. Do not forget the basis: use dotenv for any configuration secret you may need in backend.</p>
 <style class="advgb-styles-renderer">.wp-block-code {
 	border: 0;
 	padding: 0;
