@@ -21,13 +21,13 @@
 	<meta property="og:url" content="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/">
 	<meta property="og:site_name" content="Thomas VEILLARD">
 	<meta property="article:published_time" content="2022-11-30T06:59:17+00:00">
-	<meta property="article:modified_time" content="2022-12-03T18:24:08+00:00">
+	<meta property="article:modified_time" content="2022-12-04T08:30:46+00:00">
 	<meta name="author" content="Thomas Veillard">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:label1" content="Écrit par">
 	<meta name="twitter:data1" content="Thomas Veillard">
 	<meta name="twitter:label2" content="Durée de lecture estimée">
-	<meta name="twitter:data2" content="10 minutes">
+	<meta name="twitter:data2" content="12 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
@@ -43,11 +43,11 @@
 	            },
 	            "headline": "04. IAM App: http server bootstraping (practical activity)",
 	            "datePublished": "2022-11-30T06:59:17+00:00",
-	            "dateModified": "2022-12-03T18:24:08+00:00",
+	            "dateModified": "2022-12-04T08:30:46+00:00",
 	            "mainEntityOfPage": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/"
 	            },
-	            "wordCount": 1495,
+	            "wordCount": 1883,
 	            "publisher": {
 	                "@id": "https://thomas-veillard.fr/#/schema/person/98465ef1c45a4646324ef7c336388ffb"
 	            },
@@ -66,7 +66,7 @@
 	                "@id": "https://thomas-veillard.fr/#website"
 	            },
 	            "datePublished": "2022-11-30T06:59:17+00:00",
-	            "dateModified": "2022-12-03T18:24:08+00:00",
+	            "dateModified": "2022-12-04T08:30:46+00:00",
 	            "breadcrumb": {
 	                "@id": "https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/#breadcrumb"
 	            },
@@ -727,7 +727,98 @@ repo.merge(user, req.body.user)
 
 
 
-<p>Coming soon :-)</p>
+<p>Let&rsquo;s take care of the security during error handling, as no sensitive information should leak. One of the attack vectors is error serialisation when the app sends internal errors messages.</p>
+
+
+
+<p>For 4xx related errors, it is generally acceptable to send the failure&rsquo;s reason to the user. This way, the client (that could be developers in case of an API) has the opportunity to retry with fixed parameters.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<h1 style="margin-top: 0.25em">400 Bad Request</h1>
+
+
+
+<p>The HyperText Transfer Protocol (HTTP)&nbsp;<strong><code>400 Bad Request</code></strong>&nbsp;response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (for example, malformed request syntax, invalid request message framing, or deceptive request routing).</p>
+<cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400" target="_blank" rel="noreferrer noopener">Mozilla Developer Network</a></cite>
+</blockquote>
+
+
+
+<blockquote class="wp-block-quote">
+<h1 style="margin-top: 0.25em">403 Forbidden</h1>
+
+
+
+<p>The HTTP&nbsp;<strong><code>403 Forbidden</code></strong>&nbsp;response status code indicates that the server understands the request but refuses to authorize it.</p>
+<cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400" target="_blank" rel="noreferrer noopener">Mozilla Developer Network</a></cite>
+</blockquote>
+
+
+
+<blockquote class="wp-block-quote u-mbm">
+<h1 style="margin-top: 0.25em">404 Not Found</h1>
+
+
+
+<p>The HTTP&nbsp;<strong><code>404 Not Found</code></strong>&nbsp;response status code indicates that the server cannot find the requested resource. Links that lead to a 404 page are often called broken or dead links and can be subject to&nbsp;<a href="https://en.wikipedia.org/wiki/Link_rot" target="_blank" rel="noreferrer noopener">link rot</a>.</p>
+<cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400" target="_blank" rel="noreferrer noopener">Mozilla Developer Network</a></cite>
+</blockquote>
+
+
+
+<p>That is why the following response is acceptable:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">400</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Bad Request"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"body should have required property 'hello'"</span>
+}</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>But is it OK to serve that stuff?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Unable to connect to database on root@localhost, with password authentication"</span>
+}</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Or this one?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+    <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Ambiguous column name \"id\"; SQL statement: SELECT * FROM exhibit JOIN exhibit ON (id = previous_id); [90059-176]"</span>
+}</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="has-text-align-center">***</p>
+
+
+
+<p>Everything that is related to <code>Internal Server Error</code> (HTTP code 500) should never reach the end user (unless you are in development environment). But if you try yourself, you will notice fastify sends those errors in production mode!</p>
+
+
+
+<p>To toggle the production mode on, node&rsquo;s application check if <code>NODE_ENV=production</code>.</p>
+
+
+
+<p class="exercice"><strong>Exercise 7</strong>: look at the default <a href="https://github.com/fastify/fastify/blob/1e94070992d911a81a26597c25f2d35ae65f3d91/fastify.js#L74" target="_blank" rel="noreferrer noopener">error handler (the link redirects to fastify source code)</a>. As said, it is unsafe by default, so you should override the handler globally using <a href="https://www.fastify.io/docs/latest/Server/#seterrorhandler" target="_blank" rel="noreferrer noopener">setErrorHandler</a>. Is it worthy remembering you TDD?</p>
+
+
+
+<p class="exercice"><strong>Exercise 8</strong>: customise your default error handler with appropriate HTTP status code when an instance of <code>ValidationError</code> (from <code>class-validator</code>) or <code>EntityNotFoundError</code>* (from <code>typeorm</code>) is caught. Add a test against <code>POST /web-api/users</code> that triggers a <code>ValidationError</code> and proper error management. Be careful when serialising <code>ValidationError</code> instances (about the <code>target</code> property).</p>
+
+
+
+<p>*<code>EntityNotFoundError</code> would be triggered when the ID (or email&#8230;) does not match any entity in the database. You can instruct <code>typeorm</code> to raise an exception (ex. <code>findOneOrFail</code>) and gracefully format the message in the default error handler. Despite the absence of such endpoint yet, I wanted you got familiar with throwing semantic errors and process them. Because non-failing methods (ex. <code>findOne</code>) may return <code>null</code>, using the failing one discharges you adding redundant runtime assertions with typescript&rsquo;s <code>strictNullCheck: true</code>.</p>
 <style class="advgb-styles-renderer">.wp-block-code {
 	border: 0;
 	padding: 0;
