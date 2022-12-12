@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Tue, 06 Dec 2022 15:30:59 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 12 Dec 2022 12:09:46 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -29,7 +29,7 @@
 		<category><![CDATA[Modern web development]]></category>
 		<guid isPermaLink="false">https://thomas-veillard.fr/?p=4860</guid>
 
-					<description><![CDATA[<p>Learning outcomes Specifications In this tutorial, you will set up an HTTP server and the necessary endpoints for registration and login. If not already done, I suggest you check the associated presentation called HTTP protocols, servers &#38; libraries. The only new libraries allowed for installations are: fastify, @fastify/cookie, cookie-signature, ajv (also a dependency of fastify) &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/" class="more-link">Continuer la lecture de <span class="screen-reader-text">04. IAM App: http server bootstraping (practical activity)</span></a></p>
+					<description><![CDATA[<p>Learning outcomes Specifications In this tutorial, you will set up an HTTP server and the necessary endpoints for registration and login. If not already done, I suggest you check the associated presentation called HTTP protocols, servers &#38; libraries. The only new libraries allowed for installations are: fastify, @fastify/cookie, json-schema-to-ts and the corresponding @types/* packages. No &#8230; <a href="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/" class="more-link">Continuer la lecture de <span class="screen-reader-text">04. IAM App: http server bootstraping (practical activity)</span></a></p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/">04. IAM App: http server bootstraping (practical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
@@ -79,7 +79,7 @@
 
 
 
-<p>The only new libraries allowed for installations are: <code><a href="https://www.npmjs.com/package/fastify" target="_blank" rel="noreferrer noopener">fastify</a></code>, <code><a href="https://www.npmjs.com/package/@fastify/cookie" target="_blank" rel="noreferrer noopener">@fastify/cookie</a></code>, <code><a href="https://www.npmjs.com/package/cookie-signature" target="_blank" rel="noreferrer noopener">cookie-signature</a></code>, <code><a href="https://www.npmjs.com/package/ajv?activeTab=readme" target="_blank" rel="noreferrer noopener">ajv</a></code> (also a dependency of fastify) and the corresponding <code>@types/*</code> packages.</p>
+<p>The only new libraries allowed for installations are: <code><a href="https://www.npmjs.com/package/fastify" target="_blank" rel="noreferrer noopener">fastify</a></code>, <code><a href="https://www.npmjs.com/package/@fastify/cookie" target="_blank" rel="noreferrer noopener">@fastify/cookie</a></code>, <code><a href="https://www.npmjs.com/package/json-schema-to-ts" target="_blank" rel="noreferrer noopener">json-schema-to-ts</a></code> and the corresponding <code>@types/*</code> packages.</p>
 
 
 
@@ -172,8 +172,8 @@
 <p>Pay attention to the way typescript is able to infer a static type from a JSON schema (ex. <code>UserCreateRequestBody</code> type is inferred as an object having <code>email</code> and <code>passwordConfirmation</code> properties, among others). To operate property, type definitions of the utilities methods should preserve as much information as possible (ex. property names, types, requireness&#8230;) during transformations.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { JTDDataType } <span class="hljs-keyword">from</span> <span class="hljs-string">'ajv/dist/jtd'</span>
-<span class="hljs-keyword">import</span> { mergeSchema, pickFromSchema, propertiesToObjectSchema } <span class="hljs-keyword">from</span> <span class="hljs-string">'./schema-utils'</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { FromSchema } <span class="hljs-keyword">from</span> <span class="hljs-string">'json-schema-to-ts'</span>
+<span class="hljs-keyword">import</span> { mergeSchema, pickFromSchema, propertiesToObjectSchema } <span class="hljs-keyword">from</span> <span class="hljs-string">'./schema-utils.js'</span>
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> userSchema = propertiesToObjectSchema({
   id: { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span> },
@@ -182,15 +182,14 @@
   lastname: { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span> }
 } <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>)
 
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> UserCreateRequestBody = FromSchema&lt;<span class="hljs-keyword">typeof</span> userCreateRequestBody&gt;
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> userCreateRequestBody = mergeSchema(
   pickFromSchema(userSchema, <span class="hljs-string">'firstname'</span>, <span class="hljs-string">'lastname'</span>, <span class="hljs-string">'email'</span>),
   propertiesToObjectSchema({ password: { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span> }, passwordConfirmation: { <span class="hljs-keyword">type</span>: <span class="hljs-string">'string'</span> } } <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>)
 )
 
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> UserCreateResponseBody = FromSchema&lt;<span class="hljs-keyword">typeof</span> userCreateResponseBody&gt;
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> userCreateResponseBody = pickFromSchema(userSchema, <span class="hljs-string">'id'</span>, <span class="hljs-string">'firstname'</span>, <span class="hljs-string">'lastname'</span>, <span class="hljs-string">'email'</span>)
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> UserCreateRequestBody = JTDDataType&lt;<span class="hljs-keyword">typeof</span> userCreateRequestBody&gt;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> UserCreateResponseBody = JTDDataType&lt;<span class="hljs-keyword">typeof</span> userCreateResponseBody&gt;
 </code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre></div></div>
 </div>
 
@@ -252,7 +251,7 @@ describe(<span class="hljs-string">'/web-api/users'</span>, <span class="hljs-fu
 
 
 
-<p class="exercice"><strong>Exercise 3</strong>: infer the static type of input/outputs from the corresponding json schemas. Fastify has <a href="https://www.fastify.io/docs/latest/Reference/TypeScript/#json-schema" target="_blank" rel="noreferrer noopener">a guide on that topic</a>, but every mentioned solution requires the installation of a new library (ex. <code>typebox</code>, <code>json-schema-to-typescript</code>, etc.). On another side, I recently discovered that <code>ajv</code> <a href="https://ajv.js.org/json-type-definition.html" target="_blank" rel="noreferrer noopener">can also fit the need</a>. Pick one solution at your choice, be ready to discuss the pros and cons.</p>
+<p class="exercice"><strong>Exercise 3</strong>: infer the static type of input/outputs from the corresponding json schemas. Fastify has <a href="https://www.fastify.io/docs/latest/Reference/TypeScript/#json-schema" target="_blank" rel="noreferrer noopener">a guide on that topic</a>, but every mentioned solution requires the installation of a new library (ex. <code>typebox</code>, <code>json-schema-to-typescript</code>, <code>json-schema-to-ts</code>, etc.). Pick one solution at your choice, be ready to discuss the pros and cons.</p>
 
 
 
@@ -291,7 +290,7 @@ describe(<span class="hljs-string">'/web-api/users'</span>, <span class="hljs-fu
 
 
 
-<p><i class="fas fa-info-circle" style="color: #5c6bc0; margin-right: 0.5em"></i> What we are doing now is called « security by design », because it becomes impossible to meet the risky circonstances anywere in our application. When possible and relevant, I recommand you solve issues (including non-security related one) at the application level. Why? Think about it yourself!</p>
+<p>What we are doing now is called « security by design », because it becomes impossible to meet the risky circonstances anywere in our application. When possible and relevant, I recommand you solve issues (including non-security related one) at the application level. Why? Think about it yourself!</p>
 
 
 
@@ -487,7 +486,7 @@ repo.merge(user, req.body.user)
 
 
 
-<h4>Implementing <code>POST /web-api/sessions</code></h4>
+<h4>Implementing&nbsp;<code>POST /web-api/sessions</code></h4>
 
 
 
@@ -573,7 +572,83 @@ repo.merge(user, req.body.user)
 
 
 
-<p class="exercice"><strong>Exercise 10</strong>: implement and test <code>POST /web-api/sessions</code>. The endpoint may return an empty object or the user as you wish. Anyway, it will persist the session in the database and leave a secure cookie for the <code>token</code>. In addition to the cookie signing and proper cookie attribute definition, security hardening you proposed earlier are welcomed. Do not forget the basis: use dotenv for any configuration secret you may need in backend.</p>
+<div class="is-layout-flex wp-container-24 wp-block-columns">
+<div class="is-layout-flow wp-block-column exercice">
+<p><strong>Exercise 10</strong>: implement and test <code>POST /web-api/sessions</code>. The endpoint may return an empty object or the user as you wish. Anyway, it will persist the session in the database and leave a secure cookie for the <code>token</code>.</p>
+
+
+
+<p>At least, ensure the cookie signing and proper cookie attribute definition. Additional hardening (including those related to cookies you proposed earlier) are welcomed. Anyway, do not forget the basis: use <code>dotenv</code> for any configuration secret you may need in backend and work the TDD way.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">it(<span class="hljs-string">'should create a session'</span>)
+it(<span class="hljs-string">'should create a session after lowering email'</span>)
+it(<span class="hljs-string">'should reject with 404 if email not found'</span>)
+it(<span class="hljs-string">'should reject with 404 if password does not match'</span>)</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p class="u-mbn"><strong>PS</strong>: please only depend on additional <code>@fastify/cookie</code>.</p>
+</div>
+</div>
+
+
+
+<h4>Loading the session in the context of <code>GET /web-api/users/me</code></h4>
+
+
+
+<p>According to the recent developments, the application can now create a <code>Session</code> and leave a token into a cookie. To retrieve the session during the following HTTP requests, all you have to do is reading the <code>token</code> from the <code>Cookie</code> HTTP header. In fact, the browser automatically submits cookies in every HTTP request as long as the cookie attributes allows it (ex. same domain, https endpoint, not expired&#8230;).</p>
+
+
+
+<p>I recommend you create a <code>lib/session.ts</code> file (if not yet done). Here a template:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { FastifyReply, FastifyRequest } <span class="hljs-keyword">from</span> <span class="hljs-string">'fastify'</span>
+<span class="hljs-keyword">import</span> { Session } <span class="hljs-keyword">from</span> <span class="hljs-string">'../entities/session'</span>
+<span class="hljs-keyword">import</span> { User } <span class="hljs-keyword">from</span> <span class="hljs-string">'../entities/user'</span>
+
+<span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> 'fastify' {
+  <span class="hljs-keyword">interface</span> FastifyRequest {
+    session?: Session | <span class="hljs-literal">null</span>
+    user?: User | <span class="hljs-literal">null</span>
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">saveSession</span>(<span class="hljs-params">reply: FastifyReply, user: User</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> move here the code you already implemented</span>
+  <span class="hljs-comment">// about session creation and cookie assignment.</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadSession</span>(<span class="hljs-params">request: FastifyRequest</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> read the cookie from request.cookies[COOKIE_NAME].</span>
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> unsign the cookie (or reject if invalid) and retreive the token.</span>
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> load the sesion + user and assign it to ̀request.session` and `request.user`.</span>
+}</code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The <code>loadSession</code> function is a <code>preHandler</code> hook that can be registered globally on a <code>fastify</code> instance. If you set it up as a global hook, it should do nothing if the session cookie is missing in request. Else, it will decorate the <code>request</code> object with additional <code>user</code> and <code>session</code> properties. For performances reasons, use <code><a href="https://www.fastify.io/docs/latest/Reference/Decorators/" target="_blank" rel="noreferrer noopener">decorateRequest</a></code>.</p>
+
+
+
+<div class="is-layout-flex wp-container-28 wp-block-columns">
+<div class="is-layout-flow wp-block-column exercice">
+<p><strong>Exercise 11</strong>: implement <code>loadSession</code> according to the previous recommendations. Then, use the <code>request.user</code> to respond to <code>GET /web-api/users/me</code> requests.</p>
+
+
+
+<p>For your tests, you can import the <code>sign</code> function from <code>@fastify/cookie</code>, so the forged cookie can pass crypto securities of <code>loadSession</code>.</p>
+
+
+<pre class="wp-block-code u-mbn" aria-describedby="shcb-language-26" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">it(<span class="hljs-string">'should respond with the current user identity'</span>)
+it(<span class="hljs-string">'should respond with 403 if user is not logged in'</span>)
+it(<span class="hljs-string">'should respond with 403 if unsigned cookie'</span>)
+it(<span class="hljs-string">'should respond with 403 if cookie signature with a wrong key'</span>)</code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre></div>
+</div>
+
+
+
+<p class="exercice"><strong>Exercise 12</strong>: implement a <code>DELETE /web-api/sessions/current</code> endpoint.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/">04. IAM App: http server bootstraping (practical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -653,7 +728,7 @@ repo.merge(user, req.body.user)
 <p>You are free to install the RDBMS the way you want (docker, system wide install, etc.). For the users of <code>docker-compose</code>, here is a ready-to-use recipe:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="YAML" data-shcb-language-slug="yaml"><div><code class="hljs language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-29" data-shcb-language-name="YAML" data-shcb-language-slug="yaml"><div><code class="hljs language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
 
 <span class="hljs-attr">services:</span>
   <span class="hljs-attr">postgres:</span>
@@ -675,7 +750,7 @@ repo.merge(user, req.body.user)
       <span class="hljs-attr">PGADMIN_DEFAULT_EMAIL:</span> <span class="hljs-string">admin@admin.com</span>
       <span class="hljs-attr">PGADMIN_DEFAULT_PASSWORD:</span> <span class="hljs-string">privatepassword</span>
     <span class="hljs-attr">ports:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-string">:8000:80</span></code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">YAML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">yaml</span><span class="shcb-language__paren">)</span></small></pre>
+      <span class="hljs-bullet">-</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-string">:8000:80</span></code></div><small class="shcb-language" id="shcb-language-29"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">YAML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">yaml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4 id="basic-typescript-project-template-e14f4a83-6fe4-4e4f-82ab-b0fb7a49bd42">Basic typescript project template</h4>
@@ -728,7 +803,7 @@ repo.merge(user, req.body.user)
 
 
 
-<div class="is-layout-flex wp-container-24 wp-block-columns exercice">
+<div class="is-layout-flex wp-container-31 wp-block-columns exercice">
 <div class="is-layout-flow wp-block-column exercise">
 <p><strong>Exercise 1</strong>: Set up a <code>datasource</code> (exported from <code>src/lib/typeorm.ts</code>) that connects to your newly created (and empty) database. Take a look at the <code>dotenv</code> package for managing credentials and configurations. Then, define the <code>User</code> model inside <code>src/entities/user.ts</code>. Running the node server should automatically create the <code>user</code> table.</p>
 
@@ -773,7 +848,7 @@ repo.merge(user, req.body.user)
 <p>TDD supposes you set up asap a test runner (a library responsible for preparing the scenario of each test case and actually run the code of the test). Let&rsquo;s do this by installing <code>mocha</code> (the test runner) and <code>chai</code> (an assertion library). Those familiar with <code>jest</code> can rely on it instead.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-25" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm install --save-dev mocha @types/mocha chai @types/chai chai-as-promised @types/chai-as-promised</code></div><small class="shcb-language" id="shcb-language-25"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">npm install --save-dev mocha @types/mocha chai @types/chai chai-as-promised @types/chai-as-promised</code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>In addition, you can register additional scripts in <code>package.json</code>. Above is my command to run the whole test suite. <code>NODE_ENV</code> is an environment variable.</p>
@@ -781,11 +856,11 @@ repo.merge(user, req.body.user)
 
 
 <div class="wp-block-advgb-adv-tabs advgb-tabs-wrapper advgb-tab-horz-desktop advgb-tab-vert-tablet advgb-tab-stack-mobile advgb-tabs-aa5513b0-ad8e-46ed-8b8f-bbdf12120995 u-mbn" data-tab-active="0"><ul class="advgb-tabs-panel"><li class="advgb-tab" style="background-color:#e0e0e0;border-style:solid;border-width:1px;border-radius:10px"><a id="" href="#advgb-tabs-tab0" style="color:#fff"><span>Linux &amp; Max</span></a></li><li class="advgb-tab" style="background-color:#e0e0e0;border-style:solid;border-width:1px;border-radius:10px"><a id="" href="#advgb-tabs-tab1" style="color:#fff"><span>Windows</span></a></li></ul><div class="advgb-tab-body-wrapper" style="border-style:solid;border-width:1px;border-radius:10px">
-<div class="wp-block-advgb-tab advgb-tab-body-container"><div class="advgb-tab-body-header advgb-tab-class-">Linux &amp; Max</div><div class="advgb-tab-_5513b0-ad advgb-tab-body" aria-labelledby="advgb-tabs-tab0"><pre class="wp-block-code u-mbn" aria-describedby="shcb-language-26" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">NODE_ENV=test mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre></div></div>
+<div class="wp-block-advgb-tab advgb-tab-body-container"><div class="advgb-tab-body-header advgb-tab-class-">Linux &amp; Max</div><div class="advgb-tab-_5513b0-ad advgb-tab-body" aria-labelledby="advgb-tabs-tab0"><pre class="wp-block-code u-mbn" aria-describedby="shcb-language-33" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">NODE_ENV=test mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre></div></div>
 
 
 
-<div class="wp-block-advgb-tab advgb-tab-body-container"><div class="advgb-tab-body-header advgb-tab-class-">Windows</div><div class="advgb-tab-_342930-e8 advgb-tab-body" aria-labelledby="advgb-tabs-tab1"><pre class="wp-block-code u-mbn" aria-describedby="shcb-language-27" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">SET NODE_ENV=test&amp;&amp;mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-27"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre></div></div>
+<div class="wp-block-advgb-tab advgb-tab-body-container"><div class="advgb-tab-body-header advgb-tab-class-">Windows</div><div class="advgb-tab-_342930-e8 advgb-tab-body" aria-labelledby="advgb-tabs-tab1"><pre class="wp-block-code u-mbn" aria-describedby="shcb-language-34" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">SET NODE_ENV=test&amp;&amp;mocha --recursive dist/specs --exit --<span class="hljs-keyword">async</span>-stack-traces</code></div><small class="shcb-language" id="shcb-language-34"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre></div></div>
 </div></div>
 
 
@@ -797,7 +872,7 @@ repo.merge(user, req.body.user)
 <p>Here a start point for the source code of your test:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-28" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/specs/entities/user.ts</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-35" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// src/specs/entities/user.ts</span>
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> chai <span class="hljs-keyword">from</span> <span class="hljs-string">'chai'</span>
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> chaiAsPromised <span class="hljs-keyword">from</span> <span class="hljs-string">'chai-as-promised'</span>
 <span class="hljs-keyword">import</span> { User } <span class="hljs-keyword">from</span> <span class="hljs-string">'...'</span>
@@ -822,7 +897,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
     })
   })
 })
-</code></div><small class="shcb-language" id="shcb-language-28"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+</code></div><small class="shcb-language" id="shcb-language-35"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 2</strong>: Please first focus on implementing (and passing green) the two test cases. Once done, you can think about DRY (don&rsquo;t repeat yourself principle) and mutualise the test database management across the whole test suite (only composed of <code>src/specs/entities/user.spec.ts</code> for now). In addition, you could rely on <code>NODE_ENV=test</code> to override the database name (and potentially more configurations).</p>
@@ -841,7 +916,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-31 wp-block-columns">
+<div class="is-layout-flex wp-container-38 wp-block-columns">
 <div class="is-layout-flow wp-block-column exercice">
 <p><strong>Exercise 3</strong>: Implement a custom <code>ValidationError</code> class (with appropriate inheritance) that will be raised when trying to save (both on creation and update) an invalid user object. You can take advantage of <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">typeorm listeners</a>, especially <code>@BeforeInsert</code> and <code>@BeforeUpdate</code> on purpose. Your first use case is checking that required properties are present (not null, nor empty string).</p>
 
@@ -876,9 +951,9 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>Update the corresponding integration test. I give you a part of it:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-29" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually
+<pre class="wp-block-code" aria-describedby="shcb-language-36" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually
   .be.rejectedWith(ValidationError, <span class="hljs-string">"The email is required"</span>)
-  .and.include({ target: user, property: <span class="hljs-string">'email'</span> })</code></div><small class="shcb-language" id="shcb-language-29"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+  .and.include({ target: user, property: <span class="hljs-string">'email'</span> })</code></div><small class="shcb-language" id="shcb-language-36"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><strong>Tips</strong>: do not use <code>class-validator</code> yet, as it is described in the typeorm documentation about validations. That is for the next exercise.</p>
@@ -898,8 +973,8 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>The typeorm team recommends using  <code>class-validator</code>, as described <a href="https://typeorm.io/validation" target="_blank" rel="noreferrer noopener">here</a>. The validations are then defined as decorators on properties. Once defined, you can validate any <code>user</code> this way:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-32" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> errors = <span class="hljs-keyword">await</span> validate(user)
-<span class="hljs-keyword">if</span> (errors.length) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Validation failed!`</span>)</code></div><small class="shcb-language" id="shcb-language-32"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-39" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> errors = <span class="hljs-keyword">await</span> validate(user)
+<span class="hljs-keyword">if</span> (errors.length) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Validation failed!`</span>)</code></div><small class="shcb-language" id="shcb-language-39"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Things to note about this way of doing:</p>
@@ -932,7 +1007,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-35 wp-block-columns">
+<div class="is-layout-flex wp-container-42 wp-block-columns">
 <div class="is-layout-flow wp-block-column exercice">
 <p><strong>Exercise 4</strong>: you will migrate to <code>class-validator</code>, why preserving the systematic validation on persist. You cannot call the <code>async validate(this)</code> instruction inside an Entity Listener like <code>@BeforeUpdate</code>, because any returned promise is not awaited. Instead, you will need a <a href="https://typeorm.io/listeners-and-subscribers#what-is-a-subscriber" target="_blank" rel="noreferrer noopener">Subscriber</a>. Of course, you have to write the corresponding specs. Your custom error class defined in <code>errors/validation-error.ts</code> will become obsolete, replaced with a class managed by the <code>class-validator</code> package. For performance reasons, it would be nice to raise on the first validation error.</p>
 
@@ -941,11 +1016,11 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>Here a hint for the updated spec:</p>
 
 
-<pre class="wp-block-code u-mbn" aria-describedby="shcb-language-33" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually.be.rejected.and.deep.include({
+<pre class="wp-block-code u-mbn" aria-describedby="shcb-language-40" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">await</span> expect(repo.save(user)).to.eventually.be.rejected.and.deep.include({
   target: user,
   property: <span class="hljs-string">'email'</span>,
   constraints: { isNotEmpty: <span class="hljs-string">'email should not be empty'</span> }
-})</code></div><small class="shcb-language" id="shcb-language-33"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre></div>
+})</code></div><small class="shcb-language" id="shcb-language-40"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
@@ -974,7 +1049,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-37 wp-block-columns">
+<div class="is-layout-flex wp-container-44 wp-block-columns">
 <div class="is-layout-flow wp-block-column question">
 <p><strong>Question 4</strong>: how models validations, such as the one you just wrote, can serve the security of your application? Give an example.</p>
 
@@ -1098,7 +1173,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>In a real-world application, the data could be formalised as multiple entities: <code>Address</code>, <code>Customer</code>, <code>Biller</code>, <code>ItemInvoice</code> and finally <code>Invoice</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-38" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Address {
+<pre class="wp-block-code" aria-describedby="shcb-language-45" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Address {
   street: <span class="hljs-built_in">string</span>
   city: <span class="hljs-built_in">string</span>
   zipcode: <span class="hljs-built_in">string</span>
@@ -1133,13 +1208,13 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
   biller: Biller
   itemInvoices: ItemInvoice[]
   paymentDelayInDays: <span class="hljs-built_in">number</span>
-}</code></div><small class="shcb-language" id="shcb-language-38"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-45"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>In our case, the endpoint will receive a single payload with nested properties matching the above <code>Invoice</code> interface. Also, note that the JSON format encodes dates as strings. For example:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-39" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-46" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
   <span class="hljs-attr">"reference"</span>: <span class="hljs-string">"2021-001"</span>,
   <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2021-12-01"</span>,
   <span class="hljs-attr">"paymentDelayInDays"</span>: <span class="hljs-number">30</span>,
@@ -1175,7 +1250,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
       <span class="hljs-attr">"taxPercent"</span>: <span class="hljs-number">20</span>
     }
   ]
-}</code></div><small class="shcb-language" id="shcb-language-39"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-46"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4>Simple echo server</h4>
@@ -1190,7 +1265,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-41 wp-block-columns">
+<div class="is-layout-flex wp-container-48 wp-block-columns">
 <div class="is-layout-flow wp-block-column exercice">
 <p id="exercice"><strong>Exercise 1</strong>: Now the context is given, please create a simple HTTP server with <a href="https://www.fastify.io/" target="_blank" rel="noreferrer noopener">fastify</a>, that:</p>
 
@@ -1230,7 +1305,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-43 wp-block-columns">
+<div class="is-layout-flex wp-container-50 wp-block-columns">
 <div class="is-layout-flow wp-block-column question">
 <p><strong>Question 1</strong>: About input validation:</p>
 
@@ -1242,7 +1317,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 
 
 
-<div class="is-layout-flex wp-container-45 wp-block-columns">
+<div class="is-layout-flex wp-container-52 wp-block-columns">
 <div class="is-layout-flow wp-block-column question">
 <p><strong>Question 2</strong>: About response serialisation:</p>
 
@@ -1277,7 +1352,7 @@ describe(<span class="hljs-string">'User'</span>, <span class="hljs-function"><s
 <p>Depending on the mimetype provided in the request <code>Accept</code> header, the server may respond with another type of content. Currently, whatever the value of this header, your current implementation outputs a JSON payload.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-46" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">enum</span> MIME_TYPES {
+<pre class="wp-block-code" aria-describedby="shcb-language-53" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">enum</span> MIME_TYPES {
   HTML = <span class="hljs-string">'text/html'</span>,
   <span class="hljs-built_in">JSON</span> = <span class="hljs-string">'application/json'</span>,
   PDF = <span class="hljs-string">'application/pdf'</span>
@@ -1294,7 +1369,7 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
     <span class="hljs-keyword">default</span>:
       <span class="hljs-keyword">return</span> reply.type(MIME_TYPES.HTML).send(<span class="hljs-string">'&lt;!doctype html&gt;&lt;html&gt;&lt;body&gt;Hello world&lt;/body&gt;&lt;/html&gt;'</span>)
   }
-})</code></div><small class="shcb-language" id="shcb-language-46"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+})</code></div><small class="shcb-language" id="shcb-language-53"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>The core topic of this section is rendering the HTML template on the server side. There are plenty of ways:</p>
@@ -1336,31 +1411,31 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
 <p>A status code 400 notifies an invalid request. It is acceptable to send the failure&rsquo;s reason to the user. If the server provides an API consumed by developers, this is a welcome help for them.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-47" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-54" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
     <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">400</span>,
     <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Bad Request"</span>,
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"body should have required property 'hello'"</span>
-}</code></div><small class="shcb-language" id="shcb-language-47"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-54"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>But is it OK to serve this?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-48" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-55" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
     <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
     <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Unable to connect to database on root@localhost, with password authentication"</span>
-}</code></div><small class="shcb-language" id="shcb-language-48"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-55"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Or this?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-49" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+<pre class="wp-block-code" aria-describedby="shcb-language-56" data-shcb-language-name="JSON / JSON avec commentaires" data-shcb-language-slug="json"><div><code class="hljs language-json">{
     <span class="hljs-attr">"statusCode"</span>: <span class="hljs-number">500</span>,
     <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Internal Server Error"</span>,
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Ambiguous column name \"id\"; SQL statement: SELECT * FROM exhibit JOIN exhibit ON (id = previous_id); [90059-176]"</span>
-}</code></div><small class="shcb-language" id="shcb-language-49"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-56"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JSON / JSON avec commentaires</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Everything that is related to <code>Internal Server Error</code> (HTTP code 500) should never reach the end user (unless you are in development environment). But if you try yourself, you will notice fastify sends those errors in production mode (<code>NODE_ENV=production</code>)! As a web developer, I saw this on publicly routed servers!</p>
@@ -1479,7 +1554,7 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
 <p>The CLI software should accept the following command-line options:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-50" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">Options:
+<pre class="wp-block-code" aria-describedby="shcb-language-57" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">Options:
   --inputFiles    Glob expression to files containing answers. Each file
                   contains a single text to compare to each others. It assumes
                   all texts refer to the same question.      [string] [required]
@@ -1489,7 +1564,7 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
   --clusterScore  The minimum matching score to merge 2 submissions <span class="hljs-keyword">in</span> the same
                   report. It is a number between 0 (merge even <span class="hljs-keyword">if</span> not really
                   similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
-                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-50"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+                                                         [number] [default: 0.9]</code></div><small class="shcb-language" id="shcb-language-57"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="u-mbs">You will extract IO-related code and plagiarism detection code in 2 distinct modules:</p>
@@ -1531,7 +1606,7 @@ instance.post(<span class="hljs-string">'/invoices'</span>, <span class="hljs-ke
 <p>Calling your script without mandatory options should print the documentation:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-51" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index.js
+<pre class="wp-block-code" aria-describedby="shcb-language-58" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index.js
 Options:
   --<span class="hljs-built_in">help</span>          Show <span class="hljs-built_in">help</span>                                            [boolean]
   --version       Show version number                                  [boolean]
@@ -1546,7 +1621,7 @@ Options:
                   similar) and 1 (merge only <span class="hljs-keyword">if</span> exactly same). Default is 0.9.
                                                          [number] [default: 0.9]
 
-Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-51"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+Missing required argument: inputFiles</code></div><small class="shcb-language" id="shcb-language-58"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="u-mbs">Tips:</p>
@@ -1560,7 +1635,7 @@ Missing required argument: inputFiles</code></div><small class="shcb-language" i
 <p>Here the template to help you:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-52" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> yargs <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs'</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-59" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">import</span> yargs <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs'</span>
 <span class="hljs-keyword">import</span> { hideBin } <span class="hljs-keyword">from</span> <span class="hljs-string">'yargs/helpers'</span>
 
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span> (<span class="hljs-params"></span>) </span>{
@@ -1571,18 +1646,18 @@ Missing required argument: inputFiles</code></div><small class="shcb-language" i
   <span class="hljs-built_in">console</span>.log(argv)
 }
 
-run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-52"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small class="shcb-language" id="shcb-language-59"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Once completed, the <code>argv</code>&lsquo;s type should be inferred as:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-53" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Argv {
+<pre class="wp-block-code" aria-describedby="shcb-language-60" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Argv {
   inputFiles: <span class="hljs-built_in">string</span>
   outputFile: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>
   format: <span class="hljs-string">'json'</span> | <span class="hljs-string">'text'</span>
   clusterScore: <span class="hljs-built_in">number</span>
-}</code></div><small class="shcb-language" id="shcb-language-53"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-60"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h5><strong>List all files that match the glob expression from <code>--inputFiles</code></strong></h5>
@@ -1604,7 +1679,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
 <p>The expected output:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-54" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index --inputFiles=<span class="hljs-string">'../samples/*.txt'</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-61" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash">$ node dist/index --inputFiles=<span class="hljs-string">'../samples/*.txt'</span>
 [
   <span class="hljs-string">'../samples/1.txt'</span>,  <span class="hljs-string">'../samples/10.txt'</span>, <span class="hljs-string">'../samples/11.txt'</span>,
   <span class="hljs-string">'../samples/12.txt'</span>, <span class="hljs-string">'../samples/13.txt'</span>, <span class="hljs-string">'../samples/14.txt'</span>,
@@ -1630,7 +1705,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
   <span class="hljs-string">'../samples/67.txt'</span>, <span class="hljs-string">'../samples/68.txt'</span>, <span class="hljs-string">'../samples/69.txt'</span>,
   <span class="hljs-string">'../samples/7.txt'</span>,  <span class="hljs-string">'../samples/70.txt'</span>, <span class="hljs-string">'../samples/71.txt'</span>,
   <span class="hljs-string">'../samples/8.txt'</span>,  <span class="hljs-string">'../samples/9.txt'</span>
-]</code></div><small class="shcb-language" id="shcb-language-54"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+]</code></div><small class="shcb-language" id="shcb-language-61"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h5><strong>Read each <code>inputFile</code> and put its content into an array</strong></h5>
@@ -1640,7 +1715,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
 <p>Each item of the array should contain both a way to locate original file (such a path) and, of course, the file content:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-55" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-55"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-62" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> loadedFiles: { path: <span class="hljs-built_in">string</span>, content: <span class="hljs-built_in">string</span> }[] = []</code></div><small class="shcb-language" id="shcb-language-62"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <h4><strong>Implement a function that finds clusters of similar submissions</strong></h4>
@@ -1650,7 +1725,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
 <p>This function must be implemented into its own module, with that prototype:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-56" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Sample {
+<pre class="wp-block-code" aria-describedby="shcb-language-63" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Sample {
   content: <span class="hljs-built_in">string</span>
   path: <span class="hljs-built_in">string</span>
 }
@@ -1666,7 +1741,7 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
   options: { clusterScore: <span class="hljs-built_in">number</span> }
 </span>): <span class="hljs-title">Sample</span>[][] </span>{
   <span class="hljs-keyword">return</span> []
-}</code></div><small class="shcb-language" id="shcb-language-56"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-63"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>You are encouraged to think this algorithm the way you want. It will not be graded.</p>
@@ -1890,8 +1965,8 @@ run().catch(<span class="hljs-built_in">console</span>.error)</code></div><small
 <p>From a security and maintainability perspective, you should never let secrets and configurations hardcoded in your code. Instead, extract them to a configuration file ignored by git. Even better, allow those settings to be different depending on the environment (ex. test, development, staging, production&#8230;). The Vue assets pipeline has a built-in feature for this: <a href="https://cli.vuejs.org/guide/mode-and-env.html" target="_blank" rel="noreferrer noopener">env variables</a>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-57" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.development.local</span>
-VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-57"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+<pre class="wp-block-code" aria-describedby="shcb-language-64" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment"># file: .env.development.local</span>
+VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span class="hljs-number">-462</span>d-a85f-f81cfea8f0d8</code></div><small class="shcb-language" id="shcb-language-64"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p><i class="fas fa-exclamation-circle" style="color: #d32f2f; margin-right: 0.5em"></i> Unfortunately, changes appyed to .env files cannot be watched by the cli. Each time, you must restart the building process (ex. npm run serve).</p>
@@ -1913,7 +1988,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 1: add SigninButton »</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-58" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// file src/lib/microsoftGraph.js</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-65" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// file src/lib/microsoftGraph.js</span>
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msal <span class="hljs-keyword">from</span> <span class="hljs-string">'@azure/msal-browser'</span>
 
 <span class="hljs-comment">/**
@@ -1936,7 +2011,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
   <span class="hljs-keyword">const</span> authResult = <span class="hljs-keyword">await</span> msalInstance.loginPopup(requestedScopes)
   msalInstance.setActiveAccount(authResult.account)
   <span class="hljs-keyword">return</span> authResult.account
-}</code></div><small class="shcb-language" id="shcb-language-58"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-65"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <figure class="wp-block-image size-large"><img decoding="async" width="1060" height="836" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/signin-button.gif" alt="" class="wp-image-3576"/></figure>
@@ -2135,7 +2210,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<div class="is-layout-flex wp-container-60 wp-block-columns">
+<div class="is-layout-flex wp-container-67 wp-block-columns">
 <div class="is-layout-flow wp-block-column question">
 <p><strong>Question 7</strong>: What is the performance difference between:</p>
 
@@ -2255,11 +2330,11 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 <p class="question"><strong>Question 1</strong>: That is the main difference between local installation and global installation of packages with npm? What kind of packages do you generally install locally? What kind is generally installed globally?</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-61" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-68" data-shcb-language-name="Bash" data-shcb-language-slug="bash"><div><code class="hljs language-bash"><span class="hljs-comment"># example of command to install the vue cli locally</span>
 npm install @vue/cli
 
 <span class="hljs-comment"># example of command to install the vue cli globally</span>
-npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-61"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
+npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-language-68"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">Bash</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">bash</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>According to the <a href="https://cli.vuejs.org/guide/installation.html" target="_blank" rel="noreferrer noopener">docs</a>, the global installation is best suitable for Vue CLI.</p>
@@ -2349,7 +2424,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p class="exercice"><strong>Exercise 5</strong>: Let&rsquo;s begin with the root component, formally <code>App</code> (in <code>src/App.vue</code>). Replace its template with the following content and create the missing components. Add some content to the header (ex. fake home link, fake user name&#8230;) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-62" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-69" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template of file src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">base-header</span> /&gt;</span>
@@ -2358,7 +2433,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-62"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-comment">&lt;!-- do not remove the &lt;script /&gt; markup --&gt;</span></code></div><small class="shcb-language" id="shcb-language-69"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 5: create BaseHeader and BaseFooter »</p>
@@ -2376,12 +2451,12 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p><strong>Tips</strong>: If you integrated font awesome, try extracting most logic out of <code>App</code>. When it comes to configure third party dependencies, I generally work with ES-modules inside a <code>src/lib</code> folder. Example: <code>src/lib/fontAwesome.js</code>.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-63" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-70" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-comment">&lt;!-- template tag of src/App.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">home-page</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-63"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-70"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p style="margin-top: -1.5em"><i class="fab fa-git-alt" style="color: #f4511e; margin-right: 0.5em"></i> Commit changes with message « Ex 6: create BaseLayout that uses slot API »</p>
@@ -2433,7 +2508,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>You may split your scoped CSS in 2 parts: the styles common to all components, and specific classes for each color in the palette. So, the component&rsquo;s style could look like:</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-64" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<pre class="wp-block-code" aria-describedby="shcb-language-71" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
 <span class="hljs-selector-class">.button</span> {
   <span class="hljs-comment">/* css properties common to all buttons */</span>
 }
@@ -2442,7 +2517,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
   <span class="hljs-comment">/* css properties specific to the primary color */</span>
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#42b983</span>;
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-64"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-71"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Finally, you just need to conditionally bind the CSS classes (<a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">explained here</a>).</p>
@@ -2454,11 +2529,11 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Declare in a single place the allowed values for the colour enum and its corresponding colours. On my side, I just declared the above object and always take it as a single source of truth in <code>BaseComponent</code>. In other words, this object contains the colour palette indexed by names I use as reference everywhere in the component.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-65" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
+<pre class="wp-block-code" aria-describedby="shcb-language-72" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> colorPalette = {
   <span class="hljs-attr">primary</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#42b983'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#4cce93'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#47d696'</span> },
   <span class="hljs-attr">warn</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#ff5722'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ff7043'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#ff8a65'</span> },
   <span class="hljs-attr">danger</span>: { <span class="hljs-attr">bg</span>: <span class="hljs-string">'#e53935'</span>, <span class="hljs-attr">hoverBg</span>: <span class="hljs-string">'#ef5350'</span>, <span class="hljs-attr">focusBorder</span>: <span class="hljs-string">'#e57373'</span> },
-}</code></div><small class="shcb-language" id="shcb-language-65"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+}</code></div><small class="shcb-language" id="shcb-language-72"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p>Then, you need <a href="https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css" target="_blank" rel="noreferrer noopener">a way to apply variables to your CSS</a>. In short, this is a conjugaison of <a href="https://v3.vuejs.org/guide/class-and-style.html" target="_blank" rel="noreferrer noopener">style binding</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noreferrer noopener">CSS variables</a>, <a href="https://v3.vuejs.org/guide/computed.html" target="_blank" rel="noreferrer noopener">computed properties</a> and scoped styles.</p>
@@ -2486,7 +2561,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>Here you have its source code (if you did not install FontAwesome, just replace the <code>&lt;font-awesome-icon /&gt;</code> by a simple text, while preserving the <code>v-if</code> directive.</p>
 
 
-<pre class="wp-block-code" aria-describedby="shcb-language-66" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<pre class="wp-block-code" aria-describedby="shcb-language-73" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">base-button</span>
     <span class="hljs-attr">:disabled</span>=<span class="hljs-string">"isPending"</span>
     <span class="hljs-attr">:color</span>=<span class="hljs-string">"color"</span>
@@ -2530,7 +2605,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
     }
   }
 }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-66"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-73"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
 
 
 <p class="exercice"><strong>Exercise 9</strong>: Add a button to the <code>HomePage</code> that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the <code>@click</code> event listener attached to the instance of <code>AsyncComponent</code> instance returns a Promise that waits for 2 seconds before resolving. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noreferrer noopener">You can create such a Promise using its constructor and a setTimeou</a>t. Also, please <a href="https://v3.vuejs.org/guide/events.html#method-event-handlers" target="_blank" rel="noreferrer noopener">write the event handler inside a dedicated method</a> since at is a bit complex.</p>
@@ -2794,19 +2869,19 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="is-layout-flex wp-container-71 wp-block-columns">
-<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-67" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
+<div class="is-layout-flex wp-container-78 wp-block-columns">
+<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-74" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-class">.my-rounded-block</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ffecb8</span>;
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#795548</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
   <span class="hljs-attribute">text-align</span>: center;
-}</code></div><small class="shcb-language" id="shcb-language-67"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
+}</code></div><small class="shcb-language" id="shcb-language-74"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre></div>
 
 
 
-<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-69" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
+<div class="is-layout-flow wp-block-column"><pre class="wp-block-code" aria-describedby="shcb-language-76" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-rounded-block"</span>&gt;</span>
   Example of paragraph with background and rounded border.
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-69"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></div><small class="shcb-language" id="shcb-language-76"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
