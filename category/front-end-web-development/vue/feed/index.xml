@@ -286,7 +286,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/props-goes-down.gif" alt="" class="wp-image-3609"/><figcaption>Animated flow of props propagation from <code>App</code> to deeply nested children.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/props-goes-down.gif" alt="" class="wp-image-3609"/><figcaption>Animated flow of props propagation from <code>App</code> to deeply nested children.</figcaption></figure>
 
 
 
@@ -294,7 +294,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/event-goes-up.gif" alt="" class="wp-image-3613"/><figcaption>Animated flow of events going up, getting handled in App and trigering a view update.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/event-goes-up.gif" alt="" class="wp-image-3613"/><figcaption>Animated flow of events going up, getting handled in App and trigering a view update.</figcaption></figure>
 
 
 <a href=https://docs.google.com/presentation/d/1FhBhkHADZAE-DtDQU2qk6MczPhqDVYRIyk7ysPOFdA8/edit#slide=id.gebafa763cd_0_119 target="_blank">
@@ -609,7 +609,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="376" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png" alt="" class="wp-image-3762" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-300x110.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-768x282.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png 1501w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>On the left, the vue app with placeholders. On the right, result after cleanup.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="376" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png" alt="" class="wp-image-3762" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-300x110.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-768x282.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png 1501w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>On the left, the vue app with placeholders. On the right, result after cleanup.</figcaption></figure>
 
 
 
@@ -637,7 +637,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png" alt="" class="wp-image-3378" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-300x128.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-768x327.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png 1296w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Basic possible visual at the end of the next exercise and its components tree.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png" alt="" class="wp-image-3378" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-300x128.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-768x327.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png 1296w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Basic possible visual at the end of the next exercise and its components tree.</figcaption></figure>
 
 
 
@@ -703,7 +703,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button.gif" alt="" class="wp-image-3490"/></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button.gif" alt="" class="wp-image-3490"/></figure></div>
 
 
 
@@ -711,7 +711,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="850" height="166" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-used-in-header.gif" alt="" class="wp-image-3804"/><figcaption>Tips: it makes sense to use them in the navigation in header.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="850" height="166" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-used-in-header.gif" alt="" class="wp-image-3804"/><figcaption>Tips: it makes sense to use them in the navigation in header.</figcaption></figure>
 
 
 
@@ -719,7 +719,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="331" height="219" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png" alt="" class="wp-image-3493" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png 331w, https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color-300x198.png 300w" sizes="(max-width: 331px) 100vw, 331px" /></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" width="331" height="219" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png" alt="" class="wp-image-3493" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png 331w, https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color-300x198.png 300w" sizes="(max-width: 331px) 100vw, 331px" /></figure></div>
 
 
 
@@ -778,7 +778,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif" alt="" class="wp-image-3510"/></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif" alt="" class="wp-image-3510"/></figure></div>
 
 
 

@@ -12,7 +12,7 @@
 	<atom:link href="https://thomas-veillard.fr/feed/" rel="self" type="application/rss+xml" />
 	<link>https://thomas-veillard.fr/</link>
 	<description>Mes cours et supports pédagogiques pour l&#039;enseignement de l&#039;ingénierie informatique.</description>
-	<lastBuildDate>Mon, 12 Dec 2022 12:09:46 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 20 Jan 2023 16:57:30 +0000</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -568,7 +568,7 @@ repo.merge(user, req.body.user)
 }</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
 
 
-<p class="exercice"><strong>Exercise 9</strong>: implement a <code>Session</code> class managed by <code>typeorm</code>. The database table must have a <code>token</code> column storing  a base64-encoded secret (known by the client). Set the column length containing exactly 384 bits of entropy token encoded in base64. In addition, <code>Session</code> references <code>User</code> with a <code>ManyToMany</code> relationship. Finally, it has <code>createdAt</code>, <code>expiresAt</code> and <code>revokedAt</code> columns. The <code>token</code> should be generated using the <code>crypto</code> built-in module. The initialisation process (setting <code>expiredAt</code>, generating <code>token</code>s) can be moved inside the <code>Session</code> class a way it runs the first time the entity is persisted. Prefer <code>@CreateDateColumn</code> decorator for <code>createdAt</code>.</p>
+<p class="exercice"><strong>Exercise 9</strong>: implement a <code>Session</code> class managed by <code>typeorm</code>. The database table must have a <code>token</code> column storing  a base64-encoded secret (known by the client). Set the column length containing exactly 384 bits of entropy token encoded in base64. In addition, <code>Session</code> references <code>User</code> with a <code>ManyToOne</code> relationship. Finally, it has <code>createdAt</code>, <code>expiresAt</code> and <code>revokedAt</code> columns. The <code>token</code> should be generated using the <code>crypto</code> built-in module. The initialisation process (setting <code>expiredAt</code>, generating <code>token</code>s) can be moved inside the <code>Session</code> class a way it runs the first time the entity is persisted. Prefer <code>@CreateDateColumn</code> decorator for <code>createdAt</code>.</p>
 
 
 
@@ -641,14 +641,20 @@ it(<span class="hljs-string">'should reject with 404 if password does not match'
 
 
 <pre class="wp-block-code u-mbn" aria-describedby="shcb-language-26" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">it(<span class="hljs-string">'should respond with the current user identity'</span>)
-it(<span class="hljs-string">'should respond with 403 if user is not logged in'</span>)
-it(<span class="hljs-string">'should respond with 403 if unsigned cookie'</span>)
-it(<span class="hljs-string">'should respond with 403 if cookie signature with a wrong key'</span>)</code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre></div>
+it(<span class="hljs-string">'should respond with 401 if user is not logged in'</span>)
+it(<span class="hljs-string">'should respond with 401 if unsigned cookie'</span>)
+it(<span class="hljs-string">'should respond with 401 if cookie signature with a wrong key'</span>)
+it(<span class="hljs-string">'should respond with 401 if session has expired'</span>)
+it(<span class="hljs-string">'should respond with 401 if session has been revoked'</span>)</code></div><small class="shcb-language" id="shcb-language-26"><span class="shcb-language__label">Langage du code :</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre></div>
 </div>
 
 
 
-<p class="exercice"><strong>Exercise 12</strong>: implement a <code>DELETE /web-api/sessions/current</code> endpoint.</p>
+<p><strong>Tips:</strong> If not already done, it would be preferable having a unique column index on <code>session.token</code> for faster querying and database integrity.</p>
+
+
+
+<p class="exercice"><strong>Exercise 12</strong>: implement a <code>DELETE /web-api/sessions/current</code> endpoint. For history reasons, that endpoint sets the <code>revokedAt</code> property instead of destroying the <code>session</code> record.</p>
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/front-end-web-development/04-backend/04-iam-app-http-server-bootstraping-practical-activity/">04. IAM App: http server bootstraping (practical activity)</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></content:encoded>
 					
@@ -2062,7 +2068,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/props-goes-down.gif" alt="" class="wp-image-3609"/><figcaption>Animated flow of props propagation from <code>App</code> to deeply nested children.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/props-goes-down.gif" alt="" class="wp-image-3609"/><figcaption>Animated flow of props propagation from <code>App</code> to deeply nested children.</figcaption></figure>
 
 
 
@@ -2070,7 +2076,7 @@ VUE_APP_OAUTH_CLIENT_ID=e8137439<span class="hljs-number">-4</span>d1d<span clas
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/event-goes-up.gif" alt="" class="wp-image-3613"/><figcaption>Animated flow of events going up, getting handled in App and trigering a view update.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1294" height="727" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/event-goes-up.gif" alt="" class="wp-image-3613"/><figcaption>Animated flow of events going up, getting handled in App and trigering a view update.</figcaption></figure>
 
 
 <a href=https://docs.google.com/presentation/d/1FhBhkHADZAE-DtDQU2qk6MczPhqDVYRIyk7ysPOFdA8/edit#slide=id.gebafa763cd_0_119 target="_blank">
@@ -2385,7 +2391,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="376" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png" alt="" class="wp-image-3762" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-300x110.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-768x282.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png 1501w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>On the left, the vue app with placeholders. On the right, result after cleanup.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="376" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png" alt="" class="wp-image-3762" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-1024x376.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-300x110.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders-768x282.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/remove-vue-placeholders.png 1501w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>On the left, the vue app with placeholders. On the right, result after cleanup.</figcaption></figure>
 
 
 
@@ -2413,7 +2419,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png" alt="" class="wp-image-3378" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-300x128.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-768x327.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png 1296w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Basic possible visual at the end of the next exercise and its components tree.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="435" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png" alt="" class="wp-image-3378" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/image-1024x435.png 1024w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-300x128.png 300w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image-768x327.png 768w, https://thomas-veillard.fr/wp-content/uploads/2021/09/image.png 1296w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Basic possible visual at the end of the next exercise and its components tree.</figcaption></figure>
 
 
 
@@ -2479,7 +2485,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button.gif" alt="" class="wp-image-3490"/></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button.gif" alt="" class="wp-image-3490"/></figure></div>
 
 
 
@@ -2487,7 +2493,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="850" height="166" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-used-in-header.gif" alt="" class="wp-image-3804"/><figcaption>Tips: it makes sense to use them in the navigation in header.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="850" height="166" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-used-in-header.gif" alt="" class="wp-image-3804"/><figcaption>Tips: it makes sense to use them in the navigation in header.</figcaption></figure>
 
 
 
@@ -2495,7 +2501,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="331" height="219" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png" alt="" class="wp-image-3493" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png 331w, https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color-300x198.png 300w" sizes="(max-width: 331px) 100vw, 331px" /></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" width="331" height="219" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png" alt="" class="wp-image-3493" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color.png 331w, https://thomas-veillard.fr/wp-content/uploads/2021/09/base-button-with-color-300x198.png 300w" sizes="(max-width: 331px) 100vw, 331px" /></figure></div>
 
 
 
@@ -2554,7 +2560,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif" alt="" class="wp-image-3510"/></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" width="539" height="124" src="https://thomas-veillard.fr/wp-content/uploads/2021/09/async-button.gif" alt="" class="wp-image-3510"/></figure></div>
 
 
 
@@ -2689,7 +2695,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="658" height="515" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1790" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png 658w, https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments-300x235.png 300w" sizes="(max-width: 658px) 100vw, 658px" /><figcaption>Démonstration de la <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, qui permet au site web de déléguer tout le processus de commande et de paiement en ligne. Cela inclut l&rsquo;affichage du détail des prix, l&rsquo;enregistrement des cartes bancaires et le traitement du paiement.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="658" height="515" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png" alt="" class="wp-image-1790" srcset="https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments.png 658w, https://thomas-veillard.fr/wp-content/uploads/2021/02/Your-browser-can-process-payments-300x235.png 300w" sizes="(max-width: 658px) 100vw, 658px" /><figcaption>Démonstration de la <a href="https://whatwebcando.today/payments.html" target="_blank" rel="noreferrer noopener">Payments API</a>, qui permet au site web de déléguer tout le processus de commande et de paiement en ligne. Cela inclut l&rsquo;affichage du détail des prix, l&rsquo;enregistrement des cartes bancaires et le traitement du paiement.</figcaption></figure>
 
 
 
@@ -2823,7 +2829,7 @@ npm install -g @vue/cli</code></div><small class="shcb-language" id="shcb-langua
 <p>L’article <a rel="nofollow" href="https://thomas-veillard.fr/developpement-web-cote-client/cours/a-quelle-point-cette-interface-est-elle-elaboree/">3. À quelle point cette interface est-elle élaborée ?</a> est apparu en premier sur <a rel="nofollow" href="https://thomas-veillard.fr/">Thomas VEILLARD</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1058" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1406"/><figcaption>L&rsquo;interface de gestion d&rsquo;Hetzner Cloud est un bel exemple de Single Page Application.</figcaption></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1058" height="692" src="https://thomas-veillard.fr/wp-content/uploads/2021/02/How-rich-can-be-a-web-ui-.gif" alt="" class="wp-image-1406"/><figcaption>L&rsquo;interface de gestion d&rsquo;Hetzner Cloud est un bel exemple de Single Page Application.</figcaption></figure>
 
 
 
